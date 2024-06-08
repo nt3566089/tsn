@@ -1,0 +1,25 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	screenCd	画面CD		1	1		1	1													
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	screenNm	画面名		1	1		1	1													
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	systemType	システム種別		1	1		1	1													
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	itemCd	項目CD	1	text	1	1		1	300			1	300
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	項目名	2	text	1	1		1	300			2	300
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	itemType	項目型	3	dropdown	1	1		0	270			3	270
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	visible	表示可否	4	dropdown	1	1		1	110			4	110
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	editable	編集可否	5	dropdown	1	1		1	130			5	130
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	textAlign	表示位置	6	dropdown	1	1		0	185			6	185
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	necessary	必須	7	dropdown	1	1		1	95			7	95
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	displayRequired	表示必須	8	dropdown	1	1		1	95			8	
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.inputLimit	入力文字制限	9	dropdown	1	1		0	450			9	450
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.limitMessageCd	制限メッセージCD	10	text	1	1		0	420			10	420
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.minChars	最小文字数	11	number	1	1	right	0	90			11	110
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.maxChars	最大文字数	12	number	1	1	right	0	90			12	110
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.minNumber	最小値	13	number	1	1	right	0	230			13	230
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.maxNumber	最大値	14	number	1	1	right	0	230			14	230
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.integerLength	整数桁数	15	number	1	1	right	0	75			15	75
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	bitemValidAsOne.decimalLength	小数桁数	16	number	1	1	right	0	75			16	120
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	body	画面項目マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	17	dropdown	1	1		0	110			17	110
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	addRow	行追加		1	1		0	1													
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	removeRow	行削除		1	1		0	1													
+ScreenItemEdit	画面項目マスタメンテナンス(編集)	base	register	登録		1	1		0	1													

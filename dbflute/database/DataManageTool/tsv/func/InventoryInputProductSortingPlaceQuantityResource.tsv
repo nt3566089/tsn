@@ -1,0 +1,4 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+InventoryInputProductSortingPlaceQuantityResource	send	send	確定ボタン押下	case	ｹｰｽ	text	0
+InventoryInputProductSortingPlaceQuantityResource	send	send	確定ボタン押下	carton	ｶｰﾄﾝ	text	0
+InventoryInputProductSortingPlaceQuantityResource	send	send	確定ボタン押下	defective	製品不良	text	0

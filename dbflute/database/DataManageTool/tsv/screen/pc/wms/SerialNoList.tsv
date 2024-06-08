@@ -1,0 +1,40 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SerialNoList	シリアルNo.一覧	wms	centerCd	センタ	dropdown	1	1		1	1													
+SerialNoList	シリアルNo.一覧	wms	clientCd	荷主	dropdown	1	1		1	1													
+SerialNoList	シリアルNo.一覧	wms	productCd	商品CD	text	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	serialNoFrom	シリアルNo.(From)	text	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	serialNoTo	シリアルNo.(To)	text	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	supplyCd	仕入先CD	text	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	receiveSlipNo	WMS入荷伝票No.	text	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	receiveDtFrom	入荷日(From)	date	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	receiveDtTo	入荷日(To)	date	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	supplyCustomerCd	納品先CD	text	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	pickingWorkNo	出庫作業No./出荷梱包No.	text	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	shippingDtFrom	出荷日(From)	date	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	shippingDtTo	出荷日(To)	date	1	1		0	0													
+SerialNoList	シリアルNo.一覧	wms	search	検索		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	excelOutput	Excel出力		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mproduct.productCd	商品CD	1	text	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mproduct.productNm	商品名称	2	text	1	0		0	250				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	serialNo	シリアルNo.	3	text	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	supplierCd	仕入先CD	4	text	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	supplierNm	仕入先名称	5	text	1	0		0	250				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	receiveSlipNo	WMS入荷伝票No.	6	text	1	0		0	180				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	receiveDt	入荷日	7	date	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	supplyCustomerCd	納品先CD	8	text	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	supplyCustomerNm	納品先名称	9	text	1	0		0	250				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No./出荷梱包No.	10	text	1	0		0	200				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	shippingDt	出荷日	11	date	1	0		0	150				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mcenter.centerCd	センタCD	12	text	1	0		0	130				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mcenter.centerNm	センタ名称	13	text	1	0		0	180				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mclient.clientCd	荷主CD	14	text	1	0		0	130				
+SerialNoList	シリアルNo.一覧	wms	serialNoList	シリアルNo.一覧グリッド	grid	1	0		0	1	mclient.clientNm	荷主名称	15	text	1	0		0	180				
+SerialNoList	シリアルNo.一覧	wms	supplyCustomerCdBatch	納品先CD	text	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	pickingWorkNoBatch	出庫作業No./出荷梱包No.	text	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	shippingDtBatch	出荷日	date	1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	checkShippingBatch	出荷情報更新		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	dataDelete	削除		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	shippingInfoClear	出荷情報クリア		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	slipNoReceiveList	伝票別入荷一覧		1	1		0	1													
+SerialNoList	シリアルNo.一覧	wms	shippingInstList	出庫指示一覧		1	1		0	1													

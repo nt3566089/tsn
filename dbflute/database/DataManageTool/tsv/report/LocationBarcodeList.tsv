@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+LocationBarcodeList	ロケーションバーコードリスト	ロケーションバーコード LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList.jrxml	1						0	0	lblCntrNm	センタ:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	ロケーションバーコード LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList.jrxml	1						0	0	lblWarehouseNm	倉庫:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	ロケーションバーコード LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList.jrxml	1						0	0	lblZoneNm	ゾーン:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	Location Barcode Label	../../../../../../reports/master/LocationBarcodeList_enUS.jrxml	1						0	1	lblCntrNm	センタ:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	Location Barcode Label	../../../../../../reports/master/LocationBarcodeList_enUS.jrxml	1						0	1	lblWarehouseNm	倉庫:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	Location Barcode Label	../../../../../../reports/master/LocationBarcodeList_enUS.jrxml	1						0	1	lblZoneNm	ゾーン:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	库位条形码 LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList_zhCN.jrxml	1						0	1	lblCntrNm	センタ:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	库位条形码 LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList_zhCN.jrxml	1						0	1	lblWarehouseNm	倉庫:	String	1	
+LocationBarcodeList	ロケーションバーコードリスト	库位条形码 LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList_zhCN.jrxml	1						0	1	lblZoneNm	ゾーン:	String	1	

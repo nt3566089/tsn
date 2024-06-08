@@ -1,0 +1,61 @@
+<div ng-controller="DeliveryCourseMasterEdit" owd-screen="DeliveryCourseMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<div class="well">
+				<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.07 sja Start -->
+					<!--
+					<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+					 -->
+
+					<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.07 sja End -->
+					<owd-text id="deliveryCourseCd" ng-model="head.deliveryCourseCd" label-text="配送コースCD" ></owd-text>
+					<!-- [新WMS-110-004] 削除フラグの空の選択肢を削除 2015.07.14 kawana Start -->
+					<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" owd-remove-blank></owd-select>
+					<!-- [新WMS-110-004] 削除フラグの空の選択肢を削除 2015.07.14 kawana End -->
+				</div>
+			</div>
+			<div class="well">
+			<div class="row">
+				<owd-text id="deliveryCourseNm" ng-model="head.deliveryCourseNm" label-text="配送コース名称"></owd-text>
+				<owd-select id="carrierCd" ng-model="head.mcarrier.carrierCd" owd-models="carrierList" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者" ng-change="carrierCdChange()"></owd-select>
+				<!-- [Ver２．１向けエンハンス] 荷札出力対応 C-CWMS-0058 2016/07/06 HDIS Start -->
+<!-- 			<owd-text id="trackingNumberingKey" ng-model="head.trackingNumberingKey" label-text="追跡番号採番キー"></owd-text>
+				<owd-text id="trackingNumberingAfterKey" ng-model="head.trackingNumberingAfterKey" label-text="追跡番号採番キー(代引時、2枚目以降)"></owd-text>
+-->
+				<!-- [#1077] 追跡番号採番キー及び追跡番号採番キー(代引時、2枚目以降) をドロップダウン化する 2017.6.15 nayzaw Start-->
+				<owd-select id="trackingNumberingKey" ng-model="head.trackingNumberingKey" owd-models="trackingNumberingKeyList" owd-repeat-key="bizCd" owd-repeat-value="bizNm" label-text="追跡番号採番キー"></owd-select>
+				<owd-select id="trackingNumberingAfterKey" ng-model="head.trackingNumberingAfterKey" owd-models="trackingNumberingKeyList" owd-repeat-key="bizCd" owd-repeat-value="bizNm" label-text="追跡番号採番キー(代引時、2枚目以降)"></owd-select>
+				<!-- [#1077] 追跡番号採番キー及び追跡番号採番キー(代引時、2枚目以降) をドロップダウン化する 2017.6.15 nayzaw End-->
+				<owd-select id="trackingNumberingUnit" ng-model="head.trackingNumberingUnit" owd-models="trackingNumberingUnitList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="追跡番号採番単位"></owd-select>
+				<owd-select id="tagType" ng-model="head.tagType" owd-models="tagTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="送り状種別"></owd-select>
+				<owd-select id="tagTypeAfter" ng-model="head.tagTypeAfter" owd-models="tagTypeAfterList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="送り状種別(代引時、2枚目以降)"></owd-select>
+				<owd-select id="tagDataType" ng-model="head.tagDataType" owd-models="tagDataTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="送り状データ種別"></owd-select>
+				<owd-select id="slipTagType" ng-model="head.slipTagType" owd-models="slipTagTypeList" owd-repeat-key="tagType" owd-repeat-value="tagNm" label-text="送り状定義"></owd-select>
+				<!-- <owd-select id="tagType" ng-model="head.tagType" owd-models="tagTypeList" owd-repeat-key="tagType" owd-repeat-value="tagNm" label-text="送り状データ種別"></owd-select> -->
+				<!-- [Ver２．１向けエンハンス] 荷札出力対応 C-CWMS-0058 2016/07/06 HDIS End -->
+				<owd-text id="pickingTime" ng-model="head.pickingTime" label-text="出庫開始時刻"></owd-text>
+				<owd-text id="stowageTime" ng-model="head.stowageTime" label-text="積込予定時刻"></owd-text>
+				<owd-text id="shippingTime" ng-model="head.shippingTime" label-text="出荷予定時刻"></owd-text>
+				<!-- キャリアEDIシステム(CES)連携対応 2018.01.07 PYM Start -->
+				<owd-select id="paymentTerm" ng-model="head.paymentTerm" owd-models="paymentTermList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Payment Term"></owd-select>
+				<!-- キャリアEDIシステム(CES)連携対応 2018.01.07 PYM End -->
+			</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="deliveryCourseMasterEdit" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

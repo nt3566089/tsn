@@ -1,0 +1,62 @@
+<div ng-controller="ProductMasterEdit" owd-screen="ProductMasterEdit">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="clientCd" ng-model="productSearch.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主CD" ></owd-select>
+				<owd-text id="productCd" ng-model="productSearch.productCd" label-text="商品CD"></owd-text>
+				<!-- [新WMS-110-004] 削除フラグの空の選択肢を削除 2015.07.14 kawana Start -->
+				<owd-select id="delFlg" ng-model="productSearch.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" owd-remove-blank></owd-select>
+				<!-- [新WMS-110-004] 削除フラグの空の選択肢を削除 2015.07.14 kawana End -->
+			</div>
+		</div>
+		<div class="well">
+			<div class="row">
+				<owd-text id="productNm" ng-model="productSearch.productNm" label-text="商品名称" ng-blur="productNmBlur()"></owd-text>
+				<owd-text id="productAbbr" ng-model="productSearch.productAbbr" label-text="商品略称"></owd-text>
+				<!-- [ON推-品向-389] JANCDを半角に変更 2014.12.02 kawana Start -->
+				<owd-text id="janCd" ng-model="productSearch.janCd" label-text="JANCD"></owd-text>
+				<!-- [ON推-品向-389] JANCDを半角に変更 2014.12.02 kawana End -->
+				<owd-select id="lotManagFlg" ng-model="productSearch.lotManagFlg" owd-models="lotManagFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ロット管理フラグ" ng-change="lotManagFlgChange()"></owd-select>
+				<!-- [EC-CT1-130] 不要な項目削除 2015.3.19 Sakata Start -->
+				<!-- [EC-CT1-130] 不要な項目削除 2015.3.19 Sakata End -->
+				<owd-select id="limitDtManagFlg" ng-model="productSearch.limitDtManagFlg" owd-models="limitDtManagFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="期限日管理フラグ" ng-change="limitDtManagFlgChange()"></owd-select>
+				<!-- [ON推-品向-573] 期限日数の削除は登録時に設定する(処理削除) 2015.04.23 kawana Start -->
+				<owd-select id="limitDtReverseFlg" ng-model="productSearch.limitDtReverseFlg" owd-models="limitDtReverseFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="期限日逆転防止フラグ"></owd-select>
+				<!-- [ON推-品向-573] 期限日数の削除は登録時に設定する(処理削除) 2015.04.23 kawana End -->
+				<owd-number id="receiveLimitNum" ng-model="productSearch.receiveLimitNum" label-text="入荷期限日数"></owd-number>
+				<owd-number id="shippingLimitNum" ng-model="productSearch.shippingLimitNum" label-text="出荷期限日数"></owd-number>
+				<owd-select id="mergeCls" ng-model="productSearch.mergeCls" owd-models="mergeClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入庫No.マージ区分"></owd-select>
+				<owd-select id="shippingStopFlg" ng-model="productSearch.shippingStopFlg" owd-models="shippingStopFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷停止フラグ"></owd-select>
+				<owd-number id="fixedPoint" ng-model="productSearch.fixedPoint" label-text="定点"></owd-number>
+<!-- 			// [Ver3.0] unit of measure対応 2017.12.05 NING Start -->
+				<owd-select id="shapeGrpCd" ng-model="productSearch.mshapeGrp.shapeGrpCd" owd-models="deferredInventoryManagementUnitList" owd-repeat-key="shapeCd" owd-repeat-value="shapeNm" label-text="在庫管理単位" ng-change="inventoryManagementUnitChange()"></owd-select>
+<!-- 			// [Ver3.0] unit of measure対応 2017.12.05 NING Start -->
+<!--            //  キャリアEDIシステム(CES)連携対応 2017.01.03 LSW Start -->
+				<owd-text id="nmfcCode" ng-model="productSearch.nmfcCode" label-text="NMFC Code"></owd-text>
+				<owd-select id="freightCls" ng-model="productSearch.freightCls" owd-models="freightClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Freight Class"></owd-select>
+				<owd-text id="counntryOfOrigin" ng-model="productSearch.counntryOfOrigin" label-text="Country of Origin"></owd-text>
+				<owd-number id="unitVal" ng-model="productSearch.unitVal" label-text="Unit Value"></owd-number>
+				<owd-text id="htsCd" ng-model="productSearch.htsCd" label-text="Harmonized Code"></owd-text>
+<!--            //  キャリアEDIシステム(CES)連携対応 2017.01.03 LSW End -->
+			</div>
+		</div>
+		<!-- [#165][2.1.0-CT-019] 商品荷姿の削除機能を追加 2016.11.02 kawana Start -->
+		<!-- [#7006][OSS] 行選択機能を除外 2020.02.05 tsuboi Start -->
+		<div owd-grid="gridOptions" id="product" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-backcolor-option="getClassForRow(row)" owd-form-name="inputform"></div>
+		<!-- [#7006][OSS] 行選択機能を除外 2020.02.05 tsuboi End -->
+		<!-- [#165][2.1.0-CT-019] 商品荷姿の削除機能を追加 2016.11.02 kawana End -->
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [Ver3.0][#3642] 必須項目が、全て入力された押下できるように変更 2018.02.15 shimizu Start -->
+					<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="inputform.$invalid">登録</owd-button>
+					<!-- [Ver3.0][#3642] 必須項目が、全て入力された押下できるように変更 2018.02.15 shimizu End -->
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

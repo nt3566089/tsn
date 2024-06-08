@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerCd	センタ		1	1		1	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	classCd	区分値CD		1	1		1	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	classComment	区分値解説		1	1		1	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	systemType	システム種別		1	1		1	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerClassEdit	センタ別区分値マスタメンテナンスグリッド	grid	1	1		0	1	classDtlCd	区分値明細CD	1	text	1	1		1	300			1	300
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerClassEdit	センタ別区分値マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	区分値明細名	2	text	1	1		1	300			2	300
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerClassEdit	センタ別区分値マスタメンテナンスグリッド	grid	1	1		0	1	viewOrder	表示順	3	number	1	1	right	1	70			3	140
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerClassEdit	センタ別区分値マスタメンテナンスグリッド	grid	1	1		0	1	defaultFlg	デフォルト	4	checkbox	1	1		1	80			4	80
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	centerClassEdit	センタ別区分値マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	5	dropdown	1	1		0	110			5	110
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	removeRow	行削除		1	1		0	1													
+CenterClassEdit	センタ別区分値マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

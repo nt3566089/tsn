@@ -1,0 +1,31 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+BoxMaster	荷材マスタメンテナンス	wms	centerCd	拠点		1	0		1	1													
+BoxMaster	荷材マスタメンテナンス	wms	boxCd	箱タイプ		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	boxNm	箱タイプ名		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	boxType	箱種別		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	search	検索		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	0		0	1	boxCd	箱タイプ	1	text	1	0		0				1	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	boxNm	箱タイプ名	2	text	1	1		1				2	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	boxType	箱種別	3	dropdown	1	1		1				3	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	0		0	1	bxcpy	容積(cm3)	4	number	1	0	right	0				4	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	bxweight	空箱重量(g)	5	number	1	1	right	1				5	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	bxoszl	箱外寸(L)(mm)	6	number	1	1	right	1				6	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	bxoszw	箱外寸(W)(mm)	7	number	1	1	right	1				7	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	bxoszh	箱外寸(H)(mm)	8	number	1	1	right	1				8	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	length	箱内寸(L)(mm)	9	number	1	1	right	1				9	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	width	箱内寸(W)(mm)	10	number	1	1	right	1				10	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	height	箱内寸(H)(mm)	11	number	1	1	right	1				11	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	volumeRate	梱包率(%)	12	number	1	1	right	1				12	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	1	1		1	1	delFlg	削除	13	dropdown	1	1		1				13	
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	centerCd	拠点CD		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	centerNm	拠点名称		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	clientCd	荷主CD		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	clientNm	荷主名称		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	volume	容積(mm3)		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	searchResultList	荷材マスタメンテナンスグリッド	grid	0	0		0	0	permitVolume	許容容積(mm3)		text	0	0		0					
+BoxMaster	荷材マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+BoxMaster	荷材マスタメンテナンス	wms	register	登録		1	1		0	1													

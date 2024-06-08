@@ -1,0 +1,23 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReplenishInstBulkInput	融通指示一括登録	wms	centerCd	拠点		1	0		1	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	clientCd	荷主		1	0		1	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	errorOnly	エラーのみ表示		1	1		0	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	lineNo	No.	1	number	1	0	right	0	70			1	70
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	flexlnsNo	指示No.	2	text	1	0		0	160	2		2	160
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	schDate	発送予定日	3	text	1	0		0	300	3		3	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	supplierCd	発送元CD	4	text	1	0		0	250	4		4	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	rcvDate	受入予定日	5	text	1	0		0	110	5		5	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	shipCd	発送先CD	6	text	1	0		0	110	6		6	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	itemCd	銘柄CD	7	text	1	0		0	140	7		7	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	manufactureDate	製造年月日	8	date	1	0		0	110	8		8	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	designCd	デザイン区分	9	text	1	0		0	125	9		9	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	qty	数量(個数)	10	number	1	0	right	0	300	10		10	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	flexUpdUserCd	画面更新者	11	text	1	0		0	300	11		11	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	errorMsg	エラー内容	12	text	1	0		0	300	12		12	300
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	clientCd	荷主CD	13	text	0	0		0	250	13		13	200
+ReplenishInstBulkInput	融通指示一括登録	wms	replenishInstBulkInputList	融通指示一括登録グリッド	grid	1	0		0	1	clientNm	荷主名称	14	text	0	0		0	75	14		14	200
+ReplenishInstBulkInput	融通指示一括登録	wms	fileInput	ファイル取込		1	1		0	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	excelOutput	Excel出力		1	1		0	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	errorProcessMet	エラー処理方法	dropdown	1	0		0	1													
+ReplenishInstBulkInput	融通指示一括登録	wms	register	登録		1	1		0	1													

@@ -1,0 +1,5 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+BarcodeLabel	バーコードラベル	バーコードラベル(C1)	../../../../../../reports/master/ProductLabel_C1.jrxml	1						0	0					
+BarcodeLabel	バーコードラベル	バーコードラベル(A4)	../../../../../../reports/master/ProductLabel_A4.jrxml	1						0	0					
+BarcodeLabel	バーコードラベル	条形码标签(C1)	../../../../../../reports/master/ProductLabel_C1_zhCN.jrxml	1						0	1					
+BarcodeLabel	バーコードラベル	条形码标签(A4)	../../../../../../reports/master/ProductLabel_A4_zhCN.jrxml	1						0	1					

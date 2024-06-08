@@ -1,0 +1,82 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblCasePickingList	ケースピッキングリスト	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblClientCd	荷主	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblWarehouseCd	倉庫	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblWorkDt	作業日	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblPickingWorkNo	出庫作業No.	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblStockTypeCd	在庫区分	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblLocationNm	ロケーション	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblJancd	ソースCD	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblProductNm	商品名称	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblProductCd	商品CD	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblLot	ロット	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblAgain	再	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblAllPage	ALL PAGE:	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblCenter	センタ	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblCasePickingNo	ケースピッキングNo.	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblTotalPickingNum	総ピック数	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblTotalBreakdown	総ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblBreakdown	ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblPickNum	ピック数	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblZoneCd	ゾーン	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblShippingPackingNo	梱包No.	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblFromShippingPackingNo	(From)	String	1	
+CasePickingList	ケースピッキングリスト	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0	lblToShippingPackingNo	(To)	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblCasePickingList	ケースピッキングリスト	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblClientCd	荷主	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblJancd	ソースCD	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblAgain	再	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblAllPage	ALL PAGE:	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblCenter	センタ	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblCasePickingNo	ケースピッキングNo.	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblTotalPickingNum	総ピック数	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblTotalBreakdown	総ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblBreakdown	ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblPickNum	ピック数	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblShippingPackingNo	梱包No.	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblFromShippingPackingNo	(From)	String	1	
+CasePickingList	ケースピッキングリスト	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1	lblToShippingPackingNo	(To)	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblCasePickingList	ケースピッキングリスト	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblClientCd	荷主	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblJancd	ソースCD	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblAgain	再	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblAllPage	ALL PAGE:	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblCenter	センタ	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblCasePickingNo	ケースピッキングNo.	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblTotalPickingNum	総ピック数	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblTotalBreakdown	総ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblBreakdown	ピック内訳	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblPickNum	ピック数	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblShippingPackingNo	梱包No.	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblFromShippingPackingNo	(From)	String	1	
+CasePickingList	ケースピッキングリスト	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1	lblToShippingPackingNo	(To)	String	1	

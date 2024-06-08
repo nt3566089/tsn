@@ -1,0 +1,42 @@
+<div ng-controller="LocationMaster" owd-screen="LocationMaster">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select	id="clientCd" ng-model="searchCondition.clientCd" label-text="荷主" owd-models="clientCdList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" ng-change="clientCdChange()"></owd-select>
+						<owd-select	id="locGroup" ng-model="searchCondition.locGroup" label-text="ロケーショングループ" owd-models="locGroupList" ng-blur="locGroupChange()" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+						<owd-text	id="locationCd" ng-model="searchCondition.locationCd" label-text="ロケーションCD"></owd-text>
+						<owd-select	id="allocNgFlg" ng-model="searchCondition.allocNgFlg" label-text="引当可否" owd-models="allocNgFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" ng-change="allocNgFlgChange()"></owd-select>
+						<owd-text	id="zone" ng-model="searchCondition.zone" label-text="ゾーン" ng-change="zoneChange()"></owd-text>
+						<owd-select	id="delFlg" ng-model="searchCondition.delFlg" label-text="削除" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button	id="search"	class="btn-info"	ng-click="searchClick()"	ng-disabled="searchConditionForm.$invalid" >検索</owd-button>
+				<owd-button	id="excelOutput"	class="btn-info"	ng-click="excelOutputClick()"	ng-disabled="searchConditionForm.$invalid">Excel出力</owd-button>
+			</div>
+		</div>
+	</form>
+	<br>
+	<form id="searchResultListForm" name="searchResultListForm" novalidate>
+<!-- 			<div owd-grid="gridOptions" id="locationList"></div> -->
+			<div owd-grid="gridOptions" id="locationList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+  			<div owd-grid="gridForOutput" id="locationListOutput" ng-show=false></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="LocationManageListExcelOutput" ng-click="locationManageListExcelOutputClick()"	class="btn-info">ロケーション管理リストExcel出力</owd-button>
+						<owd-button id="copy" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">複製</owd-button>
+						<owd-button id="new" class="btn-success"  ng-click="initNew()">新規</owd-button>
+						<owd-button id="update"	class="btn-success"	ng-click="updateClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

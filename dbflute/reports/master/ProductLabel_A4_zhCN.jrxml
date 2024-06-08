@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProductLabel_A4" columnCount="4" pageWidth="595" pageHeight="842" columnWidth="137" leftMargin="23" rightMargin="23" topMargin="23" bottomMargin="23" scriptletClass="com.oneslogi.wms.jasperreports.master.ProductLabel" uuid="70c4b647-a018-48bb-a08c-acad170da23b">
+	<property name="ireport.zoom" value="1.4641000000000024"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<style name="Barcode" hAlign="Left" vAlign="Middle" fontName="IPAexゴシック" fontSize="16"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Source_20140709\\Source\\reports\\master\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_JASPER_FILE" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="REPORT_BARCODE_PRINT" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="productCd" class="java.lang.String"/>
+	<field name="productCdBar" class="java.lang.String"/>
+	<field name="productNm" class="java.lang.String"/>
+	<field name="productBiko" class="java.lang.String"/>
+	<field name="productLabelBarcode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<rectangle radius="0">
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="136" height="72" isRemoveLineWhenBlank="true" uuid="851aeef6-7015-4e11-a620-ec139b6e6a72"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<componentElement>
+				<reportElement key="barProdCd" style="Barcode" x="3" y="20" width="130" height="32" uuid="e36de634-3b9d-4e0d-878c-0cff4b845d86">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "CODABAR" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:Codabar xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:Codabar>
+			</componentElement>
+			<componentElement>
+				<reportElement key="barProdCd" style="Barcode" x="3" y="20" width="130" height="32" uuid="f9302231-094b-4f3c-b6ac-d98de89db4ab">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "CODE39" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:Code39 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="0.6" textPosition="none" quietZone="0.0" verticalQuietZone="0.0" checksumMode="ignore">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:Code39>
+			</componentElement>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtProductNm" style="Barcode" mode="Opaque" x="0" y="0" width="132" height="20" uuid="7d8ab529-853e-4ffa-8d24-be9b3fd4dc05"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Noto Sans S Chinese Regular" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtProductCd" mode="Opaque" x="3" y="52" width="136" height="20" uuid="92420877-5868-45ea-97c7-0a023e3bbc75"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Noto Sans S Chinese Regular" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productCd}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement style="Barcode" x="3" y="20" width="130" height="32" uuid="5d108ed7-fd6f-45d8-8939-510716daf3f8">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "CODE128" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Barcode" x="3" y="20" width="130" height="32" uuid="99de95bb-636b-49ff-a121-aa9928de4ca1">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "JAN13" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:EAN13 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0" checksumMode="ignore">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:EAN13>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Barcode" x="3" y="20" width="130" height="32" uuid="804a39bb-cfb5-445d-964c-3d467f4ade3e">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "JAN8" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:EAN8 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0" checksumMode="ignore">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:EAN8>
+			</componentElement>
+			<componentElement>
+				<reportElement style="Barcode" x="3" y="20" width="130" height="32" uuid="e90e847b-6a9a-4a8b-9967-3de45fd5d7ac">
+					<printWhenExpression><![CDATA[$F{productLabelBarcode}.equals( "ITF" ) && $P{REPORT_BARCODE_PRINT}]]></printWhenExpression>
+				</reportElement>
+				<jr:Interleaved2Of5 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0" checksumMode="ignore">
+					<jr:codeExpression><![CDATA[$F{productCdBar}]]></jr:codeExpression>
+				</jr:Interleaved2Of5>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

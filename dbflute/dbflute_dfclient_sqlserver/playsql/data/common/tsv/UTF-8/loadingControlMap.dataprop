@@ -1,0 +1,22 @@
+map:{
+    # ALL, NONE, PART
+    #; loggingInsertType = PART
+
+    # true or false
+    #; isSuppressBatchUpdate = true
+
+    # true or false
+    #; isCheckColumnDefExistence = true
+
+    # true or false
+    #; isRTrimCellValue = true
+
+    # outside file for large text
+    #; largeTextFileMap = map:{
+    #    ; WHITE_LARGE_TEXT_FILE = list:{ suffix:_TEXT }
+    #}
+    ; largeTextFileMap = map:{
+        ; P_REPORT_LAYOUT = list:{ REPORT_LAYOUT_DATA }
+        ; P_SUBREP_LAYOUT = list:{ SUBREP_LAYOUT_DATA }
+    }
+}

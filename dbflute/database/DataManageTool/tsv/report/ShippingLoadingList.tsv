@@ -1,0 +1,20 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblAttention	取扱注意	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblShippingLoadingList	積　込　リ　ス　ト	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblOrderType	依頼種別　　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblRmaNo	問合番号　　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblOwnerSoNo	整理番号　　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblOtherRefNo1	輸送形態　　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblShitToCd	受入先コード：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblCustomerNm	受入先名称　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblShipSchDate	出庫予定日　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblCarNo	号車　　　　：	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblPlNo	P/LNo.	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblItemCd	銘柄ｺｰﾄﾞ	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblProductNm	銘柄名称	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblLot1	商社搬入番号	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblLot4	製造年月	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblLot3	ﾃﾞｻﾞｲﾝ	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblCaseQty	ｹｰｽ数	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblCartonQty	ｶｰﾄﾝ数	String	1	
+ShippingLoadingList	積込リスト	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0	lblTotal	合計	String	1	

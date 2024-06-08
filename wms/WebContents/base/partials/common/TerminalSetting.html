@@ -1,0 +1,51 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div owd-screen="TerminalSetting">
+	<div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+		<div class="row" ng-show="modalAlerts.TerminalSetting">
+			<div class="col-xs-12">
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-modal">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{"terminalSetting" | owfMessage}}
+			</div>
+			<div class="panel-body">
+				<form id="inputform" name="inputform" novalidate>
+					<div class="well">
+						<div class="row">
+							<owd-text id="terminalCd" ng-model="head.terminalCd" label-text="端末CD"></owd-text>
+							<owd-text id="terminalNm" ng-model="head.terminalNm" label-text="端末名称"></owd-text>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<owd-checkbutton style="margin-top:-50px" id="unsetOnly" ng-model="searchParam.unsetOnly" label-text="未設定のみ" btn-checkbox-true="1" btn-checkbox-false="0" ng-change="search()"></owd-checkbutton>
+						</div>
+					</div>
+					<br>
+					<div owd-grid="gridOptions" id="terminalSettingGrid" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+					<br>
+
+					<div class="row">
+						<div class="col-xs-6">
+							<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">登録</owd-button>
+							<owd-button id="release" class="btn-danger" ng-click="release()" ng-disabled="!head.terminalCd">解除</owd-button>
+						</div>
+						<div class="col-xs-6" align="right">
+							<owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

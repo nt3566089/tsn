@@ -1,0 +1,17 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	centerCd	拠点		1	0		1	1													
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	productCd	銘柄CD		1	1		1	1													
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	productCd	銘柄CD	1	text	1	0		0	180			1	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	productNm	銘柄名称	2	text	1	0		0	180			2	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	slotlocname	保管ロケ名称	3	text	1	0		0	180			3	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	picklocname	ピッキングロケ名称	4	text	1	0		0	180			4	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	updDt	更新日時	5	datetime	1	0		0	180			5	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	1	0		0	0	updUser	更新者	6	text	1	0		0	180			6	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	0	0		0	0	transportPriority	出力順(組織)	7	text	0	0		0	180			7	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	0	0		0	0	userNum3	一般出力順	8	text	0	0		0	180			8	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	CenterProductControlMasterList	拠点別銘柄制御マスタ一覧グリッド	grid	0	0		0	0	userNum1	内外区分	9	text	0	0		0	180			9	180
+CenterProductControlMasterList	拠点別銘柄制御マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													

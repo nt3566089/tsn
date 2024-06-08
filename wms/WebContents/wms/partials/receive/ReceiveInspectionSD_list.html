@@ -1,0 +1,20 @@
+<!-- [#981] SD用基盤改修 2017.02.06 honma Mod Start -->
+<ion-view owd-screen="ReceiveInspectionSD" title="{{screenTitle}}">
+<!-- [#981] SD用基盤改修 2017.02.06 honma Mod End -->
+	<div class="bar bar-calm bar-subheader">
+		<h2 class="title">
+			<owd-span id="searchResultTitle" label-text="検索結果"></owd-span>
+			<span ng-bind="': ' + searchResult.totalServerItems"></span>
+		</h2>
+	</div>
+	<ion-content class="has-subheader" ng-class="{'has-footer' : alerts.length > 0}">
+
+		<owd-search-result id="receiveInspectionList" owd-grid-option="listGridOptions" owd-result-list="receiveInspectionList" ng-click="detail($index)" owd-backcolor-option="getClassForRow(row)"></owd-search-result>
+
+		<ion-infinite-scroll
+			ng-if="moreDataCanBeLoaded()"
+			icon="ion-loading-c"
+			on-infinite="loadMoreData()">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

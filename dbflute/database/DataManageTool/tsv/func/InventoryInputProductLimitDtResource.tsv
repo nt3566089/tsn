@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+InventoryInputProductLimitDtResource	send	send	HT商品棚卸(詳細期限日)送信	limitDt	期限日	date	1

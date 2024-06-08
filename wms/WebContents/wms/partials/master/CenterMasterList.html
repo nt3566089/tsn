@@ -1,0 +1,40 @@
+<div ng-controller="CenterMasterList" owd-screen="CenterMasterList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+						<div class="row">
+							<owd-text id="centerCd" ng-model="head.centerCd" label-text="センタCD"></owd-text>
+							<owd-text id="centerNm" ng-model="head.centerNm" label-text="センタ名称"></owd-text>
+							<!-- [C-CWMS-0039] センタ間移動機能を追加(住所1を削除) 2015.09.17 kawana -->
+							<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<!-- [ON推-品向-862] form名間違いを修正 2015.07.09 kawana Start -->
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					<!-- [ON推-品向-862] form名間違いを修正 2015.07.09 kawana End -->
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="centerMasterList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-info"  ng-click="register()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

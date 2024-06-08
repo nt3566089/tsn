@@ -1,0 +1,18 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblBonded	保税	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblLot4	製造年月日	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblReceiveQtyCase	ケース	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblReceiveQtyBowl	カートン	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblCheck	＜Check＞	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblItemCd	銘柄コード	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblLot3	デザイン区分	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblLot1	商社搬入番号	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblForeignCargoCd	外貨内貨区分	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblPalletNo	管理番号	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblPluralProductionKbn	複数製造月日区分	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblTransportNo1	輸送番号	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblRtnRcvKbn	逆転入庫区分	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblPrintingDate	作成日	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblOtherLot1Name	コード名称	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblPalletCuttingKbn	パレット分割区分	String	1	
+PalletLabel	パレットはり紙	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0	lblShTypeCd	輸送形態コード	String	1	

@@ -1,0 +1,18 @@
+<ion-view owd-screen="InventoryInputSD" title="{{screenTitle}}">
+	<ion-content ng-class="{'has-footer' : alerts.length > 0}">
+
+		<form id="form.searchform" name="form.searchform" novalidate>
+			<div class="tablet-row responsive-sm" style="flex-wrap: wrap;">
+				<owd-select class="tablet-col tablet-col-50" id="warehouseCd" ng-model="conditionB.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-focus="warehouseFocus()" ng-change="warehouseChange()" ng-blur="warehouseBlur()"></owd-select>
+				<owd-date class="tablet-col tablet-col-50" id="inventoryDt" ng-model="conditionH.inventoryDt" label-text="棚卸日" ng-focus="inputValueAllSelectOnFocus($event)"></owd-date>
+				<owd-text class="tablet-col tablet-col-50" id="fromLocationCd" ng-model="conditionI.fromLocationCd" label-text="ロケーションCd(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="toLocationCd" ng-model="conditionI.toLocationCd" label-text="ロケーションCD(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(conditionI.fromLocationCd, $value)" owd-validate-watch="'conditionI.fromLocationCd'" owd-validate-message="fromToMessage" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-select class="tablet-col tablet-col-50" id="zoneCd" ng-model="conditionI.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+				<owd-select class="tablet-col tablet-col-50" id="stockTakingInput" ng-model="conditionI.stockTakingInput" owd-models="stockTakingInputList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="棚卸入力有"></owd-select>
+				<owd-select class="tablet-col tablet-col-50" id="unmatch" ng-model="conditionI.unmatch" owd-models="unmatchList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アンマッチ有"  owd-remove-blank></owd-select>
+			</div>
+
+		    <owd-button id="search" class="button-positive" ng-disabled="form.searchform.$invalid" ng-click="search()">検索</owd-button>
+		</form>
+	</ion-content>
+</ion-view>

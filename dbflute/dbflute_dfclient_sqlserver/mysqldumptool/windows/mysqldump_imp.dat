@@ -1,0 +1,140 @@
+@ECHO OFF
+
+SET NOW_DATE=%DATE:~-10,-6%%DATE:~-5,-3%%DATE:~-2%
+SET NOW_TIME=%TIME:~0,2%%TIME:~3,2%
+SET NOW_TIME=%NOW_TIME: =0%
+SET NOW_DATE_TIME=%NOW_DATE%_%NOW_TIME%
+
+SET WORK_FOLDER=%CD%
+
+SET ENV_FILE=mysqldump.env
+IF EXIST "%ENV_FILE%" (
+  TYPE NUL>"%ENV_FILE%.bat"
+  FOR /F "usebackq eol=; delims=" %%i IN ("%ENV_FILE%") DO (
+    IF NOT "%%i"=="" (
+      ECHO SET %%i>>"%ENV_FILE%.bat"
+    )
+  )
+  CALL "%ENV_FILE%.bat"
+  DEL /F "%ENV_FILE%.bat"
+)
+
+SET ENV_FILE=%~1.env
+IF EXIST "%ENV_FILE%" (
+  TYPE NUL>"%ENV_FILE%.bat"
+  FOR /F "usebackq eol=; delims=" %%i IN ("%ENV_FILE%") DO (
+    IF NOT "%%i"=="" (
+      ECHO SET %%i>>"%ENV_FILE%.bat"
+    )
+  )
+  CALL "%ENV_FILE%.bat"
+  DEL /F "%ENV_FILE%.bat"
+)
+
+SET IGN_FILE=%~n0.ign
+
+SET LOG_FILE=%~1_%NOW_DATE_TIME%.log
+SET DEL_FILE=%~1_%NOW_DATE_TIME%.sql
+
+SET IGNORE_MSG=Warning: Using a password on the command line interface can be insecure.
+
+SET PATH=C:\Program Files\MySQL\MySQL Server 8.0\bin;%PATH%
+
+ECHO.
+ECHO MySQLへのインポート処理を開始します。
+
+IF "%~2"=="" (
+  ECHO.
+  ECHO インポートするSQLファイル一式が格納されているフォルダを指定して下さい。
+  ECHO.
+  SET /P IMP_FOLDER=フォルダ：
+) ELSE (
+  SET IMP_FOLDER=%~2
+)
+
+IF "%IMP_FOLDER%"=="" (
+  ECHO.
+  ECHO フォルダを指定して下さい。
+  PAUSE
+  GOTO :EOF
+)
+
+DIR "%IMP_FOLDER%" /AD>NUL
+IF ERRORLEVEL 1 (
+  ECHO.
+  ECHO フォルダが存在しません。
+  PAUSE
+  GOTO :EOF
+)
+
+ECHO.
+ECHO 以下パラメータで実行されます。
+
+ECHO.
+ECHO User     ：%USER%
+ECHO Host     ：%HOST%
+ECHO Database ：%DBNM%
+
+ECHO.
+ECHO SQL入力元：%IMP_FOLDER%
+
+ECHO.
+ECHO ※【%IGN_FILE%】に指定されたTableは除外されます。
+
+ECHO.
+PAUSE
+
+ECHO.
+ECHO 実行中...
+ECHO.
+
+TYPE NUL>"%LOG_FILE%"
+TYPE NUL>"%DEL_FILE%"
+
+PUSHD "%IMP_FOLDER%"
+
+FOR /F "usebackq tokens=1 delims=." %%i in (`DIR *.sql /B /ON`) DO (
+  FINDSTR /R ^%%i$ "%WORK_FOLDER%\%IGN_FILE%">NUL || (
+    TYPE NUL> "%WORK_FOLDER%\%DEL_FILE%"
+    ECHO /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;>> "%WORK_FOLDER%\%DEL_FILE%"
+    ECHO truncate table %%i;>> "%WORK_FOLDER%\%DEL_FILE%"
+    ECHO /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;>> "%WORK_FOLDER%\%DEL_FILE%"
+    SETLOCAL ENABLEDELAYEDEXPANSION
+    SET OUT_MSG=!DATE! !TIME!
+    ECHO !OUT_MSG! ^> truncate table %%i start.
+    ECHO !OUT_MSG! ^> truncate table %%i start.>> "%WORK_FOLDER%\%LOG_FILE%"
+    mysql --default-character-set=utf8mb4 -N -u %USER% -p%PASS% -h %HOST% %DBNM% < "%WORK_FOLDER%\%DEL_FILE%" > "%WORK_FOLDER%\%LOG_FILE%.$$$" 2>&1
+    IF ERRORLEVEL 1 (
+      FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+      ECHO truncateでエラーが発生しました。
+      PAUSE
+      POPD
+      GOTO :EOF
+    )
+    FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+    SET OUT_MSG=!DATE! !TIME!
+    ECHO !OUT_MSG! ^> truncate table %%i end.
+    ECHO !OUT_MSG! ^> truncate table %%i end.>> "%WORK_FOLDER%\%LOG_FILE%"
+    ECHO !OUT_MSG! ^> insert table %%i start.
+    ECHO !OUT_MSG! ^> insert table %%i start.>> "%WORK_FOLDER%\%LOG_FILE%"
+    mysql --default-character-set=utf8mb4 -N -u %USER% -p%PASS% -h %HOST% %DBNM% < "%%i.sql" > "%WORK_FOLDER%\%LOG_FILE%.$$$" 2>&1
+    IF ERRORLEVEL 1 (
+      FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+      ECHO insertでエラーが発生しました。
+      PAUSE
+      POPD
+      GOTO :EOF
+    )
+    FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+    SET OUT_MSG=!DATE! !TIME!
+    ECHO !OUT_MSG! ^> insert table %%i end.
+    ECHO !OUT_MSG! ^> insert table %%i end.>> "%WORK_FOLDER%\%LOG_FILE%"
+    ENDLOCAL
+  )
+)
+
+POPD
+
+DEL "%DEL_FILE%">NUL
+DEL "%LOG_FILE%.$$$">NUL
+

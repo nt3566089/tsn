@@ -1,0 +1,30 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	clientCd	荷主	dropdown	1	0		1	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	locationCd	ロケーションCD	text	1	1		1	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	locationNm	ロケーション名称	text	1	1		1	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	locGroup	ロケーショングループ	dropdown	1	1		1	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	allocNgFlg	引当可否	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	zone	ゾーン	text	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	pickingOrder	山出し順	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	palletecapacity	許容パレット枚数	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	maxStoreNum	許容個数	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	linblk	ライン/ブロック	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	locid	ロケーション区分	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	productCd	銘柄CD	text	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	tosplmd	当日補充方式	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	presplmd	事前補充方式	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	splrevun	補充切り上げ単位	dropdown	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	splrevctqa	補充切り上げカートン数	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	replenishPNum	基本補充点	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	bssplpt	基本補充量	number	1	1		0	1													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	centerCd	センタ	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	warehouseCd	倉庫	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	allocOrder	引当順序	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	product	商品	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	replenishStockTypeId	在庫区分	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	replenishDepositId	預託	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	replenishPProductShapeId	補充点荷姿	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	maxStoreProductShapeId	最大格納数商品荷姿	text	0	0		0	0													
+LocationMasterEdit	ロケーションマスタメンテナンス(編集)	wms	register	登録	button	1	1		0	1													

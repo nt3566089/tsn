@@ -1,0 +1,525 @@
+﻿map:{
+    ; $$ALL$$ = map:{
+        ; DEL_FLG = DelFlg
+    }
+
+    ##########偙偙偐傜偼嬫暘抣儅僗僞偺巊梡僥乕僽儖掕媊
+    # 嬫暘抣掕媊 辞書マスタ
+    ; B_DICT = map:{
+        ; DATA_TYPE = DataType
+    }
+    # 嬫暘抣掕媊 ログ
+    ; B_LOG = map:{
+        ; LOG_STATUS = LogStatus
+    }
+    # 嬫暘抣掕媊 ログ明細
+    ; B_LOG_DTL = map:{
+        ; LOG_DTL_TYPE = LogDtlType
+        ; LOG_DTL_STATUS = LogDtlStatus
+    }
+    # 嬫暘抣掕媊 システムログ
+    ; B_SYSTEM_LOG = map:{
+        ; SYSTEM_LOG_TYPE = SystemLogType
+        ; SYSTEM_LOG_STATUS = SystemLogStatus
+    }
+    # 嬫暘抣掕媊 メッセージマスタ
+    ; B_MESSAGE = map:{
+        ; MESSAGE_TYPE = MessageType
+        ; SYSTEM_TYPE = SystemType
+    }
+    # 嬫暘抣掕媊 区分値マスタ
+    ; B_CLASS = map:{
+        ; SYSTEM_TYPE = SystemType
+    }
+    # 嬫暘抣掕媊 項目マスタ
+    ; B_ITEM = map:{
+        ; ITEM_TYPE = ItemType
+        ; VISIBLE = Visible
+        ; EDITABLE = Editable
+        ; TEXT_ALIGN = TextAlign
+        ; NECESSARY = Necessary
+        ; DISPLAY_REQUIRED = DisplayRequired
+    }
+    # 嬫暘抣掕媊 列マスタ
+    ; B_COL = map:{
+        ; COL_TYPE = ColType
+        ; VISIBLE = Visible
+        ; EDITABLE = Editable
+        ; TEXT_ALIGN = TextAlign
+        ; NECESSARY = Necessary
+    }
+    # 嬫暘抣掕媊 画面権限マスタ
+    ; B_SCREEN_ROLE = map:{
+        ; VISIBLE = Visible
+    }
+    # 嬫暘抣掕媊 項目権限マスタ
+    ; B_ITEM_ROLE = map:{
+        ; VISIBLE = Visible
+        ; EDITABLE = Editable
+    }
+    # 嬫暘抣掕媊 列権限マスタ
+    ; B_COL_ROLE = map:{
+        ; VISIBLE = Visible
+        ; EDITABLE = Editable
+    }
+    # 嬫暘抣掕媊 採番マスタ
+    ; B_NUMBERING = map:{
+        ; CHECK_DIGIT = CheckDigit
+    }
+    # 嬫暘抣掕媊 権限グループマスタ
+    ; B_ROLE_GRP = map:{
+        ; ROLE_CONTROL_CLASS = RoleControlClass
+    }
+    # 嬫暘抣掕媊 ユーザ認証マスタ
+    ; B_USER_AUTH = map:{
+        ; PASSWORD_RESET = PasswordReset
+        ; LOCKOUT = Lockout
+    }
+    # 嬫暘抣掕媊 プリンタマスタ
+    ; P_PRINTER = map:{
+        ; VISIBLE = Visible
+    }
+    # 嬫暘抣掕媊 プリンタ属性マスタ
+    ; P_PRINTER_ATTRIBUTE = map:{
+        ; VISIBLE = Visible
+    }
+    # 嬫暘抣掕媊 印刷情報
+    ; P_PRINT_REQUEST = map:{
+        ; PRINT_STATUS = PrintStatus
+        ; SHEET_COLLATE = SheetCollate
+        ; PRINTED_FLG = PrintedFlg
+        ; PRINT_DATA_TYPE = PrintDataType
+    }
+    # 嬫暘抣掕媊 レイアウト別印刷設定マスタ
+    ; P_LAYOUT_PRINT_SETTING = map:{
+        ; SHEET_COLLATE = SheetCollate
+    }
+    # 嬫暘抣掕媊 印刷サービス情報
+    ; P_PRINT_SERVICE = map:{
+        ; PRINT_SERVICE_STATUS = PrintServiceStatus
+    }
+    # 嬫暘抣掕媊 印刷履歴情報
+    ; P_PRINT_REQUEST_HIST = map:{
+        ; SHEET_COLLATE = SheetCollate
+        ; PRINT_RESULT_CLASS = PrintResultClass
+    }
+    # 嬫暘抣掕媊 帳票レイアウトマスタ
+    ; P_REPORT_LAYOUT = map:{
+        ; UPDATABLE = Updatable
+        ; AUTO_PRINT_TARGET_FLG = AutoPrintTargetFlg
+    }
+    # 嬫暘抣掕媊 印刷キュー情報
+    ; P_PRINT_QUEUE = map:{
+        ; PRINT_QUEUE_STATUS = PrintQueueStatus
+    }
+    # 嬫暘抣掕媊 メニューマスタ
+    ; B_MENU = map:{
+        ; TARGET_WINDOW = TargetWindow
+    }
+    # 嬫暘抣掕媊 棚卸ボディ履歴
+    ; H_INVENTORY_B = map:{
+        ; INPUT_TYPE = InputType
+        ; STOCK_ADJUST_FLG = StockMoveFlg
+    }
+    # 嬫暘抣掕媊 在庫移動ボディ履歴
+    ; H_MOVE_B = map:{
+        ; INOUT_TYPE = InoutType
+    }
+    # 嬫暘抣掕媊 入荷ボディ履歴
+    ; H_RECEIVE_B = map:{
+        ; STORE_FLG = StoreFlg
+    }
+    # 嬫暘抣掕媊 入荷ヘッダ履歴
+    ; H_RECEIVE_H = map:{
+        ; RECEIVE_DELIVERY_STATUS = ReceiveDeliveryStatus
+    }
+    # 嬫暘抣掕媊 出荷ヘッダ履歴
+    ; H_SHIPPING_H = map:{
+        ; DELIV_TZ = DelivTz
+        ; EMERGENCY_FLG = EmergencyFlg
+    }
+    # 嬫暘抣掕媊 在庫受払データ履歴
+    ; H_STOCK_INOUT = map:{
+        ; CORRECT_TYPE = CorrectType
+        ; INOUT_TYPE = InoutType
+    }
+    # 嬫暘抣掕媊 佐川送り状マスタ
+    ; M_CARRIER_SLIP_SGW = map:{
+        ; API_BINSYU_CODE = CenterApiBinsyuCode
+        ; API_DAIBIKI_FLG = CenterApiDaibikiFlg
+        ; API_DAIBIKI_TYPE = CenterApiDaibikiType
+        ; API_EIDOME_FLG = CenterApiEidomeFlg
+        ; API_WEIGHT_CD_1 = CenterApiWeightCd
+        ; API_WEIGHT_CD_2 = CenterApiWeightCd
+        ; CHARACTER_CD = CharacterCd
+        ; COD_CLS = CodCls
+        ; SEAL_TYPE1 = CenterSealType
+        ; SEAL_TYPE2 = CenterSealType
+        ; SEAL_TYPE3 = CenterSealType
+        ; SETTLEMENT_TYPE = SettlementType
+        ; SLIP_SHAPE_CD = CenterSlipShapeCd
+        ; TRANSPORT_TYPE_ITEM = CenterTransportTypeItem
+        ; TRANSPORT_TYPE_SPEED = CenterTransportTypeSpeed
+    }
+    # 嬫暘抣掕媊 ヤマト送り状マスタ
+    ; M_CARRIER_SLIP_YMT = map:{
+        ; CHARACTER_CD = CharacterCd
+        ; COOL_CLS = CoolCls
+        ; PACKING_SHOW_FLG = PackingShowFlg
+        ; SLIP_TYPE = SlipType
+    }
+    # 嬫暘抣掕媊 ゆうパック送り状マスタ
+    ; M_CARRIER_SLIP_YUPK = map:{
+        ; CHARACTER_CD = CharacterCd
+        ; COD_TYPE = CodType
+        ; COOL_TYPE = CoolType
+        ; NO_STOCK_CLS = NoStockCls
+        ; NO_UPSIDE_DOWN_CLS = NoUpsideDownCls
+        ; POST_TYPE = PostType
+    }
+    # 嬫暘抣掕媊 センタ区分値マスタ
+    ; M_CENTER_CLASS = map:{
+        ; SYSTEM_TYPE = SystemType
+    }
+    # 嬫暘抣掕媊 荷主センタマスタ
+    ; M_CLIENT_CENTER = map:{
+        ; BATCH_PROGRESS_FLG = BatchProgressFlg
+    }
+    # 嬫暘抣掕媊 共通運送業者マスタ
+    ; M_COMMON_CARRIER = map:{
+        ; ARRIVAL_STORE_FORMAT = ArrivalStoreFormat
+        ; BOL_OUTPUT_TARGET_FLG = BolOutputTargetFlg
+    }
+    # 嬫暘抣掕媊 取引先マスタ
+    ; M_CUSTOMER = map:{
+        ; DELIVERY_FLG = DeliveryFlg
+        ; DEPOSIT_FLG = DepositFlg
+        ; LIMIT_DT_REVERSE_FLG = LimitDtReverseFlg
+        ; LOT_REVERSE_FLG = LotReverseFlg
+        ; ONETIME_FLG = OnetimeFlg
+        ; SHIPPING_STOP_FLG = ShippingStopFlg
+        ; VENDOR_FLG = VendorFlg
+    }
+    # 嬫暘抣掕媊 初期データ取込種別マスタ
+    ; M_DATA_INPUT_TYPE = map:{
+        ; DATA_INPUT_TYPE_CD = DataInputType
+    }
+    # 嬫暘抣掕媊 配送コースマスタ
+    ; M_DELIVERY_COURSE = map:{
+        ; TAG_DATA_TYPE = CenterTagDataType
+        ; TAG_TYPE = CenterTagType
+        ; TAG_TYPE_AFTER = CenterTagTypeAfter
+        ; TRACKING_NUMBERING_UNIT = TrackingNumberingUnit
+        ; PAYMENT_TERM = PaymentTerm
+    }
+    # 嬫暘抣掕媊 センタ採番マスタ
+    ; M_NUMBERING_CENTER = map:{
+        ; USER_EDITABLE = UserEditable
+        ; CHECK_DIGIT = CheckDigit
+    }
+    # 嬫暘抣掕媊 取込種別マスタ
+    ; M_IMPORT_TYPE = map:{
+        ; GIFT_STATEMENT_TYPE = GiftStatementType
+        ; LINE_FEED_CD = LineFeedCd
+        ; UPLOAD_TABLE_NM = UploadTableNm
+    }
+    # 嬫暘抣掕媊 ロケーションマスタ
+    ; M_LOCATION = map:{
+        ; ALLOC_NG_FLG = AllcNgFlg
+        ; LOCATION_TYPE = LocationType
+        ; PICKING_LOCATION_FLG = PickingLocationFlg
+    }
+    # 嬫暘抣掕媊 パラメータマスタ
+    ; M_PARAM = map:{
+        ; AFTER_TAG_OUT_FLG = AfterTagOutFlg
+        ; AFTER_DELIV_SLIP_OUT_FLG = AfterTagOutFlg
+        ; AFTER_DELIV_SLIP_OUT_TGT = AfterDelivSlipOutTgt
+        ; SGL_ROW_INSP_AFTER_OUT_CLS = SglRowInspAfterOutCls
+        ; BOX_SELECT_SKIP = BoxSelectSkip
+        ; CASE_PIC_FLG = CasePicFlg
+        ; HT_CHAR_READ_FLG = HtCharReadFlg
+        ; MERGE_CLS = MergeCls
+        ; MULTI_PIC_CLS = MultiPicCls
+        ; OVER_STORE_NUM_FLG = OverStoreNumFlg
+        ; PACKING_CAL_CLS = PackingCalCls
+        ; PACKING_PROCESS_CLS = PackingProcessCls
+        ; PAST_STORE_DT_FLG = PastStoreDtFlg
+        ; PRODUCT_LABEL_JAN_BARCODE = ProductLabelJanBarcode
+        ; PRODUCT_LABEL_OUT_UNIT = ProductLabelOutUnit
+        ; PRODUCT_LABEL_PROD_BARCODE = ProductLabelProdBarcode
+        ; PRODUCT_PART_PACKING = ProductPartPacking
+        ; DECIMAL_PRODUCT_PACKING = DecimalProductPacking
+        ; EM_REPLENISH_ALLOC_CLS = ReplenishAllocCls
+        ; RG_REPLENISH_UNIT_CLS = ReplenishUnitCls
+        ; EM_REPLENISH_UNIT_CLS = ReplenishUnitCls
+        ; RESULT_AFTER_PRODUCT_LABEL = ResultAfterProductLabel
+        ; RESULT_AFTER_PRODUCT_TARGET = ResultAfterProductTarget
+        ; STORE_DT_FLG = StoreDtFlg
+        ; STORE_NO_FLG = StoreNoFlg
+        ; TAG_DELIVERY_OUT_FLG = TagDeliveryOutFlg
+        ; USE_HT_SHIP_FLG = UseHtShipFlg
+        ; INSPECTION_LABEL_OUT_FLG = InspectionLabelOutFlg
+        ; SGL_ROW_PIC_FLG = SglRowPicFlg
+        ; TOTAL_PIC_FLG = TotalPicFlg
+        ; PIC_MTHD_RCMD_FLG = PicMthdRcmdFlg
+        ; PIC_MTHD_RCMD_BREAK_KEY = PicMthdRcmdBreakKey
+        ; AUTO_SHIP_INST_FLG = AutoShipInstFlg
+        ; STOCK_OUT_AUTO_INST_FLG = StockOutAutoInstFlg
+        ; AUTO_EMG_SET_FLG = AutoEmgSetFlg
+        ; AUTO_EMG_SET_TGT = AutoEmgSetTgt
+        ; STOCK_OUT_ALLOC_CLS = StockOutAllocCls
+        ; STOCK_OUT_INST_CXL_FLG = StockOutInstCxlFlg
+        ; STOCK_OUT_INST_SPLIT_FLG = StockOutInstSplitFlg
+        ; PIC_MTHD_RCMD_MLT_PL_OUT = PicMthdRcmdListOut
+        ; PIC_MTHD_RCMD_SPL_SL_OUT = PicMthdRcmdListOut
+        ; ERROR_SOUND_PLAY_FLG = SoundPlayFlg
+        ; WARN_SOUND_PLAY_FLG = SoundPlayFlg
+        ; INSP_SOUND_PLAY_FLG = SoundPlayFlg
+        ; INSP_COMP_SOUND_PLAY_FLG = SoundPlayFlg
+        ; CES_INTEGRATION_FLG = CesIntegrationFlg
+        ; PACKING_SLIP_AUTO_OUTPUT_FLG = PackingSlipAutoOutputFlg
+    }
+    # 嬫暘抣掕媊 処理区分マスタ
+    ; M_PROCESS_TYPE = map:{
+        ; RECEIVE_FLG = ReceiveFlg
+        ; SHIPPING_FLG = ShippingFlg
+        ; STOCK_ADJUST_FLG = StockAdjustFlg
+    }
+    # 嬫暘抣掕媊 商品マスタ
+    ; M_PRODUCT = map:{
+        ; LIMIT_DT_MANAG_FLG = LimitDtManagFlg
+        ; LIMIT_DT_REVERSE_FLG = LimitDtReverseFlg
+        ; LOT_MANAG_FLG = LotManagFlg
+        ; LOT_REVERSE_FLG = LotReverseFlg
+        ; MERGE_CLS = MergeCls
+        ; SHIPPING_STOP_FLG = ShippingStopFlg
+        ; FREIGHT_CLS = FreightCls
+    }
+    # 嬫暘抣掕媊 荷姿グループマスタ
+    ; M_SHAPE_GRP = map:{
+        ; DECIMAL_EXIST_FLG = DecimalExistFlg
+    }
+    # 嬫暘抣掕媊 荷姿グループ明細マスタ
+    ; M_SHAPE_GRP_DTL = map:{
+        ; CASE_PICK_FLG = CasePickFlg
+        ; EM_REPLENISH_SHAPE_FLG = EmReplenishShapeFlg
+    }
+    # 嬫暘抣掕媊 在庫区分マスタ
+    ; M_STOCK_TYPE = map:{
+        ; REVERSE_VALID_FLG = ReverseValidFlg
+    }
+    # 嬫暘抣掕媊 倉庫マスタ
+    ; M_WAREHOUSE = map:{
+        ; FOREIGN_FLG = ForeignFlg
+    }
+    # 嬫暘抣掕媊 郵便番号マスタ
+    ; M_ZIP = map:{
+        ; FLG6 = CodeFlg
+        ; FLG5 = CodeType
+        ; COMPANY_FLG = CompanyFlg
+        ; REASON_TYPE = ReasonType
+        ; UPD_CD = UpdCd
+        ; UPD_TYPE = UpdType
+        ; FLG1 = ZipFlg
+        ; FLG2 = ZipFlg
+        ; FLG3 = ZipFlg
+        ; FLG4 = ZipFlg
+    }
+    # 嬫暘抣掕媊 引当指示ボディ
+    ; T_ALLOC_INST_B = map:{
+        ; LIMIT_DT_MANAG_FLG = LimitDtManagFlg
+        ; LIMIT_DT_REVERSE_FLG = LimitDtReverseFlg
+        ; LOT_MANAG_FLG = LotManagFlg
+    }
+    # 嬫暘抣掕媊 引当指示ヘッダ
+    ; T_ALLOC_INST_H = map:{
+        ; DELIV_TZ = DelivTz
+    }
+    # 嬫暘抣掕媊 EC受注ボディ
+    ; T_EC_ORDER_B = map:{
+        ; ERROR_FLG = ErrorFlg
+    }
+    # 嬫暘抣掕媊 EC受注ヘッダ
+    ; T_EC_ORDER_H = map:{
+        ; DELIV_MATCH_FLG = DelivMatchFlg
+        ; ERROR_FLG = ErrorFlg
+        ; GIFT_FLG = GiftFlg
+        ; IMPORT_FLG = ImportFlg
+        ; PRIORITY_FLG = PriorityFlg
+    }
+    # 嬫暘抣掕媊 EC受注帳票
+    ; T_EC_ORDER_R = map:{
+        ; INVOICE_CREATE_FLG = InvoiceCreateFlg
+        ; STATEMENT_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 棚卸ボディ
+    ; T_INVENTORY_B = map:{
+        ; INPUT_TYPE = InputType
+        ; STOCK_ADJUST_FLG = StockMoveFlg
+    }
+    # 嬫暘抣掕媊 棚卸入力履歴
+    ; T_INVENTORY_INP_HIST = map:{
+        ; LAST_FLG = LastFlg
+    }
+    # 嬫暘抣掕媊 棚卸指示
+    ; T_INVENTORY_INST = map:{
+        ; STOCK_EXIST_ONLY_FLG = StockExistOnlyFlg
+    }
+    # 嬫暘抣掕媊 棚卸帳票
+    ; T_INVENTORY_R = map:{
+        ; TWL_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 在庫移動指示ボディ
+    ; T_MOVE_INST_B = map:{
+        ; INOUT_TYPE = InoutType
+        ; MOVE_INST_STATUS = MoveInstStatus
+    }
+    # 嬫暘抣掕媊 在庫移動指示ヘッダ
+    ; T_MOVE_INST_H = map:{
+        ; INPUT_TYPE = InputType
+        ; MOVE_INST_STATUS = MoveInstStatus
+    }
+    # 嬫暘抣掕媊 在庫移動指示帳票
+    ; T_MOVE_INST_R = map:{
+        ; INST_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 在庫移動実績ボディ
+    ; T_MOVE_RECORD_B = map:{
+        ; ALL_SHIPPING_FLG = AllShippingFlg
+        ; STORE_NO_MERGE_FLG = StoreNoMergeFlg
+    }
+    # 嬫暘抣掕媊 梱包ボディ
+    ; T_PACKING_B = map:{
+        ; INSPECTION_FLG = InspectionFlg
+        ; PICKING_FLG = PickingFlg
+    }
+    # 嬫暘抣掕媊 梱包ヘッダ
+    ; T_PACKING_H = map:{
+        ; LOADING_FLG = LoadingFlg
+        ; MIXED_FLG = MixedFlg
+        ; MULTI_PIC_FLG = MultiPicFlg
+        ; PACKING_STATUS = PackingStatus
+    }
+    # 嬫暘抣掕媊 梱包帳票
+    ; T_PACKING_R = map:{
+        ; STW_OUT_FLG = ListOutFlg
+        ; TAG_OUT_FLG = ListOutFlg
+        ; INSPECTION_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 出庫ヘッダ
+    ; T_PICKING_H = map:{
+        ; CENTER_TRANSIT_FLG = CenterTransitFlg
+        ; FORCE_FIXED_FLG = ForceFixedFlg
+        ; PACKING_CAL_CLS = PackingCalCls
+        ; PICKING_STATUS = PickingStatus
+        ; SGL_ROW_PIC_FLG = SglRowPicFlg
+    }
+    # 嬫暘抣掕媊 出庫帳票
+    ; T_PICKING_R = map:{
+        ; INVOICE_CREATE_FLG = InvoiceCreateFlg
+        ; OPL_OUT_FLG = ListOutFlg
+        ; TPL_OUT_FLG = ListOutFlg
+        ; CASE_OUT_FLG = ListOutFlg
+        ; MLT_OUT_FLG = ListOutFlg
+        ; SPL_OUT_FLG = ListOutFlg
+        ; PL_OUT_FLG = ListOutFlg
+        ; SL_OUT_FLG = ListOutFlg
+        ; PL1_OUT_FLG = ListOutFlg
+        ; PL2_OUT_FLG = ListOutFlg
+        ; PACKING_OUT_FLG = ListOutFlg
+        ; SLIP_OUT_FLG = ListOutFlg
+        ; SHIPPING_RECORD_OUT_FLG = ListOutFlg
+        ; BOL_OUT_FLG = BolOutFlg
+    }
+    # 嬫暘抣掕媊 入荷予定ボディ
+    ; T_RECEIVE_PLAN_B = map:{
+        ; ERROR_FLG = ErrorFlg
+        ; RECEIVE_STATUS = ReceiveStatus
+    }
+    # 嬫暘抣掕媊 入荷予定ヘッダ
+    ; T_RECEIVE_PLAN_H = map:{
+        ; CENTER_TRANSIT_FLG = CenterTransitFlg
+        ; ERROR_FLG = ErrorFlg
+        ; INPUT_TYPE = InputType
+        ; RECEIVE_DELIVERY_STATUS = ReceiveDeliveryStatus
+        ; RECEIVE_STATUS = ReceiveStatus
+    }
+    # 嬫暘抣掕媊 入荷予定帳票
+    ; T_RECEIVE_PLAN_R = map:{
+        ; RPL_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 出荷指示ボディ
+    ; T_SHIPPING_INST_B = map:{
+        ; ERROR_FLG = ErrorFlg
+    }
+    # 嬫暘抣掕媊 出荷指示ヘッダ
+    ; T_SHIPPING_INST_H = map:{
+        ; DELIV_TZ = DelivTz
+        ; EMERGENCY_FLG = EmergencyFlg
+        ; ERROR_FLG = ErrorFlg
+        ; INPUT_TYPE = InputType
+        ; SHIPPING_STATUS = ShippingStatus
+        ; STOCK_OUT_FLG = StockOutFlg
+    }
+    # 嬫暘抣掕媊 在庫受払
+    ; T_STOCK_INOUT = map:{
+        ; CORRECT_TYPE = CorrectType
+        ; INOUT_TYPE = InoutType
+    }
+    # 嬫暘抣掕媊 入庫No.帳票
+    ; T_STORE_NO_R = map:{
+        ; TWL_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 入庫実績ボディ
+    ; T_STORE_RECORD_B = map:{
+        ; INPUT_TYPE = InputType
+        ; STORE_FLG = StoreFlg
+    }
+    # 嬫暘抣掕媊 入庫実績帳票
+    ; T_STORE_RECORD_R = map:{
+        ; RECEIVE_RECORD_OUT_FLG = ListOutFlg
+    }
+    # 嬫暘抣掕媊 ピッキング提案
+    ; T_PIC_MTHD_RCMD = map:{
+        ; RCMD_PICKING_CLS = RcmdPickingCls
+        ; EMERGENCY_FLG = EmergencyFlg
+    }
+    # 嬫暘抣掕媊 作業実績
+    ; T_WORK_LOG = map:{
+        ; WORK_STATUS = WorkStatus
+        ; WORK_LOG_OUT_FLG = WorkLogOutFlg
+    }
+    # 嬫暘抣掕媊 単行出荷検品ワークボディ
+    ; W_SGL_ROW_SHIP_INSP_B = map:{
+        ; INSPECTION_FLG = InspectionFlg
+    }
+    # 嬫暘抣掕媊 キャリアEDIシステム送り状マスタ
+    ; M_CARRIER_SLIP_CES = map:{
+        ; SAT_DELIVERY_FLG = SatDeliveryFlg
+        ; RESIDENTIAL_DELIVERY_FLG = ResidentialDeliveryFlg
+        ; COD_FLG = CodFlg
+        ; SIGNATURE_REQUIRED_FLG = SignatureRequiredFlg
+        ; SIGNATURE_RELEASE_FLG = SignatureReleaseFlg
+        ; CALL_BEFORE_DELIVERY_FLG = CallBeforeDeliveryFlg
+        ; FREEZABLE_PROTECTION_FLG = FreezableProtectionFlg
+        ; GUARANTEED_PLUS_FLG = GuaranteedPlusFlg
+        ; RESIDENTIAL_PICKUP_FLG = ResidentialPickupFlg
+        ; DO_NOT_STACK_STACK_FLG = DoNotStackStackFlg
+        ; LIMITED_ACCESS_DELIVERY_FLG = LimitedAccessDeliveryFlg
+        ; LIMITED_ACCESS_PICKUP_FLG = LimitedAccessPickupFlg
+        ; OVER_SIZED_FLG = OverSizedFlg
+        ; POISON_FLG = PoisonFlg
+        ; FOOG_FLG = FoogFlg
+        ; LIFTGATE_DELIVERY_PREPAID_FLG = LiftgateDeliveryPrepaidFlg
+        ; LIFTGATE_DELIVERY_COLLECT_FLG = LiftgateDeliveryCollectFlg
+        ; LIFTGATE_PICKUP_PREPAID_FLG = LiftgatePickupPrepaidFlg
+        ; LIFTGATE_PICKUP_COLLECT_FLG = LiftgatePickupCollectFlg
+        ; INSIDE_DELIVERY_PREPAID_FLG = InsideDeliveryPrepaidFlg
+        ; INSIDE_DELIVERY_COLLECT_FLG = InsideDeliveryCollectFlg
+        ; INSIDE_PICKUP_PREPAID_FLG = InsidePickupPrepaidFlg
+        ; INSIDE_PICKUP_COLLECT_FLG = InsidePickupCollectFlg
+        ; DEL_FLG = DelFlg
+    }
+    ##########偙偙傑偱偼嬫暘抣儅僗僞偺巊梡僥乕僽儖掕媊
+
+}

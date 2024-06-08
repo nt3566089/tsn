@@ -1,0 +1,37 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="ReportLayoutUpload" owd-screen="ReportLayoutUpload">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="selReportId" ng-model="layoutUpload.reportId" owd-models="reportList" owd-repeat-key="reportId" owd-repeat-value="reportNm" label-text="帳票選択" ng-init="initReport()"></owd-select>
+				<owd-text id="reportLayoutNm" ng-model="layoutUpload.layoutNm" label-text="帳票ファイル名称"></owd-text>
+				
+				<div class="col-xs-4">
+					
+					<owd-file id="layoutUpload" class="btn-info" owd-before-upload="beforeUpload" owd-success="dataDownloadMain" owd-options="fileOptions">帳票レイアウトファイルアップロード</owd-file>
+					
+						<owd-info ng-model="layoutUpload.reportLayoutNm"></owd-info><br>
+					
+					
+					<owd-file id="subrepUpload" class="btn-info" owd-before-upload="beforeUploadSub" owd-success="dataDownloadSub" owd-options="fileOptions" ng-disabled="layoutUpload.reportLayoutNm == null">サブレポートレイアウトファイルアップロード</owd-file>
+					
+					
+						<owd-info ng-model="layoutUpload.subrepLayoutNm"></owd-info>
+				</div>
+				
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-6" align="right">
+				
+				<owd-button id="register" class="btn-success" ng-disabled="(inputform.$invalid || layoutUpload.reportLayoutNm == null)" ng-click="register()">登録</owd-button>
+				
+			</div>
+		</div>
+	</form>
+</div>

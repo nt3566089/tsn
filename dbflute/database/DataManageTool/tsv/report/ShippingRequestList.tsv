@@ -1,0 +1,25 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblShippingRequestList	出　庫　依　頼　書	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblDeliveryDate	納品日	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblPurchaseNumber	発注番号	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblOwnerDirectNo	JT伝票番号	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblMessage	本注文を出荷願います。	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblOrderDate	受注日	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblContactCorp	日本たばこ産業　株式会社	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblContactTel	問合先　03-6636-2650	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblInstructionsDate	指図日	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblOrderNumber	受注番号	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblPage	Page	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblNo	No.	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblPurchaseItem	発注商品	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblSkuCode	SKU コード	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblExpectQty	受注数	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblJtCd	JT CD	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblCardBoard	段ボール	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblCarTon	カートン	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblTotal	合　計	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblNote	備　考	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblOrderUnit	受注単位	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblOrderUnitCarTon	カートン	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblTotalCaseQty1	詰合数	String	1	
+ShippingRequestList	出庫依頼書	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0	lblTotalExpectQty	総Ct	String	1	

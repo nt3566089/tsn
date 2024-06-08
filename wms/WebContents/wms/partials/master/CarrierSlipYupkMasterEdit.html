@@ -1,0 +1,51 @@
+<div ng-controller="CarrierSlipYupkMasterEdit" owd-screen="CarrierSlipYupkMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+
+		<div class="well">
+			<div class = "row">
+				<owd-text id="tagType" ng-model="carrierSlipYupk.tagType" label-text="データ種別"></owd-text>
+				<owd-text id="tagNm" ng-model="carrierSlipYupk.tagNm" label-text="データ種別名称"></owd-text>
+				<owd-select id="characterCd" ng-model="carrierSlipYupk.characterCd" owd-models="characterCdList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="文字コード"></owd-select>
+				<owd-select id="postType" ng-model="carrierSlipYupk.postType" owd-models="postTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="郵便種別"></owd-select>
+				<owd-select id="coolType" ng-model="carrierSlipYupk.coolType" owd-models="coolTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="保冷種別"></owd-select>
+				<owd-select id="codType" ng-model="carrierSlipYupk.codType" owd-models="codTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="元/着払/代引"></owd-select>
+				<owd-text id="carrierType" ng-model="carrierSlipYupk.carrierType" label-text="送り状種別"></owd-text>
+				<owd-text id="slipClientZipCd" ng-model="carrierSlipYupk.slipClientZipCd"  owd-add-button="modalZip()" ng-blur="zipCdBlur()" label-text="ご依頼主郵便番号"></owd-text>
+				<owd-text id="slipClientAddress1" ng-model="carrierSlipYupk.slipClientAddress1" label-text="ご依頼主住所1"></owd-text>
+				<owd-text id="slipClientAddress2" ng-model="carrierSlipYupk.slipClientAddress2" label-text="ご依頼主住所2"></owd-text>
+				<owd-text id="slipClientAddress3" ng-model="carrierSlipYupk.slipClientAddress3" label-text="ご依頼主住所3"></owd-text>
+				<owd-text id="slipClientNm1" ng-model="carrierSlipYupk.slipClientNm1" label-text="ご依頼主名称1"></owd-text>
+				<owd-text id="slipClientTelNo" ng-model="carrierSlipYupk.slipClientTelNo" label-text="ご依頼主電話番号"></owd-text>
+				<owd-text id="slipClientMail" ng-model="carrierSlipYupk.slipClientMail" label-text="ご依頼主メールアドレス1"></owd-text>
+				<owd-select id="noUpsideDownCls" ng-model="carrierSlipYupk.noUpsideDownCls" owd-models="noUpsideDownClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="逆さま厳禁区分"></owd-select>
+				<owd-select id="noStockCls" ng-model="carrierSlipYupk.noStockCls" owd-models="noStockClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="下済み厳禁区分"></owd-select>
+				<owd-text id="slipProductSizeCls" ng-model="carrierSlipYupk.slipProductSizeCls" label-text="商品サイズ区分"></owd-text>
+				<owd-text id="slipProductNo" ng-model="carrierSlipYupk.slipProductNo" label-text="商品番号(明細)"></owd-text>
+				<owd-text id="slipItemNm" ng-model="carrierSlipYupk.slipItemNm" label-text="品名(明細)"></owd-text>
+				<owd-text id="shipReserveDataMark" ng-model="carrierSlipYupk.shipReserveDataMark" label-text="発送予約データマーク"></owd-text>
+				<owd-text id="deliCertPreYears" ng-model="carrierSlipYupk.deliCertPreYears" label-text="配達証保存年数"></owd-text>
+				<!-- [#401][2.1.0-CT-077] ゆうパックの荷札に発店名称を表示 2016.12.06 kawana Start -->
+				<owd-text id="sendNm" ng-model="carrierSlipYupk.sendNm" label-text="発店名称"></owd-text>
+				<!-- [#401][2.1.0-CT-077] ゆうパックの荷札に発店名称を表示 2016.12.06 kawana End -->
+				<!-- [ONEsLOGI Cloud/WMS バグ・品質向上対策 機能 #403] ゆうパックの送り状データの新しいフォーマット作成 2016.12.12 nayzaw Start  -->
+				<owd-select id="productTypeCode" ng-model="carrierSlipYupk.productTypeCode" owd-models="productTypeCodeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品種別コード"></owd-select>
+				<owd-text id="postBizCardCustomerNo" ng-model="carrierSlipYupk.postBizCardCustomerNo" label-text="ゆうびんビズカードお客さま番号"></owd-text>
+				<owd-text id="shippingCompanyCode" ng-model="carrierSlipYupk.shippingCompanyCode" label-text="発送会社コード"></owd-text>
+				<owd-text id="shipmentCode" ng-model="carrierSlipYupk.shipmentCode" label-text="発送局コード"></owd-text>
+				<!-- [ONEsLOGI Cloud/WMS バグ・品質向上対策 機能 #403] ゆうパックの送り状データの新しいフォーマット作成 2016.12.12 nayzaw End  -->
+				<owd-select id="delFlg" ng-model="carrierSlipYupk.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+			</div>
+		</div>
+        <!-- brタグを削除 2020.03.12 ono del -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" ng-disabled="searchinputform.$invalid" class="btn-success" ng-click="register()">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

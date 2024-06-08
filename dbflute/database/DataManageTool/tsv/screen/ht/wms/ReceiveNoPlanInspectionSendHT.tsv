@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	msg1	予定無し入荷完了		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	msg2	データを登録		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	msg3	しますか？		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	productCd	商品		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	storeNum	検数		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	storeLabelNo	汎用No		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	loc	ロケ		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	no	いいえ		1	1		0	1													
+ReceiveNoPlanInspectionSendHT	予定無し入荷確認	wms_ht	yes	はい		1	1		0	1													

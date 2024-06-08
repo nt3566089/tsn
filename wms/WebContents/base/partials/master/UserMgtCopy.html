@@ -1,0 +1,33 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="UserMgtCtrl" owd-screen="UserMgtCopy">
+	<form id="newform" name="newform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="userCdNew" ng-model="inputNew.userCd" label-text="ユーザCD"></owd-text>
+				<owd-text id="userNmNew" ng-model="inputNew.userNm" label-text="ユーザ名"></owd-text>
+				<owd-select id="cultureListNew" ng-model="inputNew.cultureCd" owd-models="cultureList" owd-repeat-key="cultureCd" owd-repeat-value="cultureNm" label-text="カルチャ"></owd-select>
+				<owd-select id="roleGrpListNew" ng-model="inputNew.roleGrpCd" owd-models="roleGrpList" owd-repeat-key="roleGrpCd" owd-repeat-value="roleGrpNm" label-text="権限グループ"></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+			</div>
+			<div class="col-xs-6" align="right">
+				<owd-button id="registerCopy" class="btn-success" ng-disabled="newform.$invalid" ng-click="registerCopy()">登録</owd-button>
+			</div>
+		</div>
+	</form>
+<br>
+	<tabset id="userMgtTabSet" justified="true" ng-show="false">
+		<tab ng-model="liteLoginPwdMgtTab" ng-show="showPwdMgtTab">
+			<tab-heading><owd-span id="liteLoginPwdMgtTabTitle" label-text="認証管理"></owd-span></tab-heading>
+				<div usermgt-include="base/partials/master/LiteLoginPwdMgt.html" usermgt-include-screen="LiteLoginPwdMgt"></div>
+		</tab>
+		
+	</tabset>
+
+</div>

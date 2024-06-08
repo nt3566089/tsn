@@ -1,0 +1,45 @@
+<div ng-controller="ShippingInstDetail" owd-screen="ShippingInstDetail">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-date id="workDt" ng-model="searchCondition.workDt" label-text="作業日"></owd-date>
+				<owd-date id="shippingDt" ng-model="searchCondition.shippingDt" label-text="出荷日"></owd-date>
+				<owd-date id="delivPlanDt" ng-model="searchCondition.delivPlanDt" label-text="納品予定日"></owd-date>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.supplyCustomerCd" label-text="納品先CD"></owd-text>
+				<owd-text id="supplyCustomerNm" ng-model="searchCondition.supplyCustomerNm" label-text="納品先名称"></owd-text>
+				<!-- [品質-102-021] 届先住所1の表示元を修正 2015.04.07 kawana Start -->
+				<owd-text id="address1" ng-model="searchCondition.delivAddress1" label-text="届先住所1"></owd-text>
+				<!-- [品質-102-021] 届先住所1の表示元を修正 2015.04.07 kawana End -->
+				<owd-text id="shippingSlipNo" ng-model="searchCondition.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+				<owd-select id="shippingStatus" ng-model="searchCondition.shippingStatus" owd-models="shippingStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷ステータス"></owd-select>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+					<div class="list-box">
+						<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonShippingTitle" label-text="通常"></owd-span></div>
+						<!-- [#5592][v3.1] キャンセルの色指定を削除 / 並び順を一覧画面に合わせて変更 2018.11.08 kawana Start -->
+						<div class="list-text wmslegend wmslegendindianred"><owd-span id="shippingStopTitle" label-text="出荷停止"></owd-span></div>
+						<div class="list-text wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></div>
+						<!-- [#5592][v3.1] キャンセルの色指定を削除 / 並び順を一覧画面に合わせて変更 2018.11.08 kawana End -->
+					</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="shippingInstDetail" owd-select-options="gridSelectOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="shippingUpdate" class="btn-info" ng-click="shippingUpdate()">実績訂正</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,16 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	excelUpload	ファイル取込		1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	excelOutput	Excel出力		1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	labelPrint	発行		1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeType	バーコード種別	dropdown	1	1		1	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	receiveRowId	No.	1	number	1	0	right	0	60				
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	barcode	バーコード	2	text	1	0		0	300	2			
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	barcodeNm	バーコード名称	3	text	1	0		0	300	3			
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	barcodeLabelComment	備考	4	text	1	0		0	300	4			
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	outputCnt	出力枚数	5	number	1	0	right	0	80	5			
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	barcodeLabelBulkPrintList	バーコードラベル一括出力グリッド	grid	1	1		0	1	errorMessageNm	エラー内容	6	text	1	0		0	400				
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	startBit	スタートビット	text	1	1		0	1													
+BarcodeLabelBulkPrint	バーコードラベル一括出力	wms	endBit	エンドビット	text	1	1		0	1													

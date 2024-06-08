@@ -1,0 +1,10 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+EdiList	EDIマスタメンテナンス(一覧)	wms	ediNm	EDI名称		1	1		0	1													
+EdiList	EDIマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+EdiList	EDIマスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+EdiList	EDIマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+EdiList	EDIマスタメンテナンス(一覧)	wms	delete	削除		1	1		0	1													
+EdiList	EDIマスタメンテナンス(一覧)	wms	ediList	EDI一覧	grid	1	0		0	1	ediNm	EDI名称	1	text	1	0		0	160				
+EdiList	EDIマスタメンテナンス(一覧)	wms	ediList	EDI一覧	grid	1	0		0	1	ediId	EDIID	2	text	1	0		0	160				
+EdiList	EDIマスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

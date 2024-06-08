@@ -1,0 +1,12 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblTitle	Packing Slip	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblClientTelNo	Tel：	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblBillTo	Bill To：	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblShipTo	Ship To：	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblShippingDt	Date：	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblClientShippingNo	Order No.：	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblProductCd	Item #	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblProductNm	Description	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblAllocNum	Quantity	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblAllocNumSum	Total Quantity	String	1	
+PackingSlipList	PackingSlip	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0	lblSpecialNotes	Special Notes	String	1	

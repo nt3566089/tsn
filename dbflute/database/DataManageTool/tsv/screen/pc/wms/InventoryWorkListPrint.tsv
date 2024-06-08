@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryWorkListPrint	棚卸作業リスト発行	wms	clientCd	荷主		1	1		1	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	centerCd	センタ		1	1		1	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	warehouseCd	倉庫		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	inventoryDt	棚卸日		1	1		1	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	depositCd	預託		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	stockTypeCd	在庫区分		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	fromLocationCd	ロケーションCD(From)		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	toLocationCd	ロケーションCD(To)		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	zoneCd	ゾーン		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	productCd	商品CD		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	stockExistOnlyFlg	在庫表示		1	1		0	1													
+InventoryWorkListPrint	棚卸作業リスト発行	wms	register	発行		1	1		0	1													

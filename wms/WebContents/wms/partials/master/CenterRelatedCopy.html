@@ -1,0 +1,44 @@
+<div ng-controller="CenterRelatedCopy" owd-screen="CenterRelatedCopy">
+	<form id="inputform" name="inputform" novalidate>
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="copyFrom" label-text="コピー元"></owd-span></legend>
+			<div class="row">
+					<owd-select id="centerCdFrom" ng-model="mCenterFrom.centerCd"
+						owd-models="centerList" owd-repeat-key="centerCd"
+						owd-repeat-value="centerNm" label-text="センタCD(From)"
+						ng-change="centerFromChange()"></owd-select>
+					<owd-select id="clientCdFrom"
+						ng-model="mClientFrom.mclient.clientCd"
+						owd-models="clientCenterList" owd-repeat-key="clientCd"
+						owd-repeat-value="clientNm" label-text="荷主CD(From)"></owd-select>
+			</div>
+		</fieldset>
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="copyTo" label-text="コピー先"></owd-span></legend>
+			<div class="row">
+					<owd-select id="centerCdTo" ng-model="mCenterTo.centerCd"
+						owd-models="centerList" owd-repeat-key="centerCd"
+						owd-repeat-value="centerNm" label-text="センタCD(To)"></owd-select>
+					<owd-select id="clientCdTo" ng-model="mClientTo.clientCd"
+						owd-models="clientList" owd-repeat-key="clientCd"
+						owd-repeat-value="clientNm" label-text="荷主CD(To)"></owd-select>
+			</div>
+		</fieldset>
+		<div owd-grid="gridOptions" id="copyMasterList" owd-form-name="inputform"></div>
+		<!-- [#7191][OSS] 明細とボタンの間隔を調整 2020.02.13 tsuboi Start -->
+		<br>
+		<!-- [#7191][OSS] 明細とボタンの間隔を調整 2020.02.13 tsuboi End -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x: auto; overflow-y: hidden;">
+				</div>
+				<div class="col-xs-6" align="right"
+					style="overflow-x: auto; overflow-y: hidden;">
+					<owd-button id="register" class="btn-success"
+						ng-disabled="inputform.$invalid" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

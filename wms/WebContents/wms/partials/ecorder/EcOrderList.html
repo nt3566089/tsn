@@ -1,0 +1,103 @@
+<div ng-controller="EcOrderList" owd-screen="EcOrderList">
+	<form id="searchform" name="searchform" novalidate>
+		<!-- [C-CWMS-0047] 次画面から戻った時に行選択状態、検索条件の開閉状態を再現 2015.07.22 kawana Start -->
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+		<owd-accordion>
+		<owd-accordion-group is-open="$parent.searchConditionIsOpen">
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+		<!-- [C-CWMS-0047] 次画面から戻った時に行選択状態、検索条件の開閉状態を再現 2015.07.22 kawana End -->
+		<fieldset>
+			<div class="row">
+				<owd-select id="dtCls" ng-model="searchCondition.dtCls" owd-models="dtClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="取込日/出荷日/作業日" owd-remove-blank></owd-select>
+				<owd-date id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)"></owd-date>
+				<owd-date id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<!-- [#1835][Ver2.2.0] EC受注データ一覧・EC送り状データ出力 - センタ・荷主変更対応 2017.05.31 honma Mod Start -->
+				<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd Start -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="changeClient()"></owd-select>
+				<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd End -->
+				<!-- [#1835][Ver2.2.0] EC受注データ一覧・EC送り状データ出力 - センタ・荷主変更対応 2017.05.31 honma Mod End -->
+				<owd-text id="orderNo" ng-model="searchCondition.orderNo" label-text="受注番号"></owd-text>
+				<owd-select id="shippingStatus" ng-model="searchCondition.tshippingInstH.shippingStatus" owd-models="shippingStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷ステータス"></owd-select>
+				<owd-select id="importType" ng-model="searchCondition.mimportType.importTypeCd" owd-models="importTypeList" owd-repeat-key="importTypeCd" owd-repeat-value="importTypeNm" label-text="取込データ種別"></owd-select>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.tshippingInstH.deliveryCourseCd" label-text="配送コースCD" owd-add-button="assistDeliveryCourse()"  ng-blur="deliveryCourseCdBlur()">
+					<owd-info ng-model="searchCondition.tshippingInstH.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.tshippingInstH.pickingWorkNo" label-text="出庫作業No"></owd-text>
+				<owd-select id="statementOutFlg" ng-model="searchCondition.tecOrderRAsOne.statementOutFlg" owd-models="statementOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="納品書出力"></owd-select>
+				<owd-select id="invoiceCreateFlg" ng-model="searchCondition.tecOrderRAsOne.invoiceCreateFlg" owd-models="invoiceCreateFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="EC送り状データ出力"></owd-select>
+				<owd-select id="errorFlg" ng-model="searchCondition.tshippingInstH.errorFlg" owd-models="errorFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラーフラグ"></owd-select>
+<!-- [#5144][v3.1] 欠品フラグを出庫指示ヘッダに移動 2018.07.23 kawana Start -->
+				<owd-select id="stockOutFlg" ng-model="searchCondition.tshippingInstH.stockOutFlg" owd-models="stockOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="欠品フラグ"></owd-select>
+<!-- [#5144][v3.1] 欠品フラグを出庫指示ヘッダに移動 2018.07.23 kawana End -->
+				<owd-select id="priorityFlg" ng-model="searchCondition.priorityFlg" owd-models="priorityFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="優先フラグ"></owd-select>
+				<owd-select id="giftFlg" ng-model="searchCondition.giftFlg" owd-models="giftFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ギフトフラグ"></owd-select>
+				<owd-select id="mergeFlg" ng-model="searchCondition.mergeFlg" owd-models="mergeFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="名寄せ有無"></owd-select>
+				<owd-text id="mergeId" ng-model="searchCondition.mergeId" label-text="名寄せID"></owd-text>
+				<owd-text id="noshi" ng-model="searchCondition.noshi" label-text="のし"></owd-text>
+				<!-- [C-CWMS-0045] 検索条件にコメント有無を追加 2015.08.03 kawana Start -->
+				<owd-select id="commentFlg" ng-model="searchCondition.commentFlg" owd-models="commentFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="コメント1有無"></owd-select>
+				<!-- [C-CWMS-0045] 検索条件にコメント有無を追加 2015.08.03 kawana End -->
+				<owd-text id="comment1" ng-model="searchCondition.comment1" label-text="コメント1"></owd-text>
+				<owd-text id="comment2" ng-model="searchCondition.comment2" label-text="コメント2"></owd-text>
+				<!-- [EC-CT1-155] キャンセルデータ表示有無の空の選択肢を削除 2015.03.31 kawana Start -->
+				<owd-select id="cancelDisplay" ng-model="searchCondition.cancelDisplay" owd-models="cancelDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="キャンセルデータ表示" owd-remove-blank></owd-select>
+				<!-- [EC-CT1-155] キャンセルデータ表示有無の空の選択肢を削除 2015.03.31 kawana End -->
+			</div>
+		</fieldset>
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+		</owd-accordion-group>
+		</owd-accordion>
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			    <owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+			<div class="col-xs-18 col-sm-9 col-md-9 col-lg-9" align="right">
+				<div class="list-box">
+					<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonShippingTitle" label-text="未出荷"></owd-span></div>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana Start -->
+					<div class="list-text wmslegend wmslegendorange"><owd-span id="shippingInstProcessingTitle" label-text="出庫指示中"></owd-span></div>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana End -->
+					<div class="list-text wmslegend wmslegendlightblue"><owd-span id="shippingInstedTitle" label-text="出庫指示済"></owd-span></div>
+					<!-- [ON推-品向-820] 凡例に「出荷検品済」を追加 2015.06.15 kawana Start -->
+					<div class="list-text wmslegend wmslegendaqua"><owd-span id="inspectionedTitle" label-text="出荷検品済"></owd-span></div>
+					<!-- [ON推-品向-820] 凡例に「出荷検品済」を追加 2015.06.15 kawana End -->
+					<div class="list-text wmslegend wmslegendturquoise"><owd-span id="shippingFixedTitle" label-text="出荷確定済"></owd-span></div>
+					<div class="list-text wmslegend wmslegenddarkgray"><owd-span id="cancelTitle" label-text="キャンセル"></owd-span></div>
+					<div class="list-text wmslegend wmslegenddarkgray2"><owd-span id="shippingDeletedTitle" label-text="出庫指示削除"></owd-span></div>
+					<div class="list-text wmslegend wmslegendpink"><owd-span id="errorTitle" label-text="エラー有"></owd-span></div>
+					<div class="list-text wmslegend wmslegendindianred"><owd-span id="shippingStopTitle" label-text="出荷停止"></owd-span></div>
+					<div class="list-text wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></div>
+					<!-- [C-CWMS-0047] 次画面から戻った時に選択行の色変更と検索条件の開閉状態を再現 2015.08.03 kawana Start -->
+					<div class="list-text wmslegend wmslegendyellow"><owd-span id="selectedRowTitle" label-text="前回選択行"></owd-span></div>
+					<!-- [C-CWMS-0047] 次画面から戻った時に選択行の色変更と検索条件の開閉状態を再現 2015.08.03 kawana End -->
+				</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="ecOrderListGrid" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- [#5627][v3.1] 「受注データ一括取込」ボタンを削除 2018.11.12 kawana Delete -->
+				<owd-button id="invoiceCreate" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="invoiceCreate()">送り状データ出力</owd-button>
+				<owd-button id="deliveryCourseShippingList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deliveryCourseShippingList()">配送コース別出荷進捗</owd-button>
+				<owd-button id="shippingInstList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInstList()">出庫指示一覧</owd-button>
+				<!-- [Ver1.1.1] [C-CWMS-0036] 画面名称を変更する、「伝票別出荷一覧」⇒「商品別出荷一覧」 2015.08.31 hayashi Start -->
+				<owd-button id="productShippingList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="productShippingList()">商品別出荷一覧</owd-button>
+				<!-- [Ver1.1.1] [C-CWMS-0036] 画面名称を変更する、「伝票別出荷一覧」⇒「商品別出荷一覧」 2015.08.31 hayashi End -->
+				<owd-button id="instUpdate" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="instUpdate()">指示修正</owd-button>
+				<!-- [ON推-品向-981] 納品書発行ボタンの色を他画面の発行ボタンにあわせて変更 2015.10.14 kawana Start -->
+				<owd-button id="statementOut" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="statementOut()">納品書</owd-button>
+				<!-- [ON推-品向-981] 納品書発行ボタンの色を他画面の発行ボタンにあわせて変更 2015.10.14 kawana End -->
+				<owd-button id="orderCancel" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="orderCancel()">受注キャンセル</owd-button>
+				<owd-button id="errorDelete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="errorDelete()">エラーデータ削除</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

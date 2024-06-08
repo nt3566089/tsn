@@ -1,0 +1,16 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblStockTransferList	山出しリスト	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblPickListDate	山出し日　:	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblLineBlock	補充先	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblSortingRackNo	仕分ラック	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblType	種別	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblOrderType	補充区分	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblPickListKey	リストNo.	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblCheck	確認	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblPickListGNo	No.	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblAllocLoc	引当ロケ	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblProduct	銘柄	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblQty	数量	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblDesignFlg	ﾃﾞｻﾞｲﾝ区分	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblManufactureDate	製造年月日	String	1	
+StockTransferList	山出しリスト	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0	lblSotedLoc	仕分ロケ	String	1	

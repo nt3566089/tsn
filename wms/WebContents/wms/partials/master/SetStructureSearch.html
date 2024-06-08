@@ -1,0 +1,42 @@
+<div ng-controller="SetStructureSearch" owd-screen="SetStructureSearch">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+						<div class="row">
+							<owd-select id="clientCd" ng-model="head.mproduct.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+							<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="親商品CD"></owd-text>
+							<owd-text id="productNm" ng-model="head.mproduct.productNm" label-text="親商品名称"></owd-text>
+							<owd-text id="janCd" ng-model="head.mproduct.janCd" label-text="JANCD"></owd-text>
+							<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="setStructureSearchList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)" ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row" >
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<!-- コピー機能追加 セット品構成マスタ画面修正 2016.06.23 Lin Zar Ni Myint Add Start -->
+						<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						<!-- コピー機能追加 セット品構成マスタ画面修正 2016.06.23 Lin Zar Ni Myint Add End -->
+						<owd-button id="register" class="btn-info"  ng-click="register()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

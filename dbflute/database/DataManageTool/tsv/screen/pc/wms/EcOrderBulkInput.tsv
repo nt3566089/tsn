@@ -1,0 +1,10 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+EcOrderBulkInput	EC受注データ一括取込	wms	centerCd	センタ		1	1		1	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	clientCd	荷主		1	1		1	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	importTypeCd	取込種別		1	1		1	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	ecOrderListGrid	EC受注データ一覧グリッド		1	0		0	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	csvUpload	取込		1	1		0	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	register	登録		1	1		0	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	csvUploadHeader	取込(注文)		1	1		0	1													
+EcOrderBulkInput	EC受注データ一括取込	wms	csvUploadBody	取込(商品)		1	1		0	1													

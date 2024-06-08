@@ -1,0 +1,39 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	centerCd	拠点		1	0		1	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	locidfrnkNm	ロケ不定間口貼付順	text	1	0		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	zonelocidfbrctg	ロケ不定銘柄カテゴリ貼付順	text	1	0		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	lincd	ラインCD	1	text	1	0		0	180			1	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	linnm	ライン名称	2	text	1	0		0	180			2	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	linblk1	対応ブロック1	3	text	1	0		0	180			3	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	linblk2	対応ブロック2	4	text	1	0		0	180			4	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	linblk3	対応ブロック3	5	text	1	0		0	180			5	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	hdrdboxrsfidNm	100BOX	6	text	1	0		0	180			6	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	pkgrt	梱包率（％）	7	text	1	0		0	180			7	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	sprprsidNm	個口圧縮	8	text	1	0		0	180			8	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	1	1		0	1	delFlgNm	削除	9	text	1	0		0	180			9	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	0	1		0	1	mcenter.centerCd	拠点CD	10	text	0	0		0	180			10	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	0	1		0	1	mcenter.centerNm	拠点名称	11	text	0	0		0	180			11	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	0	1		0	1	mclient.clientCd	荷主CD	12	text	0	0		0	180			12	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListLin	仕分場構成マスタメンテナンスグリッドライン	grid	0	1		0	1	mclient.clientNm	荷主名称	13	text	0	0		0	180			13	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	blkcd	ブロックCD	1	text	1	0		0	180			1	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	blknm	ブロック名称	2	text	1	0		0	180			2	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	locidfrnkNm	ロケ不定間口貼付順	3	text	1	0		0	180			3	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	locidfbrctg	ロケ不定銘柄カテゴリ貼付順	4	text	1	0		0	200			4	200
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	hdrdboxrsfidNm	100BOX	5	text	1	0		0	180			5	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	pkgrt	梱包率（％）	6	text	1	0		0	180			6	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	sprprsidNm	個口圧縮	7	text	1	0		0	180			7	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	1	1		0	1	delFlgNm	削除	8	text	1	0		0	180			8	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	0	1		0	1	mcenter.centerCd	拠点CD	9	text	0	0		0	180			9	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	0	1		0	1	mcenter.centerNm	拠点名称	10	text	0	0		0	180			10	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	0	1		0	1	mclient.clientCd	荷主CD	11	text	0	0		0	180			11	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	sortingPlaceMasterListBlk	仕分場構成マスタメンテナンスグリッドブロック	grid	0	1		0	1	mclient.clientNm	荷主名称	12	text	0	0		0	180			12	180
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	AddLine	ライン追加		1	1		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	AddBlock	ブロック追加		1	1		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	Edit	編集		1	1		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	lbltitleCommon	共通		0	0		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	lblSortingPlaceMasterListLin	ライン		1	0		0	1													
+SortingPlaceMasterList	仕分場構成マスタメンテナンス(一覧)	wms	lblSortingPlaceMasterListBlk	ブロック		1	0		0	1													

@@ -1,0 +1,77 @@
+<div ng-controller="SelectClientSD" owd-screen="SelectClient">
+	<ion-modal-view>
+		<ion-header-bar class="bar bar-header bar-positive">
+        	<h1 class="title" ng-bind-html="screen[screenCd].screenNm"></h1>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017.04.06 honma Mod Start -->
+        	<button class="button button-clear button-primary" ng-click="closeModal()">{{"cancel" | owfMessage}}</button>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017.04.06 honma Mod End -->
+        </ion-header-bar>
+
+        <ion-content class="has-header" ng-class="{'has-footer' : alerts.length > 0}">
+
+        	<form id="chgclientform" name="chgclientform" novalidate>
+        		<div ng-if="centerListed">
+					<owd-select id="selCenterCd" ng-model="selectClient.selCenterCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ選択" ng-change="centerChange()" ng-init="initialize()"></owd-select>
+        		</div>
+        		<div ng-if="centerNotListed" style="float:left; padding:0px 10px 0px 0px;">
+					<owd-label id="selCenterCd" ng-model="selectClient.selCenterCd" label-text="センタ"></owd-label>
+					<br>
+					<label>{{selectClient.selCenterCd}}:{{selectClient.selCenterNm}}</label>
+				</div>
+				<div ng-if="centerNoData">
+					<owd-label id="selCenterCd" ng-model="selectClient.selCenterCd" label-text="センタ"></owd-label>
+				</div>
+				<div ng-if="clientListed">
+						<owd-select id="selClientCd" ng-model="selectClient.selClientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主選択" ng-init="initialize()"></owd-select>
+					</div>
+					<div ng-if="clientNotListed">
+						<owd-label id="selClientCd" ng-model="selectClient.selClientCd" label-text="荷主"></owd-label>
+						<br>
+						<label>{{selectClient.selClientCd}}:{{selectClient.selClientNm}}</label>
+					</div>
+				<div ng-if="clientNoData">
+					<owd-label id="selClientCd" ng-model="selectClient.selClientCd" label-text="荷主"></owd-label>
+				</div>
+
+				<!-- [#1056][Ver2.2.0] SD版の登録ボタンCSSを緑に変更 2017.03.30 honma Mod Start -->
+				<!-- [Ver2.2.1][#2725] 荷主未存在の場合、ボタン非活性処理追加 2017.09.25 miyabe Start  -->
+				<owd-button id="register" class="button-balanced" ng-disabled="chgclientform.$invalid || clientList.length==0" ng-click="register()"></owd-button>
+				<!-- [Ver2.2.1][#2725] 荷主未存在の場合、ボタン非活性処理追加 2017.09.25 miyabe End  -->
+				<!-- [#1056][Ver2.2.0] SD版の登録ボタンCSSを緑に変更 2017.03.30 honma Mod End -->
+				<owd-button id="cancel" class="button-assertive" ng-click="closeModal()"></owd-button>
+
+				<div align="center">
+					<font color="red" size="+2">
+						<span ng-bind-html="'announceChangeCenterClient' | owfMessage"></span>
+					</font>
+				</div>
+			</form>
+
+        </ion-content>
+
+        <!-- アラートバー -->
+		<div ng-controller="AlertCtrl">
+			<!-- <div ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" ng-click="nextAlert()"> -->
+			<div ng-repeat="alert in alerts | orderBy:'addDt':true">
+				<!-- [#1562] アラートメッセージのCSSをPC版に合わせる対応 2017.04.06 honma Mod Start -->
+				<div id="alert" ng-show="alert.id == alerts[alerts.length-1].id" class="bar bar-footer" ng-class="{'bar-info': alert.type == 'info', 'bar-warning': alert.type == 'warning', 'bar-danger': alert.type == 'danger'}" ng-click="nextAlert()">
+				<!-- [#1562] アラートメッセージのCSSをPC版に合わせる対応 2017.04.06 honma Mod End -->
+					<button href="" class="alert-link button button-clear">
+						<span class="badge btn-info" ng-show="alerts.length > 1">{{alerts.length}}</span>
+					</button>
+
+					<div class="title">
+						<h2 class="title alertblink" close="closeAlert(alert.id)">
+						<!-- <ion-scroll style="width: 100%" zooming="false" direction="x"> -->
+							<span style="width: 300px; text-overflow: ellipsis; overflow-x: scroll; -webkit-overflow-scrolling: touch; margin: 0px 20px 0px 20px" ng-bind-html="alert.msg"></span></h2>
+						<!-- </ion-scroll> -->
+					</div>
+
+					<button class="button button-clear close" ng-click="closeAlert(alert.id)">
+						<i class="icon ion-close"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+  	</ion-modal-view>
+</div>

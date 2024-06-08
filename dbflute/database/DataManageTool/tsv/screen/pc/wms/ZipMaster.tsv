@@ -1,0 +1,45 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipCd	郵便番号		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	address1	都道府県		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	address2	市区町村		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	zipCd	郵便番号	1	text	1	0		0	125				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	publicCd	全国地方公共団体コード	2	text	1	0		0	190				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	zipCd5	旧郵便番号	3	text	1	0		0	90				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	addressKn1	都道府県カナ	4	text	1	0		0	120				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	addressKn2	市区町村カナ	5	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	addressKn3	町域カナ	6	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	companyKn	大口事業所名カナ	7	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	address1	都道府県	8	text	1	0		0	75				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	address2	市区町村	9	text	1	0		0	205				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	address3	町域	10	text	1	0		0	205				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	address4	小字	11	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	companyNm	大口事業所名	12	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	handlingAddress	取扱局	25	text	1	0		0	300				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	35	text	1	0		0	110				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCompanyFlg.vdict.dictNm	大口事業所フラグ	33	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByUpdCd.vdict.dictNm	修正コード	31	text	1	0		0	130				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg6.vdict.dictNm	フラグ6	29	text	1	0		0	220				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg5.vdict.dictNm	フラグ5	27	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByReasonType.vdict.dictNm	変更理由	24	text	1	0		0	400				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByUpdType.vdict.dictNm	更新区分	22	text	1	0		0	130				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg1.vdict.dictNm	フラグ1	14	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg2.vdict.dictNm	フラグ2	16	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg3.vdict.dictNm	フラグ3	18	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByFlg4.vdict.dictNm	フラグ4	20	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg1	フラグ1CD	13	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg2	フラグ2CD	15	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg3	フラグ3CD	17	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg4	フラグ4CD	19	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	updType	更新区分CD	21	text	1	0		0	130				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	reasonType	変更理由CD	23	text	1	0		0	130				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg5	フラグ5CD	26	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	flg6	フラグ6CD	28	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	updCd	修正コードCD	30	text	1	0		0	130				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	companyFlg	大口事業所フラグCD	32	text	1	0		0	160				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	zipList	郵便番号マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	34	text	1	0		0	110				
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+ZipMaster	郵便番号マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													

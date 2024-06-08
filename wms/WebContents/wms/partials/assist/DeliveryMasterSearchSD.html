@@ -1,0 +1,58 @@
+<!-- [#982] SD用アシスト機能新規作成 2017.02.07 honma Mod Start -->
+<div ng-controller="DeliveryMasterSearchSD" owd-screen="DeliveryMasterSearchSD">
+<!-- [#982] SD用アシスト機能新規作成 2017.02.07 honma Mod End -->
+	<ion-modal-view>
+		<ion-header-bar class="bar bar-header bar-positive">
+        	<h1 class="title" ng-bind-html="screen[screenCd].screenNm"></h1>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017.04.06 honma Mod Start -->
+        	<button class="button button-clear button-primary" ng-click="closeModal()">{{"cancel" | owfMessage}}</button>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017.04.06 honma Mod End -->
+        </ion-header-bar>
+        <div class="bar bar-calm bar-subheader">
+			<!-- [#1056][Ver2.2.0] SD版のサブヘッダタイトルの国際化対応 2017.03.31 honma Mod Start -->
+			<h2 class="title">
+				<owd-span id="searchResultTitle" label-text="'検索結果"></owd-span>
+				<span ng-bind="': ' + searchResult.totalServerItems"></span>
+			</h2>
+			<!-- [#1056][Ver2.2.0] SD版のサブヘッダタイトルの国際化対応 2017.03.31 honma Mod End -->
+			<div class="buttons">
+					<button class="button button-clear ion-search" style="font-size: 30px;" ng-click="showPopup()"></button>
+			</div>
+		</div>
+		<ion-content class="has-header has-subheader" ng-class="{'has-footer' : alerts.length > 0}">
+
+			<owd-search-result-modal id="list" owd-result-list="list" ng-click="select($index)"></owd-search-result-modal>
+
+			<ion-infinite-scroll
+				ng-if="moreDataCanBeLoaded()"
+				icon="ion-loading-c"
+				on-infinite="loadMoreData()">
+			</ion-infinite-scroll>
+		</ion-content>
+
+		<!-- アラートバー -->
+			<div ng-controller="AlertCtrl">
+				<!-- <div ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" ng-click="nextAlert()"> -->
+				<div ng-repeat="alert in alerts | orderBy:'addDt':true">
+					<!-- [#1562] アラートメッセージのCSSをPC版に合わせる対応 2017.04.06 honma Mod Start -->
+					<div id="alert" ng-show="alert.id == alerts[alerts.length-1].id" class="bar bar-footer" ng-class="{'bar-info': alert.type == 'info', 'bar-warning': alert.type == 'warning', 'bar-danger': alert.type == 'danger'}" ng-click="nextAlert()">
+					<!-- [#1562] アラートメッセージのCSSをPC版に合わせる対応 2017.04.06 honma Mod End -->
+						<button href="" class="alert-link button button-clear">
+							<span class="badge btn-info" ng-show="alerts.length > 1">{{alerts.length}}</span>
+						</button>
+
+						<div class="title">
+							<h2 class="title alertblink" close="closeAlert(alert.id)">
+							<!-- <ion-scroll style="width: 100%" zooming="false" direction="x"> -->
+								<span style="width: 300px; text-overflow: ellipsis; overflow-x: scroll; -webkit-overflow-scrolling: touch; margin: 0px 20px 0px 20px" ng-bind-html="alert.msg"></span></h2>
+							<!-- </ion-scroll> -->
+						</div>
+
+						<button class="button button-clear close" ng-click="closeAlert(alert.id)">
+							<i class="icon ion-close"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+	</ion-modal-view>
+</div>

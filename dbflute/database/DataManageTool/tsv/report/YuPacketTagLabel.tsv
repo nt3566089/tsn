@@ -1,0 +1,6 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+YuPacketTagLabel	ゆうパケット荷札	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0	lblJinJinHou	料金後納	String	1	
+YuPacketTagLabel	ゆうパケット荷札	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0	lblTitle	ゆうパケット	String	1	
+YuPacketTagLabel	ゆうパケット荷札	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0	lblProductName	品名	String	1	
+YuPacketTagLabel	ゆうパケット荷札	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0	lblAgain	再	String	1	
+YuPacketTagLabel	ゆうパケット荷札	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0	lblSender	【差出人】	String	1	

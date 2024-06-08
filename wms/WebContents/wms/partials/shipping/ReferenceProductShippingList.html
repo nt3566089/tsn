@@ -1,0 +1,60 @@
+<div ng-controller="ReferenceProductShippingList"
+	owd-screen="ReferenceProductShippingList">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+		<owd-accordion-group is-open="isopen">
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-select id="takingShippingFlg" ng-model="searchCondition.takingShippingFlg" owd-models="takingShippingFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="作業日/出荷日" owd-remove-blank></owd-select>
+				<owd-date id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)"></owd-date>
+				<owd-date id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="deliveryCourse()"  ng-blur="deliveryCourseCdBlur()">
+					<owd-info ng-model="searchCondition.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-select id="carrierCd" ng-model="searchCondition.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+				<owd-text id="pickingBatchNo" ng-model="searchCondition.pickingBatchNo" label-text="出庫指示バッチNo."></owd-text>
+				<owd-text id="shippingSlipNo" ng-model="searchCondition.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.customerCd" label-text="納品先CD" owd-add-button="modalDelivery()" ng-blur="supplyCustomerCdBlur()">
+					<owd-info ng-model="searchCondition.mcustomerByDelivCustomerId.customerNm"></owd-info>
+				</owd-text>
+				<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="商品CD" owd-add-button="modalProduct()" ng-blur="modalProductBlur()">
+					<owd-info ng-model="searchCondition.productNm"></owd-info>
+				</owd-text>
+				<owd-text id="clientShippingNo" ng-model="searchCondition.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-select id="stockOutFlg" owd-remove-blank ng-model="searchCondition.stockOutFlg" owd-models="stockOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="欠品フラグ"></owd-select>
+				<owd-select id="shippingStatus" ng-model="searchCondition.shippingStatus" owd-models="shippingStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷ステータス"></owd-select>
+				<owd-select id="emergencyFlg" owd-remove-blank ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急のみ"></owd-select>
+				<owd-select id="depositCustomerCd" ng-model="searchCondition.depositCustomerCd" owd-models="depositCustomerCdList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+				<owd-select id="cancelDisplay" ng-model="searchCondition.cancelDisplay" owd-models="cancelDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="キャンセルデータ表示" owd-remove-blank></owd-select>
+			</div>
+		</fieldset>
+		</owd-accordion-group> </owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonShippingTitle" label-text="未出荷"></owd-span></div>
+					<div class="list-text wmslegend wmslegendorange"><owd-span id="shippingInstProcessingTitle" label-text="出庫指示中"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendlightblue"><owd-span id="shippingInstedTitle" label-text="出庫指示済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendaqua"><owd-span id="inspectionedTitle" label-text="出荷検品済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendturquoise"><owd-span id="shippingFixedTitle" label-text="出荷確定済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegenddarkgray"><owd-span id="cancelTitle" label-text="キャンセル"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendpink"><owd-span id="errorTitle" label-text="エラー有"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendindianred"><owd-span id="shippingStopTitle" label-text="出荷停止"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendcolorred"><owd-span id="emergencyTitle" label-text="緊急"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="referenceProductShippingList" owd-select-options="gridSelectOptions"  owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+        <br>
+	</form>
+	<div id="content-footer"></div>
+</div>

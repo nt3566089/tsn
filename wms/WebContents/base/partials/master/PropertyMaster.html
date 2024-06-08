@@ -1,0 +1,45 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PropertyMaster" owd-screen="PropertyMaster">
+	<form id="searchform" name="searchform" novalidate>
+
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+
+					<fieldset>
+						<div class="row">
+							<owd-text id="propertyNm" ng-model="head.propertyNm" label-text="項目名"></owd-text>
+							<owd-text id="propertyComment" ng-model="head.propertyComment" label-text="項目値解説"></owd-text>
+						</div>
+					</fieldset>
+				</owd-accordion-group>
+			</owd-accordion>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="propertyList" owd-select-options="gridSelectOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden">
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				    </div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

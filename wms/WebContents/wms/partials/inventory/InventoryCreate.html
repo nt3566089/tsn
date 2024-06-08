@@ -1,0 +1,43 @@
+<div ng-controller="InventoryCreate" owd-screen="InventoryCreate">
+	<form id="createform" name="createform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.tinventoryH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.tinventoryH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ></owd-select>
+				<owd-select id="inventoryInstKbn" ng-model="searchCondition.inventoryInstKbn" owd-models="inventoryInstKbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫調査区分" ng-change="changeKubn()"></owd-select>
+				<owd-select id="lineBlock" ng-model="searchCondition.lineBlock" owd-models="lineBlockCdList" owd-repeat-key="lineblockCd" owd-repeat-value="lineblockNm" label-text="ライン/ブロック" ng-change="lineBlockBlankCheck()"></owd-select>
+				<owd-text id="directionalPistonText" ng-model="searchCondition.directionalPistonText" label-text="方面ピストン(手入力)" ng-blur="directionalPistonCheck()"></owd-text>
+				<owd-select id="directionalPistonDropdown" ng-model="searchCondition.directionalPistonDropdown" owd-models="pistonList" owd-repeat-key="sotedUnit" owd-repeat-value="pistonType" label-text="方面ピストン(選択)" ng-change="directionalPistonCheck()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="searchCondition.mzone.mwarehouse.warehouseCd" owd-models="wareList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫"></owd-select>
+				<owd-date id="inventoryDt" ng-model="searchCondition.tinventoryH.inventoryDt" label-text="棚卸日"></owd-date>
+				<owd-select id="depositCd" ng-model="searchCondition.mcustomer.customerCd" owd-models="depositCustomerList" owd-repeat-key="mcustomer.customerCd" owd-repeat-value="mcustomer.customerNm" label-text="預託"></owd-select>
+				<owd-select id="stockTypeCd" ng-model="searchCondition.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+				<owd-select id="locationGrp" ng-model="searchCondition.locationGrp" owd-models="locationGrpList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ロケーショングループ"></owd-select>
+				<owd-text id="locationCd" ng-model="searchCondition.locationCd" label-text="ロケーションCD" owd-add-button="showLocation(3)" ng-blur="locationCdBlur(3)">
+					<owd-info ng-model="searchCondition.locationNm"></owd-info>
+				</owd-text>
+				<owd-text id="fromLocationCd" ng-model="searchCondition.fromLocationCd" label-text="ロケーションCD(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+					<owd-info ng-model="searchCondition.fromLocationNm"></owd-info>
+				</owd-text>
+				<owd-text id="toLocationCd" ng-model="searchCondition.toLocationCd" label-text="ロケーションCD(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(searchCondition.fromLocationCd, $value)" owd-validate-watch="'searchCondition.fromLocationCd'" owd-validate-message="fromToMessage">
+					<owd-info ng-model="searchCondition.toLocationNm"></owd-info>
+				</owd-text>
+				<owd-select id="zoneCd" ng-model="searchCondition.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+				<owd-date id="fromStockInoutDt" ng-model="searchCondition.fromStockInoutDt" label-text="受払日(From)"></owd-date>
+				<owd-date id="toStockInoutDt" ng-model="searchCondition.toStockInoutDt" label-text="受払日(To)"></owd-date>
+				<owd-select id="stockTarget" ng-model="searchCondition.stockTarget" owd-models="stockTargetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当可能数+引当済数"></owd-select>
+				<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="銘柄CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+					<owd-info ng-model="searchCondition.productNm"></owd-info>
+				</owd-text>
+				<owd-select id="productDivision" ng-model="searchCondition.productDivision" owd-models="productKbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="銘柄区分"></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12" align="right">
+				<owd-button id="inventoryDelete" class="btn-info" ng-disabled="searchform.$invalid">棚卸データ削除</owd-button>
+				<owd-button id="instKeyList" class="btn-info" ng-disabled="searchform.$invalid" ng-click="viewList()">在庫調査指示一覧</owd-button>
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="register()">在庫調査データ作成</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

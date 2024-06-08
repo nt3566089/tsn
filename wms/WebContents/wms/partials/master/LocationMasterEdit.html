@@ -1,0 +1,51 @@
+<div ng-controller="LocationMasterEdit" owd-screen="LocationMasterEdit">
+	<form id="searchInputForm" name="searchInputForm" novalidate>
+		<div class="well">
+			<div class = "row">
+				<owd-select id="clientCd" ng-model="head.clientCd" label-text="荷主" owd-models="clientCdList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" ng-change="clientCdChange()"></owd-select>
+				<owd-text   id="locationCd" ng-model="head.locationCd" label-text="ロケーションCD" ng-blur="locationCdBlur()"></owd-text>
+				<owd-text   id="locationNm" ng-model="head.locationNm" label-text="ロケーション名称"></owd-text>
+				<owd-select id="locGroup" ng-model="head.locGroup" label-text="ロケーショングループ" owd-models="locGroupList" ng-blur="locGroupChange()" owd-repeat-key="classCd" owd-repeat-value="classNm" ng-change="locGroupChange()"></owd-select>
+				<owd-select id="delFlg" ng-model="head.delFlg" label-text="削除" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+			</div>
+		</div>
+		<div class="well">
+			<div class = "row">
+				<owd-select id="allocNgFlg" ng-model="head.allocNgFlg" label-text="引当可否" owd-models="allocNgFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" ng-change="allocNgFlgChange()"></owd-select>
+				<owd-text   id="zone" ng-model="head.zone" label-text="ゾーン"></owd-text>
+				<owd-text   id="pickingOrder" ng-model="head.pickingOrder" label-text="山出し順"></owd-text>
+				<owd-text   id="palletecapacity" ng-model="head.palletecapacity" label-text="許容パレット枚数"></owd-text>
+				<owd-text   id="maxStoreNum" ng-model="head.maxStoreNum" label-text="許容個数"></owd-text>
+			</div>
+		</div>
+		<div class="well">
+			<div class="row">
+				<owd-select id="linblk" ng-model="head.linblk" label-text="ライン/ブロック" owd-models="linblkList" owd-repeat-key="linblk" owd-repeat-value="linblk"></owd-select>
+				<owd-select id="locid" ng-model="head.locid" label-text="ロケーション区分" owd-models="locidList" ng-blur="locidChange()" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-text   id="productCd" ng-model="head.productCd" label-text="銘柄CD" owd-add-button="showProduct()"  ng-blur="productCdBlur()"></owd-text>
+				<owd-select id="tosplmd" ng-model="head.tosplmd" label-text="当日補充方式" owd-models="tosplmdList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-select id="presplmd" ng-model="head.presplmd" label-text="事前補充方式" owd-models="presplmdList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-select id="splrevun" ng-model="head.splrevun" label-text="補充切り上げ単位" owd-models="splrevUnList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-text   id="splrevctqa" ng-model="head.splrevctqa" label-text="補充切り上げカートン数"></owd-text>
+				<owd-text   id="replenishPNum" ng-model="head.replenishPNum" label-text="基本補充点"></owd-text>
+				<owd-text   id="bssplpt" ng-model="head.bssplpt" label-text="基本補充量"></owd-text>
+
+
+
+<!-- 				<owd-text   id="productCd" ng-model="head.productCd" label-text="商品CD" owd-add-button="modalProduct()" ng-blur="productCdBlur()"> -->
+<!-- 					<owd-info ng-model="head.productNm"></owd-info> -->
+<!-- 				</owd-text> -->
+			</div>
+		</div>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" class="btn-success" ng-click="registerClick()" ng-disabled="searchInputForm.$invalid">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	centerCd	拠点		1	0		1	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	clientCd	荷主		1	0		1	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	printedFlg	印刷フラグ		1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	addDt	作成日	date	1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	sts	ステータス		1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	shipCd	発送先CD		1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	transportCd	輸送番号		1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	schDate	発送予定日	date	1	0		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	excelOutput	Excel出力		1	1		0	1													
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	itemCd	銘柄CD	1	text	1	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	sname	銘柄名称	2	text	1	0		0	300				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	manufactureDate	製造年月日	3	date	1	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	designCd	デザイン区分	4	text	1	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	qtyCase	数量(ケース)	5	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	qtyBowl	数量(カートン)	6	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	htQtyCase	実績数量(ケース)	7	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	htQtyBowl	実績数量(カートン)	8	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	warehouseQtyCase	保管場在庫(ケース)	9	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	warehouseQtyBowl	保管場在庫(カートン)	10	text	1	0	right	0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	warehouseItemStock	保管場在庫有無	11	text	1	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	centerCd	拠点CD	12	text	0	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	centerNm	拠点名称	13	text	0	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	clientCd	荷主CD	14	text	0	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	clientNm	荷主名称	15	text	0	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	usernum1	使用区分	16	text	0	0		0	150				
+ReplenishStockTransferListPrintDetail	融通山出し一覧(詳細)	wms	replenishStockTransferListPrintDetail	融通山出し一覧グリッド	grid	1	1		0	0	usernum3	一般出力順	17	text	0	0		0	150				

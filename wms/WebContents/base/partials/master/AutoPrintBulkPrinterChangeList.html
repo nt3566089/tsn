@@ -1,0 +1,39 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="AutoPrintBulkPrinterChangeList" owd-screen="AutoPrintBulkPrinterChangeList">
+	<form id="autoprintbulkprinterchangelistform" name="autoprintbulkprinterchangelistform" novalidate>
+	
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	
+				<fieldset>
+					<div class="row">
+						<owd-select id="printerGroupId" ng-model="head.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" ng-change="changePrinterGroup()" label-text="プリンタグループ"></owd-select>
+						<owd-select id="printerId" ng-model="head.printerId" owd-models="printerList" owd-repeat-key="printerId" owd-repeat-value="printerNm" label-text="プリンタグループ"></owd-select>
+					</div>
+				</fieldset>
+	
+			</owd-accordion-group>
+		</owd-accordion>
+	
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="autoprintbulkprinterchangelistform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="autoPrintBulkPrinterChangeListGrid" owd-form-name="autoprintbulkprinterchangelistform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">変更</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

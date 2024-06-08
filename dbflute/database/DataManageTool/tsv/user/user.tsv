@@ -1,0 +1,8 @@
+USER_CD	USER_NM	CULTURE_CD	ROLE_GRP_CD	PASSWORD	SALT	PASSWORD_RESET	PASSWORD_MODIFIED_DATE	LAST_LOGIN_DATE	LAST_FAILED_LOGIN_DATE	FAILED_LOGIN_ATTEMPTS	LOCKOUT	LOCKOUT_DATE	AVAILABLE_START_DATE	AVAILABLE_END_DATE
+USER01	ユーザ０１	ja-JP	SystemAdministrator											
+USER02	ユーザ０２	ja-JP	OfficeSupervisor											
+USER03	ユーザ０３	ja-JP	Office											
+USER04	ユーザ０４	ja-JP	Administrators											
+USER05	ユーザ０５	ja-JP	Administrators											
+USER06	ユーザ０６	ja-JP	Workers											
+USER07	ユーザ０７	ja-JP	Workers											

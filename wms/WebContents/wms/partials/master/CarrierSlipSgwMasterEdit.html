@@ -1,0 +1,63 @@
+<div ng-controller="CarrierSlipSgwMasterEdit" owd-screen="CarrierSlipSgwMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+
+		<div class="well">
+			<div class = "row">
+<owd-text id="tagType" ng-model="carrierSlipSgw.tagType" label-text="データ種別"></owd-text>
+<owd-text id="tagNm" ng-model="carrierSlipSgw.tagNm" label-text="データ種別名称"></owd-text>
+<owd-select id="characterCd" ng-model="carrierSlipSgw.characterCd" owd-models="characterCdList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="文字コード"></owd-select>
+<owd-text id="slipCustomerCd" ng-model="carrierSlipSgw.slipCustomerCd" label-text="お客様コード"></owd-text>
+<!-- [Ver２．１向けエンハンス] 荷札出力対応 C-CWMS-0058 2016/07/08 HDIS Start -->
+<owd-text id="webApiRequestUrl" ng-model="carrierSlipSgw.webApiRequestUrl" label-text="WebAPIリクエストURL"></owd-text>
+<owd-text id="customerId" ng-model="carrierSlipSgw.customerId" label-text="カスタマーID"></owd-text>
+<system-password id="loginPassword" ng-model="carrierSlipSgw.loginPassword" label-text="ログインパスワード"></system-password>
+<!-- [Ver２．１向けエンハンス] 荷札出力対応 C-CWMS-0058 2016/07/08 HDIS End -->
+<owd-text id="deptConsignorNm" ng-model="carrierSlipSgw.deptConsignorNm" label-text="部署・担当者"></owd-text>
+<owd-text id="consignorTelNo" ng-model="carrierSlipSgw.consignorTelNo" label-text="荷送人電話番号"></owd-text>
+<owd-text id="slipClientTelNo" ng-model="carrierSlipSgw.slipClientTelNo" label-text="ご依頼主電話番号"></owd-text>
+<owd-text id="slipClientZipCd" ng-model="carrierSlipSgw.slipClientZipCd" owd-add-button="modalZip()" ng-blur="zipCdBlur()"  label-text="ご依頼主郵便番号"></owd-text>
+<owd-text id="slipClientAddress1" ng-model="carrierSlipSgw.slipClientAddress1" label-text="ご依頼主住所1"></owd-text>
+<owd-text id="slipClientAddress2" ng-model="carrierSlipSgw.slipClientAddress2" label-text="ご依頼主住所2"></owd-text>
+<owd-text id="slipClientNm1" ng-model="carrierSlipSgw.slipClientNm1" label-text="ご依頼主名称1"></owd-text>
+<owd-text id="slipClientNm2" ng-model="carrierSlipSgw.slipClientNm2" label-text="ご依頼主名称2"></owd-text>
+<owd-select id="slipShapeCd" ng-model="carrierSlipSgw.slipShapeCd" owd-models="slipShapeCdList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="荷姿コード"></owd-select>
+<owd-text id="slipItemNm1" ng-model="carrierSlipSgw.slipItemNm1" label-text="品名1"></owd-text>
+<owd-text id="slipItemNm2" ng-model="carrierSlipSgw.slipItemNm2" label-text="品名2"></owd-text>
+<owd-text id="slipItemNm3" ng-model="carrierSlipSgw.slipItemNm3" label-text="品名3"></owd-text>
+<owd-text id="slipItemNm4" ng-model="carrierSlipSgw.slipItemNm4" label-text="品名4"></owd-text>
+<owd-text id="slipItemNm5" ng-model="carrierSlipSgw.slipItemNm5" label-text="品名5"></owd-text>
+<owd-select id="transportTypeSpeed" ng-model="carrierSlipSgw.transportTypeSpeed" owd-models="transportTypeSpeedList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="便種(スピードで選択)"></owd-select>
+<owd-select id="transportTypeItem" ng-model="carrierSlipSgw.transportTypeItem" owd-models="transportTypeItemList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="便種(商品)"></owd-select>
+<owd-select id="settlementType" ng-model="carrierSlipSgw.settlementType" owd-models="settlementTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="決済種別"></owd-select>
+<owd-select id="sealType1" ng-model="carrierSlipSgw.sealType1" ng-change="checkSameType()" owd-models="sealType1List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="指定シール1"></owd-select>
+<owd-select id="sealType2" ng-model="carrierSlipSgw.sealType2" ng-change="checkSameType()" owd-models="sealType2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="指定シール2"></owd-select>
+<owd-select id="sealType3" ng-model="carrierSlipSgw.sealType3" ng-change="checkSameType()" owd-models="sealType3List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="指定シール3"></owd-select>
+<owd-select id="codCls" ng-model="carrierSlipSgw.codCls" owd-models="codClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="元着区分"></owd-select>
+
+
+<owd-text id="sendCd" ng-model="carrierSlipSgw.sendCd" label-text="発店CD"></owd-text>
+<owd-text id="apiOkuriCode" ng-model="carrierSlipSgw.apiOkuriCode" label-text="WebAPI送り状コード"></owd-text>
+<owd-select id="apiBinsyuCode" ng-model="carrierSlipSgw.apiBinsyuCode" owd-models="apiBinsyuCodeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI便種コード"></owd-select>
+<owd-select id="apiDaibikiFlg" ng-model="carrierSlipSgw.apiDaibikiFlg" owd-models="apiDaibikiFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI代引フラグ"></owd-select>
+<owd-select id="apiDaibikiType" ng-model="carrierSlipSgw.apiDaibikiType" owd-models="apiDaibikiTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI代引支払方法区分"></owd-select>
+<owd-select id="apiWeightCd1" ng-model="carrierSlipSgw.apiWeightCd1" owd-models="apiWeightCd1List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI重量コード1"></owd-select>
+<owd-select id="apiWeightCd2" ng-model="carrierSlipSgw.apiWeightCd2" owd-models="apiWeightCd2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI重量コード2"></owd-select>
+<owd-select id="apiEidomeFlg" ng-model="carrierSlipSgw.apiEidomeFlg" owd-models="apiEidomeFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="WebAPI営止フラグ"></owd-select>
+
+<owd-select id="delFlg" ng-model="carrierSlipSgw.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+
+			</div>
+		</div>
+        <!-- brタグを削除 2020.03.12 ono del -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" ng-disabled="searchinputform.$invalid" class="btn-success" ng-click="register()">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

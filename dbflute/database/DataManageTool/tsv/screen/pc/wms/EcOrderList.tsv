@@ -1,0 +1,99 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+EcOrderList	EC受注データ一覧	wms	dtCls	取込日/出荷日/作業日	dropdown	1	1		1	1													
+EcOrderList	EC受注データ一覧	wms	dtFrom	日付(From)	text	1	1		1	1													
+EcOrderList	EC受注データ一覧	wms	dtTo	日付(To)	text	1	1		1	1													
+EcOrderList	EC受注データ一覧	wms	centerCd	センタ	dropdown	1	1		1	1													
+EcOrderList	EC受注データ一覧	wms	clientCd	荷主	dropdown	1	1		1	1													
+EcOrderList	EC受注データ一覧	wms	orderNo	受注番号	text	1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingStatus	出荷ステータス	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	importType	取込種別	dropdown	1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	deliveryCourseCd	配送コースCD	text	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	pickingWorkNo	出庫作業No.	text	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	statementOutFlg	納品書発行フラグ	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	invoiceCreateFlg	EC送り状データ出力	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	errorFlg	エラーフラグ	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	stockOutFlg	欠品フラグ	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	priorityFlg	優先フラグ	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	giftFlg	ギフトフラグ	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	mergeFlg	名寄せ有無	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	mergeId	名寄せID	text	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	noshi	のし	text	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	commentFlg	コメント1有無	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	comment1	コメント1		1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	comment2	コメント2		1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	cancelDisplay	キャンセルデータ表示	dropdown	1	1		0	0													
+EcOrderList	EC受注データ一覧	wms	search	検索		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	excelOutput	Excel出力		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	nonShippingTitle	未出荷		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingInstProcessingTitle	出庫指示中		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingInstedTitle	出庫指示済		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingFixedTitle	出荷確定済		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	cancelTitle	キャンセル		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingDeletedTitle	出庫指示削除		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	errorTitle	エラー有		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingStopTitle	出荷停止		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	stockOutFlgTitle	欠品		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	selectedRowTitle	前回選択行		1	0		0	1													
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	mimportType.importTypeCd	取込種別	1	text	1	0		0	160			1	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	mimportType.importTypeNm	取込種別名称	2	text	1	0		0	160			2	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	importDt	取込日	3	date	1	0		0	105			3	140
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.shippingDt	出荷日	4	date	1	0		0	105			4	105
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.workDt	作業日	5	date	1	0		0	105			5	105
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderNo	受注番号	6	text	1	0		0	255			6	255
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	mergeIdForDisplay	名寄せID	7	text	1	0		0	110			7	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	mergeStatus	名寄せステータス	8	text	1	0		0	140			8	190
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.tallocInstH.tpickingH.pickingWorkNo	出庫作業No.	9	text	1	0		0	125			9	125
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	comment1	コメント1	10	text	1	0		0	250			10	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.updDt	更新日時	11	datetime	1	0		0	185			11	185
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	comment2	コメント2	12	text	1	0		0	250			12	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.deliveryCourseCd	配送コースCD	13	text	1	0		0	125			13	220
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	14	text	1	0		0	170			14	220
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.shippingStatus	出荷ステータス	15	text	1	0		0	125			15	150
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByShippingStatus.vdict.dictNm	出荷ステータス名称	16	text	1	0		0	140			16	180
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.stockOutFlg	欠品フラグ	17	text	1	0		0	90			17	125
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByStockOutFlg.vdict.dictNm	欠品フラグ名称	18	text	1	0		0	160			18	170
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.errorFlg	エラーフラグ	19	text	1	0		0	110			19	110
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByErrorFlg.vdict.dictNm	エラーフラグ名称	20	text	1	0		0	160			20	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tecOrderRAsOne.statementOutFlg	納品書発行フラグ	21	text	1	0		0	160			21	200
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tecOrderRAsOne.bclassDtlByStatementOutFlg.vdict.dictNm	納品書発行フラグ名称	22	text	1	0		0	170			22	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tecOrderRAsOne.invoiceCreateFlg	EC送り状データ出力フラグ	23	text	1	0		0	220			23	220
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tecOrderRAsOne.bclassDtlByInvoiceCreateFlg.vdict.dictNm	EC送り状データ出力フラグ名称	24	text	1	0		0	250			24	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivMethod	配送方法	25	text	1	0		0	160			25	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivType	配送区分	26	text	1	0		0	160			26	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivCompany	配送会社	27	text	1	0		0	160			27	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.delivDt	お届け日指定	28	date	1	0		0	105			28	200
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.delivTz	お届け時間帯	29	text	1	0		0	160			29	200
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByDelivTz.vdict.dictNm	お届け時間帯名称	30	text	1	0		0	160			30	240
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivMatchFlg	送付先一致フラグ	31	text	1	0		0	160			31	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	bclassDtlByDelivMatchFlg.vdict.dictNm	送付先一致フラグ名称	32	text	1	0		0	170			32	210
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderZipCd	注文者郵便番号	33	text	1	0		0	160			33	190
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderAddress1	注文者住所：都道府県	34	text	1	0		0	300			34	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderAddress2	注文者住所：都市区	35	text	1	0		0	300			35	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderAddress3	注文者住所：町以降	36	text	1	0		0	300			36	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderCustomerNm	注文者名称	37	text	1	0		0	170			37	170
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderTelNo	注文者電話番号	38	text	1	0		0	250			38	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivZipCd	送付先郵便番号	39	text	1	0		0	160			39	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivAddress1	送付先住所：都道府県	40	text	1	0		0	300			40	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivAddress2	送付先住所：都市区	41	text	1	0		0	300			41	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivAddress3	送付先住所：町以降	42	text	1	0		0	300			42	300
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivCustomerNm	送付先名称	43	text	1	0		0	170			43	170
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	delivTelNo	送付先電話番号	44	text	1	0		0	250			44	250
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	priorityFlg	優先フラグ	45	text	1	0		0	160			45	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	bclassDtlByPriorityFlg.vdict.dictNm	優先フラグ名称	46	text	1	0		0	160			46	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	giftFlg	ギフトフラグ	47	text	1	0		0	160			47	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	bclassDtlByGiftFlg.vdict.dictNm	ギフトフラグ名称	48	text	1	0		0	160			48	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	noshi	のし	49	text	1	0		0	170			49	170
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderDt	注文日	50	date	1	0		0	105			50	130
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	orderTime	注文時刻	51	text	1	0		0	160			51	160
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.errorMessageCd	エラーメッセージCD	52	text	1	0		0	200			52	200
+EcOrderList	EC受注データ一覧	wms	ecOrderListGrid	EC受注データ一覧グリッド	grid	1	0		0	1	tshippingInstH.headMessageNm	エラーメッセージ	53	text	1	0		0	200			53	200
+EcOrderList	EC受注データ一覧	wms	invoiceCreate	EC送り状データ出力		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	deliveryCourseShippingList	配送コース別出荷一覧		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	shippingInstList	出庫指示一覧		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	productShippingList	商品別出荷一覧		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	instUpdate	指示修正		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	statementOut	納品書		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	orderCancel	受注キャンセル		1	1		0	1													
+EcOrderList	EC受注データ一覧	wms	errorDelete	受注エラー削除		1	1		0	1													

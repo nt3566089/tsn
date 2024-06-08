@@ -1,0 +1,8 @@
+SCREEN_CD	DICT_NM	ITEM_CD	DICT_NM	COL_CD	DICT_NM	INPUT_LIMIT	LIMIT_MESSAGE_CD	MIN_CHARS	MAX_CHARS	MIN_NUMBER	MAX_NUMBER	INTEGER_LENGTH	DECIMAL_LENGTH
+ReceiveInput	入荷実績入力(予定あり)	receiveInputB	入荷実績入力グリッド	storeNum	入庫数					0		7	3
+NumberingCenterMaster	センタ採番マスタメンテナンス	list	センタ採番マスタメンテナンスグリッド	presentNumber	現在値					-1		15	0
+NumberingCenterMaster	センタ採番マスタメンテナンス	list	センタ採番マスタメンテナンスグリッド	minNumber	最小値					0		15	0
+NumberingCenterMaster	センタ採番マスタメンテナンス	list	センタ採番マスタメンテナンスグリッド	maxNumber	最大値					1		15	0
+ReceiveInspectionSD	入荷検品	receiveInspectionDetail	入荷検品リスト明細詳細グリッド	storeNum	入庫数					0		7	3
+StockSetInst	セット組指示	stockList	在庫情報グリッド	moveNumInfo	移動数					1		7	0
+StockSetRelease	セット解除指示	releaseInput	解除指示入力グリッド	chargeNum	指示数					1		7	0

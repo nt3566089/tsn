@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ShippingPickingStoreLabelNoResource	send	send	HTオーダピック(入庫No)送信	storeLabelNo	入庫ラベルNo.	text	1

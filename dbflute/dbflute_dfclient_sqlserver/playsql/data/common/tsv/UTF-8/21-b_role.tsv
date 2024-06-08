@@ -1,0 +1,6 @@
+ROLE_ID	ROLE_CD	DICT_ID
+1	SystemAdministrator	3364
+2	OfficeSupervisor	3365
+3	Office	3366
+4	Administrators	15
+5	Workers	3367

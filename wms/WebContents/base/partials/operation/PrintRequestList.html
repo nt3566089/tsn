@@ -1,0 +1,73 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PrintRequestList" owd-screen="PrintRequestList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	
+					<fieldset>
+						<div class="row" ng-init="putForm(searchinputform)">
+							<owd-select id="reportCd" ng-model="head.reportCd" owd-models="reportList" owd-repeat-key="reportCd" owd-repeat-value="reportNm" ng-change="changeReport()" label-text="帳票名"></owd-select>
+
+							<owd-select id="reportLayoutId" ng-model="head.reportLayoutId" owd-models="reportLayoutList" owd-repeat-key="reportLayoutId" owd-repeat-value="reportLayoutNm" label-text="レイアウト名"></owd-select>
+
+							<owd-select id="printerGroupId" ng-model="head.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" label-text="プリンタグループ"></owd-select>
+
+							<owd-select id="printStatus" ng-model="head.printStatus" owd-models="printStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="印刷ステータス"></owd-select>
+
+							<owd-select id="printedFlg" ng-model="head.printedFlg" owd-models="printedFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="再印刷有無"></owd-select>
+
+
+
+ 							<owd-date id="queueAddDtFromYmd" ng-model="head.queueAddDtFromYmd" ng-change="changeQueueAddDtFromYmd()" label-text="キュー登録日(From)"></owd-date>
+
+							<owd-text id="queueAddDtFromTime" ng-model="head.queueAddDtFromTime" ng-change="changeQueueAddDtFromTime()" label-text="キュー登録時間(From)"></owd-text>
+
+							<owd-date id="queueAddDtToYmd" ng-model="head.queueAddDtToYmd" ng-change="changeQueueAddDtToYmd()" label-text="キュー登録日(To)"></owd-date>
+
+							<owd-text id="queueAddDtToTime" ng-model="head.queueAddDtToTime" ng-change="changeQueueAddDtToTime()" label-text="キュー登録時間(To)"></owd-text>
+
+
+							<owd-select id="errorFlg" ng-model="head.errorFlg" owd-models="errorFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラーのみ"></owd-select>
+
+
+							<owd-text id="userCd" ng-model="head.userCd" label-text="ユーザCD"></owd-text>
+
+
+
+	
+							<owd-select id="printDataType" ng-model="head.printDataType" owd-models="printDataTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="印刷データタイプ"></owd-select>
+
+						</div>
+					</fieldset>
+
+				</owd-accordion-group>
+			</owd-accordion>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="printRequestListGrid" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-dblclick-option="gridDblClick(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+						<owd-button id="reprint" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="reprint()">再印刷</owd-button>
+						<owd-button id="printRequestHistList" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="printRequestHistList()">印刷履歴</owd-button>
+
+						<owd-button id="printRequestHistBrowse" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="printRequestHistBrowse()">印刷履歴詳細</owd-button>
+
+					</div>
+				</div>
+			</div>
+	</form>
+</div>
+

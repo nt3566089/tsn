@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+Daily	日次締処理	wms	centerCd	センタ		1	1		1	1													
+Daily	日次締処理	wms	search	検索		1	1		0	1													
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	1	text	1	0		0	85			1	130
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	2	text	1	0		0	300			2	300
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	systemDt	システム管理日付	3	date	1	0		0	150			3	230
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	systemDateAdd	システム管理日付(翌稼働日)	4	date	1	1		1	235			4	380
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	batchProgressFlgNm	バッチ処理中フラグ	5	text	1	0		0	155			5	195
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	6	text	1	0		0	125			6	
+Daily	日次締処理	wms	dailyList	日次締処理グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	7	text	1	0		0	200			7	
+Daily	日次締処理	wms	daily	締切		1	1		0	1													
+Daily	日次締処理	wms	dailyBatch	締切		0	1		0	1													

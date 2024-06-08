@@ -1,0 +1,40 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	centerCd	センタ		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	clientCd	荷主		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	shippingSlipNo	WMS出荷伝票No.		1	0		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	clientShippingNo	顧客出荷指示No.		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	emergencyFlg	緊急フラグ		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	supplierCustomerCd	納品先CD		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	deliveryCourseCd	配送コースCD		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivPlanDt	納品予定日		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	workDt	作業日		1	0		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	shippingDt	出荷日		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	processTypeCd	処理区分		1	1		1	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivDt	納品指定日		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivTz	納品時間帯		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	addRow	行追加		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	removeRow	行削除		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	register	登録		1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	lineNo	行No.	1	number	1	0	right	0	60			1	100
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	productCd	商品CD	2	text	1	1		1	245			2	245
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300			3	300
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	4	text	1	0		0	300			4	300
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	locationCd	ロケーションCD	5	text	1	1		1	200			5	200
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	chargeNum	引当可能数	6	number	1	0	right	0	95			6	130
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	7	text	1	0		0	205			7	205
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	lot	ロット	8	text	1	1		0	170			8	170
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	limitDt	期限日	9	date	1	1		0	150			9	150
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	10	text	1	0	right	0	220			10	220
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	instNum	指示数	11	calcnumber	1	1	right	1	290			11	290
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	instNumMultiText	指示数荷姿	12	number	0	1	right	0	110			12	110
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	depositCd	預託	13	dropdown	1	1		1	300			13	300
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	searchBody	出荷実績入力グリッド	grid	1	1		0	1	stockTypeCd	在庫区分	14	dropdown	1	1		1	195			14	195
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivZipCd	届先郵便番号	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivAddress1	届先住所1	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivAddress2	届先住所2	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivAddress3	届先住所3	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivAddressSupply	届先住所補足	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivCustomerNm	届先名称	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivTelNo	届先電話番号	text	1	1		0	1													
+ShippingInputNoPlan	出荷実績入力(予定なし)	wms	delivCustomerCd	届先CD		1	1		1	1													

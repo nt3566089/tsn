@@ -1,0 +1,53 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryHistory	棚卸履歴	wms	centerCd	センタ		1	1		1	1													
+InventoryHistory	棚卸履歴	wms	clientCd	荷主		1	1		1	1													
+InventoryHistory	棚卸履歴	wms	warehouseCd	倉庫		1	1		0	0													
+InventoryHistory	棚卸履歴	wms	inventoryDtFrom	棚卸日(From)	date	1	1		0	1													
+InventoryHistory	棚卸履歴	wms	inventoryDtTo	棚卸日(To)	date	1	1		0	1													
+InventoryHistory	棚卸履歴	wms	supplierCustomerCd	仕入先CD	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	depositCd	預託		1	1		0	0													
+InventoryHistory	棚卸履歴	wms	stockTypeCd	在庫区分		1	1		0	0													
+InventoryHistory	棚卸履歴	wms	locationCdFrom	ロケーションCD(From)	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	locationCdTo	ロケーションCD(To)	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	productCd	商品CD	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	lot	ロット	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	limitDtFrom	期限日(From)	date	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	limitDtTo	期限日(To)	date	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	storeLabelNo	入庫ラベルNo.	text	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	storeDtFrom	入庫日(From)	date	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	storeDtTo	入庫日(To)	date	1	1		0	0													
+InventoryHistory	棚卸履歴	wms	search	検索		1	1		0	1													
+InventoryHistory	棚卸履歴	wms	excelOutput	Excel出力		1	1		0	1													
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.histDt	履歴日	1	date	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.inventoryDt	棚卸日	2	date	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.batchNum	バッチNo.	3	text	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	locationCd	ロケーションCD	4	text	1	0		0	200				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	locationNm	ロケーション名称	5	text	1	0		0	250				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	productCd	商品CD	6	text	1	0		0	245				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	productNm	商品名称	7	text	1	0		0	300				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	inventoryNum	棚卸数	8	number	1	0	right	0	100				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	chargeNum	引当可能数	9	number	1	0	right	0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	allocNum	引当済数	10	number	1	0	right	0	95				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	moveNum	移動中数	11	number	1	0	right	0	245				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	unitNum	入数	12	number	0	0	right	0	170				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	lot	ロット	13	text	1	0		0	170				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	limitDt	期限日	14	date	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	storeLabelNo	入庫ラベルNo.	15	text	1	0		0	140				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	storeDt	入庫日	16	date	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	mstockType.stockTypeCd	在庫区分CD	17	text	1	0		0	110				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	在庫区分名称	18	text	1	0		0	110				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	depositCd	預託CD	19	text	1	0		0	160				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	depositNm	預託名称	20	text	1	0		0	300				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	supplierCd	仕入先CD	21	text	1	0		0	200				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	supplierNm	仕入先名称	22	text	1	0		0	300				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	warehouseCd	倉庫CD	23	text	1	0		0	85				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	warehouseNm	倉庫名称	24	text	1	0		0	300				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	inputType	入力区分CD	25	text	1	0		0	110				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	bclassDtlByInputType.vdict.dictNm	入力区分名称	26	text	1	0		0	110				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	stockAdjustFlg	在庫調整フラグCD	27	text	1	0		0	150				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	bclassDtlByStockAdjustFlg.vdict.dictNm	在庫調整フラグ名称	28	text	1	0		0	170				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.clientCd	荷主CD	29	text	1	0		0	200				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.clientNm	荷主名称	30	text	1	0		0	200				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.centerCd	センタCD	31	text	1	0		0	200				
+InventoryHistory	棚卸履歴	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	hinventoryH.centerNm	センタ名称	32	text	1	0		0	200				

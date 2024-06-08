@@ -1,0 +1,239 @@
+<div ng-controller="ParameterMasterEdit" owd-screen="ParameterMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<!-- [1.1.4-CT-024] 項目をカテゴリ毎にグループ化 2016.05.20 kawana Start -->
+		<div class="well">
+			<div class="row">
+				<!-- センタ・荷主 -->
+				<owd-select id="centerCd" ng-model="mClientCenter.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" owd-change></owd-select>
+				<owd-select id="clientCd" ng-model="mClientCenter.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" owd-change></owd-select>
+				<owd-select id="delFlg" ng-model="mClientCenter.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+			</div>
+		</div>
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleStockManage" label-text="在庫管理"></owd-span></legend>
+			<div class="row">
+				<owd-select id="storeNoFlg" ng-model="mClientCenter.mparamAsOne.storeNoFlg" owd-models="storeNoFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入庫No.管理フラグ"></owd-select>
+				<owd-select id="mergeCls" ng-model="mClientCenter.mparamAsOne.mergeCls" owd-models="mergeClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入庫No.マージ区分"></owd-select>
+				<owd-select id="storeDtFlg" ng-model="mClientCenter.mparamAsOne.storeDtFlg" owd-models="storeDtFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入庫日管理フラグ"></owd-select>
+			</div>
+		</fieldset>
+<!-- 		// [Ver3.0] unit of measure対応 2017.11.24 NING Del -->
+<!-- 		<fieldset class="wmsfildsetwell"> -->
+<!-- 			<legend class="wmsfildsetwell-legend"><owd-span id="titleShape" label-text="荷姿"></owd-span></legend> -->
+<!-- 			<div class="row"> -->
+<!-- 				[1.1.4-CT-058] 荷主に合わせて荷姿を変更するように変更 2016.05.25 ichikawa Start -->
+<!-- 				<owd-select id="caseShapeCd" ng-model="mClientCenter.mparamAsOne.mshapeByCaseShapeId.shapeCd" owd-models="setGridShapeList()" owd-repeat-key="shapeCd" owd-repeat-value="shapeNm" label-text="ケース荷姿" ></owd-select> -->
+<!-- 				<owd-select id="bowlShapeCd" ng-model="mClientCenter.mparamAsOne.mshapeByBowlShapeId.shapeCd" owd-models="setGridShapeList()" owd-repeat-key="shapeCd" owd-repeat-value="shapeNm" label-text="ボール荷姿" ></owd-select> -->
+<!-- 				<owd-select id="pieceShapeCd" ng-model="mClientCenter.mparamAsOne.mshapeByPieceShapeId.shapeCd" owd-models="setGridShapeList()" owd-repeat-key="shapeCd" owd-repeat-value="shapeNm" label-text="ピース荷姿" ></owd-select> -->
+<!-- 				[1.1.4-CT-058] 荷主に合わせて荷姿を変更するように変更 2016.05.25 ichikawa End -->
+<!-- 			</div> -->
+<!-- 		</fieldset> -->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleDaily" label-text="日次締処理"></owd-span></legend>
+			<div class="row">
+				<owd-number id="tkeepingDays" ng-model="mClientCenter.mparamAsOne.tkeepingDays" label-text="トランザクション保持期間"></owd-number>
+				<owd-number id="hkeepingDays" ng-model="mClientCenter.mparamAsOne.hkeepingDays" label-text="履歴保持期間"></owd-number>
+				<owd-number id="dkeepingDays" ng-model="mClientCenter.mparamAsOne.dkeepingDays" label-text="削除保持期間"></owd-number>
+			</div>
+		</fieldset>
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleHt" label-text="HT/SD"></owd-span></legend>
+			<div class="row">
+				<owd-select id="overStoreNumFlg" ng-model="mClientCenter.mparamAsOne.overStoreNumFlg" owd-models="overStoreNumFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="過入荷可フラグ"></owd-select>
+				<owd-select id="pastStoreDtFlg" ng-model="mClientCenter.mparamAsOne.pastStoreDtFlg" owd-models="pastStoreDtFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="過去日入力可フラグ"></owd-select>
+				<!-- [1.1.4-CT-069] 出荷時HT使用フラグ追加 2016.06.01 kawana Start -->
+				<!-- [Ver3.1][#5137] ドロップダウンリストに空白を表示する 2018.09.26 matsumoto Start -->
+				<owd-select id="useHtShipFlg" ng-model="mClientCenter.mparamAsOne.useHtShipFlg" owd-models="useHtShipFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷時HT使用フラグ"></owd-select>
+				<!-- [1.1.4-CT-069] 出荷時HT使用フラグ追加 2016.06.01 kawana End -->
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Add Start -->
+				<owd-select id="htCharReadFlg" ng-model="mClientCenter.mparamAsOne.htCharReadFlg" owd-models="htCharReadFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="HT文字認識使用フラグ"></owd-select>
+				<!-- [Ver3.1][#5137] ドロップダウンリストに空白を表示する 2018.09.26 matsumoto End -->
+				<owd-text id="htLotInputType" ng-model="mClientCenter.mparamAsOne.htLotInputType" label-text="HTロット入力方式"></owd-text>
+				<!-- [#1839] HTシリアル入力方式項目追加 2017.6.1 nayzaw Add Start-->
+				<owd-text id="htSerialInputType" ng-model="mClientCenter.mparamAsOne.htSerialInputType" label-text="HTシリアル入力方式"></owd-text>
+				<!-- [#1839] HTシリアル入力方式項目追加 2017.6.1 nayzaw Add End-->
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Add End -->
+				<!-- [#2234][Ver2.2.0] SDピッキング - 後続ラベル出力 2017.08.15 honma Add Start -->
+				<owd-select id="inspectionLabelOutFlg" ng-model="mClientCenter.mparamAsOne.inspectionLabelOutFlg" owd-models="inspectionLabelOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="SD検品フラグ出力"></owd-select>
+				<!-- [#2234][Ver2.2.0] SDピッキング - 後続ラベル出力 2017.08.15 honma Add End -->
+			</div>
+		</fieldset>
+
+		<!-- [#5112][v3.1] パラメータマスタ項目編集作業 新規項目追加 2018.07.23 fujiwara Start -->
+		<!-- [Ver3.1][#5137]カテゴリ位置変更 2018.09.25 matsumoto Start -->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleShipInst" label-text="出庫指示"></owd-span></legend>
+			<div class="row">
+				<owd-select id="autoShipInstFlg" ng-model="mClientCenter.mparamAsOne.autoShipInstFlg" owd-models="autoShipInstFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=自動出庫指示フラグ></owd-select>
+				<owd-select id="stockOutAutoInstFlg" ng-model="mClientCenter.mparamAsOne.stockOutAutoInstFlg" owd-models="stockOutAutoInstFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=欠品時自動出庫指示フラグ></owd-select>
+				<owd-select id="autoEmgSetFlg" ng-model="mClientCenter.mparamAsOne.autoEmgSetFlg" owd-models="autoEmgSetFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=自動緊急フラグ設定フラグ></owd-select>
+				<owd-select id="autoEmgSetTgt" ng-model="mClientCenter.mparamAsOne.autoEmgSetTgt" owd-models="autoEmgSetTgtList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=自動緊急フラグ判断対象></owd-select>
+				<!-- [Ver3.1][#5137] 数値入力タグに変更 2018.09.28 matsumoto Start -->
+				<owd-number id="autoEmgSetMinute" ng-model="mClientCenter.mparamAsOne.autoEmgSetMinute" label-text=自動緊急フラグ判断時間(分)></owd-number>
+				<!-- [Ver3.1][#5137] 数値入力タグに変更 2018.09.28 matsumoto End -->
+				<owd-select id="stockOutInstCxlFlg" ng-model="mClientCenter.mparamAsOne.stockOutInstCxlFlg" owd-models="stockOutInstCxlFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=欠品時出庫指示取消フラグ></owd-select>
+				<owd-select id="stockOutAllocCls" ng-model="mClientCenter.mparamAsOne.stockOutAllocCls" owd-models="stockOutAllocClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text=欠品時引当区分></owd-select>
+				<!-- [Ver3.1][#5137] 欠品時出荷指示分離フラグを削除 2018.10.03 matsumoto Del -->
+			</div>
+		</fieldset>
+		<!-- [#5112][v3.1] パラメータマスタ項目編集作業 新規項目追加 2018.07.23 fujiwara End -->
+
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titlePackingCal" label-text="梱包計算"></owd-span></legend>
+			<div class="row">
+				<owd-select id="packingCalCls" ng-model="mClientCenter.mparamAsOne.packingCalCls" owd-models="packingCalClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="梱包計算処理区分"></owd-select>
+				<owd-select id="packingProcessCls" ng-model="mClientCenter.mparamAsOne.packingProcessCls" owd-models="packingProcessClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="詰込区分"></owd-select>
+				<owd-select id="productPartPacking" ng-model="mClientCenter.mparamAsOne.productPartPacking" owd-models="productPartPackingList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品毎別梱包"></owd-select>
+				<!-- // [Ver3.0] unit of measure対応 2017.11.24 NING Start -->
+				<owd-select id="decimalProductPacking" ng-model="mClientCenter.mparamAsOne.decimalProductPacking" owd-models="decimalProductPackingList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="小数管理商品梱包単位"></owd-select>
+				<!-- // [Ver3.0] unit of measure対応 2017.11.24 NING End -->
+				<owd-select id="boxGrpCd" ng-model="mClientCenter.mparamAsOne.mboxGrp.boxGrpCd" owd-models="boxGrpList" owd-repeat-key="boxGrpCd" owd-repeat-value="boxGrpNm" label-text="梱包荷材グループ"></owd-select>
+			</div>
+		</fieldset>
+		<!-- [Ver3.1][#5137]カテゴリ位置変更 2018.09.25 matsumoto End -->
+		<fieldset class="wmsfildsetwell">
+			<!-- [ON推-品向-1174] ケースピッキング有無の切替機能を追加 2016.07.14 kawana Start -->
+			<legend class="wmsfildsetwell-legend"><owd-span id="titlePicking" label-text="ピッキング"></owd-span></legend>
+			<!-- [ON推-品向-1174] ケースピッキング有無の切替機能を追加 2016.07.14 kawana End -->
+			<div class="row">
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara Start -->
+				<owd-select id="totalPicFlg" ng-model="mClientCenter.mparamAsOne.totalPicFlg" owd-models="totalPicFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="トータルピックフラグ"></owd-select>
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara End -->
+				<owd-select id="multiPicCls" ng-model="mClientCenter.mparamAsOne.multiPicCls" owd-models="multiPicClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="マルチピック計算区分"></owd-select>
+				<!-- [ON推-品質問題点指摘（新ｿﾘV2-040）]修正対応 2016.08.02 chou Mod Start -->
+				<owd-number id="backetRowNum" ng-model="mClientCenter.mparamAsOne.backetRowNum" label-text="バケット段数"></owd-number>
+				<owd-number id="backetColNum" ng-model="mClientCenter.mparamAsOne.backetColNum" label-text="バケット列数"></owd-number>
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara Start -->
+				<owd-select id="sglRowPicFlg" ng-model="mClientCenter.mparamAsOne.sglRowPicFlg" owd-models="sglRowPicFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="単行ピックフラグ"></owd-select>
+				<owd-number id="sglRowPicMaxInstNum" ng-model="mClientCenter.mparamAsOne.sglRowPicMaxInstNum"   label-text="単行ピック上限指示数" ></owd-number>
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara End -->
+				<!-- [ON推-品質問題点指摘（新ｿﾘV2-040）]修正対応 2016.08.02 chou Mod End -->
+				<!-- [ON推-品向-1174] ケースピッキング有無の切替機能を追加 2016.07.14 kawana Start -->
+				<!-- [Ver3.1][#5137] ドロップダウンリストに空白を表示する 2018.09.26 matsumoto Start -->
+				<owd-select id="casePicFlg" ng-model="mClientCenter.mparamAsOne.casePicFlg" owd-models="casePicFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ケースピックフラグ"></owd-select>
+				<!-- [ON推-品向-1174] ケースピッキング有無の切替機能を追加 2016.07.14 kawana End -->
+			</div>
+		</fieldset>
+		<!-- [Ver3.1][#5137] カテゴリ ピッキング提案 新規追加 2018.09.26 matsumoto Start -->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titlePicMthdRcmd" label-text="ピッキング提案"></owd-span></legend>
+			<div class="row">
+				<owd-select id="picMthdRcmdFlg" ng-model="mClientCenter.mparamAsOne.picMthdRcmdFlg" owd-models="picMthdRcmdFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="最適ピック提案フラグ"></owd-select>
+				<!-- [Ver3.1][#5137] ドロップダウンリストに空白を表示する 2018.09.26 matsumoto End -->
+				<owd-text id="picMthdRcmdApiKey" ng-model="mClientCenter.mparamAsOne.picMthdRcmdApiKey"   label-text="最適ピック提案APIキー" ></owd-text>
+				<owd-select id="picMthdRcmdBreakKey" ng-model="mClientCenter.mparamAsOne.picMthdRcmdBreakKey" owd-models="picMthdRcmdBreakKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="最適ピック提案ブレイクキー"></owd-select>
+				<owd-select id="picMthdRcmdMltPlOut" ng-model="mClientCenter.mparamAsOne.picMthdRcmdMltPlOut" owd-models="picMthdRcmdMltPlOutList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="マルチピック摘み取りリスト出力フラグ"></owd-select>
+				<owd-select id="picMthdRcmdSplSlOut" ng-model="mClientCenter.mparamAsOne.picMthdRcmdSplSlOut" owd-models="picMthdRcmdSplSlOutList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="単行ピック種蒔きリスト出力フラグ"></owd-select>
+			</div>
+		</fieldset>
+		<!-- [Ver3.1][#5137] カテゴリ ピッキング提案 新規追加 2018.09.26 matsumoto End -->
+		<!-- [Ver3.1][#5137]カテゴリ位置変更 2018.09.25 matsumoto Start -->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleShipInspection" label-text="出荷検品"></owd-span></legend>
+			<div class="row">
+				<owd-select id="boxSelectSkip" ng-model="mClientCenter.mparamAsOne.boxSelectSkip" owd-models="boxSelectSkipList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="荷材選択スキップ"></owd-select>
+				<owd-select id="defaultBoxCd"  ng-model="mClientCenter.mparamAsOne.mbox.boxCd" owd-models="defaultBoxIdList" owd-repeat-key="boxCd" owd-repeat-value="boxNm" label-text="デフォルト荷材"></owd-select>
+				<!-- [Ver3.1][#5137] カテゴリ 出荷検品 新規項目追加 2018.09.26 matsumoto Start -->
+				<owd-select id="errorSoundPlayFlg"  ng-model="mClientCenter.mparamAsOne.errorSoundPlayFlg" owd-models="errorSoundPlayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラー音再生フラグ"></owd-select>
+				<owd-select id="warnSoundPlayFlg"  ng-model="mClientCenter.mparamAsOne.warnSoundPlayFlg" owd-models="warnSoundPlayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="警告音再生フラグ"></owd-select>
+				<owd-select id="inspSoundPlayFlg"  ng-model="mClientCenter.mparamAsOne.inspSoundPlayFlg" owd-models="inspSoundPlayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="検品音再生フラグ"></owd-select>
+				<owd-select id="inspCompSoundPlayFlg"  ng-model="mClientCenter.mparamAsOne.inspCompSoundPlayFlg" owd-models="inspCompSoundPlayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="検品完了音再生フラグ"></owd-select>
+				<!-- [Ver3.1][#5137] カテゴリ 出荷検品 新規項目追加 2018.09.26 matsumoto End -->
+			</div>
+		</fieldset>
+		<!-- [Ver3.1][#5137]カテゴリ位置変更 2018.09.25 matsumoto End -->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleReplenish" label-text="在庫補充"></owd-span></legend>
+			<div class="row">
+				<owd-select id="rgReplenishUnitCls" ng-model="mClientCenter.mparamAsOne.rgReplenishUnitCls" owd-models="rgReplenishUnitClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="定期補充単位"></owd-select>
+				<owd-select id="emReplenishUnitCls" ng-model="mClientCenter.mparamAsOne.emReplenishUnitCls" owd-models="emReplenishUnitClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急補充単位"></owd-select>
+				<!-- [ON推-品向-1099] 緊急補充倉庫が正しく選択されない問題を修正 2016.04.13 kawana Start -->
+				<owd-select id="warehouseCd" ng-model="mClientCenter.mparamAsOne.mzone.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="緊急補充倉庫"></owd-select>
+				<!-- [ON推-品向-1099] 緊急補充倉庫が正しく選択されない問題を修正 2016.04.13 kawana End -->
+				<owd-select id="zoneCd" ng-model="mClientCenter.mparamAsOne.mzone.zoneCd" owd-models="setGridZoneList()" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="緊急補充ゾーン"></owd-select>
+				<owd-select id="emReplenishAllocCls" ng-model="mClientCenter.mparamAsOne.emReplenishAllocCls" owd-models="emReplenishAllocClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急補充ロケ割付方法"></owd-select>
+				<!-- [1.1.4-CT-117] 緊急補充ゾーンの補充荷姿設定を追加 2016.06.21 kawana Start -->
+<!-- 				// [Ver3.0] unit of measure対応 2017.11.24 NING Del -->
+<!-- 				<owd-select id="emReplenishShapeCd" ng-model="mClientCenter.mparamAsOne.mshapeByEmReplenishShapeId.shapeCd" owd-models="setGridShapeList()" owd-repeat-key="shapeCd" owd-repeat-value="shapeNm" label-text="緊急補充ゾーン補充荷姿"></owd-select> -->
+				<!-- [1.1.4-CT-117] 緊急補充ゾーンの補充荷姿設定を追加 2016.06.21 kawana End -->
+			</div>
+		</fieldset>
+
+		<!--  Ver２．１向けエンハンス C-CWMS-0054 2016.06.02 SJA Start-->
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleProductLabelOut" label-text="入庫/商品ラベル出力"></owd-span></legend>
+			<div class="row">
+				<!--  [#1775]入庫ラベル最新化 2017.07.24 sampei Start -->
+				<owd-select id="resultAfterProductLabel" ng-model="mClientCenter.mparamAsOne.resultAfterProductLabel" owd-models="resultAfterProductLabelList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="実績入力後入庫/商品ラベル出力フラグ"></owd-select>
+				<owd-select id="resultAfterProductTarget" ng-model="mClientCenter.mparamAsOne.resultAfterProductTarget" owd-models="resultAfterProductTargetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="実績入力後入庫/商品ラベル出力対象"></owd-select>
+				<owd-select id="productLabelOutUnit" ng-model="mClientCenter.mparamAsOne.productLabelOutUnit" owd-models="ProductLabelOutUnitList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品ラベル出力単位"></owd-select>
+				<!--  [#1775]入庫ラベル最新化 2017.07.24 sampei End -->
+				<owd-select id="productLabelJanBarcode" ng-model="mClientCenter.mparamAsOne.productLabelJanBarcode" owd-models="productLabelJanBarcodeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品ラベルJANCDバーコード種別"></owd-select>
+				<owd-select id="productLabelProdBarcode" ng-model="mClientCenter.mparamAsOne.productLabelProdBarcode" owd-models="productLabelProdBarcodeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品ラベル商品CDバーコード種別"></owd-select>
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Mod Start -->
+				<owd-text id="productLabelJanStartbit" ng-model="mClientCenter.mparamAsOne.productLabelJanStartbit" label-text="商品ラベルバーコードソースCDスタートビット"></owd-text>
+				<owd-text id="productLabelJanEndbit" ng-model="mClientCenter.mparamAsOne.productLabelJanEndbit" label-text="商品ラベルバーコードソースCDエンドビット"></owd-text>
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Mod End -->
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Add Start -->
+				<owd-text id="productLabelProdStartbit" ng-model="mClientCenter.mparamAsOne.productLabelProdStartbit" label-text="商品ラベルバーコード商品CDスタートビット"></owd-text>
+				<owd-text id="productLabelProdEndbit" ng-model="mClientCenter.mparamAsOne.productLabelProdEndbit" label-text="商品ラベルバーコード商品CDエンドビット"></owd-text>
+				<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.04 chou Add End -->
+			</div>
+		</fieldset>
+
+		<!--  Ver２．１向けエンハンス C-CWMS-0054 2016.06.02 SJA End-->
+
+		<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.05 chou Add Start -->
+		<fieldset class="wmsfildsetwell">
+			<!-- [#5112][v3.1] パラメータマスタ項目編集作業 名称変更 2018.07.23 fujiwara Start -->
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleInvoice" label-text="送り状・荷札・納品明細"></owd-span></legend>
+			<!-- [#5112][v3.1] パラメータマスタ項目編集作業 名称変更 2018.07.23 fujiwara End -->
+			<div class="row">
+				<owd-select id="afterTagOutFlg" ng-model="mClientCenter.mparamAsOne.afterTagOutFlg" owd-models="afterTagOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="検品後荷札出力フラグ"></owd-select>
+				<owd-select id="tagDeliveryOutFlg" ng-model="mClientCenter.mparamAsOne.tagDeliveryOutFlg" owd-models="tagDeliveryOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="荷札納品書在中出力フラグ"></owd-select>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.07 PYM Start -->
+				<owd-select id="packingSlipAutoOutputFlg" ng-model="mClientCenter.mparamAsOne.packingSlipAutoOutputFlg" owd-models="packingSlipAutoOutputFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="納品明細書自動発行フラグ"></owd-select>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.07 PYM End -->
+				<!-- キャリアEDIシステム(CES)連携対応 2018.01.07 PYM Start -->
+				<owd-select id="cesIntegrationFlg" ng-model="mClientCenter.mparamAsOne.cesIntegrationFlg" owd-models="cesIntegrationFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="CES連携フラグ"></owd-select>
+				<!-- キャリアEDIシステム(CES)連携対応 2018.01.07 PYM End -->
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara Start -->
+				<owd-select id="afterDelivSlipOutFlg" ng-model="mClientCenter.mparamAsOne.afterDelivSlipOutFlg" owd-models="afterTagOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="検品後納品明細出力フラグ"></owd-select>
+				<owd-select id="afterDelivSlipOutTgt" ng-model="mClientCenter.mparamAsOne.afterDelivSlipOutTgt" owd-models="afterDelivSlipOutTgtList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="検品後納品明細出力対象"></owd-select>
+				<owd-select id="sglRowInspAfterOutCls" ng-model="mClientCenter.mparamAsOne.sglRowInspAfterOutCls" owd-models="sglRowInspAfterOutClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="単行出荷検品荷札/納品明細出力区分"></owd-select>
+				<!-- [#5112][v3.1] パラメータマスタ項目編集作業 項目追加 2018.07.23 fujiwara End -->
+			</div>
+		</fieldset>
+
+
+		<!-- [ON推-ON推受入_問題点指摘票(ON推-UT210-013) 修正対応 2016.08.05 chou Add End -->
+
+		<fieldset class="wmsfildsetwell">
+			<legend class="wmsfildsetwell-legend"><owd-span id="titleSort" label-text="引当順序"></owd-span></legend>
+			<div class="row">
+				<owd-select id="allocSortKey1" ng-model="mClientCenter.mparamAsOne.allocSortKey1" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー1"></owd-select>
+				<owd-select id="allocSortKey2" ng-model="mClientCenter.mparamAsOne.allocSortKey2" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー2"></owd-select>
+				<owd-select id="allocSortKey3" ng-model="mClientCenter.mparamAsOne.allocSortKey3" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー3"></owd-select>
+				<owd-select id="allocSortKey4" ng-model="mClientCenter.mparamAsOne.allocSortKey4" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー4"></owd-select>
+				<owd-select id="allocSortKey5" ng-model="mClientCenter.mparamAsOne.allocSortKey5" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー5"></owd-select>
+				<owd-select id="allocSortKey6" ng-model="mClientCenter.mparamAsOne.allocSortKey6" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー6"></owd-select>
+				<owd-select id="allocSortKey7" ng-model="mClientCenter.mparamAsOne.allocSortKey7" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー7"></owd-select>
+				<owd-select id="allocSortKey8" ng-model="mClientCenter.mparamAsOne.allocSortKey8" owd-models="allocSortKeyList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当ソートキー8"></owd-select>
+			</div>
+		</fieldset>
+		<!--[#7234] brタグを削除 2020.03.12 ono del -->
+		<!-- [1.1.4-CT-024] 項目をカテゴリ毎にグループ化 2016.05.20 kawana End -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [ON推-品向-1097] 一度エラーになると登録ボタンが押せない問題を修正 2016.04.13 kawana Start -->
+                	<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					<!-- [ON推-品向-1097] 一度エラーになると登録ボタンが押せない問題を修正 2016.04.13 kawana End -->
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

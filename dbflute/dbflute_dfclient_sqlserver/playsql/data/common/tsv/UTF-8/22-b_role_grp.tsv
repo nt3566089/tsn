@@ -1,0 +1,6 @@
+ROLE_GRP_ID	ROLE_GRP_CD	DICT_ID	ROLE_CONTROL_CLASS
+1	SystemAdministrator	3364	1
+2	OfficeSupervisor	3365	1
+3	Office	3366	1
+4	Administrators	15	1
+5	Workers	3367	1

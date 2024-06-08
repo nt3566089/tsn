@@ -1,0 +1,51 @@
+<div ng-controller="PackingList"
+	owd-screen="PackingList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+		<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.01.19 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.01.19 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.tpickingH.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-select id="takingShippingDtFlg" ng-model="searchCondition.takingShippingDtFlg" owd-models="takingShippingDtFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="作業日/出荷日/納品日" owd-remove-blank></owd-select>
+				<owd-date id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)"></owd-date>
+				<owd-date id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="deliveryCourse()"  ng-blur="deliveryCourseCdBlur()">
+					<owd-info ng-model="searchCondition.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-select id="carrierCd" ng-model="searchCondition.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+			    <owd-text id="supplyCustomerCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先CD" owd-add-button="showSupplyCustomer()" ng-blur="supplyCustomerCdBlur()">
+			    	<owd-info ng-model="searchCondition.supplyCustomerNm"></owd-info>
+			    </owd-text>
+				<owd-text id="delivCustomerCd" ng-model="searchCondition.tallocInstH.delivCustomerCd" label-text="届先CD" owd-add-button="showDelivCustomer()" ng-blur="delivCustomerCdBlur()">
+					<owd-info ng-model="searchCondition.delivCustomerNm"></owd-info>
+				</owd-text>
+				<owd-text id="carrierTraceNum" ng-model="searchCondition.carrierTraceNum" label-text="貨物追跡No."></owd-text>
+				<owd-text id="clientShippingNo" ng-model="searchCondition.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="packingList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+        <br>
+	</form>
+	<div id="content-footer"></div>
+	<!-- []content-footer-button を削除 2020.03.12 ono del -->
+	</div>
+</div>

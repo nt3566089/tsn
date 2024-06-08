@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpCd	メニューグループCD		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	dictNm	メニューグループ名		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	visibleType	表示種別		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	search	検索		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpList	メニューマスタ一覧グリッド	grid	1	1		0	1	menuGrpCd	メニューグループCD	1	text	1	0		0	300			1	300
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpList	メニューマスタ一覧グリッド	grid	1	1		0	1	vdict.dictNm	メニューグループ名	2	text	1	0		0	300			2	300
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpList	メニューマスタ一覧グリッド	grid	1	1		0	1	bmenuGrpSelf.vdict.dictNm	親メニューグループ	3	text	1	0		0	300			3	300
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpList	メニューマスタ一覧グリッド	grid	1	1		0	1	visibleType	表示種別	4	text	1	0		0	70			4	130
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	menuGrpList	メニューマスタ一覧グリッド	grid	1	1		0	1	viewOrder	表示順	5	number	1	0	right	0	70			5	130
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	register	新規		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	update	修正		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	delete	削除		1	1		0	1													
+MenuGrpList	メニューマスタメンテナンス(一覧)	base	copy	コピー		1	1		0	1													

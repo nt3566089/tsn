@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ShippingCasePickingNoResource	send	send	HTケースピック(No)送信	casePickingNo	ケースピッキングNo.	text	1

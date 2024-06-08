@@ -1,0 +1,63 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+OrderPickingSD	オーダーピッキング	wms_sd	takingShippingFlg	作業日/出荷日		1	1		1	1													
+OrderPickingSD	オーダーピッキング	wms_sd	dtFrom	日付(From)		1	1		1	1													
+OrderPickingSD	オーダーピッキング	wms_sd	dtTo	日付(To)		1	1		1	1													
+OrderPickingSD	オーダーピッキング	wms_sd	pickingBatchNo	出庫指示バッチNo.		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	pickingWorkNo	出庫作業No.		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	shippingPackingNo	出荷梱包No.		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	supplyCustomerCd	納品先CD		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	emergencyFlg	緊急のみ		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	noStockOutFlg	欠品フラグ		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	deliveryCourseCd	配送コースCD	text	1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	updUser	担当者CD		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	search	検索		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	searchResultTitle	合計件数		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	detailTitle	明細		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	register	登録		1	1		0	1													
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	1	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	shippingPackingNo	出荷梱包No.	2	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	packingStatusNm	梱包ステータス	3	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	userCd	担当者CD	4	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	userNm	担当者名称	5	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingList	オーダーピッキングリスト指示一覧グリッド	grid	1	0		0	1	pickingClear	ピッキング解除	6		1	1		0					
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetailList	オーダーピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	locationNm	ロケーション名称	1	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetailList	オーダーピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	warehouseAbbr	倉庫名称	2	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetailList	オーダーピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	productNm	商品名称	3	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetailList	オーダーピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	4	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetailList	オーダーピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	shippingPackingNo	出荷梱包No.	5	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	locationNm	ロケーション名称	1	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	storeLabelNo	入庫ラベルNo.	2	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	storeDt	入庫日	3	date	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	warehouseAbbr	倉庫名称	4	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	productCd	商品CD	5	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	limitDt	期限日	6	date	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	productNm	商品名称	7	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	janCd	ソースCD	8	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	lot	ロット	9	text	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	productUnit	商品単位	10	text	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	unitNumBreakdown	入数内訳	11	text	1	0	right	0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingNum	出荷総数	12	number	1	0	right	0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingBreakdown	出荷内訳	13	text	1	0	right	0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	chargeNum	引当可能数	14	number	1	0	right	0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	chargeBreakdown	引当内訳	15	text	1	0	right	0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	wmsShippingSlipNo	WMS出荷伝票No.	16	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	clientShippingNo	顧客出荷指示No.	17	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	clientCd	荷主CD	18	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	clientNm	荷主名称	19	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	centerCd	センタCD	20	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	centerNm	センタ名称	21	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	22	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	shippingPackingNo	出荷梱包No.	23	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	workDt	作業日	24	date	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	delivDt	納品指定日	25	date	1	0		0	170				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingBatchNo	出庫指示バッチNo.	26	text	1	0		0	125				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	boxCd	荷材CD	27	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	boxNm	荷材名称	28	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	deliveryCourseCd	配送コースCD	29	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	deliveryCourseNm	配送コース名称	30	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	carrierCd	運送業者CD	31	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	carrierNm	運送業者名称	32	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	supplyCustomerCd	納品先CD	33	text	1	0		0	200				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	supplyCustomerNm	納品先名称	34	text	1	0		0	300				
+OrderPickingSD	オーダーピッキング	wms_sd	orderPickingDetail	オーダーピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingWorkMessage	出庫作業メッセージ	35	text	1	0		0	300				

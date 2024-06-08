@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+EcDelivAddressModify	住所変更	wms	orderNo	受注番号		1	0		0	1													
+EcDelivAddressModify	住所変更	wms	importType	取込種別		1	0		0	1													
+EcDelivAddressModify	住所変更	wms	deliveryCourseCd	配送コース		1	0		0	1													
+EcDelivAddressModify	住所変更	wms	delivAddress1	送付先住所：都道府県		1	1		1	1													
+EcDelivAddressModify	住所変更	wms	delivAddress2	送付先住所：都市区		1	1		1	1													
+EcDelivAddressModify	住所変更	wms	delivAddress3	送付先住所：町以降		1	1		1	1													
+EcDelivAddressModify	住所変更	wms	close	閉じる		1	1		0	1													
+EcDelivAddressModify	住所変更	wms	register	登録		1	1		0	1													
+EcDelivAddressModify	住所変更	wms	importDt	取込日		1	0		0	1													

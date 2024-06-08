@@ -1,0 +1,32 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	clientCd	荷主		1	1		1	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeCd	取込種別CD	text	1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeNm	取込種別名称	text	1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	edi	EDI	dropdown	1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	uploadTableNm	アップロードテーブル名	text	1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	statementTitle	納品書タイトル	text	1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	importTypeCd	取込種別CD	1	text	1	0		0	110			1	150
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	importTypeNm	取込種別名称	2	text	1	0		0	160			2	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	ediId	EDIID	3	text	1	0		0	160			3	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	medi.ediNm	EDI名称	4	text	1	0		0	160			4	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	characterCd	文字コード	5	text	1	0		0	160			5	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	lineFeedCd	改行コード種別	6	text	1	0		0	160			6	190
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	bclassDtlByLineFeedCd.vdict.dictNm	改行コード種別名称	7	text	1	0		0	160			7	220
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	delimiter	区切り文字	8	text	1	0		0	160			8	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	skippingRows	読み飛ばし行数	9	number	1	0	right	0	160			9	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	uploadTableNm	アップロードテーブル名	10	text	1	0		0	190			10	190
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	duplicateColumnNm	重複チェック列名	11	text	1	0		0	160			11	200
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	rcvIdColumnNm	受信ID列名	12	text	1	0		0	160			12	210
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	rowNoColumnNm	行番号列名	13	text	1	0		0	160			13	220
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	giftStatementType	ギフト用納品種類	14	text	1	0		0	160			14	160
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	bclassDtlByGiftStatementType.vdict.dictNm	ギフト用納品種類名称	15	text	1	0		0	170			15	200
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	giftStatementDetail	納品書明細置換え文字列	16	text	1	0		0	190			16	270
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	okeepingDays	受注保持期間	17	number	1	0	right	0	160			17	219
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	statementTitle	納品書タイトル	18	text	1	0		0	300			18	300
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	importTypeMasterListGrid	取込種別マスタ一覧グリッド	grid	1	0		0	1	statementUrl	納品書記載URL	19	text	1	0		0	500			19	500
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	delete	削除		1	1		0	1													
+ImportTypeMasterList	取込種別マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

@@ -1,0 +1,9 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ProductLabel	商品ラベル	商品ラベル(C1)	../../../../../../reports/master/ProductLabel_C1.jrxml	1						1	0					
+ProductLabel	商品ラベル	商品ラベル(A4)	../../../../../../reports/master/ProductLabel_A4.jrxml	1						0	0					
+ProductLabel	商品ラベル	商品ラベル(A1)	../../../../../../reports/master/ProductLabel_A1.jrxml	1						0	0					
+ProductLabel	商品ラベル	Product Label（C1）	../../../../../../reports/master/ProductLabel_C1_enUS.jrxml	1						0	1					
+ProductLabel	商品ラベル	Product Label（A4）	../../../../../../reports/master/ProductLabel_A4_enUS.jrxml	1						0	1					
+ProductLabel	商品ラベル	商品标签（C1）	../../../../../../reports/master/ProductLabel_C1_zhCN.jrxml	1						0	1					
+ProductLabel	商品ラベル	商品标签（A4）	../../../../../../reports/master/ProductLabel_A4_zhCN.jrxml	1						0	1					
+ProductLabel	商品ラベル	商品标签（A1）	../../../../../../reports/master/ProductLabel_A1_zhCN.jrxml	1						0	1					

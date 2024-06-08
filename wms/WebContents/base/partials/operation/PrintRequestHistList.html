@@ -1,0 +1,21 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PrintRequestHistList" owd-screen="PrintRequestHistList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<div owd-grid="gridOptions" id="printRequestHistListGrid" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-dblclick-option="gridDblClick(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+						<owd-button id="printRequestHistBrowse" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="printRequestHistBrowse()">印刷履歴詳細</owd-button>
+					</div>
+				</div>
+			</div>
+
+	</form>
+</div>

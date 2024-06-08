@@ -1,0 +1,73 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<!DOCTYPE html>
+<html ng-app="AuthFatalError" xmlns:ng="http://angularjs.org" id="ng-app">
+<head>
+<title>AuthFatalError</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="base/css/bootstrap-3.1.1/bootstrap.min.css">
+<link rel="stylesheet" href="base/css/common.min.css">
+<script src="base/js/angular-1.2.16/angular.min.js"></script>
+<script src="base/js/ui-bootstrap-0.10.0/ui-bootstrap-tpls-0.10.0.min.js"></script>
+<script>
+<!--
+
+angular.module("AuthFatalError", ["ui.bootstrap", "ngSanitize"])
+.config(['$httpProvider', function($httpProvider) {
+
+	// GETメソッド用のヘッダーを初期化（html取得用）
+	if (!$httpProvider.defaults.headers.get) {
+		$httpProvider.defaults.headers.get = {};
+	}
+
+	//IEのAjaxリクエストキャッシュを無効にする
+	$httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+	$httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+	$httpProvider.defaults.headers.get['If-Modified-Since'] = 'Thu, 01 Jun 1970 00:00:00 GMT';
+
+}])
+.controller('AuthFatalErrorCtrl', ['$scope', '$http', function($scope, $http) {
+
+	$scope.displayStructure = {};
+	$scope.displayStructure.displayMessage = "";
+
+	var request = {};
+	request.messageCd = "authFatalError";
+
+	$http({
+		method : 'GET',
+		url : 'resources/common/message/public-record',
+		params : request
+	}).then(function(responseData) {
+		var response = responseData.data;
+		var status = responseData.status;
+		if (response != null && response.data != null && response.data[request.messageCd] != null) {
+			$scope.displayStructure.displayMessage = response.data[request.messageCd].bMessage.messageNm.replace(/\[\/\]/g, '<br>');
+		} else {
+			$scope.displayStructure.displayMessage = "認証処理にて致命的エラーが発生しました。<br>管理者に連絡して下さい。";
+		}
+	});
+
+}]);
+
+-->
+</script>
+</head>
+<body>
+<div ng-controller="AuthFatalErrorCtrl">
+<br><br><br>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<span style="font-size:20px;color:red" ng-bind-html="displayStructure.displayMessage"></span>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

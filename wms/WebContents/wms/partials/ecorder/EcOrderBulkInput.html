@@ -1,0 +1,36 @@
+<div ng-controller="EcOrderBulkInput" owd-screen="EcOrderBulkInput">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+			<!-- 荷主センタ変更対応 2017.02.28 sja Start -->
+			<!--
+				<owd-select id="centerCd" ng-model="centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+			 -->
+				<owd-select id="centerCd" ng-model="importType.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="importType.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+			<!-- 荷主センタ変更対応 2017.02.28 sja End -->
+				<owd-select id="importTypeCd" ng-model="importType.importTypeCd" owd-models="importTypeList" owd-repeat-key="importTypeCd" owd-repeat-value="importTypeNm" label-text="取込み対象" ng-change="importTypeChange()"></owd-select>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="ecOrderListGrid" owd-form-name="inputform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana Start -->
+					<!-- [C-CWMS-0026] Amazon,Yahoo対応 2015.05.29 kawana Start -->
+					<owd-file id="csvUpload" class="btn-info" owd-before-upload="beforeUpload" owd-success="uploadSuccess" owd-options="fileOptions" ng-disabled="!ecOrderBulkInputCols.length || inputform.$invalid">CSV取込</owd-file>
+					<owd-file id="csvUploadHeader" class="btn-info" owd-before-upload="beforeUploadHeader" owd-success="uploadSuccessHeader" owd-options="fileOptions" ng-disabled="!ecOrderBulkInputCols.length || inputform.$invalid">CSV取込(注文)</owd-file>
+					<owd-file id="csvUploadBody" class="btn-info" owd-before-upload="beforeUploadBody" owd-success="uploadSuccessBody" owd-options="fileOptions" ng-disabled="!ecOrderBulkInputCols.length || inputform.$invalid">CSV取込(商品)</owd-file>
+					<!-- [C-CWMS-0026] Amazon,Yahoo対応 2015.05.29 kawana End -->
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana End -->
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="!ecOrderList.length">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

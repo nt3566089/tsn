@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShapeMaster	荷姿マスタメンテナンス	wms	shapeCd	荷姿CD		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	shapeNm	荷姿名称		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	search	検索		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	register	登録		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+ShapeMaster	荷姿マスタメンテナンス	wms	list	荷姿マスタメンテナンスグリッド	grid	1	1		0	1	shapeCd	荷姿CD	1	text	1	1		1	170				
+ShapeMaster	荷姿マスタメンテナンス	wms	list	荷姿マスタメンテナンスグリッド	grid	1	1		0	1	vdictByShapeDictId.dictNm	荷姿名称	2	text	1	1		1	170				
+ShapeMaster	荷姿マスタメンテナンス	wms	list	荷姿マスタメンテナンスグリッド	grid	1	1		0	1	vdictByShapeUnitDictId.dictNm	荷姿単位	3	text	1	1		1	170				
+ShapeMaster	荷姿マスタメンテナンス	wms	list	荷姿マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	4	dropdown	1	1		1	170				

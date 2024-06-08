@@ -1,0 +1,27 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SingleRowShippingInspect	単行出荷検品	wms	centerCd	センタ		1	0		1	1													
+SingleRowShippingInspect	単行出荷検品	wms	clientCd	荷主		1	0		1	1													
+SingleRowShippingInspect	単行出荷検品	wms	warehouseCd	倉庫		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	zoneCd	ゾーンCD		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	searchPickingGroupNo	ピッキンググループNo.		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	tempNo	仮置きNo.		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	userCd	ユーザCD		1	1		1	1													
+SingleRowShippingInspect	単行出荷検品	wms	searchJanCd	ソースCD/商品CD		1	1		1	1													
+SingleRowShippingInspect	単行出荷検品	wms	search	検索		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	productCd	商品CD		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	workInstNum	作業指示数		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	pickingGroupNo	ピッキンググループNo.		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	totalSlipNum	総伝票数		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	janCd	ソースCD/商品CD		1	1		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	inspectedNum	検品済数		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	inspectedSlipNum	検品済伝票数		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	totalInspectedSlipNum	検品済総伝票数		1	0		0	1													
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.pickingWorkNo	出庫作業No.	1	text	1	0		0	125				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mcustomerBySupplyCustomerId.customerCd	納品先CD	2	text	1	0		0	200				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mcustomerBySupplyCustomerId.customerNm	納品先名称	3	text	1	0		0	300				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mcustomerByDelivCustomerId.customerCd	届先CD	4	text	1	0		0	200				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mcustomerByDelivCustomerId.customerNm	届先名称	5	text	1	0		0	300				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.deliveryCourseCd	配送コースCD	6	text	1	0		0	125				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	7	text	1	0		0	300				
+SingleRowShippingInspect	単行出荷検品	wms	singleRowShippingInspectList	単行出荷検品グリッド	grid	1	1		0	1	pickingWorkMessage	出庫作業メッセージ	8	text	1	0		0	300				

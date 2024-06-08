@@ -1,0 +1,57 @@
+<div ng-controller="ReferenceStockList" owd-screen="ReferenceStockList">
+	<form id="searchform" name="searchform" novalidate>
+			<owd-accordion> <owd-accordion-group is-open="isopen">
+			<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="head.tstock.mwarehouse.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+					<owd-select id="clientCd" ng-model="head.tstock.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+					<owd-select id="warehouseCd" ng-model="head.tstock.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-change="warehouseChange()"></owd-select>
+					<owd-select id="zone" ng-model="head.tstock.mlocation.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+					<owd-select id="stockdisplayfld" ng-model="head.stockdisplayfld" owd-models="stockdisplayfldList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫表示内容" owd-remove-blank></owd-select>
+					<owd-date id="dataTime" ng-model="head.tstock.dataTime" label-text="日付"></owd-date>
+					<owd-text id="productCd" ng-model="head.tstock.mproduct.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.tstock.mproduct.productNm"></owd-info>
+					</owd-text>
+					<owd-text id="locationCdFrom" ng-model="head.locationCdFrom" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+						<owd-info ng-model="head.locationNmFrom"></owd-info>
+					</owd-text>
+					<owd-text id="locationCdTo" ng-model="head.locationCdTo" label-text="ロケーション(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck2(head.locationCdFrom, $value)" owd-validate-watch="'head.locationCdFrom'" owd-validate-message="fromToMessage2" >
+						<owd-info ng-model="head.locationNmTo"></owd-info>
+					</owd-text>
+					<owd-text id="janCd" ng-model="head.tstock.mproduct.janCd" label-text="JANCD"></owd-text>
+					<owd-select id="customerCd" ng-model="head.tstock.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+					<owd-select id="stockTypeCd" ng-model="head.tstock.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+					<owd-date   id="limitDtFrom" ng-model="head.limitDtFrom" label-text="期限日(From)"></owd-date>
+					<owd-date   id="limitDtTo" ng-model="head.limitDtTo" label-text="期限日(To)" owd-validate="fromToCheck(head.limitDtFrom, $value)" owd-validate-watch="'head.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+					<owd-number   id="limitDtNum" ng-model="head.limitDtNum" label-text="期限日数"></owd-number>
+					<owd-text   id="lot" ng-model="head.tstock.tlot.lot" label-text="ロット"></owd-text>
+					<owd-select id="stockNumDisplay" owd-remove-blank ng-model="head.tstock.stockNumDisplay" owd-models="stockNumDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫数 0非表示"></owd-select>
+					<owd-select id="chargeNumDisplay" owd-remove-blank ng-model="head.chargeNumDisplay" owd-models="chargeNumDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当可能数 0非表示"></owd-select>
+					<owd-select id="display" owd-remove-blank ng-model="head.display" owd-models="displayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫受払 0非表示"></owd-select>
+					<owd-select id="transitDisplay" ng-model="head.tstock.transitDisplay" owd-models="transitDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="積送中在庫のみ表示" owd-remove-blank></owd-select>
+				</div>
+			</fieldset>
+			</owd-accordion-group> </owd-accordion>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+	            	<div class="list-box">
+						<div class="list-text wmslegend wmslegendcyanTxt"><owd-span id="expired" label-text="期限切れ"></owd-span></div>
+						<div class="list-text wmslegend wmslegendindianred"><owd-span id="chargestop" label-text="引当禁止"></owd-span></div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- [Ver3.0][#3065] 4つのパターンに(商品順, ロケーション順それぞれ日報なし/ありの合計4つ)分けて一覧を表示するように修正 2018.02.26 shimizu Start -->
+			<div owd-grid="referenceStockOrderByProductNoReportGridOptions" id="referenceStockOrderByProductNoReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridReferenceStockOrderByProductNoReport"></div>
+			<div owd-grid="referenceStockOrderByProductReportGridOptions" id="referenceStockOrderByProductReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridReferenceStockOrderByProductReport"></div>
+			<div owd-grid="referenceStockOrderByLocationNoReportGridOptions" id="referenceStockOrderByLocationNoReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridReferenceStockOrderByLocationNoReport"></div>
+			<div owd-grid="referenceStockOrderByLocationReportGridOptions" id="referenceStockOrderByLocationReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridReferenceStockOrderByLocationReport"></div>
+		    <!-- [Ver3.0][#3065] 4つのパターンに(商品順, ロケーション順それぞれ日報なし/ありの合計4つ)分けて一覧を表示するように修正 2018.02.26 shimizu End -->
+		    <br>
+			<div id="content-footer"></div>
+	</form>
+</div>

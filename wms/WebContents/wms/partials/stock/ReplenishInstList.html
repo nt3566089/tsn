@@ -1,0 +1,67 @@
+<div ng-controller="ReplenishInstList" owd-screen="ReplenishInstList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+					<div class="row">
+						<!-- 荷主センタ変更対応 2017.02.09 sja Start -->
+						<!--
+						<owd-select id="centerCd_H" ng-model="searchConditions.centerCd_H" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						 -->
+						<owd-select id="centerCd_H" ng-model="searchConditions.centerCd_H" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+						<!-- 荷主センタ変更対応 2017.02.09 sja End -->
+						<owd-select id="clientCd_H" ng-model="searchConditions.clientCd_H" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+
+						<!-- [Ver1.1.4][ON推-仕様変更] 2016.02.02 chou 削除 Start
+						<owd-select id="stockTypeCd_H" ng-model="searchConditions.stockTypeCd_H" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+
+						<owd-select id="depositCd_H" ng-model="searchConditions.depositCd_H" owd-models="depositList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+						[Ver1.1.4][ON推-仕様変更] 2016.02.02 chou 削除 End -->
+
+				        <owd-text id="productCd_H" ng-model="searchConditions.productCd_H" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+					        <owd-info ng-model="searchConditions.productNm_H"></owd-info>
+				        </owd-text>
+
+
+						<owd-select id="replenishToWarehouseCd_H" ng-model="searchConditions.replenishToWarehouseCd_H" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="補充先倉庫" ng-change="changeWarehouse()"></owd-select>
+
+						<owd-select id="replenishToZoneCd_H" ng-model="searchConditions.replenishToZoneCd_H" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="補充先ゾーン"></owd-select>
+
+						<owd-text id="replenishToLocationCdFrom_H" ng-model="searchConditions.replenishToLocationCdFrom_H" label-text="補充先ロケーションCD(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+							<owd-info ng-model="searchConditions.replenishToLocationNmFrom_H"></owd-info>
+						</owd-text>
+						<owd-text id="replenishToLocationCdTo_H" ng-model="searchConditions.replenishToLocationCdTo_H" label-text="補充先ロケーションCD(To)" owd-validate="locationFromToCheck(searchConditions.replenishToLocationCdFrom_H, $value)"
+							owd-validate-watch="'searchConditions.replenishToLocationCdFrom_H'" owd-validate-message="locationFromToMessage" owd-add-button="showLocation(2)"  ng-blur="locationCdBlur(2)">
+							<owd-info ng-model="searchConditions.replenishToLocationNmTo_H"></owd-info>
+						</owd-text>
+
+						<owd-select id="replenishMinNumCond_H" owd-remove-blank ng-model="searchConditions.replenishMinNumCond_H" owd-models="replenishMinNumCondList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="補充点"></owd-select>
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="replenishInstList" owd-form-name="searchform"></div>
+
+		<br>
+		<div id="content-footer"></div>
+					<div id="content-footer-button" class="container">
+		    	<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="replenishInst" class="btn-success"  ng-click="register()" ng-disabled="!(gridOptions.gridApi.selection.getSelectedRows().length)" >補充指示</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

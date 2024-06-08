@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	reportCd	帳票		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	search	検索		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	reportLayoutList	帳票レイアウトマスタ一覧グリッド	grid	1	1		0	1	preport.reportCd	帳票CD	1	text	1	0		0	200				
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	reportLayoutList	帳票レイアウトマスタ一覧グリッド	grid	1	1		0	1	preport.reportNm	帳票名	2	text	1	0		0	300				
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	reportLayoutList	帳票レイアウトマスタ一覧グリッド	grid	1	1		0	1	reportLayoutNm	帳票レイアウト名称	3	text	1	0		0	400				
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	copy	コピー		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	register	新規		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	update	修正		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	subRepUpdate	修正(サブレポート)		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	downloadLayout	ダウンロード		1	1		0	1													
+ReportLayoutList	帳票レイアウトマスタメンテナンス(一覧)	base	delete	削除		1	1		0	1													

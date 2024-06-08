@@ -1,0 +1,47 @@
+<!-- [Ver2.1向けエンハンス] 荷札出力対応 BY SJA 2016/07/04  Start  -->
+<div ng-controller="CarrierMasterList" owd-screen="CarrierMasterList">
+<!-- [Ver2.1向けエンハンス] 荷札出力対応 BY SJA 2016/07/04  End  -->
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+
+			<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="carrierMasterSearch.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+					<owd-text id="carrierCd" ng-model="carrierMasterSearch.carrierCd" label-text="運送業者CD"></owd-text>
+					<owd-text id="carrierNm" ng-model="carrierMasterSearch.carrierNm" label-text="運送業者名称"></owd-text>
+					<owd-select id="delFlg" ng-model="carrierMasterSearch.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+				</div>
+			</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			</owd-accordion-group>
+				</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<!-- [#361] ページング処理追加 2016.12.13 kawana Start -->
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="carrierList" owd-select-options="gridSelectOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<!-- [#361] ページング処理追加 2016.12.13 kawana End -->
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<!-- [Ver2.1向けエンハンス] 荷札出力対応 BY SJA 2016/07/04  Start -->
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="new" class="btn-info" ng-click="initnew()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+					<!-- [Ver2.1向けエンハンス] 荷札出力対応 BY SJA 2016/07/04  End -->
+				</div>
+			</div>
+	</form>
+</div>

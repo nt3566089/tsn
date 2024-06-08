@@ -1,0 +1,43 @@
+<div ng-controller="InstKeyList" owd-screen="InstKeyList">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="headH.centerCd"  owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+						<owd-select id="clientCd" ng-model="headH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-select id="inventoryInstKbn" ng-model="headInst.inventoryInstKbn"  owd-models="inventoryInstKbnList"  ng-show ="centerKbn" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫調査区分"></owd-select>
+						<owd-text id="instKey" ng-model="headH.inventoryKey" label-text="在庫調査指示キー"></owd-text>
+						<owd-date id="inventoryDt" ng-model="headH.inventoryDt" label-text="在庫調査指示作成日"></owd-date>
+						<owd-select id="locationGrp" ng-model="headInst.locationGrp" ng-hide ="centerKbn" owd-models="locationGrpList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ロケーショングループ"></owd-select>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="instKeyList" owd-select-options="gridSelectOptions"  owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+        <br>
+ 		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;" >
+					<span ng-show ="centerKbn">
+					<owd-button id="inventoryUnsuitablePrint" class="btn-info"  ng-click="inventoryUnsuitablePrint()"   ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">不適品在庫調査表発行</owd-button>
+					</span>
+					<span ng-hide ="centerKbn">
+					<owd-button id="stockCheck" class="btn-info"   ng-click="stockCheck()"  ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">国免在庫照合</owd-button>
+					</span>
+					<span>
+					<owd-button id="inventoryInput" class="btn-info" ng-click="inventoryInput()" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">在庫調査結果確認</owd-button>
+					</span>
+				</div>
+			</div>
+		</div>       
+	</form>
+</div>

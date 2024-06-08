@@ -1,0 +1,22 @@
+<ion-view owd-screen="OrderPickingSD" title="{{screenTitle}}">
+	<div class="bar bar-calm bar-subheader">
+		<h2 class="title">
+			<owd-span id="searchResultTitle" label-text="'検索結果"></owd-span>
+			<span ng-bind="': ' + searchResult.totalServerItems"></span>
+		</h2>
+	</div>
+	<form id="form.listform" name="form.listform" novalidate>
+		<ion-content class="has-subheader" ng-class="{'has-footer' : alerts.length > 0}">
+
+			<!-- [#2201][Ver2.2.1] SD基盤(js) - 一覧画面のボタン定義を単数→複数対応 2017.08.01 honma Mod Start -->
+			<owd-search-result id="orderPickingList" owd-grid-option="listGridOptions" owd-result-list="orderPickingList" ng-click="searchDetail($index)" owd-form-name="listform" owd-button-options="listButtonOptions"></owd-search-result>
+			<!-- [#2201][Ver2.2.1] SD基盤(js) - 一覧画面のボタン定義を単数→複数対応 2017.08.01 honma Mod End -->
+
+			<ion-infinite-scroll
+				ng-if="moreDataCanBeLoaded()"
+				icon="ion-loading-c"
+				on-infinite="loadMoreData()">
+			</ion-infinite-scroll>
+		</ion-content>
+	</form>
+</ion-view>

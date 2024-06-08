@@ -1,0 +1,40 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="GridColExtBaseEdit" owd-screen="GridColExtBaseEdit">
+	<form id="GridColExtBaseEditForm" name="GridColExtBaseEditForm" novalidate>
+	
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	
+				<fieldset>
+					<div class="row">
+						<owd-text id="screenCd" ng-model="head.screenCd" label-text="画面CD"></owd-text>
+						<owd-text id="screenNm" ng-model="head.screenNm" label-text="画面名"></owd-text>
+						<owd-select id="systemType" ng-model="head.systemType" owd-models="systemTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="システム種別"></owd-select>
+					</div>
+				</fieldset>
+	
+			</owd-accordion-group>
+		</owd-accordion>
+	
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="GridColExtBaseEditForm.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="screenList" owd-form-name="searchform" owd-dblclick-option="gridDblClick(row)" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="selection" class="btn-info" ng-click="selection()">選択</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,60 @@
+<div ng-controller="SingleRowShippingInspect" owd-screen="SingleRowShippingInspect">
+	<!-- [Ver3.1][#5235] パラメータマスタを取得し、再生有無を判断する 2018.10.03 matsumoto Start  -->
+	<audio id="inspSound" src="wms/audio/inspection.mp3"></audio>
+	<audio id="inspCompSound" src="wms/audio/inspectionComplete.mp3"></audio>
+	<!-- [Ver3.1][#5235] パラメータマスタを取得し、再生有無を判断する 2018.10.03 matsumoto End  -->
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<accordion>
+			<accordion-group is-open="$parent.isopen">
+				<accordion-heading>
+					{{"searchCondition" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+						<owd-select id="warehouseCd" ng-model="searchCondition.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-change="warehouseChange()"></owd-select>
+						<owd-select id="zoneCd" ng-model="searchCondition.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+						<owd-text id="searchPickingGroupNo" ng-model="searchCondition.pickingGroupNo" label-text="ピッキンググループNo."></owd-text>
+						<owd-text id="tempNo" ng-model="searchCondition.tempNo" label-text="仮置きNo."></owd-text>
+						<owd-text id="userCd" ng-model="searchCondition.userCd" ng-keydown="handleKeydown($event)" ng-blur="userCdBlur()" label-text="ユーザCD">
+							<owd-info ng-model="temp.userNm"></owd-info>
+						</owd-text>
+						<owd-text id="searchJanCd" ng-model="searchCondition.mproduct.productCd" ng-keydown="handleKeydown($event)" ng-blur="productCdBlur()" label-text="ソースCD/商品CD">
+							<owd-info ng-model="searchCondition.mproduct.productNm"></owd-info>
+						</owd-text>
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<owd-button id="search" class="btn-info" ng-click="search()" ng-disabled="searchinputform.$invalid">検索</owd-button>
+			</div>
+		</div>
+	</form>
+	<br>
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="productCd" ng-model="inspData.wsglRowShipInspH.mproduct.productCd" label-text="商品CD">
+					<owd-info ng-model="inspData.wsglRowShipInspH.mproduct.productNm"></owd-info>
+				</owd-text>
+				<owd-number id="workInstNum" ng-model="inspData.wsglRowShipInspH.workInstNum" label-text="作業指示数"></owd-number>
+				<owd-text id="pickingGroupNo" ng-model="inspData.wsglRowShipInspH.pickingGroupNo" label-text="ピッキンググループNo."></owd-text>
+				<owd-number id="totalSlipNum" ng-model="inspData.wsglRowShipInspH.slipNum" label-text="総伝票数"></owd-number>
+			</div>
+		</div>
+		<div class="well">
+			<div class="row">
+				<owd-text id="janCd" ng-model="inspData.inputJanCd" ng-keydown="handleKeydown($event)" label-text="ソースCD/商品CD"></owd-text>
+				<owd-number id="inspectedNum" ng-model="inspData.inspectedNum" label-text="検品済数"></owd-number>
+				<owd-number id="inspectedSlipNum" ng-model="userInspSlipNum" label-text="検品済伝票数"></owd-number>
+				<owd-number id="totalInspectedSlipNum" ng-model="inspData.wsglRowShipInspH.inspectedSlipNum" label-text="検品済総伝票数"></owd-number>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="singleRowShippingInspectList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>
+</div>

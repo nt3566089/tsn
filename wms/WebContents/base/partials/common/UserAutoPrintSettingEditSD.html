@@ -1,0 +1,76 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="UserAutoPrintSettingEditSDCtrl" owd-screen="UserAutoPrintSettingEdit">
+	<ion-modal-view>
+		<ion-header-bar class="bar bar-header bar-positive">
+			<h1 class="title" ng-bind-html="screen[screenCd].screenNm"></h1>
+			
+			<button class="button button-clear button-primary" ng-click="closeSubModal()">{{"cancel" | owfMessage}}</button>
+			
+		</ion-header-bar>
+		<form id="userautoprintsettingeditform" name="userautoprintsettingeditform" novalidate>
+			<ion-content class="has-header" ng-class="{'has-footer' : alerts.length > 0}">
+
+				<ion-list>
+					<div class="tablet-row">
+						<owd-text class="tablet-col tablet-col-50" id="reportNm" ng-model="reportLayout.preport.reportNm" label-text="帳票名称"></owd-text>
+						<owd-text class="tablet-col tablet-col-50" id="reportLayoutNm" ng-model="reportLayout.reportLayoutNm" label-text="レイアウト名称"></owd-text>
+					</div>
+					<div class="tablet-row">
+						<owd-text class="tablet-col tablet-col-50" id="attribute1" ng-model="reportLayout.attribute1" label-text="属性１"></owd-text>
+						<owd-text class="tablet-col tablet-col-50" id="attribute2" ng-model="reportLayout.attribute2" label-text="属性２"></owd-text>
+					</div>
+					<div class="tablet-row">
+						<owd-text class="tablet-col tablet-col-50" id="attribute3" ng-model="reportLayout.attribute3" label-text="属性３"></owd-text>
+						<owd-text class="tablet-col tablet-col-50" id="attribute4" ng-model="reportLayout.attribute4" label-text="属性４"></owd-text>
+					</div>
+					<div class="tablet-row">
+						<owd-text class="tablet-col tablet-col-50" id="attribute5" ng-model="reportLayout.attribute5" label-text="属性５"></owd-text>
+						<owd-select class="tablet-col tablet-col-50" id="printerGroupId" ng-model="userAutoPrintSetting.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" ng-change="changePrinterGroup()" label-text="プリンタグループ"></owd-select>
+					</div>
+					<div class="tablet-row">
+						<owd-select class="tablet-col tablet-col-50" id="printerId" ng-model="userAutoPrintSetting.printerId" owd-models="printerList" owd-repeat-key="printerId" owd-repeat-value="printerNm" ng-change="changePrinter()" label-text="プリンタ"></owd-select>
+						<owd-select class="tablet-col tablet-col-50" id="printerAttributeId" ng-model="userAutoPrintSetting.printerAttributeId" owd-models="printerAttributeList" owd-repeat-key="printerAttributeId" owd-repeat-value="trayNm" label-text="トレイ"></owd-select>
+					</div>
+				</ion-list>
+
+			</ion-content>
+
+			
+			<div class="sd-footer">
+				
+				<owd-floating-button id="update" class="button-balanced" ng-disabled="userautoprintsettingeditform.$invalid" ng-click="update(userautoprintsettingeditform.$invalid)">登録</owd-floating-button>
+				
+			</div>
+			
+		</form>
+
+		
+			<div ng-controller="AlertCtrl">
+				
+				<div ng-repeat="alert in alerts | orderBy:'addDt':true">
+					
+					<div id="alert" ng-show="alert.id == alerts[alerts.length-1].id" class="bar bar-footer" ng-class="{'bar-info': alert.type == 'info', 'bar-warning': alert.type == 'warning', 'bar-danger': alert.type == 'danger'}" ng-click="nextAlert()">
+					
+						<button href="" class="alert-link button button-clear">
+							<span class="badge btn-info" ng-show="alerts.length > 1">{{alerts.length}}</span>
+						</button>
+
+						<div class="title">
+							<h2 class="title alertblink" close="closeAlert(alert.id)">
+							
+								<span style="width: 300px; text-overflow: ellipsis; overflow-x: scroll; -webkit-overflow-scrolling: touch; margin: 0px 20px 0px 20px" ng-bind-html="alert.msg"></span></h2>
+							
+						</div>
+
+						<button class="button button-clear close" ng-click="closeAlert(alert.id)">
+							<i class="icon ion-close"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+	</ion-modal-view>
+</div>

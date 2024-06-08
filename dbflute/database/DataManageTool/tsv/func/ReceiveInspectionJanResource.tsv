@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveInspectionJanResource	send	send	HT入荷検品(ｿｰｽCD)送信	productCd	ソースCD	text	1

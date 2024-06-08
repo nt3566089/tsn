@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PropertyMaster	プロパティマスタメンテナンス	base	propertyNm	項目名		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	propertyComment	項目値解説		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	search	検索		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	excelOutput	Excel出力		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	propertyList	プロパティマスタメンテナンスグリッド	grid	1	1		0	1	propertyNm	項目名	1	text	1	1		1	300			1	300
+PropertyMaster	プロパティマスタメンテナンス	base	propertyList	プロパティマスタメンテナンスグリッド	grid	1	1		0	1	propertyValue	項目値	2	text	1	1		1	400			2	400
+PropertyMaster	プロパティマスタメンテナンス	base	propertyList	プロパティマスタメンテナンスグリッド	grid	1	1		0	1	propertyComment	項目値解説	3	text	1	1		0	800			3	800
+PropertyMaster	プロパティマスタメンテナンス	base	propertyList	プロパティマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	4	dropdown	1	1		0	110			4	110
+PropertyMaster	プロパティマスタメンテナンス	base	addRow	行追加		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	removeRow	行削除		1	1		0	1													
+PropertyMaster	プロパティマスタメンテナンス	base	register	登録		1	1		0	1													

@@ -1,0 +1,26 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	clientCd	荷主	dropdown	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeCd	取込種別CD	text	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeNm	取込種別名称	text	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	edi	EDI	dropdown	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	uploadTableNm	アップロードテーブル名	dropdown	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	confirm	確定		1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	characterCd	文字コード	text	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	lineFeedCd	改行コード	dropdown	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	delimiter	区切り文字	text	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	skippingRows	読み飛ばし行数	number	1	1	right	0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	duplicateColumnNm	重複チェック列名	dropdown	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	rcvIdColumnNm	受信ID列名	dropdown	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	rowNoColumnNm	行番号列名	dropdown	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	giftStatementType	ギフト用納品種類	dropdown	1	1		1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	giftStatementDetail	納品書明細置換え文字列	text	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	oKeepingDays	受注保持期間	number	1	1	right	1	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	statementTitle	納品書タイトル	text	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	statementUrl	納品書記載URL	text	1	1		0	1													
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeBodyListGrid	取込種別マスタメンテナンスグリッド	grid	1	1		0	1	mediColumn.ediColumnNm	EDI項目名	1	text	1	0		0	300			1	300
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeBodyListGrid	取込種別マスタメンテナンスグリッド	grid	1	1		0	1	columnNo	列番号	2	number	1	1	right	0	100			2	150
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeBodyListGrid	取込種別マスタメンテナンスグリッド	grid	1	1		0	1	uploadColumnNm	アップロード列名	3	dropdown	1	1		0	250			3	250
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeBodyListGrid	取込種別マスタメンテナンスグリッド	grid	1	1		0	1	copyHColumnNm	EC受注ヘッダコピー列名	4	text	1	1		0	300			4	300
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	importTypeBodyListGrid	取込種別マスタメンテナンスグリッド	grid	1	1		0	1	copyBColumnNm	EC受注ボディコピー列名	5	text	1	1		0	300			5	300
+ImportTypeMasterEdit	取込種別マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

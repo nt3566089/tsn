@@ -1,0 +1,62 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SlipNoReceiveList	伝票別入荷一覧	wms	centerCd	センタ		1	1		1	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	clientCd	荷主		1	1		1	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receivePlanDtFrom	入荷予定日(From)		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receivePlanDtTo	入荷予定日(To)		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	storeDtFrom	入庫日(From)		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	storeDtTo	入庫日(To)		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	receiveStatus	入荷ステータス		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	planSupplierCd	予定仕入先CD		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	clientReceiveNo	予定顧客入荷指示No.		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	storeClientReceiveNo	顧客入荷指示No.		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	receiveSlipNo	WMS入荷伝票No.		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	centerTransitFlg	センタ間移動フラグ		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	deleteDisplay	削除データ表示		1	1		0	0													
+SlipNoReceiveList	伝票別入荷一覧	wms	search	検索		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	excelOutput	Excel出力		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	nonReceive	未入荷		1	0		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receiving	入荷中		1	0		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	store	入荷済		1	0		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receiveDelete	入荷削除		1	0		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	error	エラー有		1	0		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	receivePlanDt	入荷予定日	1	date	1	0		0	150			1	150
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	lastStoreDt	入庫日	2	date	1	0		0	150			2	150
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mcustomerByPlanSupplierId.customerCd	予定仕入先CD	3	text	1	0		0	200			3	200
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mcustomerByPlanSupplierId.customerNm	予定仕入先名称	4	text	1	0		0	300			4	300
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxCustomerCd	仕入先CD	5	text	1	0		0	200			5	200
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxCustomerNm	仕入先名称	6	text	1	0		0	300			6	300
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	planClientReceiveNo	予定顧客入荷指示No.	7	text	1	0		0	210			7	210
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxClientReceiveNo	顧客入荷指示No.	8	text	1	0		0	210			8	210
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	receiveSlipNo	WMS入荷伝票No.	9	text	1	0		0	170			9	170
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	receiveStatus	入荷ステータス	10	text	1	0		0	125			10	125
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	bclassDtlByReceiveStatus.vdict.dictNm	入荷ステータス名称	11	text	1	0		0	155			11	155
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	receiveDeliveryStatus	入荷納品ステータス	12	text	1	0		0	155			12	155
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	bclassDtlByReceiveDeliveryStatus.vdict.dictNm	入荷納品ステータス名称	13	text	1	0		0	190			13	210
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mprocessType.processTypeCd	予定処理区分CD	14	text	1	0		0	140			14	160
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mprocessType.vdict.dictNm	予定処理区分名称	15	text	1	0		0	140			15	170
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxProcessTypeCd	処理区分CD	16	text	1	0		0	110			16	140
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxProcessTypeNm	処理区分名称	17	text	1	0		0	110			17	140
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mstockType.stockTypeCd	予定在庫区分CD	18	text	1	0		0	140			18	220
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	予定在庫区分名称	19	text	1	0		0	140			19	240
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxStockTypeCd	在庫区分CD	20	text	1	0		0	140			20	190
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxStockTypeNm	在庫区分名称	21	text	1	0		0	140			21	190
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	sumPlanCount	明細行数	22	number	1	0	right	0	150			22	150
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	sumPlanNum	予定数合計	23	number	1	0	right	0	150			23	150
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	sumStoreNum	入庫数合計	24	number	1	0	right	0	150			24	190
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	treceivePlanRAsOne.rplOutDt	入荷予定リスト発行日時	25	datetime	1	0		0	190			25	220
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	messageNm	エラーメッセージ	26	text	1	0		0	160			26	160
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	oldReceiveSlipNo	元WMS入荷伝票No.	27	text	1	0		0	190			27	190
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mcustomerByPlanSupplierId.customerAbbr	予定仕入先略称	28	text	1	0		0	250			28	250
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	maxCustomerAbbr	仕入先略称	29	text	1	0		0	250			29	250
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	30	text	1	0		0	170			30	
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	31	text	1	0		0	200			31	
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	32	text	1	0		0	170			32	
+SlipNoReceiveList	伝票別入荷一覧	wms	SlipNoReceiveList	伝票別入荷一覧グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	33	text	1	0		0	200			33	
+SlipNoReceiveList	伝票別入荷一覧	wms	reportPrint	入荷予定リスト		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	productReceiveList	商品別入荷一覧		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receivePlanDelete	入荷予定削除		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receivePlanInput	入荷予定修正		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	errorCheck	エラーチェック		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	receiveInput	入荷実績入力		1	1		0	1													
+SlipNoReceiveList	伝票別入荷一覧	wms	productLabel	商品ラベル		1	1		0	1													

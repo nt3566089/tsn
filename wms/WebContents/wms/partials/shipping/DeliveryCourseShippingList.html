@@ -1,0 +1,76 @@
+<div ng-controller="DeliveryCourseShippingList"
+	owd-screen="DeliveryCourseShippingList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+		<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.24 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.24 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-date id="shippingDtFrom" ng-model="searchCondition.shippingDtFrom" label-text="出荷日(From)"></owd-date>
+				<owd-date id="shippingDtTo" ng-model="searchCondition.shippingDtTo" label-text="出荷日(To)" owd-validate="fromToCheck(searchCondition.shippingDtFrom, $value)" owd-validate-watch="'searchCondition.shippingDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="deliveryCourse()"  ng-blur="deliveryCourseCdBlur()">
+					<owd-info ng-model="searchCondition.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-select id="carrierCd" ng-model="searchCondition.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+				<owd-text id="pickingBatchNo" ng-model="searchCondition.pickingBatchNo" label-text="出庫指示バッチNo."></owd-text>
+				<owd-select id="shippingStatus" ng-model="searchCondition.shippingStatus" owd-models="shippingStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷ステータス"></owd-select>
+				<owd-select id="noAllcDisplayFlg" owd-remove-blank ng-model="searchCondition.noAllcDisplayFlg" owd-models="noAllcDisplayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="未出荷全件"></owd-select>
+				<owd-select id="emergencyFlg" owd-remove-blank ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急のみ"></owd-select>
+				<!-- [EC-CT1-156] 検索条件にキャンセルデータ表示有無を追加 2015.03.28 kawana Start -->
+				<owd-select id="cancelDisplay" ng-model="searchCondition.cancelDisplay" owd-models="cancelDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="キャンセルデータ表示" owd-remove-blank></owd-select>
+				<!-- [EC-CT1-156] 検索条件にキャンセルデータ表示有無を追加 2015.03.28 kawana End -->
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonShippingTitle" label-text="未出荷"></owd-span></div>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana Start -->
+					<div class="list-text wmslegend wmslegendorange"><owd-span id="shippingInstProcessingTitle" label-text="出庫指示中"></owd-span></div>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana End -->
+            		<div class="list-text wmslegend wmslegendlightblue"><owd-span id="shippingInstedTitle" label-text="出庫指示済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendaqua"><owd-span id="inspectionedTitle" label-text="出荷検品済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendturquoise"><owd-span id="shippingFixedTitle" label-text="出荷確定済"></owd-span></div>
+            		<div class="list-text wmslegend wmslegenddarkgray"><owd-span id="cancelTitle" label-text="キャンセル"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendpink"><owd-span id="errorTitle" label-text="エラー有"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendcolorred"><owd-span id="emergencyTitle" label-text="緊急"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="deliveryCourseShippingList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br/>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<!-- [ON推-品向-935] 画面を縮めたときに進捗率表示切替が押下できない問題を修正 2015.08.28 kawana Start -->
+            	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- [ON推-品向-935] 画面を縮めたときに進捗率表示切替が押下できない問題を修正 2015.08.28 kawana End -->
+					<owd-button id="shippingInstSearch" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInstSearch()">出庫指示一覧</owd-button>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana Start -->
+					<owd-button id="shippingInst" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInst(0)">出庫指示</owd-button>
+					<owd-button id="shippingInstBatch" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInst(1)">出庫指示</owd-button>
+					<!-- [C-CWMS-0066] 非同期処理化 2016.10.19 kawana End -->
+					<owd-button id="shippingInstDelete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInstDelete()">出庫指示解除</owd-button>
+					<owd-button id="stwList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="stwList()">積込リスト</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

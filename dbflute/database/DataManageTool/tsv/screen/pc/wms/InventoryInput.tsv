@@ -1,0 +1,82 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryInput	在庫調査結果確認	wms	centerCd	拠点		1	0		1	1													
+InventoryInput	在庫調査結果確認	wms	clientCd	荷主		1	0		1	1													
+InventoryInput	在庫調査結果確認	wms	inventoryInstKbn	在庫調査区分		1	1		1	1													
+InventoryInput	在庫調査結果確認	wms	inventoryKeyFlg	在庫調査キーフラグ		1	1		1	1													
+InventoryInput	在庫調査結果確認	wms	inventoryInstKey	在庫調査指示キー		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	inventoryInstAddDt	在庫調査指示作成日		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	warehouseCd	倉庫		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	inventoryDtFrom	棚卸日(From)		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	inventoryDtTo	棚卸日(To)		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	depositCd	預託		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	stockTypeCd	在庫区分		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	locationGrp	ロケーショングループ		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	fromLocationCd	ロケーションCD(From)		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	toLocationCd	ロケーションCD(To)		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	zoneCd	ゾーン		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	productCd	銘柄CD		1	1		0	0													
+InventoryInput	在庫調査結果確認	wms	storeLabelNo	入庫ラベルNo.		0	0		0	0													
+InventoryInput	在庫調査結果確認	wms	capProduct	CAP製品		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	stockTakingInput	棚卸入力有		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	unmatch	アンマッチ有		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	productType	たばこ商品区分		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	search	検索		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	excelOutput	Excel出力		1	1		0	1													
+InventoryInput	在庫調査結果確認	wms	inventroyParcentTitle	進捗率		1	0		0	1													
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryInstKbn	在庫調査区分	1	text	1	0		0	250			1	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	instructionKey	在庫調査指示キー	2	text	1	0		0	250			2	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryDt	在庫調査日	3	date	1	0		0	250			3	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	addDt	在庫調査指示作成日時	4	datetime	1	0		0	250			4	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	lineBlock	ライン/ブロック	5	text	1	0		0	250			5	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	directionalPiston	方面ピストン	6	text	1	0		0	250			6	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	sortingOrder	仕分順	7	number	1	0		0	250			7	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	sortingNumTimes	仕分回数	8	number	1	0		0	250			8	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	locationCd	ロケーションCD	9	text	1	0		0	250			9	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	locationGrp	ロケーショングループ	10	text	1	0		0	250			10	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	productCd	銘柄CD	11	text	1	0		0	250			11	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	janCd	ソースCD	12	text	0	0		0	250			12	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	productNm	銘柄名称	13	text	1	0		0	250			13	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	productUnit	商品単位	14	text	0	0		0	250			14	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	cggdid	たばこ商品区分	15	text	1	0		0	250			15	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	firmTransportCd	商社搬入番号	16	text	1	0		0	250			16	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	17	text	1	0	right	0	250			17	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	chargeNum	在庫調査前引当可能数	18	number	1	0	right	0	250			18	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	allocNum	在庫調査前引当済数	19	number	1	0	right	0	250			19	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	moveNum	在庫調査前作業中数	20	number	1	0	right	0	250			20	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryBeforeBreakdown	在庫調査前内訳	21	text	1	0	right	0	250			21	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryNum	在庫調査数量	22	number	1	1	right	0	250			22	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryItems	在庫調査内訳	23	text	1	0	right	0	250			23	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	differenceNum	差異数量	24	text	1	0	right	0	250			24	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	differenceItems	差異内訳	25	text	1	0	right	0	250			25	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	noShippingFlg	出庫禁止フラグ	26	text	1	0		0	250			26	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	updDt	調査時間	27	datetime	1	0		0	250			27	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	lot	ロット	28	text	0	0		0	250			28	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	limitDt	期限日	29	date	0	0		0	250			29	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	storeLabelNo	入庫ラベルNo	30	text	0	0		0	250			30	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	storeDt	入庫日	31	date	0	0		0	250			31	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	stockTypeCd	在庫区分CD	32	text	0	0		0	250			32	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	stockTypeNm	在庫区分名称	33	text	0	0		0	250			33	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	depositCustomerCd	預託CD	34	text	0	0		0	250			34	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	depositCustomerNm	預託名称	35	text	0	0		0	250			35	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	supplierCustomerCd	仕入先CD	36	text	0	0		0	250			36	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	supplierCustomerNm	仕入先名称	37	text	0	0		0	250			37	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	histAddUser	入力者	38	text	0	0		0	250			38	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inputDt	入力日時	39	datetime	0	0		0	250			39	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	stockAdjustFlg	棚卸調整入力	40	text	0	0		0	250			40	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	warehouseCd	倉庫CD	41	text	0	0		0	250			41	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	warehouseNm	倉庫名称	42	text	0	0		0	250			42	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	zoneCd	ゾーンCD	43	text	0	0		0	250			43	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	zoneNm	ゾーン名称	44	text	0	0		0	250			44	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	clientCd	荷主CD	45	text	0	0		0	250			45	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	clientNm	荷主名称	46	text	0	0		0	250			46	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	centerCd	拠点CD	47	text	1	0		0	250			47	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	centerNm	拠点名称	48	text	1	0		0	250			48	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	userNum4	CAP銘柄区分	49	text	0	0		0	250			49	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	inventoryDtTime	在庫調査日時	50	datetime	0	0		0	250			50	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	fcflg	内外区分	51	text	0	0		0	250			51	250
+InventoryInput	在庫調査結果確認	wms	inventoryList	棚卸入力グリッド	grid	1	1		0	1	usernum3	一般出力順	52	text	0	0		0	250			52	250
+InventoryInput	在庫調査結果確認	wms	addRow	行追加		0	1		0	1													
+InventoryInput	在庫調査結果確認	wms	removeRow	行削除		0	1		0	1													
+InventoryInput	在庫調査結果確認	wms	stockAdjust	在庫調整		0	1		0	1													
+InventoryInput	在庫調査結果確認	wms	register	登録		1	1		0	1													

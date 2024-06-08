@@ -1,0 +1,39 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	centerCd	拠点		1	0		1	1													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	clientCd	荷主		1	0		1	1													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	status	ステータス		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	soPalletNo	P/LNo.		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shipSchDate	出庫予定日		1	0		0	1													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	ownerOrderNo	車割キー		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	requestType	依頼種別		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	custorderNo	依頼番号		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	rmaNo	問合番号		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	refNo	整理番号		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shipDate	出庫実績日		1	0		0	1													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	totalQtyCase	積付合計数量(ケース)		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	totalQtyCarton	積付合計数量(カートン)		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shipToCd	受入先CD		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	otherRefNo1	輸送形態		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	palletKey	パレット積付キー		1	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	soId	出庫予定ID		0	0		0	0													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	symbolLineNo	段ボール番号	1	number	1	0	right	0	180			1	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	rcvKey	入庫キー	2	text	1	0		0	180			2	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	symbolMakeNo	生出番号	3	date	1	0		0	180			3	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	product_Cd	銘柄CD	4	text	1	0		0	180			4	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	product_Nm	銘柄名称	5	text	1	0		0	180			5	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	lot1	商社搬入番号	6	text	1	0		0	180			6	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	lot4	製造年月日	7	date	1	0		0	180			7	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	lot3	デザイン区分	8	text	1	0		0	180			8	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	lot2	製造記号	9	text	1	0		0	180			9	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	stockTypeCd	在庫区分	10	text	1	0		0	180			10	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	makerCaseNo	メーカーケースCD	11	text	1	0		0	180			11	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	receiveDate	入庫年月日	12	date	1	0		0	180			12	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	totalQty	数量(カートン)	13	number	1	0	right	0	180			13	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	foreignCargoFlg	内貨・外貨区分	14	text	1	0		0	180			14	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	ifItemCd	需給CD	15	text	1	0		0	180			15	180
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	clientCd	荷主CD	16	text	0	0		0	100			16	
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	clientNm	荷主名称	17	text	0	0		0	100			17	
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	centerCd	拠点CD	18	text	0	0		0	100			18	
+ShippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)	wms	shippingPalleteDetailList	出庫パレット情報照会(詳細)グリッド	grid	1	1		0	1	centerNm	拠点名称	19	text	0	0		0	100			19	

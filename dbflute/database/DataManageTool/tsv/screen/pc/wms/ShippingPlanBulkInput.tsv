@@ -1,0 +1,55 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingPlanBulkInput	出荷指示一括取込	wms	centerCd	センタ		1	1		1	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	clientCd	荷主		1	1		1	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	register	登録		1	1		0	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	60			1	60
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.emergencyFlg	緊急フラグ	2	text	1	0		0	95	2		2	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.clientShippingNo	顧客出荷指示No.	3	text	1	0		0	260	3		3	260
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.customerCd	納品先CD	4	text	1	0		0	200	4		4	200
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.customerNm	納品先名称	5	text	1	0		0	300			5	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.customerAbbr	納品先略称	6	text	1	0		0	300			6	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mprocessType.processTypeCd	処理区分	7	text	1	0		0	170	7		7	170
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivPlanDt	納品予定日	8	text	1	0		0	150	8		8	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.workDt	作業日	9	text	1	0		0	150	9		9	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.shippingDt	出荷日	10	text	1	0		0	150	10		10	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mdeliveryCourse.deliveryCourseCd	配送コースCD	11	text	1	0		0	125	11		11	220
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	12	text	1	0		0	300			12	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivDt	納品指定日	13	text	1	0		0	150	13		13	220
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivTz	納品時間帯	14	text	1	0		0	175	14		14	175
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	mproduct.productCd	商品CD	15	text	1	0		0	245	15		15	245
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	16	text	1	0		0	300			16	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	17	text	1	0		0	300			17	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	18	text	1	0		0	205			18	205
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	depositCd	預託	19	text	1	0		0	300	19		19	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	stockTypeCd	在庫区分	20	text	1	0		0	195	20		20	195
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	instNum	指示数	21	number	1	0	right	0	95	21		21	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	lot	指定ロット	22	text	1	0		0	170	22		22	170
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	limitDt	指定期限日	23	text	1	0		0	150	23		23	220
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	warehouseCd	指定倉庫	24	text	1	0		0	300	24		24	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	locationCd	指定ロケーションCD	25	text	1	0		0	200	25		25	200
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivCustomerCd	届先CD	26	text	1	0		0	200	26		26	200
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivCustomerNm	届先名称	27	text	1	0		0	300	27		27	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivZipCd	届先郵便番号	28	text	1	0		0	125	28		28	190
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivAddress1	届先住所1	29	text	1	0		0	300	29		29	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivAddress2	届先住所2	30	text	1	0		0	300	30		30	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivAddress3	届先住所3	31	text	1	0		0	300	31		31	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivTelNo	届先電話番号	32	text	1	0		0	250	32		32	250
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.delivAddressSupply	届先住所補足	33	text	1	0		0	200	33		33	250
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.pickingWorkMessage	出庫作業メッセージ	34	text	1	0		0	300	34		34	300
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.totalPrice	合計金額	35	number	1	0	right	0	120	35		35	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstH.totalTax	合計消費税	36	number	1	0	right	0	120	36		36	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	unitPrice	単価	37	number	1	0	right	0	120	37		37	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	price	金額	38	number	1	0	right	0	120	38		38	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tax	消費税	39	number	1	0	right	0	120	39		39	120
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr1	予備項目１(文字列)	40	text	1	0		0	400	40		40	400
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr2	予備項目２(文字列)	41	text	1	0		0	400	41		41	400
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr3	予備項目３(文字列)	42	text	1	0		0	400	42		42	400
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum1	予備項目１(数値)	43	number	1	0	right	0	150	43		43	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum2	予備項目２(数値)	44	number	1	0	right	0	150	44		44	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum3	予備項目３(数値)	45	number	1	0	right	0	150	45		45	150
+ShippingPlanBulkInput	出荷指示一括取込	wms	shippingPlan	出荷指示一括取込グリッド	grid	1	1		0	1	errorMessageNm	エラー内容	46	text	1	0		0	400	46		46	400
+ShippingPlanBulkInput	出荷指示一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingPlanBulkInput	出荷指示一括取込	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													

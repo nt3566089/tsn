@@ -1,0 +1,55 @@
+<div ng-controller="ReferenceProductReceiveList" owd-screen="ReferenceProductReceiveList">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+			    <fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-select id="warehouseCd" ng-model="searchCondition.planWarehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫"></owd-select>
+						<owd-date id="receivePlanDtFrom" ng-model="searchCondition.receivePlanDtFrom" label-text="入荷予定日From"></owd-date>
+						<owd-date id="receivePlanDtTo" ng-model="searchCondition.receivePlanDtTo" label-text="入荷予定日To" owd-validate="fromToCheck(searchCondition.receivePlanDtFrom, $value)" owd-validate-watch="'searchCondition.receivePlanDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-date id="storeDtFrom" ng-model="searchCondition.storeDtFrom" label-text="入庫日From"></owd-date>
+						<owd-date id="storeDtTo" ng-model="searchCondition.storeDtTo" label-text="入庫日To" owd-validate="fromToCheck(searchCondition.storeDtFrom, $value)" owd-validate-watch="'searchCondition.storeDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="receiveStatus" ng-model="searchCondition.receiveStatus" owd-models="receiveStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入荷ステータス"></owd-select>
+						<owd-text id="planSupplierCd" ng-model="searchCondition.planSupplierCd" label-text="仕入先CD" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+							<owd-info ng-model="searchCondition.mcustomerByPlanSupplierId.customerNm"></owd-info>
+						</owd-text>
+						<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.productNm"></owd-info>
+						</owd-text>
+						<owd-select id="depositCustomerCd" ng-model="searchCondition.depositCustomerCd" owd-models="depositCustomerCdList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+						<owd-text id="clientReceiveNo" ng-model="searchCondition.planClientReceiveNo" label-text="予定顧客入荷指示No."></owd-text>
+						<owd-text id="storeClientReceiveNo" ng-model="searchCondition.storeClientReceiveNo" label-text="顧客入荷指示No."></owd-text>
+						<owd-text id="receiveSlipNo" ng-model="searchCondition.receiveSlipNo" label-text="WMS入荷伝票No."></owd-text>
+						<owd-text id="clientOrderNo" ng-model="searchCondition.clientOrderNo" label-text="予定顧客発注No."></owd-text>
+						<owd-text id="storeClientOrderNo" ng-model="searchCondition.storeClientOrderNo" label-text="顧客発注No."></owd-text>
+						<owd-select id="deleteDisplay" ng-model="searchCondition.deleteDisplay" owd-models="deleteDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除データ表示" owd-remove-blank></owd-select>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+			<!-- ステータス色表示を右寄せにする -->
+			<div class="col-xs-12 col-sm-6 col-md-8 col-lg-8" align="right">
+            	<div class="list-box">
+					<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonReceive" label-text="未入荷"></owd-span></div>
+					<!--  [#7026][OSS] 入荷中の表示を削除 2020.01.27 tsuboi Delete -->
+					<div class="list-text wmslegend wmslegendcyan"><owd-span id="store" label-text="入荷済"></owd-span></div>
+					<div class="list-text wmslegend wmslegendred"><owd-span id="receiveDelete" label-text="入荷削除"></owd-span></div>
+					<div class="list-text wmslegend wmslegendpink"><owd-span id="error" label-text="エラー"></owd-span></div>
+					<div class="list-text wmslegend wmslegendblue"><owd-span id="expired" label-text="入荷期限切れ"></owd-span></div>
+				</div>
+			</div>
+
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="ReferenceProductReceiveList" owd-select-options="gridSelectOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+	</form>
+</div>

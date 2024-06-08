@@ -1,0 +1,198 @@
+メッセージマスタ	メッセージマスタ	メッセージマスタ	メッセージマスタ	メッセージマスタ	メッセージマスタ	HTメッセージマスタ	メッセージマスタ	メッセージマスタ	メッセージマスタ	HTメッセージマスタ	メッセージマスタ	メッセージマスタ	メッセージマスタ	HTメッセージマスタ
+MESSAGE_CD	MESSAGE_TYPE	SYSTEM_TYPE	CULTURE_CD	MESSAGE_NM	MESSAGE_ABBR	MESSAGE_NM	CULTURE_CD_1	MESSAGE_NM_1	MESSAGE_ABBR_1	MESSAGE_NM_1	CULTURE_CD_2	MESSAGE_NM_2	MESSAGE_ABBR_2	MESSAGE_NM_2
+acceptFileTypes	error	base	ja-JP	サーバへ送信できないファイルが含まれています。	送信不可									
+accessDisableToScreenError	error	base	ja-JP	遷移しようとしている画面を使用する権限がありません。[/]メニューに遷移します。										
+afterAutoPrintSetting	info	base	ja-JP	自動印刷設定(変更後)										
+alreadyDeletedCannotDeleteError	error	base	ja-JP	既に削除されています。	既に削除済									
+alreadyRegisteredCannotRegisterError	error	base	ja-JP	既に登録されています。	既に登録済									
+applyOrderDuplicateError	error	base	ja-JP	適用順序が重複しています。	重複									
+argMasterError	error	base	ja-JP	引数マスタ取得エラー	取得失敗									
+authFatalError	error	base	ja-JP	認証処理にて致命的エラーが発生しました。[/]管理者に連絡して下さい。										
+authenticationTokenInvalidError	error	base	ja-JP	ログアウトされています。認証画面より再度ログインして下さい。										
+authorizationError	error	base	ja-JP	システムに対するアクセス権がありません。[/]管理者に連絡して下さい。										
+beforeAutoPrintSetting	info	base	ja-JP	自動印刷設定(変更前)										
+classCdDuplicateError	error	base	ja-JP	区分値CDが重複しています。	重複									
+classDtlCdDuplicateError	error	base	ja-JP	区分値明細CDが重複しています。	重複									
+classGrpCdDuplicateError	error	base	ja-JP	区分値グループCDが重複しています。	重複									
+clear	info	base	ja-JP	クリア										
+colCdDuplicateError	error	base	ja-JP	列CDが重複しています。	重複									
+colOrderDuplicateError	error	base	ja-JP	列順序が重複しています。	重複									
+columnMasterError	error	base	ja-JP	列マスタ取得エラー	取得失敗									
+confirmDeleteRow	info	base	ja-JP	選択した行を削除しますか？										
+cultureMasterError	error	base	ja-JP	カルチャマスタ取得エラー	取得失敗									
+dataDeleteConfirmation	confirm	base	ja-JP	対象データを削除しますか？										
+dataNotFoundError	error	base	ja-JP	該当データが存在しません。	未存在									
+dataNotFoundTransitionError	error	base	ja-JP	データ未登録のためページ遷移出来ません。										
+dataRegisterConfirmation	confirm	base	ja-JP	対象データを登録しますか？										
+dataUpdateConfirmation	confirm	base	ja-JP	対象データを更新しますか？										
+dateError	error	base	ja-JP	日付不正(形式:[0])	日付不正(形式:[0])	[0]は数字8桁の日付(yyyyMMdd)を入力してください。								
+decimalLengthError	error	base	ja-JP	小数[0]桁以内	小数[0]桁以内	[0]は小数[1]桁以下で入力してください。								
+delete	info	base	ja-JP	削除										
+deleteExceptionError	error	base	ja-JP	削除処理時にエラーが発生しました。(詳細：[0])	削除例外エラー									
+deleteRowErrNotSelect	info	base	ja-JP	削除する行が選択されていません。	未選択									
+deleteRowSuccess	info	base	ja-JP	行を削除しました。										
+developerMessage	error	base	ja-JP	開発者向けメッセージ										
+dictNmDuplicateError	error	base	ja-JP	辞書名が重複しています。	重複									
+dictNotFoundError	error	base	ja-JP	辞書マスタに存在しません。	辞書未存在									
+dispNmNotFoundInDispMasterError	error	base	ja-JP	画面名称が画面マスタに存在しません。	未存在									
+duplicateClickError	error	base	ja-JP	登録しようとしたデータはすでに登録済みです。	二重送信									
+entityAlreadyDeletedError	error	base	ja-JP	他のユーザに変更された可能性があります。内容を確認して下さい。	他ユーザ変更									
+entityAlreadyExistsError	error	base	ja-JP	データが重複している為、登録できません。管理者に連絡して下さい。	重複									
+entityAlreadyUpdatedError	error	base	ja-JP	他のユーザに変更されています。内容を確認して下さい。	他ユーザ変更									
+entry	info	base	ja-JP	登録										
+fileUploadDefineError	error	base	ja-JP	アップロード用の定義情報が不正です。管理者にご連絡下さい。	アップロード定義不正									
+fileUploadOpenError	error	base	ja-JP	アップロードされたファイルが開けませんでした。ファイルに問題がないか確認して下さい。	ファイルオープン不可									
+fileUploadSetCsvColError	error	base	ja-JP	データの取り込み中にエラーが発生しました。[/]行番号：[0] , 列番号：[1]	取込失敗									
+fileUploadSetCsvRowError	error	base	ja-JP	データの取り込み中にエラーが発生しました。[/]行番号：[0]	取込失敗									
+fileUploadSetError	error	base	ja-JP	データの取り込み中にエラーが発生しました。	取込失敗									
+fileUploadSetExcelColError	error	base	ja-JP	データの取り込み中にエラーが発生しました。[/]シート名：[0] , 行番号：[1] , 列番号：[2]	取込失敗									
+fileUploadSetExcelRowError	error	base	ja-JP	データの取り込み中にエラーが発生しました。[/]シート名：[0] , 行番号：[1]	取込失敗									
+fileUploadSetExcelSheetError	error	base	ja-JP	データの取り込み中にエラーが発生しました。[/]シート名：[0]	取込失敗									
+gridColExtDialogDescription_A01_00_Head	info	base	ja-JP	当画面について										
+gridColExtDialogDescription_A01_01_Title	info	base	ja-JP	当画面でできること										
+gridColExtDialogDescription_A01_01_Value	info	base	ja-JP	「列の順序」と「列の幅」を変更できます。										
+gridColExtDialogDescription_A01_02_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A01_02_Value	info	base	ja-JP	【登録】ボタンで保存した変更は次のログイン以降も引き継がれます。										
+gridColExtDialogDescription_A02_00_Head	info	base	ja-JP	画面項目について										
+gridColExtDialogDescription_A02_01_Title	info	base	ja-JP	列一覧										
+gridColExtDialogDescription_A02_01_Value	info	base	ja-JP	列の順序を変更できます。										
+gridColExtDialogDescription_A02_02_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A02_02_Value	info	base	ja-JP	列を選択し、右の移動ボタンで順序を変更します。										
+gridColExtDialogDescription_A02_03_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A02_03_Value	info	base	ja-JP	ボタンは上から「選択列を一番上に移動」「選択列をひとつ上に移動」「選択列をひとつ下に移動」「選択列を一番下に移動」の移動ボタンです。										
+gridColExtDialogDescription_A02_04_Title	info	base	ja-JP	列幅一覧										
+gridColExtDialogDescription_A02_04_Value	info	base	ja-JP	列の幅を変更できます。										
+gridColExtDialogDescription_A02_05_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A02_05_Value	info	base	ja-JP	列名の下の入力欄に幅の大きさを入力して幅を変更します。										
+gridColExtDialogDescription_A02_06_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A02_06_Value	info	base	ja-JP	マウスで境目を直接左右に動かす事でも調整できます。										
+gridColExtDialogDescription_A02_07_Title	info	base	ja-JP	【閉じる】ボタン										
+gridColExtDialogDescription_A02_07_Value	info	base	ja-JP	変更を破棄して当画面を閉じます。変更は保存されません。										
+gridColExtDialogDescription_A02_08_Title	info	base	ja-JP	【リセット】ボタン										
+gridColExtDialogDescription_A02_08_Value	info	base	ja-JP	保存した状態を破棄して初期状態に戻ります。初期状態を保存したい場合は【登録】ボタンを押してください。										
+gridColExtDialogDescription_A02_09_Title	info	base	ja-JP	【登録】ボタン										
+gridColExtDialogDescription_A02_09_Value	info	base	ja-JP	変更した内容を保存して当画面を閉じます。										
+gridColExtDialogDescription_A03_00_Head	info	base	ja-JP	ヒント										
+gridColExtDialogDescription_A03_01_Title	info	base	ja-JP	幅の制限										
+gridColExtDialogDescription_A03_01_Value	info	base	ja-JP	幅に入力できる大きさは、最小が40、最大が2000です。単位はピクセルです。										
+gridColExtDialogDescription_A03_02_Title	info	base	ja-JP	幅を戻す										
+gridColExtDialogDescription_A03_02_Value	info	base	ja-JP	列の境目をダブルクリックすると初期状態の幅に戻ります。										
+gridColExtDialogDescription_A03_03_Title	info	base	ja-JP	複数列の順序を移動										
+gridColExtDialogDescription_A03_03_Value	info	base	ja-JP	列一覧 または、列幅一覧でCtrlキーを押しながら列をクリックすることで複数の列を選択できます。										
+gridColExtDialogDescription_A03_04_Title	info	base	ja-JP	[blank]										
+gridColExtDialogDescription_A03_04_Value	info	base	ja-JP	選択した列は移動ボタンで順序を変更できます。										
+httpConnectionError	error	base	ja-JP	サーバに接続出来ませんでした。  HttpStatus:[0]  接続先:[1]	サーバ接続不可									
+httpConnectionErrorTitle	error	base	ja-JP	以下のエラーが発生しました。[/]ネットワークに接続出来るか確認して下さい。[/]それでも解決しない場合、以下の内容を管理者にお伝え下さい。	サーバ接続不可									
+infoMasterError	error	base	ja-JP	お知らせマスタ取得エラー	取得失敗									
+infoTitle	info	base	ja-JP	お知らせ										
+inputLimitCheckAlphabetAndHyphenOnlyError	error	base	ja-JP	英字と-のみ	英字と-のみ	[0]は英字と-のみ入力可能です。								
+inputLimitCheckAlphabetAndNumericAndHyphenOnlyError	error	base	ja-JP	英数字と-のみ	英数字と-のみ	[0]は英数字と-のみ入力可能です。								
+inputLimitCheckAlphabetAndNumericAndSymbolOnlyError	error	base	ja-JP	英数字と記号のみ	英数字と記号のみ	[0]は英数字と記号のみ入力可能です。								
+inputLimitCheckAlphabetAndNumericOnlyError	error	base	ja-JP	英数字のみ	英数字のみ	[0]は英数字のみ入力可能です。								
+inputLimitCheckAlphabetOnlyError	error	base	ja-JP	英字のみ	数字と-のみ	[0]は英字のみ入力可能です。								
+inputLimitCheckFullWidthOnlyError	error	base	ja-JP	全角文字のみ	全角文字のみ	[0]は全角文字のみ入力可能です。								
+inputLimitCheckHalfWidthOnlyError	error	base	ja-JP	半角文字のみ	半角文字のみ	[0]は半角文字のみ入力可能です。								
+inputLimitCheckNumericAndHyphenOnlyError	error	base	ja-JP	数字と-のみ	数字と-のみ	[0]は数字と-のみ入力可能です。								
+inputLimitCheckNumericOnlyError	error	base	ja-JP	数値のみ	数値のみ	[0]は数値のみ入力可能です。								
+inputLimitCheckTimeHHMMSSOnlyError	error	base	ja-JP	時刻のみ(HH:MM:SS)	時刻のみ(HH:MM:SS)	[0]は時刻のみ(HH:MM:SS)入力可能です。								
+inputLimitCheckTimeOnlyError	error	base	ja-JP	時刻のみ	時刻のみ	[0]は時刻のみ入力可能です。								
+insertProcessNormalEndInformation	info	base	ja-JP	正常に登録されました。	正常終了									
+integerError	error	base	ja-JP	整数のみ	整数のみ	[0]は整数で入力してください。								
+integerLengthError	error	base	ja-JP	整数[0]桁以内	整数[0]桁以内	[0]は整数[1]桁以下で入力してください。								
+isMismatchBColAndExtWarn	warn	base	ja-JP	最後に列の順序、幅を変更した後に、列の追加が行われています。設定画面から設定し直してください。										
+itemCdDuplicateError	error	base	ja-JP	項目CDが重複しています。	重複									
+itemEditableCannotSelectExceptionError	error	base	ja-JP	編集不可の項目は編集可を設定できません。	編集不可項目									
+itemMasterError	error	base	ja-JP	項目マスタ取得エラー	取得失敗									
+itemNecessaryableCannotSelectExceptionError	error	base	ja-JP	必須の項目は任意を設定できません。	必須項目									
+itemVisibleCannotSelectExceptionError	error	base	ja-JP	表示不可の項目は表示可を設定できません。	表示不可項目									
+jobQueEntryRemoteAuthConnectError	error	base	ja-JP	非同期処理の起動予約登録に失敗しました。システム管理者に問い合わせてください。[/]認証APIへ接続できません。([0])										
+jobQueEntryRemoteAuthError	error	base	ja-JP	非同期処理の起動予約登録に失敗しました。システム管理者に問い合わせてください。[/]認証に失敗しました。([0])										
+jobQueEntryRemoteFailed	error	base	ja-JP	非同期処理の起動予約登録に失敗しました。システム管理者に問い合わせてください。([0])										
+jobQueEntryRemoteServerConnectError	error	base	ja-JP	非同期処理の起動予約登録に失敗しました。システム管理者に問い合わせてください。[/]ジョブ管理システムへ接続できません。([0])										
+keyDownBackSpaceInfo	info	base	ja-JP	backspaceが押されました。[/]前ページへ移動しますか？										
+layoutNmNotFoundError	error	base	ja-JP	指定されたレイアウト名称は辞書マスタに登録されていません。	未登録									
+liteLoginErrorBecameLockout	error	base	ja-JP	ログインすることができません｡[/]ロックアウトされました。システム管理者に問い合わせてください。										
+liteLoginErrorLockout	error	base	ja-JP	ログインすることができません｡[/]ロックアウトされています。システム管理者に問い合わせてください。										
+liteLoginErrorNoUser	error	base	ja-JP	[0]・[1]に誤りがあるか、登録されていません。										
+liteLoginErrorUserAvailableOutOfPeriod	error	base	ja-JP	ログインすることができません｡[/]ユーザが利用期間外です。システム管理者に問い合わせてください。										
+liteLoginInfoPasswordExpired	info	base	ja-JP	パスワードの有効期限が切れています。[/]パスワードを変更してください。										
+liteLoginInfoPasswordReset	info	base	ja-JP	パスワードがリセットされています。[/]パスワードを変更してください。										
+logoutTitle	info	base	ja-JP	ログアウト										
+mainMenuTitle	info	base	ja-JP	メニュー										
+masterNotFoundError	error	base	ja-JP	マスタ未存在	未存在									
+maxError	error	base	ja-JP	最大[0]以下	最大[0]以下	[0]は[1]以下で入力してください。								
+maxFileSize	error	base	ja-JP	サーバへ送信可能なファイルサイズを超えています。	ファイルサイズ超過									
+maxNumberOfFiles	error	base	ja-JP	サーバへ送信可能なファイル数を超えています。	ファイル数超過									
+maxlengthError	error	base	ja-JP	最大[0]文字以下	最大[0]文字以下	[0]は[1]文字以下で入力してください。								
+menuGrpCdDuplicateError	error	base	ja-JP	メニューグループCDが重複しています。	重複									
+menuMasterError	error	base	ja-JP	メニューマスタ取得エラー	取得失敗									
+messageCdDuplicateError	error	base	ja-JP	メッセージCDが重複しています。	重複									
+messageMasterError	error	base	ja-JP	メッセージマスタ取得エラー	取得失敗									
+messageNotFoundError	error	base	ja-JP	メッセージマスタに存在しません。	未存在									
+minError	error	base	ja-JP	最小[0]以上	最小[0]以上	[0]は[1]以上で入力してください。								
+minFileSize	error	base	ja-JP	サーバへ送信可能なファイルサイズに達していません。	ファイルサイズ不足									
+minlengthError	error	base	ja-JP	最小[0]文字以上	最小[0]文字以上	[0]は[1]文字以上で入力してください。								
+moreInfo	error	base	ja-JP	詳しい情報										
+noAutoPrintTargetLayoutError	error	base	ja-JP	自動印刷対象レイアウトが登録されていません。管理者に連絡してください。	印刷設定不備									
+noDetailsError	error	base	ja-JP	明細が入力されていません。	明細未入力									
+noUseableReportLayoutError	error	base	ja-JP	使用可能な帳票レイアウトが登録されていません。										
+notBlankError	info	base	ja-JP	[0]を入力してください。										
+numberError	error	base	ja-JP	数値のみ										
+onlyOneSelect	error	base	ja-JP	一件のみ選択して下さい。	1件のみ選択									
+overLimitSizeWarn	warn	base	ja-JP	検索件数が[0]件を超えています。[1]件以降のデータを表示する場合は検索条件を変更して再検索して下さい。										
+overSafetySizeError	error	base	ja-JP	検索件数が[0]件を超えています。検索条件を見直し再度処理を実行して下さい。										
+overSafetySizeToReportError	error	base	ja-JP	発行データ件数が[0]件を超えています。発行条件を見直し再度処理を実行して下さい。										
+passwordChangeByMgtSuccess	info	base	ja-JP	パスワードが変更されました｡										
+passwordChangeErrorAvailableDateContext	error	base	ja-JP	パスワード変更ができません｡[/][0]には[1]より後の日付を入力してください。										
+passwordChangeErrorBecameLockout	error	base	ja-JP	ロックアウトされました。システム管理者に問い合わせてください。[/]ログイン画面に移動します。										
+passwordChangeErrorLockout	error	base	ja-JP	ロックアウトされています。システム管理者に問い合わせてください。[/]ログイン画面に移動します。										
+passwordChangeErrorMinAlpha	error	base	ja-JP	パスワード変更ができません｡[/]パスワードには[0]桁以上の英字を含めてください。										
+passwordChangeErrorMinLength	error	base	ja-JP	パスワード変更ができません｡[/]パスワードは[0]桁以上を入力してください。										
+passwordChangeErrorMinLowerCase	error	base	ja-JP	パスワード変更ができません｡[/]パスワードには[0]桁以上の小文字を含めてください。										
+passwordChangeErrorMinNumbers	error	base	ja-JP	パスワード変更ができません｡[/]パスワードには[0]桁以上の数字を含めてください。										
+passwordChangeErrorMinSymbol	error	base	ja-JP	パスワード変更ができません｡[/]パスワードには[0]桁以上の半角記号を含めてください。										
+passwordChangeErrorMinUpperCase	error	base	ja-JP	パスワード変更ができません｡[/]パスワードには[0]桁以上の大文字を含めてください。										
+passwordChangeErrorMismatchNewAndReEnter	error	base	ja-JP	パスワード変更ができません｡[/][0]と[1]が一致しません。										
+passwordChangeErrorMismatchNowAndOld	error	base	ja-JP	パスワード変更ができません｡[/]現在使用しているパスワードと[0]が一致しません。										
+passwordChangeErrorNoSamePasswordNewAndOld	error	base	ja-JP	パスワード変更ができません｡[/]現在使用しているパスワードと[0]が同じパスワードです。異なるパスワードに変更してください。										
+passwordChangeErrorSamePasswordNewAndOld	error	base	ja-JP	パスワード変更ができません｡[/]現在使用しているパスワードと[0]が同じパスワードです。[/]異なるパスワードに変更してください。										
+passwordChangeErrorUserAvailableOutOfPeriod	error	base	ja-JP	ユーザが利用期間外です。システム管理者に問い合わせてください。[/]ログイン画面に移動します。										
+passwordChangeSuccess	info	base	ja-JP	パスワードが変更されました｡[/]この画面を閉じるとメニューに移動します。										
+passwordTitle	info	base	ja-JP	パスワード変更										
+patternError	error	base	ja-JP	入力文字不正										
+pdfMakeInfomation	info	base	ja-JP	ＰＤＦを作成しています。このままお待ち下さい。										
+printDataTypeNotAllowedRePrintError	error	base	ja-JP	[0]は再印刷することができません。										
+printSettingTakeoverConfirm	confirm	base	ja-JP	自動印刷対象が変更されました。変更前のレイアウトから印刷設定を引き継ぎますか？										
+printerGroupIdIsUsedInOtherPrintServiceWarn	warn	base	ja-JP	指定されたプリンタグループは、すでに別の印刷サービス情報で使用されています。登録して宜しいですか？										
+printerGroupNmDuplicateError	error	base	ja-JP	プリンタグループ名が重複しています。	重複									
+processCompleteInformation	info	base	ja-JP	処理は正常終了しました。	正常終了									
+processExecuteEndInformation	info	base	ja-JP	処理を終了しました。	処理終了									
+processExecuteStartInformation	info	base	ja-JP	処理を開始しました。	処理開始									
+propertyNmDuplicateError	error	base	ja-JP	項目名は既に登録されています。	重複									
+queueAddDtConditionallyRequiredError	error	base	ja-JP	[0]入力時は必須										
+registerSuccess	info	base	ja-JP	登録しました。										
+reportCdDuplicateError	error	base	ja-JP	帳票CDは既に登録されています。	重複									
+reportLayoutNameDuplicateError	error	base	ja-JP	帳票レイアウト名が重複しています。	重複									
+requiredError	error	base	ja-JP	必須	必須	[0]を入力してください。								
+roleCodeDuplicateError	error	base	ja-JP	権限CDが重複しています。	重複									
+roleGrpCodeDuplicateError	error	base	ja-JP	権限グループCDが重複しています。	重複									
+screenCdDuplicateError	error	base	ja-JP	画面CDが重複しています。	重複									
+screenMasterError	error	base	ja-JP	画面マスタ取得エラー	取得失敗									
+search	info	base	ja-JP	検索										
+searchCondition	info	base	ja-JP	検索条件										
+searchConditionAll	info	base	ja-JP	全										
+searchConditionMain	info	base	ja-JP	主										
+searchConditionOther	info	base	ja-JP	他										
+statusCode	error	base	ja-JP	ステータスコード										
+systemMasterError	error	base	ja-JP	システム管理マスタ取得エラー	取得失敗									
+timeError	error	base	ja-JP	時刻不正(形式:[0])										
+timeoutError	error	base	ja-JP	他のユーザが使用中です。少々時間を置いてから再度処理を実行して下さい。										
+unhandledError	error	base	ja-JP	致命的エラーが発生しました。管理者に連絡して下さい。[0]	致命的エラー									
+unknownError	error	base	ja-JP	不明なエラーが発生しました。	不明エラー									
+update	info	base	ja-JP	更新										
+updateProcessNormalEndInformation	info	base	ja-JP	正常に更新されました。	正常終了									
+updateSuccess	info	base	ja-JP	更新しました。										
+userAutoPrintSetting	info	base	ja-JP	自動印刷設定										
+userEditErrorAlreadyRegistered	error	base	ja-JP	ユーザCDは既に登録されています。										
+userMessage	error	base	ja-JP	メッセージ										
+viewOrderDuplicateError	error	base	ja-JP	表示順が重複しています。	重複									

@@ -1,0 +1,63 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	centerCd	センタ		1	1		1	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	tagType	データ種別		1	1		0	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagType	データ種別	1	text	1	0		0	170			1	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagNm	データ種別名称	2	text	1	0		0	170			2	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	characterCd	文字コードCD	3	text	1	0		0	170			3	220
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCharacterCd.vdict.dictNm	文字コード名称	4	text	1	0		0	170			4	220
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipCustomerCd	お客様コード	5	text	1	0		0	170			5	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	webApiRequestUrl	WebAPIリクエストURL	6	text	1	0		0	300			6	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	customerId	カスタマーID	7	text	1	0		0	170			7	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	deptConsignorNm	部署・担当者	8	text	1	0		0	170			8	240
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	consignorTelNo	荷送人電話番号	9	text	1	0		0	170			9	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientTelNo	ご依頼主電話番号	10	text	1	0		0	170			10	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientZipCd	ご依頼主郵便番号	11	text	1	0		0	170			11	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress1	ご依頼主住所1	12	text	1	0		0	200			12	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress2	ご依頼主住所2	13	text	1	0		0	170			13	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientNm1	ご依頼主名称1	14	text	1	0		0	170			14	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientNm2	ご依頼主名称2	15	text	1	0		0	170			15	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipShapeCd	荷姿コードCD	16	text	1	0		0	170			16	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlBySlipShapeCd.vdict.dictNm	荷姿コード名称	17	text	1	0		0	170			17	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm1	品名1	18	text	1	0		0	170			18	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm2	品名2	19	text	1	0		0	170			19	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm3	品名3	20	text	1	0		0	170			20	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm4	品名4	21	text	1	0		0	170			21	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm5	品名5	22	text	1	0		0	170			22	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	transportTypeSpeed	便種(スピードで選択)CD	23	text	1	0		0	270			23	270
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByTransportTypeSpeed.vdict.dictNm	便種(スピードで選択)名称	24	text	1	0		0	270			24	270
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	transportTypeItem	便種(商品)CD	25	text	1	0		0	210			25	230
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByTransportTypeItem.vdict.dictNm	便種(商品)名称	26	text	1	0		0	210			26	250
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	settlementType	決済種別CD	27	text	1	0		0	170			27	200
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlBySettlementType.vdict.dictNm	決済種別名称	28	text	1	0		0				28	200
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sealType1	指定シール1CD	29	text	1	0		0	340			29	340
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlBySealType1.vdict.dictNm	指定シール1名称	30	text	1	0		0				30	180
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sealType2	指定シール2CD	31	text	1	0		0	340			31	340
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlBySealType2.vdict.dictNm	指定シール2名称	32	text	1	0		0				32	180
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sealType3	指定シール3CD	33	text	1	0		0	340			33	340
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlBySealType3.vdict.dictNm	指定シール3名称	34	text	1	0		0				34	180
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	codCls	元着区分CD	35	text	1	0		0	170			35	220
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCodCls.vdict.dictNm	元着区分名称	36	text	1	0		0				36	220
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sendCd	発店CD	37	text	1	0		0	170			37	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiOkuriCode	WebAPI送り状コード	38	text	1	0		0	250			38	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiBinsyuCode	WebAPI便種コードCD	39	text	1	0		0	170			39	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiBinsyuCode.vdict.dictNm	WebAPI便種コード名称	40	text	1	0		0	210			40	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiDaibikiFlg	WebAPI代引フラグCD	41	text	1	0		0	170			41	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiDaibikiFlg.vdict.dictNm	WebAPI代引フラグ名称	42	text	1	0		0	210			42	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiDaibikiType	WebAPI代引支払方法区分CD	43	text	1	0		0	250			43	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiDaibikiType.vdict.dictNm	WebAPI代引支払方法区分名称	44	text	1	0		0	340			44	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiWeightCd1	WebAPI重量コード1CD	45	text	1	0		0	210			45	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiWeightCd1.vdict.dictNm	WebAPI重量コード1名称	46	text	1	0		0	250			46	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiWeightCd2	WebAPI重量コード2CD	47	text	1	0		0	210			47	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiWeightCd2.vdict.dictNm	WebAPI重量コード2名称	48	text	1	0		0	250			48	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	apiEidomeFlg	WebAPI営止フラグCD	49	text	1	0		0	170			49	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtlByApiEidomeFlg.vdict.dictNm	WebAPI営止フラグ名称	50	text	1	0		0	250			50	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	51	text	1	0		0	110			51	170
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	52	text	1	0		0	110			52	180
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	53	text	1	0		0	110			53	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	carrierSlipSgwList	佐川送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	54	text	1	0		0	170			54	
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CarrierSlipSgwMaster	佐川送り状マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

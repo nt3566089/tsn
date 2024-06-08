@@ -1,0 +1,74 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingHistory	出荷履歴	wms	centerCd	センタ		1	1		1	1													
+ShippingHistory	出荷履歴	wms	clientCd	荷主		1	1		1	1													
+ShippingHistory	出荷履歴	wms	shippingDt	出荷日		1	1		0	1													
+ShippingHistory	出荷履歴	wms	workDt	作業日		1	1		0	1													
+ShippingHistory	出荷履歴	wms	processTypeCd	処理区分		1	1		0	0													
+ShippingHistory	出荷履歴	wms	clientShippingNo	顧客出荷指示No.		1	1		0	0													
+ShippingHistory	出荷履歴	wms	shippingSlipNo	WMS出荷伝票No.		1	1		0	0													
+ShippingHistory	出荷履歴	wms	supplyCustomerCd	納品先CD		1	1		0	0													
+ShippingHistory	出荷履歴	wms	delivCustomerCd	届先CD		1	1		0	0													
+ShippingHistory	出荷履歴	wms	delivCustomerNm	届先名称		1	1		0	0													
+ShippingHistory	出荷履歴	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+ShippingHistory	出荷履歴	wms	carrierCd	運送業者		1	1		0	0													
+ShippingHistory	出荷履歴	wms	depositCd	指定預託		1	1		0	0													
+ShippingHistory	出荷履歴	wms	productCd	商品CD		1	1		0	0													
+ShippingHistory	出荷履歴	wms	lot	指定ロット		1	1		0	0													
+ShippingHistory	出荷履歴	wms	limitDtFrom	指定期限日(From)		1	1		0	0													
+ShippingHistory	出荷履歴	wms	limitDtTo	指定期限日(To)		1	1		0	0													
+ShippingHistory	出荷履歴	wms	stockTypeCd	在庫区分		1	1		0	0													
+ShippingHistory	出荷履歴	wms	locationCdFrom	指定ロケーションCD(From)		1	1		0	0													
+ShippingHistory	出荷履歴	wms	locationCdTo	指定ロケーションCD(To)		1	1		0	0													
+ShippingHistory	出荷履歴	wms	search	検索		1	1		0	1													
+ShippingHistory	出荷履歴	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.histDt	履歴日	1	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.delivPlanDt	納品予定日	2	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.delivDt	納品指定日	3	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.delivTz	納品時間帯CD	4	text	1	0		0	160				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.bclassDtlByDelivTz.vdict.dictNm	納品時間帯名称	5	text	1	0		0	160				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.shippingDt	出荷日	6	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.workDt	作業日	7	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.supplyCustomerCd	納品先CD	8	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.supplyCustomerNm	納品先名称	9	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.delivCustomerCd	届先CD	10	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.delivCustomerNm	届先名称	11	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.clientShippingNo	顧客出荷指示No.	12	text	1	0		0	260				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.shippingSlipNo	WMS出荷伝票No.	13	text	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.mprocessType.processTypeCd	処理区分CD	14	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.mprocessType.vdict.dictNm	処理区分名称	15	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.deliveryCourseCd	配送コースCD	16	text	1	0		0	125				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.deliveryCourseNm	配送コース名称	17	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.carrierCd	運送業者CD	18	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.carrierNm	運送業者名称	19	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.emergencyFlg	緊急フラグ	20	text	1	0		0	95				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.bclassDtlByEmergencyFlg.vdict.dictNm	緊急フラグ名称	21	text	1	0		0	125				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.pickingWorkMessage	出庫作業メッセージ	22	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	productCd	商品CD	23	text	1	0		0	245				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	productNm	商品名称	24	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	lot	指定ロット	25	text	1	0		0	175				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	limitDt	指定期限日	26	date	1	0		0	150				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	mstockType.stockTypeCd	在庫区分CD	27	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	在庫区分名称	28	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	warehouseCd	指定倉庫CD	29	text	1	0		0	110				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	warehouseNm	指定倉庫名称	30	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	locationCd	指定ロケーションCD	31	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	locationNm	指定ロケーション名称	32	text	1	0		0	250				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	depositCd	指定預託CD	33	text	1	0		0	160				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	depositNm	指定預託名称	34	text	1	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	storeLabelNo	指定入庫ラベルNo.	35	text	1	0		0	140				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	shapeCd	指定荷姿CD	36	text	0	0		0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	shapeNm	指定荷姿名称	37	text	0	0		0	300				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	unitNum	指定入数	38	number	0	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	instNum	指示数	39	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	shippingNum	出荷数	40	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.totalPrice	合計金額	41	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.totalTax	合計消費税	42	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	unitPrice	単価	43	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	price	金額	44	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	tax	消費税	45	number	1	0	right	0	170				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.clientCd	荷主CD	46	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.clientNm	荷主名称	47	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.centerCd	センタCD	48	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	shippingHistoryGrid	出荷履歴グリッド	grid	1	1		0	1	hshippingH.centerNm	センタ名称	49	text	1	0		0	200				
+ShippingHistory	出荷履歴	wms	packingHistory	梱包履歴		1	1		0	1													

@@ -1,0 +1,35 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	clientCd	荷主		1	0		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	customerCd	特約店CD1		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	specialAgentsCd2	特約店CD2		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	customerNm	特約店名称		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	name	正式名称		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	customerAbbr	略式名称		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	aName	検索名称		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	ssName	短縮名称		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	showPriority	表示順		1	1	right	0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	marketType	市場区分		1	1		1	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	logisticsCd	倉庫(発地倉庫)		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	zipCd	郵便番号		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	address1	納品先住所		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	telNo	電話番号		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	faxNo	FAX番号		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	deliveryTime	納品時間		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	comments	特記事項		1	1		0	1													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	deliveryFlg	納品先フラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	vendorFlg	仕入れ先フラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	onetimeFlg	ワンタイムフラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	depositFlg	預託先フラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	address2	住所2		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	address3	住所3		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	centerCd	社内入庫センタ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	allocOrder	引当順序		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	shippingStopFlg	出庫停止フラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	limitDtReverseFlg	期限日逆転防止フラグ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	center	センタ		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	deliveryCourseCd	配送コースCD		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	deliveryOrder	配送順		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	deliveryReadTime	配送リードタイム		0	0		0	0													
+CustomerMasterEdit	特約店マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

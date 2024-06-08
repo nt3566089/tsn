@@ -1,0 +1,43 @@
+<div ng-controller="WarehouseMaster" owd-screen="WarehouseMaster">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="warehouseMasterSearch.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-text id="warehouseCd" ng-model="warehouseMasterSearch.warehouseCd" label-text="倉庫CD"></owd-text>
+						<owd-text id="warehouseNm" ng-model="warehouseMasterSearch.warehouseNm" label-text="倉庫名称"></owd-text>
+						<owd-select id="delFlg" ng-model="warehouseMasterSearch.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+					</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="warehouseList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

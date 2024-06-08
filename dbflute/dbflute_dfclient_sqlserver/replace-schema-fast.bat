@@ -1,0 +1,3 @@
+@set DBFLUTE_ENVIRONMENT_TYPE=fast
+@call manage.bat 0
+@set DBFLUTE_ENVIRONMENT_TYPE=

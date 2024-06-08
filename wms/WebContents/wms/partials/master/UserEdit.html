@@ -1,0 +1,82 @@
+<div ng-controller="UserEdit" owd-screen="UserEdit">
+	<form id="inputform" name="inputform" novalidate>
+<!-- 2015/11/04 INOUE UPD START ユーザ登録機能追加対応  -->
+		<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod Start -->
+		<div class="well">
+			<div class="row">
+				<owd-text id="userCd" ng-model="user.userCd" label-text="ユーザCD"></owd-text>
+				<owd-text id="userNm" ng-model="user.userNm" label-text="ユーザ名"></owd-text>
+				<owd-select id="cultureList" ng-model="user.bculture.cultureCd" owd-models="cultureList" owd-repeat-key="cultureCd" owd-repeat-value="cultureNm" label-text="カルチャ"></owd-select>
+				<owd-select id="roleGrpList" ng-model="user.broleGrp.roleGrpCd" owd-models="roleGrpList" owd-repeat-key="roleGrpCd" owd-repeat-value="roleGrpNm" label-text="権限グループ"></owd-select>
+				<owd-select id="centerCd" ng-model="user.muserCenterList[0].mcenter.centerCd" owd-models="searchConditonCenterList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ(権限)"></owd-select>
+				<owd-select id="clientCd" ng-model="user.muserClientList[0].mclient.clientCd" owd-models="searchConditonClientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主(権限)"></owd-select>
+				<owd-select id="delFlg" ng-model="user.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除フラグ"></owd-select>
+			</div>
+		</div>
+		<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod End -->
+<!-- 2015/11/04 INOUE UPD END -->
+<!-- 2015/11/04 INOUE UPD START tableを止めてgridを使用。  -->
+		<div class="row">
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod Start -->
+			<div class="col-xs-4" style="padding-right:0px;">
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod End -->
+				<div owd-grid="gridOptions1" id="centerList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform"></div>
+			</div>
+
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod Start -->
+			<div class="col-xs-4" style="padding:0px;">
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod End -->
+				<div owd-grid="gridOptions2" id="clientList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform"></div>
+			</div>
+
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Add Start -->
+			<div class="col-xs-4" style="padding-left:0px;">
+				<div owd-grid="gridOptions3" id="depositList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions3" owd-form-name="inputform"></div>
+			</div>
+			<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Add End -->
+		</div>
+
+		<!-- [#7025][OSS] グリッドとボタンの間に余白を追加 2020.01.28 tsuboi Start -->
+		<br>
+		<!-- [#7025][OSS] グリッドとボタンの間に余白を追加 2020.01.28 tsuboi End -->
+	<!-- 2015/11/09 INOUE UPD START content-footerの適用  -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod Start -->
+				<div class="col-xs-4" style="padding-right:0px;">
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod End -->
+					<div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+						<owd-button id="centerAllSelected" class="btn-info" ng-click="centerAllSelected()">全選択</owd-button>
+						<owd-button id="centerNoSelected" class="btn-danger" ng-click="centerNoSelected()">全解除</owd-button>
+					</div>
+				</div>
+
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod Start -->
+				<div class="col-xs-4" style="padding:0px;">
+					<div class="col-xs-12" style="padding-left:0px;padding-right:0px;">
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Mod End -->
+						<owd-button id="clientAllSelected" class="btn-info" ng-click="clientAllSelected()">全選択</owd-button>
+						<owd-button id="clientNoSelected" class="btn-danger" ng-click="clientNoSelected()">全解除</owd-button>
+					</div>
+					<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 登録ボタン削除 2017.12.06 honma Delete -->
+				</div>
+
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Add Start -->
+				<div class="col-xs-4" style="padding-left:0px;">
+					<div class="col-xs-6" style="padding-left:0px;padding-right:0px;">
+						<owd-button id="depositAllSelected" class="btn-info" ng-click="depositAllSelected()">全選択</owd-button>
+						<owd-button id="depositNoSelected" class="btn-danger" ng-click="depositNoSelected()">全解除</owd-button>
+					</div>
+					<div class="col-xs-6" style="padding-left:0px;padding-right:0px;" align="right">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+				<!-- [#3147][Ver3.0] ユーザ預託管理機能を追加 2017.12.06 honma Add End -->
+			</div>
+		</div>
+	<!-- 2015/11/09 INOUE UPD END  -->
+<!-- 2015/11/04 INOUE UPD END  -->
+	</form>
+</div>
+

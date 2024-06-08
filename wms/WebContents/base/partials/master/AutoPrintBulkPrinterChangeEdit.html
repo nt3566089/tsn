@@ -1,0 +1,53 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="AutoPrintBulkPrinterChangeEdit" owd-screen="AutoPrintBulkPrinterChangeEdit">
+	<form id="autoprintbulkprinterchangeeditform" name="autoprintbulkprinterchangeeditform" novalidate>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{"beforeAutoPrintSetting" | owfMessage}}
+			</div>
+
+			<div class="panel-body">
+					<div class="well">
+						<div class="row">
+							<div class="col-xs-12">
+								<owd-text id="beforePrinterGroupNm" ng-model="before.printerGroupNm" label-text="プリンタグループ名称"></owd-text>
+
+								<owd-text id="beforePrinterNm" ng-model="before.printerNm" label-text="プリンタ名称"></owd-text>
+
+								<owd-text id="beforeTrayNm" ng-model="before.trayNm" label-text="トレイ名称"></owd-text>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				{{"afterAutoPrintSetting" | owfMessage}}
+			</div>
+
+			<div class="panel-body">
+					<div class="well">
+						<div class="row">
+							<div class="col-xs-12">
+								<owd-text id="afterPrinterGroupNm" ng-model="after.printerGroupNm" label-text="プリンタグループ名称"></owd-text>
+
+								<owd-select id="afterPrinterId" ng-model="after.printerId" owd-models="printerList" owd-repeat-key="printerId" owd-repeat-value="printerNm" ng-change="changePrinter()" label-text="プリンタ"></owd-select>
+
+								<owd-select id="afterPrinterAttributeId" ng-model="after.printerAttributeId" owd-models="printerAttributeList" owd-repeat-key="printerAttributeId" owd-repeat-value="trayNm" label-text="トレイ"></owd-select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+							<owd-button id="update" class="btn-success" ng-disabled="autoprintbulkprinterchangeeditform.$invalid" ng-click="update()">登録</owd-button>
+						</div>
+					</div>
+			</div>
+		</div>
+	</form>
+</div>

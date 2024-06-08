@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveInspecStoreQtyResource	send	send	HT入荷検品格納(数量)送信	qty	数量	number	1

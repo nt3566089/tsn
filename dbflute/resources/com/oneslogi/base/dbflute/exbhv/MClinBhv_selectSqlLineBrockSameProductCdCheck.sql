@@ -1,0 +1,50 @@
+/*
+ [df:title]
+ ロケーションマスタ受信一覧を取得します。
+
+ [df:description]
+  SQL Description here.
+
+*/
+-- #df:entity#
+-- !df:pmb extends Paging!
+-- !!AutoDetect!!
+-- !!Long centerId!!
+-- !!Long clientId!!
+SELECT	LIN.CLIN_ID
+FROM	M_CLIN					LIN		--ラインマスタ
+LEFT	JOIN	M_LOCATION		LOC1
+		ON		LOC1.CENTER_ID	=		LIN.CENTER_ID		-- ★確認
+		AND		LOC1.LINBLK		=		LIN.LINBLK1
+		AND		LOC1.DEL_FLG	=		'0'
+
+LEFT	JOIN	M_LOCATION		LOC2
+		ON		LOC2.CENTER_ID	=		LIN.CENTER_ID		-- ★確認
+		AND		LOC2.LINBLK		=		LIN.LINBLK2
+		AND		LOC2.DEL_FLG	=		'0'
+
+LEFT	JOIN	M_LOCATION		LOC3
+		ON		LOC3.CENTER_ID	=		LIN.CENTER_ID		-- ★確認
+		AND		LOC3.LINBLK		=		LIN.LINBLK3
+		AND		LOC3.DEL_FLG	=		'0'
+
+LEFT	JOIN	M_PRODUCT		PRD1
+		ON		PRD1.PRODUCT_ID	=		LOC1.REPLENISH_PRODUCT_ID
+		AND		PRD1.DEL_FLG	=		'0'
+
+LEFT	JOIN	M_PRODUCT		PRD2
+		ON		PRD2.PRODUCT_ID	=		LOC2.REPLENISH_PRODUCT_ID
+		AND		PRD2.DEL_FLG	=		'0'
+
+LEFT	JOIN	M_PRODUCT		PRD3
+		ON		PRD3.PRODUCT_ID	=		LOC3.REPLENISH_PRODUCT_ID
+		AND		PRD3.DEL_FLG	=		'0'
+
+WHERE	LIN.CENTER_ID			=	/*pmb.centerId*/1
+AND		LIN.LINCD				=	/*pmb.lincd*/'X'
+AND		PRD1.CLIENT_ID			=	/*pmb.clientId*/1
+AND		PRD1.PRODUCT_CD			=	/*pmb.productCd*/'X'
+AND		LIN.DEL_FLG				=	'0'
+
+
+

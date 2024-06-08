@@ -1,0 +1,70 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblClientCd	荷主	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblWarehouse	倉庫	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblInventoryDt	棚卸日	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblZoneCd	ゾーン	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblDepositCd	預託	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblStockTypeCd	在庫区分	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblLocationNm	ロケーション	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblProductCd	商品CD	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblProductNm	商品名称	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblJanCd	ソースCD	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblUniNum	入数	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblStockNum	引当可能数	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblLot	ロット	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblInventoryNum	数量	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblCase	ケース	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblPiece	ピース	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lbltotalbala	総バラ数	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblAllocNum	引当済数	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblInventoryWorkList	棚卸作業リスト	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+InventoryWorkList	棚卸作業リスト	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0	lblMoveNum	作業中数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblClientCd	荷主	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblWarehouse	倉庫	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblInventoryDt	棚卸日	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblDepositCd	預託	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblUniNum	入数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblStockNum	引当可能数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblInventoryNum	棚卸数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblCase	ケース	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblPiece	ピース	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lbltotalbala	総バラ数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblAllocNum	引当済数	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblInventoryWorkList	棚卸作業リスト	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+InventoryWorkList	棚卸作業リスト	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1	lblMoveNum	作業中数	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblClientCd	荷主	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblWarehouse	倉庫	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblInventoryDt	棚卸日	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblDepositCd	預託	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblUniNum	入数	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblStockNum	引当可能数	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblInventoryNum	数量	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblCase	ケース	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblPiece	ピース	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lbltotalbala	総バラ数	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblAllocNum	引当済数	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblInventoryWorkList	棚卸作業リスト	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+InventoryWorkList	棚卸作業リスト	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1	lblMoveNum	作業中数	String	1	

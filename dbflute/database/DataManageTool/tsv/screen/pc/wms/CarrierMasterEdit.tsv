@@ -1,0 +1,16 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	centerCd	センタ		1	0		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	carrierCd	運送業者CD		1	1		1	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	delFlg	削除		1	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	carrierNm	運送業者名称		1	1		1	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	carrierAbbr	運送業者略称		1	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	commonCarrierCd	共通運送業者		1	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	mcommonCarrier.bolOutputTargetFlg	Bill of Lading発行対象		0	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	mcarrierBoxList	運送業者マスタメンテナンス(編集)グリッド	grid	1	1		0	1	boxCd	荷材	1	text	1	0		0	160				
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	mcarrierBoxList	運送業者マスタメンテナンス(編集)グリッド	grid	1	1		0	1	boxNm	荷材名称	2	text	1	0		0	160				
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	mcarrierBoxList	運送業者マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mcarrierBoxList[0].delFlg	削除	4	dropdown	1	1		0	160				
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	mcarrierBoxList	運送業者マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mcarrierBoxList[0].boxSizeCd	荷材サイズCD	3	text	1	1		1	160				
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	removeRow	削除		1	1		0	1													
+CarrierMasterEdit	運送業者マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

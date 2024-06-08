@@ -1,0 +1,42 @@
+<div ng-controller="ReceiveInput" owd-screen="ReceiveInput">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+			    <owd-select id="centerCd" ng-model="receiveInputH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+			    <owd-select id="clientCd" ng-model="receiveInputH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-text id="planSupplierCd" ng-model="receiveInputH.treceivePlanH.planSupplierCd" label-text="仕入先コード" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="receiveInputH.mcustomerBySupplierId.customerNm"></owd-info>
+				</owd-text>
+				<owd-date id="receivePlanDt" ng-model="receiveInputH.treceivePlanH.receivePlanDt" label-text="入荷日"></owd-date>
+				<owd-text id="planClientReceiveNo" ng-model="receiveInputH.treceivePlanH.planClientReceiveNo" label-text="予定顧客入荷指示No."></owd-text>
+				<owd-text id="clientReceiveNo" ng-model="receiveInputH.clientReceiveNo" label-text="顧客入荷指示No."></owd-text>
+				<owd-text id="receiveSlipNo" ng-model="receiveInputH.treceivePlanH.receiveSlipNo" label-text="WMS入荷伝票No."></owd-text>
+				<!-- 【Ver1.1.1】[C-CWMS-0035] 入荷実績入力(予定あり)画面に在庫区分を追加する 2015.08.10 hayashi Start -->
+				<owd-select id="processTypeCd" ng-model="receiveInputH.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" ng-change="processTypeChange()" label-text="処理区分"></owd-select>
+				<owd-select id="stockTypeCd" ng-model="receiveInputH.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+				<!-- 【Ver1.1.1】[C-CWMS-0035] 入荷実績入力(予定あり)画面に在庫区分を追加する 2015.08.10 hayashi End -->
+				<owd-select id="planDepositCd" ng-model="receiveInputH.treceivePlanH.planDepositCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+			    <owd-text id="storeRecordHComment" ng-model="receiveInputH.storeRecordHComment" label-text="入庫実績ヘッダ備考"></owd-text>
+			</div>
+		</div>
+
+		<!-- [Ver3.0] unit of measure対応 2017.10.22 潘 Start -->
+		<div owd-grid="gridOptions" id="receiveInputB" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-multitext-options="multiTextOptions" owd-grid-multitext-options="gridMultiTextOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+        <!-- [Ver3.0] unit of measure対応 2017.10.22 潘 End -->
+
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+			    	<owd-button id="receiveCancel" class="btn-danger" ng-click="receiveCancel()">入荷取消</owd-button>
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

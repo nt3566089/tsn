@@ -1,0 +1,18 @@
+<ion-view owd-screen="InventoryInputSD" title="{{screenTitle}}">
+	<div class="bar bar-calm bar-subheader">
+		<h2 class="title">
+			<owd-span id="searchResultTitle" label-text="検索結果"></owd-span>
+			<span ng-bind="': ' + searchResult.totalServerItems"></span>
+		</h2>
+	</div>
+	<ion-content class="has-subheader" ng-class="{'has-footer' : alerts.length > 0}">
+
+		<owd-search-result id="inventoryInputList" owd-grid-option="listGridOptions" owd-result-list="inventoryInputList" ng-click="detail($index)"></owd-search-result>
+
+		<ion-infinite-scroll
+			ng-if="moreDataCanBeLoaded()"
+			icon="ion-loading-c"
+			on-infinite="loadMoreData()">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

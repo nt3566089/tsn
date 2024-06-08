@@ -1,0 +1,48 @@
+<div ng-controller="DataInput" owd-screen="DataInput">
+	<form id="dataInputForm" name="dataInputForm" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="operationType" ng-model="dataInputCondition.operationType" owd-models="operationTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" ng-change="operationTypeChange()" label-text="初期データ取込区分"></owd-select>
+				<!-- Ver２．１向けエンハンス 荷札出力対応2016.7.26 SJA Start -->
+				<!-- <owd-select id="inputType" ng-model="dataInputCondition.inputType" owd-models="inputTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" ng-change="operationTypeChange()" label-text="初期データ取込種別"></owd-select> -->
+				<owd-select id="dataInputTypeCd" ng-model="dataInputCondition.dataInputTypeCd" owd-models="dataInputTypeList" owd-repeat-key="dataInputTypeCd" owd-repeat-value="dataInputTypeNm" label-text="初期データ取込種別" ng-change="dataInputTypeChange()"></owd-select>
+				<!-- Ver２．１向けエンハンス 荷札出力対応2016.7.26 SJA End -->
+			</div>
+			<div class="row">
+				<!-- [ON推-品向-915] 必須項目の空白を削除 2015.07.24 kawana Start -->
+				<owd-select id="commitType" ng-model="dataInputCondition.commitType" owd-models="commitTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="コミット区分" owd-remove-blank></owd-select>
+				<owd-select id="processType" ng-model="dataInputCondition.processType" owd-models="processTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="初期データ取込方法" owd-remove-blank></owd-select>
+				<owd-select id="dataRange" ng-model="dataInputCondition.dataRange" owd-models="dataRangeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ダウンロードデータ出力条件" owd-remove-blank></owd-select>
+				<!-- [ON推-品向-915] 必須項目の空白を削除 2015.07.24 kawana End -->
+			</div>
+			<div class="row">
+				<div class="col-xs-12" >
+					<owd-file id="upload" class="btn-info" owd-before-upload="beforeUpload" owd-success="uploadSuccess" owd-options="fileOptions">アップロード</owd-file>
+					<owd-button id="execute" class="btn-info" ng-disabled="dataInputForm.$invalid" ng-click="execute()">実行</owd-button>
+					<owd-button id="download" class="btn-info" ng-disabled="dataInputForm.$invalid" ng-click="execute()">ダウンロード</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!-- [ON推-品向-918] Excelダウンロードを追加 2015.07.30 kawana Start -->
+	<div class="row">
+	<form id="xlsDlForm" name="xlsDlForm" novalidate>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+			<accordion><accordion-group is-open="isopen">
+				<accordion-heading>
+					{{"excelDownloadTitleInformation" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<div class="row">
+					<!-- Ver２．１向けエンハンス 荷札出力対応2016.7.26 SJA Start -->
+					<!-- <owd-select id="inputTypeXls" ng-model="xlsDlForm.inputType" owd-models="inputTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="初期データ取込種別" owd-grid-system-option="col-xs-12 col-sm-12 col-md-12 col-lg-12"></owd-select> -->
+					<owd-select id="inputTypeXls" ng-model="xlsDlForm.dataInputTypeCd" owd-models="dataInputTypeList" owd-repeat-key="dataInputTypeCd" owd-repeat-value="dataInputTypeNm" label-text="初期データ取込種別" owd-grid-system-option="col-xs-12 col-sm-12 col-md-12 col-lg-12"></owd-select>
+					<!-- Ver２．１向けエンハンス 荷札出力対応2016.7.26 SJA End -->
+				</div>
+				<owd-button id="downloadXls" class="btn-info" ng-disabled="xlsDlForm.$invalid" ng-click="xlsDownload()">ダウンロード</owd-button>
+			</accordion-group></accordion>
+		</div>
+	</form>
+	</div>
+	<!-- [ON推-品向-918] Excelダウンロードを追加 2015.07.30 kawana End -->
+</div>

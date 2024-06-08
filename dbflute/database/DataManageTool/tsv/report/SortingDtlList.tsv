@@ -1,0 +1,20 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblType	ﾀｲﾌﾟ	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblSortingDtlList	仕 分 明 細 書	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblPrintDate	作成日：	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblBoxNo	箱番号：	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblAttention	取扱注意	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblSubTotalOfCarton	累計ｶｰﾄﾝ	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblDlvYmd	配達日	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblDetPstnId	方面	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblSerialNo	通番	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblSsNm	お得意様名	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblMr	様	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblTotalLineQty	ライン計	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblTotalBlockQty	ブロック計	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblTotalSprqaQty	丸段	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblGrandTotal	総合計	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblLocationCd	ﾛｹｰｼｮﾝ	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblCartonQty	ｶｰﾄﾝ数量	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblItemCd	銘柄名	String	1	
+SortingDtlList	仕分明細書	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0	lblSubTotal	累計	String	1	

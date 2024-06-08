@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+InventoryInputProductSortingPlaceLocationResource	send	send	確定ボタン押下	locationCd	調査ﾛｹｰｼｮﾝ	text	1

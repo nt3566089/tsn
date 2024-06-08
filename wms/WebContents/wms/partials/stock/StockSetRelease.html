@@ -1,0 +1,84 @@
+<div ng-controller="StockSetRelease" owd-screen="StockSetRelease">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="$parent.isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="head.mlocation.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+		 			<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+		 			<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="親商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.mproduct.productNm"></owd-info>
+					</owd-text>
+					<owd-select id="customerCd" ng-model="head.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+					<owd-select id="stockTypeCd" ng-model="head.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+					<owd-text id="locationCd" ng-model="head.mlocation.locationCd" label-text="ロケーション" owd-add-button="showLocation()" ng-blur="locationCdBlur()" owd-validate-message="locationCdMessage">
+						<owd-info ng-model="head.mlocation.locationNm"></owd-info>
+					</owd-text>
+					<owd-date id="storeDt" ng-model="head.tstoreNo.storeDt" label-text="入庫日"></owd-date>
+					<!-- [#3279][Ver3.0] セット解除指示で親商品の在庫が必ず0になる - 指示数量位置移動 2018.01.11 honma Delete -->
+				</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="inputform" name="inputform" novalidate>
+		<br>
+		<owd-label id="lblStockList" label-text="在庫親商品明細"></owd-label>
+		<!-- [#7164][OSS]② 在庫親商品明細のグリッドの高さを調整 2020.02.04 tsuboi Start  -->
+		<!-- [#7164][OSS] ダブルクリックの処理を除外 2020.02.05 tsuboi Start -->
+		<div owd-grid="gridOptions" id="stockList" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)" style="height:210px;"></div>
+		<!-- [#7164][OSS] ダブルクリックの処理を除外 2020.02.05 tsuboi End -->
+		<!-- [#7164][OSS]② 在庫親商品明細のグリッドの高さを調整 2020.02.04 tsuboi End  -->
+		<!-- [#3279][Ver3.0] セット解除指示で親商品の在庫が必ず0になる 2018.01.11 honma Add Start -->
+		<br>
+		<accordion>
+			<accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-number id="chargeNum" ng-model="instInput.chargeNum" label-text="指示数量"></owd-number>
+						<br>
+						<owd-button id="parentProductSelect" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="parentProductSelect()">親商品選択</owd-button>
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+	</form>
+	<form id="inputform2" name="inputform2" novalidate>
+		<!-- [#3279][Ver3.0] セット解除指示で親商品の在庫が必ず0になる 2018.01.11 honma Add End -->
+		<!-- [#7234] brタグ削除 2020.03.12 ono del -->
+		<owd-label id="lblReleaseInput" label-text="解除指示入力明細"></owd-label>
+		<!-- [#3279][Ver3.0] セット解除指示で親商品の在庫が必ず0になる 2018.01.11 honma Add Start -->
+		<!-- [#7164][OSS] 解除指示入力明細のグリッドの高さを調整 2020.02.05 tsuboi Start -->
+		<div owd-grid="gridOptions2" id="releaseInput" owd-form-name="inputform2" owd-button-options="gridButtonOptions2" style="height:610px;"></div>
+		<!-- [#7164][OSS] 解除指示入力明細のグリッドの高さを調整 2020.02.05 tsuboi End -->
+		<!-- [#3279][Ver3.0] セット解除指示で親商品の在庫が必ず0になる 2018.01.11 honma Add End -->
+		<br>
+		<div id="content-footer"></div>
+		<!-- [#7164][OSS]⑦ 解除指示入力明細に使用するボタンをフッタ領域から解除 2020.02.04 tsuboi Start -->
+		<!--  <div id="content-footer-button" class="container"> -->
+		<div class="row">
+			<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+				<owd-button id="copyRow" class="btn-info" ng-disabled="!gridOptions2.gridApi.selection.getSelectedRows().length" ng-click="copyRow()">行コピー</owd-button>
+				<owd-button id="removeRow" class="btn-danger" ng-disabled="!gridOptions2.gridApi.selection.getSelectedRows().length" ng-click="removeRow()">行削除</owd-button>
+			</div>
+			<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- [ON推-CT113-021] 解除 ⇒ 登録 2015.12.28 hayashi Start -->
+				<!-- <owd-button id="register" class="btn-danger" ng-disabled="!gridOptions2.gridApi.grid.rows.length"ng-click="register()">解除</owd-button> -->
+				<owd-button id="register" class="btn-success" ng-disabled="!gridOptions2.gridApi.grid.rows.length" ng-click="register()">登録</owd-button>
+				<!-- [ON推-CT113-021] 解除 ⇒ 登録 2015.12.28 hayashi End -->
+			</div>
+		</div>
+		<br>
+		<!--  </div> -->
+		<!-- [#7164][OSS]⑦ 解除指示入力明細に使用するボタンをフッタ領域から解除 2020.02.04 tsuboi End -->
+	</form>
+</div>

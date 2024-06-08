@@ -1,0 +1,23 @@
+<div ng-controller="ClassLabelPrint" owd-screen="ClassLabelPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.04sja Start -->
+				<!-- 
+				<owd-select id="centerCd" ng-model="searchCondition.tstoreRecordH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.tstoreRecordH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-focus="centerFocus()" ng-change="centerChange()" ng-blur="centerBlur()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.04 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.tstoreRecordH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="searchCondition.treceivePlanB.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫_"></owd-select>
+				<owd-number id="num" ng-model="searchCondition.storeLabelNo" label-text="枚数_" >
+				</owd-number>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

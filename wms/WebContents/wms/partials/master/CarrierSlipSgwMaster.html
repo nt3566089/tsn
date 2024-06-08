@@ -1,0 +1,47 @@
+<div ng-controller="CarrierSlipSgwMaster" owd-screen="CarrierSlipSgwMaster">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+					<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="carrierSlipSgwMasterSearch.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="倉庫1"></owd-select>
+						<owd-text id="tagType" ng-model="carrierSlipSgwMasterSearch.tagType" label-text="ゾーン"></owd-text>
+					</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="carrierSlipSgwList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)" ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+<!-- 						<owd-file id="excelUpload" class="btn-info" owd-before-upload="excelBeforeUpload" owd-success="excelUploadSuccess" owd-options="fileOptions">Excel取込</owd-file> -->
+<!-- 						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button> -->
+<!-- 						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button> -->
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+<!-- 						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button> -->
+						<!-- コピー機能追加 佐川送り状マスタ画面修正 2016.07.26 Lin Zar Ni Myint Add Start -->
+						<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						<!-- コピー機能追加 佐川送り状マスタ画面修正 2016.07.26 Lin Zar Ni Myint Add Start -->
+						<owd-button id="new" class="btn-info"  ng-click="initNew()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

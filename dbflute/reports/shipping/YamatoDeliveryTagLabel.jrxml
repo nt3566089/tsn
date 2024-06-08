@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="YamatoDeliveryTagREportPrint" pageWidth="311" pageHeight="467" columnWidth="301" leftMargin="5" rightMargin="5" topMargin="0" bottomMargin="0" uuid="b956aa83-6245-4689-8a2f-f303e12568c4">
+	<property name="ireport.zoom" value="1.4641000000000475"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="5"/>
+	<property name="ireport.background.image.properties" value="true,true,0.5,-8,-8,0,0,327,476"/>
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<style name="Barcode" hAlign="Center" vAlign="Bottom" fontName="IPAexゴシック" fontSize="6"/>
+	<field name="shippingPackingNoBarcode" class="java.lang.String">
+		<fieldDescription><![CDATA[shippingPackingNoBarcode]]></fieldDescription>
+	</field>
+	<field name="delivZipCd" class="java.lang.String">
+		<fieldDescription><![CDATA[delivZipCd]]></fieldDescription>
+	</field>
+	<field name="delivTelNo" class="java.lang.String">
+		<fieldDescription><![CDATA[delivTelNo]]></fieldDescription>
+	</field>
+	<field name="delivAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[delivAddress]]></fieldDescription>
+	</field>
+	<field name="delivCustomerNm" class="java.lang.String">
+		<fieldDescription><![CDATA[delivCustomerNm]]></fieldDescription>
+	</field>
+	<field name="slipClientZipCd" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientZipCd]]></fieldDescription>
+	</field>
+	<field name="slipClientTelNo" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientTelNo]]></fieldDescription>
+	</field>
+	<field name="slipClientAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientAddress1]]></fieldDescription>
+	</field>
+	<field name="slipClientAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientAddress2]]></fieldDescription>
+	</field>
+	<field name="slipClientAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientAddress3]]></fieldDescription>
+	</field>
+	<field name="slipClientAddress4" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientAddress4]]></fieldDescription>
+	</field>
+	<field name="slipClientNm" class="java.lang.String">
+		<fieldDescription><![CDATA[slipClientNm]]></fieldDescription>
+	</field>
+	<field name="slipItemNm1" class="java.lang.String">
+		<fieldDescription><![CDATA[slipItemNm1]]></fieldDescription>
+	</field>
+	<field name="slipItemNm2" class="java.lang.String">
+		<fieldDescription><![CDATA[slipItemNm2]]></fieldDescription>
+	</field>
+	<field name="article" class="java.lang.String">
+		<fieldDescription><![CDATA[article]]></fieldDescription>
+	</field>
+	<field name="coolClsNm" class="java.lang.String">
+		<fieldDescription><![CDATA[coolClsNm]]></fieldDescription>
+	</field>
+	<field name="shippingDt" class="java.lang.String">
+		<fieldDescription><![CDATA[shippingDt]]></fieldDescription>
+	</field>
+	<field name="delivDt" class="java.lang.String">
+		<fieldDescription><![CDATA[delivDt]]></fieldDescription>
+	</field>
+	<field name="delivTzNm" class="java.lang.String">
+		<fieldDescription><![CDATA[delivTzNm]]></fieldDescription>
+	</field>
+	<field name="arrivalStoreCd" class="java.lang.String">
+		<fieldDescription><![CDATA[arrivalStoreCd]]></fieldDescription>
+	</field>
+	<field name="carrierTraceNum" class="java.lang.String">
+		<fieldDescription><![CDATA[carrierTraceNum]]></fieldDescription>
+	</field>
+	<field name="sendCd" class="java.lang.String">
+		<fieldDescription><![CDATA[sendCd]]></fieldDescription>
+	</field>
+	<field name="shippingSlipNo" class="java.lang.String">
+		<fieldDescription><![CDATA[shippingSlipNo]]></fieldDescription>
+	</field>
+	<field name="pickingWorkNo" class="java.lang.String">
+		<fieldDescription><![CDATA[pickingWorkNo]]></fieldDescription>
+	</field>
+	<field name="boxSizeCd" class="java.lang.String">
+		<fieldDescription><![CDATA[boxSizeCd]]></fieldDescription>
+	</field>
+	<field name="shippingPackingNo" class="java.lang.String">
+		<fieldDescription><![CDATA[shippingPackingNo]]></fieldDescription>
+	</field>
+	<field name="arrivalStoreCdBarcode" class="java.lang.String">
+		<fieldDescription><![CDATA[arrivalStoreCdBarcode]]></fieldDescription>
+	</field>
+	<field name="coolCls" class="java.lang.String">
+		<fieldDescription><![CDATA[coolCls]]></fieldDescription>
+	</field>
+	<field name="carrierTraceNumBarcode" class="java.lang.String">
+		<fieldDescription><![CDATA[carrierTraceNumBarcode]]></fieldDescription>
+	</field>
+	<field name="reprintFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[reprintFlg]]></fieldDescription>
+	</field>
+	<field name="pickingWorkNoAbbr" class="java.lang.String">
+		<fieldDescription><![CDATA[pickingWorkNoAbbr]]></fieldDescription>
+	</field>
+	<variable name="pickingWorkNo_pageNumber" class="java.lang.Integer" resetType="Group" resetGroup="pickingWorkNo" incrementType="Page" calculation="Count">
+		<variableExpression><![CDATA[$V{pickingWorkNo_pageNumber}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="pickingWorkNo">
+		<groupExpression><![CDATA[$F{pickingWorkNo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="467" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivAddress1" x="44" y="70" width="203" height="45" uuid="7950a11f-40ee-4bc3-b381-c6bcff099a06"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivAddress}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivCustomerNm1" x="44" y="115" width="190" height="9" uuid="ab63cfd1-7861-48e2-ab39-80e38ed63793"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivCustomerNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientAddress1" x="44" y="137" width="203" height="18" uuid="5bbd667a-8c2b-4e06-a936-44e594fc22bd"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipClientAddress1}+$F{slipClientAddress2}+$F{slipClientAddress3}+$F{slipClientAddress4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipItemNm1" x="44" y="168" width="203" height="11" uuid="26e088d9-c74f-4553-8c6c-4b42062101ce"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipItemNm1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipItemNm2" x="44" y="179" width="203" height="11" uuid="6a91a32d-6195-4561-ade3-0f7c2a686321"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipItemNm2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivZipZd1" x="160" y="61" width="60" height="9" uuid="055f0a55-1013-4c8e-a726-8656047c5d26"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{delivZipCd}.equals("")) ? "" : ($F{delivZipCd}.length() < 4) ? ("〒" + $F{delivZipCd}) : ("〒" + $F{delivZipCd}.substring(0, 3) + "-" + $F{delivZipCd}.substring(3, $F{delivZipCd}.length()))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblCool" mode="Opaque" x="254" y="8" width="39" height="9" backcolor="#FFFFFF" uuid="9fd537f7-ca98-4946-bb81-04be892f9e46">
+					<printWhenExpression><![CDATA[!($F{coolCls}.equals("0"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<text><![CDATA[クール]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientNm1" x="44" y="155" width="190" height="11" uuid="efb1dce7-24d0-4e47-aed4-8a9e144ea09e"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipClientNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtPickingWorkNo" x="29" y="438" width="74" height="9" uuid="8e988c0c-37d6-448a-9472-6551e7009e64"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pickingWorkNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivZipZd2" x="160" y="292" width="60" height="9" uuid="22286a1b-8129-4bfe-a9a0-118bcc3a88bb"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{delivZipCd}.equals("")) ? "" : ($F{delivZipCd}.length() < 4) ? ("〒" + $F{delivZipCd}) : ("〒" + $F{delivZipCd}.substring(0, 3) + "-" + $F{delivZipCd}.substring(3, $F{delivZipCd}.length()))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivAddress2" x="44" y="301" width="203" height="45" uuid="915b2788-7110-49d4-b17a-c566454679b5"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivAddress}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivCustomerNm2" x="44" y="346" width="190" height="9" uuid="6170a378-1568-485e-a3e3-526d444ed27c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivCustomerNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientAddress2" x="44" y="372" width="190" height="18" uuid="bead3664-41b3-4190-9018-153c5c2a5762"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipClientAddress1}+$F{slipClientAddress2}+$F{slipClientAddress3}+$F{slipClientAddress4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientNm2" x="44" y="391" width="190" height="9" uuid="56f0e9ba-04ed-473d-8de5-a0503a44b412"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipClientNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipItemNm3" x="44" y="403" width="143" height="11" uuid="0ec2615c-d048-48e2-ba64-b3fd882d8fbf"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipItemNm1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipItemNm4" x="44" y="414" width="143" height="11" uuid="5d5a4b00-bc4e-4c5e-9eb3-239dc27c5057"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipItemNm2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientZipZd1" x="160" y="128" width="60" height="9" uuid="4fd9a38c-a08d-4a9e-b8a9-e941165ee4ab"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{slipClientZipCd}.equals("")) ? "" : ($F{slipClientZipCd}.length() < 4) ? ("〒" + $F{slipClientZipCd}) : ("〒" + $F{slipClientZipCd}.substring(0, 3) + "-" + $F{slipClientZipCd}.substring(3, $F{slipClientZipCd}.length()))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientZipZd2" x="160" y="361" width="60" height="9" uuid="4f28686b-45ad-4f60-84a6-797f4f5c4ac0"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{slipClientZipCd}.equals("")) ? "" : ($F{slipClientZipCd}.length() < 4) ? ("〒" + $F{slipClientZipCd}) : ("〒" + $F{slipClientZipCd}.substring(0, 3) + "-" + $F{slipClientZipCd}.substring(3, $F{slipClientZipCd}.length()))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivTelNo1" x="44" y="61" width="115" height="9" uuid="514a69c6-ade5-4e28-9f78-6274a56cc839"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{delivTelNo}.equals("") ? "" : "TEL " + $F{delivTelNo})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientTelNo1" x="44" y="128" width="115" height="9" uuid="37eb4435-1155-456a-882f-c68bd2c15762"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{slipClientTelNo}.equals("") ? "" : "TEL " + $F{slipClientTelNo})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDelivTelNo2" x="44" y="292" width="115" height="9" uuid="4b7774dc-8ca5-4db9-b94f-a8876a2b5aa0"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{delivTelNo}.equals("") ? "" : "TEL " + $F{delivTelNo})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientTelNo2" x="44" y="361" width="115" height="9" uuid="823303ed-c6ba-413b-9cf1-0cd0e525b1ee"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{slipClientTelNo}.equals("") ? "" : "TEL " + $F{slipClientTelNo})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtArticle" x="44" y="193" width="203" height="24" uuid="a6ed1be0-554b-470b-bdfc-1dbcda7affc7"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{article}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtCoolClsNm1" mode="Opaque" x="254" y="17" width="39" height="25" forecolor="#FFFFFF" backcolor="#000000" uuid="08b957e5-4e7b-4b0e-b326-0ce18112f4f5">
+					<printWhenExpression><![CDATA[!($F{coolCls}.equals("0"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coolClsNm}.substring(3, 5)]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM" isBlankWhenNull="true">
+				<reportElement key="txtDelivDt1" x="262" y="85" width="12" height="12" uuid="c50994b6-7947-4315-88cc-010bf2f001e6"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{delivDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd" isBlankWhenNull="true">
+				<reportElement key="txtDelivDt4" x="274" y="97" width="12" height="12" uuid="d47762da-ad27-4a13-adef-1d1c51767d76"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{delivDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtDelivTzNm1" x="255" y="136" width="36" height="28" uuid="75ee657e-dd9e-44f9-8a58-cda4e269f06a"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivTzNm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yy" isBlankWhenNull="true">
+				<reportElement key="txtShippingDt1" x="42" y="229" width="10" height="9" uuid="c00dab36-5a8f-408c-9681-9f4b4475d98f"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM" isBlankWhenNull="true">
+				<reportElement key="txtShippingDt2" x="66" y="229" width="10" height="9" uuid="6fc9834c-0b4f-461a-a9cd-cb272276181c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd" isBlankWhenNull="true">
+				<reportElement key="txtShippingDt3" x="92" y="229" width="10" height="9" uuid="5d25eb27-43d2-4b84-95b9-29031d7da2ae"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSendCd" x="43" y="254" width="45" height="9" uuid="8ada10af-1b0f-4bed-90aa-e22f4d3586c8"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sendCd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtBoxSizeCd" x="97" y="247" width="30" height="15" uuid="edb16bb6-e3e4-454c-b106-d064b51e5bbf"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="IPAexゴシック" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{boxSizeCd}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM" isBlankWhenNull="true">
+				<reportElement key="txtDelivDt3" x="262" y="317" width="12" height="12" uuid="3092cc34-f61f-414c-bebd-10815ec4e30c"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{delivDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd" isBlankWhenNull="true">
+				<reportElement key="txtDelivDt4" x="274" y="329" width="12" height="12" uuid="47de7652-ccb0-40fa-83ce-838817f826a3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{delivDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtDelivTzNm2" x="255" y="367" width="36" height="28" uuid="10c97ca0-f1c0-43f5-8c3e-70506b3a4076"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivTzNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtSlipClientTelNo3" x="75" y="428" width="90" height="9" uuid="0b7b5326-0dbf-45a0-bab7-f21a9ae3bc1d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{slipClientTelNo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtCoolClsNm2" mode="Opaque" x="255" y="401" width="39" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="9d995697-933b-430e-b0d8-1f774b8949ab">
+					<printWhenExpression><![CDATA[!($F{coolCls}.equals("0"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coolClsNm}.substring(3, 5)]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM" isBlankWhenNull="true">
+				<reportElement key="txtShippingDt4" x="264" y="443" width="10" height="9" uuid="3c32bc0f-2538-4346-879e-749cb09eb0cf"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd" isBlankWhenNull="true">
+				<reportElement key="txtShippingDt5" x="285" y="443" width="10" height="9" uuid="980cb80f-5c78-4146-85fd-187729a24d85"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="barArrivalStoreCd" style="Barcode" x="4" y="1" width="124" height="40" uuid="0678a4be-55c4-4e75-8370-5b1377e357be">
+					<printWhenExpression><![CDATA[!($F{arrivalStoreCdBarcode}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.3" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA[$F{arrivalStoreCdBarcode}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="txtArrivalStoreCd" stretchType="RelativeToBandHeight" x="128" y="14" width="123" height="26" uuid="4bfe24e4-7b1b-4ffa-9c47-ee3717dad07a"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="26" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{arrivalStoreCd}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="barCarrierTraceNum" style="Barcode" x="150" y="218" width="130" height="46" uuid="59c5efb0-4274-411c-ab5b-c9ec64831bd0">
+					<printWhenExpression><![CDATA[!($F{carrierTraceNum}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<jr:Codabar xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA["a" + $F{carrierTraceNum} + "a"]]></jr:codeExpression>
+				</jr:Codabar>
+			</componentElement>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtCarrierTraceNum1" x="127" y="47" width="85" height="8" uuid="f30c6a8f-592e-49b8-804d-11a644cc7c82"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carrierTraceNum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtCarrierTraceNum2" x="127" y="278" width="85" height="11" uuid="8f1f0cba-a24b-422e-b1fe-87668a3a1f65"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carrierTraceNum}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtShippingPackingNo" x="29" y="447" width="74" height="9" uuid="ed813386-206c-4640-8633-b1ee00fc1e1b"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shippingPackingNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtPickingWorkNoAbbr" stretchType="RelativeToBandHeight" x="188" y="403" width="60" height="22" uuid="0ab48b1c-7716-4633-bc8d-86e89963fc8d"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pickingWorkNoAbbr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblAgain" mode="Opaque" x="238" y="0" width="13" height="13" backcolor="#FFFFFF" uuid="0db9fdc2-e15c-442d-a787-bb253c79ad45">
+					<printWhenExpression><![CDATA[$F{reprintFlg}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="11"/>
+				</textElement>
+				<text><![CDATA[再]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtCarrierTraceNum" x="150" y="264" width="130" height="6" uuid="8e87e952-7147-4c0e-b9cb-adcf76a71729"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carrierTraceNum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

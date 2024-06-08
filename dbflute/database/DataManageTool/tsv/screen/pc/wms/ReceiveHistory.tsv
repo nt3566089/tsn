@@ -1,0 +1,61 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveHistory	入荷履歴	wms	centerCd	センタ		1	1		1	1													
+ReceiveHistory	入荷履歴	wms	clientCd	荷主		1	1		1	1													
+ReceiveHistory	入荷履歴	wms	storeDtFrom	入庫日(From)		1	1		0	1													
+ReceiveHistory	入荷履歴	wms	storeDtTo	入庫日(To)		1	1		0	1													
+ReceiveHistory	入荷履歴	wms	processTypeCd	処理区分		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	clientReceiveNo	顧客入荷指示No.		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	receiveSlipNo	WMS入荷伝票No.		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	supplierCd	仕入先CD		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	depositCd	預託		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	productCd	商品CD		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	lot	ロット		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	limitDtFrom	期限日(From)		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	limitDtTo	期限日(To)		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	stockTypeCd	在庫区分		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	warehouseCd	倉庫		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	storeLocationCdFrom	入庫格納ロケーションCD(From)		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	storeLocationCdTo	入庫格納ロケーションCD(To)		1	1		0	0													
+ReceiveHistory	入荷履歴	wms	search	検索		1	1		0	1													
+ReceiveHistory	入荷履歴	wms	excelOutput	Excel出力		1	1		0	1													
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.histDt	履歴日	1	date	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.receivePlanDt	入荷予定日	2	date	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	storeDt	入庫日	3	date	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.supplierCd	仕入先CD	4	text	1	0		0	200				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.supplierNm	仕入先名称	5	text	1	0		0	300				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.supplierAbbr	仕入先略称	6	text	1	0		0	250				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.depositCd	預託CD	7	text	1	0		0	160				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.depositNm	預託名称	8	text	1	0		0	300				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.depositAbbr	預託略称	9	text	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.clientReceiveNo	顧客入荷指示No.	10	text	1	0		0	210				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.receiveSlipNo	WMS入荷伝票No.	11	text	1	0		0	170				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.mprocessType.processTypeCd	処理区分CD	12	text	1	0		0	110				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.mprocessType.vdict.dictNm	処理区分名称	13	text	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.receiveDeliveryStatus	入荷納品ステータスCD	14	text	1	0		0	170				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.bclassDtlByReceiveDeliveryStatus.vdict.dictNm	入荷納品ステータス名称	15	text	1	0		0	190				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.productCd	商品CD	16	text	1	0		0	245				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.productNm	商品名称	17	text	1	0		0	300				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.productAbbr	商品略称	18	text	1	0		0	300				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.janCd	ソースCD	19	text	1	0		0	205				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.lot	ロット	20	text	1	0		0	170				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.limitDt	期限日	21	date	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.mstockType.stockTypeCd	在庫区分CD	22	text	1	0		0	110				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.mstockType.vdict.dictNm	在庫区分名称	23	text	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	planNum	予定数	24	number	1	0	right	0	95				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	storeNum	入庫数	25	number	1	0	right	0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.warehouseCd	倉庫CD	26	text	1	0		0	85				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.warehouseNm	倉庫名称	27	text	1	0		0	300				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.zoneCd	ゾーンCD	28	text	1	0		0	90				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.zoneNm	ゾーン名称	29	text	1	0		0	170				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.locationCd	ロケーションCD	30	text	1	0		0	200				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.locationNm	ロケーション名称	31	text	1	0		0	250				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.storeLabelNo	入庫ラベルNo.	32	text	1	0		0	140				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hstock.oldStoreLabelNo	元入庫ラベルNo.	33	text	1	0		0	155				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	storeFlgNm	入庫格納フラグ	34	text	1	0		0	125				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	storeLocationCd	入庫格納ロケーションCD	35	text	1	0		0	150				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	storeLocationNm	入庫格納ロケーション名称	36	text	1	0		0	250				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.clientCd	荷主CD	37	text	1	0		0	200				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.clientNm	荷主名称	38	text	1	0		0	200				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.centerCd	センタCD	39	text	1	0		0	200				
+ReceiveHistory	入荷履歴	wms	receiveHistoryGrid	入荷履歴グリッド	grid	1	1		0	1	hreceiveH.centerNm	センタ名称	40	text	1	0		0	200				

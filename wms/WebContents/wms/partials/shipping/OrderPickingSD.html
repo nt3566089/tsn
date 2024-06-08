@@ -1,0 +1,22 @@
+<ion-view owd-screen="OrderPickingSD" title="{{screenTitle}}">
+	<ion-content ng-class="{'has-footer' : alerts.length > 0}">
+
+		<form id="form.searchform" name="form.searchform" novalidate>
+			<div class="tablet-row responsive-sm" style="flex-wrap: wrap;">
+				<owd-select class="tablet-col tablet-col-50" id="takingShippingFlg" ng-model="searchCondition.takingShippingFlg" owd-models="takingShippingFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="作業日/出荷日" owd-remove-blank></owd-select>
+				<owd-date class="tablet-col tablet-col-50" id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)" ng-focus="inputValueAllSelectOnFocus($event)"></owd-date>
+				<owd-date class="tablet-col tablet-col-50" id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage" ng-focus="inputValueAllSelectOnFocus($event)"></owd-date>
+				<owd-text class="tablet-col tablet-col-50" id="pickingBatchNo" ng-model="searchCondition.pickingBatchNo" label-text="出庫指示バッチNo." ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No." ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="shippingPackingNo" ng-model="searchCondition.shippingPackingNo" label-text="出荷梱包No." ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="supplyCustomerCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先" owd-add-button="showDelivery()" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-select class="tablet-col tablet-col-50" id="emergencyFlg" ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急のみ" owd-remove-blank></owd-select>
+				<owd-select class="tablet-col tablet-col-50" id="noStockOutFlg" ng-model="searchCondition.noStockOutFlg" owd-models="noStockOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="欠品フラグ"></owd-select>
+				<owd-text class="tablet-col tablet-col-50" id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="showDeliveryCourse()" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="updUser" ng-model="searchCondition.updUser" label-text="担当者CD" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+			</div>
+
+			<owd-button id="search" class="button-positive" ng-disabled="form.searchform.$invalid" ng-click="search()">検索</owd-button>
+		</form>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<div ng-controller="CenterProductControlMasterList" owd-screen="CenterProductControlMasterList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+						<div class="row">
+							<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+							<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+							<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="銘柄CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.mproduct.productNm"></owd-info>
+					</owd-text>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="CenterProductControlMasterList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

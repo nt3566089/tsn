@@ -1,0 +1,62 @@
+<div ng-controller="ReceivePartList" owd-screen="ReceivePartList">
+	<form id="inputHeaderform" name="inputHeaderform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			    <fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+					    <owd-date id="receivePlanDtFrom" ng-model="searchCondition.receivePlanDtFrom" label-text="入荷予定日From"></owd-date>
+						<owd-date id="receivePlanDtTo" ng-model="searchCondition.receivePlanDtTo" label-text="入荷予定日To"  owd-validate="fromToCheck(searchCondition.receivePlanDtFrom, $value)" owd-validate-watch="'searchCondition.receivePlanDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-date id="storeDtFrom" ng-model="searchCondition.storeDtFrom" label-text="入荷日(From)"></owd-date>
+						<owd-date id="storeDtTo" ng-model="searchCondition.storeDtTo" label-text="入荷日(To)"  owd-validate="fromToCheck(searchCondition.storeDtFrom, $value)" owd-validate-watch="'searchCondition.storeDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="receiveDeliveryStatus" ng-model="searchCondition.receiveDeliveryStatus" owd-models="receiveDeliveryStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入荷納品ステータス"></owd-select>
+						<owd-text id="planSupplierCd" ng-model="searchCondition.planSupplierCd" label-text="仕入先コード" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+							<owd-info ng-model="searchCondition.mcustomerByPlanSupplierId.customerNm"></owd-info>
+						</owd-text>
+						<owd-text id="planClientReceiveNo" ng-model="searchCondition.planClientReceiveNo" label-text="予定顧客入荷指示No."></owd-text>
+						<owd-text id="clientReceiveNo" ng-model="searchCondition.clientReceiveNo" label-text="顧客入荷指示No."></owd-text>
+						<owd-text id="receiveSlipNo" ng-model="searchCondition.receiveSlipNo" label-text="WMS入荷伝票No."></owd-text>
+						 <owd-text id="productCd" ng-model="searchCondition.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.productNm"></owd-info>
+						</owd-text>
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div  class="col-xs-6" align="left">
+			    <owd-button id="search" class="btn-info" ng-disabled="inputHeaderform.$invalid" ng-click="search()">検索</owd-button>
+			    <owd-button id="excelOutput" class="btn-info" ng-click="excelOutput()">Excel出力</owd-button>
+	        </div>
+		</div>
+		</form>
+		<form id="inputform" name="inputform" novalidate>
+		<br>
+		<!-- [ON推-1.1.4-CT-014]シナリオテストCT指摘問題の対応 一覧表示項目を追加 2016.05.17 chou Mod Start -->
+		<div owd-grid="gridOptions" id="ReceivePartList" owd-checkbox-options="gridSelect"  owd-select-options="gridSelectOptions"  owd-form-name="inputform"  owd-backcolor-option="processForRow(row)"></div>
+	    <!-- [ON推-1.1.4-CT-014]シナリオテストCT指摘問題の対応 一覧表示項目を追加 2016.05.17 chou Mod End -->
+	    <br>
+	    <div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-10">
+					<owd-select id="processStatus" ng-model="searchCondition.receiveDeliveryStatusFooter" owd-models="receiveDeliveryStatusUnderList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入荷納品ステータス"></owd-select>
+					<owd-date id="receivePlanDt" ng-model="searchCondition.receivePlanDt" label-text="入荷予定日"></owd-date>
+	                <br>
+				    <owd-button id="instruction" class="btn-info" ng-disabled="inputform.$invalid" ng-click="instruction()">指示</owd-button>
+				</div>
+				<div class="col-xs-2" align="right">
+					<br>
+                    <!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+					<owd-button id="register" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="register()">登録</owd-button>
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ShippingNoPackingBoxResource	send	send	HTバラ出荷検品(箱登録)送信	boxCd	荷材CD	text	1

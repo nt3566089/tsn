@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	reportNm	帳票名	1	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	reportLayoutNm	帳票レイアウト名称	2	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	attribute1	帳票レイアウト属性1	3	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	attribute2	帳票レイアウト属性2	4	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	attribute3	帳票レイアウト属性3	5	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	attribute4	帳票レイアウト属性4	6	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	attribute5	帳票レイアウト属性5	7	text	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	printerGroupNm	プリンタグループ	8	dropdown	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	printerNm	プリンタ名称	9	dropdown	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	userAutoPrintSettingListGrid	自動印刷プリンタ設定グリッド	grid	1	1		0	1	trayNm	トレイ名称	10	dropdown	1	0		0	150				
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	close	閉じる		1	1		0	1													
+UserAutoPrintSettingList	自動印刷プリンタ設定(一覧)	base	update	修正		1	1		0	1													

@@ -1,0 +1,52 @@
+<div ng-controller="ShippingUpdate" owd-screen="ShippingUpdate">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="head.tshippingInstH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="head.tshippingInstH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-text id="productCd" ng-model="head.productCd" label-text="商品CD"></owd-text>
+				<owd-text id="productNm" ng-model="head.mproduct.productNm" label-text="商品名称"></owd-text>
+				<owd-date id="workDt" ng-model="head.tshippingInstH.workDt" label-text="作業日"></owd-date>
+				<owd-date id="shippingDt" ng-model="head.tshippingInstH.shippingDt" label-text="出荷日"></owd-date>
+				<owd-date id="delivDt" ng-model="head.tshippingInstH.delivDt" label-text="納品指定日"></owd-date>
+				<owd-text id="supplyCustomerCd" ng-model="head.tshippingInstH.supplyCustomerCd" label-text="納品先CD"></owd-text>
+				<owd-text id="supplyCustomerNm" ng-model="head.tshippingInstH.supplyCustomerNm" label-text="納品先名称"></owd-text>
+				<owd-text id="delivAddress1" ng-model="head.tshippingInstH.delivAddress1" label-text="届先住所1"></owd-text>
+				<owd-text id="shippingSlipNo" ng-model="head.tshippingInstH.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+				<owd-select id="shippingStatus" ng-model="head.tshippingInstH.shippingStatus" owd-models="shippingStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷ステータス"></owd-select>
+			</div>
+		</div>
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-8" align="right">
+				<table border="1">
+					<td class="wmslegend wmslegendwhite"><owd-span id="nonShippingTitle" label-text="通常"></owd-span></td>
+					<!-- [#5592][v3.1] キャンセルの色指定を削除 / 並び順を一覧画面に合わせて変更 2018.11.08 kawana Start -->
+					<td class="wmslegend wmslegendindianred"><owd-span id="shippingStopTitle" label-text="出荷停止"></owd-span></td>
+					<td class="wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></td>
+					<!-- [#5592][v3.1] キャンセルの色指定を削除 / 並び順を一覧画面に合わせて変更 2018.11.08 kawana End -->
+				</table>
+			</div>
+		</div>
+		<br>
+		<!-- [ON推-品向-445] ロケーションCDの変更で引当禁止フラグを更新 2014.12.16 kawana Start -->
+		<!-- [#3132][Ver3.0] 小数有無フラグを加味した小数点チェック処理について 2018.02.19 honma Mod Start -->
+		<div owd-grid="gridOptions" id="shippingUpdateList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)" owd-event-options="gridEventOptions" owd-multitext-options="multiTextOptions" owd-grid-multitext-options="gridMultiTextOptions"></div>
+		<!-- [#3132][Ver3.0] 小数有無フラグを加味した小数点チェック処理について 2018.02.19 honma Mod End -->
+		<!-- [ON推-品向-445] ロケーションCDの変更で引当禁止フラグを更新 2014.12.16 kawana End -->
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

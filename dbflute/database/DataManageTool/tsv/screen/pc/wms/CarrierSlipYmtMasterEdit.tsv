@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	tagType	データ種別	text	1	1		1	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	tagNm	データ種別名称	text	1	1		1	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	characterCd	文字コード	dropdown	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipType	送り状種別	dropdown	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	coolCls	クール区分	dropdown	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	honorific	敬称	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientTelNo	ご依頼主電話番号	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	packingShowFlg	個数口表示フラグ	dropdown	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientZipCd	ご依頼主郵便番号	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientAddress1	ご依頼主住所(都道府県)	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientAddress2	ご依頼主住所(市区郡町村)	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientAddress3	ご依頼主住所(町域)	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientAddress4	ご依頼主住所(アパートマンション名)	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipClientNm	ご依頼主名	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipItemCd1	品名コード1	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipItemNm1	品名1	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipItemCd2	品名コード2	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	slipItemNm2	品名2	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	freightHandling1	荷扱い1		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	freightHandling2	荷扱い2		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	billingCustomerCd	ご請求先顧客コード		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	fareNo	運賃管理番号		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	article	記事		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	sendCd	発店CD	text	1	1		0	1													
+CarrierSlipYmtMasterEdit	ヤマト送り状マスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													

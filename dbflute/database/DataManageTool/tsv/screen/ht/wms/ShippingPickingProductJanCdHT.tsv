@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	locationNm	ロケ		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	janCd	ｿｰｽCD		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	productCd	商品		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	lot	ロット		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	limitDt	期限日		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	instNum	指示数		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	spgQtyOns	検品数		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	janCdInput	ｿｰｽCD		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	return	戻る		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	send	確認		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	option1	一覧		1	1		0	1													
+ShippingPickingProductJanCdHT	オーダピック(ｿｰｽCD)	wms_ht	option2	ｽｷｯﾌﾟ		1	1		0	1													

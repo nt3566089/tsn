@@ -1,0 +1,61 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PickingListPrint	ピッキングリスト発行	wms	takingShippingFlg	作業日/出荷日		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	dtFrom	日付(From)		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	dtTo	日付(To)		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	centerCd	センタ		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	clientCd	荷主		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	pickingBatchNo	出庫指示バッチNo.		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	pickingWorkNo	出庫作業No.		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	pickingGroupNo	ピッキンググループNo.		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	supplyCustomerCd	納品先CD		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	picCls	発行区分		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	listOutKbn	発行状況		1	1		0	1
+PickingListPrint	ピッキングリスト発行	wms	emergencyFlg	緊急のみ		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	noStockOutFlg	欠品フラグ		1	1		0	1
+PickingListPrint	ピッキングリスト発行	wms	deliveryCourseCd	配送コースCD	text	1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	sglRowPicFlg	単行ピッキング対象		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	casePicFlg	ケースピッキング対象		1	1		0	0
+PickingListPrint	ピッキングリスト発行	wms	search	検索		1	1		0	1
+PickingListPrint	ピッキングリスト発行	wms	excelOutput	Excel出力		1	1		0	1
+PickingListPrint	ピッキングリスト発行	wms	emergencyTitle	緊急		1	0		0	1
+PickingListPrint	ピッキングリスト発行	wms	stockOutFlgTitle	欠品		1	0		0	1
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pickingBatchNo	出庫指示バッチNo.	1	text	1	0		0	170			1	230
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	supplyCustomerCd	納品先CD	2	text	1	0		0	200			2	200
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	supplyCustomerNm	納品先名称	3	text	1	0		0	300			3	300
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	deliveryCourseCd	配送コースCD	4	text	1	0		0	200			4	230
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	deliveryCourseNm	配送コース名称	5	text	1	0		0	300			5	300
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	6	text	1	0		0	125			6	125
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	sglRowPicNm	単行ピッキング対象	7	text	1	0		0	200			7	200
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	casePicNm	ケースピッキング対象	8	text	1	0		0	200			8	200
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	slipNo	伝票枚数	9	number	1	0	right	0	150			9	150
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	lineNo	行数	10	number	1	0	right	0	150			10	150
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	productId	アイテム数	11	number	1	0	right	0	150			11	150
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	allocNum	総ピース数	12	number	1	0	right	0	150			12	150
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	packingCnt	梱包数	13	number	1	0	right	0	140			13	140
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	packingCaseCnt	ケース梱包数	14	number	1	0	right	0	95			14	160
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	packingMixedCnt	混載梱包数	15	number	1	0	right	0	95			15	180
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	oplOutNm	オーダーピッキングリスト発行	16	text	1	0		0	235			16	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	tplOutNm	トータルピッキングリスト発行	17	text	1	0		0	235			17	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	mltOutNm	マルチピッキングリスト発行	18	text	1	0		0	235			18	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	splOutNm	単行ピッキングリスト発行	19	text	1	0		0	235			19	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pl1OutNm	一次ピッキングリスト発行	20	text	1	0		0	235			20	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pl1OutDt	一次ピッキングリスト発行日時	21	datetime	1	0		0	235			21	270
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	plOutNm	摘み取りリスト発行	22	text	1	0		0	160			22	270
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	slOutNm	種蒔きリスト発行	23	text	1	0		0	160			23	270
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pl2OutNm	二次ピッキングリスト発行	24	text	1	0		0	235			24	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pl2OutDt	二次ピッキングリスト発行日時	25	datetime	1	0		0	235			25	300
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	caseOutNm	ケースピッキングリスト発行	26	text	1	0		0	235			26	235
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	caseOutDt	ケースピッキングリスト発行日時	27	datetime	1	0		0	235			27	300
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	tagOutFlgNm	荷札発行	28	text	1	0		0	160			28
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	tagOutDt	荷札出力日時	29	datetime	1	0		0	235			29
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	pickingGroupNo	ピッキンググループNo.	30	text	1	0		0	205			30	205
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	clientCd	荷主CD	31	text	1	0		0	200			31
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	clientNm	荷主名称	32	text	1	0		0	200			32
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	centerCd	センタCD	33	text	1	0		0	200			33
+PickingListPrint	ピッキングリスト発行	wms	pickingListPrintB	ピッキングリスト発行グリッド	grid	1	0		0	1	centerNm	センタ名称	34	text	1	0		0	200			34
+PickingListPrint	ピッキングリスト発行	wms	picListCls1	リスト発行区分(一次ピッキング)		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	picListCls2	リスト発行区分(二次ピッキング)		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	picListCls3	リスト発行区分(送り状・荷札)		1	1		1	1
+PickingListPrint	ピッキングリスト発行	wms	clearIssue	発行解除		1	1		0	1
+PickingListPrint	ピッキングリスト発行	wms	issue	発行		1	1		0	1

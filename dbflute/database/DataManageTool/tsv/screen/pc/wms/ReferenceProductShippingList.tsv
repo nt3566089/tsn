@@ -1,0 +1,97 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	centerCd	センタ		1	1		1	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	clientCd	荷主		1	1		1	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	takingShippingFlg	作業日/出荷日		1	1		1	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	dtFrom	日付(From)		1	1		1	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	dtTo	日付(To)		1	1		1	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	carrierCd	運送業者		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	pickingBatchNo	出庫指示バッチNo.		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingSlipNo	WMS出荷伝票No.		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	supplyCustomerCd	納品先CD		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	productCd	商品CD		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	clientShippingNo	顧客出荷指示No.		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	pickingWorkNo	出庫作業No.		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	stockOutFlg	欠品フラグ		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingStatus	出荷ステータス		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	emergencyFlg	緊急のみ		1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	depositCustomerCd	預託	dropdown	1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	cancelDisplay	キャンセルデータ表示	dropdown	1	1		0	0													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	search	検索		1	1		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	excelOutput	Excel出力		1	1		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	nonShippingTitle	未出荷		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingInstProcessingTitle	出庫指示中		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingInstedTitle	出庫指示済		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingFixedTitle	出荷確定済		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	cancelTitle	キャンセル		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	errorTitle	エラー有		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	shippingStopTitle	出荷停止		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	emergencyTitle	緊急		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	stockOutFlgTitle	欠品		1	0		0	1													
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.supplyCustomerCd	納品先CD	1	text	1	0		0	200			1	200
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.supplyCustomerNm	納品先名称	2	text	1	0		0	300			2	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivCustomerCd	届先CD	3	text	1	0		0	200			3	200
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivCustomerNm	届先名称	4	text	1	0		0	300			4	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.shippingStatus	出荷ステータス	5	text	1	0		0	125			5	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.bclassDtlByShippingStatus.vdict.dictNm	出荷ステータス名称	6	text	1	0		0	155			6	190
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.shippingSlipNo	WMS出荷伝票No.	7	text	1	0		0	170			7	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.clientShippingNo	顧客出荷指示No.	8	text	1	0		0	260			8	260
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.pickingBatchNo	出庫指示バッチNo.	9	text	1	0		0	170			9	220
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.tallocInstH.tpickingH.pickingWorkNo	出庫作業No.	10	text	1	0		0	125			10	125
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.pickingWorkMessage	出庫作業メッセージ	11	text	1	0		0	300			11	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.deliveryCourseCd	配送コースCD	12	text	1	0		0	125			12	230
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	13	text	1	0		0	300			13	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mdeliveryCourse.mcarrier.carrierNm	運送業者名称	14	text	1	0		0	300			14	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mprocessType.processTypeCd	処理区分CD	15	text	1	0		0	110			15	140
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mprocessType.vdict.dictNm	処理区分名称	16	text	1	0		0	110			16	140
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	productCd	商品CD	17	text	1	0		0	245			17	245
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	18	text	1	0		0	300			18	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	productUnit	商品単位	19	text	1	0		0	90			19	90
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	20	text	1	0		0	205			20	205
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	instNum	指示数	21	number	1	0	right	0	95			21	120
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	allocNum	引当済数	22	number	1	0	right	0	95			22	120
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	stockOutNum	欠品数	23	number	1	0	right	0	95			23	120
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mstockType.stockTypeCd	指定在庫区分CD	24	text	1	0		0	160			24	250
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	指定在庫区分名称	25	text	1	0		0	160			25	250
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	warehouseCd	指定倉庫CD	26	text	1	0		0	90			26	220
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mwarehouse.warehouseNm	指定倉庫名称	27	text	1	0		0	300			27	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mlocation.locationNm	指定ロケーション名称	28	text	1	0		0	250			28	250
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	lot	指定ロット	29	text	1	0		0	170			29	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	limitDt	指定期限日	30	date	1	0		0	150			30	220
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].mixedFlg	混載フラグ	31	text	1	0		0	90			31	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].mixedFlgNm	混載フラグ名称	32	text	1	0		0	160			32	190
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.locationCd	ロケーションCD	33	text	1	0		0	150			33	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.locationNm	ロケーション名称	34	text	1	0		0	250			34	250
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.mzone.mwarehouse.warehouseCd	倉庫CD	35	text	1	0		0	80			35	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.mzone.mwarehouse.warehouseNm	倉庫名称	36	text	1	0		0	110			36	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.mzone.zoneCd	ゾーンCD	37	text	1	0		0	80			37	110
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mlocation.mzone.zoneNm	ゾーン名称	38	text	1	0		0	110			38	110
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	referenceDepositCd	預託CD	39	text	1	0		0	160			39	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	referenceDepositNm	預託名称	40	text	1	0		0	300			40	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mstockType.stockTypeCd	在庫区分CD	41	text	1	0		0	110			41	180
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.mstockType.vdict.dictNm	在庫区分名称	42	text	1	0		0	110			42	190
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].pickingNum	出庫数	43	number	1	0	right	0	95			43	95
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.tlot.lot	ロット	44	text	1	0		0	170			44	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.tlot.limitDt	期限日	45	date	1	0		0	150			45	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.tstoreNo.storeDt	入庫日	46	date	1	0		0	150			46	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tpickingBList[0].tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	47	text	1	0		0	140			47	140
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.workDt	作業日	48	date	1	0		0	150			48	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.shippingDt	出荷日	49	date	1	0		0	150			49	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivPlanDt	納品予定日	50	date	1	0		0	150			50	150
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivDt	納品指定日	51	date	1	0		0	150			51	200
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivTz	納品時間帯CD	52	text	1	0		0	125			52	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.bclassDtlByDelivTz.vdict.dictNm	納品時間帯名称	53	text	1	0		0	125			53	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivZipCd	届先郵便番号	54	text	1	0		0	125			54	200
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.delivAddress1	届先住所1	55	text	1	0		0	300			55	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.headMessageNm	ヘッダエラー内容	56	text	1	0		0	160			56	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	bodyMessageNm	明細エラー内容	57	text	1	0		0	160			57	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.bclassDtlByShippingStopFlg.vdict.dictNm	納品先出荷停止フラグ	58	text	1	0		0	170			58	170
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mproduct.bclassDtlByShippingStopFlg.vdict.dictNm	商品出荷停止フラグ	59	text	1	0		0	160			59	160
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.customerAbbr	納品先略称	60	text	1	0		0	300			60	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	61	text	1	0		0	300			61	300
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mclient.clientCd	荷主CD	62	text	1	0		0	200			62	
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mclient.clientNm	荷主名称	63	text	1	0		0	200			63	
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mcenter.centerCd	センタCD	64	text	1	0		0	200			64	
+ReferenceProductShippingList	商品別出荷一覧(参照)	wms	referenceProductShippingList	商品別出荷一覧(参照)グリッド	grid	1	1		0	1	tshippingInstH.mcenter.centerNm	センタ名称	65	text	1	0		0	200			65	

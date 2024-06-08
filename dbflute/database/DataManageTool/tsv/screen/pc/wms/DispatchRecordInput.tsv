@@ -1,0 +1,36 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DispatchRecordInput	配車実績入力(一覧)	wms	centerCd	拠点		1	0		1	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	clientCd	荷主		1	0		1	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	supplierrCvFlg	輸送区分		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	landing	着地		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	supplierrCvNo	輸送番号		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	search	検索		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	supplierrCvFlg	輸送区分	1	text	1	0		0	200			1	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	landing	着地	2	text	1	0		0	300			2	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	supplierrCvNo	輸送番号	3	text	1	0		0	300			3	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	supplierrCvNo2	JT輸送番号	4	text	1	0		0	150			4	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	supplierrCvNo1	TSN輸送番号	5	text	1	0		0	150			5	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	shipmentDt	発日	6	date	1	0		0	150			6	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	arrivalDt	着日	7	date	1	0		0	150			7	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	plannedCar	計画車種	8	text	1	0		0	300			8	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	achievedCar	実績車種	9	text	1	0		0	300			9	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	transportationCo	運送業者	10	text	1	0		0	300			10	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	carNo	号車No.	11	number	1	0	right	0	150			11	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	genericPalletNo	汎用パレット数	12	number	1	0	right	0	150			12	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	otherPalletNo	その他パレット数	13	number	1	0	right	0	150			13	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	rcvSumQty1Pallet	合計パレット数	14	number	1	0	right	0	150			14	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	no	個数	15	number	1	0	right	0	150			15	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	sum	合計数	16	number	1	0	right	0	150			16	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	sealNo1	封印No.(1)	17	number	1	0	right	0	150			17	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	sealNo2	封印No.(2)	18	number	1	0	right	0	150			18	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	sealNo3	封印No.(3)	19	number	1	0	right	0	150			19	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	centerCd	拠点CD	20	text	0	0		0	150			20	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	centerNm	拠点名称	21	text	0	0		0	300			21	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	clientCd	荷主CD	22	text	0	0		0	150			22	
+DispatchRecordInput	配車実績入力(一覧)	wms	slipNoReceiveList	配車実績入力(一覧)グリッド	grid	1	0		0	1	clientNm	荷主名称	23	text	0	0		0	300			23	
+DispatchRecordInput	配車実績入力(一覧)	wms	publication	発行		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	new	新規		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	update	修正		1	1		0	1													
+DispatchRecordInput	配車実績入力(一覧)	wms	delete	削除		1	1		0	1													

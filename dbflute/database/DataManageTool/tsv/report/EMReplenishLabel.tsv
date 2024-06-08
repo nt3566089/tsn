@@ -1,0 +1,117 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblClientNm	荷主	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblCntrNm	センタ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblProdCd	商品	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblDepositNm	預託	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStockType	在庫区分	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblLot	ロット	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblWarehouseNm	倉庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblZoneNm	ゾーン	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblTLocationNm1	推奨	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblTLocationNm2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblPinkLoc1	ピック	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblPinkLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblShippingLoc1	出庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblShippingLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStoreLoc1	入庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStoreLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblBreakdown	内訳	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStoreNum	総数	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblTitle	緊急補充ラベル	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblClientNm	荷主	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblCntrNm	センタ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblProdCd	商品	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblDepositNm	預託	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStockType	在庫区分	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblLot	ロット	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblWarehouseNm	倉庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblZoneNm	ゾーン	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblTLocationNm1	推奨	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblTLocationNm2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblPinkLoc1	ピック	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblPinkLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblShippingLoc1	出庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblShippingLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStoreLoc1	入庫	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStoreLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblBreakdown	内訳	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblPiece	ピース数	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStoreNum	総数	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblTitle	緊急補充ラベル	String	1	
+EMReplenishLabel	緊急補充ラベル	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblClientNm	荷主	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblProdCd	商品	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblDepositNm	預託	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStockType	在庫区分	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblWarehouseNm	倉庫	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblZoneNm	ゾーン	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblTLocationNm1	推奨	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblTLocationNm2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblPinkLoc1	ピック	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblPinkLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblShippingLoc1	出庫	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblShippingLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStoreLoc1	入庫	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStoreLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStoreNum	総数	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblTitle	緊急補充ラベル	String	1	
+EMReplenishLabel	緊急補充ラベル	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblProdCd	商品	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblDepositNm	預託	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStockType	在庫区分	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblWarehouseNm	倉庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblZoneNm	ゾーン	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblTLocationNm1	推奨	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblTLocationNm2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblPinkLoc1	ピック	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblPinkLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblShippingLoc1	出庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblShippingLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStoreLoc1	入庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStoreLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStoreNum	総数	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblTitle	緊急補充ラベル	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblProdCd	商品	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblDepositNm	預託	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStockType	在庫区分	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblWarehouseNm	倉庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblZoneNm	ゾーン	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblTLocationNm1	推奨	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblTLocationNm2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblPinkLoc1	ピック	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblPinkLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblShippingLoc1	出庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblShippingLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStoreLoc1	入庫	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStoreLoc2	ロケ	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStoreNum	総数	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblTitle	緊急補充ラベル	String	1	
+EMReplenishLabel	緊急補充ラベル	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	

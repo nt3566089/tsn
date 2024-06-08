@@ -1,0 +1,6 @@
+カルチャマスタ	カルチャマスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ	カルチャ属性マスタ
+カルチャCD	カルチャ名(辞書)	日時書式(画面)	日時書式(帳票)	日時書式(Excel)	日時書式(Text)	日付書式(画面)	日付書式(帳票)	日付書式(Excel)	日付書式(Text)	時間書式(画面)	時間書式(帳票)	時間書式(Excel)	時間書式(Text)	数値書式(画面)	数値書式(帳票)	数値書式(Excel)	数値書式(Text)	通貨書式(帳票)	フォント名称(Excel)	フォントサイズ(Excel)
+CULTURE_CD	DICT_NM	DATE_TIME_FORMAT_DISPLAY	DATE_TIME_FORMAT_REPORT	DATE_TIME_FORMAT_EXCEL	DATE_TIME_FORMAT_TEXT	DATE_FORMAT_DISPLAY	DATE_FORMAT_REPORT	DATE_FORMAT_EXCEL	DATE_FORMAT_TEXT	TIME_FORMAT_DISPLAY	TIME_FORMAT_REPORT	TIME_FORMAT_EXCEL	TIME_FORMAT_TEXT	NUMBER_FORMAT_DISPLAY	NUMBER_FORMAT_REPORT	NUMBER_FORMAT_EXCEL	NUMBER_FORMAT_TEXT	CURRENCY_FORMAT_REPORT	FONT_NAME_EXCEL	FONT_SIZE_EXCEL
+ja-JP	日本語(日本)	yyyy/MM/dd HH:mm:ss	yyyy/MM/dd HH:mm	yyyy/MM/dd HH:mm:ss	yyyy/MM/dd HH:mm:ss	yyyy/MM/dd	yyyy/MM/dd	yyyy/MM/dd	yyyy/MM/dd	HH:mm	HH:mm	HH:mm	HH:mm	#,###,##0.###	#,###,##0.###	#,###,##0.###	#,###,##0.###	\ -#,###,##0	ＭＳ Ｐゴシック	10
+en-US	英語(米国)																			
+zh-CN	簡体(中国)																			

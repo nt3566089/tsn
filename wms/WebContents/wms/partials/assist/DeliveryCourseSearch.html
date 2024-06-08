@@ -1,0 +1,50 @@
+<div owd-screen="DeliveryCourseSearch">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.DeliveryCourseSearch">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+    <form id="deliveryCourseSearchform" name="deliveryCourseSearchform" novalidate>
+    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+     <div class="container-modal">
+           <accordion>
+               <accordion-group is-open="isopen">
+	               <accordion-heading>
+	                    {{"searchCondition" | owfMessage}} <span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+	               </accordion-heading>
+	               <fieldset>
+	                   <div class="row">
+	                       <owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+	                       <owd-text id="deliveryCourseCd" ng-model="head.deliveryCourseCd" label-text="配送コースCD"></owd-text>
+	                       <owd-text id="deliveryCourseNm" ng-model="head.deliveryCourseNm" label-text="配送コース名称"></owd-text>
+	                   </div>
+	               </fieldset>
+               </accordion-group>
+            </accordion>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+                    <owd-button id="search" class="btn-info" ng-disabled="deliveryCourseSearchform.$invalid" ng-click="search()">検索</owd-button>
+                    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+                </div>
+            </div>
+            <br>
+             <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+             <div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="deliveryCourse" owd-form-name="deliveryCourseSearchform"></div>
+           	 <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+            <br>
+              <div class="row">
+               <div class="col-xs-6">
+                   <owd-button id="selection" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="selectClose()">選択</owd-button>
+               </div>
+               <div class="col-xs-6" align="right">
+                   <owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+               </div>
+           </div>
+      </div>
+    </form>
+</div>

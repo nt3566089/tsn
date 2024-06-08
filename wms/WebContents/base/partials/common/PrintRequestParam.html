@@ -1,0 +1,109 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div owd-screen="PrintRequestParam" class="container-modal">
+	<div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+		<div class="row" ng-show="modalAlerts.PrintRequestParam">
+			<div class="col-xs-12">
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+			</div>
+		</div>
+	</div>
+	<tabset id="PrintRequestTabSet" justified="true">
+		<tab ng-model="viewModel.printSet" ng-if="viewModel.isShowPrintTab">
+			<tab-heading><owd-span id="printTitle" label-text="印刷"></owd-span></tab-heading>
+			<form id="printform" name="printform" novalidate>
+				<div class="well">
+					<div class="row">
+
+						<owd-select id="printerGroupId" ng-model="viewModel.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" label-text="プリンタグループ" ng-change="changePrinterGroup()"></owd-select>
+
+
+						<owd-select id="printerId" ng-model="viewModel.printerId" owd-models="printerList" owd-repeat-key="printerId" owd-repeat-value="printerNm" label-text="プリンタ" ng-change="changePrinter()"></owd-select>
+
+
+						<owd-number id="printNum" ng-model="viewModel.printNum" label-text="部数"></owd-number>
+
+						<owd-select id="collateFlg" ng-model="viewModel.sheetCollate" owd-models="collateList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="部単位"></owd-select>
+
+						
+						
+						<owd-select id="trayId" ng-model="viewModel.printerAttributeId" owd-models="printerAttrList" owd-repeat-key="printerAttributeId" owd-repeat-value="trayNm" label-text="給紙トレイ"></owd-select>
+
+						
+						
+						<div ng-if="viewModel.isManyReportLayout">
+							<owd-select id="reportLayoutPrintId" ng-model="viewModel.reportLayoutId" owd-models="reportLayoutList" owd-repeat-key="reportLayoutId" owd-repeat-value="reportLayoutNm" label-text="帳票レイアウト" owd-repeat-view-with-key="false" ng-change="changeReportLayout()"></owd-select>
+						</div>
+
+						<div ng-if="viewModel.isOneReportLayout">
+							
+							
+							
+							<div class="col-xs-6">
+							
+								<owd-label id="reportLayoutPrintId" ng-model="viewModel.reportLayoutId" label-text="帳票レイアウト"></owd-label><br>
+								<label>{{reportLayout.reportLayoutId}}:{{reportLayout.reportLayoutNm}}</label>
+							
+							</div>
+							
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-xs-6">
+							<owd-button id="print" class="btn-success" ng-disabled="checkHasError(printform.$invalid)" ng-click="print()">印刷</owd-button>
+						</div>
+						<div class="col-xs-6" align="right">
+							<owd-button id="cancel" class="btn-danger" ng-click="close()">閉じる</owd-button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</tab>
+		<tab ng-model="viewModel.previewSet" ng-if="viewModel.isShowPreviewTab">
+			<tab-heading><owd-span id="previewTitle" label-text="プレビュー"></owd-span></tab-heading>
+			<form id="previewform" name="previewform" novalidate>
+				<div class="well">
+					<div class="row">
+						<div ng-if="viewModel.isManyReportLayout">
+							
+							
+							<owd-select id="reportLayoutPreviewId" ng-model="viewModel.reportLayoutId" owd-models="reportLayoutList" owd-repeat-key="reportLayoutId" owd-repeat-value="reportLayoutNm" label-text="帳票レイアウト" owd-repeat-view-with-key="false"></owd-select>
+						</div>
+						<div ng-if="viewModel.isOneReportLayout">
+							
+							<div class="col-xs-12">
+							
+								<owd-label id="reportLayoutPreviewId" ng-model="viewModel.reportLayoutId" label-text="帳票レイアウト"></owd-label><br>
+								<label>{{reportLayout.reportLayoutId}}:{{reportLayout.reportLayoutNm}}</label>
+							
+							</div>
+							
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-xs-6">
+							<owd-button id="preview" class="btn-success" ng-disabled="checkHasError(previewform.$invalid)" ng-click="preview()">プレビュー</owd-button>
+						</div>
+						<div class="col-xs-6" align="right">
+							<owd-button id="cancel" class="btn-danger" ng-click="close()">閉じる</owd-button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</tab>
+	</tabset>
+
+
+	<div class="row" ng-show="viewModel.isShowCloseOnly">
+		<div class="col-xs-12" align="right">
+			<owd-button id="cancel" class="btn-danger" ng-click="close()">閉じる</owd-button>
+		</div>
+	</div>
+
+</div>

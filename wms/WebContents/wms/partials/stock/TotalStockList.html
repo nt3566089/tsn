@@ -1,0 +1,47 @@
+<div ng-controller="TotalStockList" owd-screen="TotalStockList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="head.mlocation.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+					<!-- [#7212][OSS] ロストフォーカス処理を削除 2020.03.09 tsuboi Start  -->
+					<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()"></owd-select>
+					<!-- [#7212][OSS] ロストフォーカス処理を削除 2020.03.09 tsuboi End  -->
+					<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.mproduct.productNm"></owd-info>
+					</owd-text>
+					<owd-text id="janCd" ng-model="head.mproduct.janCd" label-text="JANCD"></owd-text>
+					<owd-select id="customerCd" ng-model="head.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+					<owd-select id="stockTypeCd" ng-model="head.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+					<owd-date   id="limitDtFrom" ng-model="head.tlot.limitDtFrom" label-text="期限日(From)"></owd-date>
+					<!-- [#4077][Ver3.0]期限日のFromToチェックを修正 2018.04.02 miyabe Upd Start -->
+					<owd-date   id="limitDtTo" ng-model="head.tlot.limitDtTo" label-text="期限日(To)" owd-validate="fromToCheck(head.tlot.limitDtFrom, $value)" owd-validate-watch="'head.tlot.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+					<!-- [#4077][Ver3.0]期限日のFromToチェックを修正 2018.04.02 miyabe Upd End -->
+					<owd-text   id="lot" ng-model="head.tlot.lot" label-text="ロット"></owd-text>
+					<owd-select id="fixedPointCd" ng-model="head.fixedPointDisplay" owd-models="fixedPointList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="定点切れ"></owd-select>
+					<owd-select id="stockNumDisplay" owd-remove-blank ng-model="head.stockNumDisplay" owd-models="stockNumDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫数 0非表示"></owd-select>
+				</div>
+			</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+	            	<div class="list-box">
+						<div class="list-text wmslegend wmslegendindianred"><owd-span id="fixedPoint" label-text="定点切れ"></owd-span></div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="defGridOptions" id="totalStockListDefinition" owd-form-name="inputform" ng-show="false"></div>
+			<div owd-grid="gridOptions" id="totalStockList" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		    <br>
+			<div id="content-footer"></div>
+	</form>
+</div>

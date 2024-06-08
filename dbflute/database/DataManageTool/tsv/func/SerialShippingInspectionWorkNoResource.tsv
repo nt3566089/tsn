@@ -1,0 +1,3 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+SerialShippingInspectionWorkNoResource	send	send	HTｼﾘｱﾙ登出(伝票No)送信	pickingWorkNo	出庫作業No./出荷梱包No.	text	0
+SerialShippingInspectionWorkNoResource	send	send	HTｼﾘｱﾙ登出(伝票No)送信	supplierCustomerCd	納品先CD	text	0

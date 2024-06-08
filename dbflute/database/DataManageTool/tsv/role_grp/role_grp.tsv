@@ -1,0 +1,6 @@
+ROLE_GRP_CD	DICT_NM	ROLE_CONTROL_CLASS
+SystemAdministrator	開発	1
+OfficeSupervisor	本社(主管)	1
+Office	本社	1
+Administrators	管理者	1
+Workers	作業者	1

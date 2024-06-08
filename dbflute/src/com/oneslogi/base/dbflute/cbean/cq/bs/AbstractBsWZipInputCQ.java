@@ -1,0 +1,3355 @@
+package com.oneslogi.base.dbflute.cbean.cq.bs;
+
+import java.util.*;
+
+import org.dbflute.cbean.*;
+import org.dbflute.cbean.chelper.*;
+import org.dbflute.cbean.ckey.*;
+import org.dbflute.cbean.coption.*;
+import org.dbflute.cbean.cvalue.ConditionValue;
+import org.dbflute.cbean.ordering.*;
+import org.dbflute.cbean.scoping.*;
+import org.dbflute.cbean.sqlclause.SqlClause;
+import org.dbflute.dbmeta.DBMetaProvider;
+import com.oneslogi.base.dbflute.allcommon.*;
+import com.oneslogi.base.dbflute.cbean.*;
+import com.oneslogi.base.dbflute.cbean.cq.*;
+
+/**
+ * The abstract condition-query of W_ZIP_INPUT.
+ * @author DBFlute(AutoGenerator)
+ */
+public abstract class AbstractBsWZipInputCQ extends AbstractConditionQuery {
+
+    // ===================================================================================
+    //                                                                         Constructor
+    //                                                                         ===========
+    public AbstractBsWZipInputCQ(ConditionQuery referrerQuery, SqlClause sqlClause, String aliasName, int nestLevel) {
+        super(referrerQuery, sqlClause, aliasName, nestLevel);
+    }
+
+    // ===================================================================================
+    //                                                                             DB Meta
+    //                                                                             =======
+    @Override
+    protected DBMetaProvider xgetDBMetaProvider() {
+        return DBMetaInstanceHandler.getProvider();
+    }
+
+    public String asTableDbName() {
+        return "W_ZIP_INPUT";
+    }
+
+    // ===================================================================================
+    //                                                                               Query
+    //                                                                               =====
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_Equal(Long zipInputId) {
+        doSetZipInputId_Equal(zipInputId);
+    }
+
+    protected void doSetZipInputId_Equal(Long zipInputId) {
+        regZipInputId(CK_EQ, zipInputId);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as notEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_NotEqual(Long zipInputId) {
+        doSetZipInputId_NotEqual(zipInputId);
+    }
+
+    protected void doSetZipInputId_NotEqual(Long zipInputId) {
+        regZipInputId(CK_NES, zipInputId);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as greaterThan. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_GreaterThan(Long zipInputId) {
+        regZipInputId(CK_GT, zipInputId);
+    }
+
+    /**
+     * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as lessThan. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_LessThan(Long zipInputId) {
+        regZipInputId(CK_LT, zipInputId);
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as greaterEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_GreaterEqual(Long zipInputId) {
+        regZipInputId(CK_GE, zipInputId);
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputId The value of zipInputId as lessEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setZipInputId_LessEqual(Long zipInputId) {
+        regZipInputId(CK_LE, zipInputId);
+    }
+
+    /**
+     * RangeOf with various options. (versatile) <br>
+     * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
+     * And NullIgnored, OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param minNumber The min number of zipInputId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of zipInputId. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param rangeOfOption The option of range-of. (NotNull)
+     */
+    public void setZipInputId_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, xgetCValueZipInputId(), "ZIP_INPUT_ID", rangeOfOption);
+    }
+
+    /**
+     * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputIdList The collection of zipInputId as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipInputId_InScope(Collection<Long> zipInputIdList) {
+        doSetZipInputId_InScope(zipInputIdList);
+    }
+
+    protected void doSetZipInputId_InScope(Collection<Long> zipInputIdList) {
+        regINS(CK_INS, cTL(zipInputIdList), xgetCValueZipInputId(), "ZIP_INPUT_ID");
+    }
+
+    /**
+     * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     * @param zipInputIdList The collection of zipInputId as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipInputId_NotInScope(Collection<Long> zipInputIdList) {
+        doSetZipInputId_NotInScope(zipInputIdList);
+    }
+
+    protected void doSetZipInputId_NotInScope(Collection<Long> zipInputIdList) {
+        regINS(CK_NINS, cTL(zipInputIdList), xgetCValueZipInputId(), "ZIP_INPUT_ID");
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     */
+    public void setZipInputId_IsNull() { regZipInputId(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ZIP_INPUT_ID: {PK, ID, NotNull, bigint identity(19)}
+     */
+    public void setZipInputId_IsNotNull() { regZipInputId(CK_ISNN, DOBJ); }
+
+    protected void regZipInputId(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueZipInputId(), "ZIP_INPUT_ID"); }
+    protected abstract ConditionValue xgetCValueZipInputId();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_Equal(String publicCd) {
+        doSetPublicCd_Equal(fRES(publicCd));
+    }
+
+    protected void doSetPublicCd_Equal(String publicCd) {
+        regPublicCd(CK_EQ, publicCd);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_NotEqual(String publicCd) {
+        doSetPublicCd_NotEqual(fRES(publicCd));
+    }
+
+    protected void doSetPublicCd_NotEqual(String publicCd) {
+        regPublicCd(CK_NES, publicCd);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_GreaterThan(String publicCd) {
+        regPublicCd(CK_GT, fRES(publicCd));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_LessThan(String publicCd) {
+        regPublicCd(CK_LT, fRES(publicCd));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_GreaterEqual(String publicCd) {
+        regPublicCd(CK_GE, fRES(publicCd));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_LessEqual(String publicCd) {
+        regPublicCd(CK_LE, fRES(publicCd));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCdList The collection of publicCd as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_InScope(Collection<String> publicCdList) {
+        doSetPublicCd_InScope(publicCdList);
+    }
+
+    protected void doSetPublicCd_InScope(Collection<String> publicCdList) {
+        regINS(CK_INS, cTL(publicCdList), xgetCValuePublicCd(), "PUBLIC_CD");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCdList The collection of publicCd as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_NotInScope(Collection<String> publicCdList) {
+        doSetPublicCd_NotInScope(publicCdList);
+    }
+
+    protected void doSetPublicCd_NotInScope(Collection<String> publicCdList) {
+        regINS(CK_NINS, cTL(publicCdList), xgetCValuePublicCd(), "PUBLIC_CD");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * PUBLIC_CD: {varchar(255)} <br>
+     * <pre>e.g. setPublicCd_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param publicCd The value of publicCd as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setPublicCd_LikeSearch(String publicCd, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(publicCd), xgetCValuePublicCd(), "PUBLIC_CD", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setPublicCd_NotLikeSearch(String publicCd, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(publicCd), xgetCValuePublicCd(), "PUBLIC_CD", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     * @param publicCd The value of publicCd as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setPublicCd_PrefixSearch(String publicCd) {
+        setPublicCd_LikeSearch(publicCd, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     */
+    public void setPublicCd_IsNull() { regPublicCd(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     */
+    public void setPublicCd_IsNullOrEmpty() { regPublicCd(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * PUBLIC_CD: {varchar(255)}
+     */
+    public void setPublicCd_IsNotNull() { regPublicCd(CK_ISNN, DOBJ); }
+
+    protected void regPublicCd(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValuePublicCd(), "PUBLIC_CD"); }
+    protected abstract ConditionValue xgetCValuePublicCd();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_Equal(String zipCd5) {
+        doSetZipCd5_Equal(fRES(zipCd5));
+    }
+
+    protected void doSetZipCd5_Equal(String zipCd5) {
+        regZipCd5(CK_EQ, zipCd5);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_NotEqual(String zipCd5) {
+        doSetZipCd5_NotEqual(fRES(zipCd5));
+    }
+
+    protected void doSetZipCd5_NotEqual(String zipCd5) {
+        regZipCd5(CK_NES, zipCd5);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_GreaterThan(String zipCd5) {
+        regZipCd5(CK_GT, fRES(zipCd5));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_LessThan(String zipCd5) {
+        regZipCd5(CK_LT, fRES(zipCd5));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_GreaterEqual(String zipCd5) {
+        regZipCd5(CK_GE, fRES(zipCd5));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_LessEqual(String zipCd5) {
+        regZipCd5(CK_LE, fRES(zipCd5));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5List The collection of zipCd5 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_InScope(Collection<String> zipCd5List) {
+        doSetZipCd5_InScope(zipCd5List);
+    }
+
+    protected void doSetZipCd5_InScope(Collection<String> zipCd5List) {
+        regINS(CK_INS, cTL(zipCd5List), xgetCValueZipCd5(), "ZIP_CD_5");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5List The collection of zipCd5 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_NotInScope(Collection<String> zipCd5List) {
+        doSetZipCd5_NotInScope(zipCd5List);
+    }
+
+    protected void doSetZipCd5_NotInScope(Collection<String> zipCd5List) {
+        regINS(CK_NINS, cTL(zipCd5List), xgetCValueZipCd5(), "ZIP_CD_5");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD_5: {varchar(255)} <br>
+     * <pre>e.g. setZipCd5_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param zipCd5 The value of zipCd5 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setZipCd5_LikeSearch(String zipCd5, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(zipCd5), xgetCValueZipCd5(), "ZIP_CD_5", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setZipCd5_NotLikeSearch(String zipCd5, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(zipCd5), xgetCValueZipCd5(), "ZIP_CD_5", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     * @param zipCd5 The value of zipCd5 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd5_PrefixSearch(String zipCd5) {
+        setZipCd5_LikeSearch(zipCd5, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     */
+    public void setZipCd5_IsNull() { regZipCd5(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     */
+    public void setZipCd5_IsNullOrEmpty() { regZipCd5(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ZIP_CD_5: {varchar(255)}
+     */
+    public void setZipCd5_IsNotNull() { regZipCd5(CK_ISNN, DOBJ); }
+
+    protected void regZipCd5(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueZipCd5(), "ZIP_CD_5"); }
+    protected abstract ConditionValue xgetCValueZipCd5();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_Equal(String zipCd) {
+        doSetZipCd_Equal(fRES(zipCd));
+    }
+
+    protected void doSetZipCd_Equal(String zipCd) {
+        regZipCd(CK_EQ, zipCd);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_NotEqual(String zipCd) {
+        doSetZipCd_NotEqual(fRES(zipCd));
+    }
+
+    protected void doSetZipCd_NotEqual(String zipCd) {
+        regZipCd(CK_NES, zipCd);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_GreaterThan(String zipCd) {
+        regZipCd(CK_GT, fRES(zipCd));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_LessThan(String zipCd) {
+        regZipCd(CK_LT, fRES(zipCd));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_GreaterEqual(String zipCd) {
+        regZipCd(CK_GE, fRES(zipCd));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_LessEqual(String zipCd) {
+        regZipCd(CK_LE, fRES(zipCd));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCdList The collection of zipCd as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_InScope(Collection<String> zipCdList) {
+        doSetZipCd_InScope(zipCdList);
+    }
+
+    protected void doSetZipCd_InScope(Collection<String> zipCdList) {
+        regINS(CK_INS, cTL(zipCdList), xgetCValueZipCd(), "ZIP_CD");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCdList The collection of zipCd as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_NotInScope(Collection<String> zipCdList) {
+        doSetZipCd_NotInScope(zipCdList);
+    }
+
+    protected void doSetZipCd_NotInScope(Collection<String> zipCdList) {
+        regINS(CK_NINS, cTL(zipCdList), xgetCValueZipCd(), "ZIP_CD");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD: {varchar(255)} <br>
+     * <pre>e.g. setZipCd_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param zipCd The value of zipCd as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setZipCd_LikeSearch(String zipCd, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(zipCd), xgetCValueZipCd(), "ZIP_CD", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setZipCd_NotLikeSearch(String zipCd, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(zipCd), xgetCValueZipCd(), "ZIP_CD", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     * @param zipCd The value of zipCd as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setZipCd_PrefixSearch(String zipCd) {
+        setZipCd_LikeSearch(zipCd, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     */
+    public void setZipCd_IsNull() { regZipCd(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     */
+    public void setZipCd_IsNullOrEmpty() { regZipCd(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ZIP_CD: {varchar(255)}
+     */
+    public void setZipCd_IsNotNull() { regZipCd(CK_ISNN, DOBJ); }
+
+    protected void regZipCd(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueZipCd(), "ZIP_CD"); }
+    protected abstract ConditionValue xgetCValueZipCd();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_Equal(String addressKn1) {
+        doSetAddressKn1_Equal(fRES(addressKn1));
+    }
+
+    protected void doSetAddressKn1_Equal(String addressKn1) {
+        regAddressKn1(CK_EQ, addressKn1);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_NotEqual(String addressKn1) {
+        doSetAddressKn1_NotEqual(fRES(addressKn1));
+    }
+
+    protected void doSetAddressKn1_NotEqual(String addressKn1) {
+        regAddressKn1(CK_NES, addressKn1);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_GreaterThan(String addressKn1) {
+        regAddressKn1(CK_GT, fRES(addressKn1));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_LessThan(String addressKn1) {
+        regAddressKn1(CK_LT, fRES(addressKn1));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_GreaterEqual(String addressKn1) {
+        regAddressKn1(CK_GE, fRES(addressKn1));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_LessEqual(String addressKn1) {
+        regAddressKn1(CK_LE, fRES(addressKn1));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1List The collection of addressKn1 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_InScope(Collection<String> addressKn1List) {
+        doSetAddressKn1_InScope(addressKn1List);
+    }
+
+    protected void doSetAddressKn1_InScope(Collection<String> addressKn1List) {
+        regINS(CK_INS, cTL(addressKn1List), xgetCValueAddressKn1(), "ADDRESS_KN1");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1List The collection of addressKn1 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_NotInScope(Collection<String> addressKn1List) {
+        doSetAddressKn1_NotInScope(addressKn1List);
+    }
+
+    protected void doSetAddressKn1_NotInScope(Collection<String> addressKn1List) {
+        regINS(CK_NINS, cTL(addressKn1List), xgetCValueAddressKn1(), "ADDRESS_KN1");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)} <br>
+     * <pre>e.g. setAddressKn1_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param addressKn1 The value of addressKn1 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddressKn1_LikeSearch(String addressKn1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(addressKn1), xgetCValueAddressKn1(), "ADDRESS_KN1", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddressKn1_NotLikeSearch(String addressKn1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(addressKn1), xgetCValueAddressKn1(), "ADDRESS_KN1", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     * @param addressKn1 The value of addressKn1 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn1_PrefixSearch(String addressKn1) {
+        setAddressKn1_LikeSearch(addressKn1, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     */
+    public void setAddressKn1_IsNull() { regAddressKn1(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     */
+    public void setAddressKn1_IsNullOrEmpty() { regAddressKn1(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN1: {varchar(255)}
+     */
+    public void setAddressKn1_IsNotNull() { regAddressKn1(CK_ISNN, DOBJ); }
+
+    protected void regAddressKn1(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddressKn1(), "ADDRESS_KN1"); }
+    protected abstract ConditionValue xgetCValueAddressKn1();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_Equal(String addressKn2) {
+        doSetAddressKn2_Equal(fRES(addressKn2));
+    }
+
+    protected void doSetAddressKn2_Equal(String addressKn2) {
+        regAddressKn2(CK_EQ, addressKn2);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_NotEqual(String addressKn2) {
+        doSetAddressKn2_NotEqual(fRES(addressKn2));
+    }
+
+    protected void doSetAddressKn2_NotEqual(String addressKn2) {
+        regAddressKn2(CK_NES, addressKn2);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_GreaterThan(String addressKn2) {
+        regAddressKn2(CK_GT, fRES(addressKn2));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_LessThan(String addressKn2) {
+        regAddressKn2(CK_LT, fRES(addressKn2));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_GreaterEqual(String addressKn2) {
+        regAddressKn2(CK_GE, fRES(addressKn2));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_LessEqual(String addressKn2) {
+        regAddressKn2(CK_LE, fRES(addressKn2));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2List The collection of addressKn2 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_InScope(Collection<String> addressKn2List) {
+        doSetAddressKn2_InScope(addressKn2List);
+    }
+
+    protected void doSetAddressKn2_InScope(Collection<String> addressKn2List) {
+        regINS(CK_INS, cTL(addressKn2List), xgetCValueAddressKn2(), "ADDRESS_KN2");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2List The collection of addressKn2 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_NotInScope(Collection<String> addressKn2List) {
+        doSetAddressKn2_NotInScope(addressKn2List);
+    }
+
+    protected void doSetAddressKn2_NotInScope(Collection<String> addressKn2List) {
+        regINS(CK_NINS, cTL(addressKn2List), xgetCValueAddressKn2(), "ADDRESS_KN2");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)} <br>
+     * <pre>e.g. setAddressKn2_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param addressKn2 The value of addressKn2 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddressKn2_LikeSearch(String addressKn2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(addressKn2), xgetCValueAddressKn2(), "ADDRESS_KN2", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddressKn2_NotLikeSearch(String addressKn2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(addressKn2), xgetCValueAddressKn2(), "ADDRESS_KN2", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     * @param addressKn2 The value of addressKn2 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn2_PrefixSearch(String addressKn2) {
+        setAddressKn2_LikeSearch(addressKn2, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     */
+    public void setAddressKn2_IsNull() { regAddressKn2(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     */
+    public void setAddressKn2_IsNullOrEmpty() { regAddressKn2(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN2: {varchar(255)}
+     */
+    public void setAddressKn2_IsNotNull() { regAddressKn2(CK_ISNN, DOBJ); }
+
+    protected void regAddressKn2(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddressKn2(), "ADDRESS_KN2"); }
+    protected abstract ConditionValue xgetCValueAddressKn2();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_Equal(String addressKn3) {
+        doSetAddressKn3_Equal(fRES(addressKn3));
+    }
+
+    protected void doSetAddressKn3_Equal(String addressKn3) {
+        regAddressKn3(CK_EQ, addressKn3);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_NotEqual(String addressKn3) {
+        doSetAddressKn3_NotEqual(fRES(addressKn3));
+    }
+
+    protected void doSetAddressKn3_NotEqual(String addressKn3) {
+        regAddressKn3(CK_NES, addressKn3);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_GreaterThan(String addressKn3) {
+        regAddressKn3(CK_GT, fRES(addressKn3));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_LessThan(String addressKn3) {
+        regAddressKn3(CK_LT, fRES(addressKn3));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_GreaterEqual(String addressKn3) {
+        regAddressKn3(CK_GE, fRES(addressKn3));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_LessEqual(String addressKn3) {
+        regAddressKn3(CK_LE, fRES(addressKn3));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3List The collection of addressKn3 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_InScope(Collection<String> addressKn3List) {
+        doSetAddressKn3_InScope(addressKn3List);
+    }
+
+    protected void doSetAddressKn3_InScope(Collection<String> addressKn3List) {
+        regINS(CK_INS, cTL(addressKn3List), xgetCValueAddressKn3(), "ADDRESS_KN3");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3List The collection of addressKn3 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_NotInScope(Collection<String> addressKn3List) {
+        doSetAddressKn3_NotInScope(addressKn3List);
+    }
+
+    protected void doSetAddressKn3_NotInScope(Collection<String> addressKn3List) {
+        regINS(CK_NINS, cTL(addressKn3List), xgetCValueAddressKn3(), "ADDRESS_KN3");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)} <br>
+     * <pre>e.g. setAddressKn3_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param addressKn3 The value of addressKn3 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddressKn3_LikeSearch(String addressKn3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(addressKn3), xgetCValueAddressKn3(), "ADDRESS_KN3", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddressKn3_NotLikeSearch(String addressKn3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(addressKn3), xgetCValueAddressKn3(), "ADDRESS_KN3", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     * @param addressKn3 The value of addressKn3 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddressKn3_PrefixSearch(String addressKn3) {
+        setAddressKn3_LikeSearch(addressKn3, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     */
+    public void setAddressKn3_IsNull() { regAddressKn3(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     */
+    public void setAddressKn3_IsNullOrEmpty() { regAddressKn3(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS_KN3: {varchar(255)}
+     */
+    public void setAddressKn3_IsNotNull() { regAddressKn3(CK_ISNN, DOBJ); }
+
+    protected void regAddressKn3(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddressKn3(), "ADDRESS_KN3"); }
+    protected abstract ConditionValue xgetCValueAddressKn3();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_Equal(String address1) {
+        doSetAddress1_Equal(fRES(address1));
+    }
+
+    protected void doSetAddress1_Equal(String address1) {
+        regAddress1(CK_EQ, address1);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_NotEqual(String address1) {
+        doSetAddress1_NotEqual(fRES(address1));
+    }
+
+    protected void doSetAddress1_NotEqual(String address1) {
+        regAddress1(CK_NES, address1);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_GreaterThan(String address1) {
+        regAddress1(CK_GT, fRES(address1));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_LessThan(String address1) {
+        regAddress1(CK_LT, fRES(address1));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_GreaterEqual(String address1) {
+        regAddress1(CK_GE, fRES(address1));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_LessEqual(String address1) {
+        regAddress1(CK_LE, fRES(address1));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1List The collection of address1 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_InScope(Collection<String> address1List) {
+        doSetAddress1_InScope(address1List);
+    }
+
+    protected void doSetAddress1_InScope(Collection<String> address1List) {
+        regINS(CK_INS, cTL(address1List), xgetCValueAddress1(), "ADDRESS1");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1List The collection of address1 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_NotInScope(Collection<String> address1List) {
+        doSetAddress1_NotInScope(address1List);
+    }
+
+    protected void doSetAddress1_NotInScope(Collection<String> address1List) {
+        regINS(CK_NINS, cTL(address1List), xgetCValueAddress1(), "ADDRESS1");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS1: {varchar(255)} <br>
+     * <pre>e.g. setAddress1_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param address1 The value of address1 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddress1_LikeSearch(String address1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(address1), xgetCValueAddress1(), "ADDRESS1", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddress1_NotLikeSearch(String address1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(address1), xgetCValueAddress1(), "ADDRESS1", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     * @param address1 The value of address1 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress1_PrefixSearch(String address1) {
+        setAddress1_LikeSearch(address1, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     */
+    public void setAddress1_IsNull() { regAddress1(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     */
+    public void setAddress1_IsNullOrEmpty() { regAddress1(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS1: {varchar(255)}
+     */
+    public void setAddress1_IsNotNull() { regAddress1(CK_ISNN, DOBJ); }
+
+    protected void regAddress1(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddress1(), "ADDRESS1"); }
+    protected abstract ConditionValue xgetCValueAddress1();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_Equal(String address2) {
+        doSetAddress2_Equal(fRES(address2));
+    }
+
+    protected void doSetAddress2_Equal(String address2) {
+        regAddress2(CK_EQ, address2);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_NotEqual(String address2) {
+        doSetAddress2_NotEqual(fRES(address2));
+    }
+
+    protected void doSetAddress2_NotEqual(String address2) {
+        regAddress2(CK_NES, address2);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_GreaterThan(String address2) {
+        regAddress2(CK_GT, fRES(address2));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_LessThan(String address2) {
+        regAddress2(CK_LT, fRES(address2));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_GreaterEqual(String address2) {
+        regAddress2(CK_GE, fRES(address2));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_LessEqual(String address2) {
+        regAddress2(CK_LE, fRES(address2));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2List The collection of address2 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_InScope(Collection<String> address2List) {
+        doSetAddress2_InScope(address2List);
+    }
+
+    protected void doSetAddress2_InScope(Collection<String> address2List) {
+        regINS(CK_INS, cTL(address2List), xgetCValueAddress2(), "ADDRESS2");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2List The collection of address2 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_NotInScope(Collection<String> address2List) {
+        doSetAddress2_NotInScope(address2List);
+    }
+
+    protected void doSetAddress2_NotInScope(Collection<String> address2List) {
+        regINS(CK_NINS, cTL(address2List), xgetCValueAddress2(), "ADDRESS2");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS2: {varchar(255)} <br>
+     * <pre>e.g. setAddress2_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param address2 The value of address2 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddress2_LikeSearch(String address2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(address2), xgetCValueAddress2(), "ADDRESS2", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddress2_NotLikeSearch(String address2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(address2), xgetCValueAddress2(), "ADDRESS2", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     * @param address2 The value of address2 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress2_PrefixSearch(String address2) {
+        setAddress2_LikeSearch(address2, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     */
+    public void setAddress2_IsNull() { regAddress2(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     */
+    public void setAddress2_IsNullOrEmpty() { regAddress2(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS2: {varchar(255)}
+     */
+    public void setAddress2_IsNotNull() { regAddress2(CK_ISNN, DOBJ); }
+
+    protected void regAddress2(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddress2(), "ADDRESS2"); }
+    protected abstract ConditionValue xgetCValueAddress2();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_Equal(String address3) {
+        doSetAddress3_Equal(fRES(address3));
+    }
+
+    protected void doSetAddress3_Equal(String address3) {
+        regAddress3(CK_EQ, address3);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_NotEqual(String address3) {
+        doSetAddress3_NotEqual(fRES(address3));
+    }
+
+    protected void doSetAddress3_NotEqual(String address3) {
+        regAddress3(CK_NES, address3);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_GreaterThan(String address3) {
+        regAddress3(CK_GT, fRES(address3));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_LessThan(String address3) {
+        regAddress3(CK_LT, fRES(address3));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_GreaterEqual(String address3) {
+        regAddress3(CK_GE, fRES(address3));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_LessEqual(String address3) {
+        regAddress3(CK_LE, fRES(address3));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3List The collection of address3 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_InScope(Collection<String> address3List) {
+        doSetAddress3_InScope(address3List);
+    }
+
+    protected void doSetAddress3_InScope(Collection<String> address3List) {
+        regINS(CK_INS, cTL(address3List), xgetCValueAddress3(), "ADDRESS3");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3List The collection of address3 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_NotInScope(Collection<String> address3List) {
+        doSetAddress3_NotInScope(address3List);
+    }
+
+    protected void doSetAddress3_NotInScope(Collection<String> address3List) {
+        regINS(CK_NINS, cTL(address3List), xgetCValueAddress3(), "ADDRESS3");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS3: {varchar(255)} <br>
+     * <pre>e.g. setAddress3_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param address3 The value of address3 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setAddress3_LikeSearch(String address3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(address3), xgetCValueAddress3(), "ADDRESS3", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setAddress3_NotLikeSearch(String address3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(address3), xgetCValueAddress3(), "ADDRESS3", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     * @param address3 The value of address3 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddress3_PrefixSearch(String address3) {
+        setAddress3_LikeSearch(address3, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     */
+    public void setAddress3_IsNull() { regAddress3(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     */
+    public void setAddress3_IsNullOrEmpty() { regAddress3(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADDRESS3: {varchar(255)}
+     */
+    public void setAddress3_IsNotNull() { regAddress3(CK_ISNN, DOBJ); }
+
+    protected void regAddress3(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddress3(), "ADDRESS3"); }
+    protected abstract ConditionValue xgetCValueAddress3();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_Equal(String flg1) {
+        doSetFlg1_Equal(fRES(flg1));
+    }
+
+    protected void doSetFlg1_Equal(String flg1) {
+        regFlg1(CK_EQ, flg1);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_NotEqual(String flg1) {
+        doSetFlg1_NotEqual(fRES(flg1));
+    }
+
+    protected void doSetFlg1_NotEqual(String flg1) {
+        regFlg1(CK_NES, flg1);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_GreaterThan(String flg1) {
+        regFlg1(CK_GT, fRES(flg1));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_LessThan(String flg1) {
+        regFlg1(CK_LT, fRES(flg1));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_GreaterEqual(String flg1) {
+        regFlg1(CK_GE, fRES(flg1));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_LessEqual(String flg1) {
+        regFlg1(CK_LE, fRES(flg1));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1List The collection of flg1 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_InScope(Collection<String> flg1List) {
+        doSetFlg1_InScope(flg1List);
+    }
+
+    protected void doSetFlg1_InScope(Collection<String> flg1List) {
+        regINS(CK_INS, cTL(flg1List), xgetCValueFlg1(), "FLG1");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1List The collection of flg1 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_NotInScope(Collection<String> flg1List) {
+        doSetFlg1_NotInScope(flg1List);
+    }
+
+    protected void doSetFlg1_NotInScope(Collection<String> flg1List) {
+        regINS(CK_NINS, cTL(flg1List), xgetCValueFlg1(), "FLG1");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG1: {varchar(255)} <br>
+     * <pre>e.g. setFlg1_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param flg1 The value of flg1 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setFlg1_LikeSearch(String flg1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(flg1), xgetCValueFlg1(), "FLG1", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setFlg1_NotLikeSearch(String flg1, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(flg1), xgetCValueFlg1(), "FLG1", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG1: {varchar(255)}
+     * @param flg1 The value of flg1 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg1_PrefixSearch(String flg1) {
+        setFlg1_LikeSearch(flg1, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     */
+    public void setFlg1_IsNull() { regFlg1(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     */
+    public void setFlg1_IsNullOrEmpty() { regFlg1(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * FLG1: {varchar(255)}
+     */
+    public void setFlg1_IsNotNull() { regFlg1(CK_ISNN, DOBJ); }
+
+    protected void regFlg1(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueFlg1(), "FLG1"); }
+    protected abstract ConditionValue xgetCValueFlg1();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_Equal(String flg2) {
+        doSetFlg2_Equal(fRES(flg2));
+    }
+
+    protected void doSetFlg2_Equal(String flg2) {
+        regFlg2(CK_EQ, flg2);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_NotEqual(String flg2) {
+        doSetFlg2_NotEqual(fRES(flg2));
+    }
+
+    protected void doSetFlg2_NotEqual(String flg2) {
+        regFlg2(CK_NES, flg2);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_GreaterThan(String flg2) {
+        regFlg2(CK_GT, fRES(flg2));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_LessThan(String flg2) {
+        regFlg2(CK_LT, fRES(flg2));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_GreaterEqual(String flg2) {
+        regFlg2(CK_GE, fRES(flg2));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_LessEqual(String flg2) {
+        regFlg2(CK_LE, fRES(flg2));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2List The collection of flg2 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_InScope(Collection<String> flg2List) {
+        doSetFlg2_InScope(flg2List);
+    }
+
+    protected void doSetFlg2_InScope(Collection<String> flg2List) {
+        regINS(CK_INS, cTL(flg2List), xgetCValueFlg2(), "FLG2");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2List The collection of flg2 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_NotInScope(Collection<String> flg2List) {
+        doSetFlg2_NotInScope(flg2List);
+    }
+
+    protected void doSetFlg2_NotInScope(Collection<String> flg2List) {
+        regINS(CK_NINS, cTL(flg2List), xgetCValueFlg2(), "FLG2");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG2: {varchar(255)} <br>
+     * <pre>e.g. setFlg2_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param flg2 The value of flg2 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setFlg2_LikeSearch(String flg2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(flg2), xgetCValueFlg2(), "FLG2", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setFlg2_NotLikeSearch(String flg2, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(flg2), xgetCValueFlg2(), "FLG2", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG2: {varchar(255)}
+     * @param flg2 The value of flg2 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg2_PrefixSearch(String flg2) {
+        setFlg2_LikeSearch(flg2, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     */
+    public void setFlg2_IsNull() { regFlg2(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     */
+    public void setFlg2_IsNullOrEmpty() { regFlg2(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * FLG2: {varchar(255)}
+     */
+    public void setFlg2_IsNotNull() { regFlg2(CK_ISNN, DOBJ); }
+
+    protected void regFlg2(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueFlg2(), "FLG2"); }
+    protected abstract ConditionValue xgetCValueFlg2();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_Equal(String flg3) {
+        doSetFlg3_Equal(fRES(flg3));
+    }
+
+    protected void doSetFlg3_Equal(String flg3) {
+        regFlg3(CK_EQ, flg3);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_NotEqual(String flg3) {
+        doSetFlg3_NotEqual(fRES(flg3));
+    }
+
+    protected void doSetFlg3_NotEqual(String flg3) {
+        regFlg3(CK_NES, flg3);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_GreaterThan(String flg3) {
+        regFlg3(CK_GT, fRES(flg3));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_LessThan(String flg3) {
+        regFlg3(CK_LT, fRES(flg3));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_GreaterEqual(String flg3) {
+        regFlg3(CK_GE, fRES(flg3));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_LessEqual(String flg3) {
+        regFlg3(CK_LE, fRES(flg3));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3List The collection of flg3 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_InScope(Collection<String> flg3List) {
+        doSetFlg3_InScope(flg3List);
+    }
+
+    protected void doSetFlg3_InScope(Collection<String> flg3List) {
+        regINS(CK_INS, cTL(flg3List), xgetCValueFlg3(), "FLG3");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3List The collection of flg3 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_NotInScope(Collection<String> flg3List) {
+        doSetFlg3_NotInScope(flg3List);
+    }
+
+    protected void doSetFlg3_NotInScope(Collection<String> flg3List) {
+        regINS(CK_NINS, cTL(flg3List), xgetCValueFlg3(), "FLG3");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG3: {varchar(255)} <br>
+     * <pre>e.g. setFlg3_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param flg3 The value of flg3 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setFlg3_LikeSearch(String flg3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(flg3), xgetCValueFlg3(), "FLG3", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setFlg3_NotLikeSearch(String flg3, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(flg3), xgetCValueFlg3(), "FLG3", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG3: {varchar(255)}
+     * @param flg3 The value of flg3 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg3_PrefixSearch(String flg3) {
+        setFlg3_LikeSearch(flg3, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     */
+    public void setFlg3_IsNull() { regFlg3(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     */
+    public void setFlg3_IsNullOrEmpty() { regFlg3(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * FLG3: {varchar(255)}
+     */
+    public void setFlg3_IsNotNull() { regFlg3(CK_ISNN, DOBJ); }
+
+    protected void regFlg3(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueFlg3(), "FLG3"); }
+    protected abstract ConditionValue xgetCValueFlg3();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_Equal(String flg4) {
+        doSetFlg4_Equal(fRES(flg4));
+    }
+
+    protected void doSetFlg4_Equal(String flg4) {
+        regFlg4(CK_EQ, flg4);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_NotEqual(String flg4) {
+        doSetFlg4_NotEqual(fRES(flg4));
+    }
+
+    protected void doSetFlg4_NotEqual(String flg4) {
+        regFlg4(CK_NES, flg4);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_GreaterThan(String flg4) {
+        regFlg4(CK_GT, fRES(flg4));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_LessThan(String flg4) {
+        regFlg4(CK_LT, fRES(flg4));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_GreaterEqual(String flg4) {
+        regFlg4(CK_GE, fRES(flg4));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_LessEqual(String flg4) {
+        regFlg4(CK_LE, fRES(flg4));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4List The collection of flg4 as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_InScope(Collection<String> flg4List) {
+        doSetFlg4_InScope(flg4List);
+    }
+
+    protected void doSetFlg4_InScope(Collection<String> flg4List) {
+        regINS(CK_INS, cTL(flg4List), xgetCValueFlg4(), "FLG4");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4List The collection of flg4 as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_NotInScope(Collection<String> flg4List) {
+        doSetFlg4_NotInScope(flg4List);
+    }
+
+    protected void doSetFlg4_NotInScope(Collection<String> flg4List) {
+        regINS(CK_NINS, cTL(flg4List), xgetCValueFlg4(), "FLG4");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG4: {varchar(255)} <br>
+     * <pre>e.g. setFlg4_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param flg4 The value of flg4 as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setFlg4_LikeSearch(String flg4, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(flg4), xgetCValueFlg4(), "FLG4", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setFlg4_NotLikeSearch(String flg4, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(flg4), xgetCValueFlg4(), "FLG4", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * FLG4: {varchar(255)}
+     * @param flg4 The value of flg4 as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setFlg4_PrefixSearch(String flg4) {
+        setFlg4_LikeSearch(flg4, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     */
+    public void setFlg4_IsNull() { regFlg4(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     */
+    public void setFlg4_IsNullOrEmpty() { regFlg4(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * FLG4: {varchar(255)}
+     */
+    public void setFlg4_IsNotNull() { regFlg4(CK_ISNN, DOBJ); }
+
+    protected void regFlg4(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueFlg4(), "FLG4"); }
+    protected abstract ConditionValue xgetCValueFlg4();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_Equal(String updType) {
+        doSetUpdType_Equal(fRES(updType));
+    }
+
+    protected void doSetUpdType_Equal(String updType) {
+        regUpdType(CK_EQ, updType);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_NotEqual(String updType) {
+        doSetUpdType_NotEqual(fRES(updType));
+    }
+
+    protected void doSetUpdType_NotEqual(String updType) {
+        regUpdType(CK_NES, updType);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_GreaterThan(String updType) {
+        regUpdType(CK_GT, fRES(updType));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_LessThan(String updType) {
+        regUpdType(CK_LT, fRES(updType));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_GreaterEqual(String updType) {
+        regUpdType(CK_GE, fRES(updType));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_LessEqual(String updType) {
+        regUpdType(CK_LE, fRES(updType));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updTypeList The collection of updType as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_InScope(Collection<String> updTypeList) {
+        doSetUpdType_InScope(updTypeList);
+    }
+
+    protected void doSetUpdType_InScope(Collection<String> updTypeList) {
+        regINS(CK_INS, cTL(updTypeList), xgetCValueUpdType(), "UPD_TYPE");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updTypeList The collection of updType as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_NotInScope(Collection<String> updTypeList) {
+        doSetUpdType_NotInScope(updTypeList);
+    }
+
+    protected void doSetUpdType_NotInScope(Collection<String> updTypeList) {
+        regINS(CK_NINS, cTL(updTypeList), xgetCValueUpdType(), "UPD_TYPE");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * UPD_TYPE: {varchar(255)} <br>
+     * <pre>e.g. setUpdType_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param updType The value of updType as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setUpdType_LikeSearch(String updType, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(updType), xgetCValueUpdType(), "UPD_TYPE", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setUpdType_NotLikeSearch(String updType, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(updType), xgetCValueUpdType(), "UPD_TYPE", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     * @param updType The value of updType as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdType_PrefixSearch(String updType) {
+        setUpdType_LikeSearch(updType, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     */
+    public void setUpdType_IsNull() { regUpdType(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     */
+    public void setUpdType_IsNullOrEmpty() { regUpdType(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * UPD_TYPE: {varchar(255)}
+     */
+    public void setUpdType_IsNotNull() { regUpdType(CK_ISNN, DOBJ); }
+
+    protected void regUpdType(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueUpdType(), "UPD_TYPE"); }
+    protected abstract ConditionValue xgetCValueUpdType();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_Equal(String reasonType) {
+        doSetReasonType_Equal(fRES(reasonType));
+    }
+
+    protected void doSetReasonType_Equal(String reasonType) {
+        regReasonType(CK_EQ, reasonType);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_NotEqual(String reasonType) {
+        doSetReasonType_NotEqual(fRES(reasonType));
+    }
+
+    protected void doSetReasonType_NotEqual(String reasonType) {
+        regReasonType(CK_NES, reasonType);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_GreaterThan(String reasonType) {
+        regReasonType(CK_GT, fRES(reasonType));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_LessThan(String reasonType) {
+        regReasonType(CK_LT, fRES(reasonType));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_GreaterEqual(String reasonType) {
+        regReasonType(CK_GE, fRES(reasonType));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_LessEqual(String reasonType) {
+        regReasonType(CK_LE, fRES(reasonType));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonTypeList The collection of reasonType as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_InScope(Collection<String> reasonTypeList) {
+        doSetReasonType_InScope(reasonTypeList);
+    }
+
+    protected void doSetReasonType_InScope(Collection<String> reasonTypeList) {
+        regINS(CK_INS, cTL(reasonTypeList), xgetCValueReasonType(), "REASON_TYPE");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonTypeList The collection of reasonType as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_NotInScope(Collection<String> reasonTypeList) {
+        doSetReasonType_NotInScope(reasonTypeList);
+    }
+
+    protected void doSetReasonType_NotInScope(Collection<String> reasonTypeList) {
+        regINS(CK_NINS, cTL(reasonTypeList), xgetCValueReasonType(), "REASON_TYPE");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * REASON_TYPE: {varchar(255)} <br>
+     * <pre>e.g. setReasonType_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param reasonType The value of reasonType as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setReasonType_LikeSearch(String reasonType, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(reasonType), xgetCValueReasonType(), "REASON_TYPE", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setReasonType_NotLikeSearch(String reasonType, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(reasonType), xgetCValueReasonType(), "REASON_TYPE", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     * @param reasonType The value of reasonType as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setReasonType_PrefixSearch(String reasonType) {
+        setReasonType_LikeSearch(reasonType, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     */
+    public void setReasonType_IsNull() { regReasonType(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     */
+    public void setReasonType_IsNullOrEmpty() { regReasonType(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * REASON_TYPE: {varchar(255)}
+     */
+    public void setReasonType_IsNotNull() { regReasonType(CK_ISNN, DOBJ); }
+
+    protected void regReasonType(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueReasonType(), "REASON_TYPE"); }
+    protected abstract ConditionValue xgetCValueReasonType();
+
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_Equal(Long lineNo) {
+        doSetLineNo_Equal(lineNo);
+    }
+
+    protected void doSetLineNo_Equal(Long lineNo) {
+        regLineNo(CK_EQ, lineNo);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as notEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_NotEqual(Long lineNo) {
+        doSetLineNo_NotEqual(lineNo);
+    }
+
+    protected void doSetLineNo_NotEqual(Long lineNo) {
+        regLineNo(CK_NES, lineNo);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as greaterThan. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_GreaterThan(Long lineNo) {
+        regLineNo(CK_GT, lineNo);
+    }
+
+    /**
+     * LessThan(&lt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as lessThan. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_LessThan(Long lineNo) {
+        regLineNo(CK_LT, lineNo);
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as greaterEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_GreaterEqual(Long lineNo) {
+        regLineNo(CK_GE, lineNo);
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNo The value of lineNo as lessEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setLineNo_LessEqual(Long lineNo) {
+        regLineNo(CK_LE, lineNo);
+    }
+
+    /**
+     * RangeOf with various options. (versatile) <br>
+     * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
+     * And NullIgnored, OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param minNumber The min number of lineNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of lineNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param rangeOfOption The option of range-of. (NotNull)
+     */
+    public void setLineNo_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, xgetCValueLineNo(), "LINE_NO", rangeOfOption);
+    }
+
+    /**
+     * InScope {in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNoList The collection of lineNo as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setLineNo_InScope(Collection<Long> lineNoList) {
+        doSetLineNo_InScope(lineNoList);
+    }
+
+    protected void doSetLineNo_InScope(Collection<Long> lineNoList) {
+        regINS(CK_INS, cTL(lineNoList), xgetCValueLineNo(), "LINE_NO");
+    }
+
+    /**
+     * NotInScope {not in (1, 2)}. And NullIgnored, NullElementIgnored, SeveralRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     * @param lineNoList The collection of lineNo as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setLineNo_NotInScope(Collection<Long> lineNoList) {
+        doSetLineNo_NotInScope(lineNoList);
+    }
+
+    protected void doSetLineNo_NotInScope(Collection<Long> lineNoList) {
+        regINS(CK_NINS, cTL(lineNoList), xgetCValueLineNo(), "LINE_NO");
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     */
+    public void setLineNo_IsNull() { regLineNo(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * LINE_NO: {bigint(19)}
+     */
+    public void setLineNo_IsNotNull() { regLineNo(CK_ISNN, DOBJ); }
+
+    protected void regLineNo(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueLineNo(), "LINE_NO"); }
+    protected abstract ConditionValue xgetCValueLineNo();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_Equal(String workFlg) {
+        doSetWorkFlg_Equal(fRES(workFlg));
+    }
+
+    protected void doSetWorkFlg_Equal(String workFlg) {
+        regWorkFlg(CK_EQ, workFlg);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_NotEqual(String workFlg) {
+        doSetWorkFlg_NotEqual(fRES(workFlg));
+    }
+
+    protected void doSetWorkFlg_NotEqual(String workFlg) {
+        regWorkFlg(CK_NES, workFlg);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_GreaterThan(String workFlg) {
+        regWorkFlg(CK_GT, fRES(workFlg));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_LessThan(String workFlg) {
+        regWorkFlg(CK_LT, fRES(workFlg));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_GreaterEqual(String workFlg) {
+        regWorkFlg(CK_GE, fRES(workFlg));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_LessEqual(String workFlg) {
+        regWorkFlg(CK_LE, fRES(workFlg));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlgList The collection of workFlg as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_InScope(Collection<String> workFlgList) {
+        doSetWorkFlg_InScope(workFlgList);
+    }
+
+    protected void doSetWorkFlg_InScope(Collection<String> workFlgList) {
+        regINS(CK_INS, cTL(workFlgList), xgetCValueWorkFlg(), "WORK_FLG");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlgList The collection of workFlg as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_NotInScope(Collection<String> workFlgList) {
+        doSetWorkFlg_NotInScope(workFlgList);
+    }
+
+    protected void doSetWorkFlg_NotInScope(Collection<String> workFlgList) {
+        regINS(CK_NINS, cTL(workFlgList), xgetCValueWorkFlg(), "WORK_FLG");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * WORK_FLG: {char(1)} <br>
+     * <pre>e.g. setWorkFlg_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param workFlg The value of workFlg as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setWorkFlg_LikeSearch(String workFlg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(workFlg), xgetCValueWorkFlg(), "WORK_FLG", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setWorkFlg_NotLikeSearch(String workFlg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(workFlg), xgetCValueWorkFlg(), "WORK_FLG", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * WORK_FLG: {char(1)}
+     * @param workFlg The value of workFlg as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setWorkFlg_PrefixSearch(String workFlg) {
+        setWorkFlg_LikeSearch(workFlg, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     */
+    public void setWorkFlg_IsNull() { regWorkFlg(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * WORK_FLG: {char(1)}
+     */
+    public void setWorkFlg_IsNotNull() { regWorkFlg(CK_ISNN, DOBJ); }
+
+    protected void regWorkFlg(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueWorkFlg(), "WORK_FLG"); }
+    protected abstract ConditionValue xgetCValueWorkFlg();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_Equal(String errorFlg) {
+        doSetErrorFlg_Equal(fRES(errorFlg));
+    }
+
+    protected void doSetErrorFlg_Equal(String errorFlg) {
+        regErrorFlg(CK_EQ, errorFlg);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_NotEqual(String errorFlg) {
+        doSetErrorFlg_NotEqual(fRES(errorFlg));
+    }
+
+    protected void doSetErrorFlg_NotEqual(String errorFlg) {
+        regErrorFlg(CK_NES, errorFlg);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_GreaterThan(String errorFlg) {
+        regErrorFlg(CK_GT, fRES(errorFlg));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_LessThan(String errorFlg) {
+        regErrorFlg(CK_LT, fRES(errorFlg));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_GreaterEqual(String errorFlg) {
+        regErrorFlg(CK_GE, fRES(errorFlg));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_LessEqual(String errorFlg) {
+        regErrorFlg(CK_LE, fRES(errorFlg));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlgList The collection of errorFlg as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_InScope(Collection<String> errorFlgList) {
+        doSetErrorFlg_InScope(errorFlgList);
+    }
+
+    protected void doSetErrorFlg_InScope(Collection<String> errorFlgList) {
+        regINS(CK_INS, cTL(errorFlgList), xgetCValueErrorFlg(), "ERROR_FLG");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlgList The collection of errorFlg as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_NotInScope(Collection<String> errorFlgList) {
+        doSetErrorFlg_NotInScope(errorFlgList);
+    }
+
+    protected void doSetErrorFlg_NotInScope(Collection<String> errorFlgList) {
+        regINS(CK_NINS, cTL(errorFlgList), xgetCValueErrorFlg(), "ERROR_FLG");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_FLG: {char(1)} <br>
+     * <pre>e.g. setErrorFlg_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param errorFlg The value of errorFlg as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setErrorFlg_LikeSearch(String errorFlg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(errorFlg), xgetCValueErrorFlg(), "ERROR_FLG", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setErrorFlg_NotLikeSearch(String errorFlg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(errorFlg), xgetCValueErrorFlg(), "ERROR_FLG", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     * @param errorFlg The value of errorFlg as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorFlg_PrefixSearch(String errorFlg) {
+        setErrorFlg_LikeSearch(errorFlg, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     */
+    public void setErrorFlg_IsNull() { regErrorFlg(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ERROR_FLG: {char(1)}
+     */
+    public void setErrorFlg_IsNotNull() { regErrorFlg(CK_ISNN, DOBJ); }
+
+    protected void regErrorFlg(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueErrorFlg(), "ERROR_FLG"); }
+    protected abstract ConditionValue xgetCValueErrorFlg();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_Equal(String errorMsg) {
+        doSetErrorMsg_Equal(fRES(errorMsg));
+    }
+
+    protected void doSetErrorMsg_Equal(String errorMsg) {
+        regErrorMsg(CK_EQ, errorMsg);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as notEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_NotEqual(String errorMsg) {
+        doSetErrorMsg_NotEqual(fRES(errorMsg));
+    }
+
+    protected void doSetErrorMsg_NotEqual(String errorMsg) {
+        regErrorMsg(CK_NES, errorMsg);
+    }
+
+    /**
+     * GreaterThan(&gt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as greaterThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_GreaterThan(String errorMsg) {
+        regErrorMsg(CK_GT, fRES(errorMsg));
+    }
+
+    /**
+     * LessThan(&lt;). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as lessThan. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_LessThan(String errorMsg) {
+        regErrorMsg(CK_LT, fRES(errorMsg));
+    }
+
+    /**
+     * GreaterEqual(&gt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as greaterEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_GreaterEqual(String errorMsg) {
+        regErrorMsg(CK_GE, fRES(errorMsg));
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as lessEqual. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_LessEqual(String errorMsg) {
+        regErrorMsg(CK_LE, fRES(errorMsg));
+    }
+
+    /**
+     * InScope {in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsgList The collection of errorMsg as inScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_InScope(Collection<String> errorMsgList) {
+        doSetErrorMsg_InScope(errorMsgList);
+    }
+
+    protected void doSetErrorMsg_InScope(Collection<String> errorMsgList) {
+        regINS(CK_INS, cTL(errorMsgList), xgetCValueErrorMsg(), "ERROR_MSG");
+    }
+
+    /**
+     * NotInScope {not in ('a', 'b')}. And NullOrEmptyIgnored, NullOrEmptyElementIgnored, SeveralRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsgList The collection of errorMsg as notInScope. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_NotInScope(Collection<String> errorMsgList) {
+        doSetErrorMsg_NotInScope(errorMsgList);
+    }
+
+    protected void doSetErrorMsg_NotInScope(Collection<String> errorMsgList) {
+        regINS(CK_NINS, cTL(errorMsgList), xgetCValueErrorMsg(), "ERROR_MSG");
+    }
+
+    /**
+     * LikeSearch with various options. (versatile) {like '%xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)} <br>
+     * <pre>e.g. setErrorMsg_LikeSearch("xxx", new <span style="color: #CC4747">LikeSearchOption</span>().likeContain());</pre>
+     * @param errorMsg The value of errorMsg as likeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of like-search. (NotNull)
+     */
+    public void setErrorMsg_LikeSearch(String errorMsg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_LS, fRES(errorMsg), xgetCValueErrorMsg(), "ERROR_MSG", likeSearchOption);
+    }
+
+    /**
+     * NotLikeSearch with various options. (versatile) {not like 'xxx%' escape ...} <br>
+     * And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as notLikeSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     * @param likeSearchOption The option of not-like-search. (NotNull)
+     */
+    public void setErrorMsg_NotLikeSearch(String errorMsg, LikeSearchOption likeSearchOption) {
+        regLSQ(CK_NLS, fRES(errorMsg), xgetCValueErrorMsg(), "ERROR_MSG", likeSearchOption);
+    }
+
+    /**
+     * PrefixSearch {like 'xxx%' escape ...}. And NullOrEmptyIgnored, SeveralRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     * @param errorMsg The value of errorMsg as prefixSearch. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setErrorMsg_PrefixSearch(String errorMsg) {
+        setErrorMsg_LikeSearch(errorMsg, xcLSOPPre());
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     */
+    public void setErrorMsg_IsNull() { regErrorMsg(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     */
+    public void setErrorMsg_IsNullOrEmpty() { regErrorMsg(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ERROR_MSG: {varchar(2147483647)}
+     */
+    public void setErrorMsg_IsNotNull() { regErrorMsg(CK_ISNN, DOBJ); }
+
+    protected void regErrorMsg(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueErrorMsg(), "ERROR_MSG"); }
+    protected abstract ConditionValue xgetCValueErrorMsg();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * DEL_FLG: {NotNull, char(1), default=[0], classification=DelFlg}
+     * @param delFlg The value of delFlg as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setDelFlg_Equal(String delFlg) {
+        doSetDelFlg_Equal(fRES(delFlg));
+    }
+
+    /**
+     * Equal(=). As DelFlg. And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * DEL_FLG: {NotNull, char(1), default=[0], classification=DelFlg} <br>
+     * 削除フラグ
+     * @param cdef The instance of classification definition (as ENUM type). (basically NotNull: error as default, or no condition as option)
+     */
+    public void setDelFlg_Equal_AsDelFlg(CDef.DelFlg cdef) {
+        doSetDelFlg_Equal(cdef != null ? cdef.code() : null);
+    }
+
+    /**
+     * Equal(=). As $0 (0). And OnlyOnceRegistered. <br>
+     * $0: 未削除
+     */
+    public void setDelFlg_Equal_$0() {
+        setDelFlg_Equal_AsDelFlg(CDef.DelFlg.$0);
+    }
+
+    /**
+     * Equal(=). As $1 (1). And OnlyOnceRegistered. <br>
+     * $1: 削除済
+     */
+    public void setDelFlg_Equal_$1() {
+        setDelFlg_Equal_AsDelFlg(CDef.DelFlg.$1);
+    }
+
+    protected void doSetDelFlg_Equal(String delFlg) {
+        regDelFlg(CK_EQ, delFlg);
+    }
+
+    protected void regDelFlg(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueDelFlg(), "DEL_FLG"); }
+    protected abstract ConditionValue xgetCValueDelFlg();
+
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * VERSION_NO: {NotNull, bigint(19), default=[(0)]}
+     * @param versionNo The value of versionNo as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setVersionNo_Equal(Long versionNo) {
+        doSetVersionNo_Equal(versionNo);
+    }
+
+    protected void doSetVersionNo_Equal(Long versionNo) {
+        regVersionNo(CK_EQ, versionNo);
+    }
+
+    /**
+     * RangeOf with various options. (versatile) <br>
+     * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
+     * And NullIgnored, OnlyOnceRegistered. <br>
+     * VERSION_NO: {NotNull, bigint(19), default=[(0)]}
+     * @param minNumber The min number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of versionNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param rangeOfOption The option of range-of. (NotNull)
+     */
+    public void setVersionNo_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, xgetCValueVersionNo(), "VERSION_NO", rangeOfOption);
+    }
+
+    protected void regVersionNo(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueVersionNo(), "VERSION_NO"); }
+    protected abstract ConditionValue xgetCValueVersionNo();
+
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * CONTROL_NO: {bigint(19)}
+     * @param controlNo The value of controlNo as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setControlNo_Equal(Long controlNo) {
+        doSetControlNo_Equal(controlNo);
+    }
+
+    protected void doSetControlNo_Equal(Long controlNo) {
+        regControlNo(CK_EQ, controlNo);
+    }
+
+    /**
+     * NotEqual(&lt;&gt;). And NullIgnored, OnlyOnceRegistered. <br>
+     * CONTROL_NO: {bigint(19)}
+     * @param controlNo The value of controlNo as notEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setControlNo_NotEqual(Long controlNo) {
+        doSetControlNo_NotEqual(controlNo);
+    }
+
+    protected void doSetControlNo_NotEqual(Long controlNo) {
+        regControlNo(CK_NES, controlNo);
+    }
+
+    /**
+     * RangeOf with various options. (versatile) <br>
+     * {(default) minNumber &lt;= column &lt;= maxNumber} <br>
+     * And NullIgnored, OnlyOnceRegistered. <br>
+     * CONTROL_NO: {bigint(19)}
+     * @param minNumber The min number of controlNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param maxNumber The max number of controlNo. (basically NotNull: if op.allowOneSide(), null allowed)
+     * @param rangeOfOption The option of range-of. (NotNull)
+     */
+    public void setControlNo_RangeOf(Long minNumber, Long maxNumber, RangeOfOption rangeOfOption) {
+        regROO(minNumber, maxNumber, xgetCValueControlNo(), "CONTROL_NO", rangeOfOption);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * CONTROL_NO: {bigint(19)}
+     */
+    public void setControlNo_IsNull() { regControlNo(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * CONTROL_NO: {bigint(19)}
+     */
+    public void setControlNo_IsNotNull() { regControlNo(CK_ISNN, DOBJ); }
+
+    protected void regControlNo(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueControlNo(), "CONTROL_NO"); }
+    protected abstract ConditionValue xgetCValueControlNo();
+
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * ADD_DT: {datetime2(26, 6)}
+     * @param addDt The value of addDt as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setAddDt_Equal(java.sql.Timestamp addDt) {
+        regAddDt(CK_EQ,  addDt);
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * ADD_DT: {datetime2(26, 6)}
+     * @param addDt The value of addDt as lessEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setAddDt_LessEqual(java.sql.Timestamp addDt) {
+        regAddDt(CK_LE, addDt);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADD_DT: {datetime2(26, 6)}
+     */
+    public void setAddDt_IsNull() { regAddDt(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADD_DT: {datetime2(26, 6)}
+     */
+    public void setAddDt_IsNotNull() { regAddDt(CK_ISNN, DOBJ); }
+
+    protected void regAddDt(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddDt(), "ADD_DT"); }
+    protected abstract ConditionValue xgetCValueAddDt();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADD_USER: {varchar(255)}
+     * @param addUser The value of addUser as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddUser_Equal(String addUser) {
+        doSetAddUser_Equal(fRES(addUser));
+    }
+
+    protected void doSetAddUser_Equal(String addUser) {
+        regAddUser(CK_EQ, addUser);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADD_USER: {varchar(255)}
+     */
+    public void setAddUser_IsNull() { regAddUser(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADD_USER: {varchar(255)}
+     */
+    public void setAddUser_IsNullOrEmpty() { regAddUser(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADD_USER: {varchar(255)}
+     */
+    public void setAddUser_IsNotNull() { regAddUser(CK_ISNN, DOBJ); }
+
+    protected void regAddUser(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddUser(), "ADD_USER"); }
+    protected abstract ConditionValue xgetCValueAddUser();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * ADD_PROCESS: {varchar(4000)}
+     * @param addProcess The value of addProcess as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setAddProcess_Equal(String addProcess) {
+        doSetAddProcess_Equal(fRES(addProcess));
+    }
+
+    protected void doSetAddProcess_Equal(String addProcess) {
+        regAddProcess(CK_EQ, addProcess);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * ADD_PROCESS: {varchar(4000)}
+     */
+    public void setAddProcess_IsNull() { regAddProcess(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * ADD_PROCESS: {varchar(4000)}
+     */
+    public void setAddProcess_IsNullOrEmpty() { regAddProcess(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * ADD_PROCESS: {varchar(4000)}
+     */
+    public void setAddProcess_IsNotNull() { regAddProcess(CK_ISNN, DOBJ); }
+
+    protected void regAddProcess(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueAddProcess(), "ADD_PROCESS"); }
+    protected abstract ConditionValue xgetCValueAddProcess();
+
+    /**
+     * Equal(=). And NullIgnored, OnlyOnceRegistered. <br>
+     * UPD_DT: {datetime2(26, 6)}
+     * @param updDt The value of updDt as equal. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setUpdDt_Equal(java.sql.Timestamp updDt) {
+        regUpdDt(CK_EQ,  updDt);
+    }
+
+    /**
+     * LessEqual(&lt;=). And NullIgnored, OnlyOnceRegistered. <br>
+     * UPD_DT: {datetime2(26, 6)}
+     * @param updDt The value of updDt as lessEqual. (basically NotNull: error as default, or no condition as option)
+     */
+    public void setUpdDt_LessEqual(java.sql.Timestamp updDt) {
+        regUpdDt(CK_LE, updDt);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * UPD_DT: {datetime2(26, 6)}
+     */
+    public void setUpdDt_IsNull() { regUpdDt(CK_ISN, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * UPD_DT: {datetime2(26, 6)}
+     */
+    public void setUpdDt_IsNotNull() { regUpdDt(CK_ISNN, DOBJ); }
+
+    protected void regUpdDt(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueUpdDt(), "UPD_DT"); }
+    protected abstract ConditionValue xgetCValueUpdDt();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_USER: {varchar(255)}
+     * @param updUser The value of updUser as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdUser_Equal(String updUser) {
+        doSetUpdUser_Equal(fRES(updUser));
+    }
+
+    protected void doSetUpdUser_Equal(String updUser) {
+        regUpdUser(CK_EQ, updUser);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * UPD_USER: {varchar(255)}
+     */
+    public void setUpdUser_IsNull() { regUpdUser(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * UPD_USER: {varchar(255)}
+     */
+    public void setUpdUser_IsNullOrEmpty() { regUpdUser(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * UPD_USER: {varchar(255)}
+     */
+    public void setUpdUser_IsNotNull() { regUpdUser(CK_ISNN, DOBJ); }
+
+    protected void regUpdUser(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueUpdUser(), "UPD_USER"); }
+    protected abstract ConditionValue xgetCValueUpdUser();
+
+    /**
+     * Equal(=). And NullOrEmptyIgnored, OnlyOnceRegistered. <br>
+     * UPD_PROCESS: {varchar(4000)}
+     * @param updProcess The value of updProcess as equal. (basically NotNull, NotEmpty: error as default, or no condition as option)
+     */
+    public void setUpdProcess_Equal(String updProcess) {
+        doSetUpdProcess_Equal(fRES(updProcess));
+    }
+
+    protected void doSetUpdProcess_Equal(String updProcess) {
+        regUpdProcess(CK_EQ, updProcess);
+    }
+
+    /**
+     * IsNull {is null}. And OnlyOnceRegistered. <br>
+     * UPD_PROCESS: {varchar(4000)}
+     */
+    public void setUpdProcess_IsNull() { regUpdProcess(CK_ISN, DOBJ); }
+
+    /**
+     * IsNullOrEmpty {is null or empty}. And OnlyOnceRegistered. <br>
+     * UPD_PROCESS: {varchar(4000)}
+     */
+    public void setUpdProcess_IsNullOrEmpty() { regUpdProcess(CK_ISNOE, DOBJ); }
+
+    /**
+     * IsNotNull {is not null}. And OnlyOnceRegistered. <br>
+     * UPD_PROCESS: {varchar(4000)}
+     */
+    public void setUpdProcess_IsNotNull() { regUpdProcess(CK_ISNN, DOBJ); }
+
+    protected void regUpdProcess(ConditionKey ky, Object vl) { regQ(ky, vl, xgetCValueUpdProcess(), "UPD_PROCESS"); }
+    protected abstract ConditionValue xgetCValueUpdProcess();
+
+    // ===================================================================================
+    //                                                                     ScalarCondition
+    //                                                                     ===============
+    /**
+     * Prepare ScalarCondition as equal. <br>
+     * {where FOO = (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_Equal() {
+        return xcreateSLCFunction(CK_EQ, WZipInputCB.class);
+    }
+
+    /**
+     * Prepare ScalarCondition as equal. <br>
+     * {where FOO &lt;&gt; (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_NotEqual() {
+        return xcreateSLCFunction(CK_NES, WZipInputCB.class);
+    }
+
+    /**
+     * Prepare ScalarCondition as greaterThan. <br>
+     * {where FOO &gt; (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_GreaterThan() {
+        return xcreateSLCFunction(CK_GT, WZipInputCB.class);
+    }
+
+    /**
+     * Prepare ScalarCondition as lessThan. <br>
+     * {where FOO &lt; (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_LessThan() {
+        return xcreateSLCFunction(CK_LT, WZipInputCB.class);
+    }
+
+    /**
+     * Prepare ScalarCondition as greaterEqual. <br>
+     * {where FOO &gt;= (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().scalar_Equal().<span style="color: #CC4747">avg</span>(<span style="color: #553000">purchaseCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">purchaseCB</span>.specify().<span style="color: #CC4747">columnPurchasePrice</span>(); <span style="color: #3F7E5E">// *Point!</span>
+     *     <span style="color: #553000">purchaseCB</span>.query().setPaymentCompleteFlg_Equal_True();
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_GreaterEqual() {
+        return xcreateSLCFunction(CK_GE, WZipInputCB.class);
+    }
+
+    /**
+     * Prepare ScalarCondition as lessEqual. <br>
+     * {where FOO &lt;= (select max(BAR) from ...)}
+     * <pre>
+     * cb.query().<span style="color: #CC4747">scalar_LessEqual()</span>.max(new SubQuery&lt;WZipInputCB&gt;() {
+     *     public void query(WZipInputCB subCB) {
+     *         subCB.specify().setFoo... <span style="color: #3F7E5E">// derived column for function</span>
+     *         subCB.query().setBar...
+     *     }
+     * });
+     * </pre>
+     * @return The object to set up a function. (NotNull)
+     */
+    public HpSLCFunction<WZipInputCB> scalar_LessEqual() {
+        return xcreateSLCFunction(CK_LE, WZipInputCB.class);
+    }
+
+    @SuppressWarnings("unchecked")
+    protected <CB extends ConditionBean> void xscalarCondition(String fn, SubQuery<CB> sq, String rd, HpSLCCustomized<CB> cs, ScalarConditionOption op) {
+        assertObjectNotNull("subQuery", sq);
+        WZipInputCB cb = xcreateScalarConditionCB(); sq.query((CB)cb);
+        String pp = keepScalarCondition(cb.query()); // for saving query-value
+        cs.setPartitionByCBean((CB)xcreateScalarConditionPartitionByCB()); // for using partition-by
+        registerScalarCondition(fn, cb.query(), pp, rd, cs, op);
+    }
+    public abstract String keepScalarCondition(WZipInputCQ sq);
+
+    protected WZipInputCB xcreateScalarConditionCB() {
+        WZipInputCB cb = newMyCB(); cb.xsetupForScalarCondition(this); return cb;
+    }
+
+    protected WZipInputCB xcreateScalarConditionPartitionByCB() {
+        WZipInputCB cb = newMyCB(); cb.xsetupForScalarConditionPartitionBy(this); return cb;
+    }
+
+    // ===================================================================================
+    //                                                                       MyselfDerived
+    //                                                                       =============
+    public void xsmyselfDerive(String fn, SubQuery<WZipInputCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        WZipInputCB cb = new WZipInputCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepSpecifyMyselfDerived(cb.query()); String pk = "ZIP_INPUT_ID";
+        registerSpecifyMyselfDerived(fn, cb.query(), pk, pk, pp, "myselfDerived", al, op);
+    }
+    public abstract String keepSpecifyMyselfDerived(WZipInputCQ sq);
+
+    /**
+     * Prepare for (Query)MyselfDerived (correlated sub-query).
+     * @return The object to set up a function for myself table. (NotNull)
+     */
+    public HpQDRFunction<WZipInputCB> myselfDerived() {
+        return xcreateQDRFunctionMyselfDerived(WZipInputCB.class);
+    }
+    @SuppressWarnings("unchecked")
+    protected <CB extends ConditionBean> void xqderiveMyselfDerived(String fn, SubQuery<CB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        WZipInputCB cb = new WZipInputCB(); cb.xsetupForDerivedReferrer(this); sq.query((CB)cb);
+        String pk = "ZIP_INPUT_ID";
+        String sqpp = keepQueryMyselfDerived(cb.query()); // for saving query-value.
+        String prpp = keepQueryMyselfDerivedParameter(vl);
+        registerQueryMyselfDerived(fn, cb.query(), pk, pk, sqpp, "myselfDerived", rd, vl, prpp, op);
+    }
+    public abstract String keepQueryMyselfDerived(WZipInputCQ sq);
+    public abstract String keepQueryMyselfDerivedParameter(Object vl);
+
+    // ===================================================================================
+    //                                                                        MyselfExists
+    //                                                                        ============
+    /**
+     * Prepare for MyselfExists (correlated sub-query).
+     * @param subCBLambda The implementation of sub-query. (NotNull)
+     */
+    public void myselfExists(SubQuery<WZipInputCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        WZipInputCB cb = new WZipInputCB(); cb.xsetupForMyselfExists(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepMyselfExists(cb.query());
+        registerMyselfExists(cb.query(), pp);
+    }
+    public abstract String keepMyselfExists(WZipInputCQ sq);
+
+    // ===================================================================================
+    //                                                                        Manual Order
+    //                                                                        ============
+    /**
+     * Order along manual ordering information.
+     * <pre>
+     * ManualOrderOption mop = new ManualOrderOption();
+     * mop.<span style="color: #CC4747">when_GreaterEqual</span>(priorityDate); <span style="color: #3F7E5E">// e.g. 2000/01/01</span>
+     * cb.query().addOrderBy_Birthdate_Asc().<span style="color: #CC4747">withManualOrder(mop)</span>;
+     * <span style="color: #3F7E5E">// order by </span>
+     * <span style="color: #3F7E5E">//   case</span>
+     * <span style="color: #3F7E5E">//     when BIRTHDATE &gt;= '2000/01/01' then 0</span>
+     * <span style="color: #3F7E5E">//     else 1</span>
+     * <span style="color: #3F7E5E">//   end asc, ...</span>
+     *
+     * ManualOrderOption mop = new ManualOrderOption();
+     * mop.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Withdrawal);
+     * mop.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Formalized);
+     * mop.<span style="color: #CC4747">when_Equal</span>(CDef.MemberStatus.Provisional);
+     * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder(mop)</span>;
+     * <span style="color: #3F7E5E">// order by </span>
+     * <span style="color: #3F7E5E">//   case</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'WDL' then 0</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'FML' then 1</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'PRV' then 2</span>
+     * <span style="color: #3F7E5E">//     else 3</span>
+     * <span style="color: #3F7E5E">//   end asc, ...</span>
+     * </pre>
+     * <p>This function with Union is unsupported!</p>
+     * <p>The order values are bound (treated as bind parameter).</p>
+     * @param option The option of manual-order containing order values. (NotNull)
+     */
+    public void withManualOrder(ManualOrderOption option) { // is user public!
+        xdoWithManualOrder(option);
+    }
+
+    // ===================================================================================
+    //                                                                    Small Adjustment
+    //                                                                    ================
+    /**
+     * Order along the list of manual values. #beforejava8 <br>
+     * This function with Union is unsupported! <br>
+     * The order values are bound (treated as bind parameter).
+     * <pre>
+     * MemberCB cb = new MemberCB();
+     * List&lt;CDef.MemberStatus&gt; orderValueList = new ArrayList&lt;CDef.MemberStatus&gt;();
+     * orderValueList.add(CDef.MemberStatus.Withdrawal);
+     * orderValueList.add(CDef.MemberStatus.Formalized);
+     * orderValueList.add(CDef.MemberStatus.Provisional);
+     * cb.query().addOrderBy_MemberStatusCode_Asc().<span style="color: #CC4747">withManualOrder(orderValueList)</span>;
+     * <span style="color: #3F7E5E">// order by </span>
+     * <span style="color: #3F7E5E">//   case</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'WDL' then 0</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'FML' then 1</span>
+     * <span style="color: #3F7E5E">//     when MEMBER_STATUS_CODE = 'PRV' then 2</span>
+     * <span style="color: #3F7E5E">//     else 3</span>
+     * <span style="color: #3F7E5E">//   end asc, ...</span>
+     * </pre>
+     * @param orderValueList The list of order values for manual ordering. (NotNull)
+     */
+    public void withManualOrder(List<? extends Object> orderValueList) { // is user public!
+        assertObjectNotNull("withManualOrder(orderValueList)", orderValueList);
+        final ManualOrderOption option = new ManualOrderOption();
+        option.acceptOrderValueList(orderValueList);
+        withManualOrder(option);
+    }
+
+    @Override
+    protected void filterFromToOption(String columnDbName, FromToOption option) {
+        option.allowOneSide();
+    }
+
+    // ===================================================================================
+    //                                                                       Very Internal
+    //                                                                       =============
+    protected WZipInputCB newMyCB() {
+        return new WZipInputCB();
+    }
+    // very internal (for suppressing warn about 'Not Use Import')
+    protected String xabUDT() { return Date.class.getName(); }
+    protected String xabCQ() { return WZipInputCQ.class.getName(); }
+    protected String xabLSO() { return LikeSearchOption.class.getName(); }
+    protected String xabSLCS() { return HpSLCSetupper.class.getName(); }
+    protected String xabSCP() { return SubQuery.class.getName(); }
+}

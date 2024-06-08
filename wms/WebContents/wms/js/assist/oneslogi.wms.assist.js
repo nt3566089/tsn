@@ -1,0 +1,10 @@
+angular.module('oneslogiWms.Assist',
+		[
+		 'oneslogiWms.ProductMasterSearch'
+		,'oneslogiWms.VendorMasterSearch'
+		,'oneslogiWms.DeliveryCourseSearch'
+		,'oneslogiWms.DeliveryMasterSearch'
+		,'oneslogiWms.LocationMasterSearch'
+		,'oneslogiWms.ZipMasterSearch'
+		 ]
+);

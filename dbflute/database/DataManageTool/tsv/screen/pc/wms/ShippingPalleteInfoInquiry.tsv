@@ -1,0 +1,38 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	centerCd	拠点		1	1		1	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	clientCd	荷主		1	1		1	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shipSchDateFrom	出庫予定日(From)		1	1		1	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shipSchDateTo	出庫予定日(To)		1	1		1	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	ownerOrderNo	車割キー		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	requestType	依頼種別		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	custorderNo	依頼番号		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	rmaNo	問合番号		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	refNo	整理番号		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	soPalletNo	P/LNo.		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	status	ステータス		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shipToCd	受入先CD		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	customerCd	特約店CD		1	1		0	0													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	search	検索		1	1		0	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteInfoInquiryDetail	出庫パレット情報照会(詳細)		1	1		0	1													
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	sts	ステータス	1	text	1	0		0	180			1	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	soPalletNo	P/LNo.	2	text	1	0		0	180			2	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	shipSchDate	出庫予定日	3	date	1	0		0	180			3	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	ownerOrderNo	車割キー	4	text	1	0		0	180			4	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	orderType	依頼種別	5	text	1	0		0	180			5	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	custOrderNo	依頼番号	6	text	1	0		0	180			6	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	rmaNo	問合番号	7	text	1	0		0	180			7	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	ownerSoNo	整理番号	8	text	1	0		0	180			8	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	shipDate	出庫実績日	9	date	1	0		0	180			9	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	expectQty1Style1	積付合計数量(ケース)	10	number	1	0	right	0	180			10	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	expectQty1Style2	積付合計数量(カートン)	11	number	1	0	right	0	180			11	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	shipToCd	受入先CD	12	text	1	0		0	180			12	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	shipToSName	受入先名称	13	text	1	0		0	180			13	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	otherRefNo1	輸送形態	14	text	1	0		0	180			14	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	palletKey	パレット積付キー	15	text	1	0		0	180			15	180
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	clientCd	荷主CD	16	text	0	0		0	100			16	
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	clientNm	荷主名称	17	text	0	0		0	100			17	
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	centerCd	拠点CD	18	text	0	0		0	100			18	
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	centerNm	拠点名称	19	text	0	0		0	100			19	
+ShippingPalleteInfoInquiry	出庫パレット情報照会	wms	shippingPalleteList	出庫パレット情報照会グリッド	grid	1	1		0	1	soId	出庫予定ID	20	number	0	0	right	0	100			20	

@@ -1,0 +1,40 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblClientNm	荷主	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblCntrNm	センタ	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblShippingDate	出荷日	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblDeliveryCourseCd	配送コース	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblCarrierNm	運送業者	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblProcessTypeNm	処理区分	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblSupplierCustomerNm	納品先	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblPickingWorkNo	出庫作業No.	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblSumPickingHCount	個口数	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblConfirm	確認	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblMarkRepeat	再	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblTotal	個口数合計	String	1	
+StwList	積込リスト	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0	lblTitle	積込リスト	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblClientNm	荷主	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblShippingDate	出荷日	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblDeliveryCourseCd	配送コース	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblCarrierNm	運送業者	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblProcessTypeNm	処理区分	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblSupplierCustomerNm	納品先	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblSumPickingHCount	個口数	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblConfirm	確認	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblTotal	個口数合計	String	1	
+StwList	積込リスト	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1	lblTitle	積込リスト	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblShippingDate	出荷日	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblDeliveryCourseCd	配送コース	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblCarrierNm	運送業者	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblProcessTypeNm	処理区分	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblSupplierCustomerNm	納品先	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblSumPickingHCount	個口数	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblConfirm	確認	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblTotal	個口数合計	String	1	
+StwList	積込リスト	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1	lblTitle	積込リスト	String	1	

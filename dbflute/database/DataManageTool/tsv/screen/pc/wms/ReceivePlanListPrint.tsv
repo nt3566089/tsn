@@ -1,0 +1,12 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceivePlanListPrint	入荷予定リスト発行	wms	clientCd	荷主		1	1		1	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	centerCd	センタ		1	1		1	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	warehouseCd	倉庫		1	1		0	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	receivePlanDtFrom	入荷予定日(From)		1	1		1	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	receivePlanDtTo	入荷予定日(To)		1	1		1	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	planClientReceiveNo	予定顧客入荷指示No.		1	1		0	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	receiveSlipNo	WMS入荷伝票No.		1	1		0	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	planDepositCd	預託		1	1		0	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	printCondition	発行状況		1	1		0	1													
+ReceivePlanListPrint	入荷予定リスト発行	wms	register	発行		1	1		0	1													

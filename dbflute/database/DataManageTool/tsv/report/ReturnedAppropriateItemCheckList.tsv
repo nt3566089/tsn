@@ -1,0 +1,9 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblReturnedAppropriateItemCheckList	返品適品チェックリスト	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblUserNum1	内外区分 ：	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblItemCd	銘柄コード	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblItemName	銘柄名称	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblManufactureDate	仕分場製造年月日	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblReceivedQty	数量(カートン)	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblCheck	チェック	String	1	
+ReturnedAppropriateItemCheckList	返品適品チェックリスト	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0	lblReceivedQtyTotal	合計	String	1	

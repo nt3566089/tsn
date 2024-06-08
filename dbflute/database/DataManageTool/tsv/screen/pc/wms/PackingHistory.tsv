@@ -1,0 +1,65 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PackingHistory	梱包履歴	wms	centerCd	センタ		1	1		1	1													
+PackingHistory	梱包履歴	wms	clientCd	荷主		1	1		1	1													
+PackingHistory	梱包履歴	wms	shippingDt	出荷日	text	1	1		0	1													
+PackingHistory	梱包履歴	wms	workDt	作業日	text	1	1		0	1													
+PackingHistory	梱包履歴	wms	processTypeCd	処理区分		1	1		0	0													
+PackingHistory	梱包履歴	wms	clientShippingNo	顧客出荷指示No.	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	shippingSlipNo	WMS出荷伝票No.	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	supplyCustomerCd	納品先CD	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	delivCustomerCd	届先CD	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	deliveryCourseCd	配送コースCD	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	carrierCd	運送業者		1	1		0	0													
+PackingHistory	梱包履歴	wms	productCd	商品CD	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	lot	ロット	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	limitDtFrom	期限日(From)	date	1	1		0	0													
+PackingHistory	梱包履歴	wms	limitDtTo	期限日(To)	date	1	1		0	0													
+PackingHistory	梱包履歴	wms	stockTypeCd	在庫区分		1	1		0	0													
+PackingHistory	梱包履歴	wms	carrierTraceNum	貨物追跡No.	text	1	1		0	0													
+PackingHistory	梱包履歴	wms	search	検索		1	1		0	1													
+PackingHistory	梱包履歴	wms	excelOutput	Excel出力		1	1		0	1													
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	0		0	1	hpackingH.hshippingH.centerCd	センタCD	43	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	0		0	1	hpackingH.hshippingH.centerNm	センタ名称	44	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	0		0	1	hpackingH.hshippingH.clientCd	荷主CD	41	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	0		0	1	hpackingH.hshippingH.clientNm	荷主名称	42	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.boxCd	荷材CD	36	text	1	0		0	160				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.boxNm	荷材名称	37	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.carrierTraceNum	貨物追跡No.	12	text	1	0		0	160				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.grossWeight	総重量(g)	38	number	1	0	right	0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.carrierCd	運送業者CD	15	text	1	0		0	110				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.carrierNm	運送業者名称	16	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.clientShippingNo	顧客出荷指示No.	8	text	1	0		0	260				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.delivCustomerCd	届先CD	6	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.delivCustomerNm	届先名称	7	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.deliveryCourseCd	配送コースCD	13	text	1	0		0	125				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.deliveryCourseNm	配送コース名称	14	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.histDt	履歴日	1	date	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.mprocessType.processTypeCd	処理区分CD	10	text	1	0		0	110				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.mprocessType.vdict.dictNm	処理区分名称	11	text	1	0		0	110				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.shippingDt	出荷日	2	date	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.shippingSlipNo	WMS出荷伝票No.	9	text	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.supplyCustomerCd	納品先CD	4	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.supplyCustomerNm	納品先名称	5	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.hshippingH.workDt	作業日	3	date	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hpackingH.totalVolume	総容積(mm3)	39	number	1	0	right	0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.depositAbbr	預託略称	33	text	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.depositCd	預託CD	31	text	1	0		0	160				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.depositNm	預託名称	32	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.janCd	ソースCD	20	text	1	0		0	205				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.limitDt	期限日	22	date	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.locationCd	ロケーションCD	29	text	1	0		0	200				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.locationNm	ロケーション名称	30	text	1	0		0	250				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.lot	ロット	21	text	1	0		0	170				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.mstockType.stockTypeCd	在庫区分CD	23	text	1	0		0	110				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.mstockType.vdict.dictNm	在庫区分名称	24	text	1	0		0	110				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.oldStoreLabelNo	元入庫ラベルNo.	35	text	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.productAbbr	商品略称	19	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.productCd	商品CD	17	text	1	0		0	245				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.productNm	商品名称	18	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.storeLabelNo	入庫ラベルNo.	34	text	1	0		0	140				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.warehouseCd	倉庫CD	25	text	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.warehouseNm	倉庫名称	26	text	1	0		0	300				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.zoneCd	ゾーンCD	27	text	1	0		0	150				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	hstock.zoneNm	ゾーン名称	28	text	1	0		0	170				
+PackingHistory	梱包履歴	wms	bodyList	梱包履歴グリッド	grid	1	1		0	1	packingNum	梱包数	40	number	1	0	right	0	140				

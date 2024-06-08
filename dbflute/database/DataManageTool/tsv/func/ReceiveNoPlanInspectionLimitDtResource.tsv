@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveNoPlanInspectionLimitDtResource	send	send	HT予定無し入荷(詳細期限日)送信	limitDt	期限日	date	1

@@ -1,0 +1,22 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PieceShippingInspectSu	数量入力	wms	janCd	ソースCD		1	0		0	1													
+PieceShippingInspectSu	数量入力	wms	productCd	商品CD		1	0		0	1													
+PieceShippingInspectSu	数量入力	wms	productNm	商品名称		1	0		0	1													
+PieceShippingInspectSu	数量入力	wms	instNumP	検品数		1	1	right	1	1													
+PieceShippingInspectSu	数量入力	wms	instNumPMultiText	検品数荷姿		1	1	right	0	1													
+PieceShippingInspectSu	数量入力	wms	spgQtyOnsP	検品済数		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	instSuP	指示数		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	unitNumBreakdownP	入数内訳		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	boxCdP	荷材		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	instNumC	検品数		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	instNumCMultiText	検品数荷姿		1	1	right	0	1													
+PieceShippingInspectSu	数量入力	wms	spgQtyOnsC	検品済数		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	instSuC	指示数		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	unitNumBreakdownC	入数内訳		1	0	right	0	1													
+PieceShippingInspectSu	数量入力	wms	caseNumC	個口数		1	1	right	1	1													
+PieceShippingInspectSu	数量入力	wms	boxCdC	荷材		1	1		1	1													
+PieceShippingInspectSu	数量入力	wms	update	登録		1	1		0	1													
+PieceShippingInspectSu	数量入力	wms	close	閉じる		1	1		0	1													
+PieceShippingInspectSu	数量入力	wms	pieceTitle	ピース検品		1	0	center	0	1													
+PieceShippingInspectSu	数量入力	wms	caseTitle	ケース検品		1	0	center	0	1													

@@ -1,0 +1,134 @@
+REPORT_ID	REPORT_LAYOUT_ID	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG
+1	1	バーコードラベル(C1)	../../../../../../reports/master/ProductLabel_C1.jrxml	1						0	0
+1	2	バーコードラベル(A4)	../../../../../../reports/master/ProductLabel_A4.jrxml	1						0	0
+1	3	条形码标签(C1)	../../../../../../reports/master/ProductLabel_C1_zhCN.jrxml	1						0	1
+1	4	条形码标签(A4)	../../../../../../reports/master/ProductLabel_A4_zhCN.jrxml	1						0	1
+2	5	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0
+3	6	棚出リスト	../../../../../../reports/shipping/BondedPickingList.jrxml	1						0	0
+4	7	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0
+5	8	ケースピッキングリスト	../../../../../../reports/shipping/CasePickingList.jrxml	1						0	0
+5	9	Case Picking List	../../../../../../reports/shipping/CasePickingList_enUS.jrxml	1						0	1
+5	10	箱分拣清单	../../../../../../reports/shipping/CasePickingList_zhCN.jrxml	1						0	1
+6	11	汎用ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0
+6	12	汎用ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0
+6	13	Generic Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1
+6	14	通用标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1
+6	15	通用标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1
+7	16	CommercialInvoice	report_layout_data_dummy.txt	1						1	0
+8	17	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0
+8	18	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1
+8	19	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1
+9	20	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0
+9	21	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1
+9	22	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1
+10	23	Conwa Bill of Lading	report_layout_data_dummy.txt	1						1	0
+11	24	Conway Shipping Label	report_layout_data_dummy.txt	1						1	0
+12	25	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0
+13	26	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0
+13	27	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1
+13	28	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1
+14	29	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0
+15	30	緊急補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0
+15	31	緊急補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0
+15	32	Urgent Replen. Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1
+15	33	紧急补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1
+15	34	紧急补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1
+16	35	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0
+17	36	適品過不足報告書	../../../../../../reports/inventory/ExcessOrDeficiencyReportList.jrxml	1						0	0
+18	37	不適品過不足報告書(国産)	../../../../../../reports/inventory/ExcessOrDeficiencyReportListDomestic.jrxml	1						0	0
+19	38	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0
+20	39	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0
+21	40	個体情報コード一覧	../../../../../../reports/shipping/IndividualInfoCodeListPrint.jrxml	1						0	0
+22	41	検品ラベル	../../../../../../reports/shipping/InspectionLabel.jrxml	1						1	0
+22	42	Inspection Label	../../../../../../reports/shipping/InspectionLabel_enUS.jrxml	1						0	1
+22	43	检品标签	../../../../../../reports/shipping/InspectionLabel_zhCN.jrxml	1						0	1
+23	44	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0
+23	45	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1
+23	46	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1
+24	47	棚卸作業リスト	../../../../../../reports/inventory/InventoryWorkList.jrxml	1						0	0
+24	48	Inventory Count List	../../../../../../reports/inventory/InventoryWorkList_enUS.jrxml	1						0	1
+24	49	盘点作业清单	../../../../../../reports/inventory/InventoryWorkList_zhCN.jrxml	1						0	1
+25	50	ロケーションバーコード LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList.jrxml	1						0	0
+25	51	Location Barcode Label	../../../../../../reports/master/LocationBarcodeList_enUS.jrxml	1						0	1
+25	52	库位条形码 LabelSeal(44piece/A4)	../../../../../../reports/master/LocationBarcodeList_zhCN.jrxml	1						0	1
+26	53	搬送ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0
+26	54	搬送ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0
+26	55	Transfer Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1
+26	56	搬送标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1
+26	57	搬送标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1
+27	58	マルチピッキングリスト	../../../../../../reports/shipping/MultiPickingList.jrxml	1						0	0
+27	59	Multi-Picking List	../../../../../../reports/shipping/MultiPickingList_enUS.jrxml	1						0	1
+27	60	复式分拣清单	../../../../../../reports/shipping/MultiPickingList_zhCN.jrxml	1						0	1
+28	61	不適品ラベル	../../../../../../reports/returns/NonconformityLabel.jrxml	1						1	0
+29	62	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0
+30	63	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0
+30	64	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1
+30	65	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1
+31	66	PackingSlip	../../../../../../reports/shipping/PackingSlipList.jrxml	1						0	0
+32	67	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0
+33	68	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0
+34	69	パレットはり紙	../../../../../../reports/receive/PalletLabel.jrxml	1						1	0
+35	70	摘み取りリスト	../../../../../../reports/shipping/PLPickingList.jrxml	1						0	0
+35	71	Batch Picking List (Order)	../../../../../../reports/shipping/PLPickingList_enUS.jrxml	1						0	1
+35	72	采摘清单	../../../../../../reports/shipping/PLPickingList_zhCN.jrxml	1						0	1
+36	73	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0
+37	74	製造年月日調査逆転リスト（引取場）	../../../../../../reports/inventory/ProductionDateReverseListCollectionPlace.jrxml	1						0	0
+38	75	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0
+39	76	商品ラベル(C1)	../../../../../../reports/master/ProductLabel_C1.jrxml	1						1	0
+39	77	商品ラベル(A4)	../../../../../../reports/master/ProductLabel_A4.jrxml	1						0	0
+39	78	商品ラベル(A1)	../../../../../../reports/master/ProductLabel_A1.jrxml	1						0	0
+39	79	Product Label（C1）	../../../../../../reports/master/ProductLabel_C1_enUS.jrxml	1						0	1
+39	80	Product Label（A4）	../../../../../../reports/master/ProductLabel_A4_enUS.jrxml	1						0	1
+39	81	商品标签（C1）	../../../../../../reports/master/ProductLabel_C1_zhCN.jrxml	1						0	1
+39	82	商品标签（A4）	../../../../../../reports/master/ProductLabel_A4_zhCN.jrxml	1						0	1
+39	83	商品标签（A1）	../../../../../../reports/master/ProductLabel_A1_zhCN.jrxml	1						0	1
+40	84	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0
+40	85	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1
+40	86	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1
+41	87	入庫依頼書	../../../../../../reports/shipping/ReceiveRequestList.jrxml	1						0	0
+42	88	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0
+43	89	返品適品チェックリスト	../../../../../../reports/returns/ReturnedAppropriateItemCheckList.jrxml	1						0	0
+44	90	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0
+45	91	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0
+46	92	定期補充ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0
+46	93	定期補充ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						0	0
+46	94	Replenishment Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1
+46	95	定期补充标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1
+46	96	定期补充标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1
+47	97	佐川急便荷札	report_layout_data_dummy.txt	1						1	0
+48	98	棚在庫修正リスト	../../../../../../reports/stock/ShelfStockFixList.jrxml	1						0	0
+49	99	積込リスト	../../../../../../reports/shipping/ShippingLoadingList.jrxml	1						0	0
+50	100	出庫依頼書	../../../../../../reports/shipping/ShippingRequestList.jrxml	1						0	0
+51	101	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0
+51	102	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1
+51	103	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1
+52	104	種蒔きリスト	../../../../../../reports/shipping/SLPickingList.jrxml	1						0	0
+52	105	Batch Picking List (Item)	../../../../../../reports/shipping/SLPickingList_enUS.jrxml	1						0	1
+52	106	播种清单	../../../../../../reports/shipping/SLPickingList_zhCN.jrxml	1						0	1
+53	107	仕分明細書	../../../../../../reports/shipping/SortingDtlList.jrxml	1						0	0
+54	108	仕分場受入検品リスト出力	../../../../../../reports/shipping/SortingPlaceIncomingInspecList.jrxml	1						0	0
+55	109	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0
+56	110	在庫リスト(サンプル)	../../../../../../reports/sample/StockListSample.jrxml	1						0	1
+57	111	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0
+57	112	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1
+57	113	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1
+58	114	セット解除指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0
+58	115	De-kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1
+58	116	套装解除指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1
+59	117	山出しリスト	../../../../../../reports/stock/StockTransferList.jrxml	1						0	0
+60	118	入庫ラベル(A4)	../../../../../../reports/common/GeneralLabel.jrxml	1						0	0
+60	119	入庫ラベル(C1)	../../../../../../reports/common/GeneralLabel_C1.jrxml	1						1	0
+60	120	Receiving Label	../../../../../../reports/common/GeneralLabel_enUS.jrxml	1						0	1
+60	121	入库标签(A4)	../../../../../../reports/common/GeneralLabel_zhCN.jrxml	1						0	1
+60	122	入库标签(C1)	../../../../../../reports/common/GeneralLabel_C1_zhCN.jrxml	1						0	1
+61	123	積込リスト	../../../../../../reports/shipping/StwList.jrxml	1						0	0
+61	124	Loading List	../../../../../../reports/shipping/StwList_enUS.jrxml	1						0	1
+61	125	装载清单	../../../../../../reports/shipping/StwList_zhCN.jrxml	1						0	1
+62	126	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0
+63	127	トータルピッキングリスト	../../../../../../reports/shipping/TotalPickingList.jrxml	1						0	0
+63	128	Batch Picking List	../../../../../../reports/shipping/TotalPickingList_enUS.jrxml	1						0	1
+63	129	总选货清单	../../../../../../reports/shipping/TotalPickingList_zhCN.jrxml	1						0	1
+64	130	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0
+65	131	ヤマト宅急便(発払)荷札	../../../../../../reports/shipping/YamatoDeliveryTagLabel.jrxml	1						1	0
+66	132	ゆうパケット荷札	../../../../../../reports/shipping/YuPacketTagLabel.jrxml	1						1	0
+67	133	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0

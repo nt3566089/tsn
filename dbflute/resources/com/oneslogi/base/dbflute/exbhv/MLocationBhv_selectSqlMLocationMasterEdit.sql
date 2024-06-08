@@ -1,0 +1,129 @@
+/*
+ [df:title]
+ ロケーションマスタ受信一覧を取得します。
+
+ [df:description]
+  SQL Description here.
+
+*/
+-- #df:entity#
+-- ##Long PICKING_ORDER##
+-- ##Long ALLOC_ORDER##
+-- ##String CLIENT_CD##
+-- ##String LocGroupNm##
+-- ##String ALLOC_NG_FLG_NM##
+-- ##String DEL_FLG_NM##
+-- ##String LIN_OR_BLOCK##
+-- ##String LOCKBN_NM##
+-- ##String REPLENISHMENT_ROUNDEDUP__UNIT_NM##
+-- ##String TOSPLMD_NM##
+-- ##String PRESPLMD_NM##
+-- !df:pmb extends Paging!
+-- !!AutoDetect!!
+-- !!Long locationId!!
+-- !!Long replenishProductId!!
+-- !!Long replenishStockTypeId!!
+-- !!Long replenishDepositId!!
+-- !!Long replenishPProductShapeId!!
+-- !!Long maxStoreProductShapeId!!
+SELECT	 MLC.LocGroup,
+ 		MLC.LOCATION_CD,
+ 		MLC.ALLOC_NG_FLG,
+ 		MLC.DEL_FLG,
+ 		MLC.LOCATION_NM,
+ 		MLC.PICKING_ORDER,
+ 		MLC.PALLETECAPACITY,
+ 		MLC.MAX_STORE_NUM,
+		MLC.LINBLK,
+		MLC.LOCID,
+		PRD.PRODUCT_CD,
+		PRD.PRODUCT_NM,
+		PRD.BRCTG,
+		MLC.SPLREVUN,
+		MLC.SPLREVCTQA,
+		MLC.REPLENISH_P_NUM,
+		MLC.BSSPLPT,
+		MLC.TOSPLMD,
+		MLC.PRESPLMD,
+ 		MFC.TRANSPORTPRIORITY,
+		MLC.VIRTUALLOCFLG,
+-- 		NULL 	AS 	LINORBLK,
+-- 		MLI.LINCD,
+		MLI.LINNM,
+-- 		MBL.BLKCD,
+		MBL.BLKNM,
+		MLC.CENTER_ID,
+		CEN.CENTER_CD,
+		CEN.CENTER_NM,
+		PRD.CLIENT_ID,
+		CLI.CLIENT_CD,
+		CLI.CLIENT_NM,
+ 		MLC.LOCATION_ID,
+ 		MLC.UPD_DT,
+ 		BUS.USER_NM,
+		LEFT	(MLC.LOCATION_CD,3)	AS	ZONE,
+
+		MLC.ALLOC_ORDER,
+-- 		NULL	AS	ALLOC_ORDER,	--引当順序
+		MLC.LOCATION_TYPE,
+--		NULL	AS	LOCATION_TYPE_NM,	--ロケーション種別
+		MLC.REPLENISH_PRODUCT_ID,
+-- 		NULL	AS	REPLENISH_PRODUCT_ID,	--補充商品ID
+		MLC.REPLENISH_STOCK_TYPE_ID,
+-- 		NULL	AS	REPLENISH_STOCK_TYPE_ID,	--補充在庫区分ID
+		MLC.REPLENISH_DEPOSIT_ID,
+-- 		NULL	AS	REPLENISH_DEPOSIT_ID,		--補充預託ID
+		MLC.REPLENISH_P_PRODUCT_SHAPE_ID,
+-- 		NULL	AS	REPLENISH_P_PRODUCT_SHAPE_ID,	--補充点商品荷姿ID
+ 		MLC.MAX_STORE_PRODUCT_SHAPE_ID,
+-- 		NULL	AS	MAX_STORE_PRODUCT_SHAPE_ID,		--最大格納数商品荷姿ID
+		MLC.VERSION_NO,
+-- 		NULL	AS	VERSION_NO,		--バージョンNo,
+-- 		MLC.CONTROL_NO,
+		NULL	AS	CONTROL_NO,
+-- 		MLC.ADD_PROCESS,
+		NULL	AS	ADD_PROCESS
+		
+
+FROM	M_LOCATION	MLC--ロケーションマスタ
+
+LEFT	JOIN	M_CENTER					CEN--拠点マスタ
+		ON		CEN.CENTER_ID				=		MLC.CENTER_ID
+		AND		CEN.DEL_FLG					=		'0'
+
+LEFT	JOIN	M_MFCOMPANY					MFC--組織マスタ
+		ON		MFC.COMPANY_CD				=		SUBSTRING(CEN.CENTER_CD,0,4)
+		AND		MFC.DEL_FLG					=		'0'
+
+--SUBSTRING(拠点マスタ.拠点CD,0,4) = 組織マスタ.組織CD
+
+
+LEFT	JOIN	M_PRODUCT					PRD--銘柄マスタ
+		ON		PRD.PRODUCT_ID				=		MLC.REPLENISH_PRODUCT_ID
+		AND		PRD.DEL_FLG					=		'0'
+
+-- TODO:★確認
+LEFT	JOIN	M_CLIN						MLI--ラインマスタ
+		ON		MLI.CENTER_ID				=		MLC.CENTER_ID
+		AND		MLI.LINCD					=		MLC.LINBLK
+		AND		MLI.DEL_FLG					=		'0'
+
+LEFT	JOIN	M_CBLK						MBL--ブロックマスタ
+		ON		MBL.CENTER_ID				=		MLC.CENTER_ID
+		AND		MBL.BLKCD					=		MLC.LINBLK
+		AND		MBL.DEL_FLG					=		'0'
+
+LEFT	JOIN	M_CLIENT					CLI--荷主マスタ
+		ON		CLI.CLIENT_ID				=		PRD.CLIENT_ID
+		AND		CLI.DEL_FLG					=		'0'
+
+-- TODO:★確認
+LEFT	JOIN	B_USER						BUS		--ユーザマスタ
+		ON		BUS.USER_CD					=		MLC.UPD_USER
+		AND		BUS.DEL_FLG					=		'0'
+
+
+WHERE	MLC.LOCATION_ID		=		/*pmb.locationId*/1
+
+
+

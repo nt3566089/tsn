@@ -1,0 +1,19 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupNm	プリンタグループ名称		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	attribute1	プリンタグループ属性1		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	attribute2	プリンタグループ属性2		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	attribute3	プリンタグループ属性3		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	attribute4	プリンタグループ属性4		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	attribute5	プリンタグループ属性5		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	printerGroupNm	プリンタグループ名称	1	text	1	1		1	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	attribute1	プリンタグループ属性1	2	text	1	1		0	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	attribute2	プリンタグループ属性2	3	text	1	1		0	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	attribute3	プリンタグループ属性3	4	text	1	1		0	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	attribute4	プリンタグループ属性4	5	text	1	1		0	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	printerGroupListGrid	プリンタグループマスタメンテナンスグリッド	grid	1	1		0	1	attribute5	プリンタグループ属性5	6	text	1	1		0	250				
+PrinterGroupList	プリンタグループマスタメンテナンス	base	search	検索		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	addRow	行追加		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	removeRow	行削除		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	register	登録		1	1		0	1													
+PrinterGroupList	プリンタグループマスタメンテナンス	base	remove	削除		1	1		0	1													

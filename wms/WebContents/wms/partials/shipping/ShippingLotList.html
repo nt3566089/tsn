@@ -1,0 +1,53 @@
+<div ng-controller="ShippingLotList" owd-screen="ShippingLotList">
+	<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi Start -->
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi End -->
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+					<div class="row">
+						<!-- [#1517] 出荷期限日一覧の不要な項目 (行No、センタCDを削除) 2017.04.18 kawana -->
+						<owd-select id="clientCd" ng-model="head.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="head.mproduct.productNm"></owd-info>
+						</owd-text>
+						<owd-text id="customerCd" ng-model="head.mcustomer.customerCd" label-text="仕入先CD" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+							<owd-info ng-model="head.mcustomer.customerNm"></owd-info>
+						</owd-text>
+					</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- HDIS変更 2017.04.17 HDIS Start -->
+					<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi Start -->
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+					<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi End -->
+					<!-- HDIS変更 2017.04.17 HDIS End -->
+				</div>
+			</div>
+	<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi Start -->
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#6883][OSS] 入力値チェックを修正 2019.11.25 tsuboi End -->
+			<br>
+			<div owd-grid="gridOptions" id="shippingLotList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+		    <div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+						<owd-button id="register" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="register()">登録</owd-button>
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

@@ -1,0 +1,50 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div owd-screen="RoleListCopy">
+	<div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+		<div class="row" ng-show="modalAlerts.RoleListCopy">
+			<div class="col-xs-12">
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+			</div>
+		</div>
+	</div>
+	<style>
+		h1{
+			font-size: 115%; text-align: left; margin: 1px; color: black;
+		}
+	</style>
+	<form id="inputform" name="inputform">
+		<div class="container-modal">
+			<tabset justified="true">
+				<tab select="initTab('piece')">
+					<tab-heading>
+						
+						<h1><owd-span id="copyTitle" label-text="コピー"></owd-span></h1>
+						
+					</tab-heading>
+						<div class="well">
+							<div class="row">
+								<owd-text id="roleCd" ng-model="head.roleCd" label-text="権限CD"></owd-text>
+								<owd-text id="roleNm" ng-model="head.vdict.dictNm" label-text="権限名"></owd-text>
+							</div>
+						</div>
+				</tab>
+			</tabset>
+			
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden">
+					
+					<owd-button id="register" class="btn-success" ng-click="clickOk()">登録</owd-button>
+					
+				</div>
+				<div class="col-xs-6" align="right">
+					<owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

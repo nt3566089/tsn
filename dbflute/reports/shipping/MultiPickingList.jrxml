@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MultiPickingList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="10" uuid="11129d88-4931-4864-b211-d4e2daf9a46a">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="53"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<style name="Barcode" hAlign="Center" vAlign="Bottom" fontName="IPAexゴシック" fontSize="15" isItalic="true">
+		<paragraph tabStopWidth="40"/>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="clientCd" class="java.lang.String">
+		<fieldDescription><![CDATA[clientCd]]></fieldDescription>
+	</field>
+	<field name="clientNm" class="java.lang.String">
+		<fieldDescription><![CDATA[clientNm]]></fieldDescription>
+	</field>
+	<field name="cultureId" class="java.lang.Long">
+		<fieldDescription><![CDATA[cultureId]]></fieldDescription>
+	</field>
+	<field name="limtDt" class="java.lang.String">
+		<fieldDescription><![CDATA[limtDt]]></fieldDescription>
+	</field>
+	<field name="lineNo" class="java.lang.String">
+		<fieldDescription><![CDATA[lineNo]]></fieldDescription>
+	</field>
+	<field name="locationCd" class="java.lang.String">
+		<fieldDescription><![CDATA[locationCd]]></fieldDescription>
+	</field>
+	<field name="lot" class="java.lang.String">
+		<fieldDescription><![CDATA[lot]]></fieldDescription>
+	</field>
+	<field name="pickingGroupNo" class="java.lang.String">
+		<fieldDescription><![CDATA[pickingGroupNo]]></fieldDescription>
+	</field>
+	<field name="printFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[printFlg]]></fieldDescription>
+	</field>
+	<field name="productCd" class="java.lang.String">
+		<fieldDescription><![CDATA[productCd]]></fieldDescription>
+	</field>
+	<field name="productNm" class="java.lang.String">
+		<fieldDescription><![CDATA[productNm]]></fieldDescription>
+	</field>
+	<field name="reportCd" class="java.lang.String">
+		<fieldDescription><![CDATA[reportCd]]></fieldDescription>
+	</field>
+	<field name="storeLabelNo" class="java.lang.String">
+		<fieldDescription><![CDATA[storeLabelNo]]></fieldDescription>
+	</field>
+	<field name="sumPickingNum" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[sumPickingNum]]></fieldDescription>
+	</field>
+	<field name="cartNo" class="java.lang.String">
+		<fieldDescription><![CDATA[cartNo]]></fieldDescription>
+	</field>
+	<field name="warehouseCd" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseCd]]></fieldDescription>
+	</field>
+	<field name="warehouseNm" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseNm]]></fieldDescription>
+	</field>
+	<field name="workDt" class="java.lang.String">
+		<fieldDescription><![CDATA[workDt]]></fieldDescription>
+	</field>
+	<field name="locationNm" class="java.lang.String">
+		<fieldDescription><![CDATA[locationNm]]></fieldDescription>
+	</field>
+	<field name="emergencyFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[emergencyFlg]]></fieldDescription>
+	</field>
+	<field name="packingNum11" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum11]]></fieldDescription>
+	</field>
+	<field name="packingNum21" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum21]]></fieldDescription>
+	</field>
+	<field name="packingNum31" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum31]]></fieldDescription>
+	</field>
+	<field name="packingNum41" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum41]]></fieldDescription>
+	</field>
+	<field name="packingNum51" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum51]]></fieldDescription>
+	</field>
+	<field name="packingNum61" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum61]]></fieldDescription>
+	</field>
+	<field name="packingNum12" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum12]]></fieldDescription>
+	</field>
+	<field name="packingNum22" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum22]]></fieldDescription>
+	</field>
+	<field name="packingNum32" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum32]]></fieldDescription>
+	</field>
+	<field name="packingNum42" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum42]]></fieldDescription>
+	</field>
+	<field name="packingNum52" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum52]]></fieldDescription>
+	</field>
+	<field name="packingNum62" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum62]]></fieldDescription>
+	</field>
+	<field name="packingNum13" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum13]]></fieldDescription>
+	</field>
+	<field name="packingNum23" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum23]]></fieldDescription>
+	</field>
+	<field name="packingNum33" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum33]]></fieldDescription>
+	</field>
+	<field name="packingNum43" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum43]]></fieldDescription>
+	</field>
+	<field name="packingNum53" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum53]]></fieldDescription>
+	</field>
+	<field name="packingNum63" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum63]]></fieldDescription>
+	</field>
+	<field name="packingNum14" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum14]]></fieldDescription>
+	</field>
+	<field name="packingNum24" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum24]]></fieldDescription>
+	</field>
+	<field name="packingNum34" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum34]]></fieldDescription>
+	</field>
+	<field name="packingNum44" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum44]]></fieldDescription>
+	</field>
+	<field name="packingNum54" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum54]]></fieldDescription>
+	</field>
+	<field name="packingNum64" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum64]]></fieldDescription>
+	</field>
+	<field name="packingNum15" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum15]]></fieldDescription>
+	</field>
+	<field name="packingNum25" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum25]]></fieldDescription>
+	</field>
+	<field name="packingNum35" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum35]]></fieldDescription>
+	</field>
+	<field name="packingNum45" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum45]]></fieldDescription>
+	</field>
+	<field name="packingNum55" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum55]]></fieldDescription>
+	</field>
+	<field name="packingNum65" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum65]]></fieldDescription>
+	</field>
+	<field name="packingNum16" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum16]]></fieldDescription>
+	</field>
+	<field name="packingNum26" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum26]]></fieldDescription>
+	</field>
+	<field name="packingNum36" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum36]]></fieldDescription>
+	</field>
+	<field name="packingNum46" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum46]]></fieldDescription>
+	</field>
+	<field name="packingNum56" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum56]]></fieldDescription>
+	</field>
+	<field name="packingNum66" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[packingNum66]]></fieldDescription>
+	</field>
+	<field name="backetColNum" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[backetColNum]]></fieldDescription>
+	</field>
+	<field name="backetRowNum" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[backetRowNum]]></fieldDescription>
+	</field>
+	<field name="storeDt" class="java.lang.String">
+		<fieldDescription><![CDATA[storeDt]]></fieldDescription>
+	</field>
+	<field name="storeNoFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[storeNoFlg]]></fieldDescription>
+	</field>
+	<field name="jancd" class="java.lang.String"/>
+	<variable name="rank" class="java.lang.Integer" resetType="Group" resetGroup="workDt" incrementType="Group" incrementGroup="workDt">
+		<variableExpression><![CDATA[$V{rank}.intValue()+1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="pickingGroupNo_pageNumber" class="java.lang.Integer" resetType="Group" resetGroup="pickingGroupNo" incrementType="Page" calculation="Count">
+		<variableExpression><![CDATA[$V{pickingGroupNo_pageNumber}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="clientCd" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{clientCd}]]></groupExpression>
+	</group>
+	<group name="pickingGroupNo" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{pickingGroupNo}]]></groupExpression>
+	</group>
+	<group name="cartNo" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{cartNo}]]></groupExpression>
+	</group>
+	<group name="workDt" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{workDt}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement key="lblPackingNumH" mode="Opaque" x="492" y="100" width="308" height="14" backcolor="#D3D3D3" uuid="e0ba8603-2a34-4cb2-a2c0-d69da83f89ca"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblMultiPickingList" x="5" y="3" width="797" height="40" uuid="de053d20-ddfb-4503-b272-b90165714d44"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*マルチピッキングリスト]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPage" x="682" y="25" width="50" height="15" uuid="84aee3c6-d39c-4e37-aae3-1352b42e0746"/>
+				<box topPadding="1" leftPadding="20" bottomPadding="1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[PAGE:]]></text>
+			</staticText>
+			<textField pattern="datetime" isBlankWhenNull="true">
+				<reportElement x="684" y="12" width="118" height="15" uuid="f12b4888-9af0-411a-967e-ef39a87ac35f"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.now()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="762" y="25" width="10" height="15" uuid="91f294cf-ffb7-4b3a-afd1-57f85a7d7d8d"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Group" evaluationGroup="pickingGroupNo" isBlankWhenNull="true">
+				<reportElement x="772" y="25" width="30" height="15" uuid="ba041951-d29d-4ba5-bc61-886a56cf3579"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{pickingGroupNo_pageNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="732" y="25" width="30" height="15" uuid="30db47af-c7d6-49c3-8466-dc353cd297ef"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{pickingGroupNo_pageNumber}+1]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblAgain" mode="Opaque" x="661" y="14" width="24" height="24" forecolor="#FFFFFF" backcolor="#000000" uuid="54e57b96-2d10-43c7-b0f3-601f272fb14b">
+					<printWhenExpression><![CDATA[$F{printFlg}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*再]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblClientCd" mode="Opaque" x="5" y="43" width="110" height="18" backcolor="#D3D3D3" uuid="014e8ef7-d010-4129-bd99-1f27ca71d4e0"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*荷主]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtClientCd" x="115" y="43" width="154" height="18" uuid="d2a08cf4-4739-496b-be99-6a8d5c62c035"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientCd} + " : " + $F{clientNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblLineNo" mode="Opaque" x="5" y="85" width="35" height="29" isPrintWhenDetailOverflows="true" backcolor="#D3D3D3" uuid="83e700ac-4719-430c-9ffa-2f8dba412032"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblSumPickingNum" mode="Opaque" x="420" y="85" width="72" height="29" backcolor="#D3D3D3" uuid="65667d02-67ed-425a-bbbd-15e218531082"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None">
+					<font fontName="IPAexゴシック"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[*出荷総数]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblProductCd" mode="Opaque" x="240" y="101" width="180" height="13" backcolor="#D3D3D3" uuid="50ea33e7-af80-464c-90fe-f15998c4f577"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*商品CD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblProductNm" mode="Opaque" x="137" y="100" width="103" height="14" backcolor="#D3D3D3" uuid="b0db48a8-a774-4b1b-97e3-bc0938fd65f8"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="IPAexゴシック" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*商品名称]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum" mode="Opaque" x="492" y="85" width="308" height="16" backcolor="#D3D3D3" uuid="1c25edfa-480f-4c95-8c63-857814915cd1"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*オーダー別数量]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtWorkDt" x="334" y="43" width="88" height="18" uuid="dcf9371f-6802-434f-a27f-19bd8d35ac2c"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{workDt})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblWorkDt" mode="Opaque" x="269" y="43" width="65" height="18" backcolor="#D3D3D3" uuid="9d82e3ea-e2ee-4a15-a390-86909757801d"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*作業日]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPickingGroupNo" mode="Opaque" x="5" y="61" width="110" height="18" backcolor="#D3D3D3" uuid="8c7de4eb-9ace-42c5-bb5d-3fd647ab7ae4"/>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*ピッキンググループNo.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtpickingGroupNo" x="115" y="61" width="154" height="18" uuid="26ee99dd-0b79-4ee8-9dc5-5a5e00575927"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pickingGroupNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblStoreLabelNo" mode="Opaque" x="40" y="94" width="97" height="10" backcolor="#D3D3D3" uuid="869e8829-006a-4580-84a5-a1e493d19b50">
+					<printWhenExpression><![CDATA[$F{storeNoFlg}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[*入庫ラベルNo.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblLimitDt" mode="Opaque" x="240" y="85" width="90" height="16" backcolor="#D3D3D3" uuid="3ed5696e-374b-4eb1-83f8-7fe021001ea7"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*期限日]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblLot" mode="Opaque" x="326" y="85" width="94" height="16" backcolor="#D3D3D3" uuid="9dd7ae40-f44b-4a90-afd2-f29dce292896"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*ロット]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCartNoBar" mode="Transparent" x="624" y="43" width="65" height="36" uuid="a724caf0-d514-4e82-8bc8-7cd947c2fa43"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="13" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*台車№]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement style="Barcode" x="689" y="43" width="95" height="18" uuid="e92f568c-f781-44db-a90f-cf53a9da1e92"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA[("000"+$F{cartNo}.toString()).substring(("000"+$F{cartNo}.toString()).length()-3,("000"+$F{cartNo}.toString()).length())]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<staticText>
+				<reportElement key="lblJancd" mode="Opaque" x="137" y="85" width="103" height="16" backcolor="#D3D3D3" uuid="ab3948b1-7d04-4081-9e9c-8aec293bc108"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*JANCD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblLocationNm" mode="Opaque" x="40" y="85" width="97" height="10" backcolor="#D3D3D3" uuid="8333c8c3-f40e-45ec-b6c3-db4b0de04f81"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[*ロケーション]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblEmergency" mode="Opaque" x="8" y="16" width="109" height="24" forecolor="#FFFFFF" backcolor="#000000" uuid="f1c88e19-e14b-4ebc-8c23-78d9f40ad721">
+					<printWhenExpression><![CDATA[$F{emergencyFlg}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*緊急出荷有り]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumA" mode="Transparent" x="539" y="99" width="20" height="15" uuid="f75e5b93-ea3a-4d99-a3cb-c8e7b4e862ab"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumB" mode="Transparent" x="587" y="99" width="20" height="15" uuid="c4e005b7-412e-4726-8c99-f9623fecdc1b">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumC" mode="Transparent" x="635" y="99" width="20" height="15" uuid="678ff65e-d345-4662-8299-05042bf40658">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumD" mode="Transparent" x="682" y="99" width="20" height="15" uuid="efaca17e-79dc-4c1c-8b86-cb4b80a8650c">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*D]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumE" mode="Transparent" x="731" y="99" width="20" height="15" uuid="5b2f1376-5a1c-4650-bf73-2ffb6b146a21">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*E]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNumF" mode="Transparent" x="779" y="99" width="20" height="15" uuid="e8d10af9-4147-4ce9-8fe4-75d058dec42e">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[*F]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblStoreDt" mode="Opaque" x="40" y="95" width="97" height="10" backcolor="#D3D3D3" uuid="433e9a4f-c912-46d6-964e-32add3540cfa">
+					<printWhenExpression><![CDATA[$F{storeNoFlg}.equals("0")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[*入庫日]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblWarehouseCd" mode="Opaque" x="40" y="104" width="97" height="10" backcolor="#D3D3D3" uuid="fc00f960-5a72-4066-8a8f-8ad2dcd91deb"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[*倉庫]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtCartNo" x="689" y="61" width="95" height="17" uuid="71301410-59c2-4be3-b0d5-2ab05bce4349"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[("000"+$F{cartNo}.toString()).substring(("000"+$F{cartNo}.toString()).length()-3,("000"+$F{cartNo}.toString()).length())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement key="lblBakeRowNo1" mode="Transparent" x="492" y="1" width="20" height="15" uuid="51e38245-6d56-4cc0-929b-47affa3f3853"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblBakeRowNo2" mode="Transparent" x="492" y="19" width="20" height="15" uuid="df4a9f9d-37e4-4096-bec0-7465901295a9">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblBakeRowNo3" mode="Transparent" x="492" y="37" width="20" height="15" uuid="4d8ddd32-a8a2-478f-9418-2ddeceb1bbf5">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum63" mode="Opaque" x="754" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="bcc24427-398d-4872-af9f-1f3c1a935720">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum63}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum23" mode="Opaque" x="562" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="4e713705-7e3b-4f7a-8e60-1fd52e999f70">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum23}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum13" mode="Opaque" x="514" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="ae7e031a-c9b0-4cfa-9980-6d2329c216bd">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum13}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum43" mode="Opaque" x="658" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="f0be7887-8499-41c9-992d-3ea1d0d10f25">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum43}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum33" mode="Opaque" x="610" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="d43e2b04-b770-4a13-82ef-f651e6d526a6">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum33}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum53" mode="Opaque" x="706" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="40c4dded-f395-4bbf-a840-0b5fa5f7485d">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum53}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum63" mode="Transparent" x="754" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="951a357a-bb4f-49cc-8f2f-ce60428f698d">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum63}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum63}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum23" mode="Transparent" x="562" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="c9bc6b5c-a8e1-4ca2-83f4-252d27fd6e76">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum23}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum23}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum13" mode="Transparent" x="514" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="b93f67c3-5f21-44fd-b23e-e458122a4cf1">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum13}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum13}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum53" mode="Transparent" x="706" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="a212d041-e107-4be8-8b1e-4e6f12f2863b">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum53}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum53}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum43" mode="Transparent" x="658" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="6daa4592-442c-4331-921d-aeebb3722fb4">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum43}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum43}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum33" mode="Transparent" x="610" y="37" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="d62e662c-6079-47ac-9b92-e3ef3079c3d0">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum33}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum33}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum42" mode="Opaque" x="658" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="a99524e5-90b8-4d09-a7f3-9756a306dade">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum42}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum62" mode="Opaque" x="754" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="1fb19e9a-0dec-4ec2-9e1e-8d2b330e404f">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum62}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum52" mode="Opaque" x="706" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="b6dde9d3-e728-47bb-a153-7baf566d56ff">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum52}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum32" mode="Opaque" x="610" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="b4aaeed9-a6a0-4aec-a3df-9151ffa7008b">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum32}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum22" mode="Opaque" x="562" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="42cadbf8-5a9c-40ce-a9b7-d5e38dcd1d55">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum22}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum12" mode="Opaque" x="514" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="df25309e-1595-463c-bfb2-665ea04e7b5c">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum12}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum11" mode="Opaque" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="0a921ae4-6587-4011-8019-525fea53dc55">
+					<printWhenExpression><![CDATA[$F{packingNum11}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum51" mode="Opaque" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="99d41f24-eac5-44eb-b718-8693aec7a0a6">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum51}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum61" mode="Opaque" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="66126805-bfe7-4326-bb78-3614e5322b31">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum61}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum41" mode="Opaque" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="2757adae-2ba8-483a-8dbd-3ab84cb77e91">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum41}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum31" mode="Opaque" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="7b04ddd6-1154-40c7-9cd3-73b365698809">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum31}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum21" mode="Opaque" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="bcc03763-d66e-4dac-865a-95a2025044f9">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum21}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum62" mode="Transparent" x="754" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="6f2be761-4054-4c28-bc47-7bd0bb48a3c6">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum62}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum62}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum52" mode="Transparent" x="706" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="2ae41c24-0967-4266-bbd5-85d455ddb572">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum52}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum52}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum42" mode="Transparent" x="658" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="87f999d6-3bae-46ce-814b-cf27080e0725">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum42}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum42}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum32" mode="Transparent" x="610" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="42bdd5b0-e617-4ccc-8842-d544764b7355">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum32}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum32}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum22" mode="Transparent" x="562" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="417d80ad-c8c6-4551-9797-9c8afeb27282">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum22}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum22}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum12" mode="Transparent" x="514" y="19" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="17509d3f-d6d0-4fa1-a8a7-d9c306ec9fd5">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum12}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum12}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum21" mode="Transparent" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="077c1830-fc96-44bb-9796-635340f33005">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum21}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum21}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum31" mode="Transparent" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="64ac81b8-0d01-43e4-8eff-6b39b788d767">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum31}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum31}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum41" mode="Transparent" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="7d99b947-7b8a-4b70-ac2d-c94abb1fde3b">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum41}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum41}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum51" mode="Transparent" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="bd1b877e-b585-47ab-9f77-db9c5fe77ad3">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum51}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum51}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum61" mode="Transparent" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="de653a2b-0440-48c7-b293-f5305f0ec8e5">
+					<printWhenExpression><![CDATA[$F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum61}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum61}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum11" mode="Transparent" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="58cc6a80-df15-4d2f-a242-0633e01bb0fe">
+					<printWhenExpression><![CDATA[$F{packingNum11}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtLocationNm" x="40" y="1" width="97" height="18" uuid="86606a6f-e99b-44db-906e-9a70bfdad042"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{locationNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtStoreLabelNo" x="40" y="18" width="97" height="18" uuid="b018191f-572d-4413-bad4-a2523532b987"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{storeNoFlg}.equals( "1" )?$F{storeLabelNo}:com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{storeDt}))]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="8" y="0" width="29" height="37" uuid="79a90ca0-1077-42b3-be01-3bbb55626ac8"/>
+				<box rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{rank}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="492" y="35" width="308" height="1" uuid="94033a7c-c51b-485c-b6bf-0d2425b6f1e9"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="492" y="53" width="308" height="1" uuid="c8ebf2c3-be1f-4a37-9fdf-e75a03a01291">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="5" y="52" width="797" height="1" uuid="f6aebdfd-b147-480b-8623-895cf3c7de41">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) < 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtProductCd" x="240" y="18" width="180" height="18" isPrintInFirstWholeBand="true" uuid="f3ac3c5b-138e-4551-b22a-f2aeed0604ed"/>
+				<box leftPadding="5" rightPadding="1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productCd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtProductNm" x="137" y="35" width="347" height="18" uuid="7ed9f8ea-b029-408b-aab9-4e999e864300"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productNm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtJancd" x="137" y="2" width="103" height="15" uuid="e64196a5-baa8-4f9c-82ec-a6481b2539e0"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jancd}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtLimitDt" x="240" y="1" width="86" height="18" uuid="2f4eaa3b-5dbf-4a6f-a787-143ba73be7ce"/>
+				<box leftPadding="5" rightPadding="1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{limtDt})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtLot" x="330" y="1" width="90" height="18" uuid="193ab8cd-043b-4f7e-bb3e-d780150e4963"/>
+				<box leftPadding="3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lot}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtSumPickingNum" x="420" y="2" width="64" height="33" uuid="2658c959-459c-45d3-85eb-495c2fc022b8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumPickingNum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="492" y="17" width="308" height="1" uuid="6259d4c8-f519-415c-aa5f-686cecc006d6"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement key="lblWarehouseCd" x="40" y="35" width="97" height="18" uuid="555fc7e2-ad6f-49da-8a1f-db9b90517bf2"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warehouseNm}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l]]></printWhenExpression>
+			<staticText>
+				<reportElement key="lblPackingNum34" mode="Opaque" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="9a2e2b0d-625c-4dc3-b1fd-ce521acea991">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum34}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum24" mode="Opaque" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="fe1d4c32-9f84-4419-bc53-4e60121a56b6">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum24}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum14" mode="Opaque" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="91badc40-9f71-479e-aeab-4f22781ce60d">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum14}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum14" mode="Transparent" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="8efcd4e8-1b26-44e4-a123-4c0dcdaaa193">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum14}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum14}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum44" mode="Opaque" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="8265ac2e-3e20-4ef1-91cf-7bc6a16cde36">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum44}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum64" mode="Opaque" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="0d75a823-59ef-48d5-8439-476ee14f64ef">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum64}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum24" mode="Transparent" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="2fb9142b-9490-4a69-80ac-1f07b74d2789">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum24}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum24}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum44" mode="Transparent" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="ba91faf1-363c-4719-9302-f4bc21f80f51">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum44}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum44}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum54" mode="Opaque" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="bc089ad6-3df2-4409-8503-6d9a86b7b88e">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum54}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<line>
+				<reportElement x="492" y="17" width="308" height="1" uuid="3bd5c7e7-3a93-4c64-813a-fac74df15b76">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum34" mode="Transparent" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="55b42855-6829-47e0-a0a7-1087895efc05">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum34}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum34}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum54" mode="Transparent" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="2d29584f-1c32-4bf1-b41f-e9491eb87447">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum54}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum54}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum64" mode="Transparent" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="8fa2cb7d-d1d8-4d73-8961-a30666fc43fe">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum64}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum64}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblBakeRowNo4" mode="Transparent" x="492" y="1" width="20" height="15" uuid="9fc08daf-19d5-4377-bf5c-3acf8f03e430"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="16" width="797" height="1" uuid="18abbdce-5928-41b0-a4b6-b8068518fd46">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) == 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l]]></printWhenExpression>
+			<staticText>
+				<reportElement key="lblPackingNum45" mode="Opaque" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="89a64ed4-5e3f-4a53-8b64-62abf8e71572">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum45}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum25" mode="Opaque" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="c1565dcf-1bab-42a7-aa84-df5914864b8c">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum25}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum65" mode="Opaque" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="a8d9cd05-c6e2-4ede-960e-47f7cbc53dc0">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum65}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum55" mode="Opaque" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="7b3b543d-68d3-4ce7-b337-3a73b59d2cfe">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum55}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum15" mode="Opaque" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="32dbef8b-a75f-4848-aac3-55b6fe2f8bfb">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum15}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum35" mode="Opaque" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="562c9a08-f1fb-4aac-a4a4-0a4d69a4f87a">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum35}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum45" mode="Transparent" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="34680625-75f4-4266-9944-348a85d3f55a">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum45}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum45}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum65" mode="Transparent" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="364b27a0-ce0f-4734-856a-a89ba24b2db3">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum65}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum65}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum25" mode="Transparent" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="98dba1ec-bb98-4055-b8e3-e5db07f6bb5d">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum25}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum25}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="492" y="17" width="308" height="1" uuid="187ec463-150a-4901-9774-67fda00348f9">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="lblBakeRowNo5" mode="Transparent" x="492" y="1" width="20" height="15" uuid="cf1538ad-a020-4e12-9452-ba077d137602"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum15" mode="Transparent" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="639a296e-0d94-47f2-8888-e8ba09b76f66">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum15}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum15}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum35" mode="Transparent" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="231fb3fd-e737-4f4c-b097-0ea1034a7f08">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum35}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum35}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum55" mode="Transparent" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="c58ac83b-5b45-4d40-931c-134a19a0c945">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum55}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum55}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="16" width="797" height="1" uuid="b68389d3-1324-4486-a9c5-c74816a6505e">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) == 0l]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l]]></printWhenExpression>
+			<staticText>
+				<reportElement key="lblPackingNum36" mode="Opaque" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="b2c988c6-185b-4102-891a-0131d578ee30">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum36}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum36" mode="Transparent" x="610" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="8a72cc4e-ee8e-42b2-ab74-9c19b1a4e373">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(2l) ) > 0l && $F{packingNum36}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum36}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum46" mode="Opaque" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="ec240297-d0d4-41db-b95a-83fdbbf71587">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum46}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum66" mode="Opaque" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="a4a12d21-b91d-4088-9735-364e9ada0ba8">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum66}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPackingNum56" mode="Opaque" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="83c76410-c944-4eba-847f-8cc791f79abf">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum56}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum46" mode="Transparent" x="658" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="c31f651b-e371-4fb6-8048-18d5fb88fa0c">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(3l) ) > 0l && $F{packingNum46}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum46}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblBakeRowNo6" mode="Transparent" x="492" y="1" width="20" height="15" uuid="3cc3651f-cf31-4ad5-9b2d-ba4e7546e648"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum66" mode="Transparent" x="754" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="5750d5cf-5ea3-4cd5-ad33-2dd5bafcf9c6">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum66}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum66}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum56" mode="Transparent" x="706" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="437f4714-ed77-49be-8d8b-8bf95cc8d44e">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{backetColNum}.compareTo(new java.math.BigDecimal(4l) ) > 0l && $F{packingNum56}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum56}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum16" mode="Opaque" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="21cc6327-25af-4859-a39b-9b582f53c15c">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum16}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum16" mode="Transparent" x="514" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="bfd3e186-6452-46a0-805f-d7cb9e19f3ff">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l && $F{packingNum16}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum16}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPackingNum26" mode="Opaque" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="4cbd225c-da84-4a7d-b9bd-3879888f2903">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum26}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[(            )]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPackingNum26" mode="Transparent" x="562" y="1" width="45" height="15" forecolor="#FFFFFF" backcolor="#000000" uuid="c554c7fa-34bf-45e9-9361-49643f362b9e">
+					<printWhenExpression><![CDATA[$F{backetRowNum}.compareTo(new java.math.BigDecimal(5l) ) > 0l  && $F{backetColNum}.compareTo(new java.math.BigDecimal(1l) ) > 0l && $F{packingNum26}.compareTo(new java.math.BigDecimal(0l) ) > 0l]]></printWhenExpression>
+				</reportElement>
+				<box leftPadding="5" rightPadding="6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingNum26}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="17" width="797" height="1" uuid="da7a5b0f-cd8f-4e1d-9585-6a36ba24a706"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15">
+			<staticText>
+				<reportElement key="lblAllPage" x="5" y="0" width="62" height="15" uuid="d7667c02-04a6-42fb-9d3e-12d5b2ad8499"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[ALL PAGE:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="69" y="0" width="30" height="15" uuid="24d59ecd-a539-4069-a0a1-9dc657fe8928"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="99" y="0" width="10" height="15" uuid="0e06e6b6-e07d-4932-b3f8-2cd7f441cdbd"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="109" y="0" width="30" height="15" uuid="a41d95ca-9f95-4969-9307-b9438a540818"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

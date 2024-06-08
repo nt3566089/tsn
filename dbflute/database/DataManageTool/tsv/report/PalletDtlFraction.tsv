@@ -1,0 +1,19 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblAttention	取扱注意	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot1Mix	商社搬入番号混載	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot4Mix	製造月混載	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblReferenceNoMix	整理番号混載	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblCenterNm	出庫場所	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblOtherRefNo1	輸送形態	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblReferenceNo	整理番号	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblRmono	問合番号	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblItemCd	銘柄ｺｰﾄﾞ	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblProductNm	銘柄名称	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblExpectCaseQty	ｹｰｽ	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblExpectCartonQty	ｶｰﾄﾝ	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot1	商社搬入番号	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot4	製造年月	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot2	製造記号	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblLot3	ﾃﾞｻﾞｲﾝ	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblReferenceNoDetail	整理番号	String	1	
+PalletDtlFraction	パレット明細（端数）	パレット明細（端数）	../../../../../../reports/shipping/PalletDtlFraction.jrxml	1						0	0	lblTotal	合計	String	1	

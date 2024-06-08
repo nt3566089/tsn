@@ -1,0 +1,53 @@
+<div ng-controller="PickingListRePrint" owd-screen="PickingListRePrint">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-select id="listkbn" ng-model="searchCondition.listkbn" owd-models="listkbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="帳票名"></owd-select>
+				<owd-date id="printdatetimeFrom" ng-model="searchCondition.printdatetimeFrom" label-text="印刷年月日(From)"></owd-date>
+				<owd-date id="printdatetimeTo" ng-model="searchCondition.printdatetimeTo" label-text="印刷年月日(To)" owd-validate="fromToCheck(searchCondition.printdatetimeFrom, $value)" owd-validate-watch="'searchCondition.printdatetimeFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-date id="shipschdateFrom" ng-model="searchCondition.shipschdateFrom" label-text="出庫予定日(From)"></owd-date>
+				<owd-date id="shipschdateTo" ng-model="searchCondition.shipschdateTo" label-text="出庫予定日(To)" owd-validate="fromToCheck(searchCondition.shipschdateFrom, $value)" owd-validate-watch="'searchCondition.shipschdateFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="workallocateid" ng-model="searchCondition.workallocateid" label-text="棚出リストキー"></owd-text>
+				<owd-text id="shiptocd" ng-model="searchCondition.shiptocd" label-text="受入先CD" owd-add-button="showCustomer(1)" ng-blur="customerCdBlur(1)">
+					<owd-info ng-model="searchCondition.shiptoNm"></owd-info>
+				</owd-text>
+				<owd-text id="customerCd" ng-model="searchCondition.customerCd" label-text="特約店CD" owd-add-button="showCustomer(2)" ng-blur="customerCdBlur(2)">
+					<owd-info ng-model="searchCondition.customerNm"></owd-info>
+				</owd-text>
+				<owd-text id="ownerorderno" ng-model="searchCondition.ownerorderno" label-text="車割キー"></owd-text>
+				<owd-select id="otherlot2" ng-model="searchCondition.otherlot2" owd-models="otherlot2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="依頼種別"></owd-select>
+				<owd-text id="otherlot4" ng-model="searchCondition.otherlot4" label-text="依頼番号"></owd-text>
+				<owd-text id="rmano" ng-model="searchCondition.rmano" label-text="問合番号"></owd-text>
+				<owd-text id="otherlot3" ng-model="searchCondition.otherlot3" label-text="整理番号"></owd-text>
+				<owd-text id="notes" ng-model="searchCondition.notes" label-text="P/LNo."></owd-text>
+				<owd-text id="locationCd" ng-model="searchCondition.locationCd" label-text="ロケーションCD" owd-add-button="showLocation()" ng-blur="locationCdBlur()" owd-validate-message="locationCdMessage">
+					<owd-info ng-model="searchCondition.locationNm"></owd-info>
+				</owd-text>
+				<owd-select id="trsoliststs" ng-model="searchCondition.trsoliststs" owd-models="trsoliststsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出庫作業ステータス"></owd-select>
+			</div>
+		</fieldset>
+		</owd-accordion-group> </owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="pickingListRePrintList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>
+
+
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<owd-button id="output" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="output()">発行</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

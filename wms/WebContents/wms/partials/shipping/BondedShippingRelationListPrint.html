@@ -1,0 +1,44 @@
+<div ng-controller="BondedShippingRelationListPrint" owd-screen="BondedShippingRelationListPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-select id="printedflg" ng-model="searchCondition.printedflg" owd-models="printedflgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="印刷済フラグ" owd-remove-blank></owd-select>
+				<owd-date id="shipschdateFrom" ng-model="searchCondition.shipschdateFrom" label-text="出庫予定日(From)"></owd-date>
+				<owd-date id="shipschdateTo" ng-model="searchCondition.shipschdateTo" label-text="出庫予定日(To)" owd-validate="fromToCheck(searchCondition.shipschdateFrom, $value)" owd-validate-watch="'searchCondition.shipschdateFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-select id="listkbn" ng-model="searchCondition.listkbn" owd-models="listkbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="帳票名"></owd-select>
+				<owd-text id="pickbatchkey" ng-model="searchCondition.pickbatchkey" label-text="引当バッチキー"></owd-text>
+				<owd-text id="workallocateid" ng-model="searchCondition.workallocateid" label-text="棚出リストキー"></owd-text>
+			</div>
+		</fieldset>
+		</owd-accordion-group> </owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendwhite"><owd-span id="unPrinted" label-text="未印刷"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendlightblue"><owd-span id="printed" label-text="印刷済"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="bondedShippingRelationListPrint" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>
+
+
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<owd-button id="output" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="output()">発行</owd-button>
+				<owd-button id="pickingListRePrint" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="pickingListRePrint()">保税出庫関連リスト再出力</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div ng-controller="ReceiveDesignMasterList" owd-screen="ReceiveDesignMasterList">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="clientCd" ng-model="cond.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+						<owd-text id="productCd" ng-model="cond.productCd"label-text="銘柄CD" owd-add-button="modalProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="cond.productNm"></owd-info>
+						</owd-text>
+						<owd-select id="validType" ng-model="cond.validType" owd-models="validTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="有効区分"></owd-select>
+						<owd-date id="UpdateDate" ng-model="cond.updateDate" label-text="更新日" ></owd-date>
+						<owd-date id="rcvFrDateFrom" ng-model="cond.rcvFrDateFrom" label-text="適用開始日(From)" ng-change="rcvFrDateFromChange()"></owd-date>
+						<owd-date id="rcvFrDateTo" ng-model="cond.rcvFrDateTo" label-text="適用開始日(To)" ng-change="rcvFrDateToChange()"></owd-date>
+						<owd-date id="rcvToDateFrom" ng-model="cond.rcvToDateFrom" label-text="適用終了日(From)" ng-change="rcvToDateFromChange()"></owd-date>
+						<owd-date id="rcvToDateTo" ng-model="cond.rcvToDateTo" label-text="適用終了日(To)" ng-change="rcvToDateToChange()"></owd-date>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button	id="search"	class="btn-info"	ng-click="searchClick()"	ng-disabled="searchConditionForm.$invalid" >検索</owd-button>
+				<owd-button	id="excelOutput"	class="btn-info"	ng-click="excelOutputClick()"	ng-disabled="searchConditionForm.$invalid">Excel出力</owd-button>
+			</div>
+		</div>
+	</form>
+	<br>
+	<form id="searchResultListForm" name="searchResultListForm" novalidate>
+			<div owd-grid="gridOptions" id="bodyList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchResultListForm" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">			
+						<owd-button id="copy"	class="btn-info"	ng-click="createClick()">新規</owd-button>
+						<owd-button id="new"	class="btn-info"	ng-click="copyClick()"		ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">複製</owd-button>
+						<owd-button id="update"	class="btn-info"	ng-click="updateClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

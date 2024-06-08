@@ -1,0 +1,175 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<style type="text/css">
+	.ngGridExtTitle {
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 17.6px;
+	}
+	.ngGridExt {
+		background-color: #fdfdfd;
+	}
+	.ngGridExt input[type="checkbox"] {
+		margin: 0;
+		padding: 0;
+	}
+	.ngGridExt input {
+		vertical-align: top;
+	}
+	.gridStyleExt {
+		border: 1px solid rgb(212, 212, 212);
+	}
+	.ngTopPanelExt {
+		position: relative;
+		z-index: 1;
+		background-color: #fdfdfd;
+		border-bottom: 1px solid #d4d4d4;
+	}
+	.ngHeaderContainerExt {
+		position: relative;
+
+		white-space: nowrap;
+		overflow-x: scroll;
+		overflow-y: hidden;
+
+		font-weight: bold;
+		background-color: inherit;
+	}
+	.ngHeaderScrollerExt {
+		position: absolute;
+		background-color: #eaeaea;
+	}
+	.ngHeaderCellExt {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-color: #eaeaea;
+	}
+	.ngHeaderCellSelected {
+		background-color: #ffc0cb;
+	}
+	.ngVerticalBarExt {
+		position: absolute;
+		right: 0;
+		width: 0;
+	}
+	.ngVerticalBarVisibleExt {
+		width: 1px;
+		background-color: #d4d4d4;
+	}
+	.ngHeaderTextExt {
+		padding: 6px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		white-space: nowrap;
+		-ms-text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.ngHeaderGripExt {
+		cursor: col-resize;
+		width: 10px;
+		right: -5px;
+		top: 0;
+		height: 100%;
+		position: absolute;
+		background-color: transparent;
+	}
+	.moveButton {
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+	}
+</style>
+
+<div ng-controller="GridColExtDialog" owd-screen="GridColExtDialog">
+	<div class="container-modal-large" ng-controller="AlertCtrl" ng-cloak>
+		<div class="row" ng-show="modalAlerts.GridColExtDialog">
+			<div class="col-xs-12">
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+			</div>
+		</div>
+	</div>
+	<form id="GridColExtDialogForm" name="GridColExtDialogForm" novalidate>
+		<div class="container-modal-large container" ng-init="putForm(GridColExtDialogForm)" ng-click="containerClick($event)">
+			<owd-span id="columnOrderTitle" label-text="列一覧" class="ngGridExtTitle"></owd-span>
+			<div class="row">
+				<div class="col-xs-8 col-sm-4 col-md-3 col-lg-2">
+					<span class="form-group">
+						<select class="form-control" style="width:100%" size="20" id="columnOrder" multiple="multiple" ng-multiple="true" ng-model="selectedColumnOrders" ng-options="columnDef.field as columnDef.displayName  | nullConvertFilter:'' for columnDef in columnDefs" ng-change="columnSelectChange()"></select>
+					</span>
+				</div>
+				<div class="col-xs-4 col-sm-2 col-md-1 col-lg-1">
+					<div style="position: absolute">
+						<button ng-click="moveTop()" type="button" class="btn btn-info btn-lg moveButton"><span class="glyphicon glyphicon-fast-backward"></span></button>
+						<br>
+						<button ng-click="moveUp()" type="button" class="btn btn-info btn-lg moveButton"><span class="glyphicon glyphicon-step-backward"></span></button>
+						<br>
+						<button ng-click="moveDown()" type="button" class="btn btn-info btn-lg moveButton"><span class="glyphicon glyphicon-step-forward"></span></button>
+						<br>
+						<button ng-click="moveBottom()" type="button" class="btn btn-info btn-lg moveButton"><span class="glyphicon glyphicon-fast-forward"></span></button>
+						<br>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-8 col-lg-9 pre-scrollable panel panel-info" style="min-height:465px;height:465px;padding-top:10px">
+					<span ng-repeat="description in descriptions">
+						<p class="bg-info">{{description.Head}}</p>
+						<dl class="dl-horizontal">
+							<dt ng-repeat-start="detail in description.details">{{detail.Title}}</dt>
+							<dd ng-repeat-end>{{detail.Value}}</dd>
+						</dl>
+					</span>
+				</div>
+			</div>
+
+			<owd-span id="columnWithTitle" label-text="列幅一覧" class="ngGridExtTitle"></owd-span>
+			<div class="ngGridExt gridStyleExt unselectable">
+				<div class="ngTopPanelExt" style="height: 90px">
+					<div class="ngHeaderContainerExt" style="height: 100%" ng-click="ngHeaderContainerExtClick($event)">
+						<div class="ngHeaderScrollerExt" style="height: 100%">
+							<div class="ngHeaderCellExt" ng-repeat="columnDef in columnDefs" style="display:inline-block;height:100%" ng-style="{width:columnDef.width+'px', left:calcLeft($index)+'px'}" id="ngHeaderCellExt_{{columnDef.field}}">
+								<div class="ngVerticalBarExt ngVerticalBarVisibleExt" style="height: 100%">
+									&nbsp;
+								</div>
+								<div>
+									<div class="centerText" style="cursor: default" ng-click="columnClick($event,$index)">
+										<div class="ngHeaderTextExt" ng-style="{width:(columnDef.width)+'px'}" id="ngHeaderTextExt_{{columnDef.field}}">
+											<span>{{columnDef.displayName | nullConvertFilter:'&nbsp;'}}</span>
+										</div>
+										<div class="text-center form-group" style="background-color :#ffffff;border:solid 1px #00000000;height:41px;margin-left:0px;margin-right:0px">
+											<input class="form-control" type="text" value="{{columnDef.width}}" id="width_{{columnDef.field}}" ng-focus="widthFocus($event,$index)" ng-blur="widthBlur($event,$index)">
+										</div>
+									</div>
+									<div class="ngHeaderGripExt" ng-click="gripClick($event,$index)" ng-mousedown="gripOnMouseDown($event,$index)">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div style="height:25px;border:0px;margin:0px;padding:0px" class="has-error">
+				<span style="height:25px;border:0px;margin:0px;padding:0px" class="help-block" ng-show="widthErrChk.required">{{"requiredError" | owfMessage}}</span>
+				<span style="height:25px;border:0px;margin:0px;padding:0px" class="help-block" ng-show="widthErrChk.number">{{"numberError" | owfMessage}}</span>
+				<span style="height:25px;border:0px;margin:0px;padding:0px" class="help-block" ng-show="widthErrChk.min">{{"minError" | owfMessage:minWidth}}</span>
+				<span style="height:25px;border:0px;margin:0px;padding:0px" class="help-block" ng-show="widthErrChk.max">{{"maxError" | owfMessage:maxWidth}}</span>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12" align="right">
+					<owd-button id="close" class="btn-danger" ng-click="close()">閉じる</owd-button>
+					<owd-button id="reset" class="btn-danger" ng-click="reset()">リセット</owd-button>
+					<owd-button id="confirmed" class="btn-success" ng-disabled="GridColExtDialogForm.$invalid" ng-click="confirmed()">確定</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

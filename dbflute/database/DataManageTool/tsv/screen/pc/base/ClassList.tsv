@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ClassList	区分値マスタメンテナンス(一覧)	base	classCd	区分値CD		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	classComment	区分値解説		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	systemType	システム種別		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	search	検索		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	classList	区分値マスタ一覧グリッド	grid	1	1		0	1	classCd	区分値CD	1	text	1	0		0	300			1	300
+ClassList	区分値マスタメンテナンス(一覧)	base	classList	区分値マスタ一覧グリッド	grid	1	1		0	1	classComment	区分値解説	2	text	1	0		0	300			2	300
+ClassList	区分値マスタメンテナンス(一覧)	base	classList	区分値マスタ一覧グリッド	grid	1	1		0	1	systemType	システム種別	3	text	1	0		0	110			3	110
+ClassList	区分値マスタメンテナンス(一覧)	base	classList	区分値マスタ一覧グリッド	grid	1	1		0	1	bclassDtlBySystemType.vdict.dictNm	システム種別名称	4	text	1	0		0	140			4	180
+ClassList	区分値マスタメンテナンス(一覧)	base	classGrpUpdate	修正(グループ)		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	classGrpDtlUpdate	修正(グループ明細)		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	register	新規		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	update	修正		1	1		0	1													
+ClassList	区分値マスタメンテナンス(一覧)	base	delete	削除		1	1		0	1													

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+	bean-discovery-mode="all"
+	version="1.1">
+
+	<scan>
+		<exclude name="com.oneslogi.wms.dto.**"/>
+		<exclude name="com.oneslogi.ht.wms.dto.**"/>
+	</scan>
+
+	<interceptors>
+		<!-- 認証制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.AuthenticationInterceptor
+		</class>
+		<!-- Handy認証制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.ht.base.cdi.interceptor.AuthenticationHandyInterceptor
+		</class>
+		<!-- ＤＢ共通項目設定用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.DBFluteAccessContextInterceptor
+		</class>
+		<!-- Accessログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.AccessInterceptor
+		</class>
+		<!-- Error制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.ErrorControlInterceptor
+		</class>
+		<!-- [#6501] 致命的エラー発生にてDBがロールバックされない問題を修正(HandyErrorControlInterceptor位置変更) 2019.06.04 kawana Start -->
+		<!-- Handy端末Error制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.ht.base.cdi.interceptor.HandyErrorControlInterceptor
+		</class>
+		<!-- [#6501] 致命的エラー発生にてDBがロールバックされない問題を修正(HandyErrorControlInterceptor位置変更) 2019.06.04 kawana End -->
+		<!-- Trace制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.TraceInterceptor
+		</class>
+		<!-- Transaction制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.BeginTransactionInterceptor
+		</class>
+		<!-- Transaction制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.ReadOnlyTransactionInterceptor
+		</class>
+		<!-- Transaction制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.NotUseConnectionInterceptor
+		</class>
+		<!-- [#6501] 致命的エラー発生にてDBがロールバックされない問題を修正(HandyErrorControlInterceptor位置変更-ここから削除) 2019.06.04 kawana Delete -->
+		<!-- 作業実績ログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.wms.base.cdi.interceptor.WorkLogStartInterceptor
+		</class>
+		<!-- 作業実績ログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.wms.base.cdi.interceptor.WorkLogStartEndInterceptor
+		</class>
+		<!-- 作業実績ログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.wms.base.cdi.interceptor.WorkLogMergeEndInterceptor
+		</class>
+		<!-- 作業実績ログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.wms.base.cdi.interceptor.WorkLogEndInterceptor
+		</class>
+<!-- [#3712] WAS連携用に作業中数をコア部で管理 2018.02.08 kawana Start -->
+		<!-- 作業実績ログ出力制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.wms.base.cdi.interceptor.WorkLogDataInterceptor
+		</class>
+<!-- [#3712] WAS連携用に作業中数をコア部で管理 2018.02.08 kawana End -->
+		<!-- チェック用の基本Interceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.CheckBaseInterceptor
+		</class>
+		<!-- 二重送信チェック用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.CheckTokenInterceptor
+		</class>
+		<!-- 二重送信チェックトークン取得用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.SaveTokenInterceptor
+		</class>
+		<!-- Validator制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.base.cdi.interceptor.ValidateInterceptor
+		</class>
+		<!-- [#575] ValidateチェックのHT国際化 2017.01.13 kawana Start -->
+		<!-- Handy向けValidator制御用のInterceptorクラスを登録する。 -->
+		<class>
+			com.oneslogi.ht.base.cdi.interceptor.ValidateHandyInterceptor
+		</class>
+		<!-- [#575] ValidateチェックのHT国際化 2017.01.13 kawana End -->
+	</interceptors>
+
+</beans>

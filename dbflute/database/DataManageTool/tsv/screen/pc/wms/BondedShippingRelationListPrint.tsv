@@ -1,0 +1,27 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	centerCd	拠点		1	0		1	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	clientCd	荷主		1	0		1	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	printedflg	印刷済フラグ	dropdown	1	1		0	0													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	shipschdateFrom	出庫予定日(From)		1	1		1	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	shipschdateTo	出庫予定日(To)		1	1		0	0													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	listkbn	帳票名	dropdown	1	1		0	0													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	pickbatchkey	引当バッチキー		1	1		0	0													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	workallocateid	棚出リストキー		1	1		0	0													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	search	検索		1	1		0	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	excelOutput	Excel出力		1	1		0	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	unPrinted	未印刷		1	0		0	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	printed	印刷済		1	0		0	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	printedflgNm	印刷済フラグ	1	text	1	0		0	180			1	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	listkbnNm	帳票名	2	text	1	0		0	180			2	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	pickbatchkey	引当バッチキー	3	text	1	0		0	180			3	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	workallocateid	棚出リストキー	4	text	1	0		0	180			4	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	pickdate	引当日時	5	datetime	1	0		0	180			5	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	printedflg	印刷済フラグ	6	text	0	0		0	180			6	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	listkbn	帳票区分	7	text	0	0		0	180			7	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	centerCd	拠点CD	8	text	0	0		0	180			8	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	centerAbbr	拠点名称	9	text	0	0		0	180			9	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	clientCd	荷主CD	10	text	0	0		0	180			10	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	bondedShippingRelationListPrint	保税出庫関連リスト出力グリッド	grid	1	1		0	1	clientAbbr	荷主名称	11	text	0	0		0	180			11	180
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	output	発行		1	1		0	1													
+BondedShippingRelationListPrint	保税出庫関連リスト出力	wms	pickingListRePrint	保税出庫関連リスト再出力		1	1		0	1													

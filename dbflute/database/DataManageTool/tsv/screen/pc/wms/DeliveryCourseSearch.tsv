@@ -1,0 +1,18 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryCourseSearch	配送コースマスタ検索	wms	selection	選択		1	1		0	1													
+DeliveryCourseSearch	配送コースマスタ検索	wms	centerCd	センタ		1	1		1	1													
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourseCd	配送コースCD		1	1		0	1													
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourseNm	配送コース名称		1	1		0	1													
+DeliveryCourseSearch	配送コースマスタ検索	wms	search	検索		1	1		0	1													
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	1	text	1	0		0	125			1	230
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	2	text	1	0		0	300			2	300
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	mcarrier.carrierCd	運送業者CD	3	text	1	0		0	110			3	110
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	mcarrier.carrierNm	運送業者名称	4	text	1	0		0	300			4	300
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	mcarrier.carrierAbbr	運送業者略称	5	text	1	0		0	300			5	300
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	pickingTime	出庫開始時刻	6	datetime	1	0		0	180			6	180
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	stowageTime	積込予定時刻	7	datetime	1	0		0	180			7	190
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	shippingTime	出荷予定時刻	8	datetime	1	0		0	180			8	190
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	9	text	1	0		0	200			9	
+DeliveryCourseSearch	配送コースマスタ検索	wms	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	10	text	1	0		0	200			10	
+DeliveryCourseSearch	配送コースマスタ検索	wms	close	閉じる		1	1		0	1													

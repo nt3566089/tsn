@@ -1,0 +1,19 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	centerCd	センタ		1	1		1	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGrpCd	荷材グループCD		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGrpNm	荷材グループ名称		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	boxGrpCd	荷材グループCD	1	text	1	0		0	250				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	boxGrpNm	荷材グループ名称	2	text	1	0		0	300				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	mbox.boxCd	基準荷材CD	3	text	1	0		0	200				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	mbox.boxNm	基準荷材名称	4	text	1	0		0	170				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	5	text	1	0		0	200				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	6	text	1	0		0	170				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	7	text	1	0		0	170				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	boxGroupList	荷材グループマスタメンテナンスグリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	8	text	1	0		0	200				
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+BoxGroupMasterList	荷材グループマスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

@@ -1,0 +1,59 @@
+/*
+ [df:title]
+  販売物流在庫情報をリスト検索
+
+ [df:description]
+  SQL Description here.
+*/
+-- #df:entity#
+-- !df:pmb!
+-- !!AutoDetect!!
+-- !!Long centerId!!
+-- !!Long clientId!!
+-- !!String systemDt!!
+-- !!String inoutKbn!!
+-- !!String yearMoth01!!
+SELECT
+INV.PRODUCT_CD PCD, -- 銘柄CD
+(
+    CASE
+    WHEN PRODUCT.CGGDID <> '1'
+        THEN SUB.PRODUCTSUM
+    WHEN PRODUCT.USERNUM1 = '11'
+        THEN SUB.JTSUM
+    ELSE SUB.TSNSUM
+    END
+) * PRODUCT.UNIT1 * PRODUCT.UNIT2 TOTAL -- 数量
+FROM T_TRHANBAIINV INV       -- 販売物流在庫情報
+INNER JOIN M_PRODUCT PRODUCT -- 銘柄マスタ
+ON PRODUCT.PRODUCT_CD = INV.PRODUCT_CD
+AND PRODUCT.CLIENT_ID = INV.CLIENT_ID
+AND PRODUCT.DEL_FLG = '0'
+INNER JOIN (SELECT
+ITEMCASE.PRODUCT_CD PCD,                         -- 銘柄CD
+ISNULL(SUM(MONTHSTS.JT), 0) JTSUM,               -- 国産製品数
+ISNULL(SUM(MONTHSTS.TSN), 0) TSNSUM,             -- 輸入製品数
+ISNULL(SUM(MONTHSTS.NM_EXTDATA1), 0) PRODUCTSUM  -- 商品数
+FROM T_TRBADITEMCASE ITEMCASE -- 不適品ラベル情報
+INNER JOIN M_MFMONTHSTATUS MONTHSTS -- 不適品月次状況マスタ
+ON MONTHSTS.CENTER_ID = /*pmb.centerId*/1
+AND MONTHSTS.CLIENT_ID = /*pmb.clientId*/1
+AND LEFT(MONTHSTS.TARGETMON, 6) <> /*pmb.yearMoth01*/202411
+AND LEFT(MONTHSTS.TARGETMON, 6) = LEFT(ITEMCASE.TARGETMON, 6)
+AND (
+    MONTHSTS.JT = 1 OR MONTHSTS.TSN = 1 OR MONTHSTS.NM_EXTDATA1 = 1
+       )
+AND MONTHSTS.DEL_FLG = '0'
+WHERE ITEMCASE.CLIENT_ID = /*pmb.clientId*/1
+AND ITEMCASE.CENTER_ID = /*pmb.centerId*/1
+AND ITEMCASE.DEL_FLG = '0'
+GROUP BY ITEMCASE.PRODUCT_CD) SUB
+ON SUB.PCD = INV.PRODUCT_CD
+WHERE INV.CENTER_ID = /*pmb.centerId*/1
+AND INV.CLIENT_ID = /*pmb.clientId*/1
+AND CONVERT(VARCHAR(8), INV.STOCKDATETIME, 112) = /*pmb.systemDt*/20241111
+AND INV.GOODITEMKBN = '9'    -- 不適品
+/*IF pmb.inoutKbn != null*/
+AND INV.INOUTKBN    = /*pmb.inoutKbn*/'0001'
+/*END*/
+AND INV.DEL_FLG= '0'

@@ -1,0 +1,17 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblYourQueryOrderNumber	お問合せ伝票番号	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblSpecificDate	年　　月　　日	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblCash	1 現金	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo1	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT1	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo2	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT2	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo3	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT3	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo4	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT4	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo5	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT5	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblDelivTelNo6	TEL	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblT6	〒	String	1	
+YamatoCollectTagLabel	ヤマト宅急便(コレクト)荷札	ヤマト宅急便(コレクト)荷札	../../../../../../reports/shipping/YamatoCollectTagLabel.jrxml	1						1	0	lblAgain	再	String	1	

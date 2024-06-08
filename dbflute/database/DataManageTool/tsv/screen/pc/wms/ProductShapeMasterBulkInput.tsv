@@ -1,0 +1,20 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	clientCd	荷主		1	1		1	1													
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	70				
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	mproduct.productCd	商品CD	2	text	1	0		0	245	2			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300	3			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	mshapeGrpDtl.mshape.shapeCd	荷姿CD	4	text	1	0		0	200	4			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	unitNum	入数	5	number	1	0	right	0	150	5			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	length	縦(mm)	6	number	1	0	right	0	150	6			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	width	横(mm)	7	number	1	0	right	0	150	7			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	height	高さ(mm)	8	number	1	0	right	0	150	8			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	volume	容積(mm3)	9	number	1	0	right	0	180	9			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	netWeight	商品重量(g)	10	number	1	0	right	0	150	10			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	grossWeight	総重量(g)	11	number	1	0	right	0	150	11			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	productShapeMaster	商品荷姿マスタ一括取込	grid	1	1		0	1	errorMessageNm	エラー内容	12	text	1	0	left	0	400	12			
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	register	登録		1	1		0	1													
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+ProductShapeMasterBulkInput	商品荷姿マスタ一括取込	wms	errorProcessMet	エラー処理方法		1	1		0	1													

@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblUserNum4	銘柄区分:	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblManager	所属長	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblManagerStamp	私印	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblUser	担当者	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblUserStamp	印	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblAddDate	登録日	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblItem	銘柄	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblDiffQty	過不足数	String	1	
+ExcessOrDeficiencyHistoryList	過不足履歴簿	過不足履歴簿	../../../../../../reports/inventory/ExcessOrDeficiencyHistoryList.jrxml	1						0	0	lblDiffReasons	過不足理由	String	1	

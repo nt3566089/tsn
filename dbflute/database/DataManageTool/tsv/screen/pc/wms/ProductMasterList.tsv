@@ -1,0 +1,45 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	clientCd	荷主		1	1		1	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productCd	商品CD		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	janCd	ソースCD		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productNm	商品名称		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	productCd	商品CD	1	text	1	0		0	245			1	245
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	productNm	商品名称	2	text	1	0		0	300			2	300
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	productAbbr	商品略称	3	text	1	0		0	300			3	300
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	nmfcCode	NMFC Code	4	text	0	0		0	205			4	205
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	freightCls	Freight Class	5	text	0	0		0	205			5	260
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByFreightCls.vdict.dictNm	Freight Class名称	6	text	0	0		0	205			6	260
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	counntryOfOrigin	Country of Origin	7	text	0	0		0	205			7	205
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	unitVal	Unit Value	8	number	0	0	right	0	155			8	155
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	htsCd	Harmonized Code	9	text	0	0		0	205			9	205
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	inventoryManagementUnitCd	在庫管理単位CD	10	text	1	0		0	170			10	170
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	inventoryManagementUnitNm	在庫管理単位名称	11	text	1	0		0	170			11	170
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	janCd	ソースCD	12	text	1	0		0	205			12	205
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	unitNumBreakdown	入数内訳	13	text	1	0	right	0	220			13	220
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	lotManagFlg	ロット管理フラグCD	14	text	1	0		0	170			14	230
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByLotManagFlg.vdict.dictNm	ロット管理フラグ名称	15	text	1	0		0	170			15	230
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	limitDtManagFlg	期限日管理フラグCD	16	text	1	0		0	170			16	280
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByLimitDtManagFlg.vdict.dictNm	期限日管理フラグ名称	17	text	1	0		0	170			17	280
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	limitDtReverseFlg	期限日逆転防止フラグCD	18	text	1	0		0	205			18	280
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByLimitDtReverseFlg.vdict.dictNm	期限日逆転防止フラグ名称	19	text	1	0		0	205			19	280
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	receiveLimitNum	入荷期限日数	20	number	1	0	right	0	110			20	220
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	shippingLimitNum	出荷期限日数	21	number	1	0	right	0	110			21	220
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	mergeCls	入庫No.マージ区分CD	22	text	1	0		0	205			22	260
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByMergeCls.vdict.dictNm	入庫No.マージ区分名称	23	text	1	0		0	205			23	260
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	shippingStopFlg	出荷停止フラグCD	24	text	1	0		0	155			24	210
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByShippingStopFlg.vdict.dictNm	出荷停止フラグ名称	25	text	1	0		0	155			25	210
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	fixedPoint	定点	26	number	1	0	right	0	155			26	155
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	addDt	登録日時	27	datetime	1	0		0	180			27	180
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	updDt	更新日時	28	datetime	1	0		0	180			28	180
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	delFlg	削除フラグCD	29	text	1	0		0	125			29	150
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	30	text	1	0		0	125			30	150
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	mclient.clientCd	荷主CD	31	text	1	0		0	200			31	
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productList	商品マスタ一覧グリッド	grid	1	1		1	1	mclient.clientNm	荷主名称	32	text	1	0		0	200			32	
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	productLabel	商品ラベル		1	1		0	1													
+ProductMasterList	商品マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

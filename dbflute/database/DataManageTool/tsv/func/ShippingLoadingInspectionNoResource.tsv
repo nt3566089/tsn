@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ShippingLoadingInspectionNoResource	input	input	HT積込検品(No)入力	traceOrPackingNo	貨物追跡No./出荷梱包No.	text	1

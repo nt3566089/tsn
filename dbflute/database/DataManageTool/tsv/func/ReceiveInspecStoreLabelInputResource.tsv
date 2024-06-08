@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveInspecStoreLabelInputResource	send	send	HT入荷検品格納(汎用)送信	storeLabelNo	汎用ラベルNo	text	1

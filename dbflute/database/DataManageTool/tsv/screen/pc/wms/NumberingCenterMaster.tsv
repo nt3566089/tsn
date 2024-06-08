@@ -1,0 +1,22 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	bizCd	業務CD		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	bizNm	業務名称		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	search	検索		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタ	1	dropdown	1	1		1	200			1	
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	bizCd	業務CD	2	text	1	1		1	200			2	200
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	bizNm	業務名称	3	text	1	1		1	300			3	400
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	length	桁数	4	number	1	1	right	1	170			4	170
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	presentNumber	現在値	5	number	1	1	right	1	170			5	170
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	minNumber	最小値	6	number	1	1	right	1	170			6	170
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	maxNumber	最大値	7	number	1	1	right	1	170			7	170
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	checkDigit	チェックディジット	8	dropdown	1	1		1	170			8	
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	0		0	1	numberingSample	採番例	9	text	1	0		0	170			9	
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	cashCount	キャッシュ数	10	number	1	1	right	1	170			10	220
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	list	センタ採番マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	11	dropdown	1	1		1	110			11	110
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	centerCd	センタ		1	1		1	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+NumberingCenterMaster	センタ採番マスタメンテナンス	wms	register	登録		1	1		0	1													

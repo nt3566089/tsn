@@ -1,0 +1,9 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleGrpCd	権限グループCD		1	1		1	1													
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleGrpNm	権限グループ名		1	1		1	1													
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleControlClass	権限制御区分		1	1		1	1													
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleGrpEdit	権限グループマスタメンテナンスグリッド	grid	1	1		0	1	roleCd	権限CD	1	text	1	0		0	300				
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleGrpEdit	権限グループマスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	権限名	2	text	1	0		0	300				
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	roleGrpEdit	権限グループマスタメンテナンスグリッド	grid	1	1		0	1	broleGrpDtlList[0].applyOrder	適用順序	3	number	1	1	right	0	75				
+RoleGrpEdit	権限グループマスタメンテナンス(編集)	base	register	登録		1	1		0	1													

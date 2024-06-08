@@ -1,0 +1,6 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveInspectionEndHT	確認	wms_ht	text2	入荷検品		1	1		0	1													
+ReceiveInspectionEndHT	確認	wms_ht	text3	正常終了		1	1		0	1													
+ReceiveInspectionEndHT	確認	wms_ht	end	終了		1	1		0	1													
+ReceiveInspectionEndHT	確認	wms_ht	continue	継続		1	1		0	1													

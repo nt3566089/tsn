@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProductMasterSearch	商品マスタ検索	wms	clientCd	荷主		1	1		1	1													
+ProductMasterSearch	商品マスタ検索	wms	editableClientCd	荷主		1	1		1	1													
+ProductMasterSearch	商品マスタ検索	wms	productCd	商品CD		1	1		0	1													
+ProductMasterSearch	商品マスタ検索	wms	janCd	ソースCD		1	1		0	1													
+ProductMasterSearch	商品マスタ検索	wms	productNm	商品名称		1	1		0	1													
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	productCd	商品CD	1	text	1	0		0	245			1	245
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	productNm	商品名称	2	text	1	0		0	300			2	300
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	janCd	ソースCD	3	text	1	0		0	205			3	205
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	productAbbr	商品略称	4	text	1	0		0	300			4	300
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	inventoryManagementUnitCd	在庫管理単位CD	5	text	1	0		0	170			5	180
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	inventoryManagementUnitNm	在庫管理単位名称	6	text	1	0		0	170			6	180
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	lotManagFlg	ロット管理フラグCD	7	text	1	0		0	170			7	230
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	bclassDtlByLotManagFlg.vdict.dictNm	ロット管理フラグ名称	8	text	1	0		0	170			8	230
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	limitDtManagFlg	期限日管理フラグCD	9	text	1	0		0	170			9	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	bclassDtlByLimitDtManagFlg.vdict.dictNm	期限日管理フラグ名称	10	text	1	0		0	170			10	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	limitDtReverseFlg	期限日逆転防止フラグCD	11	text	1	0		0	205			11	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	bclassDtlByLimitDtReverseFlg.vdict.dictNm	期限日逆転防止フラグ名称	12	text	1	0		0	205			12	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	receiveLimitNum	入荷期限日数	13	number	1	0	right	0	110			13	220
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	shippingLimitNum	出荷期限日数	14	number	1	0	right	0	110			14	220
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	mergeCls	入庫No.マージ区分CD	15	text	1	0		0	205			15	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	bclassDtlByMergeCls.vdict.dictNm	入庫No.マージ区分名称	16	text	1	0		0	205			16	280
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	shippingStopFlg	出荷停止フラグCD	17	text	1	0		0	155			17	220
+ProductMasterSearch	商品マスタ検索	wms	productList	商品マスタ検索グリッド	grid	1	1		0	1	bclassDtlByShippingStopFlg.vdict.dictNm	出荷停止フラグ名称	18	text	1	0		0	155			18	220
+ProductMasterSearch	商品マスタ検索	wms	search	検索		1	1		0	1													
+ProductMasterSearch	商品マスタ検索	wms	selection	選択		1	1		0	1													
+ProductMasterSearch	商品マスタ検索	wms	close	閉じる		1	1		0	1													

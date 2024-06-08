@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StoreLabelPrint	入庫ラベル発行	wms	centerCd	センタ		1	1		1	1													
+StoreLabelPrint	入庫ラベル発行	wms	clientCd	荷主		1	1		1	1													
+StoreLabelPrint	入庫ラベル発行	wms	warehouseCd	倉庫		1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	storeDt	入庫日		1	1		1	1													
+StoreLabelPrint	入庫ラベル発行	wms	customerCd	仕入先CD		1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	storeLabelNoFrom	入庫ラベルNo.(From)	text	1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	register	発行		1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	storeLabelNoTo	入庫ラベルNo.(To)	text	1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	receiveSlipNo	WMS入荷伝票No.	text	1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	clientReceiveNo	顧客入荷指示No.	text	1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	addUser	ユーザCD	text	1	1		0	1													
+StoreLabelPrint	入庫ラベル発行	wms	printCondition	発行状況	dropdown	1	1		0	1													

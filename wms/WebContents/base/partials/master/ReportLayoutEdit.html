@@ -1,0 +1,76 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="ReportLayoutEdit" owd-screen="ReportLayoutEdit">
+
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="reportCd" ng-model="head.preport.reportCd" label-text="帳票CD"></owd-text>
+				<owd-text id="reportNm" ng-model="head.preport.reportNm" label-text="帳票名"></owd-text>
+				
+				
+				<owd-text id="reportLayoutNm" ng-model="head.reportLayoutNm" label-text="帳票レイアウト名"></owd-text>
+				
+
+				
+				<owd-select id="updatable" ng-model="head.updatable" owd-models="updatableList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="更新可否" ng-show="displayIsReportEdit()"></owd-select>
+				<owd-text id="attribute1" ng-model="head.attribute1" label-text="属性1" ng-show="displayIsReportEdit()"></owd-text>
+				<owd-text id="attribute2" ng-model="head.attribute2" label-text="属性2" ng-show="displayIsReportEdit()"></owd-text>
+				<owd-text id="attribute3" ng-model="head.attribute3" label-text="属性3" ng-show="displayIsReportEdit()"></owd-text>
+				<owd-text id="attribute4" ng-model="head.attribute4" label-text="属性4" ng-show="displayIsReportEdit()"></owd-text>
+				<owd-text id="attribute5" ng-model="head.attribute5" label-text="属性5" ng-show="displayIsReportEdit()"></owd-text>
+
+				<owd-select id="printerGroupId" ng-model="pLayoutPrintSetting.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" label-text="プリンターグループ" ng-show="displayIsReportEdit()" ng-change="changePrinterGroup()"></owd-select>
+
+				<owd-select id="printerId" ng-model="pLayoutPrintSetting.printerId" owd-models="printerList" owd-repeat-key="printerId" owd-repeat-value="printerNm" label-text="プリンター" ng-show="displayIsReportEdit()" ng-change="changePrinter()"></owd-select>
+
+				<owd-select id="printerAttributeId" ng-model="pLayoutPrintSetting.printerAttributeId" owd-models="printerAttributeList" owd-repeat-key="printerAttributeId" owd-repeat-value="trayNm" label-text="プリンタ属性" ng-show="displayIsReportEdit()"></owd-select>
+
+				
+				
+				<owd-number id="printNum" ng-model="pLayoutPrintSetting.printNum" label-text="部数" ng-show="displayIsReportEdit()"></owd-number>
+				
+
+				<owd-select id="sheetCollate" ng-model="pLayoutPrintSetting.sheetCollate" owd-models="sheetCollateList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="部単位印刷要否" ng-show="displayIsReportEdit()"></owd-select>
+
+				
+
+				
+				<owd-select id="autoPrintTargetFlg" ng-model="head.autoPrintTargetFlg" owd-models="autoPrintTargetFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="自動印刷対象" ng-show="displayIsReportEdit()"></owd-select>
+				
+				
+				<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除フラグ" owd-remove-blank></owd-select>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				
+				
+				<owd-file id="reportLayout" class="btn-info" owd-before-upload="beforeUpload" owd-success="uploadSuccess" owd-options="fileOptions" ng-show="layoutUploadable">帳票レイアウト</owd-file>
+				
+			</div>
+		</div>
+		<br>
+
+		<div owd-grid="gridOptions" id="reportLayoutEdit" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x: auto; overflow-y: hidden">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x: auto; overflow-y: hidden">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

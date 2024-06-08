@@ -1,0 +1,41 @@
+<div ng-controller="ShippingPalleteInfoInquiry" owd-screen="ShippingPalleteInfoInquiry">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+						<owd-date id="shipSchDateFrom" ng-model="searchCondition.shipSchDateFrom" label-text="出庫予定日(From)"></owd-date>
+						<owd-date id="shipSchDateTo" ng-model="searchCondition.shipSchDateTo" label-text="出庫予定日(To)" owd-validate="fromToCheck(searchCondition.shipSchDateFrom, $value)" owd-validate-watch="'searchCondition.shipSchDateFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-text id="ownerOrderNo" ng-model="searchCondition.ownerOrderNo" label-text="車割キー"></owd-text>
+						<owd-select id="requestType" ng-model="searchCondition.requestType" owd-models="requestTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="依頼種別" ng-change="requestTypeChange()"></owd-select>
+						<owd-text id="custorderNo" ng-model="searchCondition.custorderNo" label-text="依頼番号"></owd-text>
+						<owd-text id="rmaNo" ng-model="searchCondition.rmaNo" label-text="問合番号"></owd-text>
+						<owd-text id="refNo" ng-model="searchCondition.refNo" label-text="整理番号"></owd-text>
+						<owd-text id="soPalletNo" ng-model="searchCondition.soPalletNo" label-text="P/LNo."></owd-text>
+						<owd-select id="status" ng-model="searchCondition.status" owd-models="statusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ステータス" ng-change="statusChange()"></owd-select>
+						<owd-text id="shipToCd" ng-model="searchCondition.shipToCd" label-text="受入先CD" owd-add-button="showSupplyCustomer1()" ></owd-text>
+						<owd-text id="customerCd" ng-model="searchCondition.customerCd" label-text="特約店CD" owd-add-button="showSupplyCustomer2()" ></owd-text>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="shippingPalleteList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12" align="right">
+				<owd-button id="shippingPalleteInfoInquiryDetail" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="shippingPalleteInfoInquiryDetail()">出庫パレット情報照会(詳細)</owd-button>
+			</div>
+		</div>
+		<br>
+		<div id="content-footer"></div>
+	</form>
+</div>

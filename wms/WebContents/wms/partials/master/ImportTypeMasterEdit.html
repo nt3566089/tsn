@@ -1,0 +1,50 @@
+<div ng-controller="ImportTypeMasterEdit" owd-screen="ImportTypeMasterEdit">
+	<form id="inputbaseform" name="inputbaseform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd Start -->
+				<owd-select id="clientCd" ng-model="header.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ></owd-select>
+				<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd End -->
+				<owd-text id="importTypeCd" ng-model="header.importTypeCd" label-text="取込種別CD"></owd-text>
+				<owd-text id="importTypeNm" ng-model="header.importTypeNm" label-text="取込種別名称"></owd-text>
+				<owd-select id="edi" ng-model="header.ediId" owd-models="ediList" owd-repeat-key="ediId" owd-repeat-value="ediNm" label-text="EDI"></owd-select>
+				<owd-select id="uploadTableNm" ng-model="header.uploadTableNm" owd-models="uploadTableList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アップロードテーブル名"></owd-select>
+			</div>
+			<div class="row" align="right">
+				<owd-button id="confirm" class="btn-info" ng-disabled="inputbaseform.$invalid" ng-click="confirm()">確定</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="characterCd" ng-model="header.characterCd" label-text="文字コード"></owd-text>
+				<owd-select id="lineFeedCd" ng-model="header.lineFeedCd" owd-models="lineFeedCdList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="改行コード"></owd-select>
+				<owd-text id="delimiter" ng-model="header.delimiter" label-text="区切り文字"></owd-text>
+				<owd-number id="skippingRows" ng-model="header.skippingRows" label-text="読み飛ばし行数"></owd-number>
+				<owd-select id="duplicateColumnNm" ng-model="header.duplicateColumnNm" owd-models="duplicateColumnNmList" owd-repeat-key="columnNm" owd-repeat-view-with-key="false" owd-repeat-value="columnNm" label-text="重複チェック列名"></owd-select>
+				<owd-select id="rcvIdColumnNm" ng-model="header.rcvIdColumnNm" owd-models="rcvIdColumnNmList" owd-repeat-key="columnNm" owd-repeat-view-with-key="false" owd-repeat-value="columnNm" label-text="受信ID列名"></owd-select>
+				<owd-select id="rowNoColumnNm" ng-model="header.rowNoColumnNm" owd-models="rowNoColumnNmList" owd-repeat-key="columnNm" owd-repeat-view-with-key="false" owd-repeat-value="columnNm" label-text="行番号列名"></owd-select>
+				<owd-select id="giftStatementType" ng-model="header.giftStatementType" owd-models="giftStatementTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ギフト用納品種類"></owd-select>
+				<owd-text id="giftStatementDetail" ng-model="header.giftStatementDetail" label-text="納品書明細置換え文字列"></owd-text>
+				<owd-number id="oKeepingDays" ng-model="header.okeepingDays" label-text="受注保持期間"></owd-number>
+				<owd-text id="statementTitle" ng-model="header.statementTitle" label-text="納品書タイトル"></owd-text>
+				<owd-text id="statementUrl" ng-model="header.statementUrl" label-text="納品書記載URL"></owd-text>
+			</div>
+		</div>
+	</form>
+	<form id="inputdtlform" name="inputdtlform" novalidate>
+		<div owd-grid="gridOptions" id="importTypeBodyListGrid" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-form-name="inputdtlform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="inputform.$invalid">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

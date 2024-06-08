@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleGrpCd	権限グループCD		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	dictName	権限グループ名		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleControlClass	権限制御区分		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleGrpList	権限グループマスタ一覧グリッド	grid	1	1		0	1	roleGrpCd	権限グループCD	1	text	1	0		0	300				
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleGrpList	権限グループマスタ一覧グリッド	grid	1	1		0	1	vdict.dictNm	権限グループ名	2	text	1	0		0	300				
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleGrpList	権限グループマスタ一覧グリッド	grid	1	1		0	1	roleControlClass	権限制御区分CD	3	text	1	0		0	300				
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	roleGrpList	権限グループマスタ一覧グリッド	grid	1	1		0	1	bclassDtlByRoleControlClass.vdict.dictNm	権限制御区分名称	4	text	1	0		0	300				
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	search	検索		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	delete	削除		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	register	新規		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	update	修正		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	excelOutput	Excel出力		1	1		0	1													
+RoleGrpList	権限グループマスタメンテナンス(一覧)	base	copy	コピー		1	1		0	1													

@@ -1,0 +1,41 @@
+<div ng-controller="HTDictCultureMaster" owd-screen="HTDictCultureMaster">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+		<fieldset>
+			<div class="row">
+				<owd-select id="cultureId"
+					ng-model="head.bdictCulture.bculture.cultureCd"
+					owd-models="cultureList" owd-repeat-key="cultureCd"
+					owd-repeat-value="cultureNm" label-text="カルチャ"></owd-select>
+				<owd-text id="dictNm" ng-model="head.dictNm" label-text="辞書名"></owd-text>
+			</div>
+		</fieldset>
+		</owd-accordion-group>
+	</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info"
+					ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<br>
+		<div owd-grid="gridOptions" id="dictCultureList"
+			owd-select-options="gridSelectOptions"
+			owd-button-options="gridButtonOptions"
+			owd-event-options="gridEventOptions" owd-form-name="searchinputform"
+			owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right"
+					style="overflow-x: auto; overflow-y: hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

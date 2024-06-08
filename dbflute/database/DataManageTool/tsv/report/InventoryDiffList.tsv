@@ -1,0 +1,64 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblClientCd	荷主	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblWarehouse	倉庫	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblInventoryDt	棚卸日	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblDepositCd	預託	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStockTypeCd	在庫区分	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblProductCd	商品CD	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblProductNm	商品名称	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblJanCd	ソースCD	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblLot	ロット	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblLocationNm	ロケーション	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStockNum	在庫数	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStockBreakdown	在庫内訳	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblInventoryNum	棚卸数	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblInventoryBreakdown	棚卸内訳	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblDiffNum	差異数	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblTotal	合計	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblInventoryDiffList	棚卸差異リスト	String	1	
+InventoryDiffList	棚卸差異リスト	棚卸差異リスト	../../../../../../reports/inventory/InventoryDiffList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblClientCd	荷主	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblWarehouse	倉庫	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblInventoryDt	棚卸日	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblDepositCd	預託	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStockNum	在庫数	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStockBreakdown	在庫内訳	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblInventoryNum	棚卸数	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblInventoryBreakdown	棚卸内訳	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblDiffNum	差異数	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblTotal	合計	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblInventoryDiffList	棚卸差異リスト	String	1	
+InventoryDiffList	棚卸差異リスト	Inventory Discrepancy List	../../../../../../reports/inventory/InventoryDiffList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblClientCd	荷主	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblWarehouse	倉庫	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblInventoryDt	棚卸日	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblDepositCd	預託	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblLocationNm	ロケーション	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStockNum	在庫数	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStockBreakdown	在庫内訳	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblInventoryNum	棚卸数	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblInventoryBreakdown	棚卸内訳	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblDiffNum	差異数	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblTotal	合計	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblInventoryDiffList	棚卸差異リスト	String	1	
+InventoryDiffList	棚卸差異リスト	盘点差异清单	../../../../../../reports/inventory/InventoryDiffList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	

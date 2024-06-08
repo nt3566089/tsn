@@ -1,0 +1,59 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	centerCd	センタ		1	1		1	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	clientCd	荷主		1	1		1	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingDtFrom	出荷日(From)		1	1		1	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingDtTo	出荷日(To)		1	1		1	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	carrierCd	運送業者		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	pickingBatchNo	出庫指示バッチNo.		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingStatus	出荷ステータス		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	noAllcDisplayFlg	未出荷全件		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	emergencyFlg	緊急のみ		1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	cancelDisplay	キャンセルデータ表示	dropdown	1	1		0	0													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	search	検索		1	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	excelOutput	Excel出力		1	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	nonShippingTitle	未出荷		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInstProcessingTitle	出庫指示中		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInstedTitle	出庫指示済		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingFixedTitle	出荷確定済		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	cancelTitle	キャンセル		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	errorTitle	エラー有		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	emergencyTitle	緊急		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	stockOutFlgTitle	欠品		1	0		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	workDt	作業日	1	date	1	0		0	150			1	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingDt	出荷日	2	date	1	0		0	150			2	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingTime	出荷予定時刻	3	text	1	0		0	110			3	200
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	4	text	1	0		0	125			4	210
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	5	text	1	0		0	300			5	300
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	carrierCd	運送業者CD	6	text	1	0		0	110			6	110
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	carrierNm	運送業者名称	7	text	1	0		0	300			7	300
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	pickingBatchNo	出庫指示バッチNo.	8	text	1	0		0	170			8	220
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingStatus	出荷ステータス	9	text	1	0		0	125			9	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingStatusNm	出荷ステータス名称	10	text	1	0		0	155			10	190
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingSlipNo	伝票枚数	11	number	1	0	right	0	150			11	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	num	行数	12	number	1	0	right	0	150			12	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	countProductCd	アイテム数	13	number	1	0	right	0	150			13	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	instNum	指示数	14	number	1	0	right	0	95			14	120
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	allocNum	引当数	15	number	1	0	right	0	150			15	150
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	countShippingPackingNo	個口数	16	number	1	0	right	0	60			16	180
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	pickingTime	出庫開始時刻	17	text	1	0		0	110			17	140
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	stowageTime	積込予定時刻	18	text	1	0		0	110			18	200
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	sumGrossWeight	重量(グロス)(g)	19	number	1	0	right	0	170			19	170
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	picListStatus1	一次ピッキングリスト発行(％)	20	number	1	0	right	0	250			20	250
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	picListStatus2	二次ピッキングリスト発行(％)	21	number	0	0	right	0	250			21	280
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	chkStatus	出荷検品(％)	22	number	1	0	right	0	110			22	200
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	invoiceCreate	送り状データ出力(％)	23	number	1	0	right	0	190			23	190
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	packingOut	納品明細発行(％)	24	number	1	0	right	0	155			24	280
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	loadingStatus	積込検品(％)	25	number	1	0	right	0	125			25	
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	shippingFixed	出荷確定(％)	26	number	1	0	right	0	125			26	220
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	clientCd	荷主CD	27	text	1	0		0	125			27	
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	clientNm	荷主名称	28	text	1	0		0	200			28	
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	centerCd	センタCD	29	text	1	0		0	125			29	
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	deliveryCourseShippingList	配送コース別出荷進捗グリッド	grid	1	1		0	1	centerNm	センタ名称	30	text	1	0		0	200			30	
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInstSearch	出庫指示一覧		1	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInst	出庫指示		1	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInstBatch	出庫指示		0	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	shippingInstDelete	出庫指示解除		1	1		0	1													
+DeliveryCourseShippingList	配送コース別出荷一覧	wms	stwList	積込リスト		1	1		0	1													

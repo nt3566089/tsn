@@ -1,0 +1,18 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerCd	センタ	dropdown	1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	classCd	区分値CD	text	1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	classComment	区分値解説	text	1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	systemType	システム種別	dropdown	1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	delete	削除		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassGrpUpdate	修正(グループ)		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassGrpDtlUpdate	修正(グループ明細)		1	1		0	1													
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	1	text	1	0		0	150			1	150
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	2	text	1	0		0	300			2	150
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	classCd	区分値CD	3	text	1	0		0	300			3	200
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	classComment	区分値解説	4	text	1	0		0	300			4	200
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	systemType	システム種別CD	5	text	1	0		0	150			5	150
+CenterClassList	センタ別区分値マスタメンテナンス(一覧)	wms	centerClassList	センタ別区分値マスタ一覧グリッド	grid	1	1		0	1	bclassDtlBySystemType.vdict.dictNm	システム種別名称	6	text	1	0		0	150			6	200

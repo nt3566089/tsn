@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	messageCd	メッセージCD		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	messageNm	メッセージ		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	messageType	属性		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	systemType	システム種別		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	cultureCd	カルチャ		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	search	検索		1	1		0	1													
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	0		0	1	messageCd	メッセージCD	1	text	1	0		1	450			1	450
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	0		0	1	messageNm	メッセージ	2	text	1	0		1	750			2	750
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	0		0	1	messageType	属性	3	text	1	0		0	160			3	160
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	0		0	1	systemType	システム種別	4	text	1	0		0	135			4	135
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	0		0	1	bculture.vdict.dictNm	カルチャ	5	text	1	0		0	300			5	300
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	body	HTメッセージマスタメンテナンスグリッド	grid	1	1		0	1	mhtMessageAsOne.messageNm	HTメッセージ	6	text	1	1		0	750			6	750
+HTMessageMaster	HTメッセージマスタメンテナンス	wms	register	登録		1	1		0	1													

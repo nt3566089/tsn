@@ -1,0 +1,21 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DictMaster	辞書マスタメンテナンス	base	dictNm	辞書名		1	1		0	1													
+DictMaster	辞書マスタメンテナンス	base	systemType	システム種別		1	1		0	1													
+DictMaster	辞書マスタメンテナンス	base	search	検索		1	1		0	1													
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	oldDictNm	辞書名(変更前)	1	text	1	0		0	300			1	300
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	dictNm	辞書名	2	text	1	1		1	300			2	300
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	systemType	システム種別	3	dropdown	1	1		1	135			3	135
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	dataType	データ型	4	dropdown	1	1		0	175			4	175
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.inputLimit	入力文字制限	5	dropdown	1	1		0	450			5	450
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.limitMessageCd	制限メッセージCD	6	text	1	1		0	420			6	420
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.minChars	最小文字数	7	number	1	1	right	0	90			7	110
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.maxChars	最大文字数	8	number	1	1	right	0	90			8	110
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.minNumber	最小値	9	number	1	1	right	0	230			9	230
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.maxNumber	最大値	10	number	1	1	right	0	230			10	230
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.integerLength	整数桁数	11	number	1	1	right	0	75			11	75
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	bdictValidAsOne.decimalLength	小数桁数	12	number	1	1	right	0	75			12	130
+DictMaster	辞書マスタメンテナンス	base	dictList	辞書マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	13	dropdown	1	1		0	110			13	110
+DictMaster	辞書マスタメンテナンス	base	addRow	行追加		1	1		0	1													
+DictMaster	辞書マスタメンテナンス	base	removeRow	行削除		1	1		0	1													
+DictMaster	辞書マスタメンテナンス	base	register	登録		1	1		0	1													

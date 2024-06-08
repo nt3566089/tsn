@@ -1,0 +1,83 @@
+<div ng-controller="SortingPlaceMasterEdit" owd-screen="SortingPlaceMasterEdit">
+	<form id="searchInputForm" name="searchInputForm" novalidate>
+		<owd-label id="lbltitleCommon" label-text="共通"></owd-label>
+			<accordion id="titleCommon">
+				<accordion-group is-open="isopen">
+					<fieldset>
+					<div class = "row" id = "commonArea">
+						<owd-select id="centerCd" ng-model="srw.centerCd" label-text="拠点" owd-models="centerCdList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" ng-change="centerCdChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="srw.clientCd" label-text="荷主" owd-models="clientCdList" owd-repeat-key="clientCd" owd-repeat-value="clientNm"></owd-select>
+						<owd-select id="locidfrnk" ng-model="srw.locidfrnk" label-text="ロケ不定間口貼付順" owd-models="locidfrnkList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+						<owd-select id="locidfbrctg1" ng-model="srw.locidfbrctg1" label-text="ロケ不定銘柄カテゴリ貼付順1" owd-models="locidfbrctgList1" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg2" ng-model="srw.locidfbrctg2" label-text="ロケ不定銘柄カテゴリ貼付順2" owd-models="locidfbrctgList2" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg3" ng-model="srw.locidfbrctg3" label-text="ロケ不定銘柄カテゴリ貼付順3" owd-models="locidfbrctgList3" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg4" ng-model="srw.locidfbrctg4" label-text="ロケ不定銘柄カテゴリ貼付順4" owd-models="locidfbrctgList4" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg5" ng-model="srw.locidfbrctg5" label-text="ロケ不定銘柄カテゴリ貼付順5" owd-models="locidfbrctgList5" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg6" ng-model="srw.locidfbrctg6" label-text="ロケ不定銘柄カテゴリ貼付順6" owd-models="locidfbrctgList6" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg7" ng-model="srw.locidfbrctg7" label-text="ロケ不定銘柄カテゴリ貼付順7" owd-models="locidfbrctgList7" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg8" ng-model="srw.locidfbrctg8" label-text="ロケ不定銘柄カテゴリ貼付順8" owd-models="locidfbrctgList8" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg9" ng-model="srw.locidfbrctg9" label-text="ロケ不定銘柄カテゴリ貼付順9" owd-models="locidfbrctgList9" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+						<owd-select id="locidfbrctg10" ng-model="srw.locidfbrctg10" label-text="ロケ不定銘柄カテゴリ貼付順10" owd-models="locidfbrctgList10" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+					</div>
+					</fieldset>
+				</accordion-group>
+			</accordion>
+		<br>
+		<owd-label id="lblSortingPlaceMasterEditLin" label-text="ライン"></owd-label>
+			<accordion id="titleLine">
+					<accordion-group is-open="isopen">
+						<fieldset>
+						<div class = "row" id = "lineArea">
+							<owd-text   id="lincd" ng-model="lin.lincd" label-text="ラインCD"></owd-text>
+							<owd-text   id="linnm" ng-model="lin.linnm" label-text="ライン名称"></owd-text>
+							<owd-select id="linblk1" ng-model="lin.linblk1" label-text="対応ブロック1" owd-models="blockcdList1" owd-repeat-key="blkcd" owd-repeat-value="blkcd" owd-repeat-view-with-key="false" ng-change="linblk1Change()"></owd-select>
+							<owd-select id="linblk2" ng-model="lin.linblk2" label-text="対応ブロック2" owd-models="blockcdList2" owd-repeat-key="blkcd" owd-repeat-value="blkcd" owd-repeat-view-with-key="false" ng-change="linblk2Change()"></owd-select>
+							<owd-select id="linblk3" ng-model="lin.linblk3" label-text="対応ブロック3" owd-models="blockcdList3" owd-repeat-key="blkcd" owd-repeat-value="blkcd" owd-repeat-view-with-key="false" ng-change="linblk3Change()"></owd-select>
+							<owd-select id="hdrdboxrsfid" ng-model="lin.hdrdboxrsfid" label-text="100BOX" owd-models="hdrdboxrsfidList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+							<owd-text   id="pkgrt" ng-model="lin.pkgrt" label-text="梱包率(%)"></owd-text>
+							<owd-select id="sprprsid" ng-model="lin.sprprsid" label-text="個口圧縮" owd-models="sprprsidList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+							<owd-select id="delFlg" ng-model="lin.delFlg" label-text="削除" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm">
+						</div>
+					</fieldset>
+			</accordion-group>
+		</accordion>
+		<br>
+		<owd-label id="lblSortingPlaceMasterEditBlk" label-text="ブロック"></owd-label>
+		<accordion id="titleBlock">
+					<accordion-group is-open="isopen">
+						<fieldset>
+						<div class="row" id = "blockArea">
+							<owd-text   id="blkcd" ng-model="blk.blkcd" label-text="ブロックCD"></owd-text>
+							<owd-text   id="blknm" ng-model="blk.blknm" label-text="ブロック名称"></owd-text>
+							<owd-select id="locidfrnkblk" ng-model="blk.locidfrnk" label-text="ロケ不定間口貼付順" owd-models="locidfrnkList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+							<owd-select id="locidfbrctg1blk" ng-model="blk.locidfbrctg1" label-text="ロケ不定銘柄カテゴリ貼付順1" owd-models="locidfbrctgList1" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg2blk" ng-model="blk.locidfbrctg2" label-text="ロケ不定銘柄カテゴリ貼付順2" owd-models="locidfbrctgList2" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg3blk" ng-model="blk.locidfbrctg3" label-text="ロケ不定銘柄カテゴリ貼付順3" owd-models="locidfbrctgList3" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg4blk" ng-model="blk.locidfbrctg4" label-text="ロケ不定銘柄カテゴリ貼付順4" owd-models="locidfbrctgList4" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg5blk" ng-model="blk.locidfbrctg5" label-text="ロケ不定銘柄カテゴリ貼付順5" owd-models="locidfbrctgList5" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg6blk" ng-model="blk.locidfbrctg6" label-text="ロケ不定銘柄カテゴリ貼付順6" owd-models="locidfbrctgList6" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg7blk" ng-model="blk.locidfbrctg7" label-text="ロケ不定銘柄カテゴリ貼付順7" owd-models="locidfbrctgList7" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg8blk" ng-model="blk.locidfbrctg8" label-text="ロケ不定銘柄カテゴリ貼付順8" owd-models="locidfbrctgList8" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg9blk" ng-model="blk.locidfbrctg9" label-text="ロケ不定銘柄カテゴリ貼付順9" owd-models="locidfbrctgList9" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="locidfbrctg10blk" ng-model="blk.locidfbrctg10" label-text="ロケ不定銘柄カテゴリ貼付順10" owd-models="locidfbrctgList10" owd-repeat-key="brctg" owd-repeat-value="brctgnm"></owd-select>
+							<owd-select id="hdrdboxrsfidblk" ng-model="blk.hdrdboxrsfid" label-text="100BOX" owd-models="hdrdboxrsfidList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+							<owd-text   id="pkgrtblk" ng-model="blk.pkgrt" label-text="梱包率(%)"></owd-text>
+							<owd-select id="sprprsidblk" ng-model="blk.sprprsid" label-text="個口圧縮" owd-models="sprprsidblkList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+							<owd-select id="delFlgblk" ng-model="blk.delFlg" label-text="削除" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+
+						</div>
+					</fieldset>
+			</accordion-group>
+		</accordion>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" class="btn-success" ng-click="registerClick()" ng-disabled="searchInputForm.$invalid">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

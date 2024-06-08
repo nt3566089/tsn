@@ -1,0 +1,3 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveNoPlanInspectionSupplierResource	send	send	HT予定無し入荷(仕入先)送信	supplier	仕入先	text	1
+ReceiveNoPlanInspectionSupplierResource	send	send	HT予定無し入荷(仕入先)送信	clientReceiveNo	顧客入荷指示No.	text	0

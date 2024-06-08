@@ -1,0 +1,10 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	centerCd	拠点		1	0		1	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	clientCd	荷主		1	0		1	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	targetDate	対象年月日		1	0		0	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	targetDateEdit	曜日		1	0		0	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	sundayFlgNm	日曜フラグ		1	0		0	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	invDate	たな卸実施日		1	1		1	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	invDateEdit	曜日		1	0		0	1													
+InventoryDateMasterEdit	たな卸実施日マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

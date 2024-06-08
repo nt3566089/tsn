@@ -1,0 +1,41 @@
+<div ng-controller="NonconformityLabelPrint" owd-screen="NonconformityLabelPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+			<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+					<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+					<owd-date id="createddateFrom" ng-model="searchCondition.createddateFrom" label-text="ラベル作成日(From)"></owd-date>
+					<owd-date id="createddateTo" ng-model="searchCondition.createddateTo" label-text="ラベル作成日(To)" owd-validate="fromToCheck(searchCondition.createddateFrom, $value)" owd-validate-watch="'searchCondition.createddateFrom'" owd-validate-message="fromToMessage"></owd-date>
+					<owd-date id="targetmon" ng-model="searchCondition.targetmon" label-text="対象月"></owd-date>
+					<owd-select id="reprintedflg" ng-model="searchCondition.reprintedflg" owd-models="reprintedflgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="印刷ステータス"></owd-select>
+					<owd-select id="inoutkbn" ng-model="searchCondition.inoutkbn" owd-models="inoutkbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="内外区分"></owd-select>
+					<owd-select id="vaExtdata2" ng-model="searchCondition.vaExtdata2" owd-models="vaExtdata2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="銘柄区分"></owd-select>
+					<owd-text id="itemcd" ng-model="searchCondition.itemcd" label-text="銘柄CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="productNm"></owd-info>
+					</owd-text>
+					<owd-text id="baditemcd" ng-model="searchCondition.baditemcd" label-text="ラベル番号"></owd-text>
+					<owd-select id="todayPrintOnlyFlg" ng-model="searchCondition.todayPrintOnlyFlg" owd-models="todayPrintOnlyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="当日作成ラベル枚数"></owd-select>
+				</div>
+			</fieldset>
+		</owd-accordion-group> </owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="nonconformityLabelPrintList" owd-select-options="gridSelectOptions" owd-form-name="searchform"></div>
+		<br>
+	</form>
+
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<owd-button id="output" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="output()">発行</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

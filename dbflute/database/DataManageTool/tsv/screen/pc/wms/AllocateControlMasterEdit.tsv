@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	clientCd	荷主	dropdown	1	0		1	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	productCd	銘柄CD	text	1	1		1	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickfrdate	適用開始日	date	1	1		1	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	picktodate	適用終了日	date	1	0		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	validtype	有効区分	dropdown	1	0		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickrank1	デ変(優先1)	dropdown	1	1		1	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickrank2	デ変(優先2)	dropdown	1	1		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickrank3	デ変(優先3)	dropdown	1	1		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickrank4	デ変(優先4)	dropdown	1	1		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	pickrank5	デ変(優先5)	dropdown	1	1		0	1													
+AllocateControlMasterEdit	引当制御マスタメンテナンス(編集)	wms	register	登録	button	1	1		0	1													

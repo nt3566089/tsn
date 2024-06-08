@@ -1,0 +1,6 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SingleRowShippingNoPackingNoHT	単行出荷検品(No)	wms_ht	pickingGroupNo	ﾋﾟｯｷﾝｸﾞｸﾞﾙｰﾌﾟNo		1	1		0	1													
+SingleRowShippingNoPackingNoHT	単行出荷検品(No)	wms_ht	tempNo	仮置No		1	1		0	1													
+SingleRowShippingNoPackingNoHT	単行出荷検品(No)	wms_ht	return	戻る		1	1		0	1													
+SingleRowShippingNoPackingNoHT	単行出荷検品(No)	wms_ht	send	送信		1	1		0	1													

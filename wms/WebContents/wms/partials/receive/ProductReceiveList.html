@@ -1,0 +1,120 @@
+<div ng-controller="ProductReceiveList" owd-screen="ProductReceiveList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			    <fieldset>
+					<div class="row">
+						<!-- 荷主センタ変更対応 2017.02.07 sja Start -->
+						<!--
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						 -->
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+						<!-- 荷主センタ変更対応 2017.02.07 sja End -->
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-select id="warehouseCd" ng-model="searchCondition.planWarehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫"></owd-select>
+						<owd-date id="receivePlanDtFrom" ng-model="searchCondition.receivePlanDtFrom" label-text="入荷予定日From"></owd-date>
+						<owd-date id="receivePlanDtTo" ng-model="searchCondition.receivePlanDtTo" label-text="入荷予定日To" owd-validate="fromToCheck(searchCondition.receivePlanDtFrom, $value)" owd-validate-watch="'searchCondition.receivePlanDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-date id="storeDtFrom" ng-model="searchCondition.storeDtFrom" label-text="入庫日From"></owd-date>
+						<owd-date id="storeDtTo" ng-model="searchCondition.storeDtTo" label-text="入庫日To" owd-validate="fromToCheck(searchCondition.storeDtFrom, $value)" owd-validate-watch="'searchCondition.storeDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="receiveStatus" ng-model="searchCondition.receiveStatus" owd-models="receiveStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入荷ステータス"></owd-select>
+						<owd-text id="planSupplierCd" ng-model="searchCondition.planSupplierCd" label-text="仕入先CD" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+							<owd-info ng-model="searchCondition.mcustomerByPlanSupplierId.customerNm"></owd-info>
+						</owd-text>
+						<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.productNm"></owd-info>
+						</owd-text>
+						<owd-text id="clientReceiveNo" ng-model="searchCondition.planClientReceiveNo" label-text="予定顧客入荷指示No."></owd-text>
+						<owd-text id="storeClientReceiveNo" ng-model="searchCondition.storeClientReceiveNo" label-text="顧客入荷指示No."></owd-text>
+						<owd-text id="receiveSlipNo" ng-model="searchCondition.receiveSlipNo" label-text="WMS入荷伝票No."></owd-text>
+						<owd-text id="clientOrderNo" ng-model="searchCondition.clientOrderNo" label-text="予定顧客発注No."></owd-text>
+						<owd-text id="storeClientOrderNo" ng-model="searchCondition.storeClientOrderNo" label-text="顧客発注No."></owd-text>
+						<!-- [ON推-品向-997] 削除データ表示有無の検索条件を追加 2015.11.09 kawana Start -->
+						<owd-select id="deleteDisplay" ng-model="searchCondition.deleteDisplay" owd-models="deleteDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除データ表示" owd-remove-blank></owd-select>
+						<!-- [ON推-品向-997] 削除データ表示有無の検索条件を追加 2015.11.09 kawana End -->
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+			<!-- [ON推]ステータス色表示を右寄せにするように修正 2016.04.06 chou Mod Start -->
+			<div class="col-xs-12 col-sm-6 col-md-8 col-lg-8" align="right">
+			<!-- [ON推]ステータス色表示を右寄せにするように修正 2016.04.06 chou Mod End -->
+            	<div class="list-box">
+					<div class="list-text wmslegend wmslegendwhite"><owd-span id="nonReceive" label-text="未入荷"></owd-span></div>
+					<!--  [#7026][OSS] 入荷中の表示を削除 2020.01.27 tsuboi Delete -->
+					<div class="list-text wmslegend wmslegendcyan"><owd-span id="store" label-text="入荷済"></owd-span></div>
+					<!-- [ON推-品向-175][ON推-品向-176] 入荷ステータスに90:入荷削除を追加のため99:エラーと画面の並びを変更 2014.11.28 kawana Start -->
+					<div class="list-text wmslegend wmslegendred"><owd-span id="receiveDelete" label-text="入荷削除"></owd-span></div>
+					<div class="list-text wmslegend wmslegendpink"><owd-span id="error" label-text="エラー"></owd-span></div>
+					<!-- [ON推-品向-175][ON推-品向-176] 入荷ステータスに90:入荷削除を追加のため99:エラーと画面の並びを変更 2014.11.28 kawana End -->
+					<!-- [ON推-品向-568] 期限日を過ぎた商品の行の色を変更 2015.04.27 kawana Start -->
+					<div class="list-text wmslegend wmslegendblue"><owd-span id="expired" label-text="入荷期限切れ"></owd-span></div>
+					<!-- [ON推-品向-568] 期限日を過ぎた商品の行の色を変更 2015.04.27 kawana End -->
+				</div>
+			</div>
+
+			<!-- [ON推]進捗率の表示をしないように修正 2016.04.06 chou Del Start -->
+			<!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" align="right">
+				<owd-span id="progressStatus" label-text="進捗率＜ステータス＞"></owd-span>
+				<div class="list-box">
+					<div class="list-text">
+						<table border="1">
+							<tr>
+								<td class="wmslegend wmslegendwhite"><owd-span id="nonReceiveTitle" label-text="未入荷"></owd-span></td>
+							</tr>
+							<tr>
+								<td class="wmslegend wmslegendpink"><owd-info id="nonReceiveParcent" ng-model="nonReceiveParcent"></owd-info></td>
+							</tr>
+						</table>
+					</div>
+					<div class="list-text">
+						<table border="1">
+							<tr>
+								<td class="wmslegend wmslegendlightyellow"><owd-span id="receivingTitle" label-text="入荷中"></owd-span></td>
+							</tr>
+							<tr>
+								<td class="wmslegend wmslegendpink"><owd-info id="receivingParcent" ng-model="receivingParcent"></owd-info></td>
+							</tr>
+						</table>
+					</div>
+					<div class="list-text">
+						<table border="1">
+							<tr>
+								<td class="wmslegend wmslegendcyan"><owd-span id="storeTitle" label-text="入荷済"></owd-span></td>
+							</tr>
+							<tr>
+								<td class="wmslegend wmslegendpink"><owd-info id="storeParcent" ng-model="storeParcent"></owd-info></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div> -->
+			<!-- [ON推]進捗率の表示をしないように修正 2016.04.06 chou Del End -->
+		</div>
+		<br>
+		<div owd-grid="gridOptions"  owd-dblclick-option="gridDblClick(row)"  id="ProductReceiveList" owd-select-options="gridSelectOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+					<owd-button id="receivePlanInput" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length"  ng-click="receivePlanInput()">入荷予定修正</owd-button>
+					<owd-button id="receiveInput" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="receiveInput()">入荷実績入力</owd-button>
+				<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+				<!-- Ver2.1向けエンハンス 2016.06.13 SJA Start -->
+					<owd-button id="productLabel" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="productLabel()">商品ラベル</owd-button>
+				<!-- Ver2.1向けエンハンス 2016.06.13 SJA End -->
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,34 @@
+<div ng-controller="HTDictMaster" owd-screen="HTDictMaster">
+	<form id="searchform" name="searchform" novalidate>
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+					<fieldset>
+						<div class="row">
+							<owd-text id="dictNm" ng-model="head.dictNm" label-text="辞書名"></owd-text>
+							<owd-select id="systemType" ng-model="head.bdict.systemType" owd-models="systemTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="システム種別"></owd-select>
+						</div>
+					</fieldset>
+				</owd-accordion-group>
+			</owd-accordion>
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<br>
+		<div owd-grid="gridOptions" id="htdictList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

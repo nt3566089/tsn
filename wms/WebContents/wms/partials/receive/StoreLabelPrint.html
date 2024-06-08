@@ -1,0 +1,37 @@
+<div ng-controller="StoreLabelPrint" owd-screen="StoreLabelPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.09 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="searchCondition.tstoreRecordH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.tstoreRecordH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.09 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.tstoreRecordH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="searchCondition.treceivePlanB.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫_"></owd-select>
+				<owd-date id="storeDt" ng-model="searchCondition.storeDt" label-text="入庫日_"></owd-date>
+		 		<owd-text id="customerCd" ng-model="searchCondition.tstoreRecordH.mcustomerBySupplierId.customerCd" label-text="仕入先_" owd-add-button="showVendor()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="searchCondition.tstoreRecordH.mcustomerBySupplierId.customerNm"></owd-info>
+				</owd-text>
+				<!-- [ON推-品向-601] 帳票データ件数の上限を設定に伴い発行条件を追加 2015.04.16 kawana Start -->
+				<owd-text id="storeLabelNoFrom" ng-model="searchCondition.storeLabelNoFrom" label-text="入庫ラベルNo.（From）"></owd-text>
+				<!-- [#4065][Ver3.0]入庫ラベルNo.のFromToチェックを追加 2018.03.29 miyabe Upd Start -->
+				<owd-text id="storeLabelNoTo" ng-model="searchCondition.storeLabelNoTo" label-text="入庫ラベルNo.（To）" owd-validate="fromToCheck(searchCondition.storeLabelNoFrom, $value)" owd-validate-watch="'searchCondition.storeLabelNoFrom'" owd-validate-message="fromToMessage"></owd-text>
+				<!-- [#4065][Ver3.0]入庫ラベルNo.のFromToチェックを追加 2018.03.29 miyabe Upd End -->
+				<!-- [ON推-品向-601] 帳票データ件数の上限を設定に伴い発行条件を追加 2015.04.16 kawana End -->
+				<!-- [C-CWMS-0032] 入庫ラベル発行の出力フラグ更新 2015.08.20 ki Start -->
+				<owd-text id="receiveSlipNo" ng-model="searchCondition.treceivePlanB.treceivePlanH.receiveSlipNo" label-text="WMS入荷伝票No"></owd-text>
+				<owd-text id="clientReceiveNo" ng-model="searchCondition.tstoreRecordH.clientReceiveNo" label-text="顧客入荷指示No"></owd-text>
+				<owd-text id="addUser" ng-model="searchCondition.addUser" label-text="ユーザCD"></owd-text>
+				<owd-select id="printCondition" ng-model="searchCondition.printCondition" owd-models="printCondition" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行条件" owd-remove-blank></owd-select>
+				<!-- [C-CWMS-0032] 入庫ラベル発行の出力フラグ更新 2015.08.20 ki End -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

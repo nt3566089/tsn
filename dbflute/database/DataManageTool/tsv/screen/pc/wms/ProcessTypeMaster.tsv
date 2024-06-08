@@ -1,0 +1,24 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeCd	処理区分CD		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	search	検索		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	processTypeCd	処理区分CD	1	text	1	1		1	90	1		1	120
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	処理区分名称	2	text	1	1		1	170	2		2	170
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	receiveFlg	入荷フラグ	3	checkbox	1	1		0	100	3		3	130
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	shippingFlg	出荷フラグ	4	checkbox	1	1		0	100	4		4	130
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	stockAdjustFlg	在庫調整フラグ	5	checkbox	1	1		0	150	5		5	220
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	defaultFlg	デフォルトフラグ	6	checkbox	1	1		0	150	6		6	150
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	mstockType.stockTypeCd	在庫区分	7	dropdown	1	1		0	150	7		7	150
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeList	処理区分マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	8	dropdown	1	1		1	110	8		8	110
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	processTypeNm	処理区分名称		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	register	登録		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	receiveFlg	入荷フラグ		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	excelUpload	ファイル取込		0	0		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	shippingFlg	出荷フラグ		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	stockAdjustFlg	在庫調整フラグ		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	defaultFlg	デフォルトフラグ		1	1		0	1													
+ProcessTypeMaster	処理区分マスタメンテナンス	wms	stockTypeCd	在庫区分		1	1		0	1													

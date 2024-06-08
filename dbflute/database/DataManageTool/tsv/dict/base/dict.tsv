@@ -1,0 +1,159 @@
+辞書マスタ	HT辞書マスタ	辞書マスタ	辞書マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書検証マスタ	辞書カルチャマスタ	辞書カルチャマスタ	HT辞書カルチャマスタ	辞書カルチャマスタ	辞書カルチャマスタ	HT辞書カルチャマスタ	辞書カルチャマスタ	辞書カルチャマスタ	HT辞書カルチャマスタ
+DICT_NM	DICT_NM	DATA_TYPE	SYSTEM_TYPE	INPUT_LIMIT	LIMIT_MESSAGE_CD	MIN_CHARS	MAX_CHARS	MIN_NUMBER	MAX_NUMBER	INTEGER_LENGTH	DECIMAL_LENGTH	CULTURE_CD	DICT_NM	DICT_NM	CULTURE_CD	DICT_NM	DICT_NM	CULTURE_CD	DICT_NM	DICT_NM
+メインメニュー	メインメニュー		base									ja-JP	メインメニュー	メインメニュー	en-US	Main Menu	Main Menu	zh-CN	主菜单	主菜单
+プレビュー			base									ja-JP	プレビュー		en-US	Preview		zh-CN	预览	
+印刷設定			base									ja-JP	印刷設定		en-US	Print Settings		zh-CN	打印设定	
+プリンタ	プリンタ		base									ja-JP	プリンタ	プリンタ	en-US	Printer	Printer	zh-CN	打印机	打印机
+部数			base	^[0-9]*$	inputLimitCheckNumericOnlyError			1		2	0	ja-JP	部数		en-US	Number of Copies		zh-CN	部数	
+部単位			base									ja-JP	部単位		en-US	Collate		zh-CN	遂份	
+給紙トレイ			base									ja-JP	給紙トレイ		en-US	Paper feed tray		zh-CN	给纸支架	
+帳票レイアウト	帳票レイアウト		base									ja-JP	帳票レイアウト	帳票レイアウト	en-US	Document Layout	Document Layout	zh-CN	报表版面设计	报表版面设计
+印刷			base									ja-JP	印刷		en-US	Print		zh-CN	打印	
+レイアウトファイルアップロード			base									ja-JP	レイアウトファイルアップロード		en-US	Layout File Upload		zh-CN	版面设计文件上传	
+帳票選択			base									ja-JP	帳票選択		en-US	Document Selection		zh-CN	报表选择	
+帳票レイアウトファイルアップロード			base									ja-JP	帳票レイアウトファイルアップロード		en-US	Document Layout File Upload		zh-CN	报表版面设计文件上传	
+サブレポートレイアウトファイルアップロード			base									ja-JP	サブレポートレイアウトファイルアップロード		en-US	Sub-Report Layout File Upload		zh-CN	子报表版面设计文件上传	
+日本語(日本)			base									ja-JP	日本語(日本)		en-US	Japanese		zh-CN	日语(日本)	
+管理者			base									ja-JP	管理者		en-US	Administrator		zh-CN	管理员	
+システム管理者			base									ja-JP	システム管理者		en-US	System Administrator		zh-CN	系统管理员	
+標準ユーザ			base									ja-JP	標準ユーザ		en-US	Standard User		zh-CN	标准用户	
+システム管理不可			base									ja-JP	システム管理不可		en-US	System Management Disabled		zh-CN	系统管理不可	
+共通設定不可			base									ja-JP	共通設定不可		en-US	Common Setting Disabled		zh-CN	共通设定不可	
+英語(米国)			base									ja-JP	英語(米国)		en-US	English (US)		zh-CN	英语(美国)	
+簡体(中国)			base									ja-JP	簡体(中国)		en-US	Chinese (PRC)		zh-CN	简体中文(中国)	
+グリッドヘッダ設定(ユーザ)			base									ja-JP	グリッドヘッダ設定(ユーザ)		en-US	Grid Header Settings (User)		zh-CN	列表头部设定（用户）	
+グリッドヘッダ設定(基本)			base									ja-JP	グリッドヘッダ設定(基本)		en-US	Grid Header Settings (Basic)		zh-CN	列表头部设定（基本）	
+リセット			base									ja-JP	リセット		en-US	Reset		zh-CN	重置	
+列一覧			base									ja-JP	列一覧		en-US	Column List		zh-CN	列一览	
+列幅一覧			base									ja-JP	列幅一覧		en-US	Column Width List		zh-CN	列宽一览	
+明細詳細			base									ja-JP	明細詳細		en-US	Item Details		zh-CN	明细详细	
+ログイン	ログイン		base									ja-JP	ログイン	ログイン	en-US	Login	Login	zh-CN	登录	登录
+ログインID			base									ja-JP	ログインID		en-US	Login ID		zh-CN	登录ID	
+パスワード	パスワード		base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError							ja-JP	パスワード	パスワード	en-US	Password	Password	zh-CN	密码	密码
+古いパスワード			base									ja-JP	古いパスワード		en-US	Old password		zh-CN	旧密码	
+新しいパスワード			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError							ja-JP	新しいパスワード		en-US	New password		zh-CN	新密码	
+パスワードの確認入力			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError							ja-JP	パスワードの確認入力		en-US	Confirm password		zh-CN	密码的输入确认	
+パスワード変更			base									ja-JP	パスワード変更		en-US	Change password		zh-CN	密码变更	
+認証管理			base									ja-JP	認証管理		en-US	Authentication Management		zh-CN	认证管理	
+次回ログイン時のパスワード変更の強制			base									ja-JP	次回ログイン時のパスワード変更の強制		en-US	Force password change at next login		zh-CN	下次登录时密码强制变更	
+パスワード変更日時			base									ja-JP	パスワード変更日時		en-US	Password Last Changed Date		zh-CN	密码变更日期	
+最終ログイン日時			base									ja-JP	最終ログイン日時		en-US	Last Login Date		zh-CN	最终登录日期	
+最終ログイン失敗日時			base									ja-JP	最終ログイン失敗日時		en-US	Last Login Attempt Date		zh-CN	最终登录失败日期	
+ログイン失敗回数			base									ja-JP	ログイン失敗回数		en-US	Invalid Login Attempts		zh-CN	登录失败次数	
+ロックアウト日時			base									ja-JP	ロックアウト日時		en-US	Lockout Date		zh-CN	闭锁日期	
+利用可能開始日			base									ja-JP	利用可能開始日		en-US	Account Start Date		zh-CN	可利用的开始日	
+利用可能開始時間			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9]$	inputLimitCheckTimeHHMMSSOnlyError		8					ja-JP	利用可能開始時間		en-US	Account Start Time		zh-CN	可利用的开始时间	
+利用可能終了日			base									ja-JP	利用可能終了日		en-US	Account Expiration Date		zh-CN	可利用的终了日	
+利用可能終了時間			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9]$	inputLimitCheckTimeHHMMSSOnlyError		8					ja-JP	利用可能終了時間		en-US	Account Expiration Time		zh-CN	可利用的终了时间	
+ユーザ編集			base									ja-JP	ユーザ編集		en-US	User Edit		zh-CN	用户编辑	
+次回のログイン時にパスワードの変更を強制する			base									ja-JP	次回のログイン時にパスワードの変更を強制する		en-US	Force password change at next login		zh-CN	下次登录时密码强制变更	
+プリンタグループマスタメンテナンス			base									ja-JP	プリンタグループマスタメンテナンス		en-US	Printer Group Master		zh-CN	打印组主表维护	
+プリンタグループマスタメンテナンスグリッド			base									ja-JP	プリンタグループマスタメンテナンスグリッド		en-US	Printer Group Master Maintenance Grid		zh-CN	打印组主表维护列表	
+印刷サービス情報メンテナンス(一覧)			base									ja-JP	印刷サービス情報メンテナンス(一覧)		en-US	Print Service Info		zh-CN	打印服务信息维护(一览)	
+印刷サービス情報メンテナンスグリッド			base									ja-JP	印刷サービス情報メンテナンスグリッド		en-US	Print Service Info Maintenance Grid		zh-CN	打印服务信息维护列表	
+印刷サービス情報メンテナンス(編集)			base									ja-JP	印刷サービス情報メンテナンス(編集)		en-US	Print Service Info Maintenance		zh-CN	打印服务信息维护(编辑)	
+プリンタマスタメンテナンス			base									ja-JP	プリンタマスタメンテナンス		en-US	Printer Master		zh-CN	打印机主表维护	
+プリンタマスタメンテナンスグリッド			base									ja-JP	プリンタマスタメンテナンスグリッド		en-US	Printer Master Maintenance Grid		zh-CN	打印机主表维护列表	
+プリンタ属性マスタメンテナンス			base									ja-JP	プリンタ属性マスタメンテナンス		en-US	Printer Properties Master		zh-CN	打印机属性主表维护	
+プリンタ属性マスタメンテナンスグリッド			base									ja-JP	プリンタ属性マスタメンテナンスグリッド		en-US	Printer Properties Master Maintenance Grid		zh-CN	打印机属性主表维护列表	
+印刷情報一覧			base									ja-JP	印刷情報一覧		en-US	Print Info List		zh-CN	打印信息一览	
+印刷情報一覧グリッド			base									ja-JP	印刷情報一覧グリッド		en-US	Print Info List Grid		zh-CN	打印信息一览列表	
+印刷履歴一覧			base									ja-JP	印刷履歴一覧		en-US	Print History List		zh-CN	打印履历一览	
+印刷履歴一覧グリッド			base									ja-JP	印刷履歴一覧グリッド		en-US	Print History List Grid		zh-CN	打印履历一览列表	
+システム管理マスタメンテナンス			base									ja-JP	システム管理マスタメンテナンス		en-US	System Management Master Maintenance		zh-CN	系统管理主表维护	
+プリンタグループ名称			base				60					ja-JP	プリンタグループ名称		en-US	Printer Group Name		zh-CN	打印机组名称	
+プリンタグループ属性1			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	プリンタグループ属性1		en-US	Printer Group Properties 1		zh-CN	打印机组属性1	
+プリンタグループ属性2			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	プリンタグループ属性2		en-US	Printer Group Properties 2		zh-CN	打印机组属性2	
+プリンタグループ属性3			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	プリンタグループ属性3		en-US	Printer Group Properties 3		zh-CN	打印机组属性3	
+プリンタグループ属性4			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	プリンタグループ属性4		en-US	Printer Group Properties 4		zh-CN	打印机组属性4	
+プリンタグループ属性5			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	プリンタグループ属性5		en-US	Printer Group Properties 5		zh-CN	打印机组属性5	
+印刷サービス名称			base				60					ja-JP	印刷サービス名称		en-US	Print Service Name		zh-CN	打印服务名称	
+端末名称			base				60					ja-JP	端末名称		en-US	Terminal name		zh-CN	端末名称	
+プリンタグループ	プリンタグループ		base									ja-JP	プリンタグループ	プリンタグループ	en-US	Printer Group	Printer Group	zh-CN	打印机组	打印机组
+印刷サービスステータス			base									ja-JP	印刷サービスステータス		en-US	Print Service Status		zh-CN	打印服务状态	
+更新可否			base									ja-JP	更新可否		en-US	Update Property		zh-CN	更新可否	
+帳票レイアウト属性1			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	帳票レイアウト属性1		en-US	Document Layout Properties 1		zh-CN	报表版面设计属性1	
+帳票レイアウト属性2			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	帳票レイアウト属性2		en-US	Document Layout Properties 2		zh-CN	报表版面设计属性2	
+帳票レイアウト属性3			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	帳票レイアウト属性3		en-US	Document Layout Properties 3		zh-CN	报表版面设计属性3	
+帳票レイアウト属性4			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	帳票レイアウト属性4		en-US	Document Layout Properties 4		zh-CN	报表版面设计属性4	
+帳票レイアウト属性5			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError		100					ja-JP	帳票レイアウト属性5		en-US	Document Layout Properties 5		zh-CN	报表版面设计属性5	
+プリンタ属性	プリンタ属性		base									ja-JP	プリンタ属性	プリンタ属性	en-US	Printer Properties	Printer Properties	zh-CN	打印机属性	打印机属性
+再印刷有無			base									ja-JP	再印刷有無		en-US	Is Reprint		zh-CN	再打印有无	
+印刷日時			base									ja-JP	印刷日時		en-US	Print Date		zh-CN	打印日时	
+印刷日(From)		date	base									ja-JP	印刷日(From)		en-US	Print Date (From)		zh-CN	打印日(From)	
+印刷時間(From)			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]$	inputLimitCheckTimeOnlyError							ja-JP	印刷時間(From)		en-US	Print Time (From)		zh-CN	打印时间(From)	
+印刷日(To)		date	base									ja-JP	印刷日(To)		en-US	Print Date (To)		zh-CN	打印日(To)	
+印刷時間(To)			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]$	inputLimitCheckTimeOnlyError							ja-JP	印刷時間(To)		en-US	Print Time (To)		zh-CN	打印时间(To)	
+再印刷No.			base									ja-JP	再印刷No.		en-US	Reprint No.		zh-CN	再打印No.	
+印刷結果			base									ja-JP	印刷結果		en-US	Print Result		zh-CN	打印结果	
+再印刷			base									ja-JP	再印刷		en-US	Reprint		zh-CN	再打印	
+プリンタ表示可否			base									ja-JP	プリンタ表示可否		en-US	Printer Visibility		zh-CN	打印机显示可否	
+トレイ表示可否			base									ja-JP	トレイ表示可否		en-US	Tray Active		zh-CN	支架显示可否	
+システムパスワード			base	^[!-~]*$	inputLimitCheckAlphabetAndNumericAndSymbolOnlyError	8						ja-JP	システムパスワード		en-US	System Password		zh-CN	系统密码	
+自動印刷プリンタ設定			base									ja-JP	自動印刷プリンタ設定		en-US	Auto-Print Settings		zh-CN	自动印刷打印设定	
+自動印刷プリンタ設定(一覧)			base									ja-JP	自動印刷プリンタ設定(一覧)		en-US	Auto-Print Settings List		zh-CN	自动印刷打印设定(一览)	
+自動印刷プリンタ設定グリッド			base									ja-JP	自動印刷プリンタ設定グリッド		en-US	Auto-Print Settings Grid		zh-CN	自动印刷打印设定列表	
+自動印刷プリンタ設定(編集)			base									ja-JP	自動印刷プリンタ設定(編集)		en-US	Auto-Print Settings (Edit)		zh-CN	自动印刷打印设定(编辑)	
+自動印刷プリンタ一括変更(一覧)			base									ja-JP	自動印刷プリンタ一括変更(一覧)		en-US	Auto-Print Bulk Update List		zh-CN	自动印刷打印一括变更(一览)	
+自動印刷プリンタ一括変更(編集)			base									ja-JP	自動印刷プリンタ一括変更(編集)		en-US	Auto-Print Bulk Update (Edit)		zh-CN	自动印刷打印一括变更(编辑)	
+自動印刷プリンタ一括変更グリッド			base									ja-JP	自動印刷プリンタ一括変更グリッド		en-US	Auto-Print Bulk Update Grid		zh-CN	自动印刷打印一括变更列表	
+プリンタ名称(変更前)			base									ja-JP	プリンタ名称(変更前)		en-US	Previous Printer Name		zh-CN	打印机名称(变更前)	
+トレイ名称(変更前)			base									ja-JP	トレイ名称(変更前)		en-US	Previous Tray Name		zh-CN	支架名称(变更前)	
+プリンタ名称(変更後)			base									ja-JP	プリンタ名称(変更後)		en-US	New Printer Name		zh-CN	打印机名称(变更后)	
+トレイ名称(変更後)			base									ja-JP	トレイ名称(変更後)		en-US	New Tray Name		zh-CN	支架名称(变更后)	
+自動印刷対象レイアウト			base									ja-JP	自動印刷対象レイアウト		en-US	Auto-Print Layout		zh-CN	自动印刷对象版面设计	
+キュー登録日時			base									ja-JP	キュー登録日時		en-US	Queue Date		zh-CN	队列登录日时	
+キュー登録日(From)		date	base									ja-JP	キュー登録日(From)		en-US	Queue Date (From)		zh-CN	队列登录日(From)	
+キュー登録時間(From)			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]$	inputLimitCheckTimeOnlyError							ja-JP	キュー登録時間(From)		en-US	Queue Time (From)		zh-CN	队列登录时间(From)	
+キュー登録日(To)		date	base									ja-JP	キュー登録日(To)		en-US	Queue Date (To)		zh-CN	队列登录日(To)	
+キュー登録時間(To)			base	^([0-1][0-9]|[2][0-3]):[0-5][0-9]$	inputLimitCheckTimeOnlyError							ja-JP	キュー登録時間(To)		en-US	Queue Time (To)		zh-CN	队列登录时间(To)	
+印刷履歴詳細			base									ja-JP	印刷履歴詳細		en-US	Print History Details		zh-CN	打印履历详细	
+ページ総数			base									ja-JP	ページ総数		en-US	Total Pages		zh-CN	总页数	
+印刷ユーザCD			base	^[0-9a-zA-Z\-]*$	inputLimitCheckAlphabetAndNumericAndHyphenOnlyError		30					ja-JP	印刷ユーザCD		en-US	Print User Code		zh-CN	打印用户CD	
+保護PDF			base									ja-JP	保護PDF		en-US	Protected PDF		zh-CN	保护PDF	
+印刷データタイプ			base									ja-JP	印刷データタイプ		en-US	Print Data Type		zh-CN	打印数据类型	
+お知らせマスタメンテナンスグリッド			base									ja-JP	お知らせマスタメンテナンスグリッド		en-US	Announcement Master Grid		zh-CN	通知主表维护列表	
+メッセージマスタメンテナンスグリッド			base									ja-JP	メッセージマスタメンテナンスグリッド		en-US	Message Master Maintenance Grid		zh-CN	信息主表维护列表	
+メニューマスタメンテナンスグリッド			base									ja-JP	メニューマスタメンテナンスグリッド		en-US	Menu Master Maintenance Grid		zh-CN	菜单主表维护列表	
+メニューマスタ一覧グリッド			base									ja-JP	メニューマスタ一覧グリッド		en-US	Menu Master List Grid		zh-CN	菜单主表一览列表	
+ユーザマスタ一覧グリッド			base									ja-JP	ユーザマスタ一覧グリッド		en-US	User Master List Grid		zh-CN	用户主表一览列表	
+ログ一覧グリッド			base									ja-JP	ログ一覧グリッド		en-US	Log List Grid		zh-CN	日志一览列表	
+ログ明細一覧グリッド			base									ja-JP	ログ明細一覧グリッド		en-US	Log Detail List Grid		zh-CN	日志明细一览列表	
+画面グリッドマスタメンテナンスグリッド			base									ja-JP	画面グリッドマスタメンテナンスグリッド		en-US	Screen grid master maintenance grid		zh-CN	画面列表主表维护列表	
+画面グリッド権限マスタメンテナンスグリッド			base									ja-JP	画面グリッド権限マスタメンテナンスグリッド		en-US	Screen Grid Access Control Maintenance Grid		zh-CN	画面列表权限主表维护列表	
+画面マスタ一覧グリッド			base									ja-JP	画面マスタ一覧グリッド		en-US	Screen Master List Grid		zh-CN	画面主表一览列表	
+画面項目マスタメンテナンスグリッド			base									ja-JP	画面項目マスタメンテナンスグリッド		en-US	Screen item master maintenance grid		zh-CN	画面项目主表维护列表	
+画面項目権限マスタメンテナンスグリッド			base									ja-JP	画面項目権限マスタメンテナンスグリッド		en-US	Screen item authority master maintenance grid		zh-CN	画面项目权限主表维护列表	
+区分値グループマスタメンテナンスグリッド			base									ja-JP	区分値グループマスタメンテナンスグリッド		en-US	Classification Group Master Maintenance Grid		zh-CN	区分值组主表维护列表	
+区分値グループ明細マスタメンテナンスグリッド			base									ja-JP	区分値グループ明細マスタメンテナンスグリッド		en-US	Classification Group Detail Master Maintenance Grid		zh-CN	区分值组明细主表维护列表	
+区分値マスタメンテナンスグリッド			base									ja-JP	区分値マスタメンテナンスグリッド		en-US	Classification Master Maintenance Grid		zh-CN	区分值主表维护列表	
+区分値マスタ一覧グリッド			base									ja-JP	区分値マスタ一覧グリッド		en-US	Classification Master List Grid		zh-CN	区分值主表一览列表	
+権限グループマスタメンテナンスグリッド			base									ja-JP	権限グループマスタメンテナンスグリッド		en-US	Access Control Group Master Maintenance Grid		zh-CN	权限组主表维护列表	
+権限グループマスタ一覧グリッド			base									ja-JP	権限グループマスタ一覧グリッド		en-US	Access Control Group Master List Grid		zh-CN	权限组主表一览列表	
+権限マスタメンテナンスグリッド			base									ja-JP	権限マスタメンテナンスグリッド		en-US	Access Control Maintenance Grid		zh-CN	权限主表维护列表	
+権限マスタ一覧グリッド			base									ja-JP	権限マスタ一覧グリッド		en-US	Access Control List Grid		zh-CN	权限主表一览列表	
+辞書カルチャマスタメンテナンスグリッド			base									ja-JP	辞書カルチャマスタメンテナンスグリッド		en-US	Dictionary culture master maintenance grid		zh-CN	词典区域和语言主表维护列表	
+辞書マスタメンテナンスグリッド			base									ja-JP	辞書マスタメンテナンスグリッド		en-US	Dictionary master maintenance grid		zh-CN	词典主表维护列表	
+表示必須			base									ja-JP	表示必須		en-US	Display Required		zh-CN	必须表示	
+時刻			base									ja-JP	時刻		en-US	Time		zh-CN	时刻	
+同一ウインドウで開く			base									ja-JP	同一ウインドウで開く		en-US	Open in Same Window		zh-CN	同一窗口中打开	
+別ウインドウを新規で開く			base									ja-JP	別ウインドウを新規で開く		en-US	Open in New Window		zh-CN	新窗口中打开	
+別ウインドウを同一画面で開く			base									ja-JP	別ウインドウを同一画面で開く		en-US	Open in New Window With Same Screen		zh-CN	同一画面新窗口中打开	
+開き方			base									ja-JP	開き方		en-US	Open Method		zh-CN	打开方式	
+表示種別			base	^[0-9a-zA-Z\-]*$	inputLimitCheckAlphabetAndNumericAndHyphenOnlyError		30					ja-JP	表示種別		en-US	Display Device		zh-CN	显示类型	
+権限制御区分	権限制御区分	text	base	^[0-9]*$	inputLimitCheckNumericOnlyError		1					ja-JP	権限制御区分	権限制御区分	en-US	Access Control Class	Access Control Class	zh-CN	权限控制区分	权限控制区分
+権限制御区分CD	権限制御区分CD	text	base	^[0-9a-zA-Z\-]*$	inputLimitCheckAlphabetAndNumericAndHyphenOnlyError							ja-JP	権限制御区分CD	権限制御区分CD	en-US	Access Control Class Code	Access Control Class Code	zh-CN	权限控制区分CD	权限控制区分CD
+権限制御区分名称	権限制御区分名称	text	base									ja-JP	権限制御区分名称	権限制御区分名称	en-US	Access Control Class Name	Access Control Class Name	zh-CN	权限控制区分名称	权限控制区分名称
+許可を指定	許可を指定		base									ja-JP	許可を指定	許可を指定	en-US	Specify Permissions	Specify Permissions	zh-CN	指定许可	指定许可
+拒否を指定	拒否を指定		base									ja-JP	拒否を指定	拒否を指定	en-US	Specify Lack of Permissions	Specify Lack of Permissions	zh-CN	指定拒绝	指定拒绝
+帳票マスタメンテナンス			base									ja-JP	帳票マスタメンテナンス		en-US	Document Master Maintenance		zh-CN	帐票主数据维护	
+帳票マスタメンテナンスグリッド			base									ja-JP	帳票マスタメンテナンスグリッド		en-US	Document Master Maintenance Grid		zh-CN	帐票主数据维护表单	
+帳票名称			base				60					ja-JP	帳票名称		en-US	Document Name		zh-CN	帐票名称	
+プロパティマスタメンテナンス			base									ja-JP	プロパティマスタメンテナンス		en-US	Property Master Maintenance		zh-CN	属性主数据维护	
+プロパティマスタメンテナンスグリッド			base									ja-JP	プロパティマスタメンテナンスグリッド		en-US	Property Master Maintenance Grid		zh-CN	属性主数据维护表单	
+帳票レイアウト一覧			base									ja-JP	帳票レイアウト一覧		en-US	List of Document Layouts		zh-CN	帐票布局一览	
+端末設定			base									ja-JP	端末設定		en-US	Terminal Setting		zh-CN	端末设定	
+端末リスト			base									ja-JP	端末リスト		en-US	Terminal List		zh-CN	端末清单	
+端末CD			base									ja-JP	端末CD		en-US	Terminal Code		zh-CN	端末编码	
+ユーザ別自動印刷設定	ユーザ別プリンタ		base									ja-JP	ユーザ別自動印刷設定	ユーザ別プリンタ	en-US	Automated Print Settings (User)	Printer(User)	zh-CN	自动印刷设定(用户)	打印(用户)
+端末別自動印刷設定	端末別プリンタ		base									ja-JP	端末別自動印刷設定	端末別プリンタ	en-US	Automated Print Settings (Terminal)	Printer(Terminal)	zh-CN	自动印刷设定(端末)	打印(端末)

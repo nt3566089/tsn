@@ -1,0 +1,9 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	cultureId	カルチャ		1	1		1	1													
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	dictNm	辞書名		1	1		0	1													
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	search	検索		1	1		0	1													
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	dictCultureList	HT辞書カルチャマスタメンテナンスグリッド	grid	1	1		0	1	bculture.vdict.dictNm	カルチャ	1	text	1	0		0	300				
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	dictCultureList	HT辞書カルチャマスタメンテナンスグリッド	grid	1	1		0	1	dictNm	辞書名	2	text	1	0		0	300				
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	dictCultureList	HT辞書カルチャマスタメンテナンスグリッド	grid	1	1		0	1	mhtDictCultureAsOne.dictNm	HTカルチャ名	3	text	1	1		0	300				
+HTDictCultureMaster	HT辞書カルチャマスタメンテナンス	wms	register	登録		1	1		0	1													

@@ -1,0 +1,452 @@
+# /---------------------------------------------------------------------------
+# additionalForeignKeyMap: (NotRequired - Default map:{})
+#
+# If foreign key does not exist in your database,
+# you can set up here as virtual foreign key for DBFlute.
+#
+# And it's one-to-one relation if you add one fixed condition to referrer table, 
+# you can set virtual foreign key with fixedCondition and fixedSuffix.
+# And you can use it to view objects too.
+#
+# If local column name is same as foreign column name,
+# you can omit the setting of localColumnName and foreignColumnName.
+# The names are treated as case insensitive.
+#
+# Example:
+# map:{
+#     ; FK_MEMBER_MEMBER_STATUS_CODE = map:{
+#         ; localTableName  = MEMBER             ; foreignTableName  = MEMBER_STATUS
+#         ; localColumnName = MEMBER_STATUS_CODE ; foreignColumnName = MEMBER_STATUS_CODE
+#     }
+#     ; FK_PURCHASE_MEMBER_ID = map:{
+#         ; localTableName  = PURCHASE  ; foreignTableName  = MEMBER
+#     }
+#     ; FK_MEMBER_MEMBER_ADDRESS_VALID = map:{
+#         ; localTableName  = MEMBER    ; foreignTableName  = MEMBER_ADDRESS
+#         ; localColumnName = MEMBER_ID ; foreignColumnName = MEMBER_ID
+#         ; fixedCondition = 
+#          $$foreignAlias$$.VALID_BEGIN_DATE <= /*targetDate(Date)*/null
+#      and $$foreignAlias$$.VALID_END_DATE >= /*targetDate(Date)*/null 
+#         ; fixedSuffix = AsValid
+#     }
+# }
+#
+# *The line that starts with '#' means comment-out.
+#
+map:{
+    #; FK_MEMBER_MEMBER_STATUS_CODE = map:{
+    #    ; localTableName  = MEMBER             ; foreignTableName  = MEMBER_STATUS
+    #    ; localColumnName = MEMBER_STATUS_CODE ; foreignColumnName = MEMBER_STATUS_CODE
+    #}
+    ; $$split$$ = map:{
+        ; class = dummy
+    }
+
+
+    ##########ここからは業務的one-to-oneの関連を定義し子テーブルなどをSetupで結合を可能にする外部キー設定
+    ; FK_T_ALLOC_INST_H_ALLOC_INST_H_ID = map:{
+        ; localTableName  = T_ALLOC_INST_H ; foreignTableName = T_PICKING_H
+        ; localColumnName = ALLOC_INST_H_ID ; foreignColumnName = ALLOC_INST_H_ID
+        ; fixedCondition  = (1 = 1)
+    }
+    
+	## [#5131][v3.1] ピッキングリストの採番を発行時に変更 2018.08.22 kawana Start
+
+    #引当指示ヘッダテーブルからセンタ取引先マスタを結合(届先)
+    ; FK_T_ALLOC_INST_H_TO_M_CENTER_CUSTOMER_BY_DELIV = map:{
+        ; localTableName  = T_ALLOC_INST_H                                    ; foreignTableName  = M_CENTER_CUSTOMER
+        ; localColumnName = CENTER_ID/DELIV_CUSTOMER_ID/DELIVERY_COURSE_ID  ; foreignColumnName = CENTER_ID/CUSTOMER_ID/DELIVERY_COURSE_ID
+        ; fixedSuffix = ByDelivCustomerId
+    }
+
+    #引当指示ヘッダテーブルからセンタ取引先マスタを結合(納品先)
+    ; FK_T_ALLOC_INST_H_TO_M_CENTER_CUSTOMER_BY_SUPPLY = map:{
+        ; localTableName  = T_ALLOC_INST_H                                    ; foreignTableName  = M_CENTER_CUSTOMER
+        ; localColumnName = CENTER_ID/SUPPLY_CUSTOMER_ID/DELIVERY_COURSE_ID  ; foreignColumnName = CENTER_ID/CUSTOMER_ID/DELIVERY_COURSE_ID
+        ; fixedSuffix = BySupplyCustomerId
+    }
+    
+	## [#5131][v3.1] ピッキングリストの採番を発行時に変更 2018.08.22 kawana End
+
+    #出荷指示ヘッダテーブルから郵便番号マスタを結合(届先)
+    ; FK_T_SHIPPING_INST_H_TO_M_ZIP_FOR_DELIV = map:{
+        ; localTableName  = T_SHIPPING_INST_H    ; foreignTableName  = M_ZIP
+        ; localColumnName = DELIV_ZIP_CD         ; foreignColumnName = ZIP_CD
+        ; fixedSuffix = ForDeliv
+    }
+
+    #取引先マスタから荷主センタマスタを結合
+    ; FK_M_CUSTOMER_TO_M_CLIENT_CENTER_BY_CLIENT_ID = map:{
+        ; localTableName  = M_CUSTOMER               ; foreignTableName  = M_CLIENT_CENTER
+        ; localColumnName = CUSTOMER_ID/CLIENT_ID    ; foreignColumnName = CUSTOMER_ID/CLIENT_ID
+        ; fixedSuffix = ByClientId
+    }
+
+
+	#[HT自動印刷対応] 2016.6.3 inoue Start
+	# ユーザ別自動印刷設定マスタから帳票レイアウトマスタを結合
+    ; FK_P_USER_AUTO_PRINT_SETTING_TO_P_REPORT_LAYOUT_BY_REPORT_LAYOUT_ID = map:{
+        ; localTableName  = P_USER_AUTO_PRINT_SETTING  ; foreignTableName  = P_REPORT_LAYOUT
+        ; localColumnName = REPORT_LAYOUT_ID           ; foreignColumnName = REPORT_LAYOUT_ID
+        ; fixedSuffix = ByReportLayoutId
+    }
+
+	# ユーザ別自動印刷設定マスタからプリンタグループマスタを結合
+    ; FK_P_USER_AUTO_PRINT_SETTING_TO_P_PRINTER_GROUP_BY_P_PRINTER_GROUP_ID = map:{
+        ; localTableName  = P_USER_AUTO_PRINT_SETTING  ; foreignTableName  = P_PRINTER_GROUP
+        ; localColumnName = PRINTER_GROUP_ID           ; foreignColumnName = PRINTER_GROUP_ID
+        ; fixedSuffix = ByPrinterGroupId
+    }
+
+	# ユーザ別自動印刷設定マスタからプリンタマスタを結合
+    ; FK_P_USER_AUTO_PRINT_SETTING_TO_P_PRINTER_BY_P_PRINTER_ID = map:{
+        ; localTableName  = P_USER_AUTO_PRINT_SETTING  ; foreignTableName  = P_PRINTER
+        ; localColumnName = PRINTER_ID                 ; foreignColumnName = PRINTER_ID
+        ; fixedSuffix = ByPrinterId
+    }
+
+	# ユーザ別自動印刷設定マスタからプリンタ属性マスタを結合
+    ; FK_P_USER_AUTO_PRINT_SETTING_TO_P_PRINTER_ATTRIBUTE_BY_P_PRINTER_ATTRIBUTE_ID = map:{
+        ; localTableName  = P_USER_AUTO_PRINT_SETTING  ; foreignTableName  = P_PRINTER_ATTRIBUTE
+        ; localColumnName = PRINTER_ATTRIBUTE_ID       ; foreignColumnName = PRINTER_ATTRIBUTE_ID
+        ; fixedSuffix = ByPrinterAttributeId
+    }
+	#[HT自動印刷対応] 2016.6.3 inoue End
+
+	## [#6677][v3.1] 端末別自動印刷設定機能の追加 2019.09.02 kawana Start
+	# 端末別自動印刷設定マスタから帳票レイアウトマスタを結合
+    ; FK_P_TERMINAL_AUTO_PRINT_SET_TO_P_REPORT_LAYOUT_BY_REPORT_LAYOUT_ID = map:{
+        ; localTableName  = P_TERMINAL_AUTO_PRINT_SET  ; foreignTableName  = P_REPORT_LAYOUT
+        ; localColumnName = REPORT_LAYOUT_ID           ; foreignColumnName = REPORT_LAYOUT_ID
+        ; fixedSuffix = ByReportLayoutId
+    }
+
+	# 端末別自動印刷設定マスタからプリンタグループマスタを結合
+    ; FK_P_TERMINAL_AUTO_PRINT_SET_TO_P_PRINTER_GROUP_BY_P_PRINTER_GROUP_ID = map:{
+        ; localTableName  = P_TERMINAL_AUTO_PRINT_SET  ; foreignTableName  = P_PRINTER_GROUP
+        ; localColumnName = PRINTER_GROUP_ID           ; foreignColumnName = PRINTER_GROUP_ID
+        ; fixedSuffix = ByPrinterGroupId
+    }
+
+	# 端末別自動印刷設定マスタからプリンタマスタを結合
+    ; FK_P_TERMINAL_AUTO_PRINT_SET_TO_P_PRINTER_BY_P_PRINTER_ID = map:{
+        ; localTableName  = P_TERMINAL_AUTO_PRINT_SET  ; foreignTableName  = P_PRINTER
+        ; localColumnName = PRINTER_ID                 ; foreignColumnName = PRINTER_ID
+        ; fixedSuffix = ByPrinterId
+    }
+
+	# 端末別自動印刷設定マスタからプリンタ属性マスタを結合
+    ; FK_P_TERMINAL_AUTO_PRINT_SET_TO_P_PRINTER_ATTRIBUTE_BY_P_PRINTER_ATTRIBUTE_ID = map:{
+        ; localTableName  = P_TERMINAL_AUTO_PRINT_SET  ; foreignTableName  = P_PRINTER_ATTRIBUTE
+        ; localColumnName = PRINTER_ATTRIBUTE_ID       ; foreignColumnName = PRINTER_ATTRIBUTE_ID
+        ; fixedSuffix = ByPrinterAttributeId
+    }
+	## [#6677][v3.1] 端末別自動印刷設定機能の追加 2019.09.02 kawana End
+
+	## [#1940] 検索条件のユーザCDが適用されていない問題を修正 2017.06.21 kawana Start
+	## [#1713] SDピッキング検索結果にユーザ名を表示 2017.04.27 kawana Start
+
+    # 梱包ヘッダからユーザマスタを結合 (更新ユーザ)
+    ; FK_T_PACKING_H_TO_B_USER_BY_UPD = map:{
+        ; localTableName  = T_PACKING_H    ; foreignTableName  = B_USER
+        ; localColumnName = UPD_USER       ; foreignColumnName = USER_CD
+        ; fixedSuffix = ByUpdUser
+    }
+
+	## [#1713] SDピッキング検索結果にユーザ名を表示 2017.04.27 kawana End
+	## [#1940] 検索条件のユーザCDが適用されていない問題を修正 2017.06.21 kawana End
+
+    ##########ここまでは業務的one-to-oneの関連を定義し子テーブルなどをSetupで結合を可能にする外部キー設定
+
+    ##########ここからは辞書（VIEW）経由で名称を解決する為に、カルチャＩＤをアプリ側から指定可能とし、one-to-oneによる結合を可能にする外部キー設定（基盤や共通部品で管理するテーブルは対象外）
+    ; FK_B_CLASS_DTL_DICT_ID = map:{
+        ; localTableName  = B_CLASS_DTL ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CENTER_CLASS_DTL_DICT_ID = map:{
+        ; localTableName  = M_CENTER_CLASS_DTL ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_PROCESS_TYPE_DICT_ID = map:{
+        ; localTableName  = M_PROCESS_TYPE ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_SHAPE_DICT_ID = map:{
+        ; localTableName  = M_SHAPE ; foreignTableName = V_DICT
+        ; localColumnName = SHAPE_DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_SHAPE_UNIT_DICT_ID = map:{
+        ; localTableName  = M_SHAPE ; foreignTableName = V_DICT
+        ; localColumnName = SHAPE_UNIT_DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_STOCK_TYPE_DICT_ID = map:{
+        ; localTableName  = M_STOCK_TYPE ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_COL_ID = map:{
+        ; localTableName  = B_COL ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_CULTURE_ID = map:{
+        ; localTableName  = B_CULTURE ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_ITEM_ID = map:{
+        ; localTableName  = B_ITEM ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_MENU_ID = map:{
+        ; localTableName  = B_MENU ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_MENU_GRP_ID = map:{
+        ; localTableName  = B_MENU_GRP ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_ROLE_ID = map:{
+        ; localTableName  = B_ROLE ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_ROLE_GRP_ID = map:{
+        ; localTableName  = B_ROLE_GRP ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_SCREEN_ID = map:{
+        ; localTableName  = B_SCREEN ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CENTER_COL_ID = map:{
+        ; localTableName  = M_CENTER_COL ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CENTER_ITEM_ID = map:{
+        ; localTableName  = M_CENTER_ITEM ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CENTER_SCREEN_ID = map:{
+        ; localTableName  = M_CENTER_SCREEN ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CLIENT_COL_ID = map:{
+        ; localTableName  = M_CLIENT_COL ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CLIENT_ITEM_ID = map:{
+        ; localTableName  = M_CLIENT_ITEM ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CLIENT_SCREEN_ID = map:{
+        ; localTableName  = M_CLIENT_SCREEN ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+#[直接印刷対応] テーブルレイアウト変更に伴い不要となったので削除 2016.1.7 inoue Start
+#    ; FK_P_REPORT_LAYOUT_ID = map:{
+#        ; localTableName  = P_REPORT_LAYOUT ; foreignTableName = V_DICT
+#        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+#        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+#    }
+#[直接印刷対応] テーブルレイアウト変更に伴い不要となったので削除 2016.1.7 inoue End
+    ; FK_P_REPORT_LAYOUT_ITEM_ID = map:{
+        ; localTableName  = P_REPORT_LAYOUT_ITEM ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_P_SUBREP_LAYOUT_ITEM_ID = map:{
+        ; localTableName  = P_SUBREP_LAYOUT_ITEM ; foreignTableName = V_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ##########ここまでは辞書（VIEW）経由で名称を解決する為に、カルチャＩＤをアプリ側から指定可能とし、one-to-oneによる結合を可能にする外部キー設定（基盤や共通部品で管理するテーブルは対象外）
+
+    ##########ここからは辞書（VIEW）経由で名称を解決するテーブル群より、辞書マスタへの外部キーより生成される各種機能を除去する設定（誤って利用してしまう事に対する事故防止策）
+    ; FK_B_CLASS_DTL_DICT_ID_NOT_FK = map:{
+        ; localTableName   = B_CLASS_DTL ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CENTER_CLASS_DTL_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CENTER_CLASS_DTL ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_PROCESS_TYPE_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_PROCESS_TYPE ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_SHAPE_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_SHAPE ; foreignTableName = B_DICT
+        ; localColumnName  = SHAPE_DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_SHAPE_UNIT_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_SHAPE ; foreignTableName = B_DICT
+        ; localColumnName  = SHAPE_UNIT_DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_STOCK_TYPE_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_STOCK_TYPE ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+#    ; FK_B_COL_DICT_ID_NOT_FK = map:{
+#        ; localTableName   = B_COL ; foreignTableName = B_DICT
+#        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+#        ; suppressJoin     = true
+#        ; suppressSubQuery = true
+#    }
+    ; FK_B_CULTURE_DICT_ID_NOT_FK = map:{
+        ; localTableName   = B_CULTURE ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+#    ; FK_B_ITEM_DICT_ID_NOT_FK = map:{
+#        ; localTableName   = B_ITEM ; foreignTableName = B_DICT
+#        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+#        ; suppressJoin     = true
+#        ; suppressSubQuery = true
+#    }
+    ; FK_B_MENU_DICT_ID_NOT_FK = map:{
+        ; localTableName   = B_MENU ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+#    ; FK_B_MENU_GRP_DICT_ID_NOT_FK = map:{
+#        ; localTableName   = B_MENU_GRP ; foreignTableName = B_DICT
+#        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+#        ; suppressJoin     = true
+#        ; suppressSubQuery = true
+#    }
+    ; FK_B_ROLE_DICT_ID_NOT_FK = map:{
+        ; localTableName   = B_ROLE ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_B_ROLE_GRP_DICT_ID_NOT_FK = map:{
+        ; localTableName   = B_ROLE_GRP ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+#    ; FK_B_SCREEN_DICT_ID_NOT_FK = map:{
+#        ; localTableName   = B_SCREEN ; foreignTableName = B_DICT
+#        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+#        ; suppressJoin     = true
+#        ; suppressSubQuery = true
+#    }
+    ; FK_M_CENTER_COL_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CENTER_COL ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CENTER_ITEM_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CENTER_ITEM ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CENTER_SCREEN_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CENTER_SCREEN ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CLIENT_COL_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CLIENT_COL ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CLIENT_ITEM_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CLIENT_ITEM ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ; FK_M_CLIENT_SCREEN_DICT_ID_NOT_FK = map:{
+        ; localTableName   = M_CLIENT_SCREEN ; foreignTableName = B_DICT
+        ; localColumnName  = DICT_ID ; foreignColumnName = DICT_ID
+        ; suppressJoin     = true
+        ; suppressSubQuery = true
+    }
+    ##########ここまでは辞書（VIEW）経由で名称を解決するテーブル群より、辞書マスタへの外部キーより生成される各種機能を除去する設定（誤って利用してしまう事に対する事故防止策）
+
+## [#2734][#3146] HT国際化対応 2017.12.15 kawana Start
+
+    ##########ここからはHT辞書（VIEW）経由で名称を解決する為に、カルチャＩＤをアプリ側から指定可能とし、one-to-oneによる結合を可能にする外部キー設定
+    ; FK_B_COL_TO_V_HT_DICT = map:{
+        ; localTableName  = B_COL ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_ITEM_TO_V_HT_DICT = map:{
+        ; localTableName  = B_ITEM ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_MENU_TO_V_HT_DICT = map:{
+        ; localTableName  = B_MENU ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_MENU_GRP_TO_V_HT_DICT = map:{
+        ; localTableName  = B_MENU_GRP ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_SCREEN_TO_V_HT_DICT = map:{
+        ; localTableName  = B_SCREEN ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_B_ARG_TO_V_HT_DICT = map:{
+        ; localTableName  = B_ARG ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CENTER_SCREEN_TO_V_HT_DICT = map:{
+        ; localTableName  = M_CENTER_SCREEN ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }
+    ; FK_M_CLIENT_SCREEN_TO_V_HT_DICT = map:{
+        ; localTableName  = M_CLIENT_SCREEN ; foreignTableName = V_HT_DICT
+        ; localColumnName = DICT_ID ; foreignColumnName = DICT_ID
+        ; fixedCondition  = $$foreignAlias$$.CULTURE_ID = /*cultureId(Long)*/null
+    }    
+    ##########ここまではHT辞書（VIEW）経由で名称を解決する為に、カルチャＩＤをアプリ側から指定可能とし、one-to-oneによる結合を可能にする外部キー設定
+
+## [#2734][#3146] HT国際化対応 2017.12.15 kawana End
+
+}
+# ----------------/

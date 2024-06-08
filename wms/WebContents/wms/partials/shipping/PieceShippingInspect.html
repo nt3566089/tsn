@@ -1,0 +1,105 @@
+<div ng-controller="PieceShippingInspect" owd-screen="PieceShippingInspect">
+	<!-- [Ver3.1][#5117]検品数がインクリメント時に正常音を出す 2018.09.10 matsumoto Start  -->
+	<audio id="inspSound" src="wms/audio/inspection.mp3"></audio>
+	<!-- [Ver3.1][#5235] パラメータマスタを取得し、再生有無を判断する 2018.10.03 matsumoto Start  -->
+	<audio id="inspCompSound" src="wms/audio/inspectionComplete.mp3"></audio>
+	<!-- [Ver3.1][#5235] パラメータマスタを取得し、再生有無を判断する 2018.10.03 matsumoto End  -->
+	<!-- [Ver3.1][#5117]検品数がインクリメント時に正常音を出す 2018.09.10 matsumoto End  -->
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<accordion>
+		<!-- [EC-CT1-135] ヘッダー自動開閉 2015.03.20 Sakata Start -->
+			<accordion-group is-open="$parent.isopen">
+		<!-- [EC-CT1-135] ヘッダー自動開閉 2015.03.20 Sakata End -->
+				<accordion-heading>
+					{{"searchCondition" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana Start -->
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto Start  -->
+						<owd-text id="userCd" ng-model="searchCondition.userCd" ng-keydown="handleKeydown($event)" ng-blur="userCdBlur()" label-text="ユーザCD">
+							<owd-info ng-model="userNm"></owd-info>
+						</owd-text>
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto End  -->
+						<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana End -->
+						<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana Start -->
+						<!-- [C-CWMS-0051]梱包計算対応  ネーゾー  2015/11/16 Start -->
+						<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" ng-keydown="handleKeydown($event)" label-text="出庫作業No./出荷梱包No."></owd-text>
+						<!-- [C-CWMS-0051]梱包計算対応  ネーゾー  2015/11/16 End -->
+						<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana End -->
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto Start  -->
+						<owd-text id="deliveryCourseCd" ng-model="pieceShippingInspectList[0].deliveryCourseCd" label-text="配送コースCD">
+							<owd-info ng-model="pieceShippingInspectList[0].deliveryCourseNm"></owd-info>
+						</owd-text>
+						<owd-text id="supplyCustomerCd" ng-model="pieceShippingInspectList[0].supplyCustomerCd" label-text="納品先CD">
+							<owd-info ng-model="pieceShippingInspectList[0].supplyCustomerNm"></owd-info>
+						</owd-text>
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto End  -->
+						<!-- [Ver3.1][#5117] 運送業者をドロップダウンリストからテキストボックスに変更 2018.09.10 matsumoto Start -->
+						<owd-text id="carrierCd" ng-model="pieceShippingInspectList[0].carrierCd" ng-change="carrierChange()" label-text="運送業者CD">
+							<owd-info ng-model="pieceShippingInspectList[0].carrierNm"></owd-info>
+						</owd-text>
+						<!-- [Ver3.1][#5117] 運送業者をドロップダウンリストからテキストボックスに変更 2018.09.10 matsumoto End -->
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana Start -->
+				<owd-button id="search" class="btn-info" ng-click="search()" ng-disabled="searchinputform.$invalid">検索</owd-button>
+				<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana End -->
+			</div>
+		</div>
+	<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana Start -->
+	</form>
+		<br>
+	<form id="inputform" name="inputform" novalidate>
+	<!-- [EC-CT1-186] 検索エリアと入力エリアにフォームをわけて「検索」ボタンの有効無効制御を行う 2015.04.06 kawana End -->
+		<accordion>
+			<accordion-group is-open="isopen">
+				<fieldset>
+					<div class= "row">
+						<!-- [ON推-品向-389] JANCDを半角に変更 2014.12.02 kawana Start -->
+						<owd-text id="janCd" ng-model="pieceShippingInspecting.janCd" ng-keydown="handleKeydown($event)" label-text="JANCD"></owd-text>
+						<!-- [ON推-品向-389] JANCDを半角に変更 2014.12.02 kawana End -->
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto Start  -->
+						<owd-text id="productCd" ng-model="productCd" label-text="商品CD">
+							<owd-info ng-model="productNm"></owd-info>
+						</owd-text>
+						<!-- [Ver3.1][#5117]項目CDに対する名称をテキストボックスの下に表示 2018.9.10 matsumoto End  -->
+						<!--  [Ver3.0] unit of measure対応 2017.11.20 ライ START -->
+						<owd-text id="productUnit" ng-model="productUnit" label-text="商品単位"></owd-text>
+						<!--  [Ver3.0] unit of measure対応 2017.11.20 ライ END -->
+						<owd-number id="shippingPackingNo" ng-model="shippingPackingNo" label-text="合計口数"></owd-number>
+						<owd-number id="instNumT" ng-model="instNumT" label-text="検品数"></owd-number>
+						<owd-number id="spgQtyOnsT" ng-model="spgQtyOnsT" label-text="検品済数"></owd-number>
+						<owd-number id="instSu" ng-model="instSu" label-text="指示数"></owd-number>
+						<owd-number id="instNum" ng-model="instNum" label-text="総検品数"></owd-number>
+						<owd-number id="spgQtyOns" ng-model="spgQtyOns" label-text="検品済総数"></owd-number>
+						<owd-select id="shpCheckDisplay" ng-model="pieceShippingInspecting.shpCheckDisplay" owd-models="shpCheckDisplayList"  owd-repeat-key="classCd" owd-repeat-value="classNm"  ng-change="displayChange()" owd-remove-blank label-text="未検品のみ表示" ></owd-select>
+						<owd-text id="status" ng-model="status" label-text="ステータス"></owd-text>
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<owd-button id="registerSu" class="btn-info" ng-disabled="!gridOptions.gridApi.grid.rows.length" ng-click="registerSu()" >数量入力</owd-button>
+							<owd-button id="registerBox" class="btn-info" ng-disabled="!gridOptions.gridApi.grid.rows.length"  ng-click="registerBox()" >箱登録</owd-button>
+							<owd-button id="interrupt" class="btn-danger" ng-disabled="!gridOptions.gridApi.grid.rows.length"  ng-click="interrupt()" >検品中断</owd-button>
+						</div>
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="pieceShippingInspectList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="clear" class="btn-danger" ng-disabled="!gridOptions.gridApi.grid.rows.length" ng-click="pieceShippingInspectClear()" >クリア</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

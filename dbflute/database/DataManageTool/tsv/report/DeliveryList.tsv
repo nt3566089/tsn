@@ -1,0 +1,20 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblContactCorp	日本たばこ産業株式会社	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblCorporation	ＴＳネットワーク株式会社	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblDono	殿	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSnNo3	発送番号	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSnNo2	ＪＴ整理番号	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSnNo1	ＴＳＮ整理番号	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblCarNo	号車No	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblPlnCarKnd	計画車種	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblAmCarKnd	実績車種	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSnYMD	発送日	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblArvYMD	到着日	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSupplierName	発送元	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblShipName	発送先	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblTotal	計	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblSelNo	封印Ｎｏ	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblDepartureTime	発地出発時間	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblArrivalTime	着地到着時間	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblLandingDepartureTime	着地出発時間	String	1	
+DeliveryList	輸送帳票	輸送帳票	../../../../../../reports/shipping/DeliveryList.jrxml	1						0	0	lblDepartureArrivalTime	発地到着時間	String	1	

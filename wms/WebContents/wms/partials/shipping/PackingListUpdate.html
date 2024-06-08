@@ -1,0 +1,121 @@
+<div ng-controller="PackingListUpdate" owd-screen="PackingListUpdate">
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<accordion>
+			<accordion-group is-open="isopen">
+				<accordion-heading>
+					{{"searchCondition" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="search.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="search.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-text id="pickingWorkNo" ng-model="search.pickingWorkNo" label-text="出庫作業No."></owd-text>
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="searchlist()">検索</owd-button>
+				<!--  [ON推-品向-557] Excel出力ボタンの位置変更 2015.01.15 kawana Start -->
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				<!--  [ON推-品向-557] Excel出力ボタンの位置変更 2015.01.15 kawana End -->
+			</div>
+		</div>
+	<!--  [EC-CT1-111] フォームを分ける修正 2015.03.11 kyo Start -->
+	</form>
+	<form id="inputform" name="inputform" novalidate>
+	<!--  [EC-CT1-111] フォームを分ける修正 2015.03.11 kyo End -->
+		<br>
+		<accordion>
+			<accordion-group is-open="isopen">
+				<accordion-heading>
+					{{"selectInformation" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<fieldset>
+					<div class="row">
+						<owd-select id="boxNo" ng-model="select.boxNo" owd-models="boxNoList" owd-repeat-key="boxNoCd" owd-repeat-value="boxNoNm" owd-repeat-view-with-key="false" label-text="荷材No."></owd-select>
+						<owd-select id="boxCd" ng-model="select.boxCd" owd-models="boxList" owd-repeat-key="boxCd" owd-repeat-value="boxNm" label-text="荷材"></owd-select>
+						<!--<owd-text id="boxCd" ng-model="select.boxCd" label-text="荷材"></owd-text>-->
+						<!-- [Ver3.0] unit of measure対応 2017.11.22 ライ Start -->
+						<!-- [#3132][Ver3.0] 小数有無フラグを加味した小数点チェック処理について 2018.02.19 honma Mod Start -->
+						<owd-text id="unitNumBreakdown" ng-model="select.unitNumBreakdown" label-text="入数内訳"></owd-text>
+						<owd-calc-number id="pickNumSel" ng-model="select.pickNumSel" owd-multitext-options="multiTextOptions" owd-multitext-id="pickNumSelMultiText" owd-productid-model="select.product.productId" label-text="投入数"></owd-calc-number>
+						<!-- [#3132][Ver3.0] 小数有無フラグを加味した小数点チェック処理について 2018.02.19 honma Mod End -->
+						<!-- [Ver3.0] unit of measure対応 2017.11.22 ライ END -->
+						<owd-number id="allocNum" ng-model="select.allocNum" label-text="アイテム別梱包状況・出荷指示数"></owd-number>
+						<owd-number id="pickNum" ng-model="select.pickNum" label-text="アイテム別梱包状況・投入数"></owd-number>
+						<owd-number id="diffNum" ng-model="select.diffNum" label-text="アイテム別梱包状況・差異数"></owd-number>
+						<!-- [ON推-CT4-256] 排他処理に項目を追加 2014.11.21 kei Start -->
+<!-- 						<owd-text:hidden id="updDt" ng-model="select.updDt" label-text="updDt"></owd-text> -->
+<!-- 						<owd-text:hidden id="count" ng-model="select.count" label-text="count"></owd-text> -->
+						<!-- [ON推-CT4-256] 排他処理に項目を追加 2014.11.21 kei End -->
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="addRow" class="btn-info" ng-click="addRow()">追加・更新</owd-button>
+				<!--  [ON推-品向-557] Excel出力ボタンの位置変更(ここから削除して移動) 2015.01.15 kawana -->
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendwhite"><owd-span id="normal" label-text="通常"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendcyan"><owd-span id="update" label-text="変更"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendred"><owd-span id="delete" label-text="削除"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+
+		<br>
+		<!--  [EC-CT1-111] フォームを分ける修正 2015.03.11 kyo Start -->
+		<div owd-grid="gridOptions" id="packingList" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)" ></div>
+		<!--  [EC-CT1-111] フォームを分ける修正 2015.03.11 kyo End -->
+		<br>
+
+		<accordion>
+			<accordion-group is-open="isopen">
+				<accordion-heading>
+					{{"allocInformation" | owfMessage}}
+					<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+				</accordion-heading>
+				<fieldset>
+					<div class="row">
+						<owd-text id="delivCustomerNm" ng-model="footer.delivCustomerNm" label-text="届先名称"></owd-text>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+						<owd-text id="delivZipCd" ng-model="footer.delivZipCd" label-text="届先郵便番号" owd-add-button="zipclick()" ng-blur="zipCdBlur()"></owd-text>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+						<owd-text id="delivTelNo" ng-model="footer.delivTelNo" label-text="届先電話番号"></owd-text>
+						<owd-text id="delivAddress1" ng-model="footer.delivAddress1" label-text="届先住所１"></owd-text>
+						<owd-text id="delivAddress2" ng-model="footer.delivAddress2" label-text="届先住所２"></owd-text>
+						<owd-text id="delivAddress3" ng-model="footer.delivAddress3" label-text="届先住所３"></owd-text>
+						<owd-date id="delivDt" ng-model="footer.delivDt" label-text="配送指定日"></owd-date>
+						<owd-select id="delivTz" ng-model="footer.delivTz" owd-models="delivTzList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="納品指定時間"></owd-select>
+						<!-- [#255] 項目マスタ整備 hiddenで設定されていた項目を削除 2017.02.17 kawana -->
+					</div>
+
+					<!-- [#255] 項目マスタ整備 hiddenで設定されていた項目を削除 2017.02.17 kawana -->
+
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<!--[#7234]brタグを削除 2020.03.12 ono del -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+			<!-- [#76][C-CWMS-0067] クリアボタン追加 2016.11.02 kawana Start -->
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="clear" class="btn-danger" ng-disabled="!gridOptions.gridApi.grid.rows.length" ng-click="clear()" >クリア</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+			<!-- [#76][C-CWMS-0067] クリアボタン追加 2016.11.02 kawana End -->
+					<owd-button id="packingListUpdate" class="btn-success" ng-click="packingListUpdate()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

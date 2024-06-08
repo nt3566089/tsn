@@ -1,0 +1,54 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CasePickingSD	ケースピッキング	wms_sd	takingShippingFlg	作業日/出荷日		1	1		1	1													
+CasePickingSD	ケースピッキング	wms_sd	dtFrom	日付(From)		1	1		1	1													
+CasePickingSD	ケースピッキング	wms_sd	dtTo	日付(To)		1	1		1	1													
+CasePickingSD	ケースピッキング	wms_sd	pickingBatchNo	出庫指示バッチNo.		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	pickingWorkNo	出庫作業No.		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	casePickingNo	ケースピッキングNo.		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	supplyCustomerCd	納品先CD		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	emergencyFlg	緊急のみ		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	noStockOutFlg	欠品フラグ		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	deliveryCourseCd	配送コースCD	text	1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	updUser	担当者CD		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	search	検索		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	searchResultTitle	合計件数		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	detailTitle	明細		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	register	登録		1	1		0	1													
+CasePickingSD	ケースピッキング	wms_sd	casePickingList	ケースピッキングリスト指示一覧グリッド	grid	1	0		0	1	casePickingNo	ケースピッキングNo.	1	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingList	ケースピッキングリスト指示一覧グリッド	grid	1	0		0	1	packingStatusNm	梱包ステータス	2	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingList	ケースピッキングリスト指示一覧グリッド	grid	1	0		0	1	userCd	担当者CD	3	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingList	ケースピッキングリスト指示一覧グリッド	grid	1	0		0	1	userNm	担当者名称	4	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingList	ケースピッキングリスト指示一覧グリッド	grid	1	0		0	1	pickingClear	ピッキング解除	5		1	1		0					
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetailList	ケースピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	productNm	商品名称	1	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetailList	ケースピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	locationNm	ロケーション名称	2	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetailList	ケースピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	warehouseNm	倉庫名称	3	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetailList	ケースピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	4	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetailList	ケースピッキングリスト指示明細一覧グリッド	grid	1	0		0	1	casePickingNo	ケースピッキングNo.	5	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	productCd	商品CD	1	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	productNm	商品名称	2	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	janCd	ソースCD	3	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	storeLabelNo	入庫ラベルNo.	4	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	storeDt	入庫日	5	date	1	0		0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	lot	ロット	6	text	1	0		0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	limitDt	期限日	7	date	1	0		0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	locationNm	ロケーション名称	8	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	productUnit	商品単位	9	text	1	0		0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	unitNumBreakdown	入数内訳	10	text	1	0	right	0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	sumPickingNum	ピック数	11	number	1	0	right	0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	caseBreakdown	ピック数(ケース)	12	text	1	0	right	0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	baraBreakdown	ピック数(端数)	13	text	1	0	right	0	250				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No.	14	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	clientCd	荷主CD	15	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	clientNm	荷主名称	16	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	centerCd	センタCD	17	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	centerNm	センタ名称	18	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	warehouseCd	倉庫CD	19	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	warehouseNm	倉庫名称	20	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	zoneCd	ゾーンCD	21	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	zoneNm	ゾーン名称	22	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	workDt	作業日	23	date	1	0		0	170				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	stockTypeCd	在庫区分CD	24	text	1	0		0	200				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	stockTypeNm	在庫区分名称	25	text	1	0		0	300				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	pickingBatchNo	出庫指示バッチNo.	26	text	1	0		0	125				
+CasePickingSD	ケースピッキング	wms_sd	casePickingDetail	ケースピッキングリスト明細詳細グリッド	grid	1	0		0	1	casePickingNo	ケースピッキングNo.	27	text	1	0		0	125				

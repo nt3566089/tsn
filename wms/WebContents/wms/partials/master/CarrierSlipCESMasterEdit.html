@@ -1,0 +1,62 @@
+<div ng-controller="CarrierSlipCESMasterEdit" owd-screen="CarrierSlipCESMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<div class="well">
+				<div class="row">
+							<owd-select id="clientCd" ng-model="head.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+							<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" owd-remove-blank></owd-select>
+				</div>
+			</div>
+			<div class="well">
+			<div class="row">
+				<owd-text id="customerCd" ng-model="head.customerCd" label-text="取引先" owd-add-button="showSupplyCustomer()" ng-blur="supplyCustomerCdBlur()">
+					<owd-info ng-model="head.customerNm"></owd-info>
+				</owd-text>
+				<owd-text id="collectAccountNoBillTo" ng-model="head.collectAccountNoBillTo" label-text="Collect Account# (Bill To)"></owd-text>
+				<owd-text id="collectZipCdBillTo" ng-model="head.collectZipCdBillTo" label-text="Collect Zip Code (Bill To)"></owd-text>
+				<owd-text id="collectCountryCdBillTo" ng-model="head.collectCountryCdBillTo" label-text="Collect Country Code (Bill To)"></owd-text>
+				<owd-text id="paymentTermCdTaxesTo" ng-model="head.paymentTermCdTaxesTo" label-text="Payment Term Code (Taxes To)"></owd-text>
+				<owd-text id="collectAccountNoTaxesTo" ng-model="head.collectAccountNoTaxesTo" label-text="Collect Account# (Taxes To)"></owd-text>
+				<owd-text id="collectZipCdTaxesTo" ng-model="head.collectZipCdTaxesTo" label-text="Collect Zip Code (Taxes To)"></owd-text>
+				<owd-text id="collectCountryCdTaxesTo" ng-model="head.collectCountryCdTaxesTo" label-text="Collect Country Code (Taxes To)"></owd-text>
+				<owd-text id="codPaymentTermCd" ng-model="head.codPaymentTermCd" label-text="COD Payment Term Code"></owd-text>
+				<owd-number id="codAmount" ng-model="head.codAmount" label-text="COD Amount"></owd-number>
+				<owd-text id="codFeePayer" ng-model="head.codFeePayer" label-text="COD Fee Payer"></owd-text>
+				<owd-text id="termsOfSales" ng-model="head.termsOfSales" label-text="Terms of Sales"></owd-text>
+				<owd-text id="brokerName" ng-model="head.brokerName" label-text="Broker Name"></owd-text>
+				<owd-text id="brokerPhoneNo" ng-model="head.brokerPhoneNo" label-text="Broker Phone#"></owd-text>
+				<owd-text id="brokerFaxNo" ng-model="head.brokerFaxNo" label-text="Broker Fax#"></owd-text>
+				<owd-select id="satDeliveryFlg" owd-blank-row ng-model="head.satDeliveryFlg" owd-models="satDeliveryFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Saturday Delivery Flag" ></owd-select>
+				<owd-select id="residentialDeliveryFlg" owd-blank-row ng-model="head.residentialDeliveryFlg" owd-models="residentialDeliveryFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Residential Delivery Flag" ></owd-select>
+				<owd-select id="codFlg" owd-blank-row ng-model="head.codFlg" owd-models="codFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Collect On Delivery Flag" ></owd-select>
+				<owd-select id="signatureRequiredFlg" owd-blank-row ng-model="head.signatureRequiredFlg" owd-models="signatureRequiredFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Signature Required Flag" ></owd-select>
+				<owd-select id="signatureReleaseFlg" owd-blank-row ng-model="head.signatureReleaseFlg" owd-models="signatureReleaseFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Signature Release Flag" ></owd-select>
+				<owd-select id="callBeforeDeliveryFlg" owd-blank-row ng-model="head.callBeforeDeliveryFlg" owd-models="callBeforeDeliveryFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Call Before Delivery Flag" ></owd-select>
+				<owd-select id="freezableProtectionFlg" owd-blank-row ng-model="head.freezableProtectionFlg" owd-models="freezableProtectionFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Freezable Protection Flag" ></owd-select>
+				<owd-select id="guaranteedPlusFlg" owd-blank-row ng-model="head.guaranteedPlusFlg" owd-models="guaranteedPlusFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Guaranteed Plus Flag" ></owd-select>
+				<owd-select id="residentialPickupFlg" owd-blank-row ng-model="head.residentialPickupFlg" owd-models="residentialPickupFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Residential Pickup Flag" ></owd-select>
+				<owd-select id="doNotStackStackFlg" owd-blank-row ng-model="head.doNotStackStackFlg" owd-models="doNotStackStackFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Do Not Stack Pallets Flag" ></owd-select>
+				<owd-select id="limitedAccessDeliveryFlg" owd-blank-row ng-model="head.limitedAccessDeliveryFlg" owd-models="limitedAccessDeliveryFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Limited Access Delivery Flag" ></owd-select>
+				<owd-select id="limitedAccessPickupFlg" owd-blank-row ng-model="head.limitedAccessPickupFlg" owd-models="limitedAccessPickupFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Limited Access Pickup Flag" ></owd-select>
+				<owd-select id="overSizedFlg" owd-blank-row ng-model="head.overSizedFlg" owd-models="overSizedFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Over-Sized/Extreme Length Flag" ></owd-select>
+				<owd-select id="poisonFlg" owd-blank-row ng-model="head.poisonFlg" owd-models="poisonFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Poison Flag" ></owd-select>
+				<owd-select id="foogFlg" owd-blank-row ng-model="head.foogFlg" owd-models="foogFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Food Flag" ></owd-select>
+				<owd-select id="liftgateDeliveryPrepaidFlg" owd-blank-row ng-model="head.liftgateDeliveryPrepaidFlg" owd-models="liftgateDeliveryPrepaidFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Liftgate at delivery Flag (Prepaid)" ></owd-select>
+				<owd-select id="liftgateDeliveryCollectFlg" owd-blank-row ng-model="head.liftgateDeliveryCollectFlg" owd-models="liftgateDeliveryCollectFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Liftgate at delivery Flag (Collect)" ></owd-select>
+				<owd-select id="liftgatePickupPrepaidFlg" owd-blank-row ng-model="head.liftgatePickupPrepaidFlg" owd-models="liftgatePickupPrepaidFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Liftgate at pickup Flag (Prepaid)" ></owd-select>
+				<owd-select id="liftgatePickupCollectFlg" owd-blank-row ng-model="head.liftgatePickupCollectFlg" owd-models="liftgatePickupCollectFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Liftgate at pickup Flag (Collect)" ></owd-select>
+				<owd-select id="insideDeliveryPrepaidFlg" owd-blank-row ng-model="head.insideDeliveryPrepaidFlg" owd-models="insideDeliveryPrepaidFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Inside Delivery Flag (Prepaid)" ></owd-select>
+				<owd-select id="insideDeliveryCollectFlg" owd-blank-row ng-model="head.insideDeliveryCollectFlg" owd-models="insideDeliveryCollectFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Inside Delivery Flag (Collect)" ></owd-select>
+				<owd-select id="insidePickupPrepaidFlg" owd-blank-row ng-model="head.insidePickupPrepaidFlg" owd-models="insidePickupPrepaidFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Inside Pickup Flag (Prepaid)" ></owd-select>
+				<owd-select id="insidePickupCollectFlg" owd-blank-row ng-model="head.insidePickupCollectFlg" owd-models="insidePickupCollectFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="Inside Pickup Flag (Collect)" ></owd-select>
+			</div>
+			</div>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-disabled="searchinputform.$invalid" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

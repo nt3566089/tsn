@@ -1,0 +1,25 @@
+<div ng-controller="InventoryDateMasterEdit" owd-screen="InventoryDateMasterEdit">
+	<form id="searchInputForm" name="searchInputForm" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="head.centerCd" owd-models="centerCdList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="head.clientCd" owd-models="clientCdList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+				<owd-date id="targetDate" ng-model="head.targetDate" label-text="対象年月日" ng-change="targetDateChange()"></owd-date>
+				<owd-select id="targetDateEdit" ng-model="head.targetDateEdit" owd-models="targetDateEditList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="曜日"></owd-select>
+				<owd-select id="sundayFlgNm" ng-model="head.sundayFlg" owd-models="sundayFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="日曜フラグ"></owd-select>
+				<owd-date id="invDate" ng-model="head.invDate" label-text="たな卸実施日" ng-change="invDateChange()"></owd-date>
+				<owd-select id="invDateEdit" ng-model="head.invDateEdit" owd-models="invDateEditList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="曜日"></owd-select>
+			</div>
+		</div>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+            	<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+            	</div>
+            	<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" class="btn-success" ng-click="registerClick()" ng-disabled="searchInputForm.$invalid">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

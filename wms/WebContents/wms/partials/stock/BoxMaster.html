@@ -1,0 +1,40 @@
+<div ng-controller="BoxMaster" owd-screen="BoxMaster">
+	<form id="searchform" name="searchform" novalidate>
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+					<fieldset>
+						<div class="row">
+							<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+							<owd-text id="boxCd" ng-model="searchCondition.boxCd" label-text="箱タイプ"></owd-text>
+							<owd-text id="boxNm" ng-model="searchCondition.boxNm" label-text="箱タイプ名"></owd-text>
+							<owd-select id="boxType" ng-model="searchCondition.boxType"  owd-models="boxTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="箱種別"></owd-select>
+							<owd-select id="delFlg" ng-model="searchCondition.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+						</div>
+					</fieldset>
+				</owd-accordion-group>
+			</owd-accordion>
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="searchResultList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

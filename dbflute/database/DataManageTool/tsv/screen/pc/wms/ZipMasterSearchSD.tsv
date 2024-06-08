@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	zipCd	郵便番号		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	address1	都道府県		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	address2	市区町村		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	search	検索		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	selection	選択		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	close	閉じる		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	searchResultTitle	合計件数		1	1		0	1													
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	zipMasterList	郵便番号マスタ検索グリッド	grid	1	1		0	1	zipCd	郵便番号	1	text	1	0		0	125				
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	zipMasterList	郵便番号マスタ検索グリッド	grid	1	1		0	1	address1	都道府県	2	text	1	0		0	75				
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	zipMasterList	郵便番号マスタ検索グリッド	grid	1	1		0	1	address2	市区町村	3	text	1	0		0	205				
+ZipMasterSearchSD	郵便番号マスタ検索	wms_sd	zipMasterList	郵便番号マスタ検索グリッド	grid	1	1		0	1	address3	町域	4	text	1	0		0	205				

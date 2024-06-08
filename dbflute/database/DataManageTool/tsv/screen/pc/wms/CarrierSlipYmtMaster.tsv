@@ -1,0 +1,41 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	centerCd	センタ		1	1		1	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	tagType	データ種別		1	1		0	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagType	データ種別	1	text	1	0		0	170			1	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagNm	データ種別名称	2	text	1	0		0	170			2	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	characterCd	文字コードCD	3	text	1	0		0	170			3	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCharacterCd.vdict.dictNm	文字コード名称	4	text	1	0		0	170			4	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipType	送り状種別CD	5	text	1	0		0	210			5	210
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlBySlipType.vdict.dictNm	送り状種別名称	6	text	1	0		0	170			6	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	coolCls	クール区分CD	7	text	1	0		0	170			7	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCoolCls.vdict.dictNm	クール区分名称	8	text	1	0		0	170			8	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	honorific	敬称	9	text	1	0		0	170			9	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	packingShowFlg	個数口表示フラグ	10	text	1	0		0	170			10	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByPackingShowFlg.vdict.dictNm	個数口表示フラグ名称	11	text	1	0		0	170			11	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientTelNo	ご依頼主電話番号	12	text	1	0		0	170			12	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientZipCd	ご依頼主郵便番号	13	text	1	0		0	170			13	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress1	ご依頼主住所(都道府県)	14	text	1	0		0	170			14	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress2	ご依頼主住所(市区郡町村)	15	text	1	0		0	200			15	200
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress3	ご依頼主住所(町域)	16	text	1	0		0	170			16	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress4	ご依頼主住所(アパートマンション名)	17	text	1	0		0	250			17	250
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientNm	ご依頼主名	18	text	1	0		0	170			18	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemCd1	品名コード1	19	text	1	0		0	170			19	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm1	品名1	20	text	1	0		0	170			20	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemCd2	品名コード2	21	text	1	0		0	170			21	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm2	品名2	22	text	1	0		0	170			22	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	freightHandling1	荷扱い1	23	text	1	0		0	170			23	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	freightHandling2	荷扱い2	24	text	1	0		0	170			24	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	article	記事	25	text	1	0		0	170			25	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	billingCustomerCd	ご請求先顧客コード	26	text	1	0		0	170			26	200
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	fareNo	運賃管理番号	27	text	1	0		0	170			27	220
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sendCd	発店CD	28	text	1	0		0	170			28	
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	29	text	1	0		0	110			29	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	30	text	1	0		0	110			30	170
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	31	text	1	0		0	110				
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	carrierSlipYmtList	ヤマト送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	32	text	1	0		0	170				
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CarrierSlipYmtMaster	ヤマト送り状マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

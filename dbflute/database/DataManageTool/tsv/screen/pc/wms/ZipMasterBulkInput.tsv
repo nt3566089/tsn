@@ -1,0 +1,38 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	uploadZipType	郵便番号種別	dropdown	1	1		1	1													
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	publicCd	全国地方公共団体コード	1	text	1	0		0	200	1		2	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	zipCd5	旧郵便番号	2	text	1	0		0	100	2		3	100
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	zipCd	郵便番号	3	text	1	0		0	100	3		4	100
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	addressKn1	都道府県カナ	4	text	1	0		0	120	4		5	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	addressKn2	市区町村カナ	5	text	1	0		0	250	5		6	250
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	addressKn3	町域カナ	6	text	1	0		0	250	6		7	250
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	address1	都道府県	7	text	1	0		0	80	7		8	80
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	address2	市区町村	8	text	1	0		0	200	8		9	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	address3	町域	9	text	1	0		0	200	9		10	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	flg1	フラグ1	10	text	1	0		0	120	10		11	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	flg2	フラグ2	11	text	1	0		0	120	11		12	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	flg3	フラグ3	12	text	1	0		0	120	12		13	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	flg4	フラグ4	13	text	1	0		0	120	13		14	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	updType	更新区分	14	text	1	0		0	120	14		15	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	reasonType	変更理由	15	text	1	0		0	200	15		16	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputKenList	郵便番号マスタ一括取込グリッド（住所）	grid	1	1		0	1	messageNm	エラー内容	16	text	1	0		0	400	17		18	400
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	publicCd	全国地方公共団体コード	1	text	1	0		0	200	1		2	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	companyKn	大口事業所名カナ	2	text	1	0		0	200	2		3	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	companyNm	大口事業所名	3	text	1	0		0	200	3		4	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	address1	都道府県	4	text	1	0		0	80	4		5	80
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	address2	市区町村	5	text	1	0		0	200	5		6	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	address3	町域	6	text	1	0		0	200	6		7	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	address4	小字	7	text	1	0		0	200	7		8	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	zipCd	郵便番号	8	text	1	0		0	100	8		9	100
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	zipCd5	旧郵便番号	9	text	1	0		0	100	9		10	100
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	handlingAddress	取扱局	10	text	1	0		0	200	10		11	200
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	flg5	フラグ5	11	text	1	0		0	120	11		12	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	flg6	フラグ6	12	text	1	0		0	120	12		13	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	updCd	修正コード	13	text	1	0		0	120	13		14	120
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	zipMasterBulkInputOfficeList	郵便番号マスタ一括取込グリッド（事業所）	grid	1	1		0	1	messageNm	エラー内容	14	text	1	0		0	400	15		16	400
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+ZipMasterBulkInput	郵便番号マスタ一括取込	wms	register	登録		1	1		0	1													

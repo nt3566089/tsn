@@ -1,0 +1,58 @@
+<div owd-screen="SelectClient" class="container-modal">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.SelectClient">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+	<form id="chgclientform" name="chgclientform" novalidate>
+		<div class="container-modal">
+			<div class="well">
+				<div class="row">
+					<div ng-if="centerListed">
+						<owd-select id="selCenterCd" ng-model="selectClient.selCenterCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ選択" ng-change="centerChange()" ng-init="initialize()"></owd-select>
+					</div>
+					<div ng-if="centerNotListed" style="float:left; padding:0px 10px 0px 0px;">
+						<owd-label id="selCenterCd" ng-model="selectClient.selCenterCd" label-text="センタ"></owd-label>
+						<br>
+						<label>{{selectClient.selCenterCd}}:{{selectClient.selCenterNm}}</label>
+					</div>
+					<div ng-if="centerNoData">
+						<owd-label id="selCenterCd" ng-model="selectClient.selCenterCd" label-text="センタ"></owd-label>
+					</div>
+					<div ng-if="clientListed">
+						<owd-select id="selClientCd" ng-model="selectClient.selClientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主選択" ng-init="initialize()"></owd-select>
+					</div>
+					<!-- [#7179][OSS]荷主に選択肢がない場合の表示位置を修正 2020.02.18 tsuboi Start  -->
+					<div ng-if="clientNotListed" class="col-xs-6">
+						<owd-label id="selClientCd" ng-model="selectClient.selClientCd" label-text="荷主"></owd-label>
+						<br>
+						<label>{{selectClient.selClientCd}}:{{selectClient.selClientNm}}</label>
+					</div>
+					<div ng-if="clientNoData" class="col-xs-6">
+						<owd-label id="selClientCd" ng-model="selectClient.selClientCd" label-text="荷主"></owd-label>
+					</div>
+					<!-- [#7179][OSS]荷主に選択肢がない場合の表示位置を修正 2020.02.18 tsuboi End  -->
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-6" align="left">
+					<!-- [Ver2.2.1][#2725] 荷主未存在の場合、ボタン非活性処理追加 2017.09.25 miyabe Start  -->
+					<owd-button id="register" class="btn-success" ng-disabled="chgclientform.$invalid || clientList.length==0" ng-click="register()"></owd-button>
+					<!-- [Ver2.2.1][#2725] 荷主未存在の場合、ボタン非活性処理追加 2017.09.25 miyabe End  -->
+				</div>
+				<div class="col-xs-6" align="right">
+					<owd-button id="cancel" class="btn-danger" ng-click="$dismiss()"></owd-button>
+				</div>
+			</div>
+			<div align="center">
+				<font color="red" size="+2">
+					<span ng-bind-html="'announceChangeCenterClient' | owfMessage"></span>
+				</font>
+			</div>
+		</div>
+	</form>
+</div>

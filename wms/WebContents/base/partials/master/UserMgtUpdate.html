@@ -1,0 +1,25 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="UserMgtUpdateCtrl" owd-screen="UserMgtUpdate">
+	<form id="updform" name="updform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="userCdUpd" ng-model="updValue.userCd" label-text="ユーザCD"></owd-text>
+				<owd-text id="userNmUpd" ng-model="updValue.userNm" label-text="ユーザ名"></owd-text>
+				<owd-select id="cultureListUpd" ng-model="updValue.cultureCd" owd-models="cultureList" owd-repeat-key="cultureCd" owd-repeat-value="cultureNm" label-text="カルチャ"></owd-select>
+				<owd-select id="roleGrpListUpd" ng-model="updValue.roleGrpCd" owd-models="roleGrpList" owd-repeat-key="roleGrpCd" owd-repeat-value="roleGrpNm" label-text="権限グループ"></owd-select>
+				<owd-select id="delFlgUpd" ng-model="updValue.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除フラグ"></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+			</div>
+			<div class="col-xs-6" align="right">
+				<owd-button id="registerUpd" class="btn-success" ng-disabled="updform.$invalid" ng-click="registerUpd()">登録</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

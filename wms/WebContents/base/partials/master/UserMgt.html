@@ -1,0 +1,30 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="UserMgtCtrl" owd-screen="UserMgt">
+	<div class="well">
+		<div class="row">
+			<owd-text id="userCdNow" ng-model="nowValue.userCd" label-text="ユーザCD"></owd-text>
+			<owd-text id="userNmNow" ng-model="nowValue.userNm" label-text="ユーザ名"></owd-text>
+			<owd-select id="cultureListNow" ng-model="nowValue.cultureCd" owd-models="cultureList" owd-repeat-key="cultureCd" owd-repeat-value="cultureNm" label-text="カルチャ"></owd-select>
+			<owd-select id="roleGrpListNow" ng-model="nowValue.roleGrpCd" owd-models="roleGrpList" owd-repeat-key="roleGrpCd" owd-repeat-value="roleGrpNm" label-text="権限グループ"></owd-select>
+			<owd-select id="delFlgNow" ng-model="nowValue.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除フラグ"></owd-select>
+		</div>
+	</div>
+
+	<tabset id="userMgtTabSet" justified="true">
+		<tab ng-model="userEditTab">
+			<tab-heading><owd-span id="userEditTabTitle" label-text="ユーザ編集"></owd-span></tab-heading>
+			<div usermgt-include="base/partials/master/UserMgtUpdate.html" usermgt-include-screen="UserMgtUpdate"></div>
+		</tab>
+
+		<tab ng-model="liteLoginPwdMgtTab" ng-show="showPwdMgtTab">
+			<tab-heading><owd-span id="liteLoginPwdMgtTabTitle" label-text="認証管理"></owd-span></tab-heading>
+				<div usermgt-include="base/partials/master/LiteLoginPwdMgt.html" usermgt-include-screen="LiteLoginPwdMgt"></div>
+		</tab>
+		
+	</tabset>
+
+</div>

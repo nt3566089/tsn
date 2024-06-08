@@ -1,0 +1,61 @@
+	<ion-view title="{{screenTitle}}">
+		
+		<ion-content class="has-header" ng-class="{'has-footer' : alerts.length > 0}">
+			
+			<div id="errorcontents" class="container" ng-cloak>
+				<h2 class="text-danger">
+					<span ng-bind-html="'httpConnectionErrorTitle' | owfMessage"></span>
+				</h2>
+				
+				<ion-list>
+				<ion-list-header ng-repeat="status in connectionStatus">
+					
+					<div class="card" style="margin:10px" ng-show="!status.httpError">
+						<div class="item item-divider item-divider-assertive" ng-bind-html="status.name | owfMessage"></div>
+						<ion-item class="item-text-wrap">
+							<dl class="dl-horizontal">
+								<dt>
+									<span ng-bind-html="'userMessage' | owfMessage"></span>
+								</dt>
+								<dd>
+									<span ng-bind-html="status.messageCode | owfMessage:status.messageReplaceValue"></span>
+								</dd>
+								<dt>
+									<span ng-bind-html="'statusCode' | owfMessage"></span>
+								</dt>
+								<dd>
+									<span ng-bind-html="status.statusCode"></span>
+								</dd>
+								<dt>
+									<span ng-bind-html="'developerMessage' | owfMessage"></span>
+								</dt>
+								<dd>
+									<span ng-bind-html="status.developerMessage"></span>
+								</dd>
+								<dt ng-show="!!status.moreInfo">
+									<span ng-bind-html="'moreInfo' | owfMessage"></span>
+								</dt>
+								<dd ng-show="!!status.moreInfo">
+									<a ng-href="{{status.moreInfo}}" target="_blank">
+										<span ng-bind-html="status.moreInfo"></span>
+									</a>
+								</dd>
+							</dl>
+						</ion-item>
+					</div>
+					<div class="card" style="margin:10px" ng-show="status.httpError">
+						<div class="item item-divider item-divider-owd-assertive" ng-bind-html="status.name | owfMessage"></div>
+						<ion-item class="item-text-wrap">
+							<dl class="dl-horizontal">
+								<dt>
+									<span ng-bind-html="'statusCode' | owfMessage"></span>
+								</dt>
+								<dd>{{status.statusCode}}</dd>
+							</dl>
+						</ion-item>
+					</div>
+				</ion-list-header>
+				</ion-list>
+			</div>
+		</ion-content>
+	</ion-view>

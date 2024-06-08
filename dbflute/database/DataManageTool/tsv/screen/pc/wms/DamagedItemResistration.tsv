@@ -1,0 +1,33 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DamagedItemResistration	り災品登録	wms	centerCd	拠点		1	0		1	1													
+DamagedItemResistration	り災品登録	wms	clientCd	荷主		1	0		1	1													
+DamagedItemResistration	り災品登録	wms	receiveDateFrom	検品実績日(From)		1	1		1	1													
+DamagedItemResistration	り災品登録	wms	receiveDateTo	検品実績日(To)		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	sufferUsageFlg	り災品取扱区分		1	1		1	1													
+DamagedItemResistration	り災品登録	wms	supplierRcvNo	伝票番号		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	otherRefNo1	お得意様CD		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	fromAddress1	内外区分		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	search	検索		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	excelOutput	Excel出力		1	1		0	1													
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	otherRefNo1	お得意様CD	1	text	1	0		0	180			1	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	fromName	伝票表示名称	2	text	1	0		0	180			2	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	1		1	1	sufferUsageFlg	り災品取扱区分	3	dropdown	1	1		1	180			3	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	rcvschDate	入庫予定日	4	date	1	0		0	180			4	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	receiveDate	検品実績日	5	date	1	0		0	180			5	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	supplierRcvNo	伝票番号	6	text	1	0		0	180			6	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	fromAddress2	方面CD	7	text	1	0		0	180			7	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	fromAddress1	内外区分	8	text	1	0		0	180			8	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	rcvType	返品/取替区分	9	text	1	0		0	180			9	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	DistrictCd	一致/不一致	10	text	1	0		0	180			10	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	OtherRefNo2	取引方法	11	text	1	0		0	180			11	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	CarrierNo	返品ステータス	12	text	1	0		0	180			12	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	1	0		0	0	UpdDt	更新日時	13	datetime	1	0		0	180			13	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	0	0		0	0	centerCd	拠点CD	14	text	0	0		0	180			14	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	0	0		0	0	centerNm	拠点名称	15	text	0	0		0	180			15	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	0	0		0	0	clientCd	荷主CD	16	text	0	0		0	180			16	180
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationList	り災品登録グリッド	grid	0	0		0	0	clientNm	荷主名称	17	text	0	0		0	180			17	180
+DamagedItemResistration	り災品登録	wms	sufferUsageFlgFd	り災品取扱区分		1	1		1	1													
+DamagedItemResistration	り災品登録	wms	bulkUpdate	一括編集		1	0		0	1													
+DamagedItemResistration	り災品登録	wms	decision	確定		1	0		0	1													
+DamagedItemResistration	り災品登録	wms	DamagedItemResistrationDetail	り災品登録(詳細)		1	0		0	1													

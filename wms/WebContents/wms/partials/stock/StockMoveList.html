@@ -1,0 +1,76 @@
+<div ng-controller="StockMoveList" owd-screen="StockMoveList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+				<div class="row">
+					<!-- 荷主センタ変更対応 2017.02.17 sja Start -->
+					<!--
+					<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+					-->
+					<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+					<!-- 荷主センタ変更対応 2017.02.17 sja End -->
+		 			<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+		 			<owd-select id="warehouseCd" ng-model="head.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫"></owd-select>
+		 			<!-- [ON推-品向-1081] 検索条件に項目を追加 2016.4.11 chou Add Start -->
+		 			<owd-text id="productCd" ng-model="head.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.productNm"></owd-info>
+				    </owd-text>
+		 			<!-- [ON推-品向-1081] 検索条件に項目を追加 2016.4.11 chou Add End -->
+		 			<owd-date id="instDtFrom" ng-model="head.instDtFrom" label-text="指示日From"></owd-date>
+		 			<owd-date id="instDtTo" ng-model="head.instDtTo" owd-validate="fromToCheck(head.instDtFrom, $value)" owd-validate-watch="'head.instDtFrom'" owd-validate-message="fromToMessage" label-text="指示日To"></owd-date>
+		 			<owd-text id="moveSlipNo" ng-model="head.moveSlipNo" label-text="WMS在庫移動伝票No."></owd-text>
+		 			<owd-select id="processTypeCd" ng-model="head.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" label-text="処理区分"></owd-select>
+		 			<owd-select id="moveInstStatus" ng-model="head.moveInstStatus" owd-models="moveInstStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫移動指示ステータス"></owd-select>
+					<!-- [ON推-品向-1143] 在庫移動一覧 - 未完了のみ表示 追加 2016.04.28 kawana Start  -->
+					<owd-select id="notCompletedFlg" ng-model="head.notCompletedFlg" owd-models="notCompletedFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="未完了のみ表示" owd-remove-blank></owd-select>
+					<!-- [ON推-品向-1143] 在庫移動一覧 - 未完了のみ表示 追加 2016.04.28 kawana End  -->
+		 			<!-- [ON推-品向-1081] 検索条件に項目を追加 2016.4.11 chou Add Start -->
+					<owd-select id="printCondition" ng-model="head.printCondition" owd-models="printConditionList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行区分" owd-remove-blank></owd-select>
+		 			<!-- [ON推-品向-1081] 検索条件に項目を追加 2016.4.11 chou Add End -->
+				</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<!-- Excel出力ボタン追加 2016.1.27 koyama Start -->
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				<!-- Excel出力ボタン追加 2016.1.27 koyama End -->
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+            	<div class="list-box">
+					<!-- [ON推-品向-1081] 修正対応 2016.4.11 chou Add Start -->
+					<div class="list-text wmslegend wmslegendwhite"><owd-span id="lblnonwork" label-text="未作業"></owd-span></div>
+					<!-- [ON推-品向-1081] 修正対応 2016.4.11 chou Add End -->
+					<div class="list-text wmslegend wmslegendlightblue"><owd-span id="lblworking" label-text="作業中"></owd-span></div>
+					<div class="list-text wmslegend wmslegendturquoise"><owd-span id="lblcompletion" label-text="完了"></owd-span></div>
+					<div class="list-text wmslegend wmslegendindianred"><owd-span id="lblcancel" label-text="取消"></owd-span></div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="list" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<!-- [ON推-品向-1034] 指示書発行機能追加 2015.12.21 koyama Start -->
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="listPrint" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="listPrint()">指示書</owd-button>
+				</div>
+				<!-- [ON推-品向-1034] 指示書発行機能追加 2015.12.21 koyama End -->
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">完了</owd-button>
+					<owd-button id="cancel" class="btn-danger" ng-click="cancel()">取消</owd-button>
+					<owd-button id="instDetail" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="instDetail()">指示明細</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

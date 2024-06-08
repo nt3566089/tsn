@@ -1,0 +1,86 @@
+
+	<ion-view ng-controller="MainMenuCtrl" owd-screen="MainMenu">
+		
+		<ion-content class="has-header">
+			<ion-list>
+
+				
+				<ion-list-header class="dropdown">
+					<span class="item item-divider item-divider-positive item-icon-right dropdown-toggle" data-toggle="dropdown" href="" ng-bind-html="userInfo.centerNm + '<i class=\'icon ion-android-arrow-dropdown\'></i>'"></span>
+					<ion-list class="dropdown-menu">
+						<label class="item item-input item-stacked-label">
+							<span class="input-label" ng-bind-html="'centerTitle' | owfMessage"></span>
+							<input type="text" placeholder="{{userInfo.centerNm}}">
+						</label>
+						<label class="item item-input item-stacked-label">
+							<span class="input-label" ng-bind-html="'clientTitle' | owfMessage"></span>
+							<input type="text" placeholder="{{userInfo.clientNm}}">
+						</label>
+						<div class="padding-horizontal">
+							<ion-item id="select" class="button button-block button-positive" ng-click="selectClient()">
+								<span ng-bind-html="'clientCenterSelect' | owfMessage"></span>
+							</ion-item>
+						</div>
+					</ion-list>
+				</ion-list-header>
+
+				
+				<ion-list-header class="dropdown">
+					<span class="item item-divider item-divider-positive" ui-sref="all.abstract.main({ system: 'base', subSystem: 'menu', screenCd: 'MainMenu' })" ng-bind-html="'mainMenuTitle' | owfMessage" menu-close></span>
+					
+				</ion-list-header>
+
+				
+				<ion-list-header class="dropdown" ng-repeat="menuHead in bMenuGroup">
+					
+					<span class="item item-divider item-divider-positive item-icon-right dropdown-toggle" data-toggle="dropdown" href="#" ng-bind-html="menuHead.vdict.dictNm + '<i class=\'icon ion-android-arrow-dropdown\'></i>'"></span>
+					
+					<ion-list class="dropdown-menu">
+						
+						<ion-item detail-push ng-repeat="menu in menuHead.bmenuList" href="{{menu.urlPath+'/'}}" menu-close>
+						  <span ng-bind-html="menu.vdict.dictNm"></span>
+						</ion-item>
+					</ion-list>
+				</ion-list-header>
+
+				
+				<ion-list-header class="dropdown">
+					
+					<span class="item item-divider item-divider-positive item-icon-right dropdown-toggle" data-toggle="dropdown" href="#" ng-bind-html="userInfo.userNm + '<i class=\'icon ion-android-arrow-dropdown\'></i>'"></span>
+					
+					<ion-list class="dropdown-menu">
+						
+						
+						<a class="item" ng-show="userCanChangePassword" ng-click="showPasswordChangeDialog()" menu-close>
+							<span ng-show="authMode=='2'" ng-bind-html="'passwordTitle' | owfMessage"></span>
+						</a>
+
+						
+						
+						
+						
+						<a class="item" ng-show="userHasSelectableAutoPrintLayouts && visibleUserAutoPrintSetting" ng-click="showUserAutoPrintSettingListDialog()" menu-close>
+							<span ng-bind-html="'userAutoPrintSetting' | owfMessage"></span>
+						</a>
+						
+						
+
+						
+						
+						<a class="item" ng-href="resources/logout?mode=sd">
+							<span ng-href="resources/logout?mode=sd" ng-bind-html="'logoutTitle' | owfMessage"></span>
+						</a>
+						
+					</ion-list>
+				</ion-list-header>
+				<ion-item>
+					<div><img src="base/image/ONEsLOGI-logo.png" height="37" width="243"></div>
+					<div>
+						<h5 style="text-align: center"><em class="text-muted">
+							&copy; 2023 <a href="https://sol.logisteed.com/" target="_blank">LOGISTEED Solutions, Ltd.</a>
+						</em></h5>
+					</div>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-view>

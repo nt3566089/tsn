@@ -1,0 +1,38 @@
+<div ng-controller="ReceivePlanInput" owd-screen="ReceivePlanInput">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="receivePlanH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm"  label-text="センタ" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="receivePlanH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-text id="receiveSlipNo" ng-model="receivePlanH.receiveSlipNo" label-text="伝票番号"></owd-text>
+				<owd-text id="planClientReceiveNo" ng-model="receivePlanH.planClientReceiveNo" label-text="予定顧客入荷指示番号"></owd-text>
+				<owd-date id="receivePlanDt" ng-model="receivePlanH.receivePlanDt" label-text="入荷予定日"></owd-date>
+				<owd-text id="planSupplierCd" ng-model="receivePlanH.planSupplierCd" label-text="仕入先コード" owd-add-button="showCustomer()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="receivePlanH.mcustomerByPlanSupplierId.customerNm"></owd-info>
+				</owd-text>
+				<!-- 【Ver1.1.1】[C-CWMS-0035] 入荷予定入力画面に在庫区分を追加する 2015.08.07 hayashi Start -->
+				<owd-select id="processTypeCd" ng-model="receivePlanH.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" ng-change="processTypeChange()" label-text="伝票区分"></owd-select>
+				<owd-select id="stockTypeCd" ng-model="receivePlanH.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+				<!-- 【Ver1.1.1】[C-CWMS-0035] 入荷予定入力画面に在庫区分を追加する 2015.08.07 hayashi End -->
+				<owd-select id="planDepositCd" ng-model="receivePlanH.planDepositCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+
+			</div>
+		</div>
+		<!-- [Ver3.0] unit of measure対応 2017.10.28 潘 Start -->
+		<div owd-grid="gridOptions" id="receivePlanB" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-multitext-options="multiTextOptions" owd-grid-multitext-options="gridMultiTextOptions" owd-form-name="inputform"></div>
+		<!-- [Ver3.0] unit of measure対応 2017.10.28 潘 End -->
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

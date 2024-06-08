@@ -1,0 +1,76 @@
+<div ng-controller="InventoryBulkUpdate" owd-screen="InventoryBulkUpdate">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+
+					<fieldset>
+					<div class="row">
+					<!-- [#1090] ブラウザの戻る⇒進むで再検索すると致命的エラー発生(model名変更) 2017.03.06 kawana Start -->
+						<!-- 荷主センタ変更対応 2017.02.09 sja Start -->
+						<owd-select id="centerCd" ng-model="searchCondition.head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+						<!-- 荷主センタ変更対応 2017.02.09 sja End -->
+						<owd-select id="clientCd" ng-model="searchCondition.head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+						<owd-select id="warehouseCd" ng-model="searchCondition.body.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫CD" ng-focus="warehouseFocus()" ng-change="warehouseChange()" ng-blur="warehouseBlur()"></owd-select>
+						<owd-date id="inventoryDt" ng-model="searchCondition.head.inventoryDt" label-text="棚卸日"></owd-date>
+						<owd-select id="depositCd" ng-model="searchCondition.inst.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+						<owd-select id="stockTypeCd" ng-model="searchCondition.body.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+						<owd-text id="fromLocationCd" ng-model="searchCondition.inst.fromLocationCd" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+							<owd-info ng-model="searchCondition.inst.fromLocationNm"></owd-info>
+						</owd-text>
+						<owd-text id="toLocationCd" ng-model="searchCondition.inst.toLocationCd" label-text="ロケーション(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(searchCondition.inst.fromLocationCd, $value)" owd-validate-watch="'searchCondition.inst.fromLocationCd'" owd-validate-message="fromToMessage">
+							<owd-info ng-model="searchCondition.inst.toLocationNm"></owd-info>
+						</owd-text>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+						<!-- [横並-188] ゾーンの順位をロケーション後ろに変更 2014.12.06 許 Start -->
+						<owd-select id="zoneCd" ng-model="searchCondition.inst.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+						<!-- [横並-188] ゾーンの順位をロケーション後ろに変更 2014.12.06 許 End -->
+						<owd-text id="storeLabelNo" ng-model="searchCondition.body.storeLabelNo" label-text="棚卸日"></owd-text>
+						<owd-text id="productCd" ng-model="searchCondition.product.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.product.productNm"></owd-info>
+						</owd-text>
+						<!-- [SK2-022] 空白を追加し空白の場合は全件表示に変更 2014.12.10 kawana Start -->
+						<owd-select id="stockTakingInput" ng-model="searchCondition.inst.stockTakingInput" owd-models="stockTakingInputList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="棚卸入力有"></owd-select>
+						<!-- [SK2-022] 空白を追加し空白の場合は全件表示に変更 2014.12.10 kawana End -->
+						<owd-select id="unmatch" owd-remove-blank ng-model="searchCondition.inst.unmatch" owd-models="unmatchList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アンマッチ有"></owd-select>
+					<!-- [#1090] ブラウザの戻る⇒進むで再検索すると致命的エラー発生(model名変更) 2017.03.06 kawana End -->
+					</div>
+					</fieldset>
+			<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+			<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+<!-- 				[横並-197] テキストの位置を修正 2014.11.24 kei Start -->
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+<!-- 				[横並-197] テキストの位置を修正 2014.11.24 kei End -->
+					<div class="list-box">
+						<!-- [ON推-品向-385] ID修正 "limitdtnum"⇒"stockChanged" 2014.12.02 kawana Start  -->
+						<div class="list-text wmslegend wmslegendindianred"><owd-span id="stockChanged" label-text="在庫変更あり"></owd-span></div>
+						<!-- [ON推-品向-385] ID修正 "limitdtnum"⇒"stockChanged" 2014.12.02 kawana End  -->
+					</div>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="inventoryBulkUpdateList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+						<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana Start -->
+						<owd-button id="register" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="register()">登録</owd-button>
+						<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana End -->
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

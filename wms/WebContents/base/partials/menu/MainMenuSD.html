@@ -1,0 +1,35 @@
+
+	<ion-view title="{{screenTitle}}" owd-screen="MainMenu">
+		
+		<ion-content ng-class="{'has-footer' : alerts.length > 0}">
+			<ion-list>
+			
+				
+				
+				<ion-list-header ng-repeat="menuHead in bMenuGroup">
+					<span class="item item-divider item-icon-right dropdown-toggle" data-toggle="dropdown" href="#" ng-bind-html="menuHead.vdict.dictNm + '<i class=\'icon ion-android-arrow-dropdown\'></i>'">					</span>
+					<ion-list class="dropdown-menu">
+						
+						<ion-item detail-push ng-repeat="menu in menuHead.bmenuList" href="{{menu.urlPath+'/'}}" target="{{targetWindow(menu.targetWindow,menu.bscreen.screenCd)}}">
+						
+						  <span ng-bind-html="menu.vdict.dictNm"></span>
+						</ion-item>
+					</ion-list>
+				</ion-list-header>
+				
+			
+				
+				<br>
+				<ion-list-header>
+					<span class="item item-divider item-divider-owd-positive" ng-bind-html="'infoTitle' | owfMessage"></span>
+					<ion-list>
+						<div class="card" style="margin:10px" detail-push ng-repeat="info in bInfos">
+							<ion-item class="item-text-wrap">
+							  <span ng-bind-html="info.bInfo.infoNm | owfNoHTML | owfNewlines"></span>
+							</ion-item>
+						</div>
+					</ion-list>
+				</ion-list-header>
+			</ion-list>
+		</ion-content>
+	</ion-view>

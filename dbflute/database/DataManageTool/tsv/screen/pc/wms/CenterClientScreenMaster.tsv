@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerClientCls	センタ・荷主区分		1	1		1	1													
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerOrClient	センタ・荷主		1	1		1	1													
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	search	検索		1	1		0	1													
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerClientScreenList	センタ・荷主別画面マスタメンテナンスグリッド	grid	1	1		0	1	screenCd	画面CD	1	text	1	0		0	300				
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerClientScreenList	センタ・荷主別画面マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	画面名	2	text	1	0		0	300				
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerClientScreenList	センタ・荷主別画面マスタメンテナンスグリッド	grid	1	1		0	1	centerOrClientScreenNm	センタ・荷主別 画面名	3	text	1	1		0	300				
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	centerClientScreenList	センタ・荷主別画面マスタメンテナンスグリッド	grid	1	1		0	1	centerOrClientScreenVisible	センタ・荷主別 表示可否	4	dropdown	1	1		0	205				
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	register	登録		1	1		0	1													
+CenterClientScreenMaster	センタ・荷主別画面マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													

@@ -1,0 +1,49 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="MenuGrpList" owd-screen="MenuGrpList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	
+					<fieldset>
+						<div class="row">
+							<owd-text id="menuGrpCd" ng-model="head.menuGrpCd" label-text="メニューグループCD"></owd-text>
+							<owd-text id="dictNm" ng-model="head.vdict.dictNm" label-text="メニューグループ名"></owd-text>
+							
+							<owd-text id="visibleType" ng-model="head.visibleType" label-text="表示種別"></owd-text>
+							
+						</div>
+					</fieldset>
+	
+				</owd-accordion-group>
+			</owd-accordion>
+	
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="menuGrpList" owd-dblclick-option="gridDblClick(row)" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+						
+						<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						
+						<owd-button id="register" class="btn-info" ng-click="register()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+						<owd-button id="delete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deletedata()">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

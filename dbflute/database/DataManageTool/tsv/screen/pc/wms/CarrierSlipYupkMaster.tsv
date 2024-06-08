@@ -1,0 +1,45 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	centerCd	センタ		1	1		1	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	tagType	データ種別		1	1		0	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagType	データ種別	1	text	1	0		0	170			1	170
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	tagNm	データ種別名称	2	text	1	0		0	300			2	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	characterCd	文字コードCD	3	text	1	0		0	145			3	220
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCharacterCd.vdict.dictNm	文字コード名称	4	text	1	0		0	145			4	220
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	postType	郵便種別CD	5	text	1	0		0	175			5	175
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByPostType.vdict.dictNm	郵便種別名称	6	text	1	0		0	175			6	175
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	coolType	保冷種別CD	7	text	1	0		0	130			7	220
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCoolType.vdict.dictNm	保冷種別名称	8	text	1	0		0	130			8	220
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	codType	元/着払/代引CD	9	text	1	0		0	125			9	250
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByCodType.vdict.dictNm	元/着払/代引名称	10	text	1	0		0	125			10	250
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	carrierType	送り状種別	11	text	1	0		0	210			11	210
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientZipCd	ご依頼主郵便番号	12	text	1	0		0	140			12	140
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress1	ご依頼主住所1	13	text	1	0		0	300			13	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress2	ご依頼主住所2	14	text	1	0		0	300			14	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientAddress3	ご依頼主住所3	15	text	1	0		0	300			15	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientNm1	ご依頼主名称1	16	text	1	0		0	300			16	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientTelNo	ご依頼主電話番号	17	text	1	0		0	160			17	160
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipClientMail	ご依頼主メールアドレス1	18	text	1	0		0	300			18	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	noUpsideDownCls	逆さま厳禁区分CD	19	text	1	0		0	150			19	170
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByNoUpsideDownCls.vdict.dictNm	逆さま厳禁区分名称	20	text	1	0		0	150			20	170
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	noStockCls	下積み厳禁区分CD	21	text	1	0		0	150			21	170
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByNoStockCls.vdict.dictNm	下積み厳禁区分名称	22	text	1	0		0	150			22	170
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipProductSizeCls	商品サイズ区分	23	text	1	0		0	125			23	150
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipProductNo	商品番号(明細)	24	text	1	0		0	210			24	210
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	slipItemNm	品名(明細)	25	text	1	0		0	300			25	300
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	shipReserveDataMark	発送予約データマーク	26	text	1	0		0	170			26	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	deliCertPreYears	配達証保存年数	27	number	1	0	right	0	170			27	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	sendNm	発店名称	28	text	1	0		0	170			28	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	productTypeCode	商品種別コード	29	text	1	0		0	170			29	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	postBizCardCustomerNo	ゆうびんビズカードお客さま番号	30	text	1	0		0	400			30	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	shippingCompanyCode	発送会社コード	31	text	1	0		0	170			31	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	shipmentCode	発送局コード	32	text	1	0		0	170			32	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	33	text	1	0		0	110			33	150
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	34	text	1	0		0	110			34	150
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	35	text	1	0		0	110			35	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	carrierSlipYupkList	ゆうパック送り状マスタメンテナンスメンテナンスグリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	36	text	1	0		0	170			36	
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CarrierSlipYupkMaster	ゆうパック送り状マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

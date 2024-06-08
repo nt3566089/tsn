@@ -1,0 +1,18 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+MessageMaster	メッセージマスタメンテナンス	base	messageCd	メッセージCD		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	messageNm	メッセージ		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	messageType	属性		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	systemType	システム種別		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	cultureCd	カルチャ		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	search	検索		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	messageCd	メッセージCD	1	text	1	1		1	450				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	messageNm	メッセージ	2	text	1	1		1	1000				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	messageAbbr	メッセージ略称	3	text	1	1		0	300				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	messageType	属性	4	dropdown	1	1		0	160				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	systemType	システム種別	5	dropdown	1	1		1	135				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	cultureCd	カルチャ	6	dropdown	1	1		1	300				
+MessageMaster	メッセージマスタメンテナンス	base	body	メッセージマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	7	dropdown	1	1		0	110				
+MessageMaster	メッセージマスタメンテナンス	base	addRow	行追加		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	removeRow	行削除		1	1		0	1													
+MessageMaster	メッセージマスタメンテナンス	base	register	登録		1	1		0	1													

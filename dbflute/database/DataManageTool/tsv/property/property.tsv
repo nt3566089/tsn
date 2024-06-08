@@ -1,0 +1,30 @@
+PROPERTY_NM	PROPERTY_VALUE	PROPERTY_COMMENT
+allowQueryCount	10000	検索可能件数(通常)
+allowQueryCountToEntryGrid	100	検索可能件数(入力グリッド)(棚卸入力で使用)
+allowQueryCountToExcel	10000	出力可能件数(Excel)
+allowQueryCountToReport	10000	出力可能件数(帳票) (0:制限なし)
+allowQueryCountToReportStoreLabel	500	出力可能件数(入庫ラベル) (0:制限なし)
+systemDtCheckTime	1440	日次処理未実施警告時間(単位：分)
+allowDataInputErrorCount	100	初期データ取込エラー許容件数
+dataInputCommitUnitNum	100	初期データ取込コミット単位件数
+batchDataCount	1000	一括処理件数(日次締処理で使用)
+zipCdExistsCheckFlg	0	郵便番号マスタ存在チェック有効/無効 (1:有効 0:無効)
+slipNoReceiveListDtFromDefFlg	1	伝票別入荷一覧の入荷予定日Fromのデフォルト設定 (1:設定する 0:設定しない)
+slipNoReceiveListDtToDefFlg	1	伝票別入荷一覧の入荷予定日Toのデフォルト設定 (1:設定する 0:設定しない)
+receivePlanInputDtDefFlg	1	入荷予定入力の入荷予定日のデフォルト設定 (1:設定する 0:設定しない)
+shippingInstListDtFromDefFlg	1	出庫指示一覧の日付Fromのデフォルト設定 (1:設定する 0:設定しない)
+shippingInstListDtToDefFlg	1	出庫指示一覧の日付Toのデフォルト設定 (1:設定する 0:設定しない)
+shippingPlanInputDelivPlanDtDefFlg	1	出荷指示入力の納品予定日のデフォルト設定 (1:設定する 0:設定しない)
+shippingPlanInputWorkDtDefFlg	1	出荷指示入力の作業日のデフォルト設定 (1:設定する 0:設定しない)
+shippingPlanInputShippingDtDefFlg	1	出荷指示入力の出荷日のデフォルト設定 (1:設定する 0:設定しない)
+encryptionFlg	0	個人情報DB登録時の暗号化有無 (1:暗号化有 0:暗号化無)
+shippingInstBatchJobCd	wmsShippingInstBatch	出庫指示バッチのジョブCD
+dailyBatchJobCd	wmsDailyBatch	日次締処理バッチのジョブCD
+allowInsertCount	1000	追加可能件数(通常)
+allowResponseListCount	1000	クライアント端末返却可能リスト件数
+dmlLog001	IUD,m_product,shape_grp_id	DMLログ書込設定 形式：[DML種別(IかUかDのうち複数指定可)],[テーブル名],[列名]
+maxShapeCount	3	荷姿グループマスタメンテナンスの最大荷姿件数(帳票の最大に合わせてデフォルト値:3)
+maxNumber	9999999999.9999	数値の最大値(出庫指示[梱包計算]の数値チェックで使用)
+reportMaxTestMode	*	帳票最大桁数確認モード(test:確認モード , test以外:通常モード)
+attendanceEntryPasswordFlg	0	出退勤・休憩入力のパスワード入力有無（0:パスワード不要、1:パスワード必須）
+attendanceTestModeFlg	0	出退勤・休憩入力のテストモード有無（0:本番モード、1:テストモード）

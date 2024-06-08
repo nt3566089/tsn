@@ -1,0 +1,17 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblStartStockFixList	スタート在庫修正リスト	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblPrintDate	作成日：	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblProductMove	製品移動	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblInspec	検品	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblShelfStockFix	棚在庫修正	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblLocationCd	ﾛｹｰｼｮﾝ	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblItemCd	銘柄名	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblBefore	修正前	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblQa	修正数量	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblAfter	修正後	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblBeforeCorrectionCardboardQa	段ボール	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblBeforeCorrectionCartonQa	カートン	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblCorrectionCardboardQa	段ボール	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblCorrectionCartonQa	カートン	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblAfterCorrectionCardboardQa	段ボール	String	1	
+StartStockFixList	スタート在庫修正リスト	スタート在庫修正リスト	../../../../../../reports/stock/StartStockFixList.jrxml	1						0	0	lblAfterCorrectionCartonQa	カートン	String	1	

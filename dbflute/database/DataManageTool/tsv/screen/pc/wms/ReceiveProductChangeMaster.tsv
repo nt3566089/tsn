@@ -1,0 +1,21 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	clientCd	荷主		1	0		1	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	itemCdFrom	組替前銘柄CD		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	designCdFrom	組替前デザイン区分		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	itemCdTo	組替後銘柄CD		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	designCdTo	組替後デザイン区分		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	delFlg	削除		1	1		1	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	search	検索		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	excelOutput	Excel出力		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	1		1	0	itemCdFrom	組替前銘柄CD	1	text	1	1		1				1	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	0		0	0	productNmFrom	組替前銘柄名称	2	text	1	0		0				2	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	1		0	0	designCdFrom	組替前デザイン区分	3	dropdown	1	1		0				3	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	1		1	0	itemCdTo	組替後銘柄CD	4	text	1	1		1				4	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	0		0	0	productNmTo	組替後銘柄名称	5	text	1	0		0				5	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	1		0	0	designCdTo	組替後デザイン区分	6	dropdown	1	1		0				6	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	1		1	0	delFlg	削除	7	dropdown	1	1		1				7	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	0		0	0	updDt	更新日時	8	text	1	0		0				8	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	searchResultList	入庫銘柄組替マスタ登録グリッド	grid	1	0		0	0	updUser	更新者	9	text	1	0		0				9	
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	copyRow	行複製		1	1		0	1													
+ReceiveProductChangeMaster	入庫銘柄組替マスタ登録	wms	register	登録		1	1		0	1													

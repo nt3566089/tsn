@@ -1,0 +1,106 @@
+<div ng-controller="StockList" owd-screen="StockList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<fieldset>
+				<div class="row">
+					<!-- [C-CWMS-0029] 検索条件にゾーンを追加 2015.06.05 kawana Start -->
+					<owd-select id="centerCd" ng-model="head.tstock.mwarehouse.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+					<!-- [C-CWMS-0029] 検索条件にゾーンを追加 2015.06.05 kawana End -->
+					<owd-select id="clientCd" ng-model="head.tstock.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+					<!-- [C-CWMS-0029] 検索条件にゾーンを追加 2015.06.05 kawana Start -->
+					<owd-select id="warehouseCd" ng-model="head.tstock.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-change="warehouseChange()"></owd-select>
+					<owd-select id="zone" ng-model="head.tstock.mlocation.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+					<!-- [C-CWMS-0029] 検索条件にゾーンを追加 2015.06.05 kawana End -->
+					<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana Start -->
+					<!-- [Ver3.0][#3065] 在庫表示順を在庫表示内容に変更 2018.02.23 shimizu Start -->
+					<owd-select id="stockdisplayfld" ng-model="head.stockdisplayfld" owd-models="stockdisplayfldList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫表示内容" owd-remove-blank></owd-select>
+					<!-- [Ver3.0][#3065] 在庫表示順を在庫表示内容に変更 2018.02.23 shimizu End -->
+					<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana End -->
+					<owd-date id="dataTime" ng-model="head.tstock.dataTime" label-text="日付"></owd-date>
+					<owd-text id="productCd" ng-model="head.tstock.mproduct.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.tstock.mproduct.productNm"></owd-info>
+					</owd-text>
+					<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+					<owd-text id="locationCdFrom" ng-model="head.locationCdFrom" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+						<owd-info ng-model="head.locationNmFrom"></owd-info>
+					</owd-text>
+					<owd-text id="locationCdTo" ng-model="head.locationCdTo" label-text="ロケーション(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck2(head.locationCdFrom, $value)" owd-validate-watch="'head.locationCdFrom'" owd-validate-message="fromToMessage2" >
+						<owd-info ng-model="head.locationNmTo"></owd-info>
+					</owd-text>
+					<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+					<owd-text id="janCd" ng-model="head.tstock.mproduct.janCd" label-text="JANCD"></owd-text>
+					<owd-select id="customerCd" ng-model="head.tstock.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+					<owd-select id="stockTypeCd" ng-model="head.tstock.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+					<owd-date   id="limitDtFrom" ng-model="head.limitDtFrom" label-text="期限日(From)"></owd-date>
+					<owd-date   id="limitDtTo" ng-model="head.limitDtTo" label-text="期限日(To)" owd-validate="fromToCheck(head.limitDtFrom, $value)" owd-validate-watch="'head.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+					<owd-number   id="limitDtNum" ng-model="head.limitDtNum" label-text="期限日数"></owd-number>
+					<owd-text   id="lot" ng-model="head.tstock.tlot.lot" label-text="ロット"></owd-text>
+					<!-- [ON推-品向-960] 在庫数を追加 2015.10.06 kawana Start -->
+					<owd-select id="stockNumDisplay" owd-remove-blank ng-model="head.tstock.stockNumDisplay" owd-models="stockNumDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫数 0非表示"></owd-select>
+					<!-- [ON推-品向-960] 在庫数を追加 2015.10.06 kawana End -->
+					<owd-select id="chargeNumDisplay" owd-remove-blank ng-model="head.chargeNumDisplay" owd-models="chargeNumDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="引当可能数 0非表示"></owd-select>
+					<owd-select id="display" owd-remove-blank ng-model="head.display" owd-models="displayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫受払 0非表示"></owd-select>
+					<!-- [C-CWMS-0039] センタ間移動機能を追加 2015.09.15 kawana Start -->
+					<owd-select id="transitDisplay" ng-model="head.tstock.transitDisplay" owd-models="transitDisplayList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="積送中在庫のみ表示" owd-remove-blank></owd-select>
+					<!-- [C-CWMS-0039] センタ間移動機能を追加 2015.09.15 kawana End -->
+				</div>
+			</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+					<!-- [#2265] 帳票構造化データ利用の調査 在庫リストサンプルの作成 2017.08.17 kawana Start -->
+					<owd-button id="stockListPrint" class="btn-info" ng-disabled="searchform.$invalid" ng-click="stockListPrint()">在庫リスト発行</owd-button>
+					<!-- [#2265] 帳票構造化データ利用の調査 在庫リストサンプルの作成 2017.08.17 kawana End -->
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+	            	<div class="list-box">
+						<!-- [ON推-品向-385] ID修正 "limitdtnum"⇒"expired" 2014.12.02 kawana Start  -->
+						<div class="list-text wmslegend wmslegendcyanTxt"><owd-span id="expired" label-text="期限切れ"></owd-span></div>
+						<!-- [ON推-品向-385] ID修正 "limitdtnum"⇒"expired" 2014.12.02 kawana End  -->
+						<div class="list-text wmslegend wmslegendindianred"><owd-span id="chargestop" label-text="引当禁止"></owd-span></div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<!-- [Ver3.0][#3065] 4つのパターンに(商品順, ロケーション順それぞれ日報なし/ありの合計4つ)分けて一覧を表示するように修正 2018.02.23 shimizu Start -->
+			<div owd-grid="stockOrderByProductNoReportGridOptions" owd-dblclick-option="gridDblClick(row)" id="stockOrderByProductNoReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridStockOrderByProductNoReport"></div>
+			<div owd-grid="stockOrderByProductReportGridOptions" owd-dblclick-option="gridDblClick(row)" id="stockOrderByProductReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridStockOrderByProductReport"></div>
+			<div owd-grid="stockOrderByLocationNoReportGridOptions" owd-dblclick-option="gridDblClick(row)" id="stockOrderByLocationNoReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridStockOrderByLocationNoReport"></div>
+			<div owd-grid="stockOrderByLocationReportGridOptions" owd-dblclick-option="gridDblClick(row)" id="stockOrderByLocationReportList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)"  ng-show="viewGridStockOrderByLocationReport"></div>
+		    <!-- [Ver3.0][#3065] 4つのパターンに(商品順, ロケーション順それぞれ日報なし/ありの合計4つ)分けて一覧を表示するように修正 2018.02.23 shimizu End -->
+		    <br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+		    	<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<!-- [Ver3.0][#3065] ng-disabledにおいて、htmlで判定していた処理をjsの関数内で行うよう修正 2018.02.26 shimizu Start -->
+						<!-- [ON推-品向-554] 表示順ロケーションボタン制御追加 2015.1.15 SAKATA Start -->
+						<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+						<owd-button id="stockInOutList" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="stockInOutList()">在庫受払問合せ</owd-button>
+						<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+						<!-- [ON推-品向-554] 表示順ロケーションボタン制御追加 2015.1.15 SAKATA End -->
+						<!-- [#5627][v3.1] 「在庫調整(新規)」ボタンを削除 2018.11.12 kawana Delete -->
+						<!-- [ON推-品向-554] 表示順ロケーションボタン制御追加 2015.1.15 SAKATA Start -->
+						<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+						<owd-button id="stockAdj" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="stockAdj()">在庫調整</owd-button>
+						<owd-button id="stockMove" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="stockMove()">在庫移動</owd-button>
+						<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+						<!-- [ON推-品向-554] 表示順ロケーションボタン制御追加 2015.1.15 SAKATA End -->
+						<!-- [C-CWMS-0043] 入庫ラベル発行機能追加 2015.08.25 kawana Start -->
+						<owd-button id="storeLabelPrint" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="storeLabelPrint()">入庫ラベル発行</owd-button>
+						<!-- [C-CWMS-0043] 入庫ラベル発行機能追加 2015.08.25 kawana End -->
+						<!-- [#2233] 在庫一括移動指示機能追加 2017.08.16 ase Start -->
+						<owd-button id="stockBulkMove" class="btn-info" ng-disabled="!checkButtonDisabled()" ng-click="stockBulkMove()">在庫一括移動指示</owd-button>
+						<!-- [#2233] 在庫一括移動指示機能追加 2017.08.16 ase End -->
+						<!-- [Ver3.0][#3065] ng-disabledにおいて、htmlで判定していた処理をjsの関数内で行うよう修正 2018.02.26 shimizu End -->
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

@@ -1,0 +1,48 @@
+<div ng-controller="ReceiveStatusProgress"
+	owd-screen="ReceiveStatusProgress">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+		<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-date id="receivePlanDtFrom" ng-model="searchCondition.receivePlanDtFrom" label-text="入荷予定日(From)" owd-validate="dtNullCheck()" owd-validate-watch="['searchCondition.receivePlanDtFrom','searchCondition.receivePlanDtTo']" owd-validate-message="requiredError"></owd-date>
+	<!-- [#4077][Ver3.0]入荷予定日のFromToチェックを追加 2018.04.02 miyabe Upd Start -->
+				<owd-date id="receivePlanDtTo" ng-model="searchCondition.receivePlanDtTo" label-text="入荷予定日(To)" owd-validate="toDtErrorCheck()" owd-validate-watch="['searchCondition.receivePlanDtFrom','searchCondition.receivePlanDtTo']" owd-validate-message="toError"></owd-date>
+	<!-- [#4077][Ver3.0]入荷予定日のFromToチェックを追加 2018.04.02 miyabe Upd End -->
+				<owd-text id="planSupplierCd" ng-model="searchCondition.planSupplierCd" label-text="予定仕入先CD" owd-add-button="planSupplier()"  ng-blur="planSupplierCdBlur()">
+					<owd-info ng-model="planSupplier.planSupplierNm"></owd-info>
+				</owd-text>
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<button id="search" class="btn btn-default" ng-disabled="searchform.$invalid" ng-click="search()" aria-label="Left Align">
+				<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+			</button>
+			<owd-label id="updateTime" label-text="更新日時" ></owd-label>:<span ng-bind-html="searchTime"></span>
+ 		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<div class="text-center">
+				<!-- [#7199][OSS] 行数⇒伝票数に変更 2020.02.21 tsuboi Start -->
+				<owd-label id="receiveStatusCountTitle" label-text="入荷ステータス別伝票数 進捗"></owd-label>
+				<!-- [#7199][OSS] 行数⇒伝票数に変更 2020.02.21 tsuboi End -->
+			</div>
+			<!-- [SLSA] angular-chart.js Version 1.0.0: legendはChart.jsのオプションになったのでchart-legendは削除。chart-coloursをchart-colorsに変更。 2016.10.17  Dario update -->
+			<canvas id="receiveStatusCountChart" class="chart chart-pie" chart-data="dataCount" chart-labels="labelsCount" chart-colors="pieColors" chart-options="pieOptions"></canvas>
+ 		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<div class="text-center">
+				<owd-label id="receiveStatusNumberTitle" label-text="入荷ステータス別入荷数 進捗"></owd-label>
+			</div>
+			<!-- [SLSA] angular-chart.js Version 1.0.0: legendはChart.jsのオプションになったのでchart-legendは削除。chart-coloursをchart-colorsに変更。 2016.10.17  Dario update -->
+			<canvas id="receiveStatusNumberChart" class="chart chart-pie" chart-data="dataNumber" chart-labels="labelsNumber" chart-colors="pieColors" chart-options="pieOptions"></canvas>
+		</div>
+	</form>
+</div>

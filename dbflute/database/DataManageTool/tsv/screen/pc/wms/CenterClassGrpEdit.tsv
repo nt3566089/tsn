@@ -1,0 +1,12 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	centerCd	センタ		1	0		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	classCd	区分値CD		1	0		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	classComment	区分値解説		1	0		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	systemType	システム種別		1	0		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	centerClassGrpMasterEdit	センタ別区分値グループマスタメンテナンスグリッド	grid	1	1		0	1	classGrpCd	区分値グループCD	1	text	1	1		1	300				
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	centerClassGrpMasterEdit	センタ別区分値グループマスタメンテナンスグリッド	grid	1	1		0	1	classGrpComment	区分値グループ解説	2	text	1	1		1	300				
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	centerClassGrpMasterEdit	センタ別区分値グループマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	3	dropdown	1	1		0	110				
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	removeRow	行削除		1	1		0	1													
+CenterClassGrpEdit	センタ別区分値グループマスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

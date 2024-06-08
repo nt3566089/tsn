@@ -1,0 +1,60 @@
+<div ng-controller="InventoryHistory" owd-screen="InventoryHistory">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+
+				<fieldset>
+					<div class="row">
+						<!-- 荷主センタ変更対応 2017.02.13 sja Start -->
+						<!--
+						<owd-select id="centerCd" ng-model="headH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="headH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						-->
+						<owd-select id="centerCd" ng-model="headH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="headH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+
+						<!-- 荷主センタ変更対応 2017.02.13 sja End -->
+						<owd-select id="warehouseCd" ng-model="headB.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-focus="warehouseFocus()" ng-change="warehouseChange()" ng-blur="warehouseBlur()"></owd-select>
+						<owd-date id="inventoryDtFrom" ng-model="headH.inventoryDtFrom" label-text="棚卸日(From)"></owd-date>
+						<owd-date id="inventoryDtTo" ng-model="headH.inventoryDtTo" label-text="棚卸日(To)" owd-validate="fromToDtCheck(headH.inventoryDtFrom, $value)" owd-validate-watch="'headH.inventoryDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-text id="supplierCustomerCd" ng-model="headB.supplierCd" label-text="仕入先CD" owd-add-button="showCustomer()" ng-blur="customerCdBlur()" owd-validate-message="vendorCdMessage">
+							<owd-info ng-model="headB.supplierNm"></owd-info>
+						</owd-text>
+						<owd-select id="depositCd" ng-model="headB.depositCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+						<owd-select id="stockTypeCd" ng-model="headB.mstockType.stockTypeCd" owd-models="StockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+						<owd-text id="locationCdFrom" ng-model="headB.locationCdFrom" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+							<owd-info ng-model="headB.locationNmFrom"></owd-info>
+						</owd-text>
+						<owd-text id="locationCdTo" ng-model="headB.locationCdTo" label-text="ロケーション(To)" owd-add-button="showLocation(2)"  ng-blur="locationCdBlur(2)" owd-validate="fromToCheck2(headB.locationCdFrom, $value)" owd-validate-watch="'headB.locationCdFrom'" owd-validate-message="fromToMessage2">
+							<owd-info ng-model="headB.locationNmTo"></owd-info>
+						</owd-text>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+						<owd-text id="productCd" ng-model="headB.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="headB.productNm"></owd-info>
+						</owd-text>
+						<owd-text id="lot" ng-model="headB.lot" label-text="ロット"></owd-text>
+						<owd-date id="limitDtFrom" ng-model="headB.limitDtFrom" label-text="期限日(From)"></owd-date>
+						<owd-date id="limitDtTo" ng-model="headB.limitDtTo" label-text="期限日(To)" owd-validate="fromToDtCheck(headB.limitDtFrom, $value)" owd-validate-watch="'headB.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-text id="storeLabelNo" ng-model="headB.storeLabelNo" label-text="入庫ラベルNo."></owd-text>
+						<owd-date id="storeDtFrom" ng-model="headB.storeDtFrom" label-text="入庫日(From)"></owd-date>
+						<owd-date id="storeDtTo" ng-model="headB.storeDtTo" label-text="入庫日(To)" owd-validate="fromToDtCheck(headB.storeDtFrom, $value)" owd-validate-watch="'headB.storeDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+					</div>
+				</fieldset>
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+		<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="bodyList" owd-select-options="gridSelectOptions"  owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+        <br>
+	</form>
+</div>

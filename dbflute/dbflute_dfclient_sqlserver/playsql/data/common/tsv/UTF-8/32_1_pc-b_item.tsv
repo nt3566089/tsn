@@ -1,0 +1,3230 @@
+ITEM_ID	SCREEN_ID	ITEM_CD	DICT_ID	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED
+1346	247	beforePrinterGroupNm	70		1	0		0	1
+1347	247	beforePrinterNm	98		1	0		0	1
+1348	247	beforeTrayNm	99		1	0		0	1
+1349	247	afterPrinterGroupNm	70		1	0		0	1
+1350	247	afterPrinterId	100		1	1		0	1
+1351	247	afterPrinterAttributeId	101		1	1		0	1
+1352	247	update	842		1	1		0	1
+1353	248	printerGroupId	70		1	1		0	1
+1354	248	printerId	4		1	1		0	1
+1355	248	search	731		1	1		0	1
+1356	248	autoPrintBulkPrinterChangeListGrid	97	grid	1	1		0	1
+1357	248	register	710		1	1		0	1
+1358	248	update	842		1	1		0	1
+1359	249	classCd	328		1	1		1	1
+1360	249	classComment	334		1	1		1	1
+1361	249	systemType	200		1	1		1	1
+1362	249	classEdit	127	grid	1	1		0	1
+1363	249	addRow	708		1	1		0	1
+1364	249	removeRow	709		1	1		0	1
+1365	249	register	710		1	1		0	1
+1366	250	classCd	328		1	0		0	1
+1367	250	classGrpCd	330		1	1		1	1
+1368	250	search	731		1	1		0	1
+1369	250	classGrpDtlList	126	grid	1	1		0	1
+1370	250	register	710		1	1		0	1
+1371	251	classCd	328		1	0		0	1
+1372	251	classComment	334		1	0		0	1
+1373	251	systemType	200		1	0		0	1
+1374	251	addRow	708		1	1		0	1
+1375	251	removeRow	709		1	1		0	1
+1376	251	register	710		1	1		0	1
+1377	251	classGrpMasterEdit	125	grid	1	1		0	1
+1378	252	classCd	328		1	1		0	1
+1379	252	classComment	334		1	1		0	1
+1380	252	systemType	200		1	1		0	1
+1381	252	search	731		1	1		0	1
+1382	252	classList	128	grid	1	1		0	1
+1383	252	classGrpUpdate	1107		1	1		0	1
+1384	252	classGrpDtlUpdate	1108		1	1		0	1
+1385	252	register	691		1	1		0	1
+1386	252	update	692		1	1		0	1
+1387	252	delete	805		1	1		0	1
+1388	253	cultureId	1010		1	1		1	1
+1389	253	dictNm	421		1	1		0	1
+1390	253	search	731		1	1		0	1
+1391	253	dictCultureList	133	grid	1	1		0	1
+1392	253	register	710		1	1		0	1
+1393	254	dictNm	421		1	1		0	1
+1394	254	systemType	200		1	1		0	1
+1395	254	search	731		1	1		0	1
+1396	254	dictList	134	grid	1	1		0	1
+1397	254	addRow	708		1	1		0	1
+1398	254	removeRow	709		1	1		0	1
+1399	254	register	710		1	1		0	1
+1400	255	screenCd	307		1	1		0	1
+1401	255	screenNm	1076		1	1		0	1
+1402	255	systemType	200		1	1		0	1
+1403	255	search	731		1	1		0	1
+1404	255	screenList	122	grid	1	1		0	1
+1405	255	selection	732		1	1		0	1
+1406	256	close	733		1	1		1	1
+1407	256	reset	24		1	1		1	1
+1408	256	confirmed	710		1	1		1	1
+1409	256	columnOrderTitle	25		1	0		0	1
+1410	256	columnWithTitle	26		1	0		0	1
+1411	257	infoDtFrom	1056		1	1		0	1
+1412	257	infoDtTo	1057		1	1		0	1
+1413	257	infoEnd	1058		1	1		0	1
+1414	257	search	731		1	1		0	1
+1415	257	excelOutput	719		1	1		0	1
+1416	257	infoList	113	grid	1	1		0	1
+1417	257	addRow	691		1	1		0	1
+1418	257	modRow	692		1	1		0	1
+1419	257	removeRow	805		1	1		0	1
+1420	257	infoNm	1059		1	1		1	1
+1421	257	infoStartDt	310		1	1		1	1
+1422	257	infoEndDt	430		1	1		1	1
+1423	257	register	710		1	1		0	1
+1424	258	login	28		1	1		1	1
+1425	258	loginId	29		1	1		1	1
+1426	258	password	30		1	1		1	1
+1427	259	register	710		1	1		1	1
+1428	259	lockout	2047		1	1		1	1
+1429	259	passwordReset	36		1	1		1	1
+1430	259	passwordModifiedDate	37		1	0		0	1
+1431	259	lastLoginDate	38		1	0		0	1
+1432	259	failedLoginAttempts	40		1	0		0	1
+1433	259	lastFailedLoginDate	39		1	0		0	1
+1434	259	lockoutDate	41		1	0		0	1
+1435	259	availableStartDateYmd	42		1	1		1	1
+1436	259	availableStartTime	43		1	1		1	1
+1437	259	availableEndDateYmd	44		1	1		1	1
+1438	259	availableEndTime	45		1	1		1	1
+1439	259	passwordChange	34		1	1		1	1
+1440	260	close	733		1	1		0	1
+1441	261	pgmCd	1039		1	0		0	1
+1442	261	pgmNm	237		1	0		0	1
+1443	261	logDtlList	119	grid	1	1		0	1
+1444	261	logDtlBrowse	27		1	1		0	1
+1445	262	logStatus	256		1	1		0	0
+1446	262	processDtFrom	847		1	1		0	1
+1447	262	processDtTo	848		1	1		0	1
+1448	262	pgm	1038		1	1		0	0
+1449	262	centerCd	5142		1	1		0	1
+1450	262	clientCd	734		1	1		0	1
+1451	262	search	731		1	1		0	1
+1452	262	excelOutput	719		1	1		0	1
+1453	262	AutomaticSearch	1050		1	1		0	1
+1454	262	logList	118	grid	1	1		0	1
+1455	262	detail	1051		1	1		0	1
+1456	263	select	732		1	1		0	1
+1457	264	menuGrpCd	245		1	1		1	1
+1458	264	dictNm	1111		1	1		1	1
+1459	264	parentMenuGrpId	1112		1	1		0	1
+1460	264	visibleType	141		1	1		1	1
+1461	264	viewOrder	5125		1	1		1	1
+1462	264	menuGrpEdit	115	grid	1	1		0	1
+1463	264	addRow	708		1	1		0	1
+1464	264	removeRow	709		1	1		0	1
+1465	264	register	710		1	1		0	1
+1466	265	menuGrpCd	245		1	1		0	1
+1467	265	dictNm	1111		1	1		0	1
+1468	265	visibleType	141		1	1		0	1
+1469	265	search	731		1	1		0	1
+1470	265	menuGrpList	116	grid	1	1		0	1
+1471	265	register	691		1	1		0	1
+1472	265	update	692		1	1		0	1
+1473	265	delete	805		1	1		0	1
+1474	265	copy	1558		1	1		0	1
+1475	266	messageCd	240		1	1		0	1
+1476	266	messageNm	239		1	1		0	1
+1477	266	messageType	503		1	1		0	1
+1478	266	systemType	200		1	1		0	1
+1479	266	cultureCd	1010		1	1		0	1
+1480	266	search	731		1	1		0	1
+1481	266	body	114	grid	1	1		0	1
+1482	266	addRow	708		1	1		0	1
+1483	266	removeRow	709		1	1		0	1
+1484	266	register	710		1	1		0	1
+1485	267	oldPassword	31		1	1		1	1
+1486	267	newPassword	32		1	1		1	1
+1487	267	newPasswordReEnter	33		1	1		1	1
+1488	267	passwordChange	34		1	1		1	1
+1489	267	cancel	1776		1	1		1	1
+1490	267	closeSuccessMsgDialog	733		1	1		1	1
+1491	267	closeWarningMsgDialog	733		1	1		1	1
+1492	267	closeDangerMsgDialog	733		1	1		1	1
+1493	267	passwordReset	47		1	1		1	1
+1494	268	printerNm	234		1	1		0	1
+1495	268	printerVisible	88		1	1		0	1
+1496	268	printerGroupId	70		1	1		1	1
+1497	268	trayNm	220		1	1		0	1
+1498	268	trayVisible	89		1	1		0	1
+1499	268	printerAttributeListGrid	56	grid	1	1		0	1
+1500	268	search	731		1	1		0	1
+1501	268	register	710		1	1		0	1
+1502	268	remove	805		1	1		0	1
+1503	269	printerGroupNm	62		1	1		0	1
+1504	269	attribute1	63		1	1		0	1
+1505	269	attribute2	64		1	1		0	1
+1506	269	attribute3	65		1	1		0	1
+1507	269	attribute4	66		1	1		0	1
+1508	269	attribute5	67		1	1		0	1
+1509	269	printerGroupListGrid	49	grid	1	1		0	1
+1510	269	search	731		1	1		0	1
+1511	269	addRow	708		1	1		0	1
+1512	269	removeRow	709		1	1		0	1
+1513	269	register	710		1	1		0	1
+1514	269	remove	805		1	1		0	1
+1515	270	printerNm	234		1	1		0	1
+1516	270	visible	602		1	1		0	1
+1517	270	printerGroupId	70		1	1		1	1
+1518	270	printerListGrid	54	grid	1	1		0	1
+1519	270	search	731		1	1		0	1
+1520	270	register	710		1	1		0	1
+1521	270	remove	805		1	1		0	1
+1522	271	printRequestNo	85		1	0		0	1
+1523	271	printerNm	4		1	0		0	1
+1524	271	trayNm	7		1	0		0	1
+1525	271	printNum	5		1	0		0	1
+1526	271	sheetCollate	603		1	0		0	1
+1527	271	printResult	86		1	0		0	1
+1528	271	printDt	80		1	0		0	1
+1529	271	queueAddDt	103		1	0		0	1
+1530	271	processInfo	462		1	0		0	1
+1531	271	close	733		1	1		0	1
+1532	272	printRequestHistListGrid	60	grid	1	1		0	1
+1533	272	printRequestHistBrowse	108		1	1		0	1
+1534	273	reportCd	1258		1	1		0	0
+1535	273	reportLayoutId	8		1	1		0	0
+1536	273	printerGroupId	70		1	1		0	0
+1537	273	printStatus	273		1	1		0	0
+1538	273	printedFlg	79		1	1		0	0
+1539	273	queueAddDtFromYmd	104		1	1		0	1
+1540	273	queueAddDtFromTime	105		1	1		0	1
+1541	273	queueAddDtToYmd	106		1	1		0	1
+1542	273	queueAddDtToTime	107		1	1		0	1
+1543	273	errorFlg	1965		1	1		0	0
+1544	273	userCd	110		1	1		0	0
+1545	273	printDataType	112		1	1		0	0
+1546	273	search	731		1	1		0	1
+1547	273	printRequestListGrid	58	grid	1	1		0	1
+1548	273	reprint	87		1	1		0	1
+1549	273	printRequestHistList	59		1	1		0	1
+1550	273	printRequestHistBrowse	108		1	1		0	1
+1551	274	printerId	4		1	1		1	1
+1552	274	printNum	5		1	1		1	1
+1553	274	collateFlg	6		1	1		1	1
+1554	274	trayId	7		1	1		1	1
+1555	274	reportLayoutPrintId	8		1	1		1	1
+1556	274	print	9		1	1		0	1
+1557	274	reportLayoutPreviewId	8		1	1		1	1
+1558	274	preview	2		1	1		0	1
+1559	274	printTitle	9		1	0		0	1
+1560	274	previewTitle	2		1	0		0	1
+1561	274	cancel	733		1	1		0	1
+1562	274	printerGroupId	70		1	1		1	1
+1563	275	printServiceNm	68		1	1		1	1
+1564	275	terminalNm	69		1	0		0	1
+1565	275	macAddress	3348		1	0		0	1
+1566	275	printerGroupId	70		1	1		0	1
+1567	275	printServiceStatus	71		1	1		1	1
+1568	275	register	710		1	1		0	1
+1569	276	printServiceNm	68		1	1		0	1
+1570	276	terminalNm	69		1	1		0	1
+1571	276	macAddress	3348		1	1		0	1
+1572	276	printerGroupId	70		1	1		0	1
+1573	276	printServiceStatus	71		1	1		0	1
+1574	276	printServiceListGrid	51	grid	1	1		0	1
+1575	276	search	731		1	1		0	1
+1576	276	update	692		1	1		0	1
+1577	276	remove	805		1	1		0	1
+1578	277	propertyNm	1063		1	1		0	1
+1579	277	propertyComment	3327		1	1		0	1
+1580	277	search	731		1	1		0	1
+1581	277	excelOutput	719		1	1		0	1
+1582	277	propertyList	151	grid	1	1		0	1
+1583	277	addRow	708		1	1		0	1
+1584	277	removeRow	709		1	1		0	1
+1585	277	register	710		1	1		0	1
+1586	278	reportCd	518		1	1		0	1
+1587	278	reportNm	525		1	1		0	1
+1588	278	reportLayoutNm	524		1	1		0	1
+1589	278	reportLayout	8		1	1		0	1
+1590	278	addRow	708		1	1		0	1
+1591	278	removeRow	709		1	1		0	1
+1592	278	register	710		1	1		0	1
+1593	278	reportLayoutEdit	2218	grid	1	1		0	1
+1594	278	updatable	72		1	1		1	1
+1595	278	attribute1	73		1	1		0	1
+1596	278	attribute2	74		1	1		0	1
+1597	278	attribute3	75		1	1		0	1
+1598	278	attribute4	76		1	1		0	1
+1599	278	attribute5	77		1	1		0	1
+1600	278	printerGroupId	70		1	1		0	1
+1601	278	printerId	4		1	1		0	1
+1602	278	printerAttributeId	78		1	1		0	1
+1603	278	printNum	5		1	1		0	1
+1604	278	sheetCollate	603		1	1		0	1
+1605	278	autoPrintTargetFlg	102		1	1		1	1
+1606	279	reportCd	518		1	1		0	1
+1607	279	reportNm	525		1	1		0	1
+1608	279	reportLayoutNm	524		1	1		0	1
+1609	279	reportLayout	8		1	1		0	1
+1610	279	updatable	72		1	1		1	1
+1611	279	attribute1	73		1	1		0	1
+1612	279	attribute2	74		1	1		0	1
+1613	279	attribute3	75		1	1		0	1
+1614	279	attribute4	76		1	1		0	1
+1615	279	attribute5	77		1	1		0	1
+1616	279	printerGroupId	70		1	1		0	1
+1617	279	printerId	4		1	1		0	1
+1618	279	printerAttributeId	78		1	1		0	1
+1619	279	printNum	5		1	1		0	1
+1620	279	sheetCollate	603		1	1		0	1
+1621	279	autoPrintTargetFlg	102		1	1		1	1
+1622	279	delFlg	388		1	1		1	1
+1623	279	reportLayoutEdit	2218	grid	1	1		0	1
+1624	279	addRow	708		1	1		0	1
+1625	279	removeRow	709		1	1		0	1
+1626	279	register	710		1	1		0	1
+1627	280	reportCd	1258		1	1		0	1
+1628	280	search	731		1	1		0	1
+1629	280	reportLayoutList	2217	grid	1	1		0	1
+1630	280	copy	1558		1	1		0	1
+1631	280	register	691		1	1		0	1
+1632	280	update	692		1	1		0	1
+1633	280	subRepUpdate	1259		1	1		0	1
+1634	280	downloadLayout	1243		1	1		0	1
+1635	280	delete	805		1	1		0	1
+1636	281	selReportId	11		1	1		1	1
+1637	281	reportLayoutNm	524		1	1		1	1
+1638	281	layoutUpload	12		1	1		0	1
+1639	281	subrepUpload	13		1	1		0	1
+1640	281	register	710		1	1		0	1
+1641	282	reportCd	518		1	1		0	1
+1642	282	reportNm	149		1	1		0	1
+1643	282	search	731		1	1		0	1
+1644	282	excelOutput	719		1	1		0	1
+1645	282	reportList	148	grid	1	1		0	1
+1646	282	addRow	708		1	1		0	1
+1647	282	removeRow	709		1	1		0	1
+1648	282	reportLayoutList	152		1	1		0	1
+1649	282	register	710		1	1		0	1
+1650	283	roleGrpCd	1021		1	1		1	1
+1651	283	roleGrpNm	1022		1	1		1	1
+1652	283	roleControlClass	142		1	1		1	1
+1653	283	roleGrpEdit	129	grid	1	1		0	1
+1654	283	register	710		1	1		0	1
+1655	284	roleGrpCd	1021		1	1		0	1
+1656	284	dictName	1022		1	1		0	1
+1657	284	roleControlClass	142		1	1		0	1
+1658	284	roleGrpList	130	grid	1	1		0	1
+1659	284	search	731		1	1		0	1
+1660	284	delete	805		1	1		0	1
+1661	284	register	691		1	1		0	1
+1662	284	update	692		1	1		0	1
+1663	284	excelOutput	719		1	1		0	1
+1664	284	copy	1558		1	1		0	1
+1665	285	roleCd	1069		1	1		0	1
+1666	285	roleNm	341		1	1		0	1
+1667	285	search	731		1	1		0	1
+1668	285	roleList	132	grid	1	1		0	1
+1669	285	register	691		1	1		0	1
+1670	285	updateScreen	1079		1	1		0	1
+1671	285	delete	805		1	1		0	1
+1672	285	updateItem	1080		1	1		0	1
+1673	285	updateScreenColRole	1081		1	1		0	1
+1674	285	excelOutput	719		1	1		0	1
+1675	285	copy	1558		1	1		0	1
+1676	286	copyTitle	1558		1	1		0	1
+1677	286	register	710		1	1		0	1
+1678	286	close	733		1	1		0	1
+1679	286	roleCd	1069		1	1		1	1
+1680	286	roleNm	341		1	1		1	1
+1681	287	screenCd	1062		1	0		1	1
+1682	287	grid	1930		1	1		1	1
+1683	287	search	731		1	1		1	1
+1684	287	body	120	grid	1	1		0	1
+1685	287	addRow	708		1	1		0	1
+1686	287	removeRow	709		1	1		0	1
+1687	287	update	710		1	1		0	1
+1688	288	roleCd	1061		1	1		1	1
+1689	288	screenCd	1062		1	1		1	1
+1690	288	itemCd	1930		1	1		1	1
+1691	288	search	731		1	1		0	1
+1692	288	screenColRoleEdit	121	grid	1	1		0	1
+1693	288	register	710		1	1		0	1
+1694	289	screenCd	307		1	1		1	1
+1695	289	screenNm	1076		1	1		1	1
+1696	289	systemType	200		1	1		1	1
+1697	289	body	123	grid	1	1		0	1
+1698	289	addRow	708		1	1		0	1
+1699	289	removeRow	709		1	1		0	1
+1700	289	register	710		1	1		0	1
+1701	290	roleCd	1061		1	0		1	1
+1702	290	screenCd	1062		1	1		1	1
+1703	290	search	731		1	1		0	1
+1704	290	screenItemRoleList	124	grid	1	1		0	1
+1705	290	register	710		1	1		0	1
+1706	291	screenCd	307		1	1		0	1
+1707	291	screenNm	1076		1	1		0	1
+1708	291	systemType	200		1	1		0	1
+1709	291	search	731		1	1		0	1
+1710	291	screenList	122	grid	1	1		0	1
+1711	291	register	691		1	1		0	1
+1712	291	update	692		1	1		0	1
+1713	291	delete	805		1	1		0	1
+1714	291	gridUpdate	1081		1	1		0	1
+1715	291	copy	1558		1	1		0	1
+1716	292	copyTitle	1558		1	1		0	1
+1717	292	register	710		1	1		0	1
+1718	292	close	733		1	1		0	1
+1719	292	screenCd	307		1	1		1	1
+1720	292	screenNm	1076		1	1		1	1
+1721	293	roleCd	1069		1	1		1	1
+1722	293	roleNm	341		1	1		1	1
+1723	293	screenRoleList	131	grid	1	1		0	1
+1724	293	register	710		1	1		0	1
+1725	294	systemNm	201		1	1		1	1
+1726	294	password	90		1	1		0	1
+1727	294	update	692		1	1		0	1
+1728	295	terminalCd	155		1	0		0	1
+1729	295	terminalNm	69		1	0		0	1
+1730	295	unsetOnly	2103		1	1		0	1
+1731	295	terminalSettingGrid	154	grid	1	1		0	1
+1732	295	release	1463		1	1		0	1
+1733	295	register	710		1	1		0	1
+1734	295	close	733		1	1		0	1
+1735	296	reportNm	525		1	0		0	1
+1736	296	reportLayoutNm	524		1	0		0	1
+1737	296	attribute1	73		1	0		0	1
+1738	296	attribute2	74		1	0		0	1
+1739	296	attribute3	75		1	0		0	1
+1740	296	attribute4	76		1	0		0	1
+1741	296	attribute5	77		1	0		0	1
+1742	296	printerGroupId	70		1	1		0	1
+1743	296	printerId	234		1	1		0	1
+1744	296	printerAttributeId	220		1	1		0	1
+1745	296	close	733		1	1		0	1
+1746	296	update	710		1	1		0	1
+1747	297	userAutoPrintSettingListGrid	93	grid	1	1		0	1
+1748	297	close	733		1	1		0	1
+1749	297	update	692		1	1		0	1
+1750	298	userCd	247		1	1		0	1
+1751	298	userNm	252		1	1		0	1
+1752	298	cultureList	1010		1	1		0	1
+1753	298	roleGrpList	1020		1	1		0	1
+1754	298	search	731		1	1		0	1
+1755	298	excelOutput	719		1	1		0	1
+1756	298	userList	117	grid	1	1		0	1
+1757	298	update	692		1	1		0	1
+1758	298	delFlg	805		1	1		0	1
+1759	298	pwdMgt	39		1	1		0	1
+1760	298	register	691		1	1		0	1
+1761	298	copy	1558		1	1		0	1
+1762	299	userCdNow	247		1	0		0	1
+1763	299	userNmNow	252		1	0		0	1
+1764	299	cultureListNow	1010		1	0		0	1
+1765	299	roleGrpListNow	1020		1	0		0	1
+1766	299	delFlgNow	805		1	0		0	1
+1767	299	userEditTabTitle	46		1	0		0	1
+1768	299	liteLoginPwdMgtTabTitle	35		1	0		0	1
+1769	300	userCdNew	247		1	1		1	1
+1770	300	userNmNew	252		1	1		1	1
+1771	300	cultureListNew	1010		1	1		1	1
+1772	300	roleGrpListNew	1020		1	1		1	1
+1773	300	registerCopy	710		1	1		0	1
+1774	300	liteLoginPwdMgtTabTitle	35		1	0		0	1
+1775	301	userCdNew	247		1	1		1	1
+1776	301	userNmNew	252		1	1		1	1
+1777	301	cultureListNew	1010		1	1		1	1
+1778	301	roleGrpListNew	1020		1	1		1	1
+1779	301	registerNew	710		1	1		1	1
+1780	302	registerUpd	710		1	1		1	1
+1781	302	userCdUpd	247		1	0		1	1
+1782	302	userNmUpd	252		1	1		1	1
+1783	302	cultureListUpd	1010		1	1		1	1
+1784	302	roleGrpListUpd	1020		1	1		1	1
+1785	302	delFlgUpd	805		1	1		1	1
+1786	303	clientCd	734	dropdown	1	0		1	1
+1787	303	productCd	4918	text	1	1		1	1
+1788	303	pickfrdate	5367	date	1	1		1	1
+1789	303	picktodate	5370	date	1	0		0	1
+1790	303	validtype	5373	dropdown	1	0		0	1
+1791	303	pickrank1	5374	dropdown	1	1		1	1
+1792	303	pickrank2	5375	dropdown	1	1		0	1
+1793	303	pickrank3	5376	dropdown	1	1		0	1
+1794	303	pickrank4	5377	dropdown	1	1		0	1
+1795	303	pickrank5	5378	dropdown	1	1		0	1
+1796	303	register	710	button	1	1		0	1
+1797	304	clientCd	734	dropdown	1	0		1	1
+1798	304	productCd	4918	text	1	1		1	1
+1799	304	pickfrdateFrom	5368	date	1	1		0	1
+1800	304	pickfrdateTo	5369	date	1	1		0	1
+1801	304	picktodateFrom	5371	date	1	1		0	1
+1802	304	picktodateTo	5372	date	1	1		0	1
+1803	304	designflg	4921	dropdown	1	1		0	1
+1804	304	validtype	5373	dropdown	1	1		0	1
+1805	304	search	731	button	1	1		0	1
+1806	304	excelOutput	719	button	1	1		0	1
+1807	304	AllocateControlMasterList	5381	grid	1	0		0	0
+1808	304	copy	5105	button	1	1		0	1
+1809	304	new	691	button	1	1		0	1
+1810	304	update	692	button	1	1		0	1
+1811	304	delete	805	button	1	1		0	1
+1812	305	mClient	734		1	1		1	1
+1813	305	currentTime	3336		1	0		0	1
+1814	305	attendance	3337		1	1		0	1
+1815	305	leaveWork	3338		1	1		0	1
+1816	305	startBreak	3339		1	1		0	1
+1817	305	endBreak	3340		1	1		0	1
+1818	305	userCd	3349		1	1		1	1
+1819	305	register	710		1	1		0	1
+1820	305	outputLog	3341		1	0		0	1
+1821	305	password	30		1	1		1	1
+1822	306	chkErrorShow	1387	checkbox	1	1		0	1
+1823	306	excelUpload	761		1	1		0	1
+1824	306	excelOutput	719		1	1		0	1
+1825	306	labelPrint	727		1	1		0	1
+1826	306	errorProcessMet	1388	dropdown	1	1		0	1
+1827	306	barcodeType	1619	dropdown	1	1		1	1
+1828	306	barcodeLabelBulkPrintList	2240	grid	1	1		0	1
+1829	306	startBit	1621	text	1	1		0	1
+1830	306	endBit	1622	text	1	1		0	1
+1831	307	centerCd	5142		1	0		1	1
+1832	307	clientCd	734		1	0		1	1
+1833	307	shippingDtFrom	808		1	1		1	1
+1834	307	shippingDtTo	807		1	1		1	1
+1835	307	bolOutputTargetFlg	3127		1	1		0	1
+1836	307	carrierCd	711		1	1		0	1
+1837	307	deliveryCourseCd	980		1	1		0	1
+1838	307	supplyCustomerCd	591		1	1		0	1
+1839	307	pickingWorkNo	3132		1	1		0	1
+1840	307	bolNo	2967		1	1		0	1
+1841	307	bolOutFlg	3126		1	1		0	1
+1842	307	search	731		1	1		0	1
+1843	307	billOfLadingPrintB	3133	grid	1	0		0	1
+1844	307	carrierTrace	2981		1	1		0	1
+1845	307	issueCancel	3128		1	1		0	1
+1846	307	issue	727		1	1		0	1
+1847	308	centerCd	4915	dropdown	1	0		1	1
+1848	308	clientCd	734	dropdown	1	0		1	1
+1849	308	receiveSts	5737	dropdown	1	1		0	0
+1850	308	fcFlg	4942	dropdown	1	1		0	0
+1851	308	supplierrcvno	4959	text	1	1		0	0
+1852	308	receivePlanDtFrom	5751	date	1	1		1	1
+1853	308	receivePlanDtTo	5752	date	1	1		0	0
+1854	308	carrierno	5686	text	1	1		0	0
+1855	308	lot1	4920	text	1	1		0	0
+1856	308	lot4	4922	date	1	1		0	0
+1857	308	itemcd	4918	text	1	1		0	0
+1858	308	lot3	4921	dropdown	1	1		0	0
+1859	308	otherrefno1	5715	dropdown	1	1		0	0
+1860	308	fromphone	5748	text	1	1		0	0
+1861	308	fromfax	5749	text	1	1		0	0
+1862	308	carrierwbno	5703	text	1	1		0	0
+1863	308	carriersname	5704	text	1	1		0	0
+1864	308	fromaddress1	5701	text	1	1		0	0
+1865	308	carriername	5738	text	1	1		0	0
+1866	308	search	731	button	1	1		0	0
+1867	308	excelOutput	719	button	1	1		0	0
+1868	308	bondedReceiveConfirmList	5736	grid	1	1		0	0
+1869	308	productReceiveList	5750	button	1	1		0	0
+1870	308	regster	5151	button	1	1		0	0
+1871	309	centerCd	4915		1	0		1	1
+1872	309	clientCd	734		1	0		1	1
+1873	309	printedflg	5272	dropdown	1	1		0	0
+1874	309	shipschdateFrom	5273		1	1		1	1
+1875	309	shipschdateTo	5274		1	1		0	0
+1876	309	listkbn	525	dropdown	1	1		0	0
+1877	309	pickbatchkey	5275		1	1		0	0
+1878	309	workallocateid	5276		1	1		0	0
+1879	309	search	731		1	1		0	1
+1880	309	excelOutput	719		1	1		0	1
+1881	309	unPrinted	2074		1	0		0	1
+1882	309	printed	2076		1	0		0	1
+1883	309	bondedShippingRelationListPrint	5279	grid	1	1		0	1
+1884	309	output	727		1	1		0	1
+1885	309	pickingListRePrint	3409		1	1		0	1
+1886	310	centerCd	5142		1	0		0	1
+1887	310	boxGrpCd	1542		1	1		1	1
+1888	310	boxGrpNm	1543		1	1		1	1
+1889	310	delFlg	805		1	1		1	1
+1890	310	boxCd	1544		1	1		1	1
+1891	310	addRow	708		1	1		0	1
+1892	310	removeRow	709		1	1		0	1
+1893	310	register	710		1	1		0	1
+1894	310	list	1541	grid	1	1		0	1
+1895	311	centerCd	5142		1	1		1	1
+1896	311	boxGrpCd	1542		1	1		0	1
+1897	311	boxGrpNm	1543		1	1		0	1
+1898	311	delFlg	805		1	1		0	1
+1899	311	search	731		1	1		0	1
+1900	311	excelOutput	719		1	1		0	1
+1901	311	boxGroupList	2238	grid	1	1		0	1
+1902	311	new	691		1	1		0	1
+1903	311	update	692		1	1		0	1
+1904	311	copy	1558		1	1		0	1
+1905	312	centerCd	4915		1	0		1	1
+1906	312	boxCd	5393		1	1		0	1
+1907	312	boxNm	5394		1	1		0	1
+1908	312	boxType	5395		1	1		0	1
+1909	312	delFlg	805		1	1		0	1
+1910	312	search	731		1	1		0	1
+1911	312	excelOutput	719		1	1		0	1
+1912	312	searchResultList	2167	grid	1	0		0	1
+1913	312	addRow	708		1	1		0	1
+1914	312	removeRow	709		1	1		0	1
+1915	312	register	710		1	1		0	1
+1916	313	centerCd	4915		1	0		1	1
+1917	313	clientCd	734		1	0		1	1
+1918	313	createDateTimeFrom	5690		1	1		0	1
+1919	313	createDateTimeTo	5691		1	1		0	1
+1920	313	makerCaseNoFrom	5680		1	1		0	1
+1921	313	makerCaseNoTo	5681		1	1		0	1
+1922	313	trsymbolId	5682		1	1		0	1
+1923	313	receiveDate	583		1	1		0	1
+1924	313	shipDate	5683		1	1		0	1
+1925	313	itemCd	5684		1	1		0	1
+1926	313	lot1	4920		1	1		0	1
+1927	313	lot4	4922		1	1		0	1
+1928	313	symbolMakeNoFrom	5636		1	1		0	1
+1929	313	symbolMakeNoTo	5637		1	1		0	1
+1930	313	lot3	4921		1	1		0	1
+1931	313	itfNo	5685		1	1		0	1
+1932	313	carrierNo	5686		1	1		0	1
+1933	313	search	731		1	1		0	1
+1934	313	excelOutput	719		1	1		0	1
+1935	313	cardboardMoveHistoryList	5687	grid	1	0		0	0
+1936	313	cardboardMoveHistoryDetail	5688		1	1		0	1
+1937	314	centerCd	5142		1	0		0	1
+1938	314	carrierCd	284		1	1		1	1
+1939	314	delFlg	805		1	1		0	1
+1940	314	carrierNm	286		1	1		1	1
+1941	314	carrierAbbr	287		1	1		0	1
+1942	314	commonCarrierCd	1688		1	1		0	1
+1943	314	mcommonCarrier.bolOutputTargetFlg	2972		0	1		0	1
+1944	314	mcarrierBoxList	1692	grid	1	1		0	1
+1945	314	addRow	708		1	1		0	1
+1946	314	removeRow	805		1	1		0	1
+1947	314	register	710		1	1		0	1
+1948	315	carrierCd	284		1	1		0	1
+1949	315	carrierNm	286		1	1		0	1
+1950	315	search	731		1	1		0	1
+1951	315	carrierList	2166	grid	1	1		0	1
+1952	315	centerCd	5142		1	1		1	1
+1953	315	delFlg	805		1	1		0	1
+1954	315	excelOutput	719		1	1		0	1
+1955	315	new	691		1	1		0	1
+1956	315	update	692		1	1		0	1
+1957	316	clientCd	734		1	0		0	1
+1958	316	customerCd	3027		1	1		0	1
+1959	316	delFlg	805		1	1		0	1
+1960	316	new	691		1	1		0	1
+1961	316	update	692		1	1		0	1
+1962	316	search	731		1	1		0	1
+1963	316	excelOutput	719		1	1		0	1
+1964	316	copy	1558		1	1		0	1
+1965	316	carrierSlipList	3115	grid	1	0		0	1
+1966	317	clientCd	734		1	1		1	1
+1967	317	delFlg	805		1	1		1	1
+1968	317	customerCd	3027		1	1		1	1
+1969	317	collectAccountNoBillTo	3028		1	1		0	1
+1970	317	collectZipCdBillTo	3029		1	1		0	1
+1971	317	collectCountryCdBillTo	3030		1	1		0	1
+1972	317	paymentTermCdTaxesTo	3031		1	1		0	1
+1973	317	collectAccountNoTaxesTo	3032		1	1		0	1
+1974	317	collectZipCdTaxesTo	3033		1	1		0	1
+1975	317	collectCountryCdTaxesTo	3034		1	1		0	1
+1976	317	codPaymentTermCd	3035		1	1		0	1
+1977	317	codAmount	3036		1	1	right	0	1
+1978	317	codFeePayer	3037		1	1		0	1
+1979	317	termsOfSales	3038		1	1		0	1
+1980	317	brokerName	3039		1	1		0	1
+1981	317	brokerPhoneNo	3040		1	1		0	1
+1982	317	brokerFaxNo	3041		1	1		0	1
+1983	317	satDeliveryFlg	3090		1	1		0	1
+1984	317	residentialDeliveryFlg	3091		1	1		0	1
+1985	317	codFlg	3092		1	1		0	1
+1986	317	signatureRequiredFlg	3093		1	1		0	1
+1987	317	signatureReleaseFlg	3094		1	1		0	1
+1988	317	callBeforeDeliveryFlg	3095		1	1		0	1
+1989	317	freezableProtectionFlg	3096		1	1		0	1
+1990	317	guaranteedPlusFlg	3097		1	1		0	1
+1991	317	residentialPickupFlg	3098		1	1		0	1
+1992	317	doNotStackStackFlg	3099		1	1		0	1
+1993	317	limitedAccessDeliveryFlg	3100		1	1		0	1
+1994	317	limitedAccessPickupFlg	3101		1	1		0	1
+1995	317	overSizedFlg	3102		1	1		0	1
+1996	317	poisonFlg	3103		1	1		0	1
+1997	317	foogFlg	3104		1	1		0	1
+1998	317	liftgateDeliveryPrepaidFlg	3105		1	1		0	1
+1999	317	liftgateDeliveryCollectFlg	3106		1	1		0	1
+2000	317	liftgatePickupPrepaidFlg	3107		1	1		0	1
+2001	317	liftgatePickupCollectFlg	3108		1	1		0	1
+2002	317	insideDeliveryPrepaidFlg	3109		1	1		0	1
+2003	317	insideDeliveryCollectFlg	3110		1	1		0	1
+2004	317	insidePickupPrepaidFlg	3111		1	1		0	1
+2005	317	insidePickupCollectFlg	3112		1	1		0	1
+2006	317	register	710		1	1		0	1
+2007	318	search	731		1	1		0	1
+2008	318	centerCd	5142		1	1		1	1
+2009	318	excelOutput	719		1	1		0	1
+2010	318	tagType	1096		1	1		0	1
+2011	318	carrierSlipSgwList	2222	grid	1	1		0	1
+2012	318	new	691		1	1		0	1
+2013	318	update	692		1	1		0	1
+2014	318	copy	1558		1	1		0	1
+2015	319	tagType	1096	text	1	1		1	1
+2016	319	tagNm	1394	text	1	1		1	1
+2017	319	characterCd	2335	dropdown	1	1		0	1
+2018	319	slipCustomerCd	1413	text	1	1		0	1
+2019	319	webApiRequestUrl	1695	text	1	1		0	1
+2020	319	customerId	1696	text	1	1		0	1
+2021	319	loginPassword	1697	text	1	1		0	1
+2022	319	deptConsignorNm	1414	text	1	1		0	1
+2023	319	consignorTelNo	1415	text	1	1		0	1
+2024	319	slipClientTelNo	1398	text	1	1		0	1
+2025	319	slipClientZipCd	1399	text	1	1		0	1
+2026	319	slipClientAddress1	1416	text	1	1		0	1
+2027	319	slipClientAddress2	1417	text	1	1		0	1
+2028	319	slipClientNm1	1418	text	1	1		0	1
+2029	319	slipClientNm2	1419	text	1	1		0	1
+2030	319	slipShapeCd	1420	dropdown	1	1		0	1
+2031	319	slipItemNm1	1406	text	1	1		0	1
+2032	319	slipItemNm2	1408	text	1	1		0	1
+2033	319	slipItemNm3	1421	text	1	1		0	1
+2034	319	slipItemNm4	1422	text	1	1		0	1
+2035	319	slipItemNm5	1423	text	1	1		0	1
+2036	319	transportTypeSpeed	1424	dropdown	1	1		0	1
+2037	319	transportTypeItem	1425	dropdown	1	1		0	1
+2038	319	settlementType	1426	dropdown	1	1		0	1
+2039	319	sealType1	1427	dropdown	1	1		0	1
+2040	319	sealType2	1428	dropdown	1	1		0	1
+2041	319	sealType3	1429	dropdown	1	1		0	1
+2042	319	codCls	1430	dropdown	1	1		0	1
+2043	319	sendCd	1702	text	1	1		0	1
+2044	319	apiOkuriCode	1704	text	1	1		0	1
+2045	319	apiBinsyuCode	1705	dropdown	1	1		0	1
+2046	319	apiDaibikiFlg	1706	dropdown	1	1		0	1
+2047	319	apiDaibikiType	1707	dropdown	1	1		0	1
+2048	319	apiWeightCd1	1708	dropdown	1	1		0	1
+2049	319	apiWeightCd2	1709	dropdown	1	1		0	1
+2050	319	apiEidomeFlg	1710	dropdown	1	1		0	1
+2051	319	delFlg	805	dropdown	1	1		1	1
+2052	319	register	710		1	1		0	1
+2053	320	search	731		1	1		0	1
+2054	320	centerCd	5142		1	1		1	1
+2055	320	excelOutput	719		1	1		0	1
+2056	320	tagType	1096		1	1		0	1
+2057	320	carrierSlipYmtList	2221	grid	1	1		0	1
+2058	320	new	691		1	1		0	1
+2059	320	update	692		1	1		0	1
+2060	320	copy	1558		1	1		0	1
+2061	321	tagType	1096	text	1	1		1	1
+2062	321	tagNm	1394	text	1	1		1	1
+2063	321	characterCd	2335	dropdown	1	1		0	1
+2064	321	slipType	1395	dropdown	1	1		0	1
+2065	321	coolCls	1396	dropdown	1	1		0	1
+2066	321	honorific	1397	text	1	1		0	1
+2067	321	slipClientTelNo	1398	text	1	1		0	1
+2068	321	packingShowFlg	1442	dropdown	1	1		0	1
+2069	321	slipClientZipCd	1399	text	1	1		0	1
+2070	321	slipClientAddress1	1400	text	1	1		0	1
+2071	321	slipClientAddress2	1401	text	1	1		0	1
+2072	321	slipClientAddress3	1402	text	1	1		0	1
+2073	321	slipClientAddress4	1403	text	1	1		0	1
+2074	321	slipClientNm	1404	text	1	1		0	1
+2075	321	slipItemCd1	1405	text	1	1		0	1
+2076	321	slipItemNm1	1406	text	1	1		0	1
+2077	321	slipItemCd2	1407	text	1	1		0	1
+2078	321	slipItemNm2	1408	text	1	1		0	1
+2079	321	freightHandling1	1409		1	1		0	1
+2080	321	freightHandling2	1410		1	1		0	1
+2081	321	billingCustomerCd	1411		1	1		0	1
+2082	321	fareNo	1412		1	1		0	1
+2083	321	article	1443		1	1		0	1
+2084	321	register	710		1	1		0	1
+2085	321	sendCd	1702	text	1	1		0	1
+2086	321	delFlg	805	dropdown	1	1		1	1
+2087	322	search	731		1	1		0	1
+2088	322	centerCd	5142		1	1		1	1
+2089	322	excelOutput	719		1	1		0	1
+2090	322	tagType	1096		1	1		0	1
+2091	322	carrierSlipYupkList	2223	grid	1	1		0	1
+2092	322	new	691		1	1		0	1
+2093	322	update	692		1	1		0	1
+2094	322	copy	1558		1	1		0	1
+2095	323	tagType	1096	text	1	1		1	1
+2096	323	tagNm	1394	text	1	1		1	1
+2097	323	characterCd	2335	dropdown	1	1		0	1
+2098	323	postType	1431	dropdown	1	1		0	1
+2099	323	coolType	1432	dropdown	1	1		0	1
+2100	323	codType	653	dropdown	1	1		0	1
+2101	323	carrierType	1395	text	1	1		0	1
+2102	323	slipClientZipCd	1399	text	1	1		0	1
+2103	323	slipClientAddress1	1416	text	1	1		0	1
+2104	323	slipClientAddress2	1417	text	1	1		0	1
+2105	323	slipClientAddress3	1433	text	1	1		0	1
+2106	323	slipClientNm1	1418	text	1	1		0	1
+2107	323	slipClientTelNo	1398	text	1	1		0	1
+2108	323	slipClientMail	1434	text	1	1		0	1
+2109	323	noUpsideDownCls	654	dropdown	1	1		0	1
+2110	323	noStockCls	655	dropdown	1	1		0	1
+2111	323	slipProductSizeCls	1435	text	1	1		0	1
+2112	323	slipProductNo	1436	text	1	1		0	1
+2113	323	slipItemNm	1437	text	1	1		0	1
+2114	323	shipReserveDataMark	1711	text	1	1		0	1
+2115	323	deliCertPreYears	1712	text	1	1		0	1
+2116	323	sendNm	1703	text	1	1		0	1
+2117	323	productTypeCode	1438	dropdown	1	1		0	1
+2118	323	postBizCardCustomerNo	1439	text	1	1		0	1
+2119	323	shippingCompanyCode	1440	text	1	1		0	1
+2120	323	shipmentCode	1441	text	1	1		0	1
+2121	323	delFlg	805	dropdown	1	1		1	1
+2122	323	register	710		1	1		0	1
+2123	324	takingShippingFlg	832		1	1		1	1
+2124	324	dtFrom	833		1	1		1	1
+2125	324	dtTo	834		1	1		1	1
+2126	324	pickingBatchNo	452		1	1		0	1
+2127	324	pickingWorkNo	450		1	1		0	1
+2128	324	casePickingNo	2551		1	1		0	1
+2129	324	supplyCustomerCd	591		1	1		0	1
+2130	324	emergencyFlg	1820		1	1		0	1
+2131	324	noStockOutFlg	338		1	1		0	1
+2132	324	deliveryCourseCd	5143	text	1	1		0	1
+2133	324	updUser	2586		1	1		0	1
+2134	324	search	731		1	1		0	1
+2135	324	searchResultTitle	2549		1	1		0	1
+2136	324	detailTitle	1051		1	1		0	1
+2137	324	register	710		1	1		0	1
+2138	324	casePickingList	2588	grid	1	0		0	1
+2139	324	casePickingDetailList	2589	grid	1	0		0	1
+2140	324	casePickingDetail	2590	grid	1	0		0	1
+2141	325	centerCd	5142		1	1		1	1
+2142	325	classCd	328		1	1		1	1
+2143	325	classComment	334		1	1		1	1
+2144	325	systemType	200		1	1		1	1
+2145	325	centerClassEdit	2214	grid	1	1		0	1
+2146	325	addRow	708		1	1		0	1
+2147	325	removeRow	709		1	1		0	1
+2148	325	register	710		1	1		0	1
+2149	326	centerCd	5142		1	0		0	1
+2150	326	classCd	328		1	0		0	1
+2151	326	classGrpCd	330		1	1		1	1
+2152	326	centerClassGrpDtlList	2216	grid	1	1		0	1
+2153	326	search	731		1	1		0	1
+2154	326	register	710		1	1		0	1
+2155	327	centerCd	5142		1	0		0	1
+2156	327	classCd	328		1	0		0	1
+2157	327	classComment	334		1	0		0	1
+2158	327	systemType	200		1	0		0	1
+2159	327	centerClassGrpMasterEdit	2215	grid	1	1		0	1
+2160	327	addRow	708		1	1		0	1
+2161	327	removeRow	709		1	1		0	1
+2162	327	register	710		1	1		0	1
+2163	328	centerCd	5142	dropdown	1	1		0	1
+2164	328	classCd	328	text	1	1		0	1
+2165	328	classComment	334	text	1	1		0	1
+2166	328	systemType	200	dropdown	1	1		0	1
+2167	328	search	731		1	1		0	1
+2168	328	register	691		1	1		0	1
+2169	328	update	692		1	1		0	1
+2170	328	delete	805		1	1		0	1
+2171	328	centerClassGrpUpdate	1107		1	1		0	1
+2172	328	centerClassGrpDtlUpdate	1108		1	1		0	1
+2173	328	centerClassList	2213	grid	1	1		0	1
+2174	329	centerClientCls	1074		1	1		1	1
+2175	329	centerOrClient	1075		1	1		1	1
+2176	329	screen	1062		1	1		1	1
+2177	329	grid	1930		1	1		1	1
+2178	329	search	731		1	1		0	1
+2179	329	centerClientScreenColList	2155	grid	1	1		0	1
+2180	329	register	710		1	1		0	1
+2181	329	excelOutput	719		1	1		0	1
+2182	330	centerClientCls	1074		1	1		1	1
+2183	330	centerOrClient	1075		1	1		1	1
+2184	330	screen	1062		1	1		1	1
+2185	330	search	731		1	1		0	1
+2186	330	centerClientScreenItemList	2157	grid	1	1		0	1
+2187	330	register	710		1	1		0	1
+2188	330	excelOutput	719		1	1		0	1
+2189	331	centerClientCls	1074		1	1		1	1
+2190	331	centerOrClient	1075		1	1		1	1
+2191	331	search	731		1	1		0	1
+2192	331	centerClientScreenList	2156	grid	1	1		0	1
+2193	331	register	710		1	1		0	1
+2194	331	excelOutput	719		1	1		0	1
+2195	332	centerMasterEdit	2158	grid	1	1		0	1
+2196	332	centerCd	202		1	1		1	1
+2197	332	delFlg	805		1	1		1	1
+2198	332	addRow	708		1	1		0	1
+2199	332	removeRow	709		1	1		0	1
+2200	332	register	710		1	1		0	1
+2201	332	centerNm	208		1	1		1	1
+2202	332	centerAbbr	209		1	1		1	1
+2203	332	cultureList	1010		1	1		0	1
+2204	332	timeZoneList	1012		1	1		0	1
+2205	332	new	691		1	1		0	1
+2206	332	update	692		1	1		0	1
+2207	333	centerCd	202		1	1		0	1
+2208	333	centerNm	208		1	1		0	1
+2209	333	search	731		1	1		0	1
+2210	333	centerMasterList	2159	grid	1	1		0	1
+2211	333	register	691		1	1		0	1
+2212	333	update	692		1	1		0	1
+2213	333	excelOutput	719		1	1		0	1
+2214	333	delFlg	805		1	1		0	1
+2215	334	centerCd	4915		1	0		0	1
+2216	334	clientCd	734		1	0		0	1
+2217	334	productCd	4918		1	0		0	1
+2218	334	productNm	4960		1	0		0	1
+2219	334	slotlocname	5244		1	1		0	1
+2220	334	picklocname	5245		1	1		0	1
+2221	334	register	710		1	1		0	1
+2222	335	centerCd	4915		1	0		1	1
+2223	335	clientCd	734		1	0		1	1
+2224	335	productCd	4918		1	1		1	1
+2225	335	search	731		1	1		0	1
+2226	335	excelOutput	719		1	1		0	1
+2227	335	CenterProductControlMasterList	5243	grid	1	0		0	0
+2228	335	update	692		1	1		0	1
+2229	336	copyFrom	2616		1	1		0	1
+2230	336	centerCdFrom	2612	dropdown	1	1		1	1
+2231	336	clientCdFrom	2614	dropdown	1	1		1	1
+2232	336	copyTo	2617		1	1		0	1
+2233	336	centerCdTo	2613	dropdown	1	1		1	1
+2234	336	clientCdTo	2615	dropdown	1	1		1	1
+2235	336	copyMasterList	2618	grid	1	1		0	1
+2236	336	register	710		1	1		0	1
+2237	337	centerCd	5142		1	1		1	1
+2238	337	clientCd	734		1	1		1	1
+2239	337	warehouseCd	723		1	1		0	1
+2240	337	register	727		1	1		0	1
+2241	337	num	955		1	1	right	1	1
+2242	338	clientCd	297		1	1		0	1
+2243	338	clientNm	303		1	1		0	1
+2244	338	delFlg	805		1	1		0	1
+2245	338	search	731		1	1		0	1
+2246	338	excelOutput	719		1	1		0	1
+2247	338	clientList	2168	grid	1	1		0	1
+2248	338	addRow	708		1	1		0	1
+2249	338	removeRow	709		1	1		0	1
+2250	338	register	710		1	1		0	1
+2251	339	clientCd	734		1	1		1	1
+2252	339	excelUpload	761		1	1		0	1
+2253	339	register	710		1	1		0	1
+2254	339	customerMaster	1251	grid	1	1		0	1
+2255	339	chkErrorShow	1387	checkbox	1	1		0	1
+2256	339	excelOutput	719		1	1		0	1
+2257	339	errorProcessMet	1388	dropdown	1	1		0	1
+2258	340	clientCd	734		1	0		1	1
+2259	340	customerCd	5119		1	1		1	1
+2260	340	specialAgentsCd2	5102		1	1		0	1
+2261	340	delFlg	805		1	1		1	1
+2262	340	customerNm	5120		1	1		1	1
+2263	340	name	5121		1	1		1	1
+2264	340	customerAbbr	5122		1	1		1	1
+2265	340	aName	5123		1	1		1	1
+2266	340	ssName	5124		1	1		1	1
+2267	340	showPriority	5125		1	1	right	0	1
+2268	340	marketType	5126		1	1		1	1
+2269	340	logisticsCd	5127		1	1		0	1
+2270	340	zipCd	5128		1	1		0	1
+2271	340	address1	5103		1	1		0	1
+2272	340	telNo	5129		1	1		0	1
+2273	340	faxNo	5130		1	1		0	1
+2274	340	deliveryTime	5131		1	1		0	1
+2275	340	comments	5132		1	1		0	1
+2276	340	deliveryFlg	5133		0	0		0	0
+2277	340	vendorFlg	5134		0	0		0	0
+2278	340	onetimeFlg	5135		0	0		0	0
+2279	340	depositFlg	5136		0	0		0	0
+2280	340	address2	5137		0	0		0	0
+2281	340	address3	5138		0	0		0	0
+2282	340	centerCd	5139		0	0		0	0
+2283	340	allocOrder	5140		0	0		0	0
+2284	340	shippingStopFlg	5104		0	0		0	0
+2285	340	limitDtReverseFlg	5141		0	0		0	0
+2286	340	center	5142		0	0		0	0
+2287	340	deliveryCourseCd	5143		0	0		0	0
+2288	340	deliveryOrder	5144		0	0		0	0
+2289	340	deliveryReadTime	5145		0	0		0	0
+2290	340	register	710		1	1		0	1
+2291	341	clientCd	734		1	0		1	1
+2292	341	customerCd	5119		1	1		0	1
+2293	341	specialAgentsCd2	5102		1	1		0	1
+2294	341	aName	5123		1	1		0	1
+2295	341	marketType	5126		1	1		0	1
+2296	341	delFlg	805		1	1		0	1
+2297	341	search	731		1	1		0	1
+2298	341	excelOutput	719		1	1		0	1
+2299	341	customerList	2177	grid	1	0		0	1
+2300	341	copy	5105		1	1		0	1
+2301	341	new	691		1	1		0	1
+2302	341	update	692		1	1		0	1
+2303	342	centerCd	5142		1	1		1	1
+2304	342	search	731		1	1		0	1
+2305	342	dailyList	2199	grid	1	1		0	1
+2306	342	daily	990		1	1		0	1
+2307	342	dailyBatch	990		0	1		0	1
+2308	343	centerCd	4915		1	0		1	1
+2309	343	clientCd	734		1	0		1	1
+2310	343	receiveDateFrom	5414		1	1		1	1
+2311	343	receiveDateTo	5415		1	1		0	1
+2312	343	sufferUsageFlg	5416		1	1		1	1
+2313	343	supplierRcvNo	5417		1	1		0	1
+2314	343	otherRefNo1	5418		1	1		0	1
+2315	343	fromAddress1	4942		1	1		0	1
+2316	343	search	731		1	1		0	1
+2317	343	excelOutput	719		1	1		0	1
+2318	343	DamagedItemResistrationList	5412	grid	1	0		0	0
+2319	343	sufferUsageFlgFd	5416		1	1		1	1
+2320	343	bulkUpdate	5420		1	0		0	1
+2321	343	decision	884		1	0		0	1
+2322	343	DamagedItemResistrationDetail	5413		1	0		0	1
+2323	344	dataInputTypeCd	1260	dropdown	1	1		0	1
+2324	344	dataRange	1238	dropdown	1	1		0	1
+2325	344	processType	1237	dropdown	1	1		0	1
+2326	344	commitType	1239	dropdown	1	1		0	1
+2327	344	upload	1782		1	1		0	1
+2328	344	download	1243		1	1		0	1
+2329	344	operationType	1264	dropdown	1	1		1	1
+2330	344	execute	1261		1	1		0	1
+2331	344	inputTypeXls	1260	dropdown	1	1		1	1
+2332	344	downloadXls	1243		1	1		0	1
+2333	345	centerCd	5142		1	0		0	1
+2334	345	deliveryCourseCd	5143		1	1		1	1
+2335	345	deliveryCourseNm	599		1	1		1	1
+2336	345	carrierCd	711		1	1		1	1
+2337	345	pickingTime	449		1	1		0	1
+2338	345	stowageTime	481		1	1		0	1
+2339	345	shippingTime	444		1	1		0	1
+2340	345	delFlg	805		1	1		1	1
+2341	345	addRow	708		1	1		0	1
+2342	345	removeRow	709		1	1		0	1
+2343	345	register	710		1	1		0	1
+2344	345	deliveryCourseMasterEdit	2205	grid	1	1		0	1
+2345	345	tagType	1395		1	1		1	1
+2346	345	trackingNumberingKey	1686		1	1		0	1
+2347	345	trackingNumberingAfterKey	1687		1	1		0	1
+2348	345	trackingNumberingUnit	1683		1	1		0	1
+2349	345	tagTypeAfter	1680		1	1		0	1
+2350	345	tagDataType	1232		1	1		0	1
+2351	345	slipTagType	1698		1	1		0	1
+2352	345	paymentTerm	2973		0	1		0	1
+2353	346	centerCd	5142		1	1		1	1
+2354	346	deliveryCourseCd	5143		1	1		0	1
+2355	346	search	731		1	1		0	1
+2356	346	new	691		1	1		0	1
+2357	346	update	692		1	1		0	1
+2358	346	deliveryCourseList	2206	grid	1	1		0	1
+2359	346	excelOutput	719		1	1		0	1
+2360	346	deliveryCourseNm	599		1	1		0	1
+2361	346	carrierCd	711		1	1		0	1
+2362	346	delFlg	805		1	1		0	1
+2363	346	copy	1558		1	1		0	1
+2364	347	selection	732		1	1		0	1
+2365	347	centerCd	5142		1	1		1	1
+2366	347	deliveryCourseCd	5143		1	1		0	1
+2367	347	deliveryCourseNm	599		1	1		0	1
+2368	347	search	731		1	1		0	1
+2369	347	deliveryCourse	2207	grid	1	1		0	1
+2370	347	close	733		1	1		0	1
+2371	348	selection	732		1	1		0	1
+2372	348	centerCd	5142		1	0		0	1
+2373	348	deliveryCourseCd	5143		1	1		0	1
+2374	348	deliveryCourseNm	599		1	1		0	1
+2375	348	search	731		1	1		0	1
+2376	348	deliveryCourse	2207	grid	1	1		0	1
+2377	348	close	733		1	1		0	1
+2378	348	searchResultTitle	2549		1	1		0	1
+2379	349	centerCd	5142		1	1		1	1
+2380	349	clientCd	734		1	1		1	1
+2381	349	shippingDtFrom	808		1	1		1	1
+2382	349	shippingDtTo	807		1	1		1	1
+2383	349	deliveryCourseCd	5143		1	1		0	0
+2384	349	carrierCd	711		1	1		0	0
+2385	349	pickingBatchNo	452		1	1		0	0
+2386	349	shippingStatus	433		1	1		0	0
+2387	349	noAllcDisplayFlg	809		1	1		0	0
+2388	349	emergencyFlg	1820		1	1		0	0
+2389	349	cancelDisplay	2362	dropdown	1	1		0	0
+2390	349	search	731		1	1		0	1
+2391	349	excelOutput	719		1	1		0	1
+2392	349	nonShippingTitle	1767		1	0		0	1
+2393	349	shippingInstProcessingTitle	1768		1	0		0	1
+2394	349	shippingInstedTitle	1770		1	0		0	1
+2395	349	inspectionedTitle	882		1	0		0	1
+2396	349	shippingFixedTitle	883		1	0		0	1
+2397	349	cancelTitle	1776		1	0		0	1
+2398	349	errorTitle	957		1	0		0	1
+2399	349	emergencyTitle	1786		1	0		0	1
+2400	349	stockOutFlgTitle	958		1	0		0	1
+2401	349	deliveryCourseShippingList	2208	grid	1	1		0	1
+2402	349	shippingInstSearch	828		1	1		0	1
+2403	349	shippingInst	824		1	1		0	1
+2404	349	shippingInstBatch	824		0	1		0	1
+2405	349	shippingInstDelete	825		1	1		0	1
+2406	349	stwList	826		1	1		0	1
+2407	350	clientCd	734		1	1		1	1
+2408	350	deliveryCd	591		1	1		0	1
+2409	350	deliveryNm	593		1	1		0	1
+2410	350	search	731		1	1		0	1
+2411	350	list	2204	grid	1	1		0	1
+2412	350	selection	732		1	1		0	1
+2413	350	close	733		1	1		0	1
+2414	351	clientCd	734		1	0		0	1
+2415	351	deliveryCd	591		1	1		0	1
+2416	351	deliveryNm	593		1	1		0	1
+2417	351	search	731		1	1		0	1
+2418	351	list	2204	grid	1	1		0	1
+2419	351	selection	732		1	1		0	1
+2420	351	close	733		1	1		0	1
+2421	351	searchResultTitle	2549		1	1		0	1
+2422	352	centerCd	5142		1	1		1	1
+2423	352	clientCd	734		1	1		1	1
+2424	352	shippingDt	443		1	1		1	1
+2425	352	supplierCd	591		1	1		0	1
+2426	352	printCondition	772		1	1		0	1
+2427	352	register	727		1	1		0	1
+2428	352	pickingWorkNo	450		0	1		0	1
+2429	352	clientShippingNo	349		0	1		0	1
+2430	353	centerCd	4915		1	0		1	1
+2431	353	clientCd	734		1	0		1	1
+2432	353	supplierrCvFlg	5798		1	1		0	1
+2433	353	landing	5799		1	1		0	1
+2434	353	supplierrCvNo	5481		1	1		0	1
+2435	353	search	731		1	1		0	1
+2436	353	excelOutput	719		1	1		0	1
+2437	353	slipNoReceiveList	5814	grid	1	0		0	1
+2438	353	publication	727		1	1		0	1
+2439	353	new	691		1	1		0	1
+2440	353	update	692		1	1		0	1
+2441	353	delete	805		1	1		0	1
+2442	354	centerCd	4915		1	0		1	1
+2443	354	clientCd	734		1	0		1	1
+2444	354	supplierrCvFlg	5798		1	1		1	1
+2445	354	landing	5799		1	1		1	1
+2446	354	supplierrCvNo	5481		1	0		0	1
+2447	354	supplierrCvNoJT	5800		1	0		0	1
+2448	354	supplierrCvNoTSN	5801		1	0		0	1
+2449	354	shipmenTDt	5802		1	1		0	1
+2450	354	arrivalDt	5803		1	1		1	1
+2451	354	plannedCar	5589		1	1		1	1
+2452	354	achievedCar	5590		1	1		1	1
+2453	354	transportationCo	711		1	1		1	1
+2454	354	carNo	5804		1	1		1	1
+2455	354	genericPalletNo	5805		1	1		1	0
+2456	354	otherPalletNo	5807		1	1		1	0
+2457	354	rcvSumQty1Pallet	5806		1	0		0	0
+2458	354	no	2441		1	1		1	1
+2459	354	sum	5808		1	0		0	0
+2460	354	sealNo1	5809		1	1		0	1
+2461	354	sealNo2	5810		1	1		0	1
+2462	354	sealNo3	5811		1	1		0	1
+2463	354	register	710		1	1		0	1
+2464	355	orderNo	2248		1	0		0	1
+2465	355	importType	2249		1	0		0	1
+2466	355	deliveryCourseCd	980		1	0		0	1
+2467	355	delivAddress1	2284		1	1		1	1
+2468	355	delivAddress2	2285		1	1		1	1
+2469	355	delivAddress3	2286		1	1		1	1
+2470	355	close	733		1	1		0	1
+2471	355	register	710		1	1		0	1
+2472	355	importDt	2258		1	0		0	1
+2473	356	centerCd	5142		1	1		1	1
+2474	356	clientCd	734		1	1		1	1
+2475	356	importTypeCd	2249		1	1		1	1
+2476	356	ecOrderListGrid	2298		1	0		0	1
+2477	356	csvUpload	2301		1	1		0	1
+2478	356	register	710		1	1		0	1
+2479	356	csvUploadHeader	2375		1	1		0	1
+2480	356	csvUploadBody	2376		1	1		0	1
+2481	357	dtCls	2314	dropdown	1	1		1	1
+2482	357	dtFrom	833	text	1	1		1	1
+2483	357	dtTo	834	text	1	1		1	1
+2484	357	centerCd	5142	dropdown	1	1		1	1
+2485	357	clientCd	734	dropdown	1	1		1	1
+2486	357	orderNo	2248	text	1	1		0	1
+2487	357	shippingStatus	433	dropdown	1	1		0	0
+2488	357	importType	2249	dropdown	1	1		0	1
+2489	357	deliveryCourseCd	5143	text	1	1		0	0
+2490	357	pickingWorkNo	450	text	1	1		0	0
+2491	357	statementOutFlg	2261	dropdown	1	1		0	0
+2492	357	invoiceCreateFlg	2254	dropdown	1	1		0	0
+2493	357	errorFlg	187	dropdown	1	1		0	0
+2494	357	stockOutFlg	338	dropdown	1	1		0	0
+2495	357	priorityFlg	2291	dropdown	1	1		0	0
+2496	357	giftFlg	2256	dropdown	1	1		0	0
+2497	357	mergeFlg	2365	dropdown	1	1		0	0
+2498	357	mergeId	2282	text	1	1		0	0
+2499	357	noshi	2273	text	1	1		0	0
+2500	357	commentFlg	2414	dropdown	1	1		0	0
+2501	357	comment1	2268		1	1		0	0
+2502	357	comment2	2269		1	1		0	0
+2503	357	cancelDisplay	2362	dropdown	1	1		0	0
+2504	357	search	731		1	1		0	1
+2505	357	excelOutput	719		1	1		0	1
+2506	357	nonShippingTitle	1767		1	0		0	1
+2507	357	shippingInstProcessingTitle	1768		1	0		0	1
+2508	357	shippingInstedTitle	1770		1	0		0	1
+2509	357	inspectionedTitle	882		1	0		0	1
+2510	357	shippingFixedTitle	883		1	0		0	1
+2511	357	cancelTitle	1776		1	0		0	1
+2512	357	shippingDeletedTitle	2322		1	0		0	1
+2513	357	errorTitle	957		1	0		0	1
+2514	357	shippingStopTitle	1756		1	0		0	1
+2515	357	stockOutFlgTitle	958		1	0		0	1
+2516	357	selectedRowTitle	2420		1	0		0	1
+2517	357	ecOrderListGrid	2298	grid	1	0		0	1
+2518	357	invoiceCreate	2254		1	1		0	1
+2519	357	deliveryCourseShippingList	806		1	1		0	1
+2520	357	shippingInstList	828		1	1		0	1
+2521	357	productShippingList	857		1	1		0	1
+2522	357	instUpdate	880		1	1		0	1
+2523	357	statementOut	2253		1	1		0	1
+2524	357	orderCancel	2297		1	1		0	1
+2525	357	errorDelete	2363		1	1		0	1
+2526	358	dtCls	2314	dropdown	1	1		1	1
+2527	358	dtFrom	833	text	1	1		1	1
+2528	358	dtTo	834	text	1	1		1	1
+2529	358	centerCd	5142	dropdown	1	1		1	1
+2530	358	clientCd	734	dropdown	1	1		1	1
+2531	358	orderNo	2248	text	1	1		0	0
+2532	358	shippingStatus	433	dropdown	1	1		0	0
+2533	358	importType	2249	dropdown	1	1		1	1
+2534	358	tagDataType	1232	dropdown	1	1		0	1
+2535	358	deliveryCourseCd	5143	text	1	1		0	0
+2536	358	invoiceCreateFlg	2254	dropdown	1	1		0	1
+2537	358	stockOutFlg	338	dropdown	1	1		0	0
+2538	358	search	731		1	1		0	1
+2539	358	shippingInstedTitle	1770		1	0		0	1
+2540	358	inspectionedTitle	882		1	0		0	1
+2541	358	shippingFixedTitle	883		1	0		0	1
+2542	358	shippingStopTitle	1756		1	0		0	1
+2543	358	stockOutFlgTitle	958		1	0		0	1
+2544	358	ecShippingTagDataOutputGrid	2319	grid	1	0		0	1
+2545	358	registerAddress	2369		1	1		0	1
+2546	358	csvOutput	1097		1	1		0	1
+2547	359	ediNm	2316		1	1		1	1
+2548	359	ediEdit	2324	grid	1	1		0	1
+2549	359	addRow	708		1	1		0	1
+2550	359	removeRow	709		1	1		0	1
+2551	359	register	710		1	1		0	1
+2552	360	ediNm	2316		1	1		0	1
+2553	360	search	731		1	1		0	1
+2554	360	register	691		1	1		0	1
+2555	360	update	692		1	1		0	1
+2556	360	delete	805		1	1		0	1
+2557	360	ediList	2317	grid	1	0		0	1
+2558	360	copy	1558		1	1		0	1
+2559	370	cultureId	1010		1	1		1	1
+2560	370	dictNm	421		1	1		0	1
+2561	370	search	731		1	1		0	1
+2562	370	dictCultureList	1017	grid	1	1		0	1
+2563	370	register	710		1	1		0	1
+2564	371	dictNm	421		1	1		0	1
+2565	371	systemType	200		1	1		0	1
+2566	371	search	731		1	1		0	1
+2567	371	htdictList	1029	grid	1	1		0	1
+2568	371	register	710		1	1		0	1
+2569	372	messageCd	240		1	1		0	1
+2570	372	messageNm	239		1	1		0	1
+2571	372	messageType	503		1	1		0	1
+2572	372	systemType	200		1	1		0	1
+2573	372	cultureCd	1010		1	1		0	1
+2574	372	search	731		1	1		0	1
+2575	372	body	1177	grid	1	0		0	1
+2576	372	register	710		1	1		0	1
+2577	373	ediColumnNm	2325	text	1	0		0	1
+2578	373	copyColumnListGrid	2373	grid	1	1		0	1
+2579	373	addRow	708		1	1		0	1
+2580	373	removeRow	709		1	1		0	1
+2581	373	selection	1281		1	1		0	1
+2582	373	close	733		1	1		0	1
+2583	374	clientCd	734	dropdown	1	1		1	1
+2584	374	importTypeCd	2334	text	1	1		1	1
+2585	374	importTypeNm	2257	text	1	1		1	1
+2586	374	edi	1783	dropdown	1	1		1	1
+2587	374	uploadTableNm	2339	dropdown	1	1		1	1
+2588	374	confirm	884		1	1		0	1
+2589	374	characterCd	2335	text	1	1		0	1
+2590	374	lineFeedCd	2336	dropdown	1	1		0	1
+2591	374	delimiter	2337	text	1	1		0	1
+2592	374	skippingRows	2338	number	1	1	right	0	1
+2593	374	duplicateColumnNm	2340	dropdown	1	1		0	1
+2594	374	rcvIdColumnNm	2341	dropdown	1	1		0	1
+2595	374	rowNoColumnNm	2342	dropdown	1	1		0	1
+2596	374	giftStatementType	2343	dropdown	1	1		1	1
+2597	374	giftStatementDetail	2344	text	1	1		0	1
+2598	374	oKeepingDays	2345	number	1	1	right	1	1
+2599	374	statementTitle	2346	text	1	1		0	1
+2600	374	statementUrl	2347	text	1	1		0	1
+2601	374	importTypeBodyListGrid	2353	grid	1	1		0	1
+2602	374	register	710		1	1		0	1
+2603	375	clientCd	734		1	1		1	1
+2604	375	importTypeCd	2334	text	1	1		0	1
+2605	375	importTypeNm	2257	text	1	1		0	1
+2606	375	edi	1783	dropdown	1	1		0	1
+2607	375	uploadTableNm	2339	text	1	1		0	1
+2608	375	statementTitle	2346	text	1	1		0	1
+2609	375	search	731		1	1		0	1
+2610	375	importTypeMasterListGrid	2348	grid	1	0		0	1
+2611	375	register	691		1	1		0	1
+2612	375	update	692		1	1		0	1
+2613	375	delete	805		1	1		0	1
+2614	375	copy	1558		1	1		0	1
+2615	376	centerCd	4915		1	0		1	1
+2616	376	clientCd	734		1	0		1	1
+2617	376	inventoryInstKbn	5753		1	1		1	1
+2618	376	instKey	5661		1	1		0	1
+2619	376	inventoryDt	5755	date	1	1		0	1
+2620	376	locationGrp	5315		1	1		0	1
+2621	376	search	731		1	1		0	1
+2622	376	excelOutput	719		1	1		0	1
+2623	376	instKeyList	5757	grid	1	1		0	0
+2624	376	inventoryUnsuitablePrint	5756		1	1		0	1
+2625	376	stockCheck	3426		1	1		0	1
+2626	376	inventoryInput	3425		1	1		0	1
+2627	377	centerCd	5142		1	1		1	1
+2628	377	clientCd	734		1	1		1	1
+2629	377	warehouseCd	723		1	1		0	0
+2630	377	inventoryDt	514		1	1		1	1
+2631	377	depositCd	762		1	1		0	0
+2632	377	stockTypeCd	763		1	1		0	0
+2633	377	fromLocationCd	725		1	1		0	0
+2634	377	toLocationCd	726		1	1		0	0
+2635	377	zoneCd	724		1	1		0	0
+2636	377	storeLabelNo	573		1	1		0	0
+2637	377	productCd	465		1	1		0	0
+2638	377	stockTakingInput	940		1	1		0	0
+2639	377	unmatch	941		1	1		0	1
+2640	377	search	731		1	1		0	1
+2641	377	excelOutput	719		1	1		0	1
+2642	377	stockChanged	1231		1	0	center	0	1
+2643	377	inventoryBulkUpdateList	2193	grid	1	1		0	1
+2644	377	register	973		1	1		0	1
+2645	378	centerCd	4915		1	0		1	1
+2646	378	clientCd	734		1	0		1	1
+2647	378	inventoryInstKbn	5753		1	1		0	1
+2648	378	lineBlock	5320		1	1		0	1
+2649	378	directionalPistonText	5774		1	1		0	1
+2650	378	directionalPistonDropdown	5773		1	1		0	1
+2651	378	warehouseCd	723		1	0		0	0
+2652	378	inventoryDt	514		1	0		0	0
+2653	378	depositCd	762		1	0		0	0
+2654	378	stockTypeCd	763		1	0		0	0
+2655	378	locationGrp	5315		1	1		0	1
+2656	378	locationCd	262		1	1		0	1
+2657	378	fromLocationCd	725		1	1		0	1
+2658	378	toLocationCd	726		1	1		0	1
+2659	378	zoneCd	724		1	0		0	0
+2660	378	fromStockInoutDt	177		1	0		0	0
+2661	378	toStockInoutDt	181		1	0		0	0
+2662	378	stockTarget	1816		1	0		0	0
+2663	378	productCd	4918		1	1		0	1
+2664	378	productDivision	4936		1	1		0	1
+2665	378	inventoryDelete	2607		0	0		0	0
+2666	378	instKeyList	3424		1	1		0	1
+2667	378	register	5772		1	1		0	1
+2668	379	centerCd	4915		1	0		1	1
+2669	379	clientCd	734		1	0		1	1
+2670	379	targetDate	5383		1	0		0	1
+2671	379	targetDateEdit	5386		1	0		0	1
+2672	379	sundayFlgNm	5384		1	0		0	1
+2673	379	invDate	5385		1	1		1	1
+2674	379	invDateEdit	5386		1	0		0	1
+2675	379	register	710		1	1		0	1
+2676	380	centerCd	4915		1	0		1	1
+2677	380	clientCd	734		1	0		1	1
+2678	380	targetDate	5382		1	1		0	1
+2679	380	sundayFlg	5384		1	1		0	1
+2680	380	search	731		1	1		0	1
+2681	380	excelOutput	719		1	1		0	1
+2682	380	register	692		1	1		0	1
+2683	380	bodyList	2245	grid	1	1		0	1
+2684	381	clientCd	734		1	1		1	1
+2685	381	centerCd	5142		1	1		1	1
+2686	381	warehouseCd	723		1	1		0	1
+2687	381	inventoryDt	514		1	1		1	1
+2688	381	depositCd	762		1	1		0	1
+2689	381	stockTypeCd	763		1	1		0	1
+2690	381	fromLocationCd	725		1	1		0	1
+2691	381	toLocationCd	726		1	1		0	1
+2692	381	zoneCd	724		1	1		0	1
+2693	381	productCd	465		1	1		0	1
+2694	381	inventoryLocationProduct	766		1	1		0	1
+2695	381	diffQtyUp	2952		1	1	right	0	1
+2696	381	register	727		1	1		0	1
+2697	382	centerCd	5142		1	1		1	1
+2698	382	clientCd	734		1	1		1	1
+2699	382	warehouseCd	723		1	1		0	0
+2700	382	inventoryDtFrom	871	date	1	1		0	1
+2701	382	inventoryDtTo	872	date	1	1		0	1
+2702	382	supplierCustomerCd	390	text	1	1		0	0
+2703	382	depositCd	762		1	1		0	0
+2704	382	stockTypeCd	763		1	1		0	0
+2705	382	locationCdFrom	725	text	1	1		0	0
+2706	382	locationCdTo	726	text	1	1		0	0
+2707	382	productCd	465	text	1	1		0	0
+2708	382	lot	266	text	1	1		0	0
+2709	382	limitDtFrom	849	date	1	1		0	0
+2710	382	limitDtTo	850	date	1	1		0	0
+2711	382	storeLabelNo	573	text	1	1		0	0
+2712	382	storeDtFrom	1182	date	1	1		0	0
+2713	382	storeDtTo	1183	date	1	1		0	0
+2714	382	search	731		1	1		0	1
+2715	382	excelOutput	719		1	1		0	1
+2716	382	bodyList	2245	grid	1	1		0	1
+2717	383	centerCd	5142		1	1		1	1
+2718	383	clientCd	734		1	1		1	1
+2719	383	warehouseCd	723		1	1		0	0
+2720	383	inventoryDtFrom	871		1	1		1	1
+2721	383	inventoryDtTo	872		1	1		1	1
+2722	383	depositCd	762		1	1		0	0
+2723	383	stockTypeCd	763		1	1		0	0
+2724	383	fromLocationCd	725		1	1		0	0
+2725	383	toLocationCd	726		1	1		0	0
+2726	383	zoneCd	724		1	1		0	0
+2727	383	productCd	465		1	1		0	0
+2728	383	storeLabelNo	573		1	1		0	0
+2729	383	search	731		1	1		0	1
+2730	383	excelOutput	719		1	1		0	1
+2731	383	bodyList	2195	grid	1	1		0	1
+2732	384	centerCd	4915		1	0		1	1
+2733	384	clientCd	734		1	0		1	1
+2734	384	inventoryInstKbn	5753		1	1		1	1
+2735	384	inventoryKeyFlg	5775		1	1		1	1
+2736	384	inventoryInstKey	5661		1	1		0	1
+2737	384	inventoryInstAddDt	5755		1	1		0	1
+2738	384	warehouseCd	723		0	0		0	0
+2739	384	inventoryDtFrom	871		0	0		0	0
+2740	384	inventoryDtTo	872		0	0		0	0
+2741	384	depositCd	762		0	0		0	0
+2742	384	stockTypeCd	763		0	0		0	0
+2743	384	locationGrp	5315		1	1		0	1
+2744	384	fromLocationCd	725		1	1		0	1
+2745	384	toLocationCd	726		1	1		0	1
+2746	384	zoneCd	724		0	0		0	0
+2747	384	productCd	4918		1	1		0	0
+2748	384	storeLabelNo	573		0	0		0	0
+2749	384	capProduct	5788		1	1		0	1
+2750	384	stockTakingInput	940		1	1		0	1
+2751	384	unmatch	941		1	1		0	1
+2752	384	productType	4989		1	1		0	1
+2753	384	search	731		1	1		0	1
+2754	384	excelOutput	719		1	1		0	1
+2755	384	inventroyParcentTitle	1189		1	0		0	1
+2756	384	inventoryList	2194	grid	1	1		0	1
+2757	384	addRow	708		0	1		0	1
+2758	384	removeRow	709		0	1		0	1
+2759	384	stockAdjust	888		0	1		0	1
+2760	384	register	710		1	1		0	1
+2761	385	clientCd	734		1	0		1	1
+2762	385	centerCd	5142		1	0		1	1
+2763	385	warehouseCd	723		1	1		0	1
+2764	385	inventoryDt	514		1	0		1	1
+2765	385	locationCd	262		1	1		1	1
+2766	385	productCd	465		1	1		1	1
+2767	385	stockTypeCd	763		1	1		1	1
+2768	385	lot	266		1	1		0	1
+2769	385	limitDt	313		1	1		0	1
+2770	385	inventoryNum	513		1	1	right	1	1
+2771	385	inventoryNumMultiText	2953		1	1	right	0	1
+2772	385	storeLabelNo	573		0	1		0	1
+2773	385	supplierCustomerCd	390		0	1		0	1
+2774	385	addRow	972		1	1		0	1
+2775	385	depositCd	762		1	1		1	1
+2776	385	close	733		1	1		0	1
+2777	385	unitNumBreakdown	2702		1	0	right	0	1
+2778	385	storeDt	583		1	1		1	1
+2779	386	warehouseCd	723		1	1		0	1
+2780	386	inventoryDt	514		1	1		1	1
+2781	386	fromLocationCd	725		1	1		0	1
+2782	386	toLocationCd	726		1	1		0	1
+2783	386	zoneCd	724		1	1		0	1
+2784	386	stockTakingInput	940		1	1		0	1
+2785	386	unmatch	941		1	1		0	1
+2786	386	search	731		1	1		0	1
+2787	386	detailTitle	1051		1	1		0	1
+2788	386	searchResultTitle	2549		1	1		0	1
+2789	386	register	710		1	1		0	1
+2790	386	inventoryInputList	2594	grid	1	0		0	1
+2791	386	inventoryInputDetail	2593	grid	1	0		0	1
+2792	387	centerCd	4915		1	0		1	1
+2793	387	clientCd	734		1	0		1	1
+2794	387	inventoryReport	5792		1	1		1	1
+2795	387	executedate	5608		1	1		1	1
+2796	387	inoutkbn	4942		1	1		1	1
+2797	387	diffoccarea	5793		1	1		0	1
+2798	387	itemcd	4918		1	1		0	1
+2799	387	capitemflg	5788		1	1		0	1
+2800	387	unmatch	941		1	1		0	1
+2801	387	stockAdjustInst	5791		1	1	center	0	1
+2802	387	register	727		1	1	center	0	1
+2803	388	clientCd	734		1	1		1	1
+2804	388	centerCd	5142		1	1		1	1
+2805	388	warehouseCd	723		1	1		0	1
+2806	388	inventoryDt	514		1	1		1	1
+2807	388	depositCd	762		1	1		0	1
+2808	388	stockTypeCd	763		1	1		0	1
+2809	388	fromLocationCd	725		1	1		0	1
+2810	388	toLocationCd	726		1	1		0	1
+2811	388	zoneCd	724		1	1		0	1
+2812	388	productCd	465		1	1		0	1
+2813	388	stockExistOnlyFlg	869		1	1		0	1
+2814	388	register	727		1	1		0	1
+2815	389	centerCd	5142		1	1		1	1
+2816	389	warehouseCd	723		1	1		0	1
+2817	389	zoneCd	724		1	1		0	1
+2818	389	locationCdFrom	725		1	1		0	1
+2819	389	locationCdTo	726		1	1		0	1
+2820	389	register	727		1	1		0	1
+2821	390	clientCd	734		1	0		1	1
+2822	390	locGroup	5315		1	1		0	1
+2823	390	locationCd	262		1	1		0	1
+2824	390	allocNgFlg	5316		1	1		0	1
+2825	390	zone	724		1	1		0	1
+2826	390	delFlg	805		1	1		0	1
+2827	390	search	731		1	1		0	1
+2828	390	excelOutput	719		1	1		0	1
+2829	390	locationList	2164	grid	1	0		0	1
+2830	390	locationListOutput	2164	grid	1	0		0	0
+2831	390	LocationManageListExcelOutput	5336		1	1		0	1
+2832	390	new	691		1	1		0	1
+2833	390	update	692		1	1		0	1
+2834	390	copy	5105		1	1		0	1
+2835	391	locationMasterBulkInputList	2239	grid	1	1		0	1
+2836	391	chkErrorShow	1387	checkbox	1	1		0	1
+2837	391	centerCd	5142	dropdown	1	1		1	1
+2838	391	errorProcessMet	1388	dropdown	1	1		0	1
+2839	391	excelOutput	719		1	1		0	1
+2840	391	excelUpload	761		1	1		0	1
+2841	391	register	710		1	1		0	1
+2842	392	clientCd	734	dropdown	1	0		1	1
+2843	392	locationCd	262	text	1	1		1	1
+2844	392	locationNm	265	text	1	1		1	1
+2845	392	locGroup	5315	dropdown	1	1		1	1
+2846	392	delFlg	805	dropdown	1	1		1	1
+2847	392	allocNgFlg	5316	dropdown	1	1		0	1
+2848	392	zone	724	text	1	1		0	1
+2849	392	pickingOrder	5317	number	1	1		0	1
+2850	392	palletecapacity	5318	number	1	1		0	1
+2851	392	maxStoreNum	5319	number	1	1		0	1
+2852	392	linblk	5320	dropdown	1	1		0	1
+2853	392	locid	5321	dropdown	1	1		0	1
+2854	392	productCd	4918	text	1	1		0	1
+2855	392	tosplmd	5328	dropdown	1	1		0	1
+2856	392	presplmd	5329	dropdown	1	1		0	1
+2857	392	splrevun	5324	dropdown	1	1		0	1
+2858	392	splrevctqa	5325	number	1	1		0	1
+2859	392	replenishPNum	5326	number	1	1		0	1
+2860	392	bssplpt	5327	number	1	1		0	1
+2861	392	centerCd	5142	text	0	0		0	0
+2862	392	warehouseCd	723	text	0	0		0	0
+2863	392	allocOrder	5140	text	0	0		0	0
+2864	392	product	765	text	0	0		0	0
+2865	392	replenishStockTypeId	763	text	0	0		0	0
+2866	392	replenishDepositId	762	text	0	0		0	0
+2867	392	replenishPProductShapeId	1538	text	0	0		0	0
+2868	392	maxStoreProductShapeId	1539	text	0	0		0	0
+2869	392	register	710	button	1	1		0	1
+2870	393	locationType	264		1	1		0	1
+2871	393	search	731		1	1		0	1
+2872	393	selection	732		1	1		0	1
+2873	393	close	733		1	1		0	1
+2874	393	locationList	2165	grid	1	0		1	1
+2875	393	centerCd	5142		1	1		1	1
+2876	393	locationCd	262		1	1		0	1
+2877	393	pickingLocationFlg	225		1	1		0	1
+2878	393	warehouse	723		1	1		0	1
+2879	393	zone	724		1	1		0	1
+2880	394	locationType	264		1	1		0	1
+2881	394	search	731		1	1		0	1
+2882	394	selection	732		1	1		0	1
+2883	394	close	733		1	1		0	1
+2884	394	locationList	2165	grid	1	0		1	1
+2885	394	centerCd	5142		1	0		0	1
+2886	394	locationCd	262		1	1		0	1
+2887	394	pickingLocationFlg	225		1	1		0	1
+2888	394	warehouse	723		1	1		0	1
+2889	394	zone	724		1	1		0	1
+2890	394	searchResultTitle	2549		1	1		0	1
+2891	403	matchingType	2328	text	1	1		0	1
+2892	403	matchingKeyword	2329	text	1	1		0	1
+2893	403	transformCd	2330	text	1	1		0	1
+2894	403	search	731		1	1		0	1
+2895	403	matchingListGrid	2331	grid	1	1		0	1
+2896	403	addRow	708		1	1		0	1
+2897	403	removeRow	709		1	1		0	1
+2898	403	register	710		1	1		0	1
+2899	404	close	733		1	1		0	1
+2900	405	close	733		1	1		0	1
+2901	406	close	733		1	1		0	1
+2902	407	workInstNum	3224		1	0		0	1
+2903	407	close	733		1	1		0	1
+2904	408	centerCd	4915		1	0		1	1
+2905	408	clientCd	734		1	0		1	1
+2906	408	productCd	4918		1	1		0	1
+2907	408	sotedunit	5080		1	1		0	1
+2908	408	delFlg	805		1	1		0	1
+2909	408	search	731		1	1		0	1
+2910	408	excelOutput	719		1	1		0	1
+2911	408	searchResultList	5488	grid	1	1		1	0
+2912	408	addRow	708		1	1		0	1
+2913	408	deleteRow	709		1	1		0	1
+2914	408	copyRow	5492		1	1		0	1
+2915	408	register	710		1	1		0	1
+2916	409	centerCd	5142		1	1		1	1
+2917	409	clientCd	734		1	1		1	1
+2918	409	warehouseCd	723		1	1		0	1
+2919	409	instDt	398		1	1		1	1
+2920	409	moveSlipNo	183	text	1	1		0	1
+2921	409	storeLabelNo	573	text	1	1		0	1
+2922	409	addUser	247	text	1	1		0	1
+2923	409	printCondition	772	dropdown	1	1		0	1
+2924	409	register	727		1	1		0	1
+2925	410	centerCd	4915		1	0		1	1
+2926	410	clientCd	734		1	0		1	1
+2927	410	createddateFrom	5707		1	1		0	1
+2928	410	createddateTo	5708		1	1		0	1
+2929	410	targetmon	5709		1	1		0	1
+2930	410	reprintedflg	273		1	1		0	1
+2931	410	inoutkbn	4942		1	1		0	1
+2932	410	vaExtdata2	4936		1	1		0	1
+2933	410	itemcd	4918		1	1		0	1
+2934	410	baditemcd	5710		1	1		0	1
+2935	410	todayPrintOnlyFlg	5711		1	1		0	1
+2936	410	search	731		1	1		0	1
+2937	410	excelOutput	719		1	1		0	1
+2938	410	nonconformityLabelPrintList	5712	grid	1	0		0	0
+2939	410	output	727		1	1		0	1
+2940	411	bizCd	324		1	1		0	1
+2941	411	bizNm	326		1	1		0	1
+2942	411	search	731		1	1		0	1
+2943	411	excelOutput	719		1	1		0	1
+2944	411	list	2601	grid	1	1		0	1
+2945	411	centerCd	5142		1	1		1	1
+2946	411	delFlg	805		1	1		0	1
+2947	411	addRow	708		1	1		0	1
+2948	411	removeRow	709		1	1		0	1
+2949	411	register	710		1	1		0	1
+2950	412	takingShippingFlg	832		1	1		1	1
+2951	412	dtFrom	833		1	1		1	1
+2952	412	dtTo	834		1	1		1	1
+2953	412	pickingBatchNo	452		1	1		0	1
+2954	412	pickingWorkNo	450		1	1		0	1
+2955	412	shippingPackingNo	438		1	1		0	1
+2956	412	supplyCustomerCd	591		1	1		0	1
+2957	412	emergencyFlg	1820		1	1		0	1
+2958	412	noStockOutFlg	338		1	1		0	1
+2959	412	deliveryCourseCd	5143	text	1	1		0	1
+2960	412	updUser	2586		1	1		0	1
+2961	412	search	731		1	1		0	1
+2962	412	searchResultTitle	2549		1	1		0	1
+2963	412	detailTitle	1051		1	1		0	1
+2964	412	register	710		1	1		0	1
+2965	412	orderPickingList	2583	grid	1	0		0	1
+2966	412	orderPickingDetailList	2584	grid	1	0		0	1
+2967	412	orderPickingDetail	2585	grid	1	0		0	1
+2968	413	centerCd	5142		1	1		1	1
+2969	413	clientCd	734		1	1		1	1
+2970	413	shippingDt	443	text	1	1		0	1
+2971	413	workDt	387	text	1	1		0	1
+2972	413	processTypeCd	737		1	1		0	0
+2973	413	clientShippingNo	349	text	1	1		0	0
+2974	413	shippingSlipNo	184	text	1	1		0	0
+2975	413	supplyCustomerCd	591	text	1	1		0	0
+2976	413	delivCustomerCd	548	text	1	1		0	0
+2977	413	deliveryCourseCd	5143	text	1	1		0	0
+2978	413	carrierCd	711		1	1		0	0
+2979	413	productCd	465	text	1	1		0	0
+2980	413	lot	266	text	1	1		0	0
+2981	413	limitDtFrom	849	date	1	1		0	0
+2982	413	limitDtTo	850	date	1	1		0	0
+2983	413	stockTypeCd	763		1	1		0	0
+2984	413	carrierTraceNum	306	text	1	1		0	0
+2985	413	search	731		1	1		0	1
+2986	413	excelOutput	719		1	1		0	1
+2987	413	bodyList	2242	grid	1	0		0	1
+2988	414	centerCd	5142		1	1		1	1
+2989	414	clientCd	734		1	1		1	1
+2990	414	pickingWorkNo	450		1	1		0	1
+2991	414	takingShippingDtFlg	1650		1	1		1	1
+2992	414	dtFrom	833		1	1		1	1
+2993	414	dtTo	834		1	1		1	1
+2994	414	deliveryCourseCd	5143		1	1		0	1
+2995	414	carrierCd	711		1	1		0	1
+2996	414	supplyCustomerCd	591		1	1		0	0
+2997	414	delivCustomerCd	548		1	1		0	0
+2998	414	carrierTraceNum	306		1	1		0	0
+2999	414	clientShippingNo	349		1	1		0	0
+3000	414	search	731		1	1		0	1
+3001	414	excelOutput	719		1	1		0	1
+3002	414	packingList	2241	grid	1	1		0	1
+3003	415	clear	896		1	1		0	1
+3004	415	clientCd	734		1	1		1	1
+3005	415	centerCd	5142		1	1		1	1
+3006	415	pickingWorkNo	450		1	1		1	1
+3007	415	search	731		1	1		0	1
+3008	415	boxNo	836		1	1		0	1
+3009	415	boxCd	837		1	1		0	1
+3010	415	unitNumBreakdown	2702		1	0		0	1
+3011	415	pickNumSel	838		1	1		0	1
+3012	415	pickNumSelMultiText	2960		1	1		0	1
+3013	415	allocNum	839		1	0		0	1
+3014	415	pickNum	840		1	0		0	1
+3015	415	diffNum	841		1	0		0	1
+3016	415	delivCustomerNm	556		1	1		0	1
+3017	415	delivZipCd	557		1	1		0	1
+3018	415	delivTelNo	555		1	1		0	1
+3019	415	delivAddress1	550		1	1		0	1
+3020	415	delivAddress2	551		1	1		0	1
+3021	415	delivAddress3	552		1	1		0	1
+3022	415	delivDt	843		1	1		0	1
+3023	415	delivTz	844		1	1		0	1
+3024	415	addRow	845		1	1		0	1
+3025	415	excelOutput	719		1	1		0	1
+3026	415	normal	1791		1	0		0	1
+3027	415	update	842		1	0		0	1
+3028	415	delete	805		1	0		0	1
+3029	415	packingList	2169	grid	1	1		0	1
+3030	415	packingListUpdate	710		1	1		0	1
+3031	416	centerCd	5142	dropdown	1	0		1	1
+3032	416	clientCd	734	dropdown	1	1		1	1
+3033	416	delFlg	805	dropdown	1	1		1	1
+3034	416	titleStockManage	1590		1	0		0	1
+3035	416	storeNoFlg	572	dropdown	1	1		1	1
+3036	416	mergeCls	571	dropdown	1	1		1	1
+3037	416	storeDtFlg	664	dropdown	1	1		1	1
+3038	416	titleDaily	988		1	0		0	1
+3039	416	tkeepingDays	218	number	1	1	right	1	1
+3040	416	hkeepingDays	629	number	1	1	right	1	1
+3041	416	dkeepingDays	389	number	1	1	right	1	1
+3042	416	titleHt	2595		1	0		0	1
+3043	416	overStoreNumFlg	1277	dropdown	1	1		1	1
+3044	416	pastStoreDtFlg	1278	dropdown	1	1		1	1
+3045	416	useHtShipFlg	2086	dropdown	1	1		1	1
+3046	416	htCharReadFlg	1636	dropdown	1	1		0	1
+3047	416	htLotInputType	1639	text	1	1		0	1
+3048	416	htSerialInputType	1640	text	1	1		0	1
+3049	416	inspectionLabelOutFlg	2596	dropdown	1	1		1	1
+3050	416	titleShipInst	824		1	0		0	1
+3051	416	autoShipInstFlg	3272	dropdown	1	1		1	1
+3052	416	stockOutAutoInstFlg	3275	dropdown	1	1		0	1
+3053	416	autoEmgSetFlg	3278	dropdown	1	1		1	1
+3054	416	autoEmgSetTgt	3281		1	1		0	1
+3055	416	autoEmgSetMinute	3284		1	1		0	1
+3056	416	stockOutInstCxlFlg	3288	dropdown	1	1		1	1
+3057	416	stockOutAllocCls	3285	dropdown	1	1		0	1
+3058	416	titlePackingCal	1593		1	0		0	1
+3059	416	packingCalCls	668	dropdown	1	1		1	1
+3060	416	packingProcessCls	1518	dropdown	1	1		0	1
+3061	416	productPartPacking	670	dropdown	1	1		0	1
+3062	416	decimalProductPacking	2939	dropdown	1	1		0	1
+3063	416	boxGrpCd	1519	dropdown	1	1		0	1
+3064	416	titlePicking	686		1	0		0	1
+3065	416	totalPicFlg	3253	dropdown	1	1		1	1
+3066	416	multiPicCls	673	dropdown	1	1		1	1
+3067	416	backetColNum	1511	number	1	1	right	0	1
+3068	416	backetRowNum	1512	number	1	1	right	0	1
+3069	416	sglRowPicFlg	3249	dropdown	1	1		1	1
+3070	416	sglRowPicMaxInstNum	3252	number	1	1	right	0	1
+3071	416	casePicFlg	683	dropdown	1	1		1	1
+3072	416	titlePicMthdRcmd	3214		1	0		0	1
+3073	416	picMthdRcmdFlg	3256	dropdown	1	1		1	1
+3074	416	picMthdRcmdApiKey	3259		1	1		0	1
+3075	416	picMthdRcmdBreakKey	3260		1	1		0	1
+3076	416	picMthdRcmdMltPlOut	3316	dropdown	1	1		0	1
+3077	416	picMthdRcmdSplSlOut	3319	dropdown	1	1		0	1
+3078	416	titleShipInspection	867		1	0		0	1
+3079	416	boxSelectSkip	1612		1	1		1	1
+3080	416	defaultBoxCd	1613		1	1		0	1
+3081	416	errorSoundPlayFlg	3304	dropdown	1	1		1	1
+3082	416	warnSoundPlayFlg	3307	dropdown	1	1		1	1
+3083	416	inspSoundPlayFlg	3310	dropdown	1	1		1	1
+3084	416	inspCompSoundPlayFlg	3313	dropdown	1	1		1	1
+3085	416	titleReplenish	1592		1	0		0	1
+3086	416	rgReplenishUnitCls	1513	dropdown	1	1		0	1
+3087	416	emReplenishUnitCls	1514	dropdown	1	1		0	1
+3088	416	warehouseCd	1515	dropdown	1	1		0	1
+3089	416	zoneCd	1516	dropdown	1	1		0	1
+3090	416	emReplenishAllocCls	1517	dropdown	1	1		0	1
+3091	416	titleProductLabelOut	1615		1	0		0	1
+3092	416	resultAfterProductLabel	1609		1	1		1	1
+3093	416	resultAfterProductTarget	2608		1	1		0	1
+3094	416	productLabelOutUnit	1608		1	1		1	1
+3095	416	productLabelJanBarcode	1610		1	1		1	1
+3096	416	productLabelProdBarcode	1611		1	1		1	1
+3097	416	productLabelJanStartbit	1602	text	1	1		0	1
+3098	416	productLabelJanEndbit	1603	text	1	1		0	1
+3099	416	productLabelProdStartbit	1628	text	1	1		0	1
+3100	416	productLabelProdEndbit	1629	text	1	1		0	1
+3101	416	titleInvoice	3248		1	0		0	1
+3102	416	afterTagOutFlg	1630	dropdown	1	1		1	1
+3103	416	tagDeliveryOutFlg	1633	dropdown	1	1		1	1
+3104	416	afterDelivSlipOutFlg	3263	dropdown	1	1		1	1
+3105	416	afterDelivSlipOutTgt	3266		1	1		0	1
+3106	416	sglRowInspAfterOutCls	3269		1	1		0	1
+3107	416	packingSlipAutoOutputFlg	3002	dropdown	0	1		0	1
+3108	416	cesIntegrationFlg	3000	dropdown	0	1		0	1
+3109	416	titleSort	5140		1	0		0	1
+3110	416	allocSortKey1	1269	dropdown	1	1		0	1
+3111	416	allocSortKey2	1270	dropdown	1	1		0	1
+3112	416	allocSortKey3	1271	dropdown	1	1		0	1
+3113	416	allocSortKey4	1272	dropdown	1	1		0	1
+3114	416	allocSortKey5	1273	dropdown	1	1		0	1
+3115	416	allocSortKey6	1274	dropdown	1	1		0	1
+3116	416	allocSortKey7	1275	dropdown	1	1		0	1
+3117	416	allocSortKey8	1276	dropdown	1	1		0	1
+3118	416	register	710		1	1		0	1
+3119	417	takingShippingFlg	832		1	1		1	1
+3120	417	dtFrom	833		1	1		1	1
+3121	417	dtTo	834		1	1		1	1
+3122	417	centerCd	5142		1	1		1	1
+3123	417	clientCd	734		1	1		1	1
+3124	417	pickingBatchNo	452		1	1		0	0
+3125	417	pickingWorkNo	450		1	1		0	0
+3126	417	pickingGroupNo	217		1	1		0	0
+3127	417	supplyCustomerCd	591		1	1		0	0
+3128	417	picCls	977		1	1		1	1
+3129	417	listOutKbn	772		1	1		0	1
+3130	417	emergencyFlg	1820		1	1		0	0
+3131	417	noStockOutFlg	338		1	1		0	1
+3132	417	deliveryCourseCd	5143	text	1	1		0	0
+3133	417	sglRowPicFlg	3303		1	1		0	0
+3134	417	casePicFlg	2918		1	1		0	0
+3135	417	search	731		1	1		0	1
+3136	417	excelOutput	719		1	1		0	1
+3137	417	emergencyTitle	1786		1	0		0	1
+3138	417	stockOutFlgTitle	958		1	0		0	1
+3139	417	pickingListPrintB	2161	grid	1	0		0	1
+3140	417	picListCls1	996		1	1		1	1
+3141	417	picListCls2	997		1	1		1	1
+3142	417	picListCls3	1699		1	1		1	1
+3143	417	clearIssue	3295		1	1		0	1
+3144	417	issue	727		1	1		0	1
+3145	418	centerCd	4915	dropdown	1	0		1	1
+3146	418	clientCd	734	dropdown	1	0		1	1
+3147	418	listkbn	525	dropdown	1	1		0	0
+3148	418	printdatetimeFrom	5611		1	1		0	0
+3149	418	printdatetimeTo	5612		1	1		0	0
+3150	418	shipschdateFrom	5273		1	1		0	0
+3151	418	shipschdateTo	5274		1	1		0	0
+3152	418	workallocateid	5276		1	1		0	0
+3153	418	shiptocd	5564		1	1		0	0
+3154	418	customerCd	4952		1	1		0	0
+3155	418	ownerorderno	5561		1	1		0	0
+3156	418	otherlot2	5562	dropdown	1	1		0	0
+3157	418	otherlot4	5563		1	1		0	0
+3158	418	rmano	5159		1	1		0	0
+3159	418	otherlot3	5158		1	1		0	0
+3160	418	notes	5174		1	1		0	0
+3161	418	locationCd	262		1	1		0	0
+3162	418	trsoliststs	5613	dropdown	1	1		0	0
+3163	418	search	731		1	1		0	0
+3164	418	excelOutput	719		1	1		0	0
+3165	418	pickingListRePrintList	5614	grid	1	1		0	0
+3166	418	output	727		1	1		0	0
+3167	419	centerCd	5142		1	1		1	1
+3168	419	clientCd	734		1	1		1	1
+3169	419	search	731		1	1		0	1
+3170	419	excelOutput	719		1	1		0	1
+3171	419	emergencyTitle	1786		1	0		0	1
+3172	419	pickingMethodRecommendationList	3215	grid	1	1		0	1
+3173	419	recommendationAgain	3213		1	1		0	1
+3174	419	detail	1051		1	1		0	1
+3175	419	issue	727		1	1		0	1
+3176	420	centerCd	5142		1	0		0	1
+3177	420	clientCd	734		1	0		0	1
+3178	420	pickingBatchNo	222		1	0		0	1
+3179	420	rcmdPickingCls	3211		1	0		0	1
+3180	420	packingNum	364		1	0		0	1
+3181	420	workVolume	3212		1	0		0	1
+3182	420	emergencyFlg	327		1	0		0	1
+3183	420	emergencyTitle	1786		1	0		0	1
+3184	420	picMthdRcmdDetailB	3217	grid	1	1		0	1
+3185	421	pickingType	2581		1	1		1	1
+3186	421	search	731		1	1		0	1
+3187	422	centerCd	5142		1	0		1	1
+3188	422	userCd	247		1	1		1	1
+3189	422	pickingWorkNo	1493		1	1		1	1
+3190	422	deliveryCourseCd	5143		1	0		0	1
+3191	422	supplyCustomerCd	591		1	0		0	1
+3192	422	carrierCd	284		1	0		0	1
+3193	422	search	731		1	1		0	1
+3194	422	excelOutput	719		1	1		0	1
+3195	422	janCd	676		1	1		0	1
+3196	422	productCd	465		1	0		0	1
+3197	422	productUnit	2921		1	0		0	1
+3198	422	shippingPackingNo	889		1	0	right	0	1
+3199	422	instNumT	890		1	0		0	1
+3200	422	spgQtyOnsT	892		1	0		0	1
+3201	422	instSu	397		1	0		0	1
+3202	422	instNum	893		1	0		0	1
+3203	422	spgQtyOns	894		1	0		0	1
+3204	422	registerBox	895		1	1		0	1
+3205	422	interrupt	1774		1	1		0	1
+3206	422	clear	896		1	1		0	1
+3207	422	shpCheckDisplay	1822		1	1		0	1
+3208	422	status	898		1	0		0	1
+3209	422	pieceShippingInspectList	2180	grid	1	1		0	1
+3210	422	registerSu	971		1	1		0	1
+3211	422	clientCd	734		1	0		1	1
+3212	423	shippingPackingNo	968		1	0	right	0	1
+3213	423	boxCd	837		1	1		1	1
+3214	423	permitWeight	1004		0	1	right	0	1
+3215	423	update	710		1	1		0	1
+3216	423	close	733		1	1		0	1
+3217	424	janCd	180		1	0		0	1
+3218	424	productCd	465		1	0		0	1
+3219	424	productNm	469		1	0		0	1
+3220	424	instNumP	890		1	1	right	1	1
+3221	424	instNumPMultiText	2928		1	1	right	0	1
+3222	424	spgQtyOnsP	892		1	0	right	0	1
+3223	424	instSuP	397		1	0	right	0	1
+3224	424	unitNumBreakdownP	2702		1	0	right	0	1
+3225	424	boxCdP	837		1	0	right	0	1
+3226	424	instNumC	890		1	0	right	0	1
+3227	424	instNumCMultiText	2928		1	1	right	0	1
+3228	424	spgQtyOnsC	892		1	0	right	0	1
+3229	424	instSuC	397		1	0	right	0	1
+3230	424	unitNumBreakdownC	2702		1	0	right	0	1
+3231	424	caseNumC	816		1	1	right	1	1
+3232	424	boxCdC	837		1	1		1	1
+3233	424	update	710		1	1		0	1
+3234	424	close	733		1	1		0	1
+3235	424	pieceTitle	1829		1	0	center	0	1
+3236	424	caseTitle	1830		1	0	center	0	1
+3237	425	processTypeCd	458		1	1		0	1
+3238	425	search	731		1	1		0	1
+3239	425	processTypeList	2219	grid	1	1		0	1
+3240	425	processTypeNm	800		1	1		0	1
+3241	425	delFlg	805		1	1		0	1
+3242	425	addRow	708		1	1		0	1
+3243	425	removeRow	709		1	1		0	1
+3244	425	register	710		1	1		0	1
+3245	425	excelOutput	719		1	1		0	1
+3246	425	receiveFlg	560		1	1		0	1
+3247	425	excelUpload	761		0	0		0	1
+3248	425	shippingFlg	434		1	1		0	1
+3249	425	stockAdjustFlg	384		1	1		0	1
+3250	425	defaultFlg	215		1	1		0	1
+3251	425	stockTypeCd	763		1	1		0	1
+3252	426	clientCd	734		1	1		1	1
+3253	426	excelUpload	761		1	1		0	1
+3254	426	register	710		1	1		0	1
+3255	426	productMaster	1234	grid	1	1		0	1
+3256	426	chkErrorShow	1387	checkbox	1	1		0	1
+3257	426	excelOutput	719		1	1		0	1
+3258	426	errorProcessMet	1388	dropdown	1	1		0	1
+3259	427	productNm	469		1	1		1	1
+3260	427	productAbbr	470		1	1		1	1
+3261	427	janCd	180		1	1		0	1
+3262	427	lotManagFlg	269		1	1		1	1
+3263	427	limitDtManagFlg	314		1	1		1	1
+3264	427	limitDtReverseFlg	5141		1	1		1	1
+3265	427	receiveLimitNum	561		1	1		0	1
+3266	427	shippingLimitNum	436		1	1		0	1
+3267	427	mergeCls	571		1	1		1	1
+3268	427	shippingStopFlg	442		1	1		1	1
+3269	427	clientCd	734		1	0		0	1
+3270	427	productCd	465		1	1		1	1
+3271	427	delFlg	805		1	1		1	1
+3272	427	register	710		1	1		0	1
+3273	427	product	2187	grid	1	1		0	1
+3274	427	fixedPoint	1286		1	1		0	1
+3275	427	shapeGrpCd	2930		1	1		1	1
+3276	427	nmfcCode	2961		0	1		0	1
+3277	427	freightCls	2962		0	1		0	1
+3278	427	counntryOfOrigin	2964		0	1		0	1
+3279	427	unitVal	2965		0	1		0	1
+3280	427	htsCd	2966		0	1		0	1
+3281	428	clientCd	734		1	1		1	1
+3282	428	productCd	465		1	1		0	1
+3283	428	janCd	180		1	1		0	1
+3284	428	productNm	469		1	1		0	1
+3285	428	productList	2188	grid	1	1		1	1
+3286	428	search	731		1	1		0	1
+3287	428	register	691		1	1		0	1
+3288	428	update	692		1	1		0	1
+3289	428	excelOutput	719		1	1		0	1
+3290	428	delFlg	805		1	1		0	1
+3291	428	productLabel	1614		1	1		0	1
+3292	428	copy	1558		1	1		0	1
+3293	429	labelOutputCnt	955		1	1		1	1
+3294	429	print	727		1	1		0	1
+3295	429	close	733		1	1		0	1
+3296	430	clientCd	734		1	1		1	1
+3297	430	editableClientCd	734		1	1		1	1
+3298	430	productCd	465		1	1		0	1
+3299	430	janCd	180		1	1		0	1
+3300	430	productNm	469		1	1		0	1
+3301	430	productList	2189	grid	1	1		0	1
+3302	430	search	731		1	1		0	1
+3303	430	selection	732		1	1		0	1
+3304	430	close	733		1	1		0	1
+3305	431	clientCd	734		1	0		1	1
+3306	431	productCd	465		1	1		0	1
+3307	431	janCd	180		1	1		0	1
+3308	431	productNm	469		1	1		0	1
+3309	431	productList	2189	grid	1	1		0	1
+3310	431	search	731		1	1		0	1
+3311	431	selection	732		1	1		0	1
+3312	431	close	733		1	1		0	1
+3313	431	searchResultTitle	2549		1	1		0	1
+3314	432	centerCd	5142		1	1		1	1
+3315	432	clientCd	734		1	1		1	1
+3316	432	receivePlanDtFrom	770		1	1		0	1
+3317	432	receivePlanDtTo	771		1	1		0	1
+3318	432	warehouseCd	723		1	1		0	0
+3319	432	storeDtFrom	1182		1	1		0	0
+3320	432	storeDtTo	1183		1	1		0	0
+3321	432	receiveStatus	1193		1	1		0	0
+3322	432	planSupplierCd	614		1	1		0	0
+3323	432	productCd	465		1	1		0	0
+3324	432	clientReceiveNo	649		1	1		0	0
+3325	432	storeClientReceiveNo	350		1	1		0	0
+3326	432	receiveSlipNo	186		1	1		0	0
+3327	432	clientOrderNo	650		1	1		0	0
+3328	432	storeClientOrderNo	351		1	1		0	0
+3329	432	deleteDisplay	674		1	1		0	0
+3330	432	search	731		1	1		0	1
+3331	432	excelOutput	719		1	1		0	1
+3332	432	nonReceive	1763		1	0		0	1
+3333	432	receiving	1764		1	0		0	1
+3334	432	store	1765		1	0		0	1
+3335	432	receiveDelete	782		1	0		0	1
+3336	432	error	957		1	0		0	1
+3337	432	expired	1268	text	1	0		0	1
+3338	432	ProductReceiveList	2190	grid	1	1		0	1
+3339	432	receivePlanInput	786		1	1		0	1
+3340	432	receiveInput	788		1	1		0	1
+3341	432	productLabel	1614		1	1		0	1
+3342	433	clientCd	734		1	1		1	1
+3343	433	excelUpload	761		1	1		0	1
+3344	433	productShapeMaster	1526	grid	1	1		0	1
+3345	433	register	710		1	1		0	1
+3346	433	chkErrorShow	1387	checkbox	1	1		0	1
+3347	433	excelOutput	719		1	1		0	1
+3348	433	errorProcessMet	1388		1	1		0	1
+3349	434	centerCd	5142		1	1		1	1
+3350	434	clientCd	734		1	1		1	1
+3351	434	takingShippingFlg	832		1	1		1	1
+3352	434	dtFrom	833		1	1		1	1
+3353	434	dtTo	834		1	1		1	1
+3354	434	deliveryCourseCd	5143		1	1		0	0
+3355	434	carrierCd	711		1	1		0	0
+3356	434	pickingBatchNo	452		1	1		0	0
+3357	434	shippingSlipNo	184		1	1		0	0
+3358	434	supplyCustomerCd	591		1	1		0	0
+3359	434	productCd	465		1	1		0	0
+3360	434	clientShippingNo	349		1	1		0	0
+3361	434	pickingWorkNo	450		1	1		0	0
+3362	434	stockOutFlg	338		1	1		0	0
+3363	434	shippingStatus	433		1	1		0	0
+3364	434	emergencyFlg	1820		1	1		0	0
+3365	434	cancelDisplay	2362	dropdown	1	1		0	0
+3366	434	search	731		1	1		0	1
+3367	434	excelOutput	719		1	1		0	1
+3368	434	nonShippingTitle	1767		1	0		0	1
+3369	434	shippingInstProcessingTitle	1768		1	0		0	1
+3370	434	shippingInstedTitle	1770		1	0		0	1
+3371	434	inspectionedTitle	882		1	0		0	1
+3372	434	shippingFixedTitle	883		1	0		0	1
+3373	434	cancelTitle	1776		1	0		0	1
+3374	434	errorTitle	957		1	0		0	1
+3375	434	shippingStopTitle	1756		1	0		0	1
+3376	434	emergencyTitle	1786		1	0		0	1
+3377	434	stockOutFlgTitle	958		1	0		0	1
+3378	434	productShippingList	2196	grid	1	1		0	1
+3379	434	workShippingDtFlg	832		1	1		1	1
+3380	434	workShippingDt	864		1	1		1	1
+3381	434	workShippingDtUpdate	875		1	1		0	1
+3382	434	zipCd	5128		1	1		1	1
+3383	434	zipCdUpdate	876		1	1		0	1
+3384	434	deliveryCourseCdUpd	5143		1	1		1	1
+3385	434	deliveryCourseCdUpdate	878		1	1		0	1
+3386	434	instUpdate	880		1	1		0	1
+3387	434	instDetail	881		1	1		0	1
+3388	435	clientCd	734		1	0		1	1
+3389	435	productCd	4918		1	1		0	1
+3390	435	validType	5373		1	1		0	1
+3391	435	UpdateDate	5604		1	1		0	1
+3392	435	rcvFrDateFrom	5368		1	1		0	1
+3393	435	rcvFrDateTo	5369		1	1		0	1
+3394	435	rcvToDateFrom	5371		1	1		0	1
+3395	435	rcvToDateTo	5372		1	1		0	1
+3396	435	search	731		1	1		0	1
+3397	435	excelOutput	719		1	1		0	1
+3398	435	bodyList	5603	grid	1	1		0	1
+3399	435	copy	691		1	1		0	1
+3400	435	new	5105		1	1		0	1
+3401	435	update	805		1	1		0	1
+3402	436	centerCd	5142		1	1		1	1
+3403	436	clientCd	734		1	1		1	1
+3404	436	storeDtFrom	1182		1	1		0	1
+3405	436	storeDtTo	1183		1	1		0	1
+3406	436	processTypeCd	737		1	1		0	0
+3407	436	clientReceiveNo	350		1	1		0	0
+3408	436	receiveSlipNo	186		1	1		0	0
+3409	436	supplierCd	390		1	1		0	0
+3410	436	depositCd	762		1	1		0	0
+3411	436	productCd	465		1	1		0	0
+3412	436	lot	266		1	1		0	0
+3413	436	limitDtFrom	849		1	1		0	0
+3414	436	limitDtTo	850		1	1		0	0
+3415	436	stockTypeCd	763		1	1		0	0
+3416	436	warehouseCd	723		1	1		0	0
+3417	436	storeLocationCdFrom	1662		1	1		0	0
+3418	436	storeLocationCdTo	1663		1	1		0	0
+3419	436	search	731		1	1		0	1
+3420	436	excelOutput	719		1	1		0	1
+3421	436	receiveHistoryGrid	2243	grid	1	1		0	1
+3422	437	clientCd	734		1	0		1	1
+3423	437	centerCd	5142		1	0		1	1
+3424	437	processTypeCd	737		1	1		1	1
+3425	437	planSupplierCd	390		1	1		1	1
+3426	437	receivePlanDt	775		1	1		1	1
+3427	437	clientReceiveNo	350		1	1		0	1
+3428	437	receiveSlipNo	186		1	0		0	1
+3429	437	planDepositCd	762		1	1		1	1
+3430	437	storeRecordHComment	579		1	1		0	1
+3431	437	receiveInputB	2200	grid	1	1		0	1
+3432	437	addRow	1179		1	1		0	1
+3433	437	removeRow	1180		1	1		0	1
+3434	437	register	710		1	1		0	1
+3435	437	receiveCancel	780		1	1		0	1
+3436	437	planClientReceiveNo	649		1	0		0	1
+3437	437	stockTypeCd	763	dropdown	1	1		1	1
+3438	438	clientCd	734		1	1		1	1
+3439	438	centerCd	5142		1	1		1	1
+3440	438	processTypeCd	737		1	1		1	1
+3441	438	planSupplierCd	390		1	1		1	1
+3442	438	receivePlanDt	775		1	1		1	1
+3443	438	clientReceiveNo	350		1	1		0	1
+3444	438	receiveSlipNo	186		1	0		0	1
+3445	438	planDepositCd	762		1	1		1	1
+3446	438	storeRecordHComment	579		1	1		0	1
+3447	438	receiveInputB	2200	grid	1	1		0	1
+3448	438	addRow	708		1	1		0	1
+3449	438	removeRow	709		1	1		0	1
+3450	438	register	710		1	1		0	1
+3451	438	stockTypeCd	763	dropdown	1	1		1	1
+3452	439	receivePlanDtFrom	770		1	1		0	1
+3453	439	receivePlanDtTo	771		1	1		0	1
+3454	439	receiveStatus	559		1	1		0	1
+3455	439	planSupplierCd	390		1	1		0	1
+3456	439	productCd	465		1	1		0	1
+3457	439	clientReceiveNo	649		1	1		0	1
+3458	439	preEntry	2548		1	0		0	1
+3459	439	locationCd	262		1	1		0	1
+3460	439	search	731		1	1		0	1
+3461	439	detailTitle	1051		1	1		0	1
+3462	439	searchResultTitle	2549		1	1		0	1
+3463	439	register	710		1	1		0	1
+3464	439	receiveInspectionList	2591	grid	1	1		0	1
+3465	439	receiveInspectionDetail	2592	grid	1	1		0	1
+3466	440	centerCd	5142		1	1		1	1
+3467	440	clientCd	734		1	1		1	1
+3468	440	receivePlanDtFrom	770		1	1		0	1
+3469	440	receivePlanDtTo	771		1	1		0	1
+3470	440	storeDtFrom	1182		1	1		0	0
+3471	440	storeDtTo	1183		1	1		0	0
+3472	440	receiveDeliveryStatus	562		1	1		0	0
+3473	440	planSupplierCd	614		1	1		0	0
+3474	440	planClientReceiveNo	649		1	1		0	0
+3475	440	clientReceiveNo	350		1	1		0	0
+3476	440	receiveSlipNo	186		1	1		0	0
+3477	440	productCd	465		1	1		0	0
+3478	440	search	731		1	1		0	1
+3479	440	excelOutput	719		1	1		0	1
+3480	440	ReceivePartList	2201	grid	1	1		0	1
+3481	440	processStatus	562		1	1		1	1
+3482	440	receivePlanDt	568		1	1		1	1
+3483	440	instruction	798		1	1		0	1
+3484	440	register	710		1	1		0	1
+3485	441	centerCd	5142		1	1		1	1
+3486	441	clientCd	734		1	1		1	1
+3487	441	excelUpload	761		1	1		0	1
+3488	441	register	710		1	1	right	0	1
+3489	441	receivePlan	2202	grid	1	1		0	1
+3490	441	chkErrorShow	1387	checkbox	1	1		0	1
+3491	441	errorProcessMet	1388	dropdown	1	1	right	0	1
+3492	441	excelOutput	719		1	1		0	1
+3493	442	clientCd	734		1	1		1	1
+3494	442	centerCd	5142		1	1		1	1
+3495	442	processTypeCd	737		1	1		1	1
+3496	442	receivePlanDt	568		1	1		1	1
+3497	442	planSupplierCd	390		1	1		1	1
+3498	442	receiveSlipNo	186		1	0		0	1
+3499	442	receivePlanB	2203	grid	1	1		0	1
+3500	442	addRow	708		1	1		0	1
+3501	442	removeRow	709		1	1		0	1
+3502	442	register	710		1	1		0	1
+3503	442	planClientReceiveNo	649		1	1		0	1
+3504	442	planDepositCd	762		1	1		1	1
+3505	442	stockTypeCd	763	dropdown	1	1		1	1
+3506	443	clientCd	734		1	1		1	1
+3507	443	centerCd	5142		1	1		1	1
+3508	443	warehouseCd	723		1	1		0	1
+3509	443	receivePlanDtFrom	770		1	1		1	1
+3510	443	receivePlanDtTo	771		1	1		1	1
+3511	443	planClientReceiveNo	649		1	1		0	1
+3512	443	receiveSlipNo	186		1	1		0	1
+3513	443	planDepositCd	762		1	1		0	1
+3514	443	printCondition	772		1	1		0	1
+3515	443	register	727		1	1		0	1
+3516	444	clientCd	734		1	0		1	1
+3517	444	itemCdFrom	5730		1	1		0	1
+3518	444	designCdFrom	5731		1	1		0	1
+3519	444	itemCdTo	5732		1	1		0	1
+3520	444	designCdTo	5733		1	1		0	1
+3521	444	delFlg	805		1	1		1	1
+3522	444	search	731		1	1		0	1
+3523	444	excelOutput	719		1	1		0	1
+3524	444	searchResultList	5729	grid	1	1		1	0
+3525	444	copyRow	5492		1	1		0	1
+3526	444	register	710		1	1		0	1
+3527	445	centerCd	5142	dropdown	1	1		1	1
+3528	445	clientCd	734	dropdown	1	1		1	1
+3529	445	receivePlanDtFrom	770	date	1	1		0	1
+3530	445	receivePlanDtTo	771	date	1	1		0	1
+3531	445	planSupplierCd	614	text	1	1		0	0
+3532	445	search	731		1	1		0	1
+3533	445	updateTime	355		1	0		0	1
+3534	445	receiveStatusCountTitle	1567		1	0		0	1
+3535	445	receiveStatusNumberTitle	1568		1	0		0	1
+3536	446	centerCd	5142		1	1		1	1
+3537	446	clientCd	734		1	1		1	1
+3538	446	receivePlanDtFrom	770		1	1		0	1
+3539	446	receivePlanDtTo	771		1	1		0	1
+3540	446	warehouseCd	723		1	1		0	0
+3541	446	storeDtFrom	1182		1	1		0	0
+3542	446	storeDtTo	1183		1	1		0	0
+3543	446	receiveStatus	1193		1	1		0	0
+3544	446	planSupplierCd	614		1	1		0	0
+3545	446	productCd	465		1	1		0	0
+3546	446	depositCustomerCd	762		1	1		0	0
+3547	446	clientReceiveNo	649		1	1		0	0
+3548	446	storeClientReceiveNo	350		1	1		0	0
+3549	446	receiveSlipNo	186		1	1		0	0
+3550	446	clientOrderNo	650		1	1		0	0
+3551	446	storeClientOrderNo	351		1	1		0	0
+3552	446	deleteDisplay	674		1	1		0	0
+3553	446	search	731		1	1		0	1
+3554	446	excelOutput	719		1	1		0	1
+3555	446	nonReceive	1763		1	0		0	1
+3556	446	receiving	1764		1	0		0	1
+3557	446	store	1765		1	0		0	1
+3558	446	receiveDelete	782		1	0		0	1
+3559	446	error	957		1	0		0	1
+3560	446	expired	1268	text	1	0		0	1
+3561	446	ReferenceProductReceiveList	2895	grid	1	1		0	1
+3562	447	centerCd	5142		1	1		1	1
+3563	447	clientCd	734		1	1		1	1
+3564	447	takingShippingFlg	832		1	1		1	1
+3565	447	dtFrom	833		1	1		1	1
+3566	447	dtTo	834		1	1		1	1
+3567	447	deliveryCourseCd	5143		1	1		0	0
+3568	447	carrierCd	711		1	1		0	0
+3569	447	pickingBatchNo	452		1	1		0	0
+3570	447	shippingSlipNo	184		1	1		0	0
+3571	447	supplyCustomerCd	591		1	1		0	0
+3572	447	productCd	465		1	1		0	0
+3573	447	clientShippingNo	349		1	1		0	0
+3574	447	pickingWorkNo	450		1	1		0	0
+3575	447	stockOutFlg	338		1	1		0	0
+3576	447	shippingStatus	433		1	1		0	0
+3577	447	emergencyFlg	1820		1	1		0	0
+3578	447	depositCustomerCd	762	dropdown	1	1		0	0
+3579	447	cancelDisplay	2362	dropdown	1	1		0	0
+3580	447	search	731		1	1		0	1
+3581	447	excelOutput	719		1	1		0	1
+3582	447	nonShippingTitle	1767		1	0		0	1
+3583	447	shippingInstProcessingTitle	1768		1	0		0	1
+3584	447	shippingInstedTitle	1770		1	0		0	1
+3585	447	inspectionedTitle	882		1	0		0	1
+3586	447	shippingFixedTitle	883		1	0		0	1
+3587	447	cancelTitle	1776		1	0		0	1
+3588	447	errorTitle	957		1	0		0	1
+3589	447	shippingStopTitle	1756		1	0		0	1
+3590	447	emergencyTitle	1786		1	0		0	1
+3591	447	stockOutFlgTitle	958		1	0		0	1
+3592	447	referenceProductShippingList	2197	grid	1	1		0	1
+3593	448	centerCd	5142		1	1		1	1
+3594	448	clientCd	734		1	1		1	1
+3595	448	warehouseCd	723		1	1		0	0
+3596	448	zone	724		1	1		0	0
+3597	448	stockdisplayfld	863		1	1		1	1
+3598	448	dataTime	864		1	1		1	1
+3599	448	productCd	465		1	1		0	0
+3600	448	locationCdFrom	725		1	1		0	0
+3601	448	locationCdTo	726		1	1		0	0
+3602	448	janCd	180		1	1		0	0
+3603	448	customerCd	762		1	1		0	0
+3604	448	stockTypeCd	763		1	1		0	0
+3605	448	limitDtFrom	849		1	1		0	0
+3606	448	limitDtTo	850		1	1		0	0
+3607	448	limitDtNum	865		1	1	right	0	0
+3608	448	lot	266		1	1		0	0
+3609	448	stockNumDisplay	1454		1	1		0	1
+3610	448	chargeNumDisplay	866		1	1		0	1
+3611	448	display	1067		1	1		0	1
+3612	448	transitDisplay	2041		1	1		0	1
+3613	448	search	731		1	1		0	1
+3614	448	excelOutput	719		1	1		0	1
+3615	448	stockListPrint	1258		0	1		0	1
+3616	448	expired	915		1	0	center	0	1
+3617	448	chargestop	1749		1	0	center	0	1
+3618	448	referenceStockOrderByProductNoReportList	2900	grid	1	0		0	1
+3619	448	referenceStockOrderByProductReportList	2901	grid	1	0		0	1
+3620	448	referenceStockOrderByLocationNoReportList	2902	grid	1	0		0	1
+3621	448	referenceStockOrderByLocationReportList	2903	grid	1	0		0	1
+3622	449	centerCd	5142	dropdown	1	1		0	1
+3623	449	clientCd	734	dropdown	1	1		0	1
+3624	449	productCd	465	text	1	1		0	1
+3625	449	janCd	180	text	1	1		0	1
+3626	449	customerCd	762	dropdown	1	1		0	0
+3627	449	stockTypeCd	763	dropdown	1	1		0	0
+3628	449	limitDtFrom	849	datetime	1	1		0	0
+3629	449	limitDtTo	850	datetime	1	1		0	0
+3630	449	lot	266	text	1	1		0	0
+3631	449	fixedPointCd	1453	dropdown	1	1		0	0
+3632	449	stockNumDisplay	1454	dropdown	1	1		0	0
+3633	449	search	731		1	1		0	1
+3634	449	excelOutput	719		1	1		0	1
+3635	449	fixedPoint	1453		1	0		0	1
+3636	449	referenceTotalStockList	2225		1	0		0	1
+3637	449	referenceTotalStockListDefinition	2227	grid	1	0		0	1
+3638	450	centerCd	4915		1	0		1	1
+3639	450	clientCd	734		1	0		1	1
+3640	450	errorOnly	1387		1	1		0	1
+3641	450	replenishInstBulkInputList	4927	grid	1	0		0	1
+3642	450	fileInput	761		1	1		0	1
+3643	450	excelOutput	719		1	1		0	1
+3644	450	errorProcessMet	1388	dropdown	1	0		0	1
+3645	450	register	710		1	1		0	1
+3646	451	centerCd_H	5142		1	1		1	1
+3647	451	clientCd_H	734		1	1		1	1
+3648	451	productCd_H	465		1	1		0	0
+3649	451	replenishToWarehouseCd_H	1495		1	1		0	0
+3650	451	replenishToZoneCd_H	1496		1	1		0	0
+3651	451	replenishToLocationCdFrom_H	1497		1	1		0	0
+3652	451	replenishToLocationCdTo_H	1498		1	1		0	0
+3653	451	replenishMinNumCond_H	1499		1	1		0	1
+3654	451	search	731		1	1		0	1
+3655	451	excelOutput	719		1	1		0	1
+3656	451	replenishInstList	2236	grid	1	1		0	1
+3657	451	replenishInst	1500		1	1		0	1
+3658	452	centerCd	4915		1	0		1	1
+3659	452	clientCd	734		1	0		1	1
+3660	452	printedFlg	5761		1	1		0	1
+3661	452	sts	898		1	1		0	1
+3662	452	shipCd	4979		1	1		0	1
+3663	452	schDate	4974		1	1		0	1
+3664	452	transportCd	5481		1	1		0	1
+3665	452	productCd	4918		1	1		0	1
+3666	452	search	731		1	1		0	1
+3667	452	excelOutput	719		1	1		0	1
+3668	452	replenishStockTransferListPrint	5771	grid	1	1		0	0
+3669	452	compulsionFlg	5767		1	1		0	1
+3670	452	detailList	5768		1	1		0	1
+3671	452	listPrint	5769		1	1		0	1
+3672	452	workConfirm	5770		1	1		0	1
+3673	453	centerCd	4915		1	0		1	1
+3674	453	clientCd	734		1	0		1	1
+3675	453	printedFlg	5761		1	0		0	1
+3676	453	addDt	5473	date	1	0		0	1
+3677	453	sts	898		1	0		0	1
+3678	453	shipCd	4979		1	0		0	1
+3679	453	transportCd	5481		1	0		0	1
+3680	453	schDate	4974	date	1	0		0	1
+3681	453	excelOutput	719		1	1		0	1
+3682	453	replenishStockTransferListPrintDetail	5771	grid	1	1		0	0
+3683	454	selClientCd	164		1	1		1	1
+3684	454	selCenterCd	165		1	1		1	1
+3685	454	selWarehouseCd	166		1	1		0	1
+3686	454	register	167		1	1		0	1
+3687	454	cancel	733		1	1		0	1
+3688	455	centerCd	5142	dropdown	1	1		1	1
+3689	455	clientCd	734	dropdown	1	1		1	1
+3690	455	chkErrorShow	1387	checkbox	1	1		0	1
+3691	455	serialNoList	2571	grid	1	1		0	1
+3692	455	excelUpload	761		1	1		0	1
+3693	455	excelOutput	719		1	1		0	1
+3694	455	errorProcessMet	1388	dropdown	1	1	right	0	1
+3695	455	register	710		1	1	right	0	1
+3696	456	centerCd	5142	dropdown	1	1		1	1
+3697	456	clientCd	734	dropdown	1	1		1	1
+3698	456	productCd	465	text	1	1		0	1
+3699	456	serialNoFrom	2560	text	1	1		0	1
+3700	456	serialNoTo	2561	text	1	1		0	1
+3701	456	supplyCd	390	text	1	1		0	0
+3702	456	receiveSlipNo	186	text	1	1		0	0
+3703	456	receiveDtFrom	796	date	1	1		0	0
+3704	456	receiveDtTo	797	date	1	1		0	0
+3705	456	supplyCustomerCd	591	text	1	1		0	0
+3706	456	pickingWorkNo	1493	text	1	1		0	0
+3707	456	shippingDtFrom	808	date	1	1		0	0
+3708	456	shippingDtTo	807	date	1	1		0	0
+3709	456	search	731		1	1		0	1
+3710	456	excelOutput	719		1	1		0	1
+3711	456	serialNoList	2562	grid	1	0		0	1
+3712	456	supplyCustomerCdBatch	591	text	1	1		0	1
+3713	456	pickingWorkNoBatch	1493	text	1	1		0	1
+3714	456	shippingDtBatch	443	date	1	1		0	1
+3715	456	checkShippingBatch	2563		1	1		0	1
+3716	456	dataDelete	805		1	1		0	1
+3717	456	shippingInfoClear	2564		1	1		0	1
+3718	456	slipNoReceiveList	781		1	1		0	1
+3719	456	shippingInstList	828		1	1		0	1
+3720	457	clientCd	734		1	0		0	1
+3721	457	productCd	1464		1	1		1	1
+3722	457	delFlg	805		1	1		1	1
+3723	457	list	2232	grid	1	1		0	1
+3724	457	addRow	708		1	1		0	1
+3725	457	removeRow	709		1	1		0	1
+3726	457	register	710		1	1		0	1
+3727	458	clientCd	734		1	1		1	1
+3728	458	productCd	1464		1	1		0	1
+3729	458	productNm	1465		1	1		0	1
+3730	458	janCd	180		1	1		0	1
+3731	458	delFlg	805		1	1		0	1
+3732	458	search	731		1	1		0	1
+3733	458	excelOutput	719		1	1		0	1
+3734	458	register	691		1	1		0	1
+3735	458	update	692		1	1		0	1
+3736	458	setStructureSearchList	2235	grid	1	1		0	1
+3737	458	copy	1558		1	1		0	1
+3738	459	clientCd	734		1	0		1	1
+3739	459	shapeGrpCd	2908		1	1		1	1
+3740	459	shapeGrpName	2909		1	1		1	1
+3741	459	decimalExistFlg	2910		1	1		1	1
+3742	459	delFlg	805		1	1		1	1
+3743	459	addRow	708		1	1		0	1
+3744	459	removeRow	709		1	1		0	1
+3745	459	register	710		1	1		0	1
+3746	459	list	2912	grid	1	1		1	1
+3747	460	clientCd	734		1	1		1	1
+3748	460	shapeGrpCd	2908		1	1		0	1
+3749	460	shapeGrpName	2909		1	1		0	1
+3750	460	decimalExistFlg	2910		1	1		0	1
+3751	460	delFlg	805		1	1		0	1
+3752	460	search	731		1	1		0	1
+3753	460	excelOutput	719		1	1		0	1
+3754	460	shapeGroupList	2915	grid	1	1		0	1
+3755	460	new	691		1	1		0	1
+3756	460	update	692		1	1		0	1
+3757	460	copy	1558		1	1		0	1
+3758	461	shapeCd	293		1	1		0	1
+3759	461	shapeNm	1523		1	1		0	1
+3760	461	delFlg	805		1	1		0	1
+3761	461	search	731		1	1		0	1
+3762	461	removeRow	709		1	1		0	1
+3763	461	register	710		1	1		0	1
+3764	461	excelOutput	719		1	1		0	1
+3765	461	addRow	708		1	1		0	1
+3766	461	list	2237	grid	1	1		0	1
+3767	462	centerCd	5142		1	1		1	1
+3768	462	clientCd	734		1	1		1	1
+3769	462	noConfirmedFlg	919		1	1		0	1
+3770	462	shippingStatus	433		1	1		0	0
+3771	462	shippingDtFrom	808		1	1		1	1
+3772	462	shippingDtTo	807		1	1		1	1
+3773	462	deliveryCourseCd	5143		1	1		0	0
+3774	462	carrierCd	711		1	1		0	0
+3775	462	supplyCustomerCd	591		1	1		0	0
+3776	462	pickingWorkNo	450		1	1		0	0
+3777	462	noStockOutFlg	338	dropdown	1	1		0	0
+3778	462	search	731		1	1		0	1
+3779	462	excelOutput	719		1	1		0	1
+3780	462	noConfirmed	1230		1	0	center	0	1
+3781	462	inspectionedTitle	882		1	0		0	1
+3782	462	Confirmed	883		1	0	center	0	1
+3783	462	shippingStop	1756		1	0	center	0	1
+3784	462	shippingConfirmList	2178	grid	1	1		0	1
+3785	462	compulsory	1793		1	1		0	1
+3786	462	shippingInstList	828		1	1		0	1
+3787	462	carrierTrace	2981		0	1		0	1
+3788	462	confirmCancel	920		1	1		0	1
+3789	462	confirm	1775		1	1		0	1
+3790	463	bolNo	2967		1	0		0	1
+3791	463	pickingHId	447		0	0		0	1
+3792	463	traceNo	2982		1	1		1	1
+3793	463	update	710		1	1		0	1
+3794	463	close	733		1	1		0	1
+3795	463	title	2981		1	0		0	1
+3796	464	centerCd	5142		1	1		1	1
+3797	464	clientCd	734		1	1		1	1
+3798	464	shippingDt	443		1	1		0	1
+3799	464	workDt	387		1	1		0	1
+3800	464	processTypeCd	737		1	1		0	0
+3801	464	clientShippingNo	349		1	1		0	0
+3802	464	shippingSlipNo	184		1	1		0	0
+3803	464	supplyCustomerCd	591		1	1		0	0
+3804	464	delivCustomerCd	548		1	1		0	0
+3805	464	delivCustomerNm	556		1	1		0	0
+3806	464	deliveryCourseCd	5143		1	1		0	0
+3807	464	carrierCd	711		1	1		0	0
+3808	464	depositCd	1666		1	1		0	0
+3809	464	productCd	465		1	1		0	0
+3810	464	lot	402		1	1		0	0
+3811	464	limitDtFrom	1667		1	1		0	0
+3812	464	limitDtTo	1668		1	1		0	0
+3813	464	stockTypeCd	763		1	1		0	0
+3814	464	locationCdFrom	1669		1	1		0	0
+3815	464	locationCdTo	1670		1	1		0	0
+3816	464	search	731		1	1		0	1
+3817	464	excelOutput	719		1	1		0	1
+3818	464	shippingHistoryGrid	2244	grid	1	1		0	1
+3819	464	packingHistory	1659		1	1		0	1
+3820	465	centerCd	5142		1	1		1	1
+3821	465	clientCd	734		1	1		1	1
+3822	465	shippingSlipNo	184		1	0		0	1
+3823	465	clientShippingNo	349		1	1		0	1
+3824	465	emergencyFlg	327		1	1		1	1
+3825	465	supplierCustomerCd	591		1	1		1	1
+3826	465	deliveryCourseCd	5143		1	1		1	1
+3827	465	delivPlanDt	597		1	1		0	1
+3828	465	workDt	387		1	0		0	1
+3829	465	shippingDt	443		1	1		1	1
+3830	465	processTypeCd	737		1	1		1	1
+3831	465	delivDt	589		1	1		0	1
+3832	465	delivTz	590		1	1		0	1
+3833	465	addRow	708		1	1		0	1
+3834	465	removeRow	709		1	1		0	1
+3835	465	register	710		1	1		0	1
+3836	465	searchBody	2185	grid	1	1		0	1
+3837	465	delivZipCd	557	text	1	1		0	1
+3838	465	delivAddress1	550	text	1	1		0	1
+3839	465	delivAddress2	551	text	1	1		0	1
+3840	465	delivAddress3	552	text	1	1		0	1
+3841	465	delivAddressSupply	553	text	1	1		0	1
+3842	465	delivCustomerNm	556	text	1	1		0	1
+3843	465	delivTelNo	555	text	1	1		0	1
+3844	465	delivCustomerCd	548		1	1		1	1
+3845	466	centerCd	5142		1	0		0	1
+3846	466	clientCd	734		1	0		0	1
+3847	466	workDt	387		1	0		0	1
+3848	466	shippingDt	443		1	0		0	1
+3849	466	delivPlanDt	597		1	0		0	1
+3850	466	supplyCustomerCd	591		1	0		0	1
+3851	466	supplyCustomerNm	593		1	0		0	1
+3852	466	address1	550		1	0		0	1
+3853	466	shippingSlipNo	184		1	0		0	1
+3854	466	shippingStatus	433		1	0		0	1
+3855	466	nonShippingTitle	1791		1	0		0	1
+3856	466	shippingStopTitle	1756		1	0		0	1
+3857	466	stockOutFlgTitle	958		1	0		0	1
+3858	466	shippingInstDetail	2183	grid	1	1		0	1
+3859	466	shippingUpdate	983		1	1		0	1
+3860	467	takingShippingFlg	832		1	1		1	1
+3861	467	dtFrom	833		1	1		1	1
+3862	467	dtTo	834		1	1		1	1
+3863	467	centerCd	5142		1	1		1	1
+3864	467	clientCd	734		1	1		1	1
+3865	467	deliveryCourseCd	5143		1	1		0	0
+3866	467	supplyCustomerCd	591		1	1		0	0
+3867	467	carrierCd	711		1	1		0	0
+3868	467	pickingBatchNo	452		1	1		0	0
+3869	467	pickingWorkNo	450		1	1		0	0
+3870	467	clientShippingNo	349		1	1		0	0
+3871	467	shippingStatus	433		1	1		0	0
+3872	467	noAllcDisplayFlg	809		1	1		0	0
+3873	467	emergencyFlg	1820		1	1		0	0
+3874	467	noStockOutFlg	338		1	1		0	0
+3875	467	shippingSlipNo	184		1	1		0	0
+3876	467	pickingWorkMessageFlg	2417	dropdown	1	1		0	0
+3877	467	pickingWorkMessage	451		1	1		0	0
+3878	467	cancelDisplay	2362	dropdown	1	1		0	0
+3879	467	search	731		1	1		0	1
+3880	467	excelOutput	719		1	1		0	1
+3881	467	nonShippingTitle	1767		1	0		0	1
+3882	467	shippingInstProcessingTitle	1768		1	0		0	1
+3883	467	shippingInstedTitle	1770		1	0		0	1
+3884	467	inspectionedTitle	882		1	0		0	1
+3885	467	shippingFixedTitle	883		1	0		0	1
+3886	467	cancelTitle	1776		1	0		0	1
+3887	467	errorTitle	957		1	0		0	1
+3888	467	shippingStopTitle	1756		1	0		0	1
+3889	467	emergencyTitle	1786		1	0		0	1
+3890	467	stockOutFlgTitle	958		1	0		0	1
+3891	467	shippingInstList	2186	grid	1	1		0	1
+3892	467	workShippingDtFlg	832		1	1		1	1
+3893	467	dateBatch	864		1	1		1	1
+3894	467	checkDtBatch	875		1	1		0	1
+3895	467	deliveryCourseCdBatch	5143		1	1		1	1
+3896	467	checkdeliveryCourseBatch	878		1	1		0	1
+3897	467	indicator	824		1	1		0	1
+3898	467	indicatorBatch	824		0	1		0	1
+3899	467	indicatingCancel	825		1	1		0	1
+3900	467	pieceShippingInspectCancel	1249	text	1	1		0	1
+3901	467	pickingListPrint	911		1	1		0	1
+3902	467	shippingWorkRefUpdate	912		1	1		0	1
+3903	467	indicatorCancel	913		1	1		0	1
+3904	467	errorDelete	914		1	1		0	1
+3905	467	clearShortage	3294		1	1		0	1
+3906	467	errorCheck	787		1	1		0	1
+3907	467	productShippingList	857		1	1		0	1
+3908	468	clientCd	734		1	1		1	1
+3909	468	productCd	465		1	1		0	1
+3910	468	customerCd	591		1	1		0	1
+3911	468	search	731		1	1		0	1
+3912	468	excelOutput	719		1	1		0	1
+3913	468	shippingLotList	2179	grid	1	1		0	1
+3914	468	register	710		1	1		0	1
+3915	469	centerCd	4915		1	1		1	1
+3916	469	clientCd	734		1	1		1	1
+3917	469	shipSchDateFrom	5273		1	1		1	1
+3918	469	shipSchDateTo	5274		1	1		1	1
+3919	469	ownerOrderNo	5561		1	1		0	0
+3920	469	requestType	5562		1	1		0	0
+3921	469	custorderNo	5563		1	1		0	0
+3922	469	rmaNo	5159		1	1		0	0
+3923	469	refNo	5158		1	1		0	0
+3924	469	soPalletNo	5174		1	1		0	0
+3925	469	status	898		1	1		0	0
+3926	469	shipToCd	5564		1	1		0	0
+3927	469	customerCd	4952		1	1		0	0
+3928	469	search	731		1	1		0	1
+3929	469	excelOutput	719		1	1		0	1
+3930	469	shippingPalleteInfoInquiryDetail	5572		1	1		0	1
+3931	469	shippingPalleteList	5573	grid	1	1		0	1
+3932	470	centerCd	4915		1	0		1	1
+3933	470	clientCd	734		1	0		1	1
+3934	470	status	898		1	0		0	0
+3935	470	soPalletNo	5174		1	0		0	0
+3936	470	shipSchDate	5566		1	0		0	1
+3937	470	ownerOrderNo	5561		1	0		0	0
+3938	470	requestType	5562		1	0		0	0
+3939	470	custorderNo	5563		1	0		0	0
+3940	470	rmaNo	5159		1	0		0	0
+3941	470	refNo	5158		1	0		0	0
+3942	470	shipDate	5567		1	0		0	1
+3943	470	totalQtyCase	5568		1	0		0	0
+3944	470	totalQtyCarton	5569		1	0		0	0
+3945	470	shipToCd	5564		1	0		0	0
+3946	470	otherRefNo1	5157		1	0		0	0
+3947	470	palletKey	5570		1	0		0	0
+3948	470	soId	5571		0	0		0	0
+3949	470	excelOutput	719		1	1		0	1
+3950	470	shippingPalleteDetailList	5574	grid	1	1		0	1
+3951	471	centerCd	5142		1	1		1	1
+3952	471	clientCd	734		1	1		1	1
+3953	471	excelUpload	761		1	1		0	1
+3954	471	register	710		1	1		0	1
+3955	471	shippingPlan	2181	grid	1	1		0	1
+3956	471	chkErrorShow	1387	checkbox	1	1		0	1
+3957	471	excelOutput	719		1	1		0	1
+3958	471	errorProcessMet	1388	dropdown	1	1		0	1
+3959	472	clientCd	734		1	1		1	1
+3960	472	centerCd	5142		1	1		1	1
+3961	472	shippingSlipNo	184		1	0		0	1
+3962	472	clientShippingNo	349		1	1		0	1
+3963	472	emergencyFlg	327		1	1		1	1
+3964	472	supplyCustomerCd	591		1	1		1	1
+3965	472	delivPlanDt	597		1	1		0	1
+3966	472	workDt	387		1	1		1	1
+3967	472	shippingDt	443		1	1		1	1
+3968	472	processTypeCd	737		1	1		1	1
+3969	472	delivDt	589		1	1		0	1
+3970	472	delivTz	590		1	1		0	1
+3971	472	addRow	708		1	1		0	1
+3972	472	removeRow	709		1	1		0	1
+3973	472	register	710		1	1		0	1
+3974	472	shippingPlanInputList	2182	grid	1	1		0	1
+3975	472	deliveryCourseCd	5143		1	1		1	1
+3976	472	pickingWorkMessage	451		1	1		0	1
+3977	472	delivZipCd	557	text	1	1		0	1
+3978	472	delivAddress1	550	text	1	1		0	1
+3979	472	delivAddress2	551	text	1	1		0	1
+3980	472	delivAddress3	552	text	1	1		0	1
+3981	472	delivAddressSupply	553	text	1	1		0	1
+3982	472	delivCustomerNm	556	text	1	1		0	1
+3983	472	delivTelNo	555	text	1	1		0	1
+3984	472	delivCustomerCd	548		1	1		1	1
+3985	472	totalPrice	2637		1	1		0	1
+3986	472	totalTax	2638		1	1		0	1
+3987	473	centerCd	5142	dropdown	1	1		1	1
+3988	473	clientCd	734	dropdown	1	1		1	1
+3989	473	workDt	387	date	1	1		0	1
+3990	473	shippingDt	443	date	1	1		0	1
+3991	473	deliveryCourseCd	5143	text	1	1		0	0
+3992	473	search	731		1	1		0	1
+3993	473	updateTime	355		1	0		0	1
+3994	473	shippingStatusCountTitle	1564		1	0		0	1
+3995	473	shippingStatusNumberTitle	1565		1	0		0	1
+3996	474	takingShippingFlg	832		1	1		0	1
+3997	474	dtFrom	833		1	1		0	1
+3998	474	dtTo	834		1	1		0	1
+3999	474	centerCd	5142		1	1		1	1
+4000	474	clientCd	734		1	1		1	1
+4001	474	deliveryCourseCd	5143		1	1		0	0
+4002	474	carrierCd	711		1	1		0	0
+4003	474	supplyCustomerCd	591		1	1		0	0
+4004	474	pickingWorkNo	450		1	1		0	0
+4005	474	clientShippingNo	349		1	1		0	0
+4006	474	emergencyFlg	1820		1	1		0	0
+4007	474	invoiceCreateFlg	500		1	1		0	1
+4008	474	search	731		1	1		0	1
+4009	474	shippingTagDataOutputB	2192	grid	1	1		0	1
+4010	474	csvOutput	1097		1	1		0	1
+4011	475	centerCd	5142		1	0		1	1
+4012	475	clientCd	734		1	0		1	1
+4013	475	productCd	465		1	0		0	1
+4014	475	productNm	469		1	0		0	1
+4015	475	workDt	387		1	0		0	1
+4016	475	shippingDt	443		1	0		0	1
+4017	475	delivDt	597		1	0		0	1
+4018	475	supplyCustomerCd	591		1	0		0	1
+4019	475	supplyCustomerNm	593		1	0		0	1
+4020	475	delivAddress1	550		1	0		0	1
+4021	475	shippingSlipNo	184		1	0		0	1
+4022	475	shippingStatus	433		1	0		0	1
+4023	475	nonShippingTitle	1791		1	0		0	1
+4024	475	shippingStopTitle	1756		1	0		0	1
+4025	475	stockOutFlgTitle	958		1	0		0	1
+4026	475	shippingUpdateList	2184	grid	1	1		0	1
+4027	475	addRow	708		1	1		0	1
+4028	475	removeRow	709		1	1		0	1
+4029	475	register	710		1	1		0	1
+4030	476	pickingWorkMessage	451		1	1		0	1
+4031	476	register	710		1	1		0	1
+4032	476	close	733		1	1		0	1
+4033	477	centerCd	5142		1	0		1	1
+4034	477	clientCd	734		1	0		1	1
+4035	477	warehouseCd	723		1	1		0	1
+4036	477	zoneCd	211		1	1		0	1
+4037	477	searchPickingGroupNo	217		1	1		0	1
+4038	477	tempNo	289		1	1		0	1
+4039	477	userCd	247		1	1		1	1
+4040	477	searchJanCd	676		1	1		1	1
+4041	477	search	731		1	1		0	1
+4042	477	productCd	465		1	0		0	1
+4043	477	workInstNum	3224		1	0		0	1
+4044	477	pickingGroupNo	217		1	0		0	1
+4045	477	totalSlipNum	3229		1	0		0	1
+4046	477	janCd	676		1	1		0	1
+4047	477	inspectedNum	892		1	0		0	1
+4048	477	inspectedSlipNum	3230		1	0		0	1
+4049	477	totalInspectedSlipNum	3231		1	0		0	1
+4050	477	singleRowShippingInspectList	3210	grid	1	1		0	1
+4051	478	centerCd	5142		1	1		1	1
+4052	478	clientCd	734		1	1		1	1
+4053	478	receivePlanDtFrom	770		1	1		0	1
+4054	478	receivePlanDtTo	771		1	1		0	1
+4055	478	storeDtFrom	1182		1	1		0	0
+4056	478	storeDtTo	1183		1	1		0	0
+4057	478	receiveStatus	559		1	1		0	0
+4058	478	planSupplierCd	614		1	1		0	0
+4059	478	clientReceiveNo	649		1	1		0	0
+4060	478	storeClientReceiveNo	350		1	1		0	0
+4061	478	receiveSlipNo	186		1	1		0	0
+4062	478	centerTransitFlg	2039		1	1		0	0
+4063	478	deleteDisplay	674		1	1		0	0
+4064	478	search	731		1	1		0	1
+4065	478	excelOutput	719		1	1		0	1
+4066	478	nonReceive	1763		1	0		0	1
+4067	478	receiving	1764		1	0		0	1
+4068	478	store	1765		1	0		0	1
+4069	478	receiveDelete	782		1	0		0	1
+4070	478	error	957		1	0		0	1
+4071	478	SlipNoReceiveList	2198	grid	1	1		0	1
+4072	478	reportPrint	783		1	1		0	1
+4073	478	productReceiveList	949		1	1		0	1
+4074	478	receivePlanDelete	785		1	1		0	1
+4075	478	receivePlanInput	786		1	1		0	1
+4076	478	errorCheck	787		1	1		0	1
+4077	478	receiveInput	788		1	1		0	1
+4078	478	productLabel	1614		1	1		0	1
+4079	479	centerCd	4915	dropdown	1	0		1	1
+4080	479	clientCd	734	dropdown	1	0		1	1
+4081	479	locidfrnk	5340	dropdown	1	1		0	1
+4082	479	locidfbrctg1	5357	dropdown	1	1		0	1
+4083	479	locidfbrctg2	5358	dropdown	1	1		0	1
+4084	479	locidfbrctg3	5359	dropdown	1	1		0	1
+4085	479	locidfbrctg4	5360	dropdown	1	1		0	1
+4086	479	locidfbrctg5	5361	dropdown	1	1		0	1
+4087	479	locidfbrctg6	5362	dropdown	1	1		0	1
+4088	479	locidfbrctg7	5363	dropdown	1	1		0	1
+4089	479	locidfbrctg8	5364	dropdown	1	1		0	1
+4090	479	locidfbrctg9	5365	dropdown	1	1		0	1
+4091	479	locidfbrctg10	5366	dropdown	1	1		0	1
+4092	479	lincd	5342	text	1	1		0	1
+4093	479	linnm	5343	text	1	1		0	1
+4094	479	linblk1	5344	dropdown	1	1		0	1
+4095	479	linblk2	5345	dropdown	1	1		0	1
+4096	479	linblk3	5346	dropdown	1	1		0	1
+4097	479	hdrdboxrsfid	5347	dropdown	1	1		0	1
+4098	479	pkgrt	5348	number	1	1	right	0	1
+4099	479	sprprsid	5349	dropdown	1	1		0	1
+4100	479	delFlg	805	dropdown	1	1		0	1
+4101	479	blkcd	5350	text	1	1		0	1
+4102	479	blknm	5351	text	1	1		0	1
+4103	479	locidfrnkblk	5340	dropdown	1	1		0	1
+4104	479	locidfbrctg1blk	5357	dropdown	1	1		0	1
+4105	479	locidfbrctg2blk	5358	dropdown	1	1		0	1
+4106	479	locidfbrctg3blk	5359	dropdown	1	1		0	1
+4107	479	locidfbrctg4blk	5360	dropdown	1	1		0	1
+4108	479	locidfbrctg5blk	5361	dropdown	1	1		0	1
+4109	479	locidfbrctg6blk	5362	dropdown	1	1		0	1
+4110	479	locidfbrctg7blk	5363	dropdown	1	1		0	1
+4111	479	locidfbrctg8blk	5364	dropdown	1	1		0	1
+4112	479	locidfbrctg9blk	5365	dropdown	1	1		0	1
+4113	479	locidfbrctg10blk	5366	dropdown	1	1		0	1
+4114	479	hdrdboxrsfidblk	5347	dropdown	1	1		0	1
+4115	479	pkgrtblk	5348	number	1	1	right	0	1
+4116	479	sprprsidblk	5349	dropdown	1	1		0	1
+4117	479	delFlgblk	805	dropdown	1	1		0	1
+4118	479	register	710		1	1		0	1
+4119	479	lbltitleCommon	5356		0	0		0	1
+4120	479	lblSortingPlaceMasterEditLin	3511		0	0		0	1
+4121	479	lblSortingPlaceMasterEditBlk	3513		0	0		0	1
+4122	480	centerCd	4915		1	0		1	1
+4123	480	clientCd	734		1	0		1	1
+4124	480	delFlg	805		1	1		0	1
+4125	480	search	731		1	1		0	1
+4126	480	locidfrnkNm	5340	text	1	0		0	1
+4127	480	zonelocidfbrctg	5341	text	1	0		0	1
+4128	480	sortingPlaceMasterListLin	5354	grid	1	1		0	1
+4129	480	sortingPlaceMasterListBlk	5355	grid	1	1		0	1
+4130	480	AddLine	5337		1	1		0	1
+4131	480	AddBlock	5338		1	1		0	1
+4132	480	Edit	5339		1	1		0	1
+4133	480	lbltitleCommon	5356		0	0		0	1
+4134	480	lblSortingPlaceMasterListLin	3511		1	0		0	1
+4135	480	lblSortingPlaceMasterListBlk	3513		1	0		0	1
+4136	481	clientCd	734		1	1		1	1
+4137	481	centerCd	5142		1	1		1	1
+4138	481	productCd	465		1	1		1	1
+4139	481	productUnit	2921		1	0		0	1
+4140	481	depositCd	762		1	1		1	1
+4141	481	stockTypeCd	763		1	1		1	1
+4142	481	locationCd	262		1	1		1	1
+4143	481	unitNumBreakdown	2702		1	0	right	0	1
+4144	481	lot	266		1	1		0	1
+4145	481	limitDt	313		1	1		0	1
+4146	481	storeLabelNo	573		1	1		0	1
+4147	481	supplierCustomerCd	390		1	1		0	1
+4148	481	storeLabelNo_B	344		1	1		0	1
+4149	481	chargeNum	2400		1	1	right	0	1
+4150	481	chargeNumMultiText	2708		1	1	right	0	1
+4151	481	chargeNum_A	2403		1	1	right	0	1
+4152	481	chargeNum_AMultiText	2709		1	1	right	0	1
+4153	481	processTypeCd	737		1	1		1	1
+4154	481	adjNum	2406		1	1	right	1	1
+4155	481	adjNumMultiText	2710		1	1	right	0	1
+4156	481	moveInstComment	377		1	1		0	1
+4157	481	confirm	884		1	1		0	1
+4158	481	update	710		1	1		0	1
+4159	481	storeDt	583		1	1		1	1
+4160	482	stockBulkMoveList	2629	grid	1	0		0	1
+4161	482	register	710		1	1		0	1
+4162	482	close	733		1	1		0	1
+4163	483	centerCd	4915	dropdown	1	0		1	1
+4164	483	clientCd	734	dropdown	1	0		1	1
+4165	483	inventoryInstKey	5661	text	1	1		1	1
+4166	483	productCd	4918	text	1	1		0	1
+4167	483	unmatch	941	dropdown	1	1		0	1
+4168	483	search	731	button	1	1		0	1
+4169	483	excelOutput	719	button	1	1		0	1
+4170	483	StockCheck	5662	grid	1	0		0	0
+4171	484	centerCd	5142		1	1		1	1
+4172	484	clientCd	734		1	1		1	1
+4173	484	warehouseCd	723		1	1		0	0
+4174	484	processDtFrom	847		1	1		1	1
+4175	484	processDtTo	848		1	1		1	1
+4176	484	depositCd	762		1	1		0	0
+4177	484	stockTypeCd	763		1	1		0	0
+4178	484	productCd	465		1	1		0	0
+4179	484	processTypeCd	737		1	1		0	0
+4180	484	locationCdFrom	725		1	1		0	0
+4181	484	locationCdTo	726		1	1		0	0
+4182	484	janCd	180		1	1		0	0
+4183	484	lot	266		1	1		0	0
+4184	484	limitDtFrom	849		1	1		0	0
+4185	484	limitDtTo	850		1	1		0	0
+4186	484	search	731		1	1		0	1
+4187	484	excelOutput	719		1	1		0	1
+4188	484	allocNgFlg	1749		1	0		0	1
+4189	484	pChargeNumDay	916		1	0		0	1
+4190	484	chargeNum	917		1	0		0	1
+4191	484	stockInOutList	2170	grid	1	1		0	1
+4192	485	centerCd	5142		1	1		1	1
+4193	485	clientCd	734		1	1		1	1
+4194	485	warehouseCd	723		1	1		0	0
+4195	485	zone	724		1	1		0	0
+4196	485	stockdisplayfld	863		1	1		1	1
+4197	485	dataTime	864		1	1		1	1
+4198	485	productCd	465		1	1		0	0
+4199	485	locationCdFrom	725		1	1		0	0
+4200	485	locationCdTo	726		1	1		0	0
+4201	485	janCd	180		1	1		0	0
+4202	485	customerCd	762		1	1		0	0
+4203	485	stockTypeCd	763		1	1		0	0
+4204	485	limitDtFrom	849		1	1		0	0
+4205	485	limitDtTo	850		1	1		0	0
+4206	485	limitDtNum	865		1	1	right	0	0
+4207	485	lot	266		1	1		0	0
+4208	485	stockNumDisplay	1454		1	1		0	1
+4209	485	chargeNumDisplay	866		1	1		0	1
+4210	485	display	1067		1	1		0	1
+4211	485	transitDisplay	2041		1	1		0	1
+4212	485	search	731		1	1		0	1
+4213	485	excelOutput	719		1	1		0	1
+4214	485	stockListPrint	1258		0	1		0	1
+4215	485	expired	915		1	0	center	0	1
+4216	485	chargestop	1749		1	0	center	0	1
+4217	485	stockOrderByProductNoReportList	2171	grid	1	0		0	1
+4218	485	stockOrderByProductReportList	2172	grid	1	0		0	1
+4219	485	stockOrderByLocationNoReportList	2173	grid	1	0		0	1
+4220	485	stockOrderByLocationReportList	2174	grid	1	0		0	1
+4221	485	stockInOutList	846		1	1		0	1
+4222	485	stockAdj	888		1	1		0	1
+4223	485	stockMove	978		1	1		0	1
+4224	485	storeLabelPrint	1124		1	1		0	1
+4225	485	stockBulkMove	2628		1	1		0	1
+4226	486	clientCd	734		1	1		1	1
+4227	486	centerCd	5142		1	1		1	1
+4228	486	productCd	465		1	1		1	1
+4229	486	productUnit	2921		1	0		0	1
+4230	486	depositCd_F	963		1	1		1	1
+4231	486	locationCd_F	725		1	1		1	1
+4232	486	chargeNum_F	959		1	0	right	0	1
+4233	486	chargeNum_FMultiText	2942		1	0	right	0	1
+4234	486	stockTypeCd_F	964		1	1		1	1
+4235	486	chargeNum_F_T	960		1	0	right	0	1
+4236	486	chargeNum_F_TMultiText	2943		1	0	right	0	1
+4237	486	unitNumBreakdown	2702		1	0	right	0	1
+4238	486	lot	266		1	1		0	1
+4239	486	limitDt	313		1	1		0	1
+4240	486	supplierCustomerCd	390		1	1		0	1
+4241	486	storeLabelNo	573		1	1		0	1
+4242	486	storeLabelNo_B	344		1	0		0	1
+4243	486	depositCd_T	965		1	1		1	1
+4244	486	locationCd_T	726		1	1		1	1
+4245	486	chargeNum_T	961		1	0	right	0	1
+4246	486	chargeNum_TMultiText	2944		1	0	right	0	1
+4247	486	moveNum	2411		1	1	right	1	1
+4248	486	moveNumMultiText	2945		1	1	right	0	1
+4249	486	stockTypeCd_T	966		1	1		1	1
+4250	486	moveInstComment	377		1	1		0	1
+4251	486	confirm	884		1	1		0	1
+4252	486	update	710		1	1		0	1
+4253	486	storeDt_F	583		1	1		1	1
+4254	486	storeDt_T	583		1	1		1	1
+4255	487	centerCd	5142		1	1		1	1
+4256	487	clientCd	734		1	1		1	1
+4257	487	warehouseCd	723		1	1		0	0
+4258	487	productCd	465		1	1		0	0
+4259	487	instDtFrom	1473		1	1		0	1
+4260	487	instDtTo	1474		1	1		0	1
+4261	487	moveSlipNo	183		1	1		0	0
+4262	487	processTypeCd	737		1	1		0	0
+4263	487	moveInstStatus	374		1	1		0	0
+4264	487	search	731		1	1		0	1
+4265	487	excelOutput	719		1	1		0	1
+4266	487	lblnonwork	1855		1	0		0	1
+4267	487	lblworking	1856		1	0		0	1
+4268	487	lblcompletion	1857		1	0		0	1
+4269	487	lblcancel	1858		1	0		0	1
+4270	487	list	1646	grid	1	1		0	1
+4271	488	centerCd	5142		1	1		1	1
+4272	488	clientCd	734		1	1		1	1
+4273	488	processTypeCd	737		1	1		0	0
+4274	488	inoutType	584		1	1		0	0
+4275	488	productCd	465		1	1		0	0
+4276	488	lot	266		1	1		0	0
+4277	488	limitDtFrom	849		1	1		0	0
+4278	488	limitDtTo	850		1	1		0	0
+4279	488	stockTypeCd	763		1	1		0	0
+4280	488	warehouseCd	723		1	1		0	0
+4281	488	locationCdFrom	725		1	1		0	0
+4282	488	locationCdTo	726		1	1		0	0
+4283	488	depositCd	762		1	1		0	0
+4284	488	storeLabelNo	1657		1	1		0	0
+4285	488	oldStoreLabelNo	1658		1	1		0	0
+4286	488	moveDtFrom	1654		1	1		0	1
+4287	488	moveDtTo	1655		1	1		0	1
+4288	488	search	731		1	1		0	1
+4289	488	excelOutput	719		1	1		0	1
+4290	488	stockMoveHistoryGrid	2246	grid	1	1		0	1
+4291	489	centerCd	5142		1	0		0	1
+4292	489	clientCd	734		1	0		0	1
+4293	489	instDt	398		1	0		0	1
+4294	489	processTypeCd	737		1	0		0	1
+4295	489	moveSlipNo	183		1	0		0	1
+4296	489	moveInstStatus	374		1	0		0	1
+4297	489	moveInstComment	377		1	0		0	1
+4298	489	stockMoveInstListDetail	2234	grid	1	0		0	1
+4299	490	centerCd	5142		1	1		1	1
+4300	490	clientCd	734		1	1		1	1
+4301	490	warehouseCd	723		1	1		0	0
+4302	490	productCd	465		1	1		0	0
+4303	490	instDtFrom	1473		1	1		0	1
+4304	490	instDtTo	1474		1	1		0	1
+4305	490	moveSlipNo	183		1	1		0	0
+4306	490	processTypeCd	737		1	1		0	0
+4307	490	moveInstStatus	374		1	1		0	0
+4308	490	notCompletedFlg	2073	dropdown	1	1		0	1
+4309	490	printCondition	772		1	1		0	1
+4310	490	search	731		1	1		0	1
+4311	490	excelOutput	719		1	1		0	1
+4312	490	lblnonwork	1855		1	0		0	1
+4313	490	lblworking	1856		1	0		0	1
+4314	490	lblcompletion	1857		1	0		0	1
+4315	490	lblcancel	1858		1	0		0	1
+4316	490	list	2233	grid	1	1		0	1
+4317	490	listPrint	1492		1	1		0	1
+4318	490	register	1857		1	1		0	1
+4319	490	cancel	1858		1	1		0	1
+4320	490	instDetail	881		1	1		0	1
+4321	491	centerCd	5142		1	1		1	1
+4322	491	clientCd	734		1	1		1	1
+4323	491	productCd	1464		1	1		1	1
+4324	491	search	731		1	1		0	1
+4325	491	clear	896		1	1		0	1
+4326	491	customerCd	762		1	1		1	1
+4327	491	stockTypeCd	763		1	1		1	1
+4328	491	storeDt	583		1	1		1	1
+4329	491	lot	266		1	1		0	1
+4330	491	limitDt	313		1	1		0	1
+4331	491	chargeNum	1460		1	1	right	1	1
+4332	491	locationCd	262		1	1		1	1
+4333	491	setStructureList	2228	grid	1	1		0	1
+4334	491	stockList	2229	grid	1	1		0	1
+4335	491	register	710		1	1		0	1
+4336	491	lblSetStructureList	1490		1	0		0	1
+4337	491	lblStockList	1491		1	0		0	1
+4338	492	centerCd	5142		1	1		1	1
+4339	492	clientCd	734		1	1		1	1
+4340	492	productCd	1464		1	1		0	1
+4341	492	depositCd	762		1	1		0	1
+4342	492	stockTypeCd	763		1	1		0	1
+4343	492	locationCdFrom	725		1	1		0	1
+4344	492	locationCdTo	726		1	1		0	1
+4345	492	lot	266		1	1		0	1
+4346	492	limitDtFrom	849		1	1		0	1
+4347	492	limitDtTo	850		1	1		0	1
+4348	492	storeDtFrom	1182		1	1		0	1
+4349	492	storeDtTo	1183		1	1		0	1
+4350	492	register	727		1	1		0	1
+4351	492	printCondition	772		1	1		0	1
+4352	493	centerCd	5142		1	1		1	1
+4353	493	clientCd	734		1	1		1	1
+4354	493	productCd	1464		1	1		1	1
+4355	493	customerCd	762		1	1		0	0
+4356	493	stockTypeCd	763		1	1		0	0
+4357	493	locationCd	262		1	1		0	0
+4358	493	storeDt	583		1	1		0	0
+4359	493	search	731		1	1		0	1
+4360	493	lblStockList	1488		1	0		0	1
+4361	493	stockList	2230	grid	1	1		0	1
+4362	493	chargeNum	1460		1	1	right	1	1
+4363	493	parentProductSelect	2955		1	1		0	1
+4364	493	lblReleaseInput	1489		1	0		0	1
+4365	493	releaseInput	2231	grid	1	1		0	1
+4366	493	copyRow	1462		1	1		0	1
+4367	493	removeRow	709		1	1		0	1
+4368	493	register	710		1	1		0	1
+4369	494	centerCd	5142		1	1		1	1
+4370	494	clientCd	734		1	1		1	1
+4371	494	productCd	1464		1	1		0	1
+4372	494	depositCd	762		1	1		0	1
+4373	494	stockTypeCd	763		1	1		0	1
+4374	494	locationCdFrom	725		1	1		0	1
+4375	494	locationCdTo	726		1	1		0	1
+4376	494	lot	266		1	1		0	1
+4377	494	limitDtFrom	849		1	1		0	1
+4378	494	limitDtTo	850		1	1		0	1
+4379	494	storeDtFrom	1182		1	1		0	1
+4380	494	storeDtTo	1183		1	1		0	1
+4381	494	register	727		1	1		0	1
+4382	494	printCondition	772		1	1		0	1
+4383	495	stockTypeCd	381		1	1		0	1
+4384	495	search	731		1	1		0	1
+4385	495	stockTypeList	2220	grid	1	1		0	1
+4386	495	stockTypeNm	851		1	1		0	1
+4387	495	delFlg	805		1	1		0	1
+4388	495	addRow	708		1	1		0	1
+4389	495	removeRow	709		1	1		0	1
+4390	495	register	710		1	1		0	1
+4391	495	excelOutput	719		1	1		0	1
+4392	495	receiveFlg	560		1	1		0	1
+4393	496	centerCd	5142		1	1		1	1
+4394	496	clientCd	734		1	1		1	1
+4395	496	warehouseCd	723		1	1		0	1
+4396	496	storeDt	583		1	1		1	1
+4397	496	customerCd	390		1	1		0	1
+4398	496	storeLabelNoFrom	1265	text	1	1		0	1
+4399	496	register	727		1	1		0	1
+4400	496	storeLabelNoTo	1266	text	1	1		0	1
+4401	496	receiveSlipNo	186	text	1	1		0	1
+4402	496	clientReceiveNo	350	text	1	1		0	1
+4403	496	addUser	247	text	1	1		0	1
+4404	496	printCondition	772	dropdown	1	1		0	1
+4405	497	centerCd	5142		1	1		1	1
+4406	497	clientCd	734		1	1		1	1
+4407	497	shippingDt	443		1	1		1	1
+4408	497	deliveryCourseCd	5143		1	1		0	1
+4409	497	printCondition	772		1	1		0	1
+4410	497	register	727		1	1		0	1
+4411	498	centerCd	5142	dropdown	1	1		0	1
+4412	498	clientCd	734	dropdown	1	1		0	1
+4413	498	productCd	465	text	1	1		0	1
+4414	498	janCd	180	text	1	1		0	1
+4415	498	customerCd	762	dropdown	1	1		0	0
+4416	498	stockTypeCd	763	dropdown	1	1		0	0
+4417	498	limitDtFrom	849	datetime	1	1		0	0
+4418	498	limitDtTo	850	datetime	1	1		0	0
+4419	498	lot	266	text	1	1		0	0
+4420	498	fixedPointCd	1453	dropdown	1	1		0	0
+4421	498	stockNumDisplay	1454	dropdown	1	1		0	0
+4422	498	search	731		1	1		0	1
+4423	498	fixedPoint	1453		1	0		0	1
+4424	498	excelOutput	719		1	1		0	1
+4425	498	totalStockList	2224		1	0		0	1
+4426	498	totalStockListDefinition	2226	grid	1	0		0	1
+4427	499	userCd	247		1	0		0	1
+4428	499	userNm	252		1	0		0	1
+4429	499	cultureList	1010		1	0		0	1
+4430	499	roleGrpList	1020		1	0		1	1
+4431	499	centerCd	2891		1	0		0	1
+4432	499	clientCd	2892		1	0		0	1
+4433	499	delFlg	805		1	0		1	1
+4434	499	centerList	2163	grid	1	1		0	1
+4435	499	centerAllSelected	1086		1	1		0	1
+4436	499	centerNoSelected	1087		1	1		0	1
+4437	499	clientList	2162	grid	1	1		0	1
+4438	499	clientAllSelected	1086		1	1		0	1
+4439	499	clientNoSelected	1087		1	1		0	1
+4440	499	depositList	2893	grid	1	1		0	1
+4441	499	depositAllSelected	1086		1	1		0	1
+4442	499	depositNoSelected	1087		1	1		0	1
+4443	499	register	710		1	1		0	1
+4444	500	userCd	247		1	1		0	1
+4445	500	userNm	252		1	1		0	1
+4446	500	cultureList	1010		1	1		0	1
+4447	500	roleGrpList	1020		1	1		0	1
+4448	500	centerCd	2891		1	1		0	1
+4449	500	clientCd	2892		1	1		0	1
+4450	500	delFlg	805		1	1		0	1
+4451	500	search	731		1	1		0	1
+4452	500	excelOutput	719		1	1		0	1
+4453	500	userMasterList	117	grid	1	1		0	1
+4454	500	copy	1558		1	1		0	1
+4455	500	register	691		1	1		0	1
+4456	500	update	692		1	1		0	1
+4457	500	role	1061		1	1		0	1
+4458	501	clientCd	734		1	1		1	1
+4459	501	vendorCd	390		1	1		0	1
+4460	501	vendorNm	393		1	1		0	1
+4461	501	search	731		1	1		0	1
+4462	501	list	2175	grid	1	1		0	1
+4463	501	close	733		1	1		0	1
+4464	501	selection	732		1	1		0	1
+4465	502	clientCd	734		1	0		0	1
+4466	502	vendorCd	390		1	1		0	1
+4467	502	vendorNm	393		1	1		0	1
+4468	502	search	731		1	1		0	1
+4469	502	list	2175	grid	1	1		0	1
+4470	502	close	733		1	1		0	1
+4471	502	selection	732		1	1		0	1
+4472	502	searchResultTitle	2549		1	1		0	1
+4473	503	warehouseCd	494		1	1		0	1
+4474	503	warehouseNm	496		1	1		0	1
+4475	503	search	731		1	1		0	1
+4476	503	warehouseList	2191	grid	1	1		0	1
+4477	503	centerCd	5142		1	1		1	1
+4478	503	delFlg	805		1	1		0	1
+4479	503	addRow	708		1	1		0	1
+4480	503	removeRow	709		1	1		0	1
+4481	503	register	710		1	1		0	1
+4482	503	excelOutput	719		1	1		0	1
+4483	504	macAddress	3348		1	1		0	1
+4484	504	centerCd	5142		1	1		0	1
+4485	504	clientCd	734		1	1		0	1
+4486	504	delFlg	805		1	1		0	1
+4487	504	search	731		1	1		0	1
+4488	504	excelOutput	719		1	1		0	1
+4489	504	webhtinfoList	3331	grid	1	1		0	1
+4490	504	addRow	708		1	1		0	1
+4491	504	removeRow	709		1	1		0	1
+4492	504	register	710		1	1		0	1
+4493	505	centerCd	4915		1	0		1	1
+4494	505	clientCd	734		1	0		1	1
+4495	505	taskType	5619		1	1		0	1
+4496	505	taskTypeDetail	326		1	1		0	1
+4497	505	workDt	5620		1	1		1	1
+4498	505	workTimeFrom	5621		1	1		0	1
+4499	505	workTimeTo	5622		1	1		0	1
+4500	505	startEnd	5623		1	1		0	1
+4501	505	usercd	247		1	1		0	1
+4502	505	userNm	5624		1	1		0	1
+4503	505	search	731		1	1		0	1
+4504	505	excelOutput	719		1	1		0	1
+4505	505	workloadInquiryList	5618	grid	1	0		0	1
+4506	505	csvOutput	5629		1	1		0	1
+4507	506	zipCd	5128		1	1		0	1
+4508	506	address1	534		1	1		0	1
+4509	506	address2	395		1	1		0	1
+4510	506	delFlg	805		1	1		0	1
+4511	506	search	731		1	1		0	1
+4512	506	zipList	2209	grid	1	1		0	1
+4513	506	excelOutput	719		1	1		0	1
+4514	506	new	691		1	1		0	1
+4515	506	update	692		1	1		0	1
+4516	507	uploadZipType	3343	dropdown	1	1		1	1
+4517	507	chkErrorShow	1387	checkbox	1	1		0	1
+4518	507	zipMasterBulkInputKenList	3344	grid	1	1		0	1
+4519	507	zipMasterBulkInputOfficeList	3345	grid	1	1		0	1
+4520	507	errorProcessMet	1388	dropdown	1	1		0	1
+4521	507	excelOutput	719		1	1		0	1
+4522	507	excelUpload	761		1	1		0	1
+4523	507	register	710		1	1		0	1
+4524	508	companyFlg	504	dropdown	1	1		1	1
+4525	508	zipCd	5128	text	1	1		1	1
+4526	508	publicCd	492	text	1	1		0	1
+4527	508	zipCd5	321	text	1	1		0	1
+4528	508	addressKn1	535	text	1	1		0	1
+4529	508	addressKn2	396	text	1	1		0	1
+4530	508	addressKn3	527	text	1	1		0	1
+4531	508	companyKn	506	text	1	1		0	1
+4532	508	address1	534	text	1	1		1	1
+4533	508	address2	395	text	1	1		1	1
+4534	508	address3	526	text	1	1		0	1
+4535	508	address4	471	text	1	1		0	1
+4536	508	companyNm	505	text	1	1		0	1
+4537	508	flg1	226	dropdown	1	1		0	1
+4538	508	flg2	227	dropdown	1	1		0	1
+4539	508	flg3	228	dropdown	1	1		0	1
+4540	508	flg4	229	dropdown	1	1		0	1
+4541	508	updType	354	dropdown	1	1		0	1
+4542	508	reasonType	605	dropdown	1	1		0	1
+4543	508	handlingAddress	422	text	1	1		0	1
+4544	508	flg5	230	dropdown	1	1		0	1
+4545	508	flg6	231	dropdown	1	1		0	1
+4546	508	updCd	429	dropdown	1	1		0	1
+4547	508	delFlg	805	dropdown	1	1		1	1
+4548	508	register	710		1	1		0	1
+4549	509	zipCd	5128		1	1		0	1
+4550	509	address1	534		1	1		0	1
+4551	509	address2	395		1	1		0	1
+4552	509	search	731		1	1		0	1
+4553	509	selection	732		1	1		0	1
+4554	509	close	733		1	1		0	1
+4555	509	zipMasterList	2210	grid	1	1		0	1
+4556	510	zipCd	5128		1	1		0	1
+4557	510	address1	534		1	1		0	1
+4558	510	address2	395		1	1		0	1
+4559	510	search	731		1	1		0	1
+4560	510	selection	732		1	1		0	1
+4561	510	close	733		1	1		0	1
+4562	510	searchResultTitle	2549		1	1		0	1
+4563	510	zipMasterList	2210	grid	1	1		0	1
+4564	511	zoneCd	211		1	1		0	1
+4565	511	search	731		1	1		0	1
+4566	511	zoneList	2160	grid	1	1		0	1
+4567	511	centerCd	5142		1	1		1	1
+4568	511	delFlg	805		1	1		0	1
+4569	511	addRow	708		1	1		0	1
+4570	511	removeRow	709		1	1		0	1
+4571	511	register	710		1	1		0	1
+4572	511	excelOutput	719		1	1		0	1
+4573	511	warehouseCd	723		1	1		0	1
+4574	511	excelUpload	761		1	1		0	1

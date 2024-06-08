@@ -1,0 +1,47 @@
+<div ng-controller="ImportTypeMasterList" owd-screen="ImportTypeMasterList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+					<div class="row">
+						<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd Start -->
+						<owd-select id="clientCd" ng-model="searchDto.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" owd-remove-blank></owd-select>
+						<!-- [#3998][Ver3.0]項目名変更に伴い修正 2018.04.10 miyabe upd End -->
+						<owd-text id="importTypeCd" ng-model="searchDto.importTypeCd" label-text="取込み種別CD"></owd-text>
+						<owd-text id="importTypeNm" ng-model="searchDto.importTypeNm" label-text="取込み種別名称"></owd-text>
+						<owd-select id="edi" ng-model="searchDto.ediId" owd-models="ediList" owd-repeat-key="ediId" owd-repeat-value="ediNm" label-text="EDI"></owd-select>
+						<!-- [C-CWMS-0026] Amazon,Yahoo対応 2015.05.29 kawana Start -->
+						<owd-select id="uploadTableNm" ng-model="searchDto.uploadTableNm" owd-models="uploadTableList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アップロードテーブル名"></owd-select>
+						<!-- [C-CWMS-0026] Amazon,Yahoo対応 2015.05.29 kawana End -->
+						<owd-text id="statementTitle" ng-model="searchDto.statementTitle" label-text="納品書タイトル"></owd-text>
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="importTypeMasterListGrid" owd-form-name="searchform"></div>
+		<br>
+	</form>
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- コピー機能追加 取込種別マスタ画面修正 2016.08.25 Thein Myo Oo Add Start -->
+				<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+				<!-- コピー機能追加 取込種別マスタ画面修正 2016.08.25 Thein Myo Oo Add End -->
+				<owd-button id="register" class="btn-info"  ng-click="register()">新規</owd-button>
+				<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+				<owd-button id="delete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deleteMaster()">削除</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

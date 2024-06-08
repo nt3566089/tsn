@@ -1,0 +1,20 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	clientCd	荷主		1	1		1	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	productCd	親商品CD		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	productNm	親商品名称		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	janCd	ソースCD		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.productCd	親商品CD	1	text	1	0		0	245			1	245
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.productNm	親商品名称	2	text	1	0		0	300			2	300
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.productAbbr	親商品略称	3	text	1	0		0	300			3	300
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	4	text	1	0		0	205			4	205
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	delFlg	削除フラグCD	5	text	1	0		0	110			5	150
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	6	text	1	0		0	150			6	150
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.mclient.clientCd	荷主CD	7	text	1	0		0	200			7	
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	setStructureSearchList	セット品構成マスタメンテナンス(一覧)グリッド	grid	1	1		0	1	mproduct.mclient.clientNm	荷主名称	8	text	1	0		0	200			8	
+SetStructureSearch	セット品構成マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

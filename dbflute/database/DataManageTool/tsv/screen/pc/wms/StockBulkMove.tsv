@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mproduct.productCd	商品CD	1	text	1	0		0	245			1	245
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mproduct.productNm	商品名称	2	text	1	0		0	300			2	300
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mlocation.locationCd	ロケーションCD(From)	3	text	1	0		0	200			3	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mlocation.locationNm	ロケーション名称	4	text	1	0		0	200			4	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	moveLocationCd	ロケーションCD(To)	5	text	1	1		1	200			5	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	chargeNum	在庫数	16	number	1	0	right	0	95			16	95
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	unitNumBreakdown	入数内訳	17	text	1	0	right	0	220			17	220
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	moveInstNum	移動総数	18	calcnumber	1	1	right	1	290			18	290
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	moveInstNumMultiText	移動総数荷姿	19	number	0	1	right	0	110			19	110
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mwarehouse.mcenter.centerCd	センタCD	23	text	1	0		0	170			23	170
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mwarehouse.mcenter.centerNm	センタ名称	24	text	1	0		0	200			24	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mclient.clientCd	荷主CD	21	text	1	0		0	170			21	170
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mclient.clientNm	荷主名称	22	text	1	0		0	200			22	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mcustomer.customerCd	預託CD	6	text	1	0		0	160			6	160
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mcustomer.customerNm	預託名称	7	text	1	0		0	300			7	300
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mstockType.stockTypeCd	在庫区分CD	8	text	1	0		0	110			8	180
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	mstockType.vdict.dictNm	在庫区分名称	9	text	1	0		0	110			9	180
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tlot.lot	ロット	10	text	1	0		0	170			10	170
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tlot.limitDt	期限日	11	date	1	0		0	150			11	150
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tstoreNo.mcustomer.customerCd	仕入先CD	14	text	1	0		0	200			14	200
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tstoreNo.mcustomer.customerNm	仕入先名称	15	text	1	0		0	300			15	300
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tstoreNo.storeLabelNo	入庫ラベルNo.	12	text	1	0		0	140			12	140
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tstoreNo.tstoreNoSelf.storeLabelNo	元入庫ラベルNo.	13	text	1	0		0	155			13	190
+StockBulkMove	在庫一括移動指示	wms	stockBulkMoveList	在庫一括移動指示グリッド	grid	1	0		0	1	tstoreNo.storeDt	入庫日	20	date	1	0		0	150			20	150
+StockBulkMove	在庫一括移動指示	wms	register	登録		1	1		0	1													
+StockBulkMove	在庫一括移動指示	wms	close	閉じる		1	1		0	1													

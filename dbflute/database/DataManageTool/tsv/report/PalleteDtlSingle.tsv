@@ -1,0 +1,8 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblAttention	取扱注意	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblCenterNm	出庫場所	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblOtherRefNo1	輸送形態	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblReferenceNo	整理番号	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblRmaNo	問合番号	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblLot2	製造記号	String	1	
+PalleteDtlSingle	パレット明細（単品）	パレット明細（単品）	../../../../../../reports/shipping/PalleteDtlSingle.jrxml	1						0	0	lblLot3	ﾃﾞｻﾞｲﾝ区分	String	1	

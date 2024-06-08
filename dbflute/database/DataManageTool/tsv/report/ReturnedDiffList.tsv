@@ -1,0 +1,18 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblReturnedDiffList	差異リスト	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblTitle1	（倉庫保管用）	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblTitle2	（確認用）	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblOtherRefNo1	お得意様コード：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblRcvSchDate	入庫予定日：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblOtherRefNo3	返品区分：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblFromName	お得意様名称：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblFromAddress2	方面コード：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblSupplierRcvNo	伝票番号：	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblItemCd	銘柄コード	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblItemSname	銘柄名称	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblExpQty	予定数	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblRcvQty	実績数	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblFlg	状態コード	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblNotes	備考	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblLostSu	不足本数	String	1	
+ReturnedDiffList	返品差異リスト	返品差異リスト	../../../../../../reports/returns/ReturnedDiffList.jrxml	1						0	0	lblTotal	合計	String	1	

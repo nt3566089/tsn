@@ -1,0 +1,3 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+ReceiveStoreLotLimitDtResource	send	send	HT入庫格納(詳細)送信	lot	ロット	text	1
+ReceiveStoreLotLimitDtResource	send	send	HT入庫格納(詳細)送信	limitDt	期限日	date	1

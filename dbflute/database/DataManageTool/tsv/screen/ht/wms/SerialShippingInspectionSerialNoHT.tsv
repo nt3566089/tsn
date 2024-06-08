@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	workNo	出庫作業No		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	packingNo	出荷梱包No		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	customerCd	納品先		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	janCd	ｿｰｽCD		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	productCd	商品		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	serialNo	ｼﾘｱﾙ		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	option1	範囲		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	option2	完了		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	return	戻る		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	send	送信		1	1		0	1													
+SerialShippingInspectionSerialNoHT	ｼﾘｱﾙ登出(ｼﾘｱﾙ)	wms_ht	inspQty	登録数		1	1		0	1													

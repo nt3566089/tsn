@@ -1,0 +1,73 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locGroup	ロケーショングループ		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationCd	ロケーションCD		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	allocNgFlg	引当可否		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	zone	ゾーン		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	centerCd	拠点CD	1	text	1	0		0				1	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	centerNm	拠点名称	2	text	1	0		0				2	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	locationCd	ロケーションCD	3	text	1	0		0				3	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	locationNm	ロケーション名称	4	text	1	0		0				4	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	locGroupNm	ロケーショングループ	5	text	1	0		0				5	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	allocNgFlgNm	引当可否	6	text	1	0		0				6	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	zone	ゾーン	7	text	1	0		0				7	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	pickingOrder	山出し順	8	number	1	0	right	0				8	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	palletecapacity	許容パレット枚数	9	number	1	0	right	0				9	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	maxStoreNum	許容個数	10	number	1	0	right	0				10	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	linOrBlock	ライン/ブロック	11	text	1	0		0				11	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	lockbnNm	ロケーション区分	12	text	1	0		0				12	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	productCd	銘柄CD	13	text	1	0		0				13	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	productNm	銘柄名正称	14	text	1	0		0				14	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	brctg	銘柄カテゴリ	15	text	1	0		0				15	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	replenishmentRoundedupUnitNm	補充切り上げ単位	16	text	1	0		0				16	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	splrevctqa	補充切り上げカートン数	17	number	1	0	right	0				17	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	replenishPNum	基本補充点	18	number	1	0	right	0				18	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	bssplpt	基本補充量	19	number	1	0	right	0				19	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	tosplmdNm	当日補充方式	20	text	1	0		0				20	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	presplmdNm	事前補充方式	21	text	1	0		0				21	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	updDt	更新日時	22	datetime	1	0		0				22	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	userNm	更新者	23	text	1	0		0				23	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	1	delFlgNm	削除	24	text	1	0		0				24	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	transportpriority	出力順(組織)	25	number	0	0	right	0				25	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	virtuallocflg	論理ロケフラグ	26	text	0	0		0				26	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	clientCd	荷主CD	27	text	0	0		0				27	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	clientNm	荷主名称	28	text	0	0		0				28	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	locationId	ロケーションID	29	text	0	0		0				29	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	allocOrder	引当順序	30	text	0	0		0				30	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	locationType	ロケーション種別	31	text	0	0		0				31	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	replenishProductId	補充商品ID	32	text	0	0		0				32	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	replenishStockTypeId	補充在庫区分ID	33	text	0	0		0				33	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	replenishDepositId	補充預託ID	34	text	0	0		0				34	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	replenishPProductShapeId	補充点商品荷姿ID	35	text	0	0		0				35	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	maxStoreProductShapeId	最大格納数商品荷姿ID	36	text	0	0		0				36	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	versionNo	バージョンNo.	37	text	0	0		0				37	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	controlNo	コントロールNo.	38	text	0	0		0				38	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationList	ロケーションマスタメンテナンスグリッド	grid	0	0		0	0	addProcess	登録プロセス	39	text	0	0		0				39	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	linBlk	ライン/ブロック	1	text	1	0		0				1	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	sortCenter	仕分拠点	2	text	1	0		0				2	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	locationCd	ロケーションCD	3	text	1	0		0				3	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	productCd	銘柄CD	4	text	1	0		0				4	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	productNm	銘柄名	5	text	1	0		0				5	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	stockBox	現棚在庫ダンボール数	6	text	1	0		0				6	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	stockCarton	現棚在庫カートン数	7	text	1	0		0				7	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	locidNm	ロケーション区分	8	text	1	0		0				8	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	brctg	銘柄カテゴリ	9	text	1	0		0				9	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	tosplmd	当日補充方式	10	text	1	0		0				10	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	presplmd	事前補充方式	11	text	1	0		0				11	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	splrevunNm	切上単位	12	text	1	0		0				12	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	splrevctqa	切上カートン	13	number	1	0		0				13	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	replenishPNum	基本補充点	14	number	1	0		0				14	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	bssplpt	基本補充量	15	number	1	0		0				15	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	toReplenishPNum	当日補充点	16	number	1	0		0				16	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	toReplenishPQty	当日補充量	17	number	1	0		0				17	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	preReplenishPNum	事前補充点	18	number	1	0		0				18	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	preReplenishPQty	事前補充量	19	number	1	0		0				19	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	locationListOutput	ロケーションマスタメンテナンスグリッド	grid	1	0		0	0	createdate	作成日	20	text	1	0		0				20	
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	LocationManageListExcelOutput	ロケーション管理リストExcel出力		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+LocationMaster	ロケーションマスタメンテナンス(一覧)	wms	copy	複製		1	1		0	1													

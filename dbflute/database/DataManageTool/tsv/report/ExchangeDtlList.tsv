@@ -1,0 +1,32 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblCenterNm	配達拠点：	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblExchangeDtlList	取 替 明 細 書	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblAttention	取扱注意	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblPrintDate	作成日：	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblDlvYmd	配達日	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblDetPstnId	方面	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblDlvRnk	配達順位	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSsCd	お得意様コード	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSsNm	お得意様名	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblMr	様	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblProductNm1	銘柄名	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblCartonInfo1	ｶｰﾄﾝ情報	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCt1	数量	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSubTotal1	累計	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaNum1	端数	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb1up	段	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb1bot	ﾎﾞｰﾙ	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblProductNm2	銘柄名	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblCartonInfo2	ｶｰﾄﾝ情報	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCt2	数量	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSubTotal2	累計	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaNum2	端数	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb2up	段	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb2bot	ﾎﾞｰﾙ	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblProductNm3	銘柄名	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblCartonInfo3	ｶｰﾄﾝ情報	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCt3	数量	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSubTotal3	累計	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaNum3	端数	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb3up	段	String	1	
+ExchangeDtlList	取替明細書	取替明細書	../../../../../../reports/shipping/ExchangeDtlList.jrxml	1						0	0	lblSlQaCb3bot	ﾎﾞｰﾙ	String	1	

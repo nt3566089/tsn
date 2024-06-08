@@ -1,0 +1,30 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	tagType	データ種別	text	1	1		1	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	tagNm	データ種別名称	text	1	1		1	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	characterCd	文字コード	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	postType	郵便種別	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	coolType	保冷種別	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	codType	元/着払/代引	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	carrierType	送り状種別	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientZipCd	ご依頼主郵便番号	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientAddress1	ご依頼主住所1	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientAddress2	ご依頼主住所2	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientAddress3	ご依頼主住所3	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientNm1	ご依頼主名称1	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientTelNo	ご依頼主電話番号	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipClientMail	ご依頼主メールアドレス1	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	noUpsideDownCls	逆さま厳禁区分	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	noStockCls	下積み厳禁区分	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipProductSizeCls	商品サイズ区分	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipProductNo	商品番号(明細)	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	slipItemNm	品名(明細)	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	shipReserveDataMark	発送予約データマーク	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	deliCertPreYears	配達証保存年数	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	sendNm	発店名称	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	productTypeCode	商品種別コード	dropdown	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	postBizCardCustomerNo	ゆうびんビズカードお客さま番号	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	shippingCompanyCode	発送会社コード	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	shipmentCode	発送局コード	text	1	1		0	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													
+CarrierSlipYupkMasterEdit	ゆうパック送り状マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

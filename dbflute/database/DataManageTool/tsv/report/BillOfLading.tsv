@@ -1,0 +1,63 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblTitle	BILL OF LADING	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblDt	Date:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPage	Page	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipFrom	SHIP FROM	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipFromName	Name:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipFromAddress	Address:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipFromCity	City/State/Zip:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipFromSID	SID#:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFromFob	FOB:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipTo	SHIP TO	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipToName	Name:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipToAddress	Address:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipToCity	City/State/Zip:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipToCID	CID#:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblToFob	FOB:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblLocation	Location #:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblThird	THIRD PARTY FREIGHT CHARGES BILL TO:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblName	Name:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblAddress	Address:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCity	City/State/Zip:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblSpecialInstructions	SPECIAL INSTRUCTIONS:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblBillLadingNo	Bill of Lading Number:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCarrierName	CARRIER NAME:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblTrailerNumber	Trailer number:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblSealNumber	Seal  number(s):	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblSCAC	SCAC:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblProNumber	Pro Number:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFreightCharge	Freight Charge Terms: 	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFreightCharges	(freight charges are prepaid 	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblUnless	unless marked otherwise)	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPrePaid	PrePaid	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCollect	Collect	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lbl3	3	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblRd	rd	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblParty	Party	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCheckBox	(check box)	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCustomerOrderInformation	CUSTOMER ORDER INFORMATION	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCustomerOrderNumber	CUSTOMER ORDER NUMBER	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPkgs	#PKGS	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblWeight	WEIGHT	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPallet	PALLET/SILP	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCircleOne	(CIRCLE ONE)	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblY	Y	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblN	N	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblAdditional	ADDITIONAL SHIPPER INFO	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPer	Per	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCodAmount	COD Amount:  $	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFeeTerms	Fee Terms:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCollate	Collact:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFooterPrepaid	Prepaid:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCustomerCheckAcc	Customer check acceptable:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipper	Shipper	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblSignature	Signature	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblShipperSignatuer	SHIPPER SIGNATUER/DATE	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblTrailer	Trailer Loaded:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblBySipper	By shipper	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblByDriver	By Driver	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblFreightCounted	Freight Counted:	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblByShipper1	By shipper	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblByPallets	By Driver/pallets said to contain	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblPieces	By Driver/Pieces	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading.jrxml	1						0	0	lblCarrierSignatuer	CARRIER SIGNATUER/PICKUP DATE	String	1	

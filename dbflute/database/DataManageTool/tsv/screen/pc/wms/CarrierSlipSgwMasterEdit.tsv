@@ -1,0 +1,40 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	tagType	データ種別	text	1	1		1	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	tagNm	データ種別名称	text	1	1		1	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	characterCd	文字コード	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipCustomerCd	お客様コード	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	webApiRequestUrl	WebAPIリクエストURL	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	customerId	カスタマーID	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	loginPassword	ログインパスワード	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	deptConsignorNm	部署・担当者	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	consignorTelNo	荷送人電話番号	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientTelNo	ご依頼主電話番号	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientZipCd	ご依頼主郵便番号	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientAddress1	ご依頼主住所1	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientAddress2	ご依頼主住所2	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientNm1	ご依頼主名称1	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipClientNm2	ご依頼主名称2	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipShapeCd	荷姿コード	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipItemNm1	品名1	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipItemNm2	品名2	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipItemNm3	品名3	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipItemNm4	品名4	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	slipItemNm5	品名5	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	transportTypeSpeed	便種(スピードで選択)	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	transportTypeItem	便種(商品)	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	settlementType	決済種別	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	sealType1	指定シール1	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	sealType2	指定シール2	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	sealType3	指定シール3	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	codCls	元着区分	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	sendCd	発店CD	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiOkuriCode	WebAPI送り状コード	text	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiBinsyuCode	WebAPI便種コード	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiDaibikiFlg	WebAPI代引フラグ	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiDaibikiType	WebAPI代引支払方法区分	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiWeightCd1	WebAPI重量コード1	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiWeightCd2	WebAPI重量コード2	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	apiEidomeFlg	WebAPI営止フラグ	dropdown	1	1		0	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													
+CarrierSlipSgwMasterEdit	佐川送り状マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

@@ -1,0 +1,48 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="RoleList" owd-screen="RoleList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	
+					<fieldset>
+						<div class="row">
+							<owd-text id="roleCd" ng-model="head.roleCd" label-text="権限CD"></owd-text>
+							<owd-text id="roleNm" ng-model="head.roleNm" label-text="権限名"></owd-text>
+						</div>
+					</fieldset>
+	
+				</owd-accordion-group>
+			</owd-accordion>
+	
+			<div class="row">
+				<div class="col-xs-12">
+					
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="roleList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+						
+						<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						
+						<owd-button id="register" class="btn-info" ng-click="register()">新規</owd-button>
+						<owd-button id="updateScreen" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="updateScreen()">修正（画面）</owd-button>
+						<owd-button id="updateItem" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="updateItem()">修正（項目）</owd-button>
+						<owd-button id="updateScreenColRole" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="updateScreenColRole()">修正（グリッド）</owd-button>
+						<owd-button id="delete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deletedata()">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

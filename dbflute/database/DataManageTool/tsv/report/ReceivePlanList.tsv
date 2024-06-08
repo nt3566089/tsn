@@ -1,0 +1,76 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblClientNm	荷主	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblReceiveSlipeNo	WMS入荷伝票No.	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblCntrNm	センタ	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblReceivePlanDate	入荷予定日	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblClientReceiveNo	予定顧客入荷指示No.	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblPlanSupplierNm	仕入先	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblDepositNm	預託	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblProcessTypeNm	処理区分	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblProdCd	商品CD	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblProdNm	商品名称	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblClientOrderNo	顧客発注No.	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblJAN	ソースCD	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblPlanLot	ロット	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblConfirm	確認	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblNo	No.	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblPlanNumSubTotal	総合計(予定)	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblStoreNumSubTotal	総合計(実績)	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblMarkRepeat	再	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblLocationNm	格納ロケーション	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblStockTypeNm	在庫区分	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblPlanNum	数量	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblBreakdown	内訳	String	1	
+ReceivePlanList	入荷予定リスト	入荷予定リスト	../../../../../../reports/receive/ReceivePlanList.jrxml	1						0	0	lblTitle	入荷予定リスト	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblClientNm	荷主	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblReceiveSlipeNo	WMS入荷伝票No.	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblReceivePlanDate	入荷予定日	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblClientReceiveNo	予定顧客入荷指示No.	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblPlanSupplierNm	仕入先	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblDepositNm	預託	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblProcessTypeNm	処理区分	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblProdCd	商品CD	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblProdNm	商品名称	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblClientOrderNo	顧客発注No.	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblJAN	ソースCD	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblPlanLot	ロット	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblConfirm	確認	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblNo	No.	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblPlanNumSubTotal	総合計(予定)	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblStoreNumSubTotal	総合計(実績)	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblLocationNm	格納ロケーション	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblStockTypeNm	在庫区分	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblPlanNum	数量	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+ReceivePlanList	入荷予定リスト	Receiving Plan List	../../../../../../reports/receive/ReceivePlanList_enUS.jrxml	1						0	1	lblTitle	入荷予定リスト	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblReceiveSlipeNo	WMS入荷伝票No.	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblReceivePlanDate	入荷予定日	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblClientReceiveNo	予定顧客入荷指示No.	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblPlanSupplierNm	仕入先	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblDepositNm	預託	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblProcessTypeNm	処理区分	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblProdCd	商品CD	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblProdNm	商品名称	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblClientOrderNo	顧客発注No.	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblJAN	ソースCD	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblPlanLot	ロット	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblConfirm	確認	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblNo	No.	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblPlanNumSubTotal	総合計(予定)	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblStoreNumSubTotal	総合計(実績)	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblLocationNm	格納ロケーション	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblStockTypeNm	在庫区分	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblPlanNum	数量	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+ReceivePlanList	入荷予定リスト	入库预定清单	../../../../../../reports/receive/ReceivePlanList_zhCN.jrxml	1						0	1	lblTitle	入荷予定リスト	String	1	

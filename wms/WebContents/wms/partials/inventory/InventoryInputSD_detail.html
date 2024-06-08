@@ -1,0 +1,48 @@
+<ion-view owd-screen="InventoryInputSD" title="{{screenTitle}}">
+	<div class="bar bar-calm bar-subheader">
+		<div class="buttons">
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod START -->
+			<button class="button button-clear" ng-show="searchResult.hasPrevious" ng-click="detailPrevious()">{{"detailPrevious" | owfMessage}}</button>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod END -->
+		</div>
+		<h2 class="title">
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod START -->
+			<span>{{"detailTitle" | owfMessage}}</span>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod END -->
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update START -->
+			<span ng-bind="': ' + (searchResult.index+1)"></span>
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update END -->
+		</h2>
+		<div class="buttons">
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod START -->
+			<button class="button button-clear" ng-show="searchResult.hasNext" ng-click="detailNext()">{{"detailNext" | owfMessage}}</button>
+			<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Mod END -->
+		</div>
+	</div>
+	<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update START -->
+	<form id="form.detailform" name="form.detailform" novalidate>
+	<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update END -->
+		<ion-content class="has-subheader" ng-class="{'has-footer' : alerts.length > 0}">
+
+			<!-- [#3116] SD棚卸 UoM対応 2017.12.19 kawana Start -->
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update START -->
+			<!-- [#3558][Ver3.0] 小数有無チェック処理不正 2018.03.07 honma Mod Start -->
+			<owd-detail id="inventoryInputDetail" ng-detail="gridOptions" owd-detail-item="searchResult.detailedItem" owd-detail-index="searchResult.index" owd-form-name="detailform" owd-event-options="detailEventOptions" owd-multitext-options="multiTextOptions"></owd-detail>
+			<!-- [#3558][Ver3.0] 小数有無チェック処理不正 2018.03.07 honma Mod End -->
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update END -->
+			<!-- [#3116] SD棚卸 UoM対応 2017.12.19 kawana End -->
+			 <br><br>
+
+		</ion-content>
+
+		<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Add START -->
+		<div class="sd-footer">
+			<!-- [#1056][Ver2.2.0] SD版の登録ボタンCSSを緑に変更 2017.03.30 honma Mod Start -->
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update START -->
+			<owd-floating-button id="register" class="button-balanced" ng-click="register()">登録</owd-floating-button>
+			<!-- [#1066] SD版でもoptionMessageControlを使用可能にする 2017/04/13 Dario Update END -->
+			<!-- [#1056][Ver2.2.0] SD版の登録ボタンCSSを緑に変更 2017.03.30 honma Mod End -->
+		</div>
+		<!-- [#1056][Ver2.2.0] SD版のボタン国際化対応 2017/03/22 Dario Add END -->
+	</form>
+</ion-view>

@@ -1,0 +1,173 @@
+/*
+ [df:title]
+ 入荷予定一括取込一覧を取得します。
+
+ [df:description]
+  SQL Description here.
+
+*/
+-- #df:entity#
+-- !df:pmb extends Paging!
+-- !!Long cultureId!!
+-- !!AutoDetect!!
+/*IF pmb.isPaging()*/
+SELECT ERP.RECEIVE_CD
+	  ,ERP.RECEIVE_PLAN_ID
+	  ,ERP.RECEIVE_ROW_ID
+	  ,ERP.IMPORT_FLG
+	  ,ERP.ERROR_FLG
+	  ,ERP.ERROR_MESSAGE_CD
+	  ,ERP.CLIENT_CD
+	  ,ERP.CENTER_CD
+	  ,ERP.PLAN_CLIENT_RECEIVE_NO
+	  ,ERP.PLAN_SUPPLIER_CD
+	  ,ERP.VERSION_NO
+	  ,ERP.CONTROL_NO
+	  ,MC_0.CUSTOMER_NM
+	  ,MC_0.CUSTOMER_ABBR
+	  ,ERP.RECEIVE_PLAN_DT
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+	  ,ERP.PROCESS_TYPE_CD
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+	-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana Start
+	  ,VD_0.DICT_NM AS PROCESS_TYPE_NM
+	-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana End
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+	  ,ERP.STOCK_TYPE_CD
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+	-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana Start
+	  ,VD_1.DICT_NM AS STOCK_TYPE_NM
+	-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana End
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+	  ,ERP.PLAN_DEPOSIT_CD
+	-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+	  ,MC_1.CUSTOMER_NM AS PLAN_DEPOSIT_NM
+	  ,ERP.PRODUCT_CD
+	  ,MP_0.PRODUCT_NM
+	  ,MP_0.PRODUCT_ABBR
+	  ,MP_0.JAN_CD
+	  ,MP_0.LOT_MANAG_FLG  -- // cls(LotManagFlg)
+	  ,MP_0.LIMIT_DT_MANAG_FLG  -- // cls(LimitDtManagFlg)
+	  ,ERP.PLAN_NUM
+	  ,ERP.PLAN_WAREHOUSE_CD
+	  ,ERP.PLAN_LOCATION_CD
+	  ,ERP.PLAN_LOT
+	  ,ERP.PLAN_LIMIT_DT
+	  ,ERP.PLAN_CLIENT_ORDER_NO
+	  ,BM_0.MESSAGE_NM
+	  ,LCS_0.LOCATION_ID
+	  ,LCS_0.WAREHOUSE_CD AS LCS_WAREHOUSE_CD
+-- [#2253]予備項目対応 2017.08.18 sampei Start
+	  ,ERP.SPARE_STR_1
+	  ,ERP.SPARE_STR_2
+	  ,ERP.SPARE_STR_3
+	  ,ERP.SPARE_NUM_1
+	  ,ERP.SPARE_NUM_2
+	  ,ERP.SPARE_NUM_3
+-- [#2253]予備項目対応 2017.08.18 sampei End
+
+-- ELSE SELECT COUNT(*)
+/*END*/
+	FROM E_RECEIVE_PLAN ERP
+		INNER JOIN M_CLIENT MCL_0
+			ON MCL_0.CLIENT_CD = ERP.CLIENT_CD
+		INNER JOIN M_CENTER MCN_0
+			ON ERP.CENTER_CD = MCN_0.CENTER_CD
+		LEFT JOIN M_CUSTOMER MC_0
+			ON ERP.PLAN_SUPPLIER_CD = MC_0.CUSTOMER_CD
+			AND MCL_0.CLIENT_ID = MC_0.CLIENT_ID
+			AND MC_0.VENDOR_FLG = '1'
+			AND MC_0.DEL_FLG = '0'
+		LEFT JOIN M_PROCESS_TYPE MPT
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+			ON MPT.PROCESS_TYPE_CD = ERP.PROCESS_TYPE_CD
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+			AND MPT.RECEIVE_FLG = '1'
+			AND MPT.DEL_FLG = '0'
+		-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana Start
+		LEFT JOIN V_DICT VD_0
+			ON VD_0.DICT_ID = MPT.DICT_ID
+			AND (VD_0.CULTURE_ID = /*pmb.cultureId*/11111111111 OR VD_0.CULTURE_ID IS NULL)
+		-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana End
+		LEFT JOIN M_STOCK_TYPE MST
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+			ON MST.STOCK_TYPE_CD = ERP.STOCK_TYPE_CD
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+			AND MST.DEL_FLG = '0'
+		-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana Start
+		LEFT JOIN V_DICT VD_1
+			ON VD_1.DICT_ID = MST.DICT_ID
+			AND (VD_1.CULTURE_ID = /*pmb.cultureId*/11111111111 OR VD_1.CULTURE_ID IS NULL)
+		-- [#49] 辞書マスタを辞書ビューに変更 2016.10.24 kawana End
+		LEFT JOIN M_CUSTOMER MC_1
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod Start
+			ON ERP.PLAN_DEPOSIT_CD = MC_1.CUSTOMER_CD
+			-- [#246][2.1.0 バグ・品質向上対策] 入荷予定/出荷指示受信テーブルの物理名を(～ID)から(～CD)に修正 2016.11.22 honma Mod End
+			AND MC_1.CLIENT_ID = MCL_0.CLIENT_ID
+			AND MC_1.DEPOSIT_FLG = '1'
+			AND MC_1.DEL_FLG = '0'
+		LEFT JOIN M_PRODUCT MP_0
+			ON MP_0.PRODUCT_CD = ERP.PRODUCT_CD
+			AND MP_0.CLIENT_ID = MCL_0.CLIENT_ID
+			AND MP_0.DEL_FLG = '0'
+		LEFT JOIN B_MESSAGE BM_0
+			ON BM_0.MESSAGE_CD = ERP.ERROR_MESSAGE_CD
+			/*IF pmb.cultureId != null*/
+			AND BM_0.CULTURE_ID = /*pmb.cultureId*/1
+			/*END*/
+		LEFT JOIN
+			(SELECT DFREL_6_0.WAREHOUSE_CD
+					,DFLOC.LOCATION_ID AS LOCATION_ID
+					,DFLOC.CENTER_ID AS CENTER_ID
+					,DFLOC.ZONE_ID AS ZONE_ID
+					,DFLOC.LOCATION_CD AS LOCATION_CD
+					,DFLOC.LOCATION_NM AS LOCATION_NM
+					,DFLOC.PICKING_LOCATION_FLG AS PICKING_LOCATION_FLG
+					,DFLOC.PICKING_ORDER AS PICKING_ORDER
+					,DFLOC.LOCATION_TYPE AS LOCATION_TYPE
+					,DFLOC.ALLOC_ORDER AS ALLOC_ORDER
+					,DFLOC.ALLOC_NG_FLG AS ALLOC_NG_FLG
+					,DFLOC.REPLENISH_PRODUCT_ID AS REPLENISH_PRODUCT_ID
+					,DFLOC.REPLENISH_STOCK_TYPE_ID AS REPLENISH_STOCK_TYPE_ID
+					,DFLOC.REPLENISH_DEPOSIT_ID AS REPLENISH_DEPOSIT_ID
+					,DFLOC.REPLENISH_P_NUM AS REPLENISH_P_NUM
+					,DFLOC.REPLENISH_P_PRODUCT_SHAPE_ID AS REPLENISH_P_PRODUCT_SHAPE_ID
+					,DFLOC.MAX_STORE_NUM AS MAX_STORE_NUM
+					,DFLOC.MAX_STORE_PRODUCT_SHAPE_ID AS MAX_STORE_PRODUCT_SHAPE_ID
+					,DFLOC.DEL_FLG AS DEL_FLG
+					,DFLOC.VERSION_NO AS VERSION_NO
+					,DFLOC.CONTROL_NO AS CONTROL_NO
+					,DFLOC.ADD_DT AS ADD_DT
+					,DFLOC.ADD_USER AS ADD_USER
+					,DFLOC.ADD_PROCESS AS ADD_PROCESS
+					,DFLOC.UPD_DT AS UPD_DT
+					,DFLOC.UPD_USER AS UPD_USER
+					,DFLOC.UPD_PROCESS AS UPD_PROCESS
+			FROM M_LOCATION DFLOC
+				INNER JOIN M_ZONE DFREL_6
+					ON DFLOC.ZONE_ID = DFREL_6.ZONE_ID
+					AND DFREL_6.DEL_FLG = '0'
+				INNER JOIN M_WAREHOUSE DFREL_6_0
+					ON DFREL_6.WAREHOUSE_ID = DFREL_6_0.WAREHOUSE_ID
+					AND DFREL_6_0.DEL_FLG = '0'
+			WHERE DFLOC.CENTER_ID = /*pmb.centerId*/4444444444444444444
+				AND DFLOC.DEL_FLG = '0'
+				--ORDER BY DFLOC.LOCATION_CD ASC
+			) LCS_0
+			ON LCS_0.CENTER_ID = MCN_0.CENTER_ID
+			AND LCS_0.LOCATION_CD = ERP.PLAN_LOCATION_CD
+	WHERE 1 = 1
+		AND ERP.RECEIVE_CD = /*pmb.receiveCd*/'E12345678901'
+		AND ERP.CLIENT_CD = /*pmb.clientCd*/'MK001'
+		AND ERP.CENTER_CD = /*pmb.centerCd*/'TOKYO'
+		/*IF pmb.errorFlg != null*/
+		AND ERP.ERROR_FLG = /*pmb.errorFlg*/'1'
+		/*END*/
+		/*IF pmb.importFlg != null*/
+		AND ERP.IMPORT_FLG = /*pmb.importFlg*/'0'
+		/*END*/
+/*IF pmb.isPaging()*/
+	ORDER BY ERP.RECEIVE_PLAN_ID ASC
+			,ERP.RECEIVE_CD ASC
+			,ERP.RECEIVE_ROW_ID ASC
+/*END*/

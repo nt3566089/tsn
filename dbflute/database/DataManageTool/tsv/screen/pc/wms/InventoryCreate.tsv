@@ -1,0 +1,25 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryCreate	在庫調査指示作成	wms	centerCd	拠点		1	0		1	1													
+InventoryCreate	在庫調査指示作成	wms	clientCd	荷主		1	0		1	1													
+InventoryCreate	在庫調査指示作成	wms	inventoryInstKbn	在庫調査区分		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	lineBlock	ライン/ブロック		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	directionalPistonText	方面ピストン(手入力)		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	directionalPistonDropdown	方面ピストン(選択)		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	warehouseCd	倉庫		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	inventoryDt	棚卸日		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	depositCd	預託		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	stockTypeCd	在庫区分		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	locationGrp	ロケーショングループ		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	locationCd	ロケーションCD		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	fromLocationCd	ロケーションCD(From)		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	toLocationCd	ロケーションCD(To)		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	zoneCd	ゾーン		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	fromStockInoutDt	受払日(From)		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	toStockInoutDt	受払日(To)		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	stockTarget	引当可能数＋引当済数＞０		1	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	productCd	銘柄CD		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	productDivision	銘柄区分		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	inventoryDelete	棚卸データ削除		0	0		0	0													
+InventoryCreate	在庫調査指示作成	wms	instKeyList	在庫調査指示一覧		1	1		0	1													
+InventoryCreate	在庫調査指示作成	wms	register	在庫調査データ作成		1	1		0	1													

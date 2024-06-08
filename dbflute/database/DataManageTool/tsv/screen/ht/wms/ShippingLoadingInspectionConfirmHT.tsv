@@ -1,0 +1,7 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingLoadingInspectionConfirmHT	積込検品(確認)	wms_ht	deliveryCourse	配送コース		1	1		0	1													
+ShippingLoadingInspectionConfirmHT	積込検品(確認)	wms_ht	loading1	の積込検品が		1	1		0	1													
+ShippingLoadingInspectionConfirmHT	積込検品(確認)	wms_ht	loading2	終了しました。		1	1		0	1													
+ShippingLoadingInspectionConfirmHT	積込検品(確認)	wms_ht	return	終了		1	1		0	1													
+ShippingLoadingInspectionConfirmHT	積込検品(確認)	wms_ht	send	継続		1	1		0	1													

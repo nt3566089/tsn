@@ -1,0 +1,35 @@
+<div ng-controller="StockCheck" owd-screen="StockCheck">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList"
+							owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList"
+							owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-text id="inventoryInstKey" ng-model="searchCondition.inventoryKey"
+							label-text="在庫調査指示キー"></owd-text>
+						<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="銘柄CD"
+							owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.productNm"></owd-info>
+						</owd-text>
+						<owd-select id="unmatch" ng-model="searchCondition.unmatch" owd-models="unmatchList"
+							owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アンマッチ有"
+							owd-remove-blank></owd-select>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid"
+					ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid"
+					ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="StockCheck" owd-form-name="searchform"></div>
+		<br>
+	</form>
+</div>

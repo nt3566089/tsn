@@ -1,0 +1,63 @@
+<div ng-controller="ShippingTagDataOutput" owd-screen="ShippingTagDataOutput">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<!-- [ON推-品向-590] 出荷日・作業日の検索条件を出庫指示一覧にあわせる 2015.03.25 kawana Start -->
+				<owd-select id="takingShippingFlg" ng-model="searchCondition.takingShippingFlg" owd-models="takingShippingFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="作業日/出荷日" owd-remove-blank></owd-select>
+				<owd-date id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)"></owd-date>
+				<owd-date id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<!-- [ON推-品向-590] 出荷日・作業日の検索条件を出庫指示一覧にあわせる 2015.03.25 kawana End -->
+				<!-- 荷主センタ変更対応 2017.02.08 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.08 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<!-- [ON推-品向-590] 既存の出荷日・作業日の条件を削除 2015.03.25 kawana  -->
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.tallocInstH.mdeliveryCourse.deliveryCourseCd" label-text="配送コース" owd-add-button="showDeliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+					<owd-info ng-model="searchCondition.tallocInstH.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-select id="carrierCd" ng-model="searchCondition.tallocInstH.mdeliveryCourse.mcarrier.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先CD" owd-add-button="showVendor()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="searchCondition.tallocInstH.mcustomerBySupplyCustomerId.customerNm"></owd-info>
+				</owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-text id="clientShippingNo" ng-model="searchCondition.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+				<owd-select id="emergencyFlg" owd-remove-blank ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急のみ"></owd-select>
+				<!-- [EC-CT1-015] 空白の選択肢を追加 2015.02.10 kawana Start -->
+				<owd-select id="invoiceCreateFlg" ng-model="searchCondition.tpickingRAsOne.invoiceCreateFlg" owd-models="invoiceCreateFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="送り状データ作成フラグ"></owd-select>
+				<!-- [EC-CT1-015] 空白の選択肢を追加 2015.02.10 kawana End -->
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="shippingTagDataOutputB" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<!--[#7234] content-footer-controll ⇒ content-footer-buttonに変更 2020.03.12 ono Start -->
+		<div id="content-footer-button" class="container">
+				<!-- [#7234] content-footer-controll ⇒ content-footer-buttonに変更 2020.03.12 ono End -->
+			<div class="row">
+				<!-- [EC-CT1-124] EC送り状データ出力にあわせて変更 2015.03.18 kawana Start -->
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+					<owd-button id="csvOutput" class="btn-success " ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="csvOutput()">データ出力</owd-button>
+					<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+				</div>
+				<!-- [EC-CT1-124] EC送り状データ出力にあわせて変更 2015.03.18 kawana End -->
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,27 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+UserEdit	ユーザマスタメンテナンス(編集)	wms	userCd	ユーザCD		1	0		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	userNm	ユーザ名称		1	0		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	cultureList	カルチャ		1	0		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	roleGrpList	権限グループ		1	0		1	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerCd	センタ(権限)		1	0		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientCd	荷主(権限)		1	0		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	delFlg	削除		1	0		1	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerList	ユーザマスタメンテナンス荷主グリッド	grid	1	1		0	1	centerCheckBox		1	checkbox	1	1		0	40				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerList	ユーザマスタメンテナンス荷主グリッド	grid	1	1		0	1	centerCd	センタCD	2	text	1	0		0	90				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerList	ユーザマスタメンテナンス荷主グリッド	grid	1	1		0	1	centerNm	センタ名称	3	text	1	0		0	300				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerAllSelected	全選択		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	centerNoSelected	全解除		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientList	ユーザマスタメンテナンスセンタグリッド	grid	1	1		0	1	clientCheckBox		1	checkbox	1	1		0	40				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientList	ユーザマスタメンテナンスセンタグリッド	grid	1	1		0	1	clientCd	荷主CD	2	text	1	0		0	85				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientList	ユーザマスタメンテナンスセンタグリッド	grid	1	1		0	1	clientNm	荷主名称	3	text	1	0		0	300				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientAllSelected	全選択		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	clientNoSelected	全解除		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositList	ユーザマスタメンテナンス預託グリッド	grid	1	1		0	1	depositCheckBox		1	checkbox	1	1		0	40				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositList	ユーザマスタメンテナンス預託グリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	2	text	1	0		0	85				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositList	ユーザマスタメンテナンス預託グリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	3	text	1	0		0	300				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositList	ユーザマスタメンテナンス預託グリッド	grid	1	1		0	1	customerCd	預託CD	4	text	1	0		0	160				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositList	ユーザマスタメンテナンス預託グリッド	grid	1	1		0	1	customerNm	預託名称	5	text	1	0		0	300				
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositAllSelected	全選択		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	depositNoSelected	全解除		1	1		0	1													
+UserEdit	ユーザマスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

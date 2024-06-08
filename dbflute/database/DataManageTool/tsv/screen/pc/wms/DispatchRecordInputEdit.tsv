@@ -1,0 +1,24 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DispatchRecordInputEdit	配車実績入力(編集)	wms	centerCd	拠点		1	0		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	clientCd	荷主		1	0		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	supplierrCvFlg	輸送区分		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	landing	着地		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	supplierrCvNo	輸送番号		1	0		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	supplierrCvNoJT	JT輸送番号		1	0		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	supplierrCvNoTSN	TSN輸送番号		1	0		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	shipmenTDt	発日		1	1		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	arrivalDt	着日		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	plannedCar	計画車種		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	achievedCar	実績車種		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	transportationCo	運送業者		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	carNo	号車No.		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	genericPalletNo	汎用パレット数		1	1		1	0													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	otherPalletNo	その他パレット数		1	1		1	0													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	rcvSumQty1Pallet	合計パレット数		1	0		0	0													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	no	個数		1	1		1	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	sum	合計数		1	0		0	0													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	sealNo1	封印No.(1)		1	1		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	sealNo2	封印No.(2)		1	1		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	sealNo3	封印No.(3)		1	1		0	1													
+DispatchRecordInputEdit	配車実績入力(編集)	wms	register	登録		1	1		0	1													

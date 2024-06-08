@@ -1,0 +1,9 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	msg1	データを登録します。		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	msg2	よろしいですか？		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	workNo	出庫作業No		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	shippingPackingNo	出荷梱包No		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	pieceDenoRecode	総個口数		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	no	いいえ		1	1		0	1													
+ShippingNoPackingSendHT	出荷検品(確認)	wms_ht	yes	はい		1	1		0	1													

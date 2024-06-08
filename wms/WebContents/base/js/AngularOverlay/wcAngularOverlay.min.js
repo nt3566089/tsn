@@ -1,0 +1,11 @@
+/*
+* このソースは基盤ソースです。変更は行わないで下さい。
+*/
+
+
+/*
+* The license and copyright of this source are documented in the "LICENSE" file in the same folder.
+*/
+
+
+!function(){var a=function(a,b,c,d,e){return{restrict:"EA",transclude:!0,scope:{wcOverlayDelay:"@"},template:'<div id="overlay-container" class="overlayContainer"><div id="overlay-background" class="overlayBackground"></div><div id="overlay-content" class="overlayContent" data-ng-transclude></div></div>',link:function(b,c,f){function g(){h(),window.jQuery&&i()}function h(){d.request=function(c){return e.processRequest(b),c||a.when(c)},d.response=function(c){return e.processResponse(b),c||a.when(c)},d.responseError=function(c){return e.processResponse(b),a.reject(c)}}function i(){$(document).ajaxStart(function(){e.processRequest(b)}),$(document).ajaxComplete(function(){e.processResponse(b)}),$(document).ajaxError(function(){e.processResponse(b)})}g()}}},b=function(a){a.interceptors.push("httpInterceptor")},c=function(){return{}};overlayFunction=function(a,b){var c=null,d=null,e=null,f=[];(function(){var a=null;return document.defaultView&&document.defaultView.getComputedStyle?a=document.defaultView.getComputedStyle:"undefined"!=typeof document.body.currentStyle&&(a=function(a,b){return a.currentStyle}),function(b,c){return a(b,null)[c]}})();return{processRequest:function(b){var c=this;f.push({}),1==f.length&&(d=a(function(){f.length&&c.showOverlay()},b.wcOverlayDelay?b.wcOverlayDelay:500))},processResponse:function(b){var c=this;f.pop(),0==f.length&&(e=a(function(){0==f.length&&(c.hideOverlay(),e&&a.cancel(e))},b.wcOverlayDelay?b.wcOverlayDelay:500))},showOverlay:function(){c=document.getElementById("overlay-container"),c.style.display="block"},hideOverlay:function(){d&&a.cancel(d),c&&(c.style.display="none")}}};var d=angular.module("wc.Directives",[]);d.factory("httpInterceptor",c),d.factory("overlayFunction",["$timeout","$window",overlayFunction]),d.config(["$httpProvider",b]),d.directive("wcOverlay",["$q","$timeout","$window","httpInterceptor","overlayFunction",a])}();

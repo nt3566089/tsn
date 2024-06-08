@@ -1,0 +1,88 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblClientNm	荷主	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblCntrNm	センタ	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblWarehouseCd	倉庫	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblProductCdH	親商品CD	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblProductNmH	親商品名称	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblDepositCdH	預託	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblStockTypeCdH	在庫区分	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLocationNmH	ロケーション	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblInstNumH	数量	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLotH	ロット	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLimitDtH	期限日	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblStoreDtH	入庫日	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblProductCd	構成品CD	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblProductNm	構成品名称	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblUnitNum	構成数	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblJanCd	ソースCD	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblStorelabelNo	入庫ラベルNo.	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblDepositCd	預託	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblStockTypeCd	在庫区分	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLocationCd	ロケーション	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblLot	ロット	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblInstNum	指示数	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblChargeNum	引当可能数	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblTitle	セット組指示書	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblTitle2	セット解除指示書	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblMarkRepeat	再	String	1	
+StockSetInstList	セット組指示書	セット組指示書	../../../../../../reports/stock/StockSetInstList.jrxml	1						0	0	lblMoveSlipNo	WMS在庫移動伝票No.	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblClientNm	荷主	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblProductCdH	親商品CD	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblProductNmH	親商品名称	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblDepositCdH	預託	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblStockTypeCdH	在庫区分	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLocationNmH	ロケーション	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblInstNumH	数量	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLotH	ロット	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLimitDtH	期限日	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblStoreDtH	入庫日	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblProductCd	構成品CD	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblProductNm	構成品名称	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblUnitNum	構成数	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblStorelabelNo	入庫ラベルNo.	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblDepositCd	預託	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLocationCd	ロケーション	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblInstNum	指示数	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblTitle	セット組指示書	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblTitle2	セット解除指示書	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+StockSetInstList	セット組指示書	Kitting Instruction List	../../../../../../reports/stock/StockSetInstList_enUS.jrxml	1						0	1	lblMoveSlipNo	WMS在庫移動伝票No.	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblCntrNm	センタ	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblProductCdH	親商品CD	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblProductNmH	親商品名称	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblDepositCdH	預託	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblStockTypeCdH	在庫区分	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLocationNmH	ロケーション	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblInstNumH	数量	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLotH	ロット	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLimitDtH	期限日	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblStoreDtH	入庫日	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblProductCd	構成品CD	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblProductNm	構成品名称	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblUnitNum	構成数	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblStorelabelNo	入庫ラベルNo.	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblDepositCd	預託	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLocationCd	ロケーション	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblInstNum	指示数	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblTitle	セット組指示書	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblTitle2	セット解除指示書	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+StockSetInstList	セット組指示書	套装组合指示书	../../../../../../reports/stock/StockSetInstList_zhCN.jrxml	1						0	1	lblMoveSlipNo	WMS在庫移動伝票No.	String	1	

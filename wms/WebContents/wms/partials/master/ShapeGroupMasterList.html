@@ -1,0 +1,36 @@
+<div ng-controller="ShapeGroupMasterList" owd-screen="ShapeGroupMasterList">
+	<form id="searchform" name="searchform" novalidate>
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+					<fieldset>
+						<div class="row">
+							<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+							<owd-text id="shapeGrpCd" ng-model="head.shapeGrpCd" label-text="荷姿グループCD"></owd-text>
+							<owd-text id="shapeGrpName" ng-model="head.shapeGrpName" label-text="荷姿グループ名称"></owd-text>
+							<owd-select id="decimalExistFlg" ng-model="head.decimalExistFlg" owd-models="decimalExistFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="小数有無フラグ"></owd-select>
+							<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+						</div>
+					</fieldset>
+				</owd-accordion-group>
+			</owd-accordion>
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="shapeGroupList" owd-form-name="searchform"   owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" ></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row" >
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="copy" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						<owd-button id="new" class="btn-info"  ng-click="initNew()">新規</owd-button>
+						<owd-button id="update" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

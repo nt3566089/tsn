@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+InspectionLabel	検品ラベル	検品ラベル	../../../../../../reports/shipping/InspectionLabel.jrxml	1						1	0					
+InspectionLabel	検品ラベル	検品ラベル	../../../../../../reports/shipping/InspectionLabel.jrxml	1						1	0	lblPickingWorkNo	出庫作業No.	String	1	
+InspectionLabel	検品ラベル	検品ラベル	../../../../../../reports/shipping/InspectionLabel.jrxml	1						1	0	lblShippingPackingNo	出荷梱包No.	String	1	
+InspectionLabel	検品ラベル	Inspection Label	../../../../../../reports/shipping/InspectionLabel_enUS.jrxml	1						0	1					
+InspectionLabel	検品ラベル	Inspection Label	../../../../../../reports/shipping/InspectionLabel_enUS.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+InspectionLabel	検品ラベル	Inspection Label	../../../../../../reports/shipping/InspectionLabel_enUS.jrxml	1						0	1	lblShippingPackingNo	出荷梱包No.	String	1	
+InspectionLabel	検品ラベル	检品标签	../../../../../../reports/shipping/InspectionLabel_zhCN.jrxml	1						0	1					
+InspectionLabel	検品ラベル	检品标签	../../../../../../reports/shipping/InspectionLabel_zhCN.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+InspectionLabel	検品ラベル	检品标签	../../../../../../reports/shipping/InspectionLabel_zhCN.jrxml	1						0	1	lblShippingPackingNo	出荷梱包No.	String	1	

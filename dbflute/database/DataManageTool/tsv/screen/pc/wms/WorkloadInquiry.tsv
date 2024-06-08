@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+WorkloadInquiry	作業量照会	wms	centerCd	拠点		1	0		1	1													
+WorkloadInquiry	作業量照会	wms	clientCd	荷主		1	0		1	1													
+WorkloadInquiry	作業量照会	wms	taskType	業務区分		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	taskTypeDetail	業務名称		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	workDt	作業年月日		1	1		1	1													
+WorkloadInquiry	作業量照会	wms	workTimeFrom	作業時刻(From)		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	workTimeTo	作業時刻(To)		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	startEnd	開始終了		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	usercd	ユーザCD		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	userNm	作業者名称		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	search	検索		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	excelOutput	Excel出力		1	1		0	1													
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	workDt	作業年月日	1	date	1	0		0	180			1	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	usercd	ユーザCD	2	text	1	0		0	180			2	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	userNm	作業者名称	3	text	1	0		0	180			3	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	taskType	業務区分	4	text	1	0		0	180			4	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	taskTypeDetail	業務名称	5	text	1	0		0	180			5	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	worktime	作業時刻	6	datetime	1	0		0	180			6	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	startEnd	開始終了	7	text	1	0		0	180			7	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	workPalletQty	パレット数	8	number	1	0	right	0	180			8	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	workCaseQty	ケース数	9	number	1	0	right	0	180			9	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	workCartonQty	カートン数	10	number	1	0	right	0	180			10	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	workQty	個装数	11	number	1	0	right	0	180			11	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	centerCd	拠点CD	12	text	1	0		0	180			12	180
+WorkloadInquiry	作業量照会	wms	workloadInquiryList	作業量照会グリッド	grid	1	0		0	1	centerNm	拠点名称	13	text	1	0		0	180			13	180
+WorkloadInquiry	作業量照会	wms	csvOutput	CSV出力		1	1		0	1													

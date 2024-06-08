@@ -1,0 +1,51 @@
+<div ng-controller="CardboardMoveHistory" owd-screen="CardboardMoveHistory">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select	id="centerCd" ng-model="searchCondition.centerCd" label-text="拠点" owd-models="centerCdList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" ng-change="centerCdChange()"></owd-select>
+						<owd-select	id="clientCd" ng-model="searchCondition.clientCd" label-text="荷主" owd-models="clientCdList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" ng-change="clientCdChange()"></owd-select>
+						<owd-date	id="createDateTimeFrom" ng-model="searchCondition.createDateTimeFrom" label-text="実作業日(From)"></owd-date>
+						<owd-date	id="createDateTimeTo" ng-model="searchCondition.createDateTimeTo" label-text="実作業日(To)" owd-validate="fromToCheck(searchCondition.createDateTimeFrom, $value)" owd-validate-watch="'searchCondition.createDateTimeFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-text	id="makerCaseNoFrom" ng-model="searchCondition.makerCaseNoFrom" label-text="メーカーケースCD(From)"></owd-text>
+						<owd-text	id="makerCaseNoTo" ng-model="searchCondition.makerCaseNoTo" label-text="メーカーケースCD(To)" owd-validate="fromToCheck(searchCondition.makerCaseNoFrom, $value)" owd-validate-watch="'searchCondition.makerCaseNoFrom'" owd-validate-message="fromToMessage"></owd-text>
+						<owd-text	id="trsymbolId" ng-model="searchCondition.trsymbolId" label-text="シンボル管理番号"></owd-text>
+						<owd-date	id="receiveDate" ng-model="searchCondition.receiveDate" label-text="入庫日"></owd-date>
+						<owd-date	id="shipDate" ng-model="searchCondition.shipDate" label-text="出庫日"></owd-date>
+						<owd-text	id="itemCd" ng-model="searchCondition.itemCd" label-text="銘柄CD(シンボル)" owd-validate="validCheck($value,searchCondition.lot1)" owd-validate-watch="'searchCondition.lot1'" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.itemNm"></owd-info>
+						</owd-text>
+						<owd-text	id="lot1" ng-model="searchCondition.lot1" label-text="商社搬入番号" owd-validate="validCheck(searchCondition.itemCd,$value)" owd-validate-watch="'searchCondition.itemCd'"></owd-text>
+						<owd-date	id="lot4" ng-model="searchCondition.lot4" label-text="製造年月日"></owd-date>
+						<owd-text	id="symbolMakeNoFrom" ng-model="searchCondition.symbolMakeNoFrom" label-text="生出番号(From)"></owd-text>
+						<owd-text	id="symbolMakeNoTo" ng-model="searchCondition.symbolMakeNoTo" label-text="生出番号(To)" owd-validate="fromToCheck(searchCondition.symbolMakeNoFrom, $value)" owd-validate-watch="'searchCondition.symbolMakeNoFrom'" owd-validate-message="fromToMessage"></owd-text>
+						<owd-select	id="lot3" ng-model="searchCondition.lot3" owd-models="lot3List" label-text="デザイン区分" owd-models="lot3List" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+						<owd-text	id="itfNo" ng-model="searchCondition.itfNo" label-text="ITF CD"></owd-text>
+						<owd-text	id="carrierNo" ng-model="searchCondition.carrierNo" label-text="コンテナNo."></owd-text>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button	id="search"	class="btn-info"	ng-click="searchClick()"	ng-disabled="searchConditionForm.$invalid" >検索</owd-button>
+				<owd-button	id="excelOutput"	class="btn-info"	ng-click="excelOutputClick()"	ng-disabled="searchConditionForm.$invalid">Excel出力</owd-button>
+			</div>
+		</div>
+	</form>
+	<br>
+	<form id="searchResultListForm" name="searchResultListForm" novalidate>
+			<div owd-grid="gridOptions" id="cardboardMoveHistoryList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+  			<div owd-grid="gridForOutput" id="cardboardMoveHistoryListOutput" ng-show=false></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="cardboardMoveHistoryDetail" ng-click="cardboardMoveHistoryDetailClick()" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">段ボール移動履歴(詳細)</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

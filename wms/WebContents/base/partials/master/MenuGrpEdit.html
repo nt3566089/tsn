@@ -1,0 +1,38 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="MenuGrpEdit" owd-screen="MenuGrpEdit">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<fieldset>
+				<div class="row">
+					<owd-text id="menuGrpCd" ng-model="head.menuGrpCd" label-text="メニューグループCD"></owd-text>
+					<owd-text id="dictNm" ng-model="head.vdict.dictNm" label-text="メニューグループ名"></owd-text>
+					<owd-select id="parentMenuGrpId" ng-model="head.bmenuGrpSelf.menuGrpCd" owd-models="parentMenuGrpIdList" owd-repeat-key="menuGrpCd" owd-repeat-value="menuGrpNm" label-text="親メニューグループ"></owd-select>
+					
+					<owd-text id="visibleType" ng-model="head.visibleType" label-text="表示種別"></owd-text>
+					
+					
+					<owd-number id="viewOrder" ng-model="head.viewOrder" label-text="表示順"></owd-number>
+					
+				</div>
+			</fieldset>
+		</div>
+		<div owd-grid="gridOptions" id="menuGrpEdit" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x: auto; overflow-y: hidden">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x: auto; overflow-y: hidden">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

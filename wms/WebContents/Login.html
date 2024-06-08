@@ -1,0 +1,69 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<!DOCTYPE html>
+<html ng-app="oneslogiWeb.base.liteLogin.LiteLogin" xmlns:ng="http://angularjs.org" id="ng-app">
+
+<link rel="icon" href="base/image/favicon.ico" type="image/x-icon">
+
+<head>
+<title>Login</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="base/css/bootstrap-3.1.1/bootstrap.min.css">
+<link rel="stylesheet" href="base/css/common.min.css">
+<script src="base/js/angular-1.2.16/angular.min.js"></script>
+<script src="base/js/ui-bootstrap-0.10.0/ui-bootstrap-tpls-0.10.0.min.js"></script>
+</head>
+<body>
+
+<div id="JSNG" style="width: 400px; text-align: left; border: 5px solid #ffaaaa; padding: 10px">
+	<p>javascriptが無効化されています。有効化してください。javascript is disabled. Please Activate.</p>
+</div>
+<script>document.getElementById("JSNG").style.display = "none";</script>
+
+<div ng-controller="LiteLoginCtrl" ng-init="initBody()" class="ng-cloak">
+	<div class="page-header text-center">
+		<h3>{{displayStructure.system}}</h3>
+	</div>
+	
+	<div class="alert alert-danger text-center" role="alert" ng-show="displayStructure.hasError">
+		<span class="glyphicon glyphicon-warning-sign left"></span>
+		
+		<span ng-repeat="line in displayStructure.errorMessages track by $index">
+			{{line}}<br>
+		</span>
+		
+	</div>
+	
+	<div class="container" style="margin-top:30px">
+		<div class="col-md-4 col-md-offset-4" ng-show="displayStructure.initialized">
+			<div class="panel panel-default panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong>{{displayStructure.title}} </strong></h3>
+				</div>
+				<div class="panel-body">
+					<form role="form">
+						<div class="form-group">
+							<label for="loginId">{{displayStructure.loginId}}</label>
+							<input type="input" class="form-control" style="border-radius:0px" id="loginId" placeholder="{{displayStructure.loginId}}" ng-model="loginId" ng-readonly="displayStructure.loading" required>
+						</div>
+						<div class="form-group">
+							<label for="password">{{displayStructure.password}}</label>
+							<input type="password" class="form-control" style="border-radius:0px" id="password" placeholder="{{displayStructure.password}}" ng-model="password" ng-readonly="displayStructure.loading" required>
+						</div>
+						<button type="button" class="btn btn-sm btn-info" ng-click="clickLogin()" ng-disabled="displayStructure.loading">{{displayStructure.login}}</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="base/js/oneslogi.base.liteLogin.min.js"></script>
+	
+</body>
+</html>

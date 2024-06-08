@@ -1,0 +1,56 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockMoveHistory	在庫移動履歴	wms	centerCd	センタ		1	1		1	1													
+StockMoveHistory	在庫移動履歴	wms	clientCd	荷主		1	1		1	1													
+StockMoveHistory	在庫移動履歴	wms	processTypeCd	処理区分		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	inoutType	入出庫区分		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	productCd	商品CD		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	lot	ロット		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	limitDtFrom	期限日(From)		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	limitDtTo	期限日(To)		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	stockTypeCd	在庫区分		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	warehouseCd	倉庫		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	locationCdFrom	ロケーションCD(From)		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	locationCdTo	ロケーションCD(To)		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	depositCd	預託		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	storeLabelNo	入庫ラベルNo		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	oldStoreLabelNo	元入庫ラベルNo		1	1		0	0													
+StockMoveHistory	在庫移動履歴	wms	moveDtFrom	移動日(From)		1	1		0	1													
+StockMoveHistory	在庫移動履歴	wms	moveDtTo	移動日(To)		1	1		0	1													
+StockMoveHistory	在庫移動履歴	wms	search	検索		1	1		0	1													
+StockMoveHistory	在庫移動履歴	wms	excelOutput	Excel出力		1	1		0	1													
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.histDt	履歴日	1	date	1	0		0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.mprocessType.processTypeCd	処理区分CD	2	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.mprocessType.vdict.dictNm	処理区分名称	3	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	inoutType	入出庫区分CD	4	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	bclassDtlByInoutType.vdict.dictNm	入出庫区分名称	5	text	1	0		0	130				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	moveDt	移動日	6	date	1	0		0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	moveNum	在庫移動実績数	7	number	1	0	right	0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.warehouseCd	倉庫CD	8	text	1	0		0	85				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.warehouseNm	倉庫名称	9	text	1	0		0	300				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.productCd	商品CD	10	text	1	0		0	245				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.productNm	商品名称	11	text	1	0		0	300				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.productAbbr	商品略称	12	text	1	0		0	250				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.janCd	ソースCD	13	text	1	0		0	205				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.lot	ロット	14	text	1	0		0	170				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.limitDt	期限日	15	date	1	0		0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.mstockType.stockTypeCd	在庫区分CD	16	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.mstockType.vdict.dictNm	在庫区分名称	17	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.zoneCd	ゾーンCD	18	text	1	0		0	110				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.zoneNm	ゾーン名称	19	text	1	0		0	300				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.locationCd	ロケーションCD	20	text	1	0		0	160				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.locationNm	ロケーション名称	21	text	1	0		0	250				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.depositCd	預託CD	22	text	1	0		0	160				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.depositNm	預託名称	23	text	1	0		0	300				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.depositAbbr	預託略称	24	text	1	0		0	250				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.storeLabelNo	入庫ラベルNo	25	text	1	0		0	140				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.oldStoreLabelNo	元入庫ラベルNo	26	text	1	0		0	155				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.supplierCd	仕入先CD	27	text	1	0		0	200				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.supplierNm	仕入先名称	28	text	1	0		0	300				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.supplierAbbr	仕入先略称	29	text	1	0		0	250				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hstock.storeDt	入庫日	30	date	1	0		0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.moveInstComment	在庫移動指示備考	31	text	1	0		0	150				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.clientCd	荷主CD	32	text	1	0		0	170				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.clientNm	荷主名称	33	text	1	0		0	200				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.centerCd	センタCD	34	text	1	0		0	170				
+StockMoveHistory	在庫移動履歴	wms	stockMoveHistoryGrid	在庫移動履歴グリッド	grid	1	1		0	1	hmoveH.centerNm	センタ名称	35	text	1	0		0	200				

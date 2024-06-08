@@ -1,0 +1,28 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblNonconformityStockReportList	不適品在庫調査表	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblInventoryDt	在庫調査日  :  	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblUserNum4	銘柄区分  :  	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblCggdId	たばこ商品区分  :  	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblManager	所属長	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblManagerStamp	私印	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblUser	担当者	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblUserStamp	印	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblProdctCd	　銘柄　 コード 	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblProductAbbr	銘柄名称	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblExcessOrDeficiencyTotal	累計過不足計	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblHenpin	返品	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblTaxRefond	国税還付品	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblNonconformityStockTotalNum	不適品在庫計	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblInventoryQty	在庫数量	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblStockCaseSu	ケース	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblStockCartonSu	カートン	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblCheck1	レ	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblMonthStatusSu	個装	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblCheck2	レ	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblSuffErerQty	り災品	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblPackingNum	梱包数	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblRefundItemQty	国税還付品	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblCheck3	レ	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblTotal	合計	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblExcess	過剰	String	1	
+NonconformityStockReportList	不適品在庫調査表	不適品在庫調査表	../../../../../../reports/inventory/NonconformityStockReportList.jrxml	1						0	0	lblShortage	不足	String	1	

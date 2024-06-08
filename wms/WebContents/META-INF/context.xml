@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiResourceLocking="true">
+<!--
+  <Resources>
+    <PreResources
+      className="org.apache.catalina.webresources.FileResourceSet"
+      base="${catalina.base}/ext/wms/dbcp.properties"
+      webAppMount="/WEB-INF/classes/dbcp.properties"
+     />
+    <PreResources
+      className="org.apache.catalina.webresources.FileResourceSet"
+      base="${catalina.base}/ext/wms/login.properties"
+      webAppMount="/WEB-INF/classes/login.properties"
+     />
+    <PreResources
+      className="org.apache.catalina.webresources.FileResourceSet"
+      base="${catalina.base}/ext/wms/jobQueEntry.properties"
+      webAppMount="/WEB-INF/classes/jobQueEntry.properties"
+     />
+    <PreResources
+      className="org.apache.catalina.webresources.FileResourceSet"
+      base="${catalina.base}/ext/wms/SagawaApi.properties"
+      webAppMount="/WEB-INF/classes/SagawaApi.properties"
+     />
+  </Resources>
+-->
+</Context>

@@ -1,0 +1,48 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockMoveList	在庫移動一覧	wms	centerCd	センタ		1	1		1	1													
+StockMoveList	在庫移動一覧	wms	clientCd	荷主		1	1		1	1													
+StockMoveList	在庫移動一覧	wms	warehouseCd	倉庫		1	1		0	0													
+StockMoveList	在庫移動一覧	wms	productCd	商品CD		1	1		0	0													
+StockMoveList	在庫移動一覧	wms	instDtFrom	指示日(From)		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	instDtTo	指示日(To)		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	moveSlipNo	WMS在庫移動伝票No.		1	1		0	0													
+StockMoveList	在庫移動一覧	wms	processTypeCd	処理区分		1	1		0	0													
+StockMoveList	在庫移動一覧	wms	moveInstStatus	在庫移動指示ステータス		1	1		0	0													
+StockMoveList	在庫移動一覧	wms	notCompletedFlg	未完了のみ表示	dropdown	1	1		0	1													
+StockMoveList	在庫移動一覧	wms	printCondition	発行状況		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	search	検索		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	excelOutput	Excel出力		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	lblnonwork	未作業		1	0		0	1													
+StockMoveList	在庫移動一覧	wms	lblworking	作業中		1	0		0	1													
+StockMoveList	在庫移動一覧	wms	lblcompletion	完了		1	0		0	1													
+StockMoveList	在庫移動一覧	wms	lblcancel	取消		1	0		0	1													
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	instDt	指示日	1	date	1	0		0	150			1	150
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	moveSlipNo	WMS在庫移動伝票No.	2	text	1	0		0	200			2	200
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mprocessType.processTypeCd	処理区分CD	3	text	1	0		0	150			3	150
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mprocessType.vdict.dictNm	処理区分名称	4	text	1	0		0	150			4	150
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	moveInstStatus	在庫移動ステータスCD	5	text	1	0		0	220			5	250
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	bclassDtlByMoveInstStatus.vdict.dictNm	在庫移動ステータス名称	6	text	1	0		0	220			6	260
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	warehouseCd	倉庫CD	7	text	1	0		0	85			7	160
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	warehouseNm	倉庫名称	8	text	1	0		0	300			8	300
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	sourceBatchNo	指示元バッチNo.	9	text	1	0		0	170			9	250
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	pickingLocationNm	出庫ロケーション名称	10	text	1	0		0	250			10	250
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	storeLocationNm	入庫ロケーション名称	11	text	1	0		0	250			11	250
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	productCd	商品CD	12	text	1	0		0	245			12	245
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	productNm	商品名称	13	text	1	0		0	300			13	300
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	productUnit	商品単位	14	text	1	0		0	90			14	90
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	15	text	1	0	right	0	220			15	220
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	instTotalNum	指示総数	16	number	1	0	right	0	400			16	150
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	instBreakdown	指示内訳	17	text	1	0	right	0	200			17	200
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	printCondition	発行状況	18	text	1	0		0	170			18	170
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	moveSourceStoreLabelNo	移動元入庫ラベルNo.	19	text	1	0		0	170			19	200
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	moveInstComment	在庫移動指示備考	20	text	1	0		0	300			20	320
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	addDt	登録日時	21	datetime	1	0		0	180			21	180
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	22	text	1	0		0	170			22	
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	23	text	1	0		0	200			23	
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	24	text	1	0		0	170			24	
+StockMoveList	在庫移動一覧	wms	list	在庫移動一覧グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	25	text	1	0		0	200			25	
+StockMoveList	在庫移動一覧	wms	listPrint	指示書		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	register	完了		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	cancel	取消		1	1		0	1													
+StockMoveList	在庫移動一覧	wms	instDetail	指示明細		1	1		0	1													

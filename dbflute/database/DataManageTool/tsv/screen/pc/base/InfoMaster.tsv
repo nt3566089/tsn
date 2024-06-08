@@ -1,0 +1,17 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InfoMaster	お知らせマスタメンテナンス	base	infoDtFrom	お知らせ日(From)		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoDtTo	お知らせ日(To)		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoEnd	終了したお知らせの表示		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	search	検索		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	excelOutput	Excel出力		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoList	お知らせマスタメンテナンスグリッド	grid	1	1		0	1	infoNm	お知らせ内容	1	text	1	0		0	1100				
+InfoMaster	お知らせマスタメンテナンス	base	infoList	お知らせマスタメンテナンスグリッド	grid	1	1		0	1	infoStartDt	開始日付	2	date	1	0		0	150				
+InfoMaster	お知らせマスタメンテナンス	base	infoList	お知らせマスタメンテナンスグリッド	grid	1	1		0	1	infoEndDt	終了日付	3	date	1	0		0	150				
+InfoMaster	お知らせマスタメンテナンス	base	addRow	新規		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	modRow	修正		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	removeRow	削除		1	1		0	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoNm	お知らせ内容		1	1		1	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoStartDt	開始日付		1	1		1	1													
+InfoMaster	お知らせマスタメンテナンス	base	infoEndDt	終了日付		1	1		1	1													
+InfoMaster	お知らせマスタメンテナンス	base	register	登録		1	1		0	1													

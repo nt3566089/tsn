@@ -1,0 +1,101 @@
+CENTER_ID	CLASS_CD	CLASS_COMMENT	SYSTEM_TYPE	CLASS_DTL_CD	DICT_NM	VIEW_ORDER	DEFAULT_FLG	CLASS_GRP_CD	CLASS_GRP_COMMENT	USE_FLG	DEFAULT_FLG	CLASS_GRP_CD	CLASS_GRP_COMMENT	USE_FLG	DEFAULT_FLG	CLASS_GRP_CD	CLASS_GRP_COMMENT	USE_FLG	DEFAULT_FLG	CLASS_GRP_CD	CLASS_GRP_COMMENT	USE_FLG	DEFAULT_FLG
+100008	PIC_LIST_CLS1	一次ピッキングリスト	wms	0	オーダーピッキングリスト	1	1																
+100008	PIC_LIST_CLS1	一次ピッキングリスト	wms	1	トータルピッキングリスト	2	0																
+100008	PIC_LIST_CLS1	一次ピッキングリスト	wms	4	ケースピッキングリスト	3	0																
+100008	PIC_LIST_CLS1	一次ピッキングリスト	wms	5	マルチピッキングリスト	4	0																
+100008	PIC_LIST_CLS1	一次ピッキングリスト	wms	6	単行ピッキングリスト	5	0																
+100008	PIC_LIST_CLS2	二次ピッキングリスト	wms	2	摘み取りリスト	1	1																
+100008	PIC_LIST_CLS2	二次ピッキングリスト	wms	3	種蒔きリスト	2	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	1	送り状＋バラ・ケース荷札	1	1																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	2	送り状＋バラ荷札	2	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	3	送り状＋ケース荷札	3	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	4	送り状	4	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	5	バラ・ケース荷札	5	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	6	バラ荷札	6	0																
+100008	PIC_LIST_CLS3	送り状・荷札	wms	7	ケース荷札	7	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	01	午前中	1	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	04	18時～21時	7	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	12	12時～14時	2	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	14	14時～16時	3	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	16	16時～18時	4	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	18	18時～20時	5	0																
+100008	SAGAWA_DELIV_TZ	佐川配達時間帯	wms	19	19時～21時	6	0																
+100008	TRANSPORT_TYPE_ITEM	便種(商品)	wms	001	指定なし	1	0																
+100008	TRANSPORT_TYPE_ITEM	便種(商品)	wms	002	飛脚クール便(冷蔵)	2	0																
+100008	TRANSPORT_TYPE_ITEM	便種(商品)	wms	003	飛脚クール便(冷凍)	3	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	001	箱類	1	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	002	バッグ類	2	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	003	スーツケース	3	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	004	封筒類	4	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	005	ゴルフバッグ	5	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	006	スキー	6	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	007	スノーボード	7	0																
+100008	SLIP_SHAPE_CD	荷姿コード	wms	008	その他	8	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	000	飛脚宅配便	1	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	001	飛脚スーパー便	2	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	002	飛脚即配便	3	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	003	飛脚航空便(翌日中配達)	4	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	004	飛脚航空便(翌日午前中配達)	5	0																
+100008	TRANSPORT_TYPE_SPEED	便種(スピードで選択)	wms	005	飛脚ジャストタイム便	6	0																
+100008	SEAL_TYPE	指定シール	wms	001	飛脚クール便(冷蔵)	1	0																
+100008	SEAL_TYPE	指定シール	wms	002	飛脚クール便(冷凍)	2	0																
+100008	SEAL_TYPE	指定シール	wms	003	飛脚スーパー便	3	0																
+100008	SEAL_TYPE	指定シール	wms	004	営止めサービス	4	0																
+100008	SEAL_TYPE	指定シール	wms	005	配達指定日	5	0																
+100008	SEAL_TYPE	指定シール	wms	007	時間帯指定(５時間帯)	6	0																
+100008	SEAL_TYPE	指定シール	wms	008	eコレクト(現金決済)	7	0																
+100008	SEAL_TYPE	指定シール	wms	009	eコレクト(デビット／クレジット決済)	8	0																
+100008	SEAL_TYPE	指定シール	wms	010	eコレクト(なんでも決済)	9	0																
+100008	SEAL_TYPE	指定シール	wms	011	取扱注意	10	0																
+100008	SEAL_TYPE	指定シール	wms	012	貴重品	11	0																
+100008	SEAL_TYPE	指定シール	wms	013	天地無用	12	0																
+100008	SEAL_TYPE	指定シール	wms	014	飛脚即配便	13	0																
+100008	SEAL_TYPE	指定シール	wms	016	時間帯指定(午前中)	14	0																
+100008	SEAL_TYPE	指定シール	wms	017	飛脚航空便	15	0																
+100008	SEAL_TYPE	指定シール	wms	018	飛脚ジャストタイム便	16	0																
+100008	SEAL_TYPE	指定シール	wms	019	時間帯指定(６時間帯(オプション)	17	0																
+100008	TAG_CLASS	データ種別	wms	01	ヤマト(通常)	1	1																
+100008	TAG_CLASS	データ種別	wms	02	ヤマト(保冷・・・冷蔵)	2	0																
+100008	TAG_CLASS	データ種別	wms	11	佐川(通常)	3	0																
+100008	TAG_CLASS	データ種別	wms	12	佐川(保冷・・・冷蔵)	4	0																
+100008	TAG_CLASS	データ種別	wms	21	ゆうパック(通常)	5	0																
+100008	TAG_CLASS	データ種別	wms	22	ゆうパック(保冷・・・冷蔵)	6	0																
+100008	TAG_DATA_TYPE	送り状データ種別	wms	1	B2	1	1	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別			TAG_DATA_TYPE_SGW	佐川用送り状データ種別			TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別	1	0				
+100008	TAG_DATA_TYPE	送り状データ種別	wms	2	E飛伝2	2	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別			TAG_DATA_TYPE_SGW	佐川用送り状データ種別	1	0	TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_DATA_TYPE	送り状データ種別	wms	3	E飛伝Pro	3	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別			TAG_DATA_TYPE_SGW	佐川用送り状データ種別	1	0	TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_DATA_TYPE	送り状データ種別	wms	4	ゆうパックプリントR(発送予定)	4	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別	1	0	TAG_DATA_TYPE_SGW	佐川用送り状データ種別			TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_DATA_TYPE	送り状データ種別	wms	5	ゆうパックプリントR(発送履歴)	5	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別	1	0	TAG_DATA_TYPE_SGW	佐川用送り状データ種別			TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_DATA_TYPE	送り状データ種別	wms	6	発送確定データフォーマット	6	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別	1	0	TAG_DATA_TYPE_SGW	佐川用送り状データ種別			TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_DATA_TYPE	送り状データ種別	wms	7	大口FDデータフォーマット	7	0	TAG_DATA_TYPE_JP	ゆうパック用送り状データ種別	1	0	TAG_DATA_TYPE_SGW	佐川用送り状データ種別			TAG_DATA_TYPE_YMT	ヤマト用送り状データ種別						
+100008	TAG_TYPE	送り状種別	wms	1	汎用荷札	1	1	TAG_TYPE_COMM	汎用荷札用送り状種別	1	0	TAG_TYPE_JP	ゆうパック用送り状種別			TAG_TYPE_SGW	佐川用送り状種別			TAG_TYPE_YMT	ヤマト用送り状種別		
+100008	TAG_TYPE	送り状種別	wms	2	ヤマト宅急便(発払)荷札	2	0	TAG_TYPE_COMM	汎用荷札用送り状種別			TAG_TYPE_JP	ゆうパック用送り状種別			TAG_TYPE_SGW	佐川用送り状種別			TAG_TYPE_YMT	ヤマト用送り状種別	1	0
+100008	TAG_TYPE	送り状種別	wms	3	ヤマト宅急便(コレクト)荷札	3	0	TAG_TYPE_COMM	汎用荷札用送り状種別			TAG_TYPE_JP	ゆうパック用送り状種別			TAG_TYPE_SGW	佐川用送り状種別			TAG_TYPE_YMT	ヤマト用送り状種別	1	0
+100008	TAG_TYPE	送り状種別	wms	4	佐川荷札(WebAPI)	4	0	TAG_TYPE_COMM	汎用荷札用送り状種別			TAG_TYPE_JP	ゆうパック用送り状種別			TAG_TYPE_SGW	佐川用送り状種別	1	0	TAG_TYPE_YMT	ヤマト用送り状種別		
+100008	TAG_TYPE	送り状種別	wms	5	ゆうパック荷札	5	0	TAG_TYPE_COMM	汎用荷札用送り状種別			TAG_TYPE_JP	ゆうパック用送り状種別	1	0	TAG_TYPE_SGW	佐川用送り状種別			TAG_TYPE_YMT	ヤマト用送り状種別		
+100008	TAG_TYPE	送り状種別	wms	6	ゆうパケット荷札	6	0	TAG_TYPE_COMM	汎用荷札用送り状種別			TAG_TYPE_JP	ゆうパック用送り状種別	1	0	TAG_TYPE_SGW	佐川用送り状種別			TAG_TYPE_YMT	ヤマト用送り状種別		
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	1	汎用荷札	1	1	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)	1	0	TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)		
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	2	ヤマト宅急便(発払)荷札	2	0	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)	1	0
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	3	ヤマト宅急便(コレクト)荷札	3	0	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)	1	0
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	4	佐川荷札(WebAPI)	4	0	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)	1	0	TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)		
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	5	ゆうパック荷札	5	0	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)	1	0	TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)		
+100008	TAG_TYPE_AFTER	送り状種別(代引時、2枚目以降)	wms	6	ゆうパケット荷札	6	0	TAG_TYPE_AFTER_COMM	汎用荷札用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_JP	ゆうパック用送り状種別(代引時、2枚目以降)	1	0	TAG_TYPE_AFTER_SGW	佐川用送り状種別(代引時、2枚目以降)			TAG_TYPE_AFTER_YMT	ヤマト用送り状種別(代引時、2枚目以降)		
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	000	陸便	1	0																
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	030	航空便	2	0																
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	140	クール冷蔵	3	0																
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	141	クール冷蔵(航空便)	4	0																
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	150	クール冷凍	5	0																
+100008	API_BINSYU_CODE	WebAPI便種コード	wms	151	クール冷凍(航空便)	6	0																
+100008	API_DAIBIKI_FLG	WebAPI代引フラグ	wms	0	通常の送り状を発行	1	0																
+100008	API_DAIBIKI_FLG	WebAPI代引フラグ	wms	1	代金引換の送り状を発行	2	0																
+100008	API_DAIBIKI_TYPE	WebAPI代引支払方法区分	wms	0	なんでも決済	1	0																
+100008	API_DAIBIKI_TYPE	WebAPI代引支払方法区分	wms	1	現金	2	0																
+100008	API_DAIBIKI_TYPE	WebAPI代引支払方法区分	wms	2	クレジットカード・デビットカード	3	0																
+100008	API_EIDOME_FLG	WebAPI営止フラグ	wms	0	営業所止めを行いません	1	0																
+100008	API_EIDOME_FLG	WebAPI営止フラグ	wms	1	営業所止めにします	2	0																
+100008	API_WEIGHT_CD	WebAPI重量コード	wms	60	2Kg(サイズ60)	1	0																
+100008	API_WEIGHT_CD	WebAPI重量コード	wms	80	5Kg(サイズ80)	2	0																
+100008	API_WEIGHT_CD	WebAPI重量コード	wms	100	10Kg(サイズ100)	3	0																
+100008	API_WEIGHT_CD	WebAPI重量コード	wms	140	20Kg(サイズ140)	4	0																
+100008	API_WEIGHT_CD	WebAPI重量コード	wms	160	30Kg(サイズ160)	5	0																
+100008	OUTPUT_TARGET_FLG	発行対象のみ表示	wms	1	発行対象のみ	1	0																
+100008	PRINT_CONDITION	未発行のみ表示	wms	1	未発行のみ表示	1	0																

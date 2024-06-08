@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	register	登録		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	lockout	ロックアウト		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	passwordReset	次回ログイン時のパスワード変更の強制		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	passwordModifiedDate	パスワード変更日時		1	0		0	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	lastLoginDate	最終ログイン日時		1	0		0	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	failedLoginAttempts	ログイン失敗回数		1	0		0	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	lastFailedLoginDate	最終ログイン失敗日時		1	0		0	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	lockoutDate	ロックアウト日時		1	0		0	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	availableStartDateYmd	利用可能開始日		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	availableStartTime	利用可能開始時間		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	availableEndDateYmd	利用可能終了日		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	availableEndTime	利用可能終了時間		1	1		1	1													
+LiteLoginPwdMgt	ユーザマスタメンテナンス(編集)	base	passwordChange	パスワード変更		1	1		1	1													

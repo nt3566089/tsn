@@ -1,0 +1,52 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerCd	特約店CD1		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	specialAgentsCd2	特約店CD2		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	aName	検索名称		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	marketType	市場区分		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	customerCd	特約店CD1	1	text	1	0		0				1	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.specialAgentsCd2	特約店CD2	2	text	1	0		0				2	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	customerNm	特約店名称	3	text	1	0		0				3	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.name	正式名称	4	text	1	0		0				4	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	customerAbbr	略式名称	5	text	1	0		0				5	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.aname	検索名称	6	text	1	0		0				6	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.ssName	短縮名称	7	text	1	0		0				7	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.showPriority	表示順	8	text	1	0		0				8	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.bclassDtlByMarketType.vdict.dictNm	市場区分	9	text	1	0		0				9	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	mcustomerSubAsOne.logisticsCd	倉庫(発地倉庫)	10	text	0	0		0				10	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	centerNm	倉庫(発地倉庫)	11	text	1	0		0				11	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	zipCd	郵便番号	12	text	1	0		0				12	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	address1	納品先住所	13	text	1	0		0				13	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	telNo	電話番号	14	text	1	0		0				14	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.faxNo	FAX番号	15	text	1	0		0				15	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.deliveryTime	納品時間	16	text	1	0		0				16	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	mcustomerSubAsOne.comments	特記事項	17	text	1	0		0				17	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	bclassDtlByDelFlg.vdict.dictNm	削除	18	text	1	0		0				18	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	updDt	更新日時	19	datetime	1	0		0				19	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	1	0		0	1	updUser	更新者	20	text	1	0		0				20	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	mclient.clientCd	荷主CD	21	text	0	0		0				21	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	mclient.clientNm	荷主名称	22	text	0	0		0				22	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	address2	住所2	23	text	0	0		0				23	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	address3	住所3	24	text	0	0		0				24	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	vendorFlg	仕入先フラグ	25	text	0	0		0				25	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	deliveryFlg	納品先フラグ	26	text	0	0		0				26	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	onetimeFlg	ワンタイムフラグ	27	text	0	0		0				27	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	depositFlg	預託先フラグ	28	text	0	0		0				28	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	allocOrder	引当順序	29	text	0	0		0				29	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	lotReverseFlg	ロット逆転防止フラグ	30	text	0	0		0				30	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	limitDtReverseFlg	期限日逆転防止フラグ	31	text	0	0		0				31	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	shippingStopFlg	出庫停止フラグ	32	text	0	0		0				32	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	delivCustomerId	届先ID	33	text	0	0		0				33	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	versionNo	バージョンNo.	34	text	0	0		0				34	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	controlNo	コントロールNo.	35	text	0	0		0				35	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	addDt	登録日時	36	text	0	0		0				36	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	addUser	登録ユーザ	37	text	0	0		0				37	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	addProcess	登録プロセス	38	text	0	0		0				38	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	customerList	取引先マスタ一覧グリッド	grid	0	0		0	0	updProcess	更新プロセス	39	text	0	0		0				39	180
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	copy	複製		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+CustomerMasterList	特約店マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													

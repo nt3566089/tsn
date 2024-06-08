@@ -1,0 +1,22 @@
+<ion-view owd-screen="ImageUploadSD" title="{{screenTitle}}">
+	<ion-content ng-class="{'has-footer' : alerts.length > 0}">
+
+		<form id="form.uploadform" name="form.uploadform" novalidate>
+			<ion-list>
+
+					<owd-image id="add" owd-models="uploadedImages" owd-before-upload="imageBeforeUpload" owd-success="imageUploadSuccess" owd-options="imageOptions" owd-remove="removeImage(i)">追加</owd-image>
+
+					<ion-infinite-scroll
+						ng-if="moreDataCanBeLoaded()"
+						icon="ion-loading-c"
+						on-infinite="loadMoreData()">
+					</ion-infinite-scroll>
+
+			<!-- [#1903][Ver2.2.0] パッケージ仕様書（項目一覧）の最新化対応【HDIS作業】 2017.06.20 HDIS Mod Start -->
+			</ion-list>
+			<!-- [#1903][Ver2.2.0] パッケージ仕様書（項目一覧）の最新化対応【HDIS作業】 2017.06.20 HDIS Mod End -->
+
+
+		</form>
+	</ion-content>
+</ion-view>

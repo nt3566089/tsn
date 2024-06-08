@@ -1,0 +1,34 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	centerCd	センタ		1	1		1	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseCd	配送コースCD		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	1	text	1	0		0	125			1	220
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	2	text	1	0		0	300			2	300
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	paymentTerm	Payment Term	3	text	0	0		0	125			3	220
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	bclassDtlByPaymentTerm.vdict.dictNm	Payment Term名称	4	text	0	0		0	300			4	300
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcarrier.carrierCd	運送業者CD	5	text	1	0		0	110			5	110
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	trackingNumberingKey	追跡番号採番キー	6	text	1	0		0	250			6	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	trackingNumberingAfterKey	追跡番号採番キー(代引時、2枚目以降)	7	text	1	0		0	300			7	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	trackingNumberingUnit	追跡番号採番単位CD	8	text	1	0		0	180			8	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	bclassDtlByTrackingNumberingUnit.vdict.dictNm	追跡番号採番単位名称	9	text	1	0		0	200			9	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	tagType	送り状種別CD	10	text	1	0		0	125			10	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcenterClassDtlByTagType.vdict.dictNm	送り状種別名称	11	text	1	0		0	200			11	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	tagTypeAfter	送り状種別(代引時、2枚目以降)CD	12	text	1	0		0	270			12	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcenterClassDtlByTagTypeAfter.vdict.dictNm	送り状種別(代引時、2枚目以降)名称	13	text	1	0		0	270			13	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	tagDataType	送り状データ種別CD	14	text	1	0		0	180			14	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcenterClassDtlByTagDataType.vdict.dictNm	送り状データ種別名称	15	text	1	0		0	270			15	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	pickingTime	出庫開始時刻	16	datetime	1	0		0	180			16	180
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	stowageTime	積込予定時刻	17	datetime	1	0		0	180			17	200
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	shippingTime	出荷予定時刻	18	datetime	1	0		0	180			18	200
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	delFlg	削除フラグCD	19	text	1	0		0	125			19	150
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	20	text	1	0		0	125			20	150
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcenter.centerCd	センタCD	21	text	1	0		0	125			21	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseList	配送コースマスタ一覧グリッド	grid	1	1		0	1	mcenter.centerNm	センタ名称	22	text	1	0		0	180			22	
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	deliveryCourseNm	配送コース名称		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	carrierCd	運送業者		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+DeliveryCourseMasterList	配送コースマスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

@@ -1,0 +1,14 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblReplenishStockTransferList	融通山出しリスト	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblShipCd	発送先：	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblSchDate	発送予定日：	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblTransportCd	輸送番号：	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblFflexPickListno	リストNo.:	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblConfirm	確認	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblItemCd	銘柄コード	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblItemName	銘柄名称	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblManufacturDate	製造年月日	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblDesignCd	デザイン区分	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblQtyCase	数量（ケース）	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblQtyBowl	数量（カートン）	String	1	
+ReplenishStockTransferList	融通山出しリスト	融通山出しリスト	../../../../../../reports/shipping/ReplenishStockTransferList.jrxml	1						0	0	lblCheck	チェック	String	1	

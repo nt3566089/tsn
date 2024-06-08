@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+InventoryInputProductSortingPlaceProductionDateCollationResource	send	send	確定ボタン押下	manufactureDate	製造年月日	text	1

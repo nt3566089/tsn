@@ -1,0 +1,79 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblSingleRowPickingList	単行ピッキングリスト	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblAgain	再	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblPickingGroupNo	ピッキンググループNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblClientCd	荷主	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblCenterCd	センタ	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblWarehouseCd	倉庫	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblZoneCd	ゾーン	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblWorkDt	作業日	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblStockTypeCd	在庫区分	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblLineNo	No.	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblLocationNm	ロケ	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblProductCd	商品CD	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblProductNm	商品名称	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblJancd	ソースCD	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblLot	ロット	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblSumPickingNum	数量	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblBreakdown	内訳	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblTempNo	仮置きNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblConfirm	確認	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblChargeNum	引当可能数	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblInstNum	指示数	String	1	
+SingleRowPickingList	単行ピッキングリスト	単行ピッキングリスト	../../../../../../reports/shipping/SingleRowPickingList.jrxml	1						0	0	lblTotal	総合計	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblSingleRowPickingList	単行ピッキングリスト	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblAgain	再	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblPickingGroupNo	ピッキンググループNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblClientCd	荷主	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblCenterCd	センタ	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblLineNo	No.	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblLocationNm	ロケ	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblJancd	ソースCD	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblSumPickingNum	数量	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblTempNo	仮置きNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblConfirm	確認	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblInstNum	指示数	String	1	
+SingleRowPickingList	単行ピッキングリスト	Single Picking List	../../../../../../reports/shipping/SingleRowPickingList_enUS.jrxml	1						0	1	lblTotal	総合計	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblSingleRowPickingList	単行ピッキングリスト	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblAgain	再	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblPickingGroupNo	ピッキンググループNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblClientCd	荷主	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblCenterCd	センタ	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblZoneCd	ゾーン	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblStockTypeCd	在庫区分	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblLineNo	No.	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblLocationNm	ロケ	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblJancd	ソースCD	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblSumPickingNum	数量	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblTempNo	仮置きNo.	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblConfirm	確認	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblInstNum	指示数	String	1	
+SingleRowPickingList	単行ピッキングリスト	单行分拣清单	../../../../../../reports/shipping/SingleRowPickingList_zhCN.jrxml	1						0	1	lblTotal	総合計	String	1	

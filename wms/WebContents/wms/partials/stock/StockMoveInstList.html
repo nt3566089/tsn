@@ -1,0 +1,24 @@
+<div ng-controller="StockMoveInstList" owd-screen="StockMoveInstList">
+	<form id="searchform" name="searchform" novalidate>
+		<accordion>
+			<accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-date id="instDt" ng-model="searchCondition.instDt" label-text="指示日" ></owd-date>
+						<owd-select id="processTypeCd" ng-model="searchCondition.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" label-text="処理区分"></owd-select>
+						<owd-text id="moveSlipNo" ng-model="searchCondition.moveSlipNo" label-text="WMS在庫移動伝票No."></owd-text>
+						<owd-select id="moveInstStatus" ng-model="searchCondition.moveInstStatus" owd-models="moveInstStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫移動指示ステータス"></owd-select>
+						<owd-text id="moveInstComment" ng-model="searchCondition.moveInstComment" label-text="在庫移動指示備考"></owd-text>
+					</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<br>
+		<!-- [#908] ケース入数が未設定なのにケース数が表示される不具合を修正 2017.01.26 kawana Start -->
+		<div owd-grid="gridOptions" id="stockMoveInstListDetail" owd-form-name="searchform"></div>
+		<!-- [#908] ケース入数が未設定なのにケース数が表示される不具合を修正 2017.01.26 kawana End -->
+		<br>
+	</form>
+</div>

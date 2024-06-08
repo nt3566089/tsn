@@ -1,0 +1,34 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceivePlanInput	入荷予定入力	wms	clientCd	荷主		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	centerCd	センタ		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	processTypeCd	処理区分		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	receivePlanDt	入荷予定日		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	planSupplierCd	仕入先CD		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	receiveSlipNo	WMS入荷伝票No.		1	0		0	1													
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	60			1	60
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	productCd	商品CD	2	text	1	1		1	245			2	245
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300			3	300
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	4	text	1	0		0	300			4	300
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	5	text	1	0		0	205			5	205
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	6	text	1	0	right	0	220			6	220
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planNum	予定数	7	calcnumber	1	1	right	1	290			7	290
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planNumMultiText	予定数荷姿	8	number	0	1	right	0	110			8	110
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planWarehouseCd	予定倉庫	9	dropdown	1	1		0	300			9	300
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planLocationCd	予定ロケーションCD	10	text	1	1		0	200			10	200
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planLot	予定ロット	11	text	1	1		0	170			11	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planLimitDt	予定期限日	12	date	1	1		0	150			12	150
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planClientOrderNo	予定顧客発注No.	13	text	1	1		0	210			13	180
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	planStoreLabelNo	予定入庫ラベルNo.	14	text	1	1		0	170			14	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareStr1	予備項目１(文字列)	15	text	0	1		0	170			15	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareStr2	予備項目２(文字列)	16	text	0	1		0	170			16	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareStr3	予備項目３(文字列)	17	text	0	1		0	170			17	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareNum1	予備項目１(数値)	18	number	0	1	right	0	170			18	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareNum2	予備項目２(数値)	19	number	0	1	right	0	170			19	170
+ReceivePlanInput	入荷予定入力	wms	receivePlanB	入荷予定入力グリッド	grid	1	1		0	1	treceivePlanSpareAsOne.spareNum3	予備項目３(数値)	20	number	0	1	right	0	170			20	170
+ReceivePlanInput	入荷予定入力	wms	addRow	行追加		1	1		0	1													
+ReceivePlanInput	入荷予定入力	wms	removeRow	行削除		1	1		0	1													
+ReceivePlanInput	入荷予定入力	wms	register	登録		1	1		0	1													
+ReceivePlanInput	入荷予定入力	wms	planClientReceiveNo	予定顧客入荷指示No.		1	1		0	1													
+ReceivePlanInput	入荷予定入力	wms	planDepositCd	預託		1	1		1	1													
+ReceivePlanInput	入荷予定入力	wms	stockTypeCd	在庫区分	dropdown	1	1		1	1													

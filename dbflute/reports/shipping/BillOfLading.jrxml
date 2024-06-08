@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BillOfLading" pageWidth="618" pageHeight="792" columnWidth="578" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="e3e5b6f8-7701-49db-a476-e54e72b9b8d7">
+	<property name="ireport.zoom" value="1.6105100000000019"/>
+	<property name="ireport.x" value="317"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Barcode" hAlign="Center" vAlign="Bottom" fontName="IPAexゴシック" fontSize="10"/>
+	<field name="shippingDt" class="java.lang.String">
+		<fieldDescription><![CDATA[shippingDt]]></fieldDescription>
+	</field>
+	<field name="clientNm" class="java.lang.String">
+		<fieldDescription><![CDATA[clientNm]]></fieldDescription>
+	</field>
+	<field name="address1" class="java.lang.String">
+		<fieldDescription><![CDATA[address1]]></fieldDescription>
+	</field>
+	<field name="zipCdFrom" class="java.lang.String">
+		<fieldDescription><![CDATA[zipCdFrom]]></fieldDescription>
+	</field>
+	<field name="bolNo" class="java.lang.String">
+		<fieldDescription><![CDATA[bolNo]]></fieldDescription>
+	</field>
+	<field name="delivCustomerNm" class="java.lang.String">
+		<fieldDescription><![CDATA[delivCustomerNm]]></fieldDescription>
+	</field>
+	<field name="delivAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[delivAddress1]]></fieldDescription>
+	</field>
+	<field name="zipCdTo" class="java.lang.String">
+		<fieldDescription><![CDATA[zipCdTo]]></fieldDescription>
+	</field>
+	<field name="carrierNm" class="java.lang.String">
+		<fieldDescription><![CDATA[carrierNm]]></fieldDescription>
+	</field>
+	<field name="carrierCd" class="java.lang.String">
+		<fieldDescription><![CDATA[carrierCd]]></fieldDescription>
+	</field>
+	<field name="carrierTraceNum" class="java.lang.String">
+		<fieldDescription><![CDATA[carrierTraceNum]]></fieldDescription>
+	</field>
+	<field name="paymentTerm" class="java.lang.String">
+		<fieldDescription><![CDATA[paymentTerm]]></fieldDescription>
+	</field>
+	<field name="clientShippingNo" class="java.lang.String">
+		<fieldDescription><![CDATA[clientShippingNo]]></fieldDescription>
+	</field>
+	<field name="pkgs" class="java.lang.Long">
+		<fieldDescription><![CDATA[pkgs]]></fieldDescription>
+	</field>
+	<field name="weight" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[weight]]></fieldDescription>
+	</field>
+	<field name="subReportData" class="java.lang.String">
+		<fieldDescription><![CDATA[subReportData]]></fieldDescription>
+	</field>
+	<field name="cultureId" class="java.lang.Long">
+		<fieldDescription><![CDATA[cultureId]]></fieldDescription>
+	</field>
+	<field name="sumFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[sumFlg]]></fieldDescription>
+	</field>
+	<variable name="PageSize" class="java.lang.Integer" resetType="Group" resetGroup="bolNo" calculation="Count">
+		<variableExpression><![CDATA[new Integer(1)]]></variableExpression>
+	</variable>
+	<variable name="variable1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[new Integer(1)]]></variableExpression>
+	</variable>
+	<variable name="variable2" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{variable1}%5]]></variableExpression>
+	</variable>
+	<variable name="pkgsSum" class="java.lang.Long" resetType="Group" resetGroup="bolNo" calculation="Sum">
+		<variableExpression><![CDATA[$F{pkgs}]]></variableExpression>
+	</variable>
+	<variable name="weightSum" class="java.math.BigDecimal" resetType="Group" resetGroup="bolNo" calculation="Sum">
+		<variableExpression><![CDATA[$F{weight}]]></variableExpression>
+	</variable>
+	<variable name="pageNow" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[new Integer(1)]]></variableExpression>
+		<initialValueExpression><![CDATA[new Integer(1)]]></initialValueExpression>
+	</variable>
+	<group name="bolNo" isStartNewPage="true" isResetPageNumber="true" isReprintHeaderOnEachPage="true">
+		<groupExpression><![CDATA[$F{bolNo}]]></groupExpression>
+		<groupHeader>
+			<band height="286">
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="291" y="92" width="287" height="37" uuid="82335f49-38eb-4541-ba88-adcd6bde96ff"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="291" y="191" width="287" height="38" uuid="e4a9481d-7de2-4c85-a50a-a2b9ab6d3bf2"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="159" width="291" height="59" uuid="213a5739-125e-4af1-a6b8-e8da71ce45bf"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="92" width="291" height="66" uuid="650f2cff-935b-434a-b018-7ef9087ca05f"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="lblShipFromName" x="0" y="39" width="67" height="14" uuid="49934d52-08ed-4df7-b56e-476d26c6334f"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement textAlignment="Left">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipFromAddress" x="0" y="52" width="67" height="14" uuid="bc359bf7-0b29-43e2-855d-6347879735b2"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement textAlignment="Left">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Address:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipFromCity" x="0" y="65" width="93" height="14" uuid="60c9bcba-17f5-4ae5-b3ac-b8bfd1b18174"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*City/State/Zip:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipFromSID" x="0" y="78" width="67" height="14" uuid="159e1d37-bb79-404f-8754-711db9a03b4a"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*SID#:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblFromFob" x="223" y="76" width="26" height="14" uuid="2874f9a9-fef1-40a8-81be-8a3daa87161a"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*FOB:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="262" y="79" width="8" height="8" uuid="c53f53fd-74e1-4eb1-a392-abb9e30db213"/>
+				</rectangle>
+				<staticText>
+					<reportElement key="lblShipToName" x="0" y="105" width="71" height="14" uuid="4356d0ef-5fed-4e42-b60c-b1097c6eac5a"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipToAddress" x="0" y="118" width="71" height="14" uuid="d03ea52c-c4da-4ac8-b816-20c8e1b2fe38"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Address:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipToCID" x="0" y="144" width="71" height="14" uuid="3381d303-30dc-4c03-a251-b6c13eeb029d"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*CID#:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="223" y="117" width="49" height="1" uuid="0c337fba-0575-4813-ad7f-1529b8b23288"/>
+				</line>
+				<staticText>
+					<reportElement key="lblLocation" x="171" y="107" width="52" height="14" uuid="f3e4d847-17c3-44b1-8008-909648b3289f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Location#:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblToFob" x="223" y="142" width="26" height="14" uuid="c3d44d98-5f90-4e6a-bf5c-280ab34bdf77"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*FOB:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="262" y="145" width="8" height="8" uuid="647da398-65cb-4973-8030-f85f2dc16ce7"/>
+				</rectangle>
+				<staticText>
+					<reportElement key="lblBillLadingNo" x="291" y="33" width="118" height="13" uuid="6edcb30b-4fb4-4a09-aff6-b5380b53e602"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Bottom">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Bill of Lading Number:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="395" y="45" width="137" height="1" uuid="24661fa8-a66c-445c-b872-d459789edbf1"/>
+				</line>
+				<staticText>
+					<reportElement key="lblCarrierName" x="291" y="92" width="118" height="13" uuid="27a11120-5c6c-4150-bd3a-17f686724005"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*CARRIER NUMBER :]]></text>
+				</staticText>
+				<line>
+					<reportElement x="380" y="104" width="137" height="1" uuid="a928ee43-7502-4437-8bad-dca76a398802"/>
+				</line>
+				<staticText>
+					<reportElement key="lblTrailerNumber" x="291" y="104" width="118" height="13" uuid="f2af433f-1802-4721-917d-0f64e7d51ff4"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Trailer  number:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblSealNumber" x="291" y="116" width="91" height="13" uuid="009fb0cc-31e6-4d40-8a3c-b1c28398534f"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Seal  number(s):]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="291" y="129" width="287" height="62" uuid="5ae47c2e-24a6-47d0-ad98-b494955def59"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="218" width="291" height="37" uuid="fb8b3b9e-64a4-40da-9071-da6ec20d3564"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="lblName" x="0" y="173" width="71" height="14" uuid="7317620b-15c2-48a7-ad7b-b874045d0a4d"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblAddress" x="0" y="186" width="71" height="14" uuid="b6657cb6-b6e1-48ae-a38d-564ebd76692b"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Address:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblSCAC" x="291" y="131" width="79" height="13" uuid="02a8c6e9-a476-4566-b144-91629b54b93a"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*SCAC:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblProNumber" x="291" y="143" width="79" height="13" uuid="4c02ac5d-ea7b-436f-a6b0-119355b5812c"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*Pro Number:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblCity" x="0" y="204" width="81" height="14" uuid="eb1d0eef-a49b-4df4-aaf2-ba11c5771f79"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*City/State/Zip:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblSpecialInstructions" x="0" y="220" width="136" height="14" uuid="7a538a5c-332f-4117-b276-b0021919e415"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*SPECIAL INSTRUCTIONS:]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="291" y="229" width="287" height="26" uuid="94335a8a-339c-47cb-8e8d-bc9c3d8ffdd9"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="lblFreightCharge" x="298" y="191" width="248" height="13" uuid="cbfa28ef-a41a-4c84-8ca6-2bfc5e7ea1dd"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Freight Charge Terms: ]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="340" y="232" width="8" height="8" uuid="ffa0be0c-8a4f-420a-ad22-c1b1e20bfce0"/>
+				</rectangle>
+				<staticText>
+					<reportElement key="lblMasterBillOfLading" x="401" y="229" width="164" height="26" uuid="411a72a1-3b40-4a32-b96d-d1bd09a25d8b"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="9"/>
+					</textElement>
+					<text><![CDATA[Master Bill of Lading:  with attached underlying Bills of Lading]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblPrePaid" x="298" y="213" width="44" height="13" uuid="788dcc4e-534c-4863-a666-c3bdd9e2a0e4"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[*Prepaid:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblCollect" x="384" y="213" width="44" height="13" uuid="3ac583cc-0bba-4bf0-8c41-63f64f7c419b"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[*Collect:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblParty" x="492" y="213" width="26" height="13" uuid="eea28cbf-8e1b-4556-96b0-7d8ca2f4d4ea"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[*Party:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="345" y="223" width="37" height="1" uuid="50853829-1bd4-47d5-9d30-5624a497615f"/>
+				</line>
+				<line>
+					<reportElement x="431" y="224" width="37" height="1" uuid="df4c23df-ab30-42df-a22f-28664ef50b8b"/>
+				</line>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="26" width="291" height="66" uuid="46847bd4-cfc3-476a-bcc9-30ca04e5a19f"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<line>
+					<reportElement x="520" y="224" width="37" height="1" uuid="471d0b97-52b2-4c17-ba80-94f5970dcf4e"/>
+				</line>
+				<staticText>
+					<reportElement key="lblShipToCity" x="0" y="131" width="93" height="14" uuid="2e63c542-5863-4de3-9a9d-8fee868b7c0b"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*City/State/Zip:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipFrom" mode="Opaque" x="0" y="26" width="291" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="20c4d1cc-9c6d-430f-8c94-0ddc05389665"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ship From]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblShipTo" mode="Opaque" x="0" y="92" width="291" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="bbb7d29e-a5df-4fdb-bb14-e17f338f1cbf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ship To]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblThird" mode="Opaque" x="0" y="158" width="291" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="f521757e-bddc-45db-8084-52dbef7c7a9d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[THIRD PARTY FERIGHT CHARGES BILL TO:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblCheckBox" x="324" y="242" width="44" height="13" uuid="2bd5068e-6625-4f63-870b-709c107763c6"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[(check box)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblFreightCharges" x="403" y="191" width="154" height="13" uuid="9e9663a7-0df2-40f9-92bd-d4eaa24165c9"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[(freght charges are prepaid ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblUnless" x="298" y="200" width="249" height="13" uuid="6a1eea0c-823c-4516-8f9a-1e502087426a"/>
+					<textElement>
+						<font fontName="IPAexゴシック" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[unless marked otherwise)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lbl3" x="482" y="213" width="17" height="13" uuid="4826e8bf-4a88-4341-b35f-ce598369c774"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[*3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblRd" x="491" y="210" width="17" height="13" uuid="672afdf0-3328-4563-9150-5e94c3e669ce"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="6"/>
+					</textElement>
+					<text><![CDATA[rd]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtClientNm" x="38" y="39" width="253" height="13" uuid="32320f75-22c6-42c9-8721-95e605eb328c"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{clientNm}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtAddress1" x="48" y="53" width="243" height="13" uuid="b339840a-f137-422c-9992-bc29a52d1d1f"/>
+					<textElement>
+						<font fontName="IPAexゴシック" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{address1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtZipCdFrom" x="79" y="66" width="212" height="12" uuid="46aa0bc9-ecbe-4c73-8e63-942853d84351"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{zipCdFrom}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtBolNo" x="398" y="33" width="106" height="13" uuid="a6584813-9dc4-4b38-8175-c66f7a0bc73e"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bolNo}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtDelivCustomerNm" x="38" y="105" width="133" height="13" uuid="431a317a-e107-4fe7-b494-766680252263"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{delivCustomerNm}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtDelivAddress1" x="48" y="119" width="243" height="13" uuid="1dd9bb0f-b8e1-4e5b-b492-61854801b83b"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{delivAddress1}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtZipCdTo" x="80" y="132" width="211" height="12" uuid="c5e1d0f6-e3c8-4921-8ea8-e2a3c1e94ae6"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{zipCdTo}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtCarrierNm" x="385" y="92" width="105" height="13" uuid="75e1c09b-3623-4d23-b72f-5af5bf2ef5cd"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{carrierNm}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtCarrierCd" x="327" y="131" width="104" height="12" uuid="6ba29601-2715-4f38-ab82-6bc46a81e029"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{carrierCd}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtCarrierTraceNum" x="357" y="145" width="106" height="11" uuid="80e47f37-a326-4e0b-a3fb-b46a64820c32"/>
+					<textElement>
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{carrierTraceNum}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement style="Barcode" x="355" y="60" width="141" height="20" isRemoveLineWhenBlank="true" uuid="b23ff763-0e9b-4442-8814-99666b770bf7">
+						<printWhenExpression><![CDATA[$F{bolNo}.isEmpty()==false]]></printWhenExpression>
+					</reportElement>
+					<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none">
+						<jr:codeExpression><![CDATA[$F{bolNo}]]></jr:codeExpression>
+					</jr:Code128>
+				</componentElement>
+				<componentElement>
+					<reportElement style="Barcode" x="345" y="163" width="141" height="20" isRemoveLineWhenBlank="true" uuid="3f961ca8-d554-4ee0-b870-21ba5f31fa00">
+						<printWhenExpression><![CDATA[$F{carrierTraceNum}.isEmpty()==false]]></printWhenExpression>
+					</reportElement>
+					<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="1.0" textPosition="none">
+						<jr:codeExpression><![CDATA[$F{carrierTraceNum}]]></jr:codeExpression>
+					</jr:Code128>
+				</componentElement>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="291" y="26" width="287" height="66" uuid="01b5ae49-af17-4499-8bd3-84669d8a12bf"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="2" width="578" height="24" uuid="c7c5bb34-7531-487a-a0fd-ca9dee7d8b63"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement key="lblTitle" x="136" y="2" width="298" height="24" uuid="102b87fc-d2e6-49e6-9c4e-c5acb7e4ead8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					</textElement>
+					<text><![CDATA[BILL  OF  LADING]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblDt" x="0" y="2" width="58" height="24" uuid="79e8fff8-eea3-4b4c-a291-41c6202b8b00"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<leftPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="10"/>
+					</textElement>
+					<text><![CDATA[*Date:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblPage" x="434" y="2" width="40" height="24" uuid="353de816-fde9-4270-a5ba-cac197060754"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="10"/>
+					</textElement>
+					<text><![CDATA[*Page:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement key="txtShippingDt" x="36" y="2" width="100" height="24" uuid="64df527c-e0ec-4a19-9aba-46fceecfe46f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{shippingDt}.toString().substring(4,6)+"/"+$F{shippingDt}.toString().substring(6,8)+"/"+$F{shippingDt}.toString().substring(0,4)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="504" y="2" width="10" height="24" uuid="417ddda7-0c26-4d73-964e-1b3dcb17d5ad"/>
+					<box topPadding="1" bottomPadding="1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<text><![CDATA[/]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="474" y="2" width="36" height="24" uuid="bcf4e760-8033-4794-b779-1f214fa70431"/>
+					<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="bolNo" isBlankWhenNull="true">
+					<reportElement x="514" y="2" width="37" height="24" uuid="99ec1d47-3bec-4fc4-9173-682a72ad017c"/>
+					<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="475" y="22" width="76" height="1" uuid="6ed9b911-6ae4-4965-b161-34250c24794e"/>
+				</line>
+				<staticText>
+					<reportElement key="lblCustomerOrderNumber" mode="Opaque" x="0" y="268" width="152" height="18" backcolor="#FFFFFF" uuid="31a86680-54dd-4716-a387-44b8f1f15453"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*CUSTOMER ORDER NUMBER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblPkgs" mode="Opaque" x="152" y="268" width="94" height="18" backcolor="#FFFFFF" uuid="bef4ccab-aead-40bc-a619-c572da8794a6"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*#PKGS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblWeight" mode="Opaque" x="246" y="268" width="94" height="18" backcolor="#FFFFFF" uuid="a005b693-f6db-4c8b-bbf3-48aca43e92fd"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*WEIGHT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblAdditional" mode="Opaque" x="434" y="268" width="144" height="18" backcolor="#FFFFFF" uuid="717bcd2d-4168-43a8-aa97-8a14f1a2d782"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*ADDITIONAL SHIPPER INFO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblPallet" mode="Opaque" x="340" y="268" width="94" height="11" backcolor="#FFFFFF" uuid="a06524ae-6906-4f9b-b423-c484ce9ab33d"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*PALLET/SILP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblCircleOne" mode="Opaque" x="340" y="278" width="94" height="8" backcolor="#FFFFFF" uuid="04a0bed3-09fd-4057-90a8-efe8e70deb0a"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25" lineStyle="Double"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="IPAexゴシック" size="6" isBold="true"/>
+					</textElement>
+					<text><![CDATA[*CRCLE ONE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="lblCustomerOrderInformation" mode="Opaque" x="0" y="255" width="578" height="13" forecolor="#FFFFFF" backcolor="#000000" uuid="92b306d5-ed5e-4077-9fb0-951d3d817d99"/>
+					<box>
+						<leftPen lineWidth="0.25" lineColor="#000000"/>
+						<rightPen lineWidth="0.25" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CUSTOMER ORDER INFORMATION]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement x="0" y="255" width="578" height="31" uuid="ee356471-e8b6-4a3a-8851-3bbd19907f05"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement key="" x="431" y="210" width="37" height="13" uuid="410d75f8-b4ed-462a-b1dd-c9543b6659d3">
+						<printWhenExpression><![CDATA[$F{paymentTerm}.equals( "COL" )]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="" x="520" y="211" width="37" height="12" uuid="9e335c51-46ef-48b3-89e8-dd94d68711e8">
+						<printWhenExpression><![CDATA[$F{paymentTerm}.equals( "3PL" )]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+				<staticText>
+					<reportElement key="" x="345" y="211" width="37" height="12" uuid="1e97899a-635d-4e02-bcca-1bbb5d0419ce">
+						<printWhenExpression><![CDATA[$F{paymentTerm}.equals( "PPD" )||$F{paymentTerm}.equals( "PPB" )||$F{paymentTerm}.equals( "CO1" )||$F{paymentTerm}.equals( "CO2" )]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font fontName="IPAexゴシック" size="8"/>
+					</textElement>
+					<text><![CDATA[X]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement key="lblY" mode="Opaque" x="340" y="0" width="47" height="18" backcolor="#FFFFFF" uuid="0f57c02b-b9b7-4a6a-a0e9-744300bc8324"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[*Y]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="434" y="0" width="144" height="18" backcolor="#FFFFFF" uuid="6ce50594-a463-448a-8087-ce01028fbab5"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblN" mode="Opaque" x="387" y="0" width="47" height="18" backcolor="#FFFFFF" uuid="3d3d4c66-5964-46a8-9c32-1aad4d46a2c1"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*N]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtPkgs" x="152" y="0" width="94" height="18" uuid="0bd16f9d-d2a8-4a5d-bb45-ac696c8d6751"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{clientShippingNo}!="")?$F{pkgs}:($F{pkgs}.doubleValue()!=0D)?$F{pkgs}: ($F{weight}.doubleValue()!=0D)?$F{pkgs}: ""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtWeight" x="246" y="0" width="94" height="18" uuid="61161abb-65e5-4094-a4f8-99d584a9c50d"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{clientShippingNo}!="")?$F{weight}:($F{pkgs}.doubleValue()!=0D)?$F{weight}: ($F{weight}.doubleValue()!=0D)?$F{weight}: ""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="txtClientShippingNo" x="0" y="0" width="153" height="18" uuid="fe9d5bdb-723a-4580-90e6-ddc68e9629e5"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientShippingNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="0" width="85" height="18" uuid="b33a8878-0afa-4de9-a89a-4a63e7263a6f">
+					<printWhenExpression><![CDATA[false]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="0" width="40" height="18" uuid="4700dea5-91ff-439a-b9c7-e47bfd119586">
+					<printWhenExpression><![CDATA[false]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{variable2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="52" height="18" uuid="23c6aa8f-5188-4951-a284-49d98e0db7c2">
+					<printWhenExpression><![CDATA[false]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sumFlg}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[new Boolean(new Boolean($V{variable1}%5l==0l) && new Boolean($F{sumFlg}.equals("0")==false))]]></printWhenExpression>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="340" y="0" width="238" height="18" backcolor="#666666" uuid="d639f231-d0e2-4455-b843-8f92bf522995"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="388" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="1ceb29d5-f851-4e1b-b447-1549ac774446"/>
+			</line>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="152" height="18" backcolor="#FFFFFF" uuid="355fc67f-8fdf-4c45-9b02-4b10748a754a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTAL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="152" y="0" width="94" height="18" uuid="24855852-1ad4-48bd-a3fe-473cc223cb3a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{pkgsSum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="94" height="18" uuid="e2d85140-27d8-4bf5-a1af-44035563c51f"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{weightSum}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="340" y="8" width="238" height="1" forecolor="#FFFFFF" uuid="90bd2d91-7023-4feb-9b7f-d44931a998d9"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="348" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="488bb423-f1dc-4dc6-a8fa-6ae1a0d9edff"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="357" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="ef1f8d61-0786-4de3-a317-5226427549a0"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="368" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="8a760fb5-05c5-41e0-8b9d-4bd866c5b32b"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="378" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="acc0d3d2-9d8c-4c2b-a6cf-d738555c1297"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="408" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="7f7eb3d5-4bf6-49e8-a43c-946300e76902"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="428" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="7a20b542-72d0-4100-a039-2ed784872c15"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="398" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="2bd9edb8-94de-4210-8646-afd16c98700f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="418" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="b7d5f9fc-0cf6-4001-8798-e3bd0a1599e4"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="448" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="52614ab7-8022-428c-b614-0d8467d41449"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="438" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="eceaff4e-ea46-4c41-adde-2228b198efb9"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="468" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="cc4293ce-7a1a-443a-87bf-f9d00f4fdf51"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="488" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="236e1c22-1a65-433e-82dc-7a371529ec46"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="458" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="72c3bdfe-5164-47c2-a94f-e8bd6580f7b9"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="478" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="c6d488d2-0087-45ab-b16e-70778f1b9f9b"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="498" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="a7642579-bc14-4a6c-be6a-fb140832c500"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="518" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="585ef00a-bdcc-40ce-aa4d-30a8c11ca926"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="538" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="7a38a665-e5de-45b0-ad7e-eef05c032f31"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="508" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="6a2cbadf-b1e1-4af1-8a33-0f6bb1ab3df5"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="528" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="a1409908-183a-4166-b11b-515e3d2868b5"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="548" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="b034a744-413e-4475-b5d0-32c2a558b4e4"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="528" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="6fa5f352-f154-4c49-bd9b-78440109311e"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="548" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="fe039142-fccf-46a2-ac79-ed0d0cdcacb3"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="558" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="391b57ac-7cb0-4f20-a42f-ebeb6be8f586"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="567" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="788a1688-bec5-4137-9fa3-011a57750410"/>
+			</line>
+		</band>
+		<band height="18">
+			<printWhenExpression><![CDATA[new Boolean(new Boolean($V{variable1}%5l==0l) && new Boolean($F{sumFlg}.equals("0")))]]></printWhenExpression>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="0" width="578" height="18" backcolor="#666666" uuid="425f0085-f6e5-4ba1-bc0f-34cf6a82262b"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="8" width="578" height="1" forecolor="#FFFFFF" uuid="b3e47f78-f809-4c3e-8762-1613572aa273"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="8" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="db3c87f2-8cf6-4e05-bac3-aa01fa262ed6"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="17" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="51700732-ab08-4889-b40d-cfe8848ed7fa"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="28" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="ab1cef51-8a57-4fa9-a9e6-fe85251fab25"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="38" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="67149988-79a3-4d90-bcd7-ecd6cfe4254f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="68" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="f97939a9-b536-4f6e-ac6d-c62b920dcd37"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="88" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="0ffeeaf3-f1d4-4524-a9f3-183e577d94bb"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="58" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="f8671a41-971c-4c63-a81f-9e1cab107f10"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="78" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="64a9a9de-9227-40a4-9c19-0c5595b940d0"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="108" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="8871abbd-2bf5-42fd-abe8-fd7fcf6d9937"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="98" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="19d000db-931e-40c5-987e-a98c0694e57e"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="128" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="30b17b10-8ddc-451f-a6f9-91e136f641c4"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="148" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="ba9c9143-61dc-4ba8-b8c6-1151fbf5e32b"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="118" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="50e303b6-53bf-4eb7-84b4-c959d08f5f11"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="138" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="80da61f0-9693-49d4-8960-440a74797160"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="158" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="efdf1803-2087-407d-bd68-c469aa5d8aa6"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="178" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="0806fe12-a59e-4840-abc0-d7377f68ba34"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="198" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="9bf5fe73-db67-4caa-a561-27458acb01ee"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="168" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="df6e878e-963a-467e-9091-1eac69583fd6"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="188" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="811482d1-7073-4163-9229-678f44bccff4"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="208" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="90bb91df-3909-4c3d-962a-94fc8a79da05"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="188" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="2b03fdeb-fffe-4b62-9fc9-db7b0c2aa326"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="208" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="32c11b7e-1c17-4b64-aa35-d493a31e7e91"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="218" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="93df8418-f881-4852-a8a9-8b71499aba67"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="228" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="0ed2923e-b78c-4ebf-826f-ebb7efae8b3b"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="48" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="5926a24e-b438-47dc-a95d-bd5f70b2c7b2"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="247" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="6998a68c-b5c9-43bd-82b5-2ec99875dcab"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="258" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="601d93e5-e3f7-4a70-83c8-6e1a04d12ea5"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="238" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="49d1088d-a54e-474d-90b6-a7fbc77c34c8"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="268" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="dd64e5c4-8427-4f71-972e-dea28646c97a"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="298" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="be2ed64b-10dd-4f65-b04e-3e388fc61623"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="318" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="44d4d40c-7d4a-4723-92ec-0b24611f53a4"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="288" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="33bc1b26-ae33-4e30-9fac-e313c2ffaf2f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="308" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="c449eb5f-3abb-4862-803f-65b9a26d190f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="338" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="14a2d7ab-335b-403b-bc6e-c31911cc5368"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="328" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="c07d8b67-d8de-4cce-886b-307b4e4dc6e9"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="358" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="88be0721-8fb5-44f7-b2ed-f682eb241dd2"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="378" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="2250359d-dd95-4633-b390-4375e961bb72"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="348" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="75435c7e-6445-4207-8771-fa4427c1e6c1"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="368" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="98531b6f-fb5c-4c3c-a2c9-5097a4b701c0"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="388" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="3ea094a9-ed7f-4ab7-8ba6-40fa5cd66869"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="408" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="357ffa52-6d6a-48b4-bb46-47d2845064cb"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="428" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="c32863dd-6d77-488f-915c-020db40d5d99"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="398" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="bc7921da-784a-4319-9625-df840456f6a6"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="418" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="c1d7699d-57a2-40b7-a594-88e20b1ed08b"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="438" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="e326ebce-0407-4e12-994d-22d5586b4c02"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="418" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="89664bbb-ce4d-4ac8-9f72-6ef71715fbae"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="438" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="9f46d443-daab-4dfe-9246-bd375eb19354"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="448" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="32719fa3-1147-4dbf-8311-d94dff6e955f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="458" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="00d2bd50-a276-4b5d-b626-8c581768d23a"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="278" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="0263ae77-1c5d-42ef-84d6-4b3a965e92a2"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="478" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="540eb659-2563-4acd-a5d9-b1acd1dcf0be"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="488" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="8d18f249-50fa-4f87-bcf3-d5e43a403450"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="518" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="945534e0-60eb-4a8d-9ec6-9a10e766510d"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="538" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="eeaf907a-275b-40ce-aec0-1b7bac517212"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="508" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="f9b8364d-70c3-422e-acea-194231fd30ae"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="468" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="eae3ef84-6cf2-4733-b352-7fab64169e33"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="528" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="dc1d7ad3-d77e-48e4-8492-f114101e076e"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="558" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="f6148b69-21af-4605-b9ea-539cbae98009"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="498" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="b4c79323-2da5-4964-b9e9-f009c0628c3d"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="548" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="fa71847a-30e5-418b-a199-8ee504e8ec38"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="567" y="0" width="1" height="18" forecolor="#FFFFFF" uuid="7bb2d18c-c5c5-4ba9-aed7-2c96056da4ec"/>
+			</line>
+		</band>
+		<band height="157">
+			<printWhenExpression><![CDATA[new Boolean($V{variable1}%5==0)]]></printWhenExpression>
+			<subreport isUsingCache="false">
+				<reportElement key="BillOfLading_sub" x="0" y="0" width="578" height="157" uuid="e06b4e7b-e5fe-4428-89a4-7311c9fa3c41"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource) $P{REPORT_DATA_SOURCE}).subDataSource("subReportData")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("SUBREPORT_JASPER_FILE")]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="192" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="578" height="46" uuid="edd8735e-6ab7-4540-bb67-016bdf29471a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="193" y="107" width="191" height="65" uuid="01c6d904-de98-44a2-9227-b2def74989b6"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="355" y="62" width="223" height="45" uuid="7fab37b9-2a51-4c99-ad3d-91fe2f9b2a5a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="355" y="83" width="223" height="24" uuid="6c5b6b84-52a8-4991-a64e-899c959f7722"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  ]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="0" y="45" width="578" height="17" uuid="aec982bb-3638-4d3e-898a-106e76fd65a4"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="lblFeeTerms" x="377" y="15" width="59" height="15" uuid="56acc7b4-aad2-4c7e-898a-3396ce0520ec"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Fee Terms:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCustomerCheckAcc" x="387" y="30" width="143" height="15" uuid="f643c601-e0f1-44d4-8d3a-e309dfe64158"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Customer check acceptable:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="529" y="33" width="8" height="8" uuid="a998f6cd-9bb5-49ef-92d1-6eef0e718ef1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="484" y="18" width="8" height="8" uuid="d053c580-7aba-4cee-844d-f3373cd73ecb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="559" y="18" width="8" height="8" uuid="a7506a0d-f428-43b5-bfe9-80815b0b6c75"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblCollate" x="439" y="15" width="44" height="15" uuid="a1baf4da-5b29-4d62-9962-7b398d3bd26f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Collate:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblFooterPrepaid" x="510" y="15" width="50" height="15" uuid="f40b414d-4ecc-463d-a56b-2528f8fd2b04"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Prepaid:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="0" y="62" width="355" height="45" uuid="05668e8d-eeba-4756-a033-5a5657364e74"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="0" y="107" width="193" height="65" uuid="eab6bdf4-3099-4bbd-a258-f0deff3aaa09"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="384" y="107" width="194" height="65" uuid="d0e39328-096e-4bb5-91e8-413767f9f2be"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="" mode="Opaque" x="0" y="47" width="578" height="15" backcolor="#FFFFFF" uuid="ca1bcc57-4c4e-411c-92f8-cb53ef0d9d8c"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTE Liability Limitation for loss or damage in this shipment may be applicate, See 49 U.S.C. 14706(c) (1)(A) and (B).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="355" y="62" width="223" height="22" uuid="9d940a3d-0f19-49c6-aaa2-a15359868e5c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="357" y="95" width="136" height="1" uuid="36d59257-82a8-48dd-b08d-2f9f20d871d2"/>
+			</line>
+			<staticText>
+				<reportElement key="lblShipper" mode="Opaque" x="494" y="84" width="52" height="12" backcolor="#FFFFFF" uuid="6c02d389-d421-4c26-872c-29f63149c713"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Shipper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblSignature" mode="Opaque" x="357" y="96" width="71" height="10" backcolor="#FFFFFF" uuid="29c17b51-d50c-4935-ac80-78c6d7a9f100"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCarrierSignatuer" x="387" y="107" width="191" height="12" uuid="a2101779-7ba0-4733-a6e8-382d639eb738"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*CARRIER SIGNATUER/PICKUP DATE]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="201" y="128" width="8" height="8" uuid="a2e569f1-a371-4330-857c-dad5dffc355f"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblTrailer" x="193" y="107" width="81" height="15" uuid="362c82f3-c1ea-487f-b5d3-bfef56558799"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[*Trailer Loaded:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="201" y="145" width="8" height="8" uuid="6fda7ecf-b931-41c1-85ff-59d3e4974147"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblBySipper" mode="Opaque" x="212" y="126" width="61" height="10" backcolor="#FFFFFF" uuid="3462011b-7b1c-4021-853a-1a835441d027"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*By shipper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblByDriver" mode="Opaque" x="212" y="144" width="60" height="10" backcolor="#FFFFFF" uuid="f353c2cf-fbc6-47af-9813-bd6218998d3a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*By Driver]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="279" y="125" width="8" height="8" uuid="34820261-97fb-46c4-aecf-2657b5210b8e"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblFreightCounted" x="274" y="107" width="108" height="15" uuid="fd1f52ab-2294-4970-b14b-04033098a826"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[*Freight Counted:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="279" y="161" width="8" height="8" uuid="cb9df563-641c-4bdc-8b7f-b6d8a2b69f27"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="279" y="141" width="8" height="8" uuid="dd5e9190-9b24-41fa-be10-7cb7b27b465d"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblByShipper1" mode="Opaque" x="291" y="124" width="91" height="10" backcolor="#FFFFFF" uuid="37ddf7db-7666-4804-89f3-78ad2e4b0c45"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*By shipper]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblByPallets" mode="Opaque" x="291" y="136" width="91" height="20" backcolor="#FFFFFF" uuid="53026b4f-3150-4b38-bca7-35e32340a3f5"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*By Driver/pallets said tocontain]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPieces" mode="Opaque" x="291" y="160" width="91" height="10" backcolor="#FFFFFF" uuid="6101c518-1fe8-4a59-85aa-fa15abf5782f"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*By Driver/Pieces]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblShipperSignatuer" x="0" y="107" width="193" height="12" uuid="115fb2a8-f022-4cd2-8043-f0350171c53b"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*SHIPPER SIGNATUER/DATE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="450" y="14" width="115" height="1" uuid="fcf1d8d3-7a85-4f6e-a562-39a574afd0de"/>
+			</line>
+			<staticText>
+				<reportElement key="" x="0" y="0" width="357" height="30" uuid="fa47e619-4c03-4e5f-b464-ea734e198276"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="1"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Where the rate is dependent on value ,shippers are required to state specifically in writing the agreed or declared value of the property as follows:
+"The agreed or declared value of the property is specifically stated by the shipper to be not exceeding]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCodAmount" x="363" y="0" width="87" height="15" uuid="fc8323b6-2254-441d-8a31-8fa6f3e57140"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*COD Amount:  $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPer" x="93" y="31" width="22" height="15" uuid="4d28ca5e-523e-4828-a7b2-9ccf0e3ac3cc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*per]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="43" width="78" height="1" uuid="fe0417b3-d50c-4af5-b0a7-81b6cd180e72"/>
+			</line>
+			<line>
+				<reportElement x="115" y="43" width="94" height="1" uuid="cea924d5-d2fa-4b1d-897f-8fd3c052fb23"/>
+			</line>
+			<staticText>
+				<reportElement key="" x="0" y="62" width="355" height="45" uuid="935a7ba6-64c7-451c-a3d4-e5e28bc3eb59"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIVED,subject to individually determined rates or contracts that have been agreed upon in writing between the carrier and shipper,if applicable,otherwise to the rates,classifications and rules that have been established carrier and are available to the shipper, on request,and to all applicible state and federal regulations.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="0" y="119" width="193" height="53" uuid="daf71b56-a4c8-40f3-871b-6d287493b579"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="6" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[This is to cetify that the above named materials are properly classfied,described,packaged,marked and labeled, and are in proper condition for transportation according to the applicable regulations of the DOT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="" x="384" y="119" width="194" height="53" uuid="3b470f42-9cd5-4308-b5cb-9c983455c4b8"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Carrier acknowledges receipt of packages and required placards.Carrier certifies emergency response information was made available and/or has the DOT emergency response guidebook or equivalent documentation the vehicle.
+
+Property described above is received in good order, except as noted.]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="355" y="0" width="223" height="46" uuid="1efb4f44-8e13-4e53-9642-6f911098271e"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement key="" x="209" y="33" width="22" height="11" uuid="c6056cda-bde0-46aa-8203-7849017f2468"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[."]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

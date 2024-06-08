@@ -1,0 +1,47 @@
+<div ng-controller="DispatchRecordInputEdit" owd-screen="DispatchRecordInputEdit">
+	<form id="inputForm" name="inputForm" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select	id="centerCd" ng-model="head.centerCd" label-text="拠点" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm"></owd-select>
+				<owd-select	id="clientCd" ng-model="head.clientCd" label-text="荷主" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm"></owd-select>
+				<owd-select	id="supplierrCvFlg" ng-model="head.tdrelayid" label-text="輸送区分" owd-models="supplierrCvFlgList" ng-change="supplierrCvFlgChange()" owd-repeat-key="classCd" owd-repeat-value="classNm" owd-remove-blank></owd-select>
+				<owd-select	id="landing" ng-model="head.landing" label-text="着地" owd-models="landingList" ng-change="landingChange()" owd-repeat-key="rlybscd" owd-repeat-value="rlybssnm"></owd-select>
+				<owd-text	id="supplierrCvNo" ng-model="head.snno3" label-text="輸送番号"></owd-text>
+				<owd-text	id="supplierrCvNoJT" ng-model="head.snno2" label-text="JT輸送番号"></owd-text>
+				<owd-text	id="supplierrCvNoTSN" ng-model="head.snno1" label-text="TSN輸送番号"></owd-text>
+				<owd-date id="shipmenTDt" ng-model="head.snymd" label-text="発日"></owd-date>
+				<owd-date id="arrivalDt" ng-model="head.arvymd" label-text="着日"></owd-date>
+			</div>
+		</div>
+		<div class="well">
+			<div class="row">
+				<owd-select	id="plannedCar" ng-model="head.plncarknd" label-text="計画車種" owd-models="plannedCarList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-select	id="achievedCar" ng-model="head.amcarknd" label-text="実績車種" owd-models="plannedCarList" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-select	id="transportationCo" ng-model="head.trannm" label-text="運送業者" owd-models="transportationCo" owd-repeat-key="classCd" owd-repeat-value="classNm"></owd-select>
+				<owd-number id="carNo" ng-model="head.carno" label-text="号車No."></owd-number>
+				<owd-number id="genericPalletNo" ng-model="head.gnlpltqa" label-text="汎用パレット数"></owd-number>
+				<owd-number id="otherPalletNo" ng-model="head.otpltqa" label-text="その他パレット数"></owd-number>
+				<owd-number id="rcvSumQty1Pallet" ng-model="head.rcvSumQty1Pallet" label-text="合計パレット数"></owd-number>
+				<owd-number id="no" ng-model="head.no" label-text="個数"></owd-number>
+				<owd-number id="sum" ng-model="head.sum" label-text="合計数"></owd-number>
+			</div>
+		</div>
+		<div class="well">
+			<div class="row">
+				<owd-number id="sealNo1" ng-model="head.selno1" label-text="封印No.(1)"></owd-number>
+				<owd-number id="sealNo2" ng-model="head.selno2" label-text="封印No.(2)"></owd-number>
+				<owd-number id="sealNo3" ng-model="head.selno3" label-text="封印No.(3)"></owd-number>
+			</div>
+		</div>
+		<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+						<owd-button id="register" class="btn-info" ng-disabled="inputForm.$invalid" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<br>
+</div>

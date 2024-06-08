@@ -1,0 +1,56 @@
+<div owd-screen="ProductMasterSearch">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.ProductMasterSearch">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+    <form id="productMasterSearchform" name="productMasterSearchform" novalidate >
+    <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+	    <div class="container-modal">
+	        <accordion>
+	            <accordion-group is-open="isopen">
+	                <accordion-heading>
+	                    {{"searchCondition" | owfMessage}} <span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+	                </accordion-heading>
+	                <fieldset>
+			            <div class="row">
+			            	<!-- [#6787][OSS] 非表示処理を修正 2019.11.14 tsuboi Start -->
+			                <owd-select ng-show="!editableFlg" id="clientCd" ng-model="productSearch.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" owd-remove-blank></owd-select>
+			                <!-- [ver3.0][#3998]荷主編集可否対応修正 2018.04.12 miyabe upd Start -->
+			                <owd-select ng-show="editableFlg" id="editableClientCd" ng-model="productSearch.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+			                <!-- [ver3.0][#3998]荷主編集可否対応修正 2018.04.12 miyabe upd End -->
+			                <!-- [#6787][OSS] 非表示処理を修正 2019.11.14 tsuboi End -->
+			                <owd-text id="productCd" ng-model="productSearch.productCd" label-text="商品CD"></owd-text>
+			                <owd-text id="productNm" ng-model="productSearch.productNm" label-text="商品名称"></owd-text>
+			                <owd-text id="janCd" ng-model="productSearch.janCd" label-text="JANコード"></owd-text>
+			            </div>
+	                </fieldset>
+	            </accordion-group>
+	        </accordion>
+	        <div class="row">
+	            <div class="col-xs-12">
+	            	<!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+	                <owd-button id="search" class="btn-info" ng-disabled="productMasterSearchform.$invalid" ng-click="search()">検索</owd-button>
+	            	<!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+	            </div>
+	        </div>
+	        <br>
+	        <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys Start -->
+	        <div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="productList" owd-select-options="gridSelectOptions" owd-form-name="productMasterSearchform"></div>
+	        <!-- [横並-094] フォーカスがセットを変更 2014.11.21 taoys End -->
+	        <br>
+	        <div class="row">
+	            <div class="col-xs-6">
+	                <owd-button id="selection" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="selectClose()">選択</owd-button>
+	            </div>
+	            <div class="col-xs-6" align="right">
+	                <owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+	            </div>
+	        </div>
+		</div>
+    </form>
+</div>

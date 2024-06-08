@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseLabel" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8cd6cfed-5b0f-414b-b86e-ff55450b31e2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="caseNum" class="java.lang.String">
+		<fieldDescription><![CDATA[caseNum]]></fieldDescription>
+	</field>
+	<field name="factoryCd" class="java.lang.String">
+		<fieldDescription><![CDATA[factoryCd]]></fieldDescription>
+	</field>
+	<field name="limitDate" class="java.lang.String">
+		<fieldDescription><![CDATA[limitDate]]></fieldDescription>
+	</field>
+	<field name="createNo" class="java.lang.String">
+		<fieldDescription><![CDATA[createNo]]></fieldDescription>
+	</field>
+	<field name="machineNo" class="java.lang.String">
+		<fieldDescription><![CDATA[machineNo]]></fieldDescription>
+	</field>
+	<field name="distributionCd" class="java.lang.String">
+		<fieldDescription><![CDATA[distributionCd]]></fieldDescription>
+	</field>
+	<field name="dateTime" class="java.lang.String">
+		<fieldDescription><![CDATA[dateTime]]></fieldDescription>
+	</field>
+	<field name="qrCode" class="java.lang.String">
+		<fieldDescription><![CDATA[qrCode]]></fieldDescription>
+	</field>
+	<field name="itemCd" class="java.lang.String">
+		<fieldDescription><![CDATA[itemCd]]></fieldDescription>
+	</field>
+	<field name="itemName" class="java.lang.String">
+		<fieldDescription><![CDATA[itemName]]></fieldDescription>
+	</field>
+	<field name="caseCd" class="java.lang.String">
+		<fieldDescription><![CDATA[caseCd]]></fieldDescription>
+	</field>
+	<field name="transportCd" class="java.lang.String">
+		<fieldDescription><![CDATA[transportCd]]></fieldDescription>
+	</field>
+	<field name="locCd" class="java.lang.String">
+		<fieldDescription><![CDATA[locCd]]></fieldDescription>
+	</field>
+	<field name="designCd" class="java.lang.String">
+		<fieldDescription><![CDATA[designCd]]></fieldDescription>
+	</field>
+	<field name="palletNo" class="java.lang.String">
+		<fieldDescription><![CDATA[palletNo]]></fieldDescription>
+	</field>
+	<field name="picklistKey" class="java.lang.String">
+		<fieldDescription><![CDATA[picklistKey]]></fieldDescription>
+	</field>
+	<field name="sotedUnit" class="java.lang.String">
+		<fieldDescription><![CDATA[sotedUnit]]></fieldDescription>
+	</field>
+	<field name="warehouseCd" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseCd]]></fieldDescription>
+	</field>
+	<field name="warehouseSname" class="java.lang.String">
+		<fieldDescription><![CDATA[warehouseSname]]></fieldDescription>
+	</field>
+	<field name="userNm" class="java.lang.String">
+		<fieldDescription><![CDATA[userNm]]></fieldDescription>
+	</field>
+	<field name="userCd" class="java.lang.String">
+		<fieldDescription><![CDATA[userCd]]></fieldDescription>
+	</field>
+	<field name="picklistSort" class="java.lang.String">
+		<fieldDescription><![CDATA[picklistSort]]></fieldDescription>
+	</field>
+	<field name="itemSort1" class="java.lang.String">
+		<fieldDescription><![CDATA[itemSort1]]></fieldDescription>
+	</field>
+	<field name="itemSort3" class="java.lang.String">
+		<fieldDescription><![CDATA[itemSort3]]></fieldDescription>
+	</field>
+	<field name="factoryCdSort" class="java.lang.String">
+		<fieldDescription><![CDATA[factoryCdSort]]></fieldDescription>
+	</field>
+	<field name="rePrintedFlg" class="java.lang.String">
+		<fieldDescription><![CDATA[rePrintedFlg]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="555">
+			<staticText>
+				<reportElement x="0" y="537" width="50" height="15" uuid="255ab23a-8fe2-41b5-989c-3b4455a909f0"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[LGLR002]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="537" width="800" height="1" uuid="e6f71289-1d5d-4e9f-8490-6be890c7010c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="280" y="537" width="30" height="15" uuid="82426eed-321b-4794-9901-39f8e3a7f95a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warehouseCd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="537" width="180" height="15" uuid="6000734c-c55a-471a-a994-243a7ea48e83">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warehouseSname}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd HH:mm:ss">
+				<reportElement x="50" y="537" width="120" height="15" uuid="1e440485-7ea6-455f-85cb-c96a79279abd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.now()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="716" y="537" width="12" height="15" uuid="fd20bf75-bbde-487c-bf05-96ec14b55311"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="" x="728" y="537" width="60" height="15" uuid="08a27571-ace0-4559-83ad-922c7a3dd312">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userCd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="788" y="537" width="12" height="15" uuid="d50dcf04-dda3-4394-9606-a3fb3a53d054"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="" x="491" y="537" width="225" height="15" uuid="506d48c8-749e-4a5e-a298-9ef38de36680">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTitle2" mode="Transparent" x="300" y="15" width="200" height="30" backcolor="#FFFFFF" uuid="7ff3953e-fd07-4848-b0fa-c898de37a638">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$F{picklistSort}.equals("") || ((!($F{picklistSort}.equals("999999999999999")) && !($F{caseNum}.equals("")) && !($F{picklistSort}.equals(""))))]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="18" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ケースはり紙]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblTitle1" mode="Transparent" x="300" y="15" width="200" height="30" backcolor="#FFFFFF" uuid="17a4c800-9ad0-48a8-8110-607e6a288d79">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$F{picklistSort}.equals("999999999999999") ||  $F{caseNum}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="18" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*カートン補充はり紙]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="208" width="132" height="42" uuid="cb1dc8eb-5f34-4a32-a461-51ecabebe7ac">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="32" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemCd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="208" width="654" height="42" uuid="952258e1-27dc-4125-8375-5abe2e4ba8cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="32" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="129" width="265" height="50" uuid="ba7aa456-0e24-478d-b22d-2db6cf218a29">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{limitDate})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" mode="Transparent" x="626" y="485" width="166" height="50" backcolor="#FFFFFF" uuid="6c1bc35c-af18-45e1-8898-ad4a3e19ef66">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[!$F{rePrintedFlg}.equals("00") && !$F{rePrintedFlg}.equals("20")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="40" isItalic="true" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[再印刷]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="57" width="268" height="50" uuid="1c412205-4827-4ffb-887c-3761adba9615">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="40" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{caseNum}.equals("")) ?  ($F{caseNum} + "カートン") : ("")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="129" width="130" height="50" uuid="88373405-2e8c-4e99-bc62-778f9cd092b8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[(Long.valueOf($F{factoryCd})>= 8000) && (Long.valueOf($F{factoryCd}) < 9000)]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factoryCd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="129" width="130" height="50" uuid="161496d5-c89e-4fad-8691-5e7fc459a6cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[!((Long.valueOf($F{factoryCd})>= 8000) && (Long.valueOf($F{factoryCd}) < 9000))]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factoryCd}.substring($F{factoryCd}.length()-2)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="130" width="140" height="50" uuid="6cb4ded7-fd78-4d0d-a2d6-f08104a15855">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{createNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="130" width="101" height="50" uuid="51612a1e-7285-4689-a6fe-18eb628d62fd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{machineNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="130" width="62" height="50" uuid="72c3d979-91a4-45bb-8812-e92309ac2294">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="45" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{distributionCd}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm" isBlankWhenNull="true">
+				<reportElement x="641" y="179" width="87" height="29" uuid="4681b431-65a1-438d-a229-86e0e6c7c058">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="25" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dateTime}.equals("") || $F{dateTime}.isEmpty()) ? "" : ( new SimpleDateFormat( "HH:mm" ) ).format( com.oneslogi.report.jasperreports.JasperReportFormat.parse( $F{dateTime} ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="265" width="160" height="30" uuid="bab13af9-c0c8-4f25-a99a-43906c5b8872"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{caseCd}.equals("")) ?  ($F{caseCd}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblCaseCd" x="380" y="265" width="160" height="30" uuid="32c4eacd-8163-43f8-877a-6e71bb183a33"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*はり紙管理番号]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="295" width="160" height="30" uuid="b1801fd5-8c40-40ad-b2a3-06da6f99b7f8"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{transportCd}.equals("")) ?  ($F{transportCd}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTransportCd" x="380" y="295" width="160" height="30" uuid="2755cd3e-86e8-4f35-a10a-700190570b29"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*輸送番号]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="325" width="160" height="30" uuid="15ed764f-ae47-41e1-b9fa-5587228f5053"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{locCd}.equals("")) ?  ($F{locCd}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblLocCd" x="380" y="325" width="160" height="30" uuid="375f8be3-2c80-4d03-a92c-777320e830cf"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*保管ロケ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="355" width="160" height="30" uuid="32954c40-7fd6-4752-a198-b420343c752e"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{palletNo}.equals("")) ?  ($F{palletNo}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPalletNo" x="380" y="355" width="160" height="30" uuid="116a3995-b886-471a-8e25-8f026af33d2b"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*パレット管理番号]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="415" width="160" height="30" uuid="4427103c-b523-4032-b5e8-d0b7483441b1"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{picklistKey}.equals("") && !$F{picklistKey}.equals("999999999999999")) ?  ($F{picklistKey}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPicklistKey" x="380" y="415" width="160" height="30" uuid="4e7e591d-477c-47ba-a340-beded1a0419a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*山出しリストNo.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="445" width="160" height="30" uuid="0c849d8a-7563-419e-bff7-c31434864c16"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{sotedUnit}.equals("")) ?  ($F{sotedUnit}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblSotedUnit" x="380" y="445" width="160" height="30" uuid="769b17da-eb58-4e4a-baf9-ed26d5060600"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*補充先]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="540" y="385" width="160" height="30" uuid="41f024e7-3f80-4212-a9f5-ff45d049357e">
+					<printWhenExpression><![CDATA[!$F{designCd}.equals("00")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(!$F{designCd}.equals("")) ?  ($F{designCd}) : ("-")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblDesignCd" x="380" y="385" width="160" height="30" uuid="0c28dc80-1ffe-4c35-811a-a1be746b2a9a"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="15" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*デザイン区分]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="641" y="107" width="87" height="72" uuid="6e4d910b-2d9c-433c-8d42-c5df6afb159a"/>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{qrCode}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<line>
+				<reportElement x="380" y="265" width="321" height="1" uuid="6705da2f-a78d-49b9-9562-dba2623dfed2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="379" y="266" width="1" height="209" uuid="7434e2a7-3dfb-4605-9f1b-23a332df0860">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="539" y="266" width="1" height="209" uuid="1033b048-97f2-4f8e-9fb6-cc186cce0822">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="700" y="266" width="1" height="209" uuid="63ff4981-fbbb-4ae8-a655-d290d5f6c92a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="295" width="320" height="1" uuid="0a5f7f93-6c73-45dc-b0d3-6b40d547c5b4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="325" width="320" height="1" uuid="460b2ca0-6138-4c98-88d6-467bce759717">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="355" width="320" height="1" uuid="0a3a1d90-0160-48cd-9df8-29a18f294a50">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="385" width="320" height="1" uuid="209be9b5-8d35-4728-9249-c18115ae2118">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="415" width="320" height="1" uuid="29765c11-78d4-489b-b669-dcc5269b2d61">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="445" width="320" height="1" uuid="b0cd73bb-c68f-4038-8b09-06f83f1e43b1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="474" width="320" height="1" uuid="012c5810-903d-4e56-b3d3-4cbc72b19346">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

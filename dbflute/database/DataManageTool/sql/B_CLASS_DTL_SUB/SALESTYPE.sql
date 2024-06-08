@@ -1,0 +1,35 @@
+INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHER1_COMMENT
+) 
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , 'コードに対応する出庫/入庫コード（''1''出庫｜ ''2''入庫）'
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'SALESTYPE' 	
+  AND BCD.CLASS_DTL_CD = 'Z002';	
+
+
+INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHER1_COMMENT
+) 
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , 'コードに対応する出庫/入庫コード（''1''出庫｜ ''2''入庫）'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'SALESTYPE' 	
+  AND BCD.CLASS_DTL_CD = 'Z005';	
+

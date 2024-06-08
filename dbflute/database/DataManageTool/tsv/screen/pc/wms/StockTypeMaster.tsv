@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeCd	在庫区分CD		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	search	検索		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeList	在庫区分マスタメンテナンスグリッド	grid	1	1		0	1	stockTypeCd	在庫区分CD	1	text	1	1		1	90	1			
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeList	在庫区分マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	在庫区分名称	2	text	1	1		1	170	2			
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeList	在庫区分マスタメンテナンスグリッド	grid	1	1		0	1	reverseValidFlg	期限日出荷制限フラグ	3	dropdown	1	1		1	170	3			
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeList	在庫区分マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	4	dropdown	1	1		1	110	4			
+StockTypeMaster	在庫区分マスタメンテナンス	wms	stockTypeNm	在庫区分名称		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	register	登録		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+StockTypeMaster	在庫区分マスタメンテナンス	wms	receiveFlg	入荷フラグ		1	1		0	1													

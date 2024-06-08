@@ -1,0 +1,8 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	bolNo	Bill of lading No		1	0		0	1													
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	pickingHId	出庫ヘッダID		0	0		0	1													
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	traceNo	貨物追跡No		1	1		1	1													
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	update	登録		1	1		0	1													
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	close	閉じる		1	1		0	1													
+ShippingConfirmListCarrierTraceNum	貨物追跡番号登録	wms	title	貨物追跡番号登録		1	0		0	1													

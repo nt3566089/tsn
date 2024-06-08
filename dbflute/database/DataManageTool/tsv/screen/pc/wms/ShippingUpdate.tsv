@@ -1,0 +1,36 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingUpdate	出荷実績訂正	wms	centerCd	センタ		1	0		1	1													
+ShippingUpdate	出荷実績訂正	wms	clientCd	荷主		1	0		1	1													
+ShippingUpdate	出荷実績訂正	wms	productCd	商品CD		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	productNm	商品名称		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	workDt	作業日		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	shippingDt	出荷日		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	delivDt	納品予定日		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	supplyCustomerCd	納品先CD		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	supplyCustomerNm	納品先名称		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	delivAddress1	届先住所1		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	shippingSlipNo	WMS出荷伝票No.		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	shippingStatus	出荷ステータス		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	nonShippingTitle	通常		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	shippingStopTitle	出荷停止		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	stockOutFlgTitle	欠品		1	0		0	1													
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	1	text	1	0	right	0	220			1	220
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	instNum	指示数	2	number	1	0	right	0	95			2	120
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	allocNum	引当済数	3	number	1	0	right	0	95			3	150
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].pickingNum	出庫数	4	calcnumber	1	1	right	1	290			4	290
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	pickingNumMultiText	出庫数荷姿	5	number	0	1	right	0	95			5	95
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.mcustomer.customerCd	預託	6	dropdown	1	1		1	300			6	300
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.mstockType.stockTypeCd	在庫区分	7	dropdown	1	1		1	195			7	195
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.mlocation.locationCd	ロケーションCD	8	text	1	1		1	200			8	200
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.tlot.lot	ロット	9	text	1	1		0	170			9	170
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.tlot.limitDt	期限日	10	date	1	1		0	150			10	150
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.tstoreNo.storeDt	入庫日	11	date	1	1		0	150			11	150
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	12	text	1	1		0	140			12	140
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].tstock.mlocation.bclassDtlByAllocNgFlg.vdict.dictNm	引当禁止フラグ	13	text	1	0		0	125			13	160
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tshippingInstH.mcustomerBySupplyCustomerId.bclassDtlByShippingStopFlg.vdict.dictNm	納品先出荷停止フラグ	14	text	1	0		0	170			14	170
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	mproduct.bclassDtlByShippingStopFlg.vdict.dictNm	商品出荷停止フラグ	15	text	1	0		0	160			15	160
+ShippingUpdate	出荷実績訂正	wms	shippingUpdateList	出荷実績訂正グリッド	grid	1	1		0	1	tallocInstB.tpickingBList[0].mixedFlgNm	混載フラグ	16	text	1	0		0	90				
+ShippingUpdate	出荷実績訂正	wms	addRow	行追加		1	1		0	1													
+ShippingUpdate	出荷実績訂正	wms	removeRow	行削除		1	1		0	1													
+ShippingUpdate	出荷実績訂正	wms	register	登録		1	1		0	1													

@@ -1,0 +1,16 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerCd	センタCD		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerNm	センタ名称		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	centerCd	センタCD	1	text	1	0		0	90			1	110
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	centerNm	センタ名称	2	text	1	0		0	300			2	300
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	centerAbbr	センタ略称	3	text	1	0		0	200			3	170
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	bculture.cultureCd	カルチャCD	4	text	1	0		0	150			4	170
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	btimeZone.timeZoneCd	タイムゾーンCD	5	text	1	0		0	150			5	170
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	delFlg	削除フラグCD	6	text	1	0		0	125			6	150
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	centerMasterList	センタマスタ一覧グリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	7	text	1	0		0	125			7	150
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	register	新規		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CenterMasterList	センタマスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													

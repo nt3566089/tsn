@@ -1,0 +1,27 @@
+<div ng-controller="BoxGroupMasterEdit" owd-screen="BoxGroupMasterEdit">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+		    	<owd-select id="centerCd" owd-remove-blank ng-model="head.mbox.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="倉庫1"></owd-select>
+				<owd-text id="boxGrpCd" ng-model="head.boxGrpCd" label-text="荷材グループCD"></owd-text>
+				<owd-text id="boxGrpNm" ng-model="head.boxGrpNm" label-text="荷材グループ名称"></owd-text>
+				<owd-select id="boxCd" owd-remove-blank ng-model="head.mbox.boxCd" owd-models="boxList" owd-repeat-key="boxCd" owd-repeat-value="boxNm" label-text="倉庫1"></owd-select>
+				<owd-select id="delFlg" owd-remove-blank ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" ></owd-select>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="list" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

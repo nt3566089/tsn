@@ -1,0 +1,41 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingTagDataOutput	送り状データ出力	wms	takingShippingFlg	作業日/出荷日		1	1		0	1													
+ShippingTagDataOutput	送り状データ出力	wms	dtFrom	日付(From)		1	1		0	1													
+ShippingTagDataOutput	送り状データ出力	wms	dtTo	日付(To)		1	1		0	1													
+ShippingTagDataOutput	送り状データ出力	wms	centerCd	センタ		1	1		1	1													
+ShippingTagDataOutput	送り状データ出力	wms	clientCd	荷主		1	1		1	1													
+ShippingTagDataOutput	送り状データ出力	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	carrierCd	運送業者		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	supplyCustomerCd	納品先CD		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	pickingWorkNo	出庫作業No.		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	clientShippingNo	顧客出荷指示No.		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	emergencyFlg	緊急のみ		1	1		0	0													
+ShippingTagDataOutput	送り状データ出力	wms	invoiceCreateFlg	送り状データ出力フラグ		1	1		0	1													
+ShippingTagDataOutput	送り状データ出力	wms	search	検索		1	1		0	1													
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	shippingDt	出荷日	1	date	1	0		0	150			1	150
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	workDt	作業日	2	date	1	0		0	150			2	150
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	3	text	1	0		0	125			3	220
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	4	text	1	0		0	300			4	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	carrierCd	運送業者CD	5	text	1	0		0	110			5	110
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	carrierNm	運送業者名称	6	text	1	0		0	300			6	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	carrierAbbr	運送業者略称	7	text	1	0		0	300			7	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	delivCustomerCd	届先CD	8	text	1	0		0	160			8	160
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	delivCustomerNm	届先名称	9	text	1	0		0	300			9	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	delivAddress1	届先住所1	10	text	1	0		0	300			10	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	delivAddress2	届先住所2	11	text	1	0		0	300			11	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	delivAddress3	届先住所3	12	text	1	0		0	300			12	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	supplyCustomerCd	納品先CD	13	text	1	0		0	200			13	200
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	supplyCustomerNm	納品先名称	14	text	1	0		0	300			14	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	supplyCustomerAbbr	納品先略称	15	text	1	0		0	300			15	300
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	pickingWorkNo	出庫作業No.	16	text	1	0		0	125			16	125
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	clientShippingNo	顧客出荷指示No.	17	text	1	0		0	260			17	260
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	sumPickinghCount	個口数	18	number	1	0	right	0	60			18	190
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	emergencyFlg	緊急フラグ	19	text	1	0		0	90			19	130
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	invoiceCreateFlg	送り状データ出力フラグ	20	text	1	0		0	190			20	190
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	invoiceCreateDt	送り状データ出力日時	21	datetime	1	0		0	180			21	180
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	clientCd	荷主CD	22	text	1	0		0	170			22	
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	clientNm	荷主名称	23	text	1	0		0	200			23	
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	centerCd	センタCD	24	text	1	0		0	170			24	
+ShippingTagDataOutput	送り状データ出力	wms	shippingTagDataOutputB	送り状データ出力グリッド	grid	1	1		0	1	centerNm	センタ名称	25	text	1	0		0	200			25	
+ShippingTagDataOutput	送り状データ出力	wms	csvOutput	データ出力		1	1		0	1													

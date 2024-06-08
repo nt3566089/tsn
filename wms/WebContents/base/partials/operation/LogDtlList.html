@@ -1,0 +1,25 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="LogDtlList" owd-screen="LogDtlList">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="pgmCd" ng-model="searchCondition.pgmCd" label-text="プログラムCD"></owd-text>
+				<owd-text id="pgmNm" ng-model="searchCondition.pgmNm" label-text="プログラム名称"></owd-text>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="logDtlList" owd-select-options="gridSelectOptions" owd-form-name="searchform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="logDtlBrowse" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="logDtlBrowse()">明細詳細</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

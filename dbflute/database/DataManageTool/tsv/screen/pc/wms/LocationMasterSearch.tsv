@@ -1,0 +1,21 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LocationMasterSearch	ロケーションマスタ検索	wms	locationType	ロケーション種別		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	search	検索		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	selection	選択		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	close	閉じる		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	locationCd	ロケーションCD	1	text	1	0		0	200			1	200
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	locationNm	ロケーション名称	2	text	1	0		0	250			2	250
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	locationType	ロケーション種別CD	3	text	1	0		0	170			3	170
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	bclassDtlByLocationType.vdict.dictNm	ロケーション種別名称	4	text	1	0		0	170			4	170
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	pickingLocationFlg	ピックロケフラグ	5	text	1	0		0	140			5	160
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	bclassDtlByPickingLocationFlg.vdict.dictNm	ピックロケフラグ名称	6	text	1	0		0	170			6	200
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	allocNgFlg	引当禁止フラグ	7	text	1	0		0	155			7	155
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	bclassDtlByAllocNgFlg.vdict.dictNm	引当禁止フラグ名称	8	text	1	0		0	155			8	200
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	mcenter.centerCd	センタCD	9	text	1	0		0	200			9	
+LocationMasterSearch	ロケーションマスタ検索	wms	locationList	ロケーションマスタ検索グリッド	grid	1	0		1	1	mcenter.centerNm	センタ名称	10	text	1	0		0	200			10	
+LocationMasterSearch	ロケーションマスタ検索	wms	centerCd	センタ		1	1		1	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	locationCd	ロケーションCD		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	pickingLocationFlg	ピックロケフラグ		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	warehouse	倉庫		1	1		0	1													
+LocationMasterSearch	ロケーションマスタ検索	wms	zone	ゾーン		1	1		0	1													

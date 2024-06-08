@@ -1,0 +1,133 @@
+#!/bin/sh
+
+NOW_DATE_TIME=`date +%Y%m%d_%H%M`
+
+WORK_FOLDER=`pwd`
+
+ENV_FILE=mysqldump.env
+if [ -e "$ENV_FILE" ]; then
+  while read line; do
+    if [ ! "`echo $line`" = "" -a ! "`echo $line | cut -c 1`" = ";" ]; then
+      export $line
+    fi
+  done < $ENV_FILE
+fi
+
+ENV_FILE=$1.env
+if [ -e "$ENV_FILE" ]; then
+  while read line; do
+    if [ ! "`echo $line`" = "" -a ! "`echo $line | cut -c 1`" = ";" ]; then
+      export $line
+    fi
+  done < $ENV_FILE
+fi
+
+IGN_FILE=`basename $0 .sh`.ign
+
+LOG_FILE=$1_$NOW_DATE_TIME.log
+DEL_FILE=$1_$NOW_DATE_TIME.sql
+
+IGNORE_MSG="Warning: Using a password on the command line interface can be insecure."
+
+echo
+echo "MySQLからのインポート処理を開始します。"
+
+if [ "$2" = "" ]; then
+  echo
+  echo "インポートするSQLファイル一式が格納されているフォルダを指定して下さい。"
+  echo
+  echo -n "フォルダ："
+  read IMP_FOLDER
+else
+  export IMP_FOLDER=$2
+fi
+
+if [ "$IMP_FOLDER" = "" ]; then
+  echo
+  echo "フォルダを指定して下さい。"
+  echo "Enterキーを押してください。"
+  read Wait
+  exit 1
+fi
+
+if [ ! -e "$IMP_FOLDER" ]; then
+  echo
+  echo "フォルダが存在しません。"
+  echo "Enterキーを押してください。"
+  read Wait
+  exit 1
+fi
+
+echo
+echo "以下パラメータで実行されます。"
+
+echo
+echo "User     ：$USER"
+echo "Host     ：$HOST"
+echo "Database ：$DBNM"
+
+echo
+echo "SQL入力元：$IMP_FOLDER"
+
+echo
+echo "※【$IGN_FILE】に指定されたTableは除外されます。"
+
+echo
+echo "よろしければEnterキーを押してください。"
+read Wait
+
+echo
+echo "実行中..."
+echo
+
+cp /dev/null $LOG_FILE
+cp /dev/null $DEL_FILE
+
+pushd $IMP_FOLDER>/dev/null
+
+FILE_LIST=*.sql
+
+for fileList in ${FILE_LIST}; do
+  TABLE_NAME=${fileList%.*}
+  if ! fgrep -q -F -i -w "$TABLE_NAME" $WORK_FOLDER/$IGN_FILE; then
+    cp /dev/null $WORK_FOLDER/$DEL_FILE
+    echo "/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;">> $WORK_FOLDER/$DEL_FILE
+    echo "truncate table $TABLE_NAME;">> $WORK_FOLDER/$DEL_FILE
+    echo "/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;">> $WORK_FOLDER/$DEL_FILE
+    OUT_MSG=`date +%Y/%m/%d\ %H:%M:%S`
+    echo "$OUT_MSG > truncate table $TABLE_NAME start."
+    echo "$OUT_MSG > truncate table $TABLE_NAME start.">> $WORK_FOLDER/$LOG_FILE
+    mysql --default-character-set=utf8mb4 -N -u $USER -p$PASS -h $HOST $DBNM < $WORK_FOLDER/$DEL_FILE > $WORK_FOLDER/$LOG_FILE.tmp 2>&1
+    if [ ! $? -eq 0 ]; then
+      fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+      echo "truncateでエラーが発生しました。"
+      echo "Enterキーを押してください。"
+      read Wait
+      exit 1
+    fi
+    fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+    OUT_MSG=`date +%Y/%m/%d\ %H:%M:%S`
+    echo "$OUT_MSG > truncate table $TABLE_NAME end."
+    echo "$OUT_MSG > truncate table $TABLE_NAME end.">> $WORK_FOLDER/$LOG_FILE
+    echo "$OUT_MSG > insert table $TABLE_NAME start."
+    echo "$OUT_MSG > insert table $TABLE_NAME start.">> $WORK_FOLDER/$LOG_FILE
+    mysql --default-character-set=utf8mb4 -N -u $USER -p$PASS -h $HOST $DBNM < $TABLE_NAME.sql > $WORK_FOLDER/$LOG_FILE.tmp 2>&1
+    if [ ! $? -eq 0 ]; then
+      fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+      echo "insertでエラーが発生しました。"
+      echo "Enterキーを押してください。"
+      read Wait
+      exit 1
+    fi
+    fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+    OUT_MSG=`date +%Y/%m/%d\ %H:%M:%S`
+    echo "$OUT_MSG > insert table $TABLE_NAME end."
+    echo "$OUT_MSG > insert table $TABLE_NAME end.">> $WORK_FOLDER/$LOG_FILE
+  fi
+done
+
+popd>/dev/null
+
+rm $DEL_FILE>/dev/null
+rm $LOG_FILE.tmp>/dev/null
+

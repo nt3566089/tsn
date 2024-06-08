@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	reportNm	帳票名		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	reportLayoutNm	帳票レイアウト名称		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	attribute1	帳票レイアウト属性1		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	attribute2	帳票レイアウト属性2		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	attribute3	帳票レイアウト属性3		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	attribute4	帳票レイアウト属性4		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	attribute5	帳票レイアウト属性5		1	0		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	printerGroupId	プリンタグループ		1	1		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	printerId	プリンタ名称		1	1		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	printerAttributeId	トレイ名称		1	1		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	close	閉じる		1	1		0	1													
+UserAutoPrintSettingEdit	自動印刷プリンタ設定(編集)	base	update	登録		1	1		0	1													

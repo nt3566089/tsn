@@ -1,0 +1,70 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblClientNm	荷主	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSupplyCustomerNm	納品先	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblShippingDate	出荷日	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSupplyDate	納品指定日	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblShippingSlipNo	WMS出荷伝票No.	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblClientShippingNo	顧客出荷指示No.	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblProdCd	商品CD	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblProdNm	商品名称	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblLot	ロット	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblLimitDt	期限日	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblPickingNum	出荷数	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblConfirm	確認	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblMarkRepeat	再	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblTotal	合計出荷数	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSubTotal	小計出荷数	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblPrice	金額	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblTax	消費税	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSubTotalPrice	小計金額	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSubTotalTax	小計消費税	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSumTotalPrice	合計金額	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblSumTotalTax	合計消費税	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblTitle	納品明細	String	1	
+DeliverySlipList	納品明細	納品明細	../../../../../../reports/shipping/DeliverySlipList.jrxml	1						1	0	lblPage	納品先別 PAGE	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblClientNm	荷主	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSupplyCustomerNm	納品先	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblShippingDate	出荷日	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSupplyDate	納品指定日	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblShippingSlipNo	WMS出荷伝票No.	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblClientShippingNo	顧客出荷指示No.	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblProdCd	商品CD	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblProdNm	商品名称	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblPickingNum	出荷数	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblConfirm	確認	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblTotal	合計出荷数	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSubTotal	小計出荷数	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblPrice	金額	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblTax	消費税	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSubTotalPrice	小計金額	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSubTotalTax	小計消費税	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSumTotalPrice	合計金額	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblSumTotalTax	合計消費税	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblTitle	納品明細	String	1	
+DeliverySlipList	納品明細	Shipping Confirmation	../../../../../../reports/shipping/DeliverySlipList_enUS.jrxml	1						0	1	lblPage	納品先別 PAGE	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblClientNm	荷主	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSupplyCustomerNm	納品先	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblShippingDate	出荷日	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSupplyDate	納品指定日	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblShippingSlipNo	WMS出荷伝票No.	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblClientShippingNo	顧客出荷指示No.	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblProdCd	商品CD	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblProdNm	商品名称	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblPickingNum	出荷数	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblConfirm	確認	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblMarkRepeat	再	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblTotal	合計出荷数	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSubTotal	小計出荷数	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblPrice	金額	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblTax	消費税	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSubTotalPrice	小計金額	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSubTotalTax	小計消費税	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSumTotalPrice	合計金額	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblSumTotalTax	合計消費税	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblTitle	納品明細	String	1	
+DeliverySlipList	納品明細	交货明细	../../../../../../reports/shipping/DeliverySlipList_zhCN.jrxml	1						0	1	lblPage	納品先別 PAGE	String	1	

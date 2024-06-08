@@ -1,0 +1,91 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblClientCd	荷主	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblCenterCd	センタ	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblWorkDt	作業日	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblDelivDt	納品指定日	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblCarrierNm	運送業者	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblDeliveryCourseCd	配送コース	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblSupplyCustomerCd	納品先	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblPickingWorkMessage	出庫作業メッセージ	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblLineNo	No.	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblWarehouseCd	倉庫	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblLocationNm	ロケ	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblStoreLabelNo	入庫ラベルNo.	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblProductCd	商品CD	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblProductNm	商品名称	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblLimitDt	期限日	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblJanCd	ソースCD	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblLot	ロット	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblStringUnitNum	入数	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblSumPickingNum	数量	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblChargeNum	引当可能数	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblTotal	総合計	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblConfirm	確認	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblPickingWorkNo	出庫作業No.	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblAgain	再	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblOrderPickingList	オーダーピッキングリスト	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblShippingPackingNo	出荷梱包No.	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblBox	荷材	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblOrders	件	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblStoreDt	入庫日	String	1	
+OrderPickingList	オーダーピッキングリスト	オーダーピッキングリスト	../../../../../../reports/shipping/OrderPickingList.jrxml	1						0	0	lblBreakdown	内訳	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblClientCd	荷主	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblCenterCd	センタ	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblDelivDt	納品指定日	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblCarrierNm	運送業者	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblDeliveryCourseCd	配送コース	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblSupplyCustomerCd	納品先	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblPickingWorkMessage	出庫作業メッセージ	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblLineNo	No.	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblLocationNm	ロケ	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblLot	ロット	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblSumPickingNum	数量	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblTotal	総合計	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblConfirm	確認	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblAgain	再	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblOrderPickingList	オーダーピッキングリスト	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblShippingPackingNo	出荷梱包No.	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblBox	荷材	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblOrders	件	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+OrderPickingList	オーダーピッキングリスト	Order Picking List	../../../../../../reports/shipping/OrderPickingList_enUS.jrxml	1						0	1	lblBreakdown	内訳	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblClientCd	荷主	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblCenterCd	センタ	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblWorkDt	作業日	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblDelivDt	納品指定日	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblCarrierNm	運送業者	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblDeliveryCourseCd	配送コース	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblSupplyCustomerCd	納品先	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblPickingWorkMessage	出庫作業メッセージ	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblLineNo	No.	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblWarehouseCd	倉庫	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblLocationNm	ロケ	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblStoreLabelNo	入庫ラベルNo.	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblProductCd	商品CD	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblProductNm	商品名称	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblLimitDt	期限日	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblJanCd	ソースCD	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblLot	ロット	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblStringUnitNum	入数	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblSumPickingNum	数量	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblChargeNum	引当可能数	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblTotal	総合計	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblConfirm	確認	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblPickingWorkNo	出庫作業No.	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblAgain	再	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblOrderPickingList	オーダーピッキングリスト	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblShippingPackingNo	出荷梱包No.	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblBox	荷材	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblOrders	件	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblStoreDt	入庫日	String	1	
+OrderPickingList	オーダーピッキングリスト	选货单	../../../../../../reports/shipping/OrderPickingList_zhCN.jrxml	1						0	1	lblBreakdown	内訳	String	1	

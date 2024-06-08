@@ -1,0 +1,147 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	1	text	1	0		0	75			1	120
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	2	text	1	0		0	300			2	300
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.cesIntegrationFlg	CES連携フラグ	3	text	0	0		0	205			3	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByCesIntegrationFlg.vdict.dictNm	CES連携フラグ名称	4	text	0	0		0	205			4	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.packingSlipAutoOutputFlg	納品明細書自動発行フラグ	5	text	0	0		0	205			5	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPackingSlipAutoOutputFlg.vdict.dictNm	納品明細書自動発行フラグ名称	6	text	0	0		0	225			6	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.storeNoFlg	入庫No.管理フラグCD	7	text	1	0		0	205			7	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByStoreNoFlg.vdict.dictNm	入庫No.管理フラグ名称	8	text	1	0		0	205			8	260
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mergeCls	入庫No.マージ区分CD	9	text	1	0		0	205			9	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByMergeCls.vdict.dictNm	入庫No.マージ区分名称	10	text	1	0		0	205			10	255
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.storeDtFlg	入庫日管理フラグCD	11	text	1	0		0	160			11	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByStoreDtFlg.vdict.dictNm	入庫日管理フラグ名称	12	text	1	0		0	160			12	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.tkeepingDays	トランザクション保持期間	13	number	1	0	right	0	205			13	240
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.hkeepingDays	履歴保持期間	14	number	1	0	right	0	110			14	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.dkeepingDays	削除保持期間	15	number	1	0	right	0	110			15	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.overStoreNumFlg	HT/SD過入荷可フラグCD	16	text	1	0		0	225			16	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByOverStoreNumFlg.vdict.dictNm	HT/SD過入荷可フラグ名称	17	text	1	0		0	225			17	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.pastStoreDtFlg	HT/SD過去日入力可フラグCD	18	text	1	0		0	260			18	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPastStoreDtFlg.vdict.dictNm	HT/SD過去日入力可フラグ名称	19	text	1	0		0	260			19	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.useHtShipFlg	HT/SDケースピック使用フラグCD	20	text	1	0		0	290			20	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByUseHtShipFlg.vdict.dictNm	HT/SDケースピック使用フラグ名称	21	text	1	0		0	290			21	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.htCharReadFlg	HT文字認識使用フラグCD	22	text	1	0		0	210			22	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByHtCharReadFlg.vdict.dictNm	HT文字認識使用フラグ名称	23	text	1	0		0	210			23	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.htLotInputType	HTロット入力方式	24	text	1	0		0	300			24	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.htSerialInputType	HTシリアル入力方式	25	text	1	0		0	300			25	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.inspectionLabelOutFlg	SD検品ラベル出力フラグCD	26	text	1	0		0	225			26	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByInspectionLabelOutFlg.vdict.dictNm	SD検品ラベル出力フラグ名称	27	text	1	0		0	225			27	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.autoShipInstFlg	自動出庫指示フラグCD	28	text	1	0		0	180			28	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAutoShipInstFlg.vdict.dictNm	自動出庫指示フラグ名称	29	text	1	0		0	180			29	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.stockOutAutoInstFlg	欠品時自動出庫指示フラグCD	30	text	1	0		0	230			30	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByStockOutAutoInstFlg.vdict.dictNm	欠品時自動出庫指示フラグ名称	31	text	1	0		0	230			31	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.autoEmgSetFlg	自動緊急フラグ設定フラグCD	32	text	1	0		0	230			32	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAutoEmgSetFlg.vdict.dictNm	自動緊急フラグ設定フラグ名称	33	text	1	0		0	230			33	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.autoEmgSetTgt	自動緊急フラグ判断対象CD	34	text	1	0		0	230			34	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAutoEmgSetTgt.vdict.dictNm	自動緊急フラグ判断対象名称	35	text	1	0		0	230			35	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.autoEmgSetMinute	自動緊急フラグ判断時間(分)	36	number	1	0	right	0	230			36	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.stockOutInstCxlFlg	欠品時出庫指示取消フラグCD	37	text	1	0		0	230			37	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByStockOutInstCxlFlg.vdict.dictNm	欠品時出庫指示取消フラグ名称	38	text	1	0		0	230			38	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.stockOutAllocCls	欠品時引当区分CD	39	text	1	0		0	190			39	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByStockOutAllocCls.vdict.dictNm	欠品時引当区分名称	40	text	1	0		0	190			40	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.packingCalCls	梱包計算処理区分CD	41	text	1	0		0	170			41	315
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPackingCalCls.vdict.dictNm	梱包計算処理区分名称	42	text	1	0		0	205			42	315
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.packingProcessCls	詰込区分CD	43	text	1	0		0	110			43	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPackingProcessCls.vdict.dictNm	詰込区分名称	44	text	1	0		0	220			44	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productPartPacking	商品毎別梱包CD	45	text	1	0		0	140			45	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByProductPartPacking.vdict.dictNm	商品毎別梱包名称	46	text	1	0		0	150			46	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.decimalProductPacking	小数管理商品梱包単位CD	47	text	1	0		0	195			47	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByDecimalProductPacking.vdict.dictNm	小数管理商品梱包単位名称	48	text	1	0		0	195			48	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mboxGrp.boxGrpCd	梱包荷材グループCD	49	text	1	0		0	170			49	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mboxGrp.boxGrpNm	梱包荷材グループ名称	50	text	1	0		0	170			50	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.totalPicFlg	トータルピックフラグCD	51	text	1	0		0	205			51	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByTotalPicFlg.vdict.dictNm	トータルピックフラグ名称	52	text	1	0		0	205			52	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.multiPicCls	マルチピック計算区分CD	53	text	1	0		0	205			53	300
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByMultiPicCls.vdict.dictNm	マルチピック計算区分名称	54	text	1	0		0	205			54	300
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.backetRowNum	バケット段数	55	number	1	0	right	0	110			55	110
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.backetColNum	バケット列数	56	number	1	0	right	0	110			56	150
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.sglRowPicFlg	単行ピックフラグCD	57	text	1	0		0	220			57	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlBySglRowPicFlg.vdict.dictNm	単行ピックフラグ名称	58	text	1	0		0	220			58	190
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.sglRowPicMaxInstNum	単行ピック上限指示数	59	number	1	0	right	0	220			59	170
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.casePicFlg	ケースピックフラグCD	60	text	1	0		0	190			60	190
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByCasePicFlg.vdict.dictNm	ケースピックフラグ名称	61	text	1	0		0	190			61	190
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.picMthdRcmdFlg	最適ピック提案フラグCD	62	text	1	0		0	220			62	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPicMthdRcmdFlg.vdict.dictNm	最適ピック提案フラグ名称	63	text	1	0		0	220			63	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.picMthdRcmdApiKey	最適ピック提案APIキー	64	text	1	0		0	300			64	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.picMthdRcmdBreakKey	最適ピック提案ブレイクキーCD	65	text	1	0		0	240			65	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPicMthdRcmdBreakKey.vdict.dictNm	最適ピック提案ブレイクキー名称	66	text	1	0		0	240			66	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.picMthdRcmdMltPlOut	マルチピック摘み取りリスト出力フラグCD	67	text	1	0		0	300			67	280
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPicMthdRcmdMltPlOut.vdict.dictNm	マルチピック摘み取りリスト出力フラグ名称	68	text	1	0		0	300			68	280
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.picMthdRcmdSplSlOut	単行ピック種蒔きリスト出力フラグCD	69	text	1	0		0	290			69	280
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByPicMthdRcmdSplSlOut.vdict.dictNm	単行ピック種蒔きリスト出力フラグ名称	70	text	1	0		0	290			70	280
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.boxSelectSkip	荷材選択スキップCD	71	text	1	0		0	160			71	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByBoxSelectSkip.vdict.dictNm	荷材選択スキップ名称	72	text	1	0		0	160			72	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mbox.boxCd	デフォルト荷材CD	73	text	1	0		0	160			73	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mbox.boxNm	デフォルト荷材名称	74	text	1	0		0	160			74	220
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.errorSoundPlayFlg	エラー音再生フラグCD	75	text	1	0		0	190			75	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByErrorSoundPlayFlg.vdict.dictNm	エラー音再生フラグ名称	76	text	1	0		0	190			76	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.warnSoundPlayFlg	警告音再生フラグCD	77	text	1	0		0	190			77	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByWarnSoundPlayFlg.vdict.dictNm	警告音再生フラグ名称	78	text	1	0		0	190			78	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.inspSoundPlayFlg	検品音再生フラグCD	79	text	1	0		0	190			79	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByInspSoundPlayFlg.vdict.dictNm	検品音再生フラグ名称	80	text	1	0		0	190			80	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.inspCompSoundPlayFlg	検品完了音再生フラグCD	81	text	1	0		0	195			81	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByInspCompSoundPlayFlg.vdict.dictNm	検品完了音再生フラグ名称	82	text	1	0		0	195			82	210
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.rgReplenishUnitCls	定期補充単位CD	83	text	1	0		0	140			83	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByRgReplenishUnitCls.vdict.dictNm	定期補充単位名称	84	text	1	0		0	155			84	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.emReplenishUnitCls	緊急補充単位CD	85	text	1	0		0	140			85	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByEmReplenishUnitCls.vdict.dictNm	緊急補充単位名称	86	text	1	0		0	155			86	230
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mzone.mwarehouse.warehouseCd	緊急補充倉庫CD	87	text	1	0		0	140			87	270
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mzone.mwarehouse.warehouseNm	緊急補充倉庫名称	88	text	1	0		0	160			88	280
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mzone.zoneCd	緊急補充ゾーンCD	89	text	1	0		0	155			89	240
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.mzone.zoneNm	緊急補充ゾーン名称	90	text	1	0		0	160			90	250
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.emReplenishAllocCls	緊急補充ロケ割付方法CD	91	text	1	0		0	205			91	390
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByEmReplenishAllocCls.vdict.dictNm	緊急補充ロケ割付方法名称	92	text	1	0		0	300			92	390
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.resultAfterProductLabel	実績入力後入庫/商品ラベル出力フラグCD	93	text	1	0		0	300			93	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByResultAfterProductLabel.vdict.dictNm	実績入力後入庫/商品ラベル出力フラグ名称	94	text	1	0		0	300			94	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.resultAfterProductTarget	実績入力後入庫/商品ラベル出力対象CD	95	text	1	0		0	300			95	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByResultAfterProductTarget.vdict.dictNm	実績入力後入庫/商品ラベル出力対象名称	96	text	1	0		0	300			96	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelOutUnit	商品ラベル出力単位CD	97	text	1	0		0	180			97	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByProductLabelOutUnit.vdict.dictNm	商品ラベル出力単位名称	98	text	1	0		0	300			98	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelJanBarcode	商品ラベルソースCDバーコード種別CD	99	text	1	0		0	300			99	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByProductLabelJanBarcode.vdict.dictNm	商品ラベルソースCDバーコード種別名称	100	text	1	0		0	300			100	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelProdBarcode	商品ラベル商品CDバーコード種別CD	101	text	1	0		0	290			101	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByProductLabelProdBarcode.vdict.dictNm	商品ラベル商品CDバーコード種別名称	102	text	1	0		0	300			102	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelJanStartbit	商品ラベルバーコードソースCDスタートビット	103	text	1	0		0	330			103	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelJanEndbit	商品ラベルバーコードソースCDエンドビット	104	text	1	0		0	330			104	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelProdStartbit	商品ラベルバーコード商品CDスタートビット	105	text	1	0		0	330			105	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.productLabelProdEndbit	商品ラベルバーコード商品CDエンドビット	106	text	1	0		0	330			106	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.afterTagOutFlg	検品後荷札出力フラグCD	107	text	1	0		0	195			107	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAfterTagOutFlg.vdict.dictNm	検品後荷札出力フラグ名称	108	text	1	0		0	225			108	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.tagDeliveryOutFlg	荷札納品書在中出力フラグCD	109	text	1	0		0	225			109	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByTagDeliveryOutFlg.vdict.dictNm	荷札納品書在中出力フラグ名称	110	text	1	0		0	225			110	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.afterDelivSlipOutFlg	検品後納品明細出力フラグCD	111	text	1	0		0	225			111	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAfterDelivSlipOutFlg.vdict.dictNm	検品後納品明細出力フラグ名称	112	text	1	0		0	225			112	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.afterDelivSlipOutTgt	検品後納品明細出力対象CD	113	text	1	0		0	210			113	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByAfterDelivSlipOutTgt.vdict.dictNm	検品後納品明細出力対象名称	114	text	1	0		0	210			114	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.sglRowInspAfterOutCls	単行出荷検品荷札/納品明細出力区分CD	115	text	1	0		0	300			115	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlBySglRowInspAfterOutCls.vdict.dictNm	単行出荷検品荷札/納品明細出力区分名称	116	text	1	0		0	300			116	
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey1	引当ソートキー1CD	117	text	1	0		0	170			117	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey1Nm	引当ソートキー1名称	118	text	1	0		0	170			118	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey2	引当ソートキー2CD	119	text	1	0		0	170			119	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey2Nm	引当ソートキー2名称	120	text	1	0		0	170			120	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey3	引当ソートキー3CD	121	text	1	0		0	170			121	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey3Nm	引当ソートキー3名称	122	text	1	0		0	170			122	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey4	引当ソートキー4CD	123	text	1	0		0	170			123	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey4Nm	引当ソートキー4名称	124	text	1	0		0	170			124	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey5	引当ソートキー5CD	125	text	1	0		0	170			125	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey5Nm	引当ソートキー5名称	126	text	1	0		0	170			126	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey6	引当ソートキー6CD	127	text	1	0		0	170			127	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey6Nm	引当ソートキー6名称	128	text	1	0		0	170			128	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey7	引当ソートキー7CD	129	text	1	0		0	170			129	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey7Nm	引当ソートキー7名称	130	text	1	0		0	170			130	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey8	引当ソートキー8CD	131	text	1	0		0	170			131	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.allocSortKey8Nm	引当ソートキー8名称	132	text	1	0		0	170			132	225
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	133	text	1	0		0	115			133	110
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerMasterEdit	センタマスタメンテナンスグリッド	grid	1	1		0	1	mparamAsOne.bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	134	text	1	0		0	115			134	160
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerCd	センタCD		1	1		1	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	removeRow	行削除		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	register	登録		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerNm	センタ名称		1	1		1	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	centerAbbr	センタ略称		1	1		1	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	cultureList	カルチャ		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	timeZoneList	タイムゾーン		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	new	新規		1	1		0	1													
+CenterMasterEdit	センタマスタメンテナンス(編集)	wms	update	修正		1	1		0	1													

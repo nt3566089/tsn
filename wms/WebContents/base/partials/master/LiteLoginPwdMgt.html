@@ -1,0 +1,58 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="LiteLoginPwdMgtCtrl" owd-screen="LiteLoginPwdMgt">
+	<br> 
+	<form id="inputform" name="inputform" novalidate>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-select id="passwordReset" ng-model="input.passwordReset" owd-models="passwordResetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="次回ログイン時のパスワード変更の強制" owd-remove-blank></owd-select>
+
+				<owd-select id="lockout" ng-model="input.lockout" owd-models="lockoutList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ロックアウト" owd-remove-blank></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-text id="passwordModifiedDate" ng-model="viewOnly.passwordModifiedDate" label-text="パスワード変更日時"></owd-text>
+
+				<owd-text id="lastLoginDate" ng-model="viewOnly.lastLoginDate" label-text="最終ログイン日時"></owd-text>
+
+				<owd-text id="failedLoginAttempts" ng-model="viewOnly.failedLoginAttempts" label-text="ログイン失敗回数"></owd-text>
+
+				<owd-text id="lastFailedLoginDate" ng-model="viewOnly.lastFailedLoginDate" label-text="ログイン失敗日時"></owd-text>
+
+				<owd-text id="lockoutDate" ng-model="viewOnly.lockoutDate" label-text="ロックアウト日時"></owd-text>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-date id="availableStartDateYmd" ng-model="input.availableStartDateYmd" label-text="利用可能開始"></owd-date>
+				<owd-text id="availableStartTime" ng-model="input.availableStartTime" ng-blur="blurTimeField($event)" label-text="利用可能開始時間"></owd-text>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-date id="availableEndDateYmd" ng-model="input.availableEndDateYmd" label-text="利用可能終了"></owd-date>
+				<owd-text id="availableEndTime" ng-model="input.availableEndTime" ng-blur="blurTimeField($event)" label-text="利用可能終了"></owd-text>
+			</div>
+		</div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="col-xs-6">
+						<owd-button id="passwordChange" class="btn-success" ng-click="showPasswordChangeDialogForMgt()">パスワード変更</owd-button>
+					</div>
+				</div>
+				<div class="col-xs-6" align="right">
+					<owd-button id="register" class="btn-success" ng-disabled="inputform.$invalid" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+
+		<div ng-init="putFormCtl(inputform)"></div>
+	</form>
+</div>

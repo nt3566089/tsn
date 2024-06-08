@@ -1,0 +1,41 @@
+<div ng-controller="CenterClassList" owd-screen="CenterClassList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+
+					<fieldset>
+						<div class="row">
+						    <owd-select id="centerCd"     ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+							<owd-text   id="classCd"      ng-model="head.classCd" label-text="区分値CD"></owd-text>
+							<owd-text   id="classComment" ng-model="head.classComment" label-text="区分値解説"></owd-text>
+							<owd-select id="systemType"   ng-model="head.systemType" owd-models="systemTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="システム種別"></owd-select>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="centerClassList" owd-dblclick-option="gridDblClick(row)" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-info"   ng-click="register()">新規</owd-button>
+						<owd-button id="update"   class="btn-info"   ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+						<owd-button id="delete"   class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deletedata()">削除</owd-button>
+						<owd-button id="centerClassGrpUpdate"    class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="classGrpUpdate()">修正（グループ)</owd-button>
+						<owd-button id="centerClassGrpDtlUpdate" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="classGrpDtlUpdate()">修正（グループ明細）</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

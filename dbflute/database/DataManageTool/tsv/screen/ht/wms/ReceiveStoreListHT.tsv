@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	janCd	ｿｰｽCD		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	productCd	商品		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	stkClsNm	在区		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	lot	ロット		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	limitDt	期限日		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	planNum	入荷数		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	storeNum	格納数		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	remnantNum	残数		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	return	戻る		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	prev	前		1	1		0	1													
+ReceiveStoreListHT	入庫格納(一覧)	wms_ht	next	次		1	1		0	1													

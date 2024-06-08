@@ -1,0 +1,103 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingInstList	出庫指示一覧	wms	takingShippingFlg	作業日/出荷日		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	dtFrom	日付(From)		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	dtTo	日付(To)		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	centerCd	センタ		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	clientCd	荷主		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	supplyCustomerCd	納品先CD		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	carrierCd	運送業者		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	pickingBatchNo	出庫指示バッチNo.		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	pickingWorkNo	出庫作業No.		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	clientShippingNo	顧客出荷指示No.		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	shippingStatus	出荷ステータス		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	noAllcDisplayFlg	未出荷全件		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	emergencyFlg	緊急のみ		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	noStockOutFlg	欠品フラグ		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	shippingSlipNo	WMS出荷伝票No.		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	pickingWorkMessageFlg	出庫作業メッセージ有無	dropdown	1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	pickingWorkMessage	出庫作業メッセージ		1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	cancelDisplay	キャンセルデータ表示	dropdown	1	1		0	0													
+ShippingInstList	出庫指示一覧	wms	search	検索		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	nonShippingTitle	未出荷		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingInstProcessingTitle	出庫指示中		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingInstedTitle	出庫指示済		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingFixedTitle	出荷確定済		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	cancelTitle	キャンセル		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	errorTitle	エラー有		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingStopTitle	出荷停止		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	emergencyTitle	緊急		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	stockOutFlgTitle	欠品		1	0		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	workDt	作業日	1	date	1	0		0	150			1	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingDt	出荷日	2	date	1	0		0	150			2	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pickingBatchNo	出庫指示バッチNo.	3	text	1	0		0	170			3	220
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	supplyCustomerCd	納品先CD	4	text	1	0		0	200			4	200
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	supplyCustomerNm	納品先名称	5	text	1	0		0	300			5	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivCustomerCd	届先CD	6	text	1	0		0	200			6	200
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivCustomerNm	届先名称	7	text	1	0		0	300			7	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	bolNo	Bill of lading No	8	text	0	0		0	300			8	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	bolOutFlg	Bill of Lading発行フラグ	9	text	0	0		0	235			9	235
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	bolOutNm	Bill of Lading発行フラグ名称	10	text	0	0		0	235			10	235
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingSlipNo	WMS出荷伝票No.	11	text	1	0		0	170			11	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	clientShippingNo	顧客出荷指示No.	12	text	1	0		0	260			12	170
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pickingWorkNo	出庫作業No.	13	text	1	0		0	125			13	180
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pickingWorkMessage	出庫作業メッセージ	14	text	1	0		0	300			14	220
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingStatus	出荷ステータス	15	text	1	0		0	125			15	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingStatusNm	出荷ステータス名称	16	text	1	0		0	155			16	110
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	17	text	1	0		0	125			17	300
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	18	text	1	0		0	300			18	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	carrierCd	運送業者CD	19	text	1	0		0	110			19	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	carrierNm	運送業者名称	20	text	1	0		0	300			20	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	slipNo	伝枚	21	number	1	0	right	0	150			21	120
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	lineNo	行数	22	number	1	0	right	0	150			22	120
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	productId	アイテム数	23	number	1	0	right	0	150			23	235
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	instNum	指示数	24	number	1	0	right	0	95			24	235
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	allocNum	引当済数	25	number	1	0	right	0	95			25	240
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	tplOutNm	トータルピッキングリスト発行	26	text	1	0		0	235			26	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	oplOutNm	オーダーピッキングリスト発行	27	text	1	0		0	235			27	260
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	mltOutNm	マルチピッキングリスト発行	28	text	1	0		0	235			28	260
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	splOutNm	単行ピッキングリスト発行	29	text	1	0		0	235			29	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pl1OutNm	一次ピッキングリスト発行	30	text	1	0		0	235			30	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	slOutNm	種蒔きリスト発行	31	text	1	0		0	160			31	260
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	plOutNm	摘み取りリスト発行	32	text	1	0		0	160			32	160
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pl2OutNm	二次ピッキングリスト発行	33	text	1	0		0	235			33	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	caseOutNm	ケースピッキングリスト発行	34	text	1	0		0	235			34	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	inspectionOutNm	SD検品ラベル発行	35	text	1	0		0	170			35	160
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	packingOutNm	納品明細発行	36	text	1	0		0	170			36	110
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	invoiceCreateNm	送り状データ出力	37	text	1	0		0	160			37	200
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	stwOutNm	積込リスト発行	38	text	1	0		0	160			38	250
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	pickingNum	ピッキング(％)	39	number	1	0	right	0	110			39	160
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	inspectionNum	出荷検品(％)	40	number	1	0	right	0	110			40	150
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	loadingStatus	積込検品(％)	41	number	1	0	right	0	110			41	200
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivUnitNo	届先単位No.	42	text	1	0		0	125			42	170
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivPlanDt	納品予定日	43	date	1	0		0	150			43	170
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivDt	納品指定日	44	date	1	0		0	150			44	160
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivTz	納品時間帯CD	45	text	1	0		0	125			45	170
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	delivTzNm	納品時間帯名称	46	text	1	0		0	125			46	160
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	messageNm	エラー内容	47	text	1	0		0	160			47	125
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingStopCsNm	納品先出荷停止フラグ	48	text	1	0		0	170			48	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	shippingStopPdNm	商品出荷停止フラグ	49	text	1	0		0	160			49	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	forceFixedFlgNm	強制確定フラグ	50	text	1	0		0	125			50	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	clientCd	荷主CD	51	text	1	0		0	150			51	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	clientNm	荷主名称	52	text	1	0		0	150			52	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	centerCd	センタCD	53	text	1	0		0	160			53	
+ShippingInstList	出庫指示一覧	wms	shippingInstList	出庫指示一覧グリッド	grid	1	1		0	1	centerNm	センタ名称	54	text	1	0		0	150			54	
+ShippingInstList	出庫指示一覧	wms	workShippingDtFlg	作業日/出荷日		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	dateBatch	日付		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	checkDtBatch	選択行更新(日付一括変更)		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	deliveryCourseCdBatch	配送コースCD		1	1		1	1													
+ShippingInstList	出庫指示一覧	wms	checkdeliveryCourseBatch	選択行更新(配送コースCD一括変更)		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	indicator	出庫指示		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	indicatorBatch	出庫指示		0	1		0	1													
+ShippingInstList	出庫指示一覧	wms	indicatingCancel	出庫指示解除		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	pieceShippingInspectCancel	出荷検品解除	text	1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	pickingListPrint	ピッキングリスト		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	shippingWorkRefUpdate	出庫作業メッセージ登録		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	indicatorCancel	出荷指示キャンセル		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	errorDelete	エラーデータ削除		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	clearShortage	欠品解除		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	errorCheck	エラーチェック		1	1		0	1													
+ShippingInstList	出庫指示一覧	wms	productShippingList	商品別出荷一覧		1	1		0	1													

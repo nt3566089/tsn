@@ -1,0 +1,72 @@
+<div ng-controller="ShippingHistory" owd-screen="ShippingHistory">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+					<div class="row">
+						<!-- 荷主センタ変更対応 2017.02.13 sja Start -->
+						<!--
+						<owd-select id="centerCd" ng-model="headH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="headH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						-->
+						<owd-select id="centerCd" ng-model="headH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="headH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+
+						<!-- 荷主センタ変更対応 2017.02.13 sja End -->
+						<owd-date id="shippingDt" ng-model="headH.shippingDt" label-text="出荷日"></owd-date>
+						<owd-date id="workDt" ng-model="headH.workDt" label-text="作業日"></owd-date>
+						<owd-select id="processTypeCd" ng-model="headH.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" label-text="処理区分"></owd-select>
+						<owd-text id="clientShippingNo" ng-model="headH.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+						<owd-text id="shippingSlipNo" ng-model="headH.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+						<owd-text id="supplyCustomerCd" ng-model="headH.supplyCustomerCd" label-text="納品先CD" owd-add-button="showSupplyCustomer()" ng-blur="supplyCustomerCdBlur()">
+							<owd-info ng-model="headH.supplyCustomerNm"></owd-info>
+						</owd-text>
+						<owd-text id="delivCustomerCd" ng-model="headH.delivCustomerCd" label-text="届先CD" owd-add-button="showDelivCustomer()" ng-blur="delivCustomerCdBlur()"></owd-text>
+						<owd-text id="delivCustomerNm" ng-model="headH.delivCustomerNm" label-text="届先名称"></owd-text>
+						<owd-text id="deliveryCourseCd" ng-model="headH.deliveryCourseCd" label-text="配送コースCD" owd-add-button="showDeliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+							<owd-info ng-model="headH.deliveryCourseNm"></owd-info>
+						</owd-text>
+						<owd-select id="carrierCd" ng-model="headH.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+						<owd-select id="depositCd" ng-model="headB.depositCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="指定預託"></owd-select>
+						<owd-text id="productCd" ng-model="headB.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="headB.productNm"></owd-info>
+					    </owd-text>
+						<owd-text id="lot" ng-model="headB.lot" label-text="指定ロット"></owd-text>
+						<owd-date id="limitDtFrom" ng-model="headB.limitDtFrom" label-text="指定期限日(From)"></owd-date>
+						<owd-date id="limitDtTo" ng-model="headB.limitDtTo" label-text="指定期限日(To)" owd-validate="fromToDtCheck(headB.limitDtFrom, $value)" owd-validate-watch="'headB.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="stockTypeCd" ng-model="headB.mstockType.stockTypeCd" owd-models="StockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+						<owd-text id="locationCdFrom" ng-model="headB.locationCdFrom" label-text="指定ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+							<owd-info ng-model="headB.locationNmFrom"></owd-info>
+						</owd-text>
+						<owd-text id="locationCdTo" ng-model="headB.locationCdTo" label-text="指定ロケーション(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck2(headB.locationCdFrom, $value)" owd-validate-watch="'headB.locationCdFrom'" owd-validate-message="fromToMessage2">
+							<owd-info ng-model="headB.locationNmTo"></owd-info>
+						</owd-text>
+						<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+			 		</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="shippingHistoryGrid" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="packingHistory" class="btn-info" ng-click="packingHistory()" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">梱包履歴</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

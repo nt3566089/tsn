@@ -1,0 +1,8 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	msg1	使用した荷材CDを		1	1		0	1													
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	msg2	入力してください。		1	1		0	1													
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	pieceNo	個口番号		1	1		0	1													
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	boxCd	荷材CD		1	1		0	1													
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	return	戻る		1	1		0	1													
+ShippingNoPackingBoxHT	出荷検品(箱登録)	wms_ht	send	決定		1	1		0	1													

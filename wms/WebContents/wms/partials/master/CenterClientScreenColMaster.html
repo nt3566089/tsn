@@ -1,0 +1,38 @@
+<div ng-controller="CenterClientScreenColMaster" owd-screen="CenterClientScreenColMaster">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+					<fieldset>
+					<div class="row">
+						<owd-select id="centerClientCls" ng-model="centerClientScreenColMasterSearch.centerClientCls" owd-models="centerClientClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="センタ・荷主区分" ng-focus="centerClientClsFocus()" ng-change="centerClientChange()"></owd-select>
+						<owd-select id="centerOrClient" ng-model="centerClientScreenColMasterSearch.centerOrClientCd" owd-models="centerOrClientList" owd-repeat-key="centerOrClientCd" owd-repeat-value="centerOrClientNm" label-text="センタ・荷主"></owd-select>
+						<owd-select id="screen" ng-model="centerClientScreenColMasterSearch.screenListCd" owd-models="screenList" owd-repeat-key="screenListCd" owd-repeat-value="screenListNm" label-text="画面" ng-change="screenChange()"></owd-select>
+						<owd-select id="grid" ng-model="centerClientScreenColMasterSearch.itemListCd" owd-models="gridList" owd-repeat-key="itemListCd" owd-repeat-value="itemListNm" label-text="グリッド"></owd-select>
+					</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.25 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="centerClientScreenColList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

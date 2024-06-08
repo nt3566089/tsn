@@ -1,0 +1,9 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblReverseReplenishList	逆転補充リスト (	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblSotedUnit	補充先	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblSortLackNo	仕分ラック番号	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblSortLocationNo	仕分ロケNo.	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblItemCd	銘柄CD	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblSName	銘柄名称	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblSoManufactureDate	仕分ロケ内製造年月日	String	1	
+ReverseReplenishList	逆転補充リスト	逆転補充リスト	../../../../../../reports/stock/ReverseReplenishList.jrxml	1						0	0	lblStManufactureDate	補充製品製造年月日	String	1	

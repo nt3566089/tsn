@@ -1,0 +1,29 @@
+<div owd-screen="ModalLargeWorkInstNum">
+	<div class="container-modal" ng-cloak>
+		<h1>
+			<owd-span id="workInstNum" label-text="作業指示数"></owd-span>
+		</h1>
+		<br>
+		<form id="workInstNumForm" name="workInstNumForm" novalidate>
+			<div class="row">
+				<div class="col-xs-12">
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(1)" ng-click="select(1)">　1　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(2)" ng-click="select(2)">　2　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(3)" ng-click="select(3)">　3　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(4)" ng-click="select(4)">　4　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(5)" ng-click="select(5)">　5　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(6)" ng-click="select(6)">　6　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(7)" ng-click="select(7)">　7　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(8)" ng-click="select(8)">　8　</button>
+					<button type="button" class="btn-info wms-btn-big" ng-show="0<=instNumList.indexOf(9)" ng-click="select(9)">　9　</button>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-xs-12" align="right">
+					<owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

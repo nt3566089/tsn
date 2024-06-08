@@ -1,0 +1,43 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PickingListRePrint	保税出庫関連リスト再出力	wms	centerCd	拠点	dropdown	1	0		1	1													
+PickingListRePrint	保税出庫関連リスト再出力	wms	clientCd	荷主	dropdown	1	0		1	1													
+PickingListRePrint	保税出庫関連リスト再出力	wms	listkbn	帳票名	dropdown	1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	printdatetimeFrom	印刷年月日(From)		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	printdatetimeTo	印刷年月日(To)		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	shipschdateFrom	出庫予定日(From)		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	shipschdateTo	出庫予定日(To)		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	workallocateid	棚出リストキー		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	shiptocd	受入先CD		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	customerCd	特約店CD		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	ownerorderno	車割キー		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	otherlot2	依頼種別	dropdown	1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	otherlot4	依頼番号		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	rmano	問合番号		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	otherlot3	整理番号		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	notes	P/LNo.		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	locationCd	ロケーションCD		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	trsoliststs	出庫作業ステータス	dropdown	1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	search	検索		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	excelOutput	Excel出力		1	1		0	0													
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	listkbnNm	帳票名	1	text	1	0		0	180			1	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	centerCd	拠点CD	2	text	1	0		0	180			2	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	centerAbbr	拠点名称	3	text	1	0		0	180			3	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	printdatetime	印刷年月日	4	datetime	1	0		0	180			4	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	shipschdate	出庫予定日	5	date	1	0		0	180			5	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	workallocateid	棚出リストキー	6	text	1	0		0	180			6	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	ownerorderno	車割キー	7	text	1	0		0	180			7	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	ordertypeNm	依頼種別	8	text	1	0		0	180			8	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	custorderno	依頼番号	9	text	1	0		0	180			9	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	rmano	問合番号	10	text	1	0		0	180			10	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	ownersono	整理番号	11	text	1	0		0	180			11	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	shiptocd	受入先CD	12	text	1	0		0	180			12	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	delivname	受入先名称	13	text	1	0		0	180			13	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	trsoliststsNm	出庫作業ステータス	14	text	1	0		0	180			14	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	sopalletno	P/LNo.	15	text	1	0		0	180			15	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	locationCd	ロケーションCD	16	text	1	0		0	180			16	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	listkbn	帳票区分	17	text	0	0		0	180			17	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	sokey	出庫指示キー	18	text	0	0		0	180			18	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	clientCd	荷主CD	19	text	0	0		0	180			19	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	pickingListRePrintList	保税出庫関連リスト再出力グリッド	grid	1	1		0	0	clientAbbr	荷主名称	20	text	0	0		0	180			20	180
+PickingListRePrint	保税出庫関連リスト再出力	wms	output	発行		1	1		0	0													

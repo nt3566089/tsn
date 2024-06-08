@@ -1,0 +1,15 @@
+
+*.bak
+*.old
+
+/dist
+/node_modules
+/WebContents/WEB-INF/classes
+/work
+
+/*.log
+/*.war
+
+/WebContents/download/*
+!/WebContents/download/dummy.txt
+

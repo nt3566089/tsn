@@ -1,0 +1,18 @@
+<div owd-screen="ModalLargeWarnDialog">
+	<!-- [Ver3.1][#5235] パラメータマスタの設定により再生有無を判断 2018.10.02 matsumoto Start -->
+	<audio id="warnSound" src="wms/audio/warn.mp3"></audio>
+	<!-- [Ver3.1][#5235] パラメータマスタの設定により再生有無を判断 2018.10.02 matsumoto End -->
+	<div class="container-modal" ng-cloak>
+		<h1 class="text-warning" >
+			<span ng-bind="message">警告が発生しました。</span>
+		</h1>
+		<br>
+		<form id="warnDialogForm" name="warnDialogForm" novalidate>
+			<div class="row">
+				<div class="col-xs-12" align="center">
+					<owd-button id="close" class="btn-danger wms-btn-big" ng-click="modalClose()">閉じる</owd-button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

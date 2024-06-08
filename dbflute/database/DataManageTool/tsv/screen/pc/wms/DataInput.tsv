@@ -1,0 +1,12 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DataInput	初期データ取込	wms	dataInputTypeCd	初期データ取込種別	dropdown	1	1		0	1													
+DataInput	初期データ取込	wms	dataRange	ダウンロードデータ出力条件	dropdown	1	1		0	1													
+DataInput	初期データ取込	wms	processType	初期データ取込方法	dropdown	1	1		0	1													
+DataInput	初期データ取込	wms	commitType	コミット区分	dropdown	1	1		0	1													
+DataInput	初期データ取込	wms	upload	アップロード		1	1		0	1													
+DataInput	初期データ取込	wms	download	ダウンロード		1	1		0	1													
+DataInput	初期データ取込	wms	operationType	初期データ取込区分	dropdown	1	1		1	1													
+DataInput	初期データ取込	wms	execute	実行		1	1		0	1													
+DataInput	初期データ取込	wms	inputTypeXls	初期データ取込種別	dropdown	1	1		1	1													
+DataInput	初期データ取込	wms	downloadXls	ダウンロード		1	1		0	1													

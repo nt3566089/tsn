@@ -1,0 +1,29 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProductMasterBulkInput	商品マスタ一括取込	wms	clientCd	荷主		1	1		1	1													
+ProductMasterBulkInput	商品マスタ一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+ProductMasterBulkInput	商品マスタ一括取込	wms	register	登録		1	1		0	1													
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	70			1	70
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.productCd	商品CD	2	text	1	0		0	245	2		2	245
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300	3		3	300
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	4	text	1	0		0	300	4		4	300
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	5	text	1	0		0	205	5		5	205
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.lotManagFlg	ロット管理フラグ	6	text	1	0		0	140	6		6	190
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.limitDtManagFlg	期限日管理フラグ	7	text	1	0		0	140	7		7	250
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.limitDtReverseFlg	期限日逆転防止フラグ	8	text	1	0		0	170	8		8	220
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.receiveLimitNum	入荷期限日数	9	number	1	0	right	0	110	9		9	220
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.shippingLimitNum	出荷期限日数	10	number	1	0	right	0	110	10		10	220
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.mergeCls	入庫No.マージ区分	11	text	1	0		0	230	11		11	230
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.shippingStopFlg	出荷停止フラグ	12	text	1	0		0	125	12		12	170
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.fixedPoint	定点	13	number	1	0	right	0	110	13		13	170
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	mproduct.mshapeGrp.shapeGrpCd	在庫管理単位	14	text	1	0		0	190	14		14	190
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	length	【在庫最小単位】縦(mm)	15	number	1	0	right	0	190	15		15	190
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	width	【在庫最小単位】横(mm)	16	number	1	0	right	0	190	16		16	190
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	height	【在庫最小単位】高さ(mm)	17	number	1	0	right	0	200	17		17	200
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	volume	【在庫最小単位】容積(mm3)	18	number	1	0	right	0	210	18		18	210
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	netWeight	【在庫最小単位】商品重量(g)	19	number	1	0	right	0	210	19		19	210
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	grossWeight	【在庫最小単位】商品総重量(g)	20	number	1	0	right	0	220	20		20	220
+ProductMasterBulkInput	商品マスタ一括取込	wms	productMaster	商品マスタ一括取込グリッド	grid	1	1		0	1	errorMessageNm	エラー内容	21	text	1	0		0	600	21		21	600
+ProductMasterBulkInput	商品マスタ一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+ProductMasterBulkInput	商品マスタ一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+ProductMasterBulkInput	商品マスタ一括取込	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													

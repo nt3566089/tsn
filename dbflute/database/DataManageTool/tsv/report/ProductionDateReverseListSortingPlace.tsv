@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblInventoryDate	在庫調査日	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblItemCd	銘柄コード	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblItemNm	銘柄名称	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblRepLocation	補充先	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblSortingRackNum	仕分ラック番号	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblSortingLocationNum	仕分ロケNo.	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblBfManufactureDate	前回入力製造年月日	String	1	
+ProductionDateReverseListSortingPlace	製造年月日調査逆転リスト（仕分場）	製造年月日調査逆転リスト（仕分場）	../../../../../../reports/inventory/ProductionDateReverseListSortingPlace.jrxml	1						0	0	lblAfManufactureDate	今回入力製造年月日	String	1	

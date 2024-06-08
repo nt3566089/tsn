@@ -1,0 +1,68 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockInOutList	在庫受払問合せ	wms	centerCd	センタ		1	1		1	1													
+StockInOutList	在庫受払問合せ	wms	clientCd	荷主		1	1		1	1													
+StockInOutList	在庫受払問合せ	wms	warehouseCd	倉庫		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	processDtFrom	処理日(From)		1	1		1	1													
+StockInOutList	在庫受払問合せ	wms	processDtTo	処理日(To)		1	1		1	1													
+StockInOutList	在庫受払問合せ	wms	depositCd	預託		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	stockTypeCd	在庫区分		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	productCd	商品CD		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	processTypeCd	処理区分		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	locationCdFrom	ロケーションCD(From)		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	locationCdTo	ロケーションCD(To)		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	janCd	ソースCD		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	lot	ロット		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	limitDtFrom	期限日(From)		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	limitDtTo	期限日(To)		1	1		0	0													
+StockInOutList	在庫受払問合せ	wms	search	検索		1	1		0	1													
+StockInOutList	在庫受払問合せ	wms	excelOutput	Excel出力		1	1		0	1													
+StockInOutList	在庫受払問合せ	wms	allocNgFlg	引当禁止		1	0		0	1													
+StockInOutList	在庫受払問合せ	wms	pChargeNumDay	前日残		1	0		0	1													
+StockInOutList	在庫受払問合せ	wms	chargeNum	当日残		1	0		0	1													
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	productCd	商品CD	1	text	1	0		0	245			1	245
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	productNm	商品名称	2	text	1	0		0	300			2	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	productAbbr	商品略称	3	text	1	0		0	300			3	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	productUnit	商品単位	4	text	1	0		0	90			4	90
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	janCd	ソースCD	5	text	1	0		0	205			5	205
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	processDt	処理日	6	date	1	0		0	150			6	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	depositCd	預託CD	7	text	1	0		0	160			7	160
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	depositNm	預託名称	8	text	1	0		0	300			8	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockTypeCd	在庫区分CD	9	text	1	0		0	110			9	190
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockTypeNm	在庫区分名称	10	text	1	0		0	110			10	190
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	lot	ロット	11	text	1	0		0	170			11	170
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	limitDt	期限日	12	date	1	0		0	150			12	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	storeDt	入庫日	13	date	1	0		0	150			13	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	storeLabelNo	入庫ラベルNo.	14	text	1	0		0	140			14	140
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	storeLabelNoOld	元入庫ラベルNo.	15	text	1	0		0	155			15	190
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	processTypeCd	処理区分CD	16	text	1	0		0	110			16	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	processTypeNm	処理区分名称	17	text	1	0		0	110			17	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	18	text	1	0	right	0	220			18	220
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	preChargeBreakdown	前残内訳	19	text	1	0	right	0	200			19	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	pChargeNumDay	前残総数	20	number	1	0	right	0	150			20	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockInBreakdown	受入内訳	21	text	1	0	right	0	200			21	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockInNum	受入総数	22	number	1	0	right	0	95			22	170
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockOutBreakdown	払出内訳	23	text	1	0	right	0	200			23	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	stockOutNum	払出総数	24	number	1	0	right	0	95			24	180
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	chargeBreakdown	当日在庫内訳	25	text	1	0	right	0	200			25	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	chargeNum	当日在庫総数	26	number	1	0	right	0	150			26	150
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	warehouseCd	倉庫CD	27	text	1	0		0	85			27	170
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	WarehouseNm	倉庫名称	28	text	1	0		0	300			28	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	locationNm	ロケーション名称	29	text	1	0		0	250			29	250
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	addDt	登録日時	30	datetime	1	0		0	180			30	180
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	addUser	登録ユーザ	31	text	1	0		0	300			31	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	processNo	処理No.	32	text	1	0		0	230			32	230
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplierCd	仕入先CD	33	text	1	0		0	200			33	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplierNm	仕入先名称	34	text	1	0		0	300			34	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplierAbbr	仕入先略称	35	text	1	0		0	250			35	250
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplyCustomerCd	納品先CD	36	text	1	0		0	200			36	200
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplyCustomerNm	納品先名称	37	text	1	0		0	300			37	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	supplyCustomerAbbr	納品先略称	38	text	1	0		0	300			38	300
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	moveInstComment	在庫移動指示備考	39	text	1	0		0	300			39	330
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	allocNgFlgName	引当禁止フラグ	40	text	1	0		0	125			40	170
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	clientReceiveNo	顧客入荷指示No.	41	text	1	0		0	210			41	210
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	clientShippingNo	顧客出荷指示No.	42	text	1	0		0	260			42	260
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	clientCd	荷主CD	43	text	1	0		0	170			43	
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	clientNm	荷主名称	44	text	1	0		0	200			44	
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	centerCd	センタCD	45	text	1	0		0	170			45	
+StockInOutList	在庫受払問合せ	wms	stockInOutList	在庫受払問合せグリッド	grid	1	1		0	1	centerNm	センタ名称	46	text	1	0		0	200			46	

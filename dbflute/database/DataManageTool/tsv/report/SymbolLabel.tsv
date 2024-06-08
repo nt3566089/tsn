@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblSupplierRcvNo	【保税管理番号】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblRcvDate	【入庫年月日】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblCarrierNo	【コンテナNo】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblRestQty	【カートン数】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblItemCd	【銘柄コード】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblItemName	【銘柄名称】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblLot1	【商社搬入番号】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblLot4	【製造年月日】	String	1	
+SymbolLabel	シンボル	シンボル	../../../../../../reports/receive/SymbolLabel.jrxml	1						0	0	lblLot3	【デザイン区分】	String	1	

@@ -1,0 +1,31 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	centerCd	センタ		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	clientCd	荷主		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	pickingBatchNo	バッチNo.		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	rcmdPickingCls	提案ピッキング方法		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	packingNum	梱包数		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	workVolume	仕事量		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	emergencyFlg	緊急フラグ		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	emergencyTitle	緊急		1	0		0	1													
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.workDt	作業日	1	date	1	0		0	150				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.shippingDt	出荷日	2	date	1	0		0	150				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.supplyCustomerCd	納品先CD	3	text	1	0		0	200				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.supplyCustomerNm	納品先名称	4	text	1	0		0	300				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.delivCustomerCd	届先CD	5	text	1	0		0	160				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.delivCustomerNm	届先名称	6	text	1	0		0	300				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.pickingWorkNo	出庫作業No.	7	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.pickingStatus	出荷ステータス	8	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.bclassDtlByPickingStatus.vdict.dictNm	出荷ステータス名称	9	text	1	0		0	155				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.deliveryCourseCd	配送コースCD	10	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	11	text	1	0		0	300				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.mcarrier.carrierCd	運送業者CD	12	text	1	0		0	110				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.mdeliveryCourse.mcarrier.carrierNm	運送業者名称	13	text	1	0		0	300				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tpickingRAsOne.bclassDtlByPl1OutFlg.vdict.dictNm	1次ピッキングリスト発行	14	text	1	0		0	205				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	slipNum	伝票枚数	15	number	1	0	right	0	150				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.delivUnitNo	届先単位No.	16	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.delivPlanDt	納品予定日	17	date	1	0		0	150				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.delivDt	納品指定日	18	date	1	0		0	150				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.delivTz	納品時間帯CD	19	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	tpickingH.tallocInstH.bclassDtlByDelivTz.vdict.dictNm	納品時間帯名称	20	text	1	0		0	125				
+PickingMethodRecommendationDetail	ピッキング提案明細	wms	picMthdRcmdDetailB	ピッキング提案明細グリッド	grid	1	1		0	1	emergencyFlgNm	緊急フラグ	21	text	1	0		0	90				

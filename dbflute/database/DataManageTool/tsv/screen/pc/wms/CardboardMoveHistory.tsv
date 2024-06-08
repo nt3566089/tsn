@@ -1,0 +1,58 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CardboardMoveHistory	段ボール移動履歴	wms	centerCd	拠点		1	0		1	1													
+CardboardMoveHistory	段ボール移動履歴	wms	clientCd	荷主		1	0		1	1													
+CardboardMoveHistory	段ボール移動履歴	wms	createDateTimeFrom	実作業日(From)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	createDateTimeTo	実作業日(To)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	makerCaseNoFrom	メーカーケースCD(From)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	makerCaseNoTo	メーカーケースCD(To)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	trsymbolId	シンボル管理番号		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	receiveDate	入庫日		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	shipDate	出庫日		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	itemCd	銘柄CD(シンボル)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	lot1	商社搬入番号		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	lot4	製造年月日		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	symbolMakeNoFrom	生出番号(From)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	symbolMakeNoTo	生出番号(To)		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	lot3	デザイン区分		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	itfNo	ITF CD		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	carrierNo	コンテナNo.		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	search	検索		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	excelOutput	Excel出力		1	1		0	1													
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	trsymbolId	シンボル管理番号	1	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	receivePlanHId	入庫キー	2	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolMakeNo	生出番号	3	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	damageFlg	詰合せ状態	4	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	locationCd	ロケーションCD	5	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	locGroup	ロケーショングループ	6	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	destinationCd	受入先CD	7	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	destinationNm	受入先名称	8	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	receiveDate	入庫日	9	date	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	shipDate	出庫日	10	date	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolItemCd	銘柄CD(シンボル)	11	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	productNm	銘柄名称(シンボル)	12	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	lot1	商社搬入番号	13	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolLot4	製造年月日(シンボル)	14	date	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolLot3	デザイン区分(シンボル)	15	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolPrinterNo	号機	16	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	symbolProductMark	製造記号(シンボル)	17	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	otherlot1	在庫区分	18	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	caseItfNo	ITF CD	19	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	caseBarcodeValiant	Barcode Valiant	20	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	caseLot4	実製造年月日	21	date	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	caseCenterNo	センターNo.	22	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	casePackNo	ケースパッカーNo.	23	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	casePackTime	ケースパッキング時間	24	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	fromAddress1	B/LNo.	25	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	carrierName	インボイスNo.	26	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	carrierWbNo	オーダーNo.	27	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	carrierNo	コンテナNo.	28	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	carrierSName	SRC CD	29	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	openFlg	開封フラグ	30	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	makerCaseNo	メーカーケースCD	31	text	1	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	1	0		0	0	restqtyCarton	残数量(カートン)	32	number	1	0	right	0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	0	0		0	0	centerCd	拠点CD	33	text	0	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	0	0		0	0	centerNm	拠点名称	34	text	0	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	0	0		0	0	clientCd	荷主CD	35	text	0	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryList	段ボール移動履歴グリッド	grid	0	0		0	0	clientNm	荷主名称	36	text	0	0		0	180				
+CardboardMoveHistory	段ボール移動履歴	wms	cardboardMoveHistoryDetail	段ボール移動履歴(詳細)		1	1		0	1													

@@ -1,0 +1,29 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	clientCd	荷主		1	1		1	1													
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	register	登録		1	1		0	1													
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	70			1	70
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.customerCd	取引先CD	2	text	1	0		0	160	2		2	160
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.customerNm	取引先名称	3	text	1	0		0	300	3		3	300
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.customerAbbr	取引先略称	4	text	1	0		0	250	4		4	250
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.deliveryFlg	納品先フラグ	5	text	1	0		0	110	5		5	110
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.vendorFlg	仕入先フラグ	6	text	1	0		0	110	6		6	110
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.onetimeFlg	ワンタイムフラグ	7	text	1	0		0	140	7		7	140
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.depositFlg	預託先フラグ	8	text	1	0		0	110	8		8	160
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.zipCd	郵便番号	9	text	1	0		0	125	9		9	125
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.address1	住所1	10	text	1	0		0	300	10		10	300
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.address2	住所2	11	text	1	0		0	300	11		11	300
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.address3	住所3	12	text	1	0		0	300	12		12	300
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.telNo	電話番号	13	text	1	0		0	250	13		13	250
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.allocOrder	引当順序	14	number	1	0	right	0	75	14		14	160
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.shippingStopFlg	出荷停止フラグ	15	text	1	0		0	130	15		15	160
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mcustomer.limitDtReverseFlg	期限日逆転防止フラグ	16	text	1	0		0	170	16		16	230
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mdeliveryCourse.deliveryCourseCd	配送コースCD	17	text	1	0		0	125	17		17	225
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	mdeliveryCourse.deliveryCourseNm	配送コース名称	18	text	1	0		0	300	18		18	300
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	deliveryOrder	配送順	19	number	1	0	right	0	70	19		19	140
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	deliveryReadTime	配送リードタイム	20	number	1	0	right	0	140	20		20	160
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	customerMaster	取引先マスタ一括取込グリッド	grid	1	1		0	1	errorMessageNm	エラー内容	21	text	1	0		0	400	21		21	400
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+CustomerMasterBulkInput	取引先マスタ一括取込	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													

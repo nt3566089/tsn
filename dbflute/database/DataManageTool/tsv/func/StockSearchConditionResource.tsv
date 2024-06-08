@@ -1,0 +1,4 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+StockSearchConditionResource	send	send	HT在庫検索送信	locationCd	ロケ	text	0
+StockSearchConditionResource	send	send	HT在庫検索送信	janCd	ソースCD	text	0
+StockSearchConditionResource	send	send	HT在庫検索送信	storeLabelNo	入庫ラベルNo.	text	0

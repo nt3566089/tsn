@@ -1,0 +1,60 @@
+<div ng-controller="ShippingInputNoPlan" owd-screen="ShippingInputNoPlan">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-text id="shippingSlipNo" ng-model="searchCondition.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+				<owd-text id="clientShippingNo" ng-model="searchCondition.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+				<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana Start -->
+				<owd-select id="emergencyFlg" ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急フラグ" owd-remove-blank></owd-select>
+				<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana End -->
+				<owd-text id="supplierCustomerCd" ng-model="searchCondition.supplyCustomerCd" label-text="納品先CD" owd-add-button="showCustomer()" ng-blur="supplyCustomerCdBlur()">
+							<owd-info ng-model="searchCondition.supplyCustomerNm"></owd-info>
+				</owd-text>
+
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="deliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+							<owd-info ng-model="searchCondition.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+
+				<owd-date id="delivPlanDt" ng-model="searchCondition.delivPlanDt" label-text="納品予定日"></owd-date>
+				<owd-date id="workDt" ng-model="searchCondition.workDt" label-text="作業日"></owd-date>
+				<owd-date id="shippingDt" ng-model="searchCondition.shippingDt" label-text="出荷日"></owd-date>
+
+				<owd-select id="processTypeCd" ng-model="searchCondition.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" label-text="処理区分" ng-change="processTypeChange()"></owd-select>
+				<owd-date id="delivDt" ng-model="searchCondition.delivDt" label-text="納品指定日"></owd-date>
+				<owd-select id="delivTz" ng-model="searchCondition.delivTz" owd-models="delivTzList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="納品時間帯"></owd-select>
+				<!-- [C-CWMS-0052] 届先CDの項目追加 2015.12.21 koyama Start -->
+				<owd-text id="delivCustomerCd" ng-model="searchCondition.delivCustomerCd" label-text="届先CD" owd-add-button="showDelivCustomer()" ng-blur="delivCustomerCdBlur()">
+					<owd-info ng-model="searchCondition.delivCustomerNm"></owd-info>
+				</owd-text>
+				<!-- [C-CWMS-0052] 届先CDの項目追加 2015.12.21 koyama End -->
+				<!-- [C-CWMS-0021] 届先追加 2015.03.26 kawana Start -->
+				<owd-text id="delivCustomerNm" ng-model="searchCondition.delivCustomerNm" label-text="届先名称"></owd-text>
+				<owd-text id="delivZipCd" ng-model="searchCondition.delivZipCd" label-text="郵便番号" owd-add-button="showZip()" ng-blur="zipCdBlur()"></owd-text>
+				<owd-text id="delivAddress1" ng-model="searchCondition.delivAddress1" label-text="住所1"></owd-text>
+				<owd-text id="delivAddress2" ng-model="searchCondition.delivAddress2" label-text="住所2"></owd-text>
+				<owd-text id="delivAddress3" ng-model="searchCondition.delivAddress3" label-text="住所3"></owd-text>
+				<owd-text id="delivTelNo" ng-model="searchCondition.delivTelNo" label-text="電話番号" ></owd-text>
+				<owd-text id="delivAddressSupply" ng-model="searchCondition.delivAddressSupply" label-text="住所補足"></owd-text>
+				<!-- [C-CWMS-0021] 届先追加 2015.03.26 kawana End -->
+			</div>
+		</div>
+		<!-- [Ver3.0] unit of measure対応 2017.12.28 潘 Start -->
+		<div owd-grid="gridOptions" id="searchBody" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-multitext-options="multiTextOptions" owd-grid-multitext-options="gridMultiTextOptions" owd-form-name="searchform"></div>
+		<!-- [Ver3.0] unit of measure対応 2017.12.28 潘 End -->
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

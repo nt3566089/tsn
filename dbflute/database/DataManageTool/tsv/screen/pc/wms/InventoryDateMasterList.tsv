@@ -1,0 +1,16 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	centerCd	拠点		1	0		1	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	targetDate	対象年		1	1		0	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	sundayFlg	日曜フラグ		1	1		0	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	register	修正		1	1		0	1													
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	targetDate	対象年月日	1	date	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	targetDateEdit	曜日	2	text	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	sundayFlgNm	日曜フラグ	3	text	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	invDate	たな卸実施日	4	date	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	invDateEdit	曜日	5	text	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	updDt	更新日時	6	datetime	1	0		0					
+InventoryDateMasterList	たな卸実施日マスタメンテナンス(一覧)	wms	bodyList	棚卸履歴グリッド	grid	1	1		0	1	updUser	更新者	7	text	1	0		0					

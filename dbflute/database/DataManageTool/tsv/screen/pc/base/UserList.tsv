@@ -1,0 +1,21 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+UserList	ユーザマスタメンテナンス(一覧)	base	userCd	ユーザCD		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	userNm	ユーザ名称		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	cultureList	カルチャ		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	roleGrpList	権限グループ		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	search	検索		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	excelOutput	Excel出力		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	userCd	ユーザCD	1	text	1	0		0	300				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	userNm	ユーザ名称	2	text	1	0		0	300				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	bculture.cultureCd	カルチャCD	3	text	1	0		0	115				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	cultureNm	カルチャ名	4	text	1	0		0	300				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	broleGrp.roleGrpCd	権限グループCD	5	text	1	0		0	300				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	roleGrpNm	権限グループ名	6	text	1	0		0	300				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	delFlg	削除フラグCD	7	text	1	0		0	110				
+UserList	ユーザマスタメンテナンス(一覧)	base	userList	ユーザマスタ一覧グリッド	grid	1	1		0	1	delFlgNm	削除フラグ名称	8	text	1	0		0	110				
+UserList	ユーザマスタメンテナンス(一覧)	base	update	修正		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	delFlg	削除		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	pwdMgt	最終ログイン失敗日時		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	register	新規		1	1		0	1													
+UserList	ユーザマスタメンテナンス(一覧)	base	copy	コピー		1	1		0	1													

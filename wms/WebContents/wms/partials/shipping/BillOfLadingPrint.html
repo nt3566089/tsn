@@ -1,0 +1,44 @@
+<div ng-controller="BillOfLadingPrint" owd-screen="BillOfLadingPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+				<owd-date id="shippingDtFrom" ng-model="searchCondition.tallocInstH.shippingDtFrom" label-text="出荷日(From)"></owd-date>
+				<owd-date id="shippingDtTo" ng-model="searchCondition.tallocInstH.shippingDtTo" label-text="出荷日(To)" owd-validate="fromToCheck(searchCondition.tallocInstH.shippingDtFrom, $value)" owd-validate-watch="'searchCondition.tallocInstH.shippingDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+                <owd-select id="bolOutputTargetFlg" ng-model="searchCondition.bolOutputTargetFlg" owd-models="bolOutputTargetFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行対象のみ表示"></owd-select>
+				<owd-select id="carrierCd" ng-model="searchCondition.carrierCd" owd-models="carrierList" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コース" owd-add-button="deliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+				    <owd-info ng-model="searchCondition.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先CD" owd-add-button="showVendor()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="searchCondition.tallocInstH.mcustomerBySupplyCustomerId.customerNm"></owd-info>
+				</owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No"></owd-text>
+				<owd-text id="bolNo" ng-model="searchCondition.bolNo" label-text="Bill of Lading No"></owd-text>
+                <owd-select id="bolOutFlg" ng-model="searchCondition.bolOutFlg" owd-models="bolOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="未発行のみ表示"></owd-select>
+			</div>
+		</fieldset>
+		</owd-accordion-group> </owd-accordion>
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="issueform" name="issueform" novalidate>
+		<br>
+		<div owd-grid="gridOptions" id="billOfLadingPrintB" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12">
+                <div align="right">
+						<owd-button id="carrierTrace" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length || issueform.$invalid" ng-click="carrierTrace()">貨物追跡番号登録</owd-button>
+						<owd-button id="issueCancel" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length || issueform.$invalid" ng-click="issueCancel()">貨物追跡番号登録</owd-button>
+                    	<owd-button id="issue" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length || issueform.$invalid" ng-click="issue()">発行_</owd-button>
+                </div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,22 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	centerCd	センタ	dropdown	1	1		1	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	clientCd	荷主	dropdown	1	1		1	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	60			1	60
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	processType	処理区分	2	text	1	0		0	150	2		2	150
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	mproduct.productCd	商品CD	3	text	1	0		0	200	3		3	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	mproduct.productNm	商品名称	4	text	1	0		0	300			4	300
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	serialNo	シリアルNo.	5	text	1	0		0	200	5		5	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	supplierCd	仕入先CD	6	text	1	0		0	200	6		6	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	supplierNm	仕入先名称	7	text	1	0		0	300			7	300
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	receiveSlipNo	WMS入荷伝票No.	8	text	1	0		0	200	8		8	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	supplyCustomerCd	納品先CD	9	text	1	0		0	200	9		9	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	supplyCustomerNm	納品先名称	10	text	1	0		0	300			10	300
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	pickingWorkNo	出庫作業No./出荷梱包No.	11	text	1	0		0	200	11		11	200
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	workDt	作業日	12	text	1	0		0	150	12		12	150
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	serialNoList	シリアルNo.メンテナンスグリッド	grid	1	1		0	1	errorMessageNm	エラー内容	13	text	1	0		0	400			13	400
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	excelUpload	ファイル取込		1	1		0	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	errorProcessMet	エラー処理方法	dropdown	1	1	right	0	1													
+SerialNoBulkInput	シリアルNo.メンテナンス	wms	register	登録		1	1	right	0	1													

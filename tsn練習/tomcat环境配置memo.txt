@@ -1,0 +1,110 @@
+1.This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled
+在mysql数据库中执行以下语句 （临时生效，重启后失效）
+set global log_bin_trust_function_creators=TRUE;
+2.; url      = jdbc:mysql://localhost:3306/test?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=UTF-8
+3.schemas设置字符:utf8mb4      utf8mb4_bin
+4.dbcp.properties设定改
+driverClassName=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/test?serverTimezone=UTC&rewriteBatchedStatements=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+mysql-connector-java.jar放到tomcat的lib包下
+
+5.login.properties里authMode=0设置后，不需要登录
+
+this.setBehaviorAutoDelFlg(false);　//默认不加这个，sql查询会只查delflg为0的记录，由dbflute配置，在下面路径D:\svn\TRAIN\Source\dbflute\dbflute_dfclient_mysql\dfprop
+
+tomcat发布文件夹更换：
+1.tomcat停止服务，并将tomcat下面的项目全部删除掉
+2.点击project->clean
+3.右键启动tomcat服务
+4.tomcat服务之后，server location变成黑色了，可以进行修改
+
+
+热部署设置，debug模式下才有效：
+server.xml里<Host>的 autoDeploy设置true
+<Context>标签的reloadable设置false
+tomcat配置的server Options选第二个:Publish module contexts to separate XML files.  ⇒ 不选这个，html和js的修改需要重启tomcat才生效
+
+注意: 修改方法内内容等有效。新增或者,修改方法名, 或修改静态代码块内容还是要重启tomcat才生效
+
+HT:
+m_web_ht_info表中加入自己的mac地址，然后USER01才能登录
+mac地址：E4A8DFAD2C57
+group_id填6
+造数据：通过页面造数据，然后HT里才能测试
+
+账票：
+irfonts.xml 里得<fontFamily name="IPAexGothic">，账票工具里得字体也要设成这样。  IPAexGothic ⇒　IPAexゴシック
+
+
+git地址:https://github.com/nt3566089/wms.git
+
+
+source注意点：
+1.<owd-select标签 里可以加 owd-remove-blank去除默认空白选项
+2.英数字と-                ^[0-9a-zA-Z\-]*$     inputLimitCheckAlphabetAndNumericAndHyphenOnlyError
+3.英数字                ^[0-9a-zA-Z]*$         inputLimitCheckAlphabetAndNumericOnlyError
+
+■sqlserver：查询所有表id和表汉字名
+SELECT  TBL.name,
+CONVERT(NVARCHAR(500),DSPTN.value) AS 'tablename'
+FROM sys.tables TBL
+LEFT JOIN sys.extended_properties DSPTN ON TBL.object_id = DSPTN.major_id AND DSPTN.minor_id = 0
+AND DSPTN.name = 'MS_Description'
+ORDER BY TBL.name
+
+■sqlserver：查询所有表的字段id和字段名
+SELECT  TBL.name,
+CONVERT(NVARCHAR(500),DSPTN.value) AS 'tablename',
+COL.column_id,
+COL.name,
+CONVERT(NVARCHAR(500),SCOLMS.value) AS 'colname'
+FROM sys.tables TBL
+INNER JOIN sys.columns COL ON TBL.object_id = COL.object_id
+LEFT JOIN sys.identity_columns IDCOL ON TBL.object_id = IDCOL.object_id AND COL.column_id = IDCOL.column_id
+LEFT JOIN sys.types TY ON COL.user_type_id = TY.user_type_id
+LEFT JOIN (
+SELECT
+name,
+object_id,
+index_id
+FROM sys.indexes
+WHERE is_primary_key = 1
+ ) PK ON TBL.object_id = PK.object_id
+LEFT JOIN sys.default_constraints DFTCNST ON COL.default_object_id = DFTCNST.object_id
+LEFT JOIN sys.extended_properties SCOLMS ON COL.object_id = SCOLMS.major_id AND
+COL.column_id = SCOLMS.minor_id AND
+SCOLMS.name = 'MS_Description'
+LEFT JOIN sys.extended_properties DSPTN ON TBL.object_id = DSPTN.major_id AND DSPTN.minor_id = 0
+AND DSPTN.name = 'MS_Description'
+WHERE TBL.name IN (SELECT name from sys.tables)
+ORDER BY TBL.name, COL.column_id
+
+■手动活性化控件，然后加必须check和删除必须check
+if(selectRange1.indexOf($scope.searchCondition.inventoryInstKbn) != -1){
+					directiveControl.editable($scope, 'lineBlock', true).then(
+						function(response){
+							$scope.lineBlockBlankCheck();
+						}
+					);
+				}else{
+					directiveControl.editable($scope, 'lineBlock', false).then(
+						function(response){
+							$scope.lineBlockBlankCheck();
+						}
+					);
+				}
+	//ライン/ブロック必須チェック
+	$scope.lineBlockBlankCheck = function(){
+		if(directiveControl.isEditable($scope,'lineBlock') && !$scope.searchCondition.lineBlock){
+			optionMessageControl.show($scope, 'lineBlock', owsCommon.convertMessage('requiredError'));
+			return true;
+		}else{
+			optionMessageControl.hide($scope, 'lineBlock');
+		}
+		return false;
+	}
+
+
+■初始化清空所有エラー
+// 業務エラーのクリア
+optionMessageControl.hideAll($scope);

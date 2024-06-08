@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerCd	センタ		1	0		0	1													
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	classCd	区分値CD		1	0		0	1													
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	classGrpCd	区分値グループCD		1	1		1	1													
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtl.mcenterClass.classCd	区分値CD	1	text	1	0		0	300			1	300
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtl.mcenterClass.classComment	区分値解説	2	text	1	0		0	300			2	300
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtl.classDtlCd	区分値明細CD	3	text	1	0		0	300			3	300
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	mcenterClassDtl.vdict.dictNm	区分値明細名	4	text	1	0		0	300			4	300
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	selectFlg	選択	5	checkbox	1	1		0	50			5	100
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	centerClassGrpDtlList	センタ別区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	defaultFlg	デフォルト	6	checkbox	1	1		0	80			6	80
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	search	検索		1	1		0	1													
+CenterClassGrpDtlEdit	センタ別区分値グループ明細マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

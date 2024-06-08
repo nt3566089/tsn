@@ -1,0 +1,37 @@
+<div owd-screen="ShippingConfirmListCarrierTraceNum">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.ShippingConfirmListCarrierTraceNum">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+    <form id="inputformNum" name="inputformNum" novalidate>
+    	<div class="container-modal">
+		   	<tabset justified="true" text-align="left">
+		       	<tab select="initTab('carrierTrace')" text-align="left">
+					<tab-heading align="left"><owd-span id="title" label-text="貨物追跡番号登録"></owd-span></tab-heading>
+				    <ng-form id="carrierTraceNumform" name="carrierTraceNumform" novalidate>
+				    	<div class="well">
+				            <div class="row">
+								<owd-text id="bolNo" ng-model="bolNo" label-text="Bill of lading No"></owd-text>
+								<owd-text id="pickingWorkNo" ng-model="pickingWorkNo" label-text="出庫作業No"style="display:none"></owd-text>
+								<owd-text id="traceNo" ng-model="traceNo" label-text="貨物追跡No" ng-change="traceNoChange()" ></owd-text>
+							</div>
+					    </div>
+				    </ng-form>
+				</tab>
+		  	</tabset>
+			<br>
+			<div class="row">
+		        <div class="col-xs-6">
+		            <owd-button id="update" class="btn-info" ng-disabled="inputformNum.$invalid" ng-click="update()" >登録</owd-button>
+		        </div>
+		        <div class="col-xs-6" align="right">
+		            <owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+		        </div>
+			</div>
+		</div>
+	</form>
+</div>

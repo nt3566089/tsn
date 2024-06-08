@@ -1,0 +1,40 @@
+<div ng-controller="EdiList" owd-screen="EdiList">
+	<form id="searchinputform" name="searchinputform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+					<fieldset>
+						<div class="row">
+							<owd-text id="ediNm" ng-model="head.ediNm" label-text="EDI名称"></owd-text>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<!-- [ON推-品向-862] form名間違いを修正 2015.07.09 kawana Start -->
+					<owd-button id="search" class="btn-info" ng-disabled="searchinputform.$invalid" ng-click="search()">検索</owd-button>
+					<!-- [ON推-品向-862] form名間違いを修正 2015.07.09 kawana End -->
+				</div>
+			</div>
+			<br>
+			<div owd-grid="gridOptions" id="ediList" owd-dblclick-option="gridDblClick(row)" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<!-- コピー機能追加 EDIマスタ画面修正 2016.07.28 Lin Zar Ni Myint Add Start -->
+						<owd-button id="copy"   class="btn-info"   ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="copy()">コピー</owd-button>
+						<!-- コピー機能追加 EDIマスタ画面修正 2016.07.28 Lin Zar Ni Myint Add End -->
+						<owd-button id="register" class="btn-info"   ng-click="register()">新規</owd-button>
+						<owd-button id="update"   class="btn-info"   ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="update()">修正</owd-button>
+						<owd-button id="delete"   class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="deletedata()">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

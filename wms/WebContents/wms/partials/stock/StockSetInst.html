@@ -1,0 +1,71 @@
+<div ng-controller="StockSetInst" owd-screen="StockSetInst">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="$parent.isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="head.mlocation.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+		 			<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+		 			<owd-text id="productCd" ng-model="head.mproduct.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+						<owd-info ng-model="head.mproduct.productNm"></owd-info>
+					</owd-text>
+				</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="clear" class="btn-danger" ng-disabled="!gridOptions2.gridApi.grid.rows.length" ng-click="clear()" >クリア</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="inputform" name="inputform" novalidate>
+		<br>
+		<accordion>
+			<accordion-group is-open="isopen">
+				<fieldset>
+				<div class="row">
+					<owd-select id="customerCd" ng-model="head.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+		 			<owd-select id="stockTypeCd" ng-model="head.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+		 			<owd-date id="storeDt" ng-model="head.tstoreNo.storeDt" label-text="入庫日"></owd-date>
+		 			<owd-text id="lot" ng-model="head.tlot.lot" label-text="ロット"></owd-text>
+		 			<owd-date id="limitDt" ng-model="head.tlot.limitDt" label-text="期限日"></owd-date>
+		 			<owd-number id="chargeNum" ng-model="head.chargeNum" ng-blur="chargeNumBlur()" label-text="指示数量"></owd-number>
+		 			<!-- [ON推-CT113-009][ON推-CT113-010] ロケーションCDの下にロケーション名称を表示 2015.12.24 hayashi Start -->
+					<!-- <owd-text id="locationCd" ng-model="head.mlocation.locationCd" label-text="ロケーション" owd-add-button="showLocation()" owd-validate-message="locationCdMessage"> -->
+		 			<owd-text id="locationCd" ng-model="head.mlocation.locationCd" label-text="ロケーション" owd-add-button="showLocation()" ng-blur="locationCdBlur()" owd-validate-message="locationCdMessage">
+		 				<owd-info ng-model="head.mlocation.locationNm"></owd-info>
+		 			<!-- [ON推-CT113-009][ON推-CT113-010] ロケーションCDの下にロケーション名称を表示 2015.12.24 hayashi End -->
+		 			</owd-text>
+				</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+	</form>
+	<form id="gridform" name="gridform" novalidate>
+		<owd-label id="lblSetStructureList" label-text="構成品情報明細"></owd-label>
+		<div owd-grid="gridOptions" id="setStructureList" owd-form-name="gridform"></div>
+
+		<br>
+		<owd-label id="lblStockList" label-text="在庫情報明細"></owd-label>
+		<div owd-grid="gridOptions2" id="stockList" owd-form-name="gridform" owd-event-options="gridEventOptions"></div>
+		<br>
+		<div id="content-footer"></div>
+		<!-- [#7164][OSS]在庫情報明細に使用するボタンをフッタ領域から解除 2020.03.12 tsuboi Start  -->
+		<div class="row">
+			<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+				<!-- [ON推-CT113-022] 指示 ⇒ 登録 2015.12.28 hayashi Start -->
+				<!-- <owd-button id="register" class="btn-success" ng-disabled="inputform.$invalid" ng-click="register()">指示</owd-button> -->
+				<owd-button id="register" class="btn-success" ng-disabled="inputform.$invalid" ng-click="register()">登録</owd-button>
+				<!-- [ON推-CT113-022] 指示 ⇒ 登録 2015.12.28 hayashi End -->
+			</div>
+		</div>
+		<br>
+		<!-- [#7164][OSS]在庫情報明細に使用するボタンをフッタ領域から解除 2020.03.12 tsuboi End  -->
+	</form>
+</div>

@@ -1,0 +1,50 @@
+<div ng-controller="ProcessTypeMaster" owd-screen="ProcessTypeMaster">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+
+					<fieldset>
+					<div class="row">
+						<owd-text id="processTypeCd" ng-model="processTypeMasterSearch.processTypeCd" label-text="処理区分CD"></owd-text>
+						<owd-text id="processTypeNm" ng-model="processTypeMasterSearch.vdict.dictNm" label-text="処理区分名称"></owd-text>
+						<owd-select id="receiveFlg" ng-model="processTypeMasterSearch.receiveFlg" owd-models="receiveFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="入荷フラグ"></owd-select>
+						<owd-select id="shippingFlg" ng-model="processTypeMasterSearch.shippingFlg" owd-models="shippingFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出荷フラグ"></owd-select>
+						<owd-select id="stockAdjustFlg" ng-model="processTypeMasterSearch.stockAdjustFlg" owd-models="stockAdjustFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫調整フラグ"></owd-select>
+						<owd-select id="defaultFlg" ng-model="processTypeMasterSearch.defaultFlg" owd-models="defaultFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デフォルトフラグ"></owd-select>
+						<owd-select id="stockTypeCd" ng-model="processTypeMasterSearch.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+					</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="processTypeList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+						<!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu Start -->
+						<owd-file id="excelUpload" class="btn-info" owd-before-upload="excelBeforeUpload" owd-success="excelUploadSuccess" owd-options="fileOptions">ファイル取込</owd-file>
+						<!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu End -->
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	printRequestNo	再印刷No.	1	text	1	0		0	100				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	printerNm	プリンタ	6	text	1	0		0	500				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	trayNm	給紙トレイ	7	text	1	0		0	300				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	printNum	部数	8	number	1	0	right	0	100				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	bclassDtlBySheetCollate.vdict.dictNm	部単位印刷要否	10	text	1	0		0	140				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	bclassDtlByPrintResultClass.vdict.dictNm	印刷結果	2	text	1	0		0	100				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	printDt	印刷日時	3	datetime	1	0		0	180				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	pprintRequest.reportNm	帳票	4	text	1	0		0	200				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	pprintRequest.reportLayoutNm	帳票レイアウト	5	text	1	0		0	200				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistListGrid	印刷履歴一覧グリッド	grid	1	1		0	1	documentPageSize	ページ総数	9	number	1	0	right	0	100				
+PrintRequestHistList	印刷履歴一覧	base	printRequestHistBrowse	印刷履歴詳細		1	1		0	1													

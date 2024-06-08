@@ -1,0 +1,20 @@
+<div ng-controller="StwListPrint" owd-screen="StwListPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-date id="shippingDt" ng-model="searchCondition.tallocInstH.shippingDt" label-text="出荷日_"></owd-date>
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.tallocInstH.mdeliveryCourse.deliveryCourseCd" label-text="配送コース_" owd-add-button="showDeliveryCourse()" ng-blur="deliveryCourseBlur()">
+					<owd-info ng-model="searchCondition.tallocInstH.mdeliveryCourse.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<owd-select id="printCondition" ng-model="searchCondition.printCondition" owd-models="printConditionList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行区分_" owd-remove-blank></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

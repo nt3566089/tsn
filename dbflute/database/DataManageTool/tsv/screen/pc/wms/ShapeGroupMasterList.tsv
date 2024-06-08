@@ -1,0 +1,20 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	clientCd	荷主		1	1		1	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGrpCd	荷姿グループCD		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGrpName	荷姿グループ名称		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	decimalExistFlg	小数有無フラグ		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	1	text	1	0		0	250				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	2	text	1	0		0	250				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	shapeGrpCd	荷姿グループCD	3	text	1	0		0	250				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	shapeGrpName	荷姿グループ名称	4	text	1	0		0	300				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	decimalExistFlg	小数有無フラグCD	5	text	1	0		0	200				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDecimalExistFlg.vdict.dictNm	小数有無フラグ名称	6	text	1	0		0	170				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除フラグCD	7	text	1	0		0	200				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	shapeGroupList	荷姿グループマスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	8	text	1	0		0	170				
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+ShapeGroupMasterList	荷姿グループマスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													

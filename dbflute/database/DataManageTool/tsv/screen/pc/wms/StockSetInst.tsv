@@ -1,0 +1,47 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockSetInst	セット組指示	wms	centerCd	センタ		1	1		1	1													
+StockSetInst	セット組指示	wms	clientCd	荷主		1	1		1	1													
+StockSetInst	セット組指示	wms	productCd	親商品CD		1	1		1	1													
+StockSetInst	セット組指示	wms	search	検索		1	1		0	1													
+StockSetInst	セット組指示	wms	clear	クリア		1	1		0	1													
+StockSetInst	セット組指示	wms	customerCd	預託		1	1		1	1													
+StockSetInst	セット組指示	wms	stockTypeCd	在庫区分		1	1		1	1													
+StockSetInst	セット組指示	wms	storeDt	入庫日		1	1		1	1													
+StockSetInst	セット組指示	wms	lot	ロット		1	1		0	1													
+StockSetInst	セット組指示	wms	limitDt	期限日		1	1		0	1													
+StockSetInst	セット組指示	wms	chargeNum	指示数量		1	1	right	1	1													
+StockSetInst	セット組指示	wms	locationCd	ロケーションCD		1	1		1	1													
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.productCd	構成品CD	1	text	1	0		0	245				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.productNm	構成品名称	2	text	1	0		0	300				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.productAbbr	構成品略称	3	text	1	0		0	300				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	4	text	1	0		0	205				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	unitNum	構成数	5	number	1	0	right	0	150				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	sumUnitNum	構成総数	6	number	1	0	right	0	150				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	instNum	指示数	7	number	1	0	right	0	150				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.mclient.clientCd	荷主CD	8	text	1	0		0	170				
+StockSetInst	セット組指示	wms	setStructureList	構成品情報グリッド	grid	1	1		0	1	mproduct.mclient.clientNm	荷主名称	9	text	1	0		0	200				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mproduct.productCd	商品CD	10	text	1	0		0	245				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	11	text	1	0		0	300				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	12	text	1	0		0	300				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	13	text	1	0		0	205				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	moveNumInfo	移動数	14	number	1	1	right	0	180				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	chargeNum	引当可能数	15	number	1	0	right	0	150				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mwarehouse.warehouseCd	倉庫CD	16	text	1	0		0	85				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mwarehouse.warehouseNm	倉庫名称	17	text	1	0		0	300				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mlocation.locationNm	ロケーション名称	18	text	1	0		0	200				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mcustomer.customerCd	預託CD	19	text	1	0		0	110				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mcustomer.customerNm	預託名称	20	text	1	0		0	200				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mstockType.stockTypeCd	在庫区分CD	21	text	1	0		0	110				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	在庫区分名称	22	text	1	0		0	110				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	tlot.lot	ロット	23	text	1	0		0	170				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	tlot.limitDt	期限日	24	date	1	0		0	150				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	tstoreNo.storeLabelNo	入庫ラベルNo.	25	text	1	0		0	140				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	tstoreNo.storeDt	入庫日	26	date	1	0		0	150				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mclient.clientCd	荷主CD	27	text	1	0		0	170				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mclient.clientNm	荷主名称	28	text	1	0		0	200				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mlocation.mcenter.centerCd	センタCD	29	text	1	0		0	170				
+StockSetInst	セット組指示	wms	stockList	在庫情報グリッド	grid	1	1		0	1	mlocation.mcenter.centerNm	センタ名称	30	text	1	0		0	200				
+StockSetInst	セット組指示	wms	register	登録		1	1		0	1													
+StockSetInst	セット組指示	wms	lblSetStructureList	構成品情報明細		1	0		0	1													
+StockSetInst	セット組指示	wms	lblStockList	在庫情報明細		1	0		0	1													

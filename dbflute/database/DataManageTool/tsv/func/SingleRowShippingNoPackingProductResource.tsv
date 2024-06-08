@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+SingleRowShippingNoPackingProductResource	send	send	HT単行出荷検品(商品)送信	janCd	ソースCD	text	1

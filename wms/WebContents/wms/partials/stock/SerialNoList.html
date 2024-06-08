@@ -1,0 +1,80 @@
+<div ng-controller="SerialNoList" owd-screen="SerialNoList">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-text id="productCd" ng-model="searchCondition.mproduct.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+					<owd-info ng-model="searchCondition.mproduct.productNm"></owd-info>
+				</owd-text>
+				<owd-text id="serialNoFrom" ng-model="searchCondition.serialNoFrom" label-text="シリアルNo.(From)"></owd-text>
+				<!-- [#4065][#4333][Ver3.0]シリアルNo.のFromToチェックを追加 2018.04.17 miyabe/kawana Upd Start -->
+				<owd-text id="serialNoTo" ng-model="searchCondition.serialNoTo" label-text="シリアルNo.(To)" owd-validate="fromToCheckString(searchCondition.serialNoFrom, $value)" owd-validate-watch="'searchCondition.serialNoFrom'" owd-validate-message="fromToMessage"></owd-text>
+				<!-- [#4065][#4333][Ver3.0]シリアルNo.のFromToチェックを追加 2018.04.17 miyabe/kawana Upd End -->
+				<owd-text id="supplyCd" ng-model="searchCondition.supplierCd" label-text="仕入先CD" owd-add-button="showSupplier()" ng-blur="supplierCdBlur()">
+					<owd-info ng-model="searchCondition.supplierNm"></owd-info>
+				</owd-text>
+				<owd-text id="receiveSlipNo" ng-model="searchCondition.receiveSlipNo" label-text="WMS入荷伝票No."></owd-text>
+				<owd-date id="receiveDtFrom" ng-model="searchCondition.receiveDtFrom" label-text="入荷日(From)"></owd-date>
+				<owd-date id="receiveDtTo" ng-model="searchCondition.receiveDtTo" label-text="入荷日(To)" owd-validate="fromToCheck(searchCondition.receiveDtFrom, $value)" owd-validate-watch="'searchCondition.receiveDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.supplyCustomerCd" label-text="納品先CD" owd-add-button="showSupplyCustomer2()" ng-blur="supplyCustomerCdBlur2()">
+					<owd-info ng-model="searchCondition.supplyCustomerNm"></owd-info>
+				</owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-date id="shippingDtFrom" ng-model="searchCondition.shippingDtFrom" label-text="出荷日(From)"></owd-date>
+				<owd-date id="shippingDtTo" ng-model="searchCondition.shippingDtTo" label-text="出荷日(To)" owd-validate="fromToCheck(searchCondition.shippingDtFrom, $value)" owd-validate-watch="'searchCondition.shippingDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+				<!-- [#1903][Ver2.2.0] パッケージ仕様書（項目一覧）の最新化対応【HDIS作業】 2017.06.20 HDIS Mod Start -->
+				<a href="" ng-click="openBulkCourse()">&#171;{{"shippingInfoUpdateCondition" | owfMessage}}&#187;</a>
+				<!-- [#1903][Ver2.2.0] パッケージ仕様書（項目一覧）の最新化対応【HDIS作業】 2017.06.20 HDIS Mod End -->
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="serialNoList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>
+	<div class="row">
+		<form id="searchform1" name="searchform1" novalidate>
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-12" id="footerBulkCourse">
+				<accordion>
+					<accordion-group is-open="$parent.isOpenBulkCourse">
+						<accordion-heading>
+							{{"shippingInfoUpdateCondition" | owfMessage}}
+							<span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isOpenBulkCourse, 'glyphicon-chevron-right': !isOpenBulkCourse}"></span>
+						</accordion-heading>
+						<owd-text id="supplyCustomerCdBatch" ng-model="updateCondition.supplyCustomerCdBatch" label-text="納品先CD" owd-add-button="showSupplyCustomer()" ng-blur="supplyCustomerCdBlur()" owd-grid-system-option="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+							<owd-info ng-model="updateCondition.supplyCustomerNmBatch"></owd-info>
+						</owd-text>
+				        <owd-text id="pickingWorkNoBatch" ng-model="updateCondition.pickingWorkNoBatch" label-text="出庫作業No." owd-grid-system-option="col-xs-12 col-sm-12 col-md-6 col-lg-3"></owd-text>
+						<owd-date id="shippingDtBatch" ng-model="updateCondition.shippingDtBatch" label-text="出荷日" owd-grid-system-option="col-xs-12 col-sm-12 col-md-6 col-lg-2"></owd-date>
+						<owd-button id="checkShippingBatch" style="margin-top:25px;margin-left:15px;" class="btn-success" ng-disabled="!(gridOptions.gridApi.selection.getSelectedRows().length && !searchform1.$invalid)" ng-click="shippingUpdate()">出荷情報更新</owd-button>
+					</accordion-group>
+				</accordion>
+			</div>
+		</form>
+	</div>
+	<div id="content-footer"></div>
+	<div id="content-footer-button" class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="dataDelete" class="btn-danger" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="dataDelete()">削除</owd-button>
+				<owd-button id="shippingInfoClear" class="btn-success" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInfoClear()">出荷情報クリア</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+				<owd-button id="slipNoReceiveList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="slipNoReceiveList()">伝票別入荷一覧</owd-button>
+				<owd-button id="shippingInstList" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="shippingInstList()">出庫指示一覧</owd-button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div ng-controller="DispatchRecordInput" owd-screen="DispatchRecordInput">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+						<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-select id="supplierrCvFlg" ng-model="head.tdrelayid" owd-models="supplierrCvFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="輸送区分" ng-change="supplierrCvFlgChange()"></owd-select>
+						<owd-select id="landing" ng-model="head.stcd" owd-models="landingList" owd-repeat-key="rlybscd" owd-repeat-value="rlybssnm" label-text="着地"></owd-select>
+						<owd-text id="supplierrCvNo" ng-model="head.snno3" label-text="輸送番号"></owd-text>
+					</div>
+				</fieldset>
+			</owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button	id="search"	class="btn-info"	ng-click="search()"	ng-disabled="searchConditionForm.$invalid" >検索</owd-button>
+				<owd-button	id="excelOutput"	class="btn-info"	ng-click="excelOutput()"	ng-disabled="searchConditionForm.$invalid">Excel出力</owd-button>
+			</div>
+		</div>
+	</form>
+	<br>
+	<form id="searchResultListForm" name="searchResultListForm" novalidate>
+			<div owd-grid="gridOptions" id="slipNoReceiveList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchResultListForm" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="publication"	class="btn-info"	ng-click="publicationClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">発行</owd-button>
+						<owd-button id="new"	class="btn-success"	ng-click="newClick()">新規</owd-button>
+						<owd-button id="update"	class="btn-success"	ng-click="updateClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">修正</owd-button>
+						<owd-button id="delete"	class="btn-info"	ng-click="deleteClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

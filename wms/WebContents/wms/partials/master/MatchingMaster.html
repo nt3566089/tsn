@@ -1,0 +1,40 @@
+<div ng-controller="MatchingMaster" owd-screen="MatchingMaster">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+
+			<fieldset>
+				<div class="row">
+					<owd-text id="matchingType" ng-model="searchDto.matchingType" label-text="マッチング種類"></owd-text>
+					<owd-text id="matchingKeyword" ng-model="searchDto.matchingKeyword" label-text="マッチングキーワード"></owd-text>
+					<owd-text id="transformCd" ng-model="searchDto.transformCd" label-text="変換CD"></owd-text>
+				</div>
+			</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				</div>
+			</div>
+	</form>
+	<form id="inputform" name="inputform" novalidate>
+			<br>
+			<div owd-grid="gridOptions" id="matchingListGrid" owd-select-options="gridSelectOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+						<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+					</div>
+					<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

@@ -1,0 +1,18 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblExchangeTotalizationList	取替集計表	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblPrintDate	作成日：	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblCenterNm	配達拠点：	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblTotalizationUnit	集計単位：	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblSalesType	販売区分：取替交付品合計	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblDetPstnId	方面：	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblProductAbbr1	銘柄名	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblSprqaful1	丸段	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblPieceQty1	ﾊﾞﾗ段	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblCartonQty1	ｶｰﾄﾝ	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblFractionQty1	端数	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblProductAbbr2	銘柄名	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblSprqaful2	丸段	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblPieceQty2	ﾊﾞﾗ段	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblCartonQty2	ｶｰﾄﾝ	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblFractionQty2	端数	String	1	
+ExchangeTotalizationList	取替集計表	取替集計表	../../../../../../reports/shipping/ExchangeTotalizationList.jrxml	1						0	0	lblTotal	合計	String	1	

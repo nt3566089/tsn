@@ -1,0 +1,43 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PackingListUpdate	梱包明細修正	wms	clear	クリア		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	clientCd	荷主		1	1		1	1													
+PackingListUpdate	梱包明細修正	wms	centerCd	センタ		1	1		1	1													
+PackingListUpdate	梱包明細修正	wms	pickingWorkNo	出庫作業No.		1	1		1	1													
+PackingListUpdate	梱包明細修正	wms	search	検索		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	boxNo	荷材No.		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	boxCd	荷材		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	unitNumBreakdown	入数内訳		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	pickNumSel	投入数		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	pickNumSelMultiText	投入数荷姿		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	allocNum	アイテム別梱包状況・出荷指示数		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	pickNum	アイテム別梱包状況・投入数		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	diffNum	アイテム別梱包状況・差異数		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	delivCustomerNm	届先名称		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivZipCd	届先郵便番号		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivTelNo	届先電話番号		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivAddress1	届先住所1		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivAddress2	届先住所2		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivAddress3	届先住所3		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivDt	配送指定日		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	delivTz	納品指定時間		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	addRow	追加・更新		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	excelOutput	Excel出力		1	1		0	1													
+PackingListUpdate	梱包明細修正	wms	normal	通常		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	update	変更		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	delete	削除		1	0		0	1													
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	boxNo	荷材No.	1	text	1	0		0	90			1	90
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	boxCd	荷材CD	2	text	1	0		0	160			2	160
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	boxNm	荷材名称	3	text	1	0		0	300			3	300
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	productCd	商品CD	4	text	1	0		0	245			4	245
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	janCd	ソースCD	5	text	1	0		0	205			5	205
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	productNm	商品名称	6	text	1	0		0	300			6	300
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	productAbbr	商品略称	7	text	1	0		0	300			7	300
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	productUnit	商品単位	8	text	1	0		0	90			8	90
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	packingNumSum	投入数	9	number	1	0	right	0	95			9	95
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	shippingPackingNo	出荷梱包No.	10	text	1	0		0	150			10	170
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	clientCd	荷主CD	11	text	1	0		0	200			11	
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	clientNm	荷主名称	12	text	1	0		0	200			12	
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	centerCd	センタCD	13	text	1	0		0	200			13	
+PackingListUpdate	梱包明細修正	wms	packingList	梱包明細修正グリッド	grid	1	1		0	1	centerNm	センタ名称	14	text	1	0		0	200			14	
+PackingListUpdate	梱包明細修正	wms	packingListUpdate	登録		1	1		0	1													

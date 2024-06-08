@@ -1,0 +1,28 @@
+<div ng-controller="ReceivePlanListPrint" owd-screen="ReceivePlanListPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.09 sja Start -->
+				<!-- 
+				<owd-select id="centerCd" ng-model="searchCondition.treceivePlanH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.treceivePlanH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.09 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.treceivePlanH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="searchCondition.planWarehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫_"></owd-select>
+				<owd-date id="receivePlanDtFrom" ng-model="searchCondition.treceivePlanH.receivePlanDtFrom" label-text="入荷予定日From_"></owd-date>
+				<owd-date id="receivePlanDtTo" ng-model="searchCondition.treceivePlanH.receivePlanDtTo" label-text="入荷予定日To_" owd-validate="fromToCheck(searchCondition.treceivePlanH.receivePlanDtFrom, $value)" owd-validate-watch="'searchCondition.treceivePlanH.receivePlanDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<owd-text id="planClientReceiveNo" ng-model="searchCondition.treceivePlanH.planClientReceiveNo" label-text="顧客入荷指示No._"></owd-text>
+				<owd-text id="receiveSlipNo" ng-model="searchCondition.treceivePlanH.receiveSlipNo" label-text="WMS入荷伝票No._"></owd-text>
+				<owd-select id="planDepositCd" ng-model="searchCondition.treceivePlanH.mcustomerByPlanDepositId.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+				<owd-select id="printCondition" ng-model="searchCondition.treceivePlanH.printCondition" owd-models="printCondition" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行条件" owd-remove-blank></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+
+		</div>
+	</form>
+</div>

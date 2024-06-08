@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SortingDtlList" columnCount="2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="401" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="com.oneslogi.wms.jasperreports.shipping.SortingDtlList" uuid="8cd6cfed-5b0f-414b-b86e-ff55450b31e2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="REPORT_VISIBLED_LOCATION1" class="java.lang.Boolean"/>
+	<parameter name="REPORT_VISIBLED_LINE" class="java.lang.Boolean"/>
+	<parameter name="customerNm1" class="java.lang.String"/>
+	<parameter name="customerNm2" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="usedBox" class="java.lang.String">
+		<fieldDescription><![CDATA[usedBox]]></fieldDescription>
+	</field>
+	<field name="createDate" class="java.lang.String">
+		<fieldDescription><![CDATA[createDate]]></fieldDescription>
+	</field>
+	<field name="createTime" class="java.lang.String">
+		<fieldDescription><![CDATA[createTime]]></fieldDescription>
+	</field>
+	<field name="centerNm" class="java.lang.String">
+		<fieldDescription><![CDATA[centerNm]]></fieldDescription>
+	</field>
+	<field name="lineBlockNum" class="java.lang.String">
+		<fieldDescription><![CDATA[lineBlockNum]]></fieldDescription>
+	</field>
+	<field name="boxNo" class="java.lang.String">
+		<fieldDescription><![CDATA[boxNo]]></fieldDescription>
+	</field>
+	<field name="message" class="java.lang.String">
+		<fieldDescription><![CDATA[message]]></fieldDescription>
+	</field>
+	<field name="totalCartonQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalCartonQty]]></fieldDescription>
+	</field>
+	<field name="deliveryDate" class="java.lang.String">
+		<fieldDescription><![CDATA[deliveryDate]]></fieldDescription>
+	</field>
+	<field name="directionCd" class="java.lang.String">
+		<fieldDescription><![CDATA[directionCd]]></fieldDescription>
+	</field>
+	<field name="serialNum" class="java.lang.String">
+		<fieldDescription><![CDATA[serialNum]]></fieldDescription>
+	</field>
+	<field name="customerCd" class="java.lang.String">
+		<fieldDescription><![CDATA[customerCd]]></fieldDescription>
+	</field>
+	<field name="customerNm" class="java.lang.String">
+		<fieldDescription><![CDATA[customerNm]]></fieldDescription>
+	</field>
+	<field name="totalLineQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalLineQty]]></fieldDescription>
+	</field>
+	<field name="totalBlockQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalBlockQty]]></fieldDescription>
+	</field>
+	<field name="totalSprqaQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[totalSprqaQty]]></fieldDescription>
+	</field>
+	<field name="grandTotalQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[grandTotalQty]]></fieldDescription>
+	</field>
+	<field name="location1" class="java.lang.String">
+		<fieldDescription><![CDATA[location1]]></fieldDescription>
+	</field>
+	<field name="location2" class="java.lang.String">
+		<fieldDescription><![CDATA[location2]]></fieldDescription>
+	</field>
+	<field name="cartonQty" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[cartonQty]]></fieldDescription>
+	</field>
+	<field name="itemNm" class="java.lang.String">
+		<fieldDescription><![CDATA[itemNm]]></fieldDescription>
+	</field>
+	<field name="boxMark" class="java.lang.String">
+		<fieldDescription><![CDATA[boxMark]]></fieldDescription>
+	</field>
+	<field name="sortingOrder" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[sortingOrder]]></fieldDescription>
+	</field>
+	<field name="printOrder" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[printOrder]]></fieldDescription>
+	</field>
+	<field name="branchNum" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[branchNum]]></fieldDescription>
+	</field>
+	<field name="groupPageNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[groupPageNo]]></fieldDescription>
+	</field>
+	<field name="groupTotalPageNo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[groupTotalPageNo]]></fieldDescription>
+	</field>
+	<field name="messageType" class="java.lang.String">
+		<fieldDescription><![CDATA[messageType]]></fieldDescription>
+	</field>
+	<variable name="totalQty" class="java.math.BigDecimal" resetType="Group" resetGroup="centerNmToBoxNo" calculation="Sum">
+		<variableExpression><![CDATA[$F{location1}.equals("DB") || ($F{location1}.isEmpty()) ? new BigDecimal(0) : $F{cartonQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(0)]]></initialValueExpression>
+	</variable>
+	<group name="centerNmToBoxNo" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{centerNm} + "_" + $F{lineBlockNum} + "_" + $F{deliveryDate} + "_" + $F{directionCd} + "_" + $F{serialNum} + "_" + $F{customerCd} + "_" + $F{sortingOrder} + "_" + $F{printOrder} + "_" + $F{branchNum} + "_" +$F{messageType} + "_" + $F{boxNo}]]></groupExpression>
+		<groupFooter>
+			<band>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<line>
+					<reportElement x="0" y="-1" width="401" height="1" uuid="0e6b21ab-100d-4d81-8ddb-c1ea340bf133">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<printWhenExpression><![CDATA[$V{PAGE_COUNT} % 5 != 0]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="555">
+			<line>
+				<reportElement x="0" y="124" width="1" height="396" uuid="4983e449-88b1-4748-8321-2dff202ca082">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="123" width="801" height="1" uuid="66a771ac-0fa6-4987-9c5a-c4309e394249"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="145" width="800" height="1" uuid="c85521e7-0f27-491e-b175-2d2114032697">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="220" width="801" height="1" uuid="676f45d2-38ee-472b-b129-f6816a09588e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="295" width="800" height="1" uuid="d20ac846-4f2f-4bab-b6f7-16c8b2305f26">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="370" width="800" height="1" uuid="807d5a74-1939-4d17-ae43-9550ae1ccc26">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="445" width="800" height="1" uuid="c16fff78-b1f3-446e-9736-7cd679448e8b">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="520" width="802" height="1" uuid="b17f04d5-e162-4faa-a07b-5f97886759cd"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="401" y="124" width="1" height="396" uuid="03b6d9d8-cee6-4a12-b4a0-943f73495920">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="14" y="146" width="1" height="374" uuid="686e782a-dc5c-4b39-9b6d-95a8acea2066">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="34" y="124" width="1" height="396" uuid="a8a49532-bc16-4043-8067-e1eeedc0462d">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="54" y="124" width="1" height="396" uuid="c717ff20-e4bf-4caa-b965-9236c8abaa40">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="380" y="124" width="1" height="396" uuid="05aa7c3e-bfb9-4c73-bccc-a6354bcfed61">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="801" y="123" width="1" height="397" uuid="9a85b59c-259c-4841-a85b-52908e804110">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="415" y="146" width="1" height="374" uuid="9e49bcb9-db75-41a5-a9f8-5a43f99af803">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="435" y="124" width="1" height="396" uuid="a20421dc-1df7-427a-bbed-542552f72863">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="456" y="124" width="1" height="396" uuid="bad451c8-638c-4e1e-b595-bbd4090f377f">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="781" y="124" width="1" height="396" uuid="c15d21d1-9c9a-4f16-9165-ff32b08b47db">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="145">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement key="lblSortingDtlList" x="325" y="7" width="200" height="30" uuid="8c79c72a-411b-4673-97c1-1274d7c03376">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="26" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*仕 分 明 細 書]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPrintDate" x="665" y="5" width="50" height="16" uuid="102d691e-2d2c-4a11-9f3f-3a5b4d70cfed">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*作成日：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="702" y="5" width="55" height="16" uuid="75b95ae2-a71a-4373-b3c7-cb1bf4848ce4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{createDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="747" y="5" width="55" height="16" uuid="75b95ae2-a71a-4373-b3c7-cb1bf4848ce4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{createTime}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" x="762" y="17" width="16" height="11" uuid="86dd27bf-f833-4f04-8c23-9c045245e5aa"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="738" y="17" width="30" height="11" uuid="24b1b3b7-e2db-4a30-9be1-ef595ce5ef52">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupPageNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="772" y="17" width="30" height="11" uuid="2a4cc0e7-b73c-4038-916d-c8ed65dec958">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupTotalPageNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" x="0" y="0" width="48" height="16" uuid="f46a7b76-44ec-4e00-ae66-a7e07172c82b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[LGLR013]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="245" y="4" width="79" height="65" isRemoveLineWhenBlank="true" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="MS UI Gothic" size="48" isBold="true" pdfFontName="C:/Windows/Fonts/msgothic.ttc,1" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usedBox}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblType" x="264" y="56" width="40" height="12" uuid="5a776da5-7697-44fb-8d18-f381d1af0798">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[!($F{usedBox}.isEmpty()) ? Boolean.TRUE : Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" isBold="true" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ﾀｲﾌﾟ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="21" width="245" height="14" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{centerNm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="38" width="228" height="14" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lineBlockNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblBoxNo" x="0" y="55" width="61" height="15" uuid="ac229984-a3f0-4320-b34c-f8b9a771911d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*箱番号：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="50" width="95" height="20" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="17.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{boxNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblDlvYmd" x="1" y="72" width="55" height="16" uuid="ebf2df50-ed0b-4a36-b20e-d131bfa3cfc8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="11" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*配達日]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="89" width="55" height="18" uuid="605a0533-889f-4aa4-9f76-c830bbb26c51">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="14" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deliveryDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblDetPstnId" x="57" y="72" width="55" height="16" uuid="de4af301-995f-43d1-8879-1faa1d4763dd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="11" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*方面]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="57" y="89" width="55" height="18" uuid="d3428a7a-c4a1-471c-894c-a5b5f5ae2e93">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="16" isBold="true" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{directionCd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblSerialNo" x="113" y="72" width="43" height="16" uuid="d3169400-32a6-4647-a360-1f5beed1c03c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="11" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*通番]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="89" width="43" height="18" uuid="d3428a7a-c4a1-471c-894c-a5b5f5ae2e93">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="16" isBold="true" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serialNum}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblSsNm" x="157" y="72" width="322" height="16" uuid="897a75bd-7ecf-4dd8-a606-88d353e94f3f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="11" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*お得意様名]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="157" y="89" width="73" height="18" uuid="2a8fe0ab-7e03-4d41-8cda-2765b71b0766">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="3" bottomPadding="1" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="14" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customerCd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblLocationCd" x="0" y="123" width="34" height="22" uuid="f0b5b823-38d8-4c19-802d-d7b645c624a2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ﾛｹｰｼｮﾝ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCartonQty" x="34" y="123" width="21" height="22" uuid="f0b5b823-38d8-4c19-802d-d7b645c624a2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ｶｰﾄﾝ数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblItemCd" x="55" y="123" width="325" height="22" uuid="6e81eada-c1e5-4d4a-b37d-71edeab16127">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*銘柄名]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="72" width="1" height="49" uuid="28404612-a1f3-4977-9852-3dd1871fb54e">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="56" y="72" width="1" height="48" uuid="99ad04fe-c936-4f84-98ad-b7458eb03830">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="112" y="72" width="1" height="48" uuid="5f305630-645e-47a4-b015-52d88445a86d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="156" y="72" width="1" height="48" uuid="ee424981-737d-46c2-8873-bcb9547c35b9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="72" width="481" height="1" uuid="fa37a98c-db92-4c14-8f54-83f3bfff3e33">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="88" width="480" height="1" uuid="c1ef729a-21d8-4307-bca6-76c56e3facb8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="120" width="480" height="1" uuid="93bc6cb4-2ce0-47ca-bcf4-f1506ab83034">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="480" y="73" width="1" height="48" uuid="910802ef-72af-416e-b630-93898eefc2d8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement key="lblMr" x="456" y="96" width="20" height="24" uuid="5a269186-1edb-4e09-94e4-1d4422e65171"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="14" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*様]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblAttention" x="611" y="23" width="120" height="27" uuid="5a776da5-7697-44fb-8d18-f381d1af0798">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="24.5" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*取扱注意]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="470" y="52" width="183" height="20" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$F{messageType}.equals("1") ? Boolean.TRUE : Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="14.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{messageType}.equals("1") ? "この箱はマージ対象です" : $F{message}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblSubTotalOfCarton" x="665" y="52" width="74" height="17" uuid="5a776da5-7697-44fb-8d18-f381d1af0798">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*累計ｶｰﾄﾝ]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="739" y="52" width="63" height="17" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="13" isBold="true" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalCartonQty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTotalLineQty" x="514" y="80" width="70" height="17" uuid="5a776da5-7697-44fb-8d18-f381d1af0798">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ライン計]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="514" y="97" width="70" height="19" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalLineQty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTotalBlockQty" x="584" y="80" width="78" height="17" uuid="5a776da5-7697-44fb-8d18-f381d1af0798"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ブロック計]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="584" y="97" width="78" height="19" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalBlockQty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTotalSprqaQty" x="662" y="80" width="70" height="17" uuid="5a776da5-7697-44fb-8d18-f381d1af0798"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*丸段]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="662" y="97" width="70" height="19" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSprqaQty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblGrandTotal" x="732" y="80" width="70" height="17" uuid="5a776da5-7697-44fb-8d18-f381d1af0798"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*総合計]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement x="732" y="97" width="70" height="19" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grandTotalQty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblSubTotal" x="380" y="123" width="21" height="22" uuid="f2c904d1-caa9-42b3-881b-42c792232b71">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*累計]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblLocationCd" x="401" y="123" width="34" height="22" uuid="2ae00b75-9aef-4f86-8032-9a5b213913cd">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ﾛｹｰｼｮﾝ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblCartonQty" x="435" y="123" width="21" height="22" uuid="b332dedb-b8d2-4aeb-8c42-c321d4c772a8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="8" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*ｶｰﾄﾝ数量]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblItemCd" x="456" y="123" width="325" height="22" uuid="2d8ae857-1f90-4a64-883c-cb0c1457a61b">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*銘柄名]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblSubTotal" x="781" y="123" width="21" height="22" uuid="70807f75-8df5-4bfe-8ffc-1350278b0ff3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="9" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[*累計]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="89" width="162" height="17" uuid="7ff47354-593f-4e56-b841-9b361be1cd79">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="ＭＳ 明朝" size="14.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{customerNm1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="230" y="103" width="162" height="17" uuid="e346864c-3c02-415c-8737-278b247c2bf9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="ＭＳ 明朝" size="14.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{customerNm2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="15">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="14" y="0" width="20" height="15" uuid="2c19bb1c-9e7c-4f88-bbf2-9ecc0bbca9e5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="12" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="0" width="325" height="15" uuid="2c19bb1c-9e7c-4f88-bbf2-9ecc0bbca9e5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="ＭＳ Ｐ明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,1" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemNm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="380" y="0" width="21" height="15" uuid="204d58f0-3d34-45f3-8375-7da4623e1529">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[($V{totalQty}.compareTo(new BigDecimal(0)) == 0) || $F{location1}.isEmpty() || $F{location1}.equals("DB")? Boolean.FALSE : Boolean.TRUE]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalQty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="14" height="15" uuid="2c19bb1c-9e7c-4f88-bbf2-9ecc0bbca9e5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$P{REPORT_VISIBLED_LOCATION1}]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="12" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{location1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="1" width="16" height="14" uuid="2c19bb1c-9e7c-4f88-bbf2-9ecc0bbca9e5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="12" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{boxMark}.equals("1") ? "★" : ""]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="false">
+				<reportElement x="34" y="0" width="21" height="15" uuid="564dc8fa-8fbf-49c6-b39b-d2fe32078907">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[$F{location1}.isEmpty() ? Boolean.FALSE : Boolean.TRUE]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="ＭＳ ゴシック" size="10.5" pdfFontName="C:/Windows/Fonts/msgothic.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cartonQty}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="401" height="1" uuid="9eaf495f-f528-4104-a6e1-a85003cb3c1f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<printWhenExpression><![CDATA[$P{REPORT_VISIBLED_LINE}]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<textField evaluationTime="Page" pattern="####">
+				<reportElement x="379" y="20" width="40" height="15" uuid="5f9c6948-2321-46d3-bce2-beac59b8eeb8">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="ＭＳ 明朝" size="10.5" pdfFontName="C:/Windows/Fonts/msmincho.ttc,0" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,30 @@
+<div ng-controller="AllocateControlMasterEdit" owd-screen="AllocateControlMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+		<div  class="well">
+			<div class="row">
+				<owd-select id="clientCd" ng-model="head.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-text id="productCd" ng-model="head.productCd" label-text="銘柄CD" owd-add-button="modalProduct()" ng-blur="productCdBlur()">
+				<owd-info ng-model="head.productNm"></owd-info>
+				</owd-text>
+				<owd-date id="pickfrdate" ng-model="head.pickfrdate" label-text="適用開始日"></owd-date>
+				<owd-date id="picktodate" ng-model="head.picktodate" label-text="適用終了日"></owd-date>
+				<owd-select id="validtype" ng-model="head.validtype" owd-models="validtypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="有効区分"></owd-select>
+			</div>
+		</div>
+		<div class="well">
+			<div class = "row">
+				<owd-select id="pickrank1" ng-model="head.pickrank1" owd-models="pickrank1List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デ変（優先1）"></owd-select>
+				<owd-select id="pickrank2" ng-model="head.pickrank2" owd-models="pickrank2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デ変（優先2）"></owd-select>
+				<owd-select id="pickrank3" ng-model="head.pickrank3" owd-models="pickrank3List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デ変（優先3）"></owd-select>
+				<owd-select id="pickrank4" ng-model="head.pickrank4" owd-models="pickrank4List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デ変（優先4）"></owd-select>
+				<owd-select id="pickrank5" ng-model="head.pickrank5" owd-models="pickrank5List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デ変（優先5）"></owd-select>
+
+			</div>
+		</div>
+            	<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+                	<owd-button id="register" class="btn-success" ng-click="registerClick()" ng-disabled="searchinputform.$invalid">登録</owd-button>
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

@@ -1,0 +1,2 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+StockMoveOutJanCdResource	send	send	HT移動出庫(ソースCD)送信	janCd	ソースCD	text	1

@@ -1,0 +1,207 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReferenceStockList	在庫問合せ(参照)	wms	centerCd	センタ		1	1		1	1													
+ReferenceStockList	在庫問合せ(参照)	wms	clientCd	荷主		1	1		1	1													
+ReferenceStockList	在庫問合せ(参照)	wms	warehouseCd	倉庫		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	zone	ゾーン		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	stockdisplayfld	在庫表示内容		1	1		1	1													
+ReferenceStockList	在庫問合せ(参照)	wms	dataTime	日付		1	1		1	1													
+ReferenceStockList	在庫問合せ(参照)	wms	productCd	商品CD		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	locationCdFrom	ロケーションCD(From)		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	locationCdTo	ロケーションCD(To)		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	janCd	ソースCD		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	customerCd	預託		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	stockTypeCd	在庫区分		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	limitDtFrom	期限日(From)		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	limitDtTo	期限日(To)		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	limitDtNum	期限日数		1	1	right	0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	lot	ロット		1	1		0	0													
+ReferenceStockList	在庫問合せ(参照)	wms	stockNumDisplay	在庫数 0非表示		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	chargeNumDisplay	引当可能数 0非表示		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	display	在庫受払 0非表示		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	transitDisplay	積送中在庫のみ表示		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	search	検索		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	excelOutput	Excel出力		1	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	stockListPrint	帳票		0	1		0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	expired	期限切れ		1	0	center	0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	chargestop	引当禁止		1	0	center	0	1													
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mproduct.productCd	商品CD	1	text	1	0		0	245			1	245
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mproduct.productNm	商品名称	2	text	1	0		0	300			2	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	productUnit	商品単位	3	text	1	0		0	90			3	90
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mproduct.janCd	ソースCD	4	text	1	0		0	205			4	205
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.warehouseCd	倉庫CD	5	text	1	0		0	85			5	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.warehouseNm	倉庫名称	6	text	1	0		0	300			6	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mlocation.locationNm	ロケーション名称	7	text	1	0		0	250			7	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mcustomer.customerCd	預託CD	8	text	1	0		0	160			8	160
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mcustomer.customerNm	預託名称	9	text	1	0		0	300			9	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mstockType.stockTypeCd	在庫区分CD	10	text	1	0		0	110			10	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mstockType.vdict.dictNm	在庫区分名称	11	text	1	0		0	110			11	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tlot.lot	ロット	12	text	1	0		0	170			12	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tlot.limitDt	期限日	13	date	1	0		0	150			13	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.storeDt	入庫日	14	date	1	0		0	150			14	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	15	text	1	0		0	140			15	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.tstoreNoSelf.storeLabelNo	元入庫ラベルNo.	16	text	1	0		0	155			16	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerCd	仕入先CD	17	text	1	0		0	200			17	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerNm	仕入先名称	18	text	1	0		0	300			18	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.stockNum	在庫数	19	number	1	0	right	0	95			19	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.chargeNum	引当可能数	20	number	1	0	right	0	95			20	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.allocNum	引当済数	21	number	1	0	right	0	95			21	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.moveNum	作業中数	22	number	1	0	right	0	95			22	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.transitNum	積送中数	23	number	1	0	right	0	95			23	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	unitNumBreakdown	入数内訳	24	text	1	0	right	0	220			24	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	stockBreakdown	在庫内訳	25	text	1	0	right	0	200			25	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	chargeBreakdown	引当可能内訳	26	text	1	0	right	0	200			26	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	allocBreakdown	引当済内訳	27	text	1	0	right	0	200			27	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	moveBreakdown	作業中内訳	28	text	1	0	right	0	200			28	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	transitBreakdown	積送中内訳	29	text	1	0	right	0	200			29	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	lastStoreDt	最新入庫年月日	30	date	1	0		0	150			30	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	lastPickingDt	最新出庫年月日	31	date	1	0		0	150			31	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	addDt	登録日時	32	datetime	1	0		0	180			32	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mclient.clientCd	荷主CD	33	text	1	0		0	170			33	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mclient.clientNm	荷主名称	34	text	1	0		0	200			34	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerCd	センタCD	35	text	1	0		0	170			35	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductNoReportList	在庫問合せ(参照)グリッド(商品順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerNm	センタ名称	36	text	1	0		0	200			36	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mproduct.productCd	商品CD	1	text	1	0		0	245			1	245
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mproduct.productNm	商品名称	2	text	1	0		0	300			2	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	productUnit	商品単位	3	text	1	0		0	90			3	90
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mproduct.janCd	ソースCD	4	text	1	0		0	205			4	205
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.warehouseCd	倉庫CD	5	text	1	0		0	85			5	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.warehouseNm	倉庫名称	6	text	1	0		0	300			6	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mlocation.locationNm	ロケーション名称	7	text	1	0		0	250			7	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mcustomer.customerCd	預託CD	8	text	1	0		0	160			8	160
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mcustomer.customerNm	預託名称	9	text	1	0		0	300			9	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mstockType.stockTypeCd	在庫区分CD	10	text	1	0		0	110			10	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mstockType.vdict.dictNm	在庫区分名称	11	text	1	0		0	110			11	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tlot.lot	ロット	12	text	1	0		0	170			12	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tlot.limitDt	期限日	13	date	1	0		0	150			13	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.storeDt	入庫日	14	date	1	0		0	150			14	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	15	text	1	0		0	140			15	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.tstoreNoSelf.storeLabelNo	元入庫ラベルNo.	16	text	1	0		0	155			16	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerCd	仕入先CD	17	text	1	0		0	200			17	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerNm	仕入先名称	18	text	1	0		0	300			18	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.stockNum	在庫数	19	number	1	0	right	0	95			19	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.chargeNum	引当可能数	20	number	1	0	right	0	95			20	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.allocNum	引当済数	21	number	1	0	right	0	95			21	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.moveNum	作業中数	22	number	1	0	right	0	95			22	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.transitNum	積送中数	23	number	1	0	right	0	95			23	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	unitNumBreakdown	入数内訳	24	text	1	0	right	0	220			24	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	stockBreakdown	在庫内訳	25	text	1	0	right	0	200			25	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	chargeBreakdown	引当可能内訳	26	text	1	0	right	0	200			26	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	allocBreakdown	引当済内訳	27	text	1	0	right	0	200			27	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	moveBreakdown	作業中内訳	28	text	1	0	right	0	200			28	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	transitBreakdown	積送中内訳	29	text	1	0	right	0	200			29	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	storeNumDay	当日入庫数	30	number	1	0	right	0	95			30	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	pickingNumDay	当日出庫数	31	number	1	0	right	0	95			31	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	movePlsNumDay	当日移動数＋	32	number	1	0	right	0	110			32	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	moveMnsNumDay	当日移動数－	33	number	1	0	right	0	110			33	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	adjPlsNumDay	当日調整数＋	34	number	1	0	right	0	110			34	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	adjMnsNumDay	当日調整数－	35	number	1	0	right	0	110			35	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	pchargeNumDay	前日残	36	number	1	0	right	0	95			36	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	storeNumMonth	当月入庫数	37	number	1	0	right	0	95			37	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	pickingNumMonth	当月出庫数	38	number	1	0	right	0	95			38	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	movePlsNumMonth	当月移動数＋	39	number	1	0	right	0	110			39	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	moveMnsNumMonth	当月移動数－	40	number	1	0	right	0	110			40	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	adjPlsNumMonth	当月調整数＋	41	number	1	0	right	0	110			41	229
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	adjMnsNumMonth	当月調整数－	42	number	1	0	right	0	110			42	230
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	pchargeNumMonth	前月残	43	number	1	0	right	0	150			43	210
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	chargeNum10	10日残数	44	number	1	0	right	0	95			44	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	chargeNum15	15日残数	45	number	1	0	right	0	95			45	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	chargeNum20	20日残数	46	number	1	0	right	0	95			46	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	chargeNumLast	末日残数	47	number	1	0	right	0	95			47	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	lastStoreDt	最新入庫年月日	48	date	1	0		0	150			48	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	lastPickingDt	最新出庫年月日	49	date	1	0		0	150			49	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	addDt	登録日時	50	datetime	1	0		0	180			50	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mclient.clientCd	荷主CD	51	text	1	0		0	170			51	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mclient.clientNm	荷主名称	52	text	1	0		0	200			52	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerCd	センタCD	53	text	1	0		0	170			53	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByProductReportList	在庫問合せ(参照)グリッド(商品順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerNm	センタ名称	54	text	1	0		0	200			54	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.warehouseCd	倉庫CD	1	text	1	0		0	85			1	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.warehouseNm	倉庫名称	2	text	1	0		0	300			2	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mlocation.locationNm	ロケーション名称	3	text	1	0		0	250			3	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mproduct.productCd	商品CD	4	text	1	0		0	245			4	245
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mproduct.productNm	商品名称	5	text	1	0		0	300			5	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	productUnit	商品単位	6	text	1	0		0	90			6	90
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mproduct.janCd	ソースCD	7	text	1	0		0	205			7	205
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mcustomer.customerCd	預託CD	8	text	1	0		0	160			8	160
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mcustomer.customerNm	預託名称	9	text	1	0		0	300			9	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mstockType.stockTypeCd	在庫区分CD	10	text	1	0		0	110			10	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mstockType.vdict.dictNm	在庫区分名称	11	text	1	0		0	110			11	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tlot.lot	ロット	12	text	1	0		0	170			12	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tlot.limitDt	期限日	13	date	1	0		0	150			13	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.storeDt	入庫日	14	date	1	0		0	150			14	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	15	text	1	0		0	140			15	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.tstoreNoSelf.storeLabelNo	元入庫ラベルNo.	16	text	1	0		0	155			16	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerCd	仕入先CD	17	text	1	0		0	200			17	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerNm	仕入先名称	18	text	1	0		0	300			18	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.stockNum	在庫数	19	number	1	0	right	0	95			19	95
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.chargeNum	引当可能数	20	number	1	0	right	0	95			20	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.allocNum	引当済数	21	number	1	0	right	0	95			21	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.moveNum	作業中数	22	number	1	0	right	0	95			22	230
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.transitNum	積送中数	23	number	1	0	right	0	95			23	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	unitNumBreakdown	入数内訳	24	text	1	0	right	0	220			24	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	stockBreakdown	在庫内訳	25	text	1	0	right	0	200			25	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	chargeBreakdown	引当可能内訳	26	text	1	0	right	0	200			26	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	allocBreakdown	引当済内訳	27	text	1	0	right	0	200			27	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	moveBreakdown	作業中内訳	28	text	1	0	right	0	200			28	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	transitBreakdown	積送中内訳	29	text	1	0	right	0	200			29	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	lastStoreDt	最新入庫年月日	30	date	1	0		0	150			30	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	lastPickingDt	最新出庫年月日	31	date	1	0		0	150			31	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	addDt	登録日時	32	datetime	1	0		0	180			32	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mclient.clientCd	荷主CD	33	text	1	0		0	170			33	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mclient.clientNm	荷主名称	34	text	1	0		0	200			34	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerCd	センタCD	35	text	1	0		0	170			35	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationNoReportList	在庫問合せ(参照)グリッド(ロケーション順(日報なし))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerNm	センタ名称	36	text	1	0		0	200			36	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.warehouseCd	倉庫CD	1	text	1	0		0	85			1	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.warehouseNm	倉庫名称	2	text	1	0		0	300			2	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mlocation.locationNm	ロケーション名称	3	text	1	0		0	250			3	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mproduct.productCd	商品CD	4	text	1	0		0	245			4	245
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mproduct.productNm	商品名称	5	text	1	0		0	300			5	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	productUnit	商品単位	6	text	1	0		0	90			6	90
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mproduct.janCd	ソースCD	7	text	1	0		0	205			7	205
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mcustomer.customerCd	預託CD	8	text	1	0		0	160			8	160
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mcustomer.customerNm	預託名称	9	text	1	0		0	300			9	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mstockType.stockTypeCd	在庫区分CD	10	text	1	0		0	110			10	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mstockType.vdict.dictNm	在庫区分名称	11	text	1	0		0	110			11	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tlot.lot	ロット	12	text	1	0		0	170			12	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tlot.limitDt	期限日	13	date	1	0		0	150			13	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.storeDt	入庫日	14	date	1	0		0	150			14	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.storeLabelNo	入庫ラベルNo.	15	text	1	0		0	140			15	140
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.tstoreNoSelf.storeLabelNo	元入庫ラベルNo.	16	text	1	0		0	155			16	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerCd	仕入先CD	17	text	1	0		0	200			17	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.tstoreNo.mcustomer.customerNm	仕入先名称	18	text	1	0		0	300			18	300
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.stockNum	在庫数	19	number	1	0	right	0	95			19	95
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.chargeNum	引当可能数	20	number	1	0	right	0	95			20	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.allocNum	引当済数	21	number	1	0	right	0	95			21	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.moveNum	作業中数	22	number	1	0	right	0	95			22	230
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.transitNum	積送中数	23	number	1	0	right	0	95			23	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	unitNumBreakdown	入数内訳	24	text	1	0	right	0	220			24	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	stockBreakdown	在庫内訳	25	text	1	0	right	0	200			25	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	chargeBreakdown	引当可能内訳	26	text	1	0	right	0	200			26	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	allocBreakdown	引当済内訳	27	text	1	0	right	0	200			27	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	moveBreakdown	作業中内訳	28	text	1	0	right	0	200			28	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	transitBreakdown	積送中内訳	29	text	1	0	right	0	200			29	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	storeNumDay	当日入庫数	30	number	1	0	right	0	95			30	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	pickingNumDay	当日出庫数	31	number	1	0	right	0	95			31	170
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	movePlsNumDay	当日移動数＋	32	number	1	0	right	0	110			32	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	moveMnsNumDay	当日移動数－	33	number	1	0	right	0	110			33	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	adjPlsNumDay	当日調整数＋	34	number	1	0	right	0	110			34	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	adjMnsNumDay	当日調整数－	35	number	1	0	right	0	110			35	200
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	pchargeNumDay	前日残	36	number	1	0	right	0	95			36	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	storeNumMonth	当月入庫数	37	number	1	0	right	0	95			37	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	pickingNumMonth	当月出庫数	38	number	1	0	right	0	95			38	220
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	movePlsNumMonth	当月移動数＋	39	number	1	0	right	0	110			39	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	moveMnsNumMonth	当月移動数－	40	number	1	0	right	0	110			40	250
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	adjPlsNumMonth	当月調整数＋	41	number	1	0	right	0	110			41	229
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	adjMnsNumMonth	当月調整数－	42	number	1	0	right	0	110			42	230
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	pchargeNumMonth	前月残	43	number	1	0	right	0	150			43	210
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	chargeNum10	10日残数	44	number	1	0	right	0	95			44	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	chargeNum15	15日残数	45	number	1	0	right	0	95			45	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	chargeNum20	20日残数	46	number	1	0	right	0	95			46	150
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	chargeNumLast	末日残数	47	number	1	0	right	0	95			47	190
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	lastStoreDt	最新入庫年月日	48	date	1	0		0	150			48	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	lastPickingDt	最新出庫年月日	49	date	1	0		0	150			49	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	addDt	登録日時	50	datetime	1	0		0	180			50	180
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mclient.clientCd	荷主CD	51	text	1	0		0	170			51	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mclient.clientNm	荷主名称	52	text	1	0		0	200			52	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerCd	センタCD	53	text	1	0		0	170			53	
+ReferenceStockList	在庫問合せ(参照)	wms	referenceStockOrderByLocationReportList	在庫問合せ(参照)グリッド(ロケーション順(日報あり))	grid	1	0		0	1	tstock.mwarehouse.mcenter.centerNm	センタ名称	54	text	1	0		0	200			54	

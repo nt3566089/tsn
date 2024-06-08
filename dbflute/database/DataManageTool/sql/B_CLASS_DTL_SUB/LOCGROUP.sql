@@ -1,0 +1,178 @@
+INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '01';	
+
+
+INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '02';	
+
+
+INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '03';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '1'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '04';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '05';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '1'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '06';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '1'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '07';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '09';	
+  
+  
+  INSERT 	
+INTO B_CLASS_DTL_SUB( 	
+  CLASS_DTL_ID	
+  , OTHERCD1	
+  , OTHER1_COMMENT	
+) 	
+SELECT	
+  BCD.CLASS_DTL_ID	
+  , '0'	
+  , 'その他コード１：はい替可否を設定する。 0:可 1:不可'	
+FROM	
+  B_CLASS BC 	
+  INNER JOIN B_CLASS_DTL BCD 	
+    ON BC.CLASS_ID = BCD.CLASS_ID 	
+WHERE	
+  1 = 1 	
+  AND BC.CLASS_CD = 'LOCGROUP' 	
+  AND BCD.CLASS_DTL_CD = '10';	

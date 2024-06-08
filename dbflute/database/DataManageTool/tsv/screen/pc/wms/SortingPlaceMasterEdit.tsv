@@ -1,0 +1,45 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	centerCd	拠点	dropdown	1	0		1	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	clientCd	荷主	dropdown	1	0		1	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfrnk	ロケ不定間口貼付順	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg1	ロケ不定銘柄カテゴリ貼付順1	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg2	ロケ不定銘柄カテゴリ貼付順2	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg3	ロケ不定銘柄カテゴリ貼付順3	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg4	ロケ不定銘柄カテゴリ貼付順4	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg5	ロケ不定銘柄カテゴリ貼付順5	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg6	ロケ不定銘柄カテゴリ貼付順6	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg7	ロケ不定銘柄カテゴリ貼付順7	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg8	ロケ不定銘柄カテゴリ貼付順8	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg9	ロケ不定銘柄カテゴリ貼付順9	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg10	ロケ不定銘柄カテゴリ貼付順10	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	lincd	ラインCD	text	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	linnm	ライン名称	text	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	linblk1	対応ブロック1	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	linblk2	対応ブロック2	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	linblk3	対応ブロック3	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	hdrdboxrsfid	100BOX	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	pkgrt	梱包率（％）	number	1	1	right	0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	sprprsid	個口圧縮	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	blkcd	ブロックCD	text	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	blknm	ブロック名称	text	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfrnkblk	ロケ不定間口貼付順	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg1blk	ロケ不定銘柄カテゴリ貼付順1	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg2blk	ロケ不定銘柄カテゴリ貼付順2	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg3blk	ロケ不定銘柄カテゴリ貼付順3	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg4blk	ロケ不定銘柄カテゴリ貼付順4	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg5blk	ロケ不定銘柄カテゴリ貼付順5	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg6blk	ロケ不定銘柄カテゴリ貼付順6	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg7blk	ロケ不定銘柄カテゴリ貼付順7	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg8blk	ロケ不定銘柄カテゴリ貼付順8	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg9blk	ロケ不定銘柄カテゴリ貼付順9	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	locidfbrctg10blk	ロケ不定銘柄カテゴリ貼付順10	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	hdrdboxrsfidblk	100BOX	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	pkgrtblk	梱包率（％）	number	1	1	right	0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	sprprsidblk	個口圧縮	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	delFlgblk	削除	dropdown	1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	lbltitleCommon	共通		0	0		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	lblSortingPlaceMasterEditLin	ライン		0	0		0	1													
+SortingPlaceMasterEdit	仕分場構成マスタメンテナンス(編集)	wms	lblSortingPlaceMasterEditBlk	ブロック		0	0		0	1													

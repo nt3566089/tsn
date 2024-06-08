@@ -1,0 +1,36 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+TotalStockList	トータル在庫問合せ	wms	centerCd	センタ	dropdown	1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	clientCd	荷主	dropdown	1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	productCd	商品CD	text	1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	janCd	ソースCD	text	1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	customerCd	預託	dropdown	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	stockTypeCd	在庫区分	dropdown	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	limitDtFrom	期限日(From)	datetime	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	limitDtTo	期限日(To)	datetime	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	lot	ロット	text	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	fixedPointCd	定点切れ	dropdown	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	stockNumDisplay	在庫数 0非表示	dropdown	1	1		0	0													
+TotalStockList	トータル在庫問合せ	wms	search	検索		1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	fixedPoint	定点切れ		1	0		0	1													
+TotalStockList	トータル在庫問合せ	wms	excelOutput	Excel出力		1	1		0	1													
+TotalStockList	トータル在庫問合せ	wms	totalStockList	トータル在庫問合せグリッド		1	0		0	1													
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mclient.clientCd	荷主CD	1	text	1	0		0	85				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mclient.clientNm	荷主名称	2	text	1	0		0	300				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mproduct.productCd	商品CD	3	text	1	0		0	245				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mproduct.productNm	商品名称	4	text	1	0		0	300				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mproduct.productAbbr	商品略称	5	text	1	0		0	300				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mproduct.janCd	ソースCD	6	text	1	0		0	205				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mcustomer.customerCd	預託CD	7	text	1	0		0	160				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mcustomer.customerNm	預託名称	8	text	1	0		0	300				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mstockType.stockTypeCd	在庫区分CD	9	text	1	0		0	110				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mstockType.vdict.dictNm	在庫区分名称	10	text	1	0		0	110				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	mproduct.fixedPoint	定点	11	number	1	0	right	0	95				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	stockNum	総在庫数	12	number	1	0	right	0	95				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	expiredStockNum	期限切れ総在庫数	13	number	1	0	right	0	140				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	receivePlanDt	次回入荷予定日	14	date	1	0		0	125				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	receivePlanNum	次回入荷予定数	15	number	1	0	right	0	125				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	centerStockList.centerCd	センタCD	16	text	1	0		0	90				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	centerStockList.centerNm	センタ名称	17	text	1	0		0	300				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	centerStockList.stockNum	在庫数	18	number	1	0	right	0	95				
+TotalStockList	トータル在庫問合せ	wms	totalStockListDefinition	トータル在庫問合せグリッド(列定義)	grid	1	0		0	1	centerStockList.expiredStockNum	期限切れ在庫数	19	number	1	0	right	0	125				

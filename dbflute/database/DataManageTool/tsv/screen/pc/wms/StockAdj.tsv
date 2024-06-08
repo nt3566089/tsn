@@ -1,0 +1,26 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockAdj	在庫調整	wms	clientCd	荷主		1	1		1	1													
+StockAdj	在庫調整	wms	centerCd	センタ		1	1		1	1													
+StockAdj	在庫調整	wms	productCd	商品CD		1	1		1	1													
+StockAdj	在庫調整	wms	productUnit	商品単位		1	0		0	1													
+StockAdj	在庫調整	wms	depositCd	預託		1	1		1	1													
+StockAdj	在庫調整	wms	stockTypeCd	在庫区分		1	1		1	1													
+StockAdj	在庫調整	wms	locationCd	ロケーションCD		1	1		1	1													
+StockAdj	在庫調整	wms	unitNumBreakdown	入数内訳		1	0	right	0	1													
+StockAdj	在庫調整	wms	lot	ロット		1	1		0	1													
+StockAdj	在庫調整	wms	limitDt	期限日		1	1		0	1													
+StockAdj	在庫調整	wms	storeLabelNo	入庫ラベルNo.		1	1		0	1													
+StockAdj	在庫調整	wms	supplierCustomerCd	仕入先CD		1	1		0	1													
+StockAdj	在庫調整	wms	storeLabelNo_B	元入庫ラベルNo.		1	1		0	1													
+StockAdj	在庫調整	wms	chargeNum	調整前総数		1	1	right	0	1													
+StockAdj	在庫調整	wms	chargeNumMultiText	調整前総数荷姿		1	1	right	0	1													
+StockAdj	在庫調整	wms	chargeNum_A	調整後総数		1	1	right	0	1													
+StockAdj	在庫調整	wms	chargeNum_AMultiText	調整後総数荷姿		1	1	right	0	1													
+StockAdj	在庫調整	wms	processTypeCd	処理区分		1	1		1	1													
+StockAdj	在庫調整	wms	adjNum	調整総数		1	1	right	1	1													
+StockAdj	在庫調整	wms	adjNumMultiText	調整総数荷姿		1	1	right	0	1													
+StockAdj	在庫調整	wms	moveInstComment	在庫移動指示備考		1	1		0	1													
+StockAdj	在庫調整	wms	confirm	確定		1	1		0	1													
+StockAdj	在庫調整	wms	update	登録		1	1		0	1													
+StockAdj	在庫調整	wms	storeDt	入庫日		1	1		1	1													

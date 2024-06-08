@@ -1,0 +1,55 @@
+<div ng-controller="PackingHistory" owd-screen="PackingHistory">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+				<fieldset>
+					<div class="row">
+						<!-- 荷主センタ変更対応 2017.02.06 sja Start -->
+						<!--
+						<owd-select id="centerCd" ng-model="headH.hshippingH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				 		-->
+						<owd-select id="centerCd" ng-model="headH.hshippingH.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+						<!-- 荷主センタ変更対応 2017.02.06 sja End -->
+						<owd-select id="clientCd" ng-model="headH.hshippingH.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-date id="shippingDt" ng-model="headH.hshippingH.shippingDt" label-text="出荷日"></owd-date>
+						<owd-date id="workDt" ng-model="headH.hshippingH.workDt" label-text="作業日"></owd-date>
+						<owd-select id="processTypeCd" ng-model="headH.hshippingH.mprocessType.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" label-text="処理区分"></owd-select>
+						<owd-text id="clientShippingNo" ng-model="headH.hshippingH.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+						<owd-text id="shippingSlipNo" ng-model="headH.hshippingH.shippingSlipNo" label-text="WMS出荷伝票No."></owd-text>
+						<owd-text id="supplyCustomerCd" ng-model="headH.hshippingH.supplyCustomerCd" label-text="納品先CD" owd-add-button="showSupplyCustomer()" ng-blur="supplyCustomerCdBlur()">
+							<owd-info ng-model="headH.hshippingH.supplyCustomerNm"></owd-info>
+						</owd-text>
+						<owd-text id="delivCustomerCd" ng-model="headH.hshippingH.delivCustomerCd" label-text="届先CD" owd-add-button="showDelivCustomer()" ng-blur="delivCustomerCdBlur()">
+							<owd-info ng-model="headH.hshippingH.delivCustomerNm"></owd-info>
+						</owd-text>
+						<owd-text id="deliveryCourseCd" ng-model="headH.hshippingH.deliveryCourseCd" label-text="配送コースCD" owd-add-button="showDeliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+							<owd-info ng-model="headH.hshippingH.deliveryCourseNm"></owd-info>
+						</owd-text>
+						<owd-select id="carrierCd" ng-model="headH.hshippingH.carrierCd" owd-models="carrier" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="運送業者"></owd-select>
+						<owd-text id="productCd" ng-model="headB.hstock.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="headB.hstock.productNm"></owd-info>
+						</owd-text>
+						<owd-text id="lot" ng-model="headB.hstock.lot" label-text="ロット"></owd-text>
+						<owd-date id="limitDtFrom" ng-model="headB.hstock.limitDtFrom" label-text="期限日(From)"></owd-date>
+						<owd-date id="limitDtTo" ng-model="headB.hstock.limitDtTo" label-text="期限日(To)" owd-validate="fromToDtCheck(headB.hstock.limitDtFrom, $value)" owd-validate-watch="'headB.hstock.limitDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="stockTypeCd" ng-model="headB.hstock.mstockType.stockTypeCd" owd-models="StockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+						<owd-text id="carrierTraceNum" ng-model="headH.carrierTraceNum" label-text="貨物追跡No."></owd-text>
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="bodyList" owd-select-options="gridSelectOptions"  owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+        <br>
+	</form>
+</div>

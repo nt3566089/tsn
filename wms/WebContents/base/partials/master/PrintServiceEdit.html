@@ -1,0 +1,34 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PrintServiceEdit" owd-screen="PrintServiceEdit">
+		<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-text id="printServiceNm" ng-model="pPrintService.printServiceNm" label-text="印刷サービス名称"></owd-text>
+
+				<owd-text id="terminalNm" ng-model="pPrintService.terminalNm" label-text="端末名称"></owd-text>
+
+				<owd-text id="macAddress" ng-model="pPrintService.macAddress" label-text="MACアドレス"></owd-text>
+
+				<owd-select id="printerGroupId" ng-model="pPrintService.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" label-text="プリンターグループ"></owd-select>
+
+				<owd-select id="printServiceStatus" ng-model="pPrintService.printServiceStatus" owd-models="selectPrintServiceStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="印刷サービスステータス"></owd-select>
+
+			</div>
+		</div>
+
+		
+
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+							<owd-button id="register" class="btn-success" ng-disabled="inputform.$invalid" ng-click="register()">登録</owd-button>
+					</div>
+			</div>
+		</div>
+	</form>
+</div>

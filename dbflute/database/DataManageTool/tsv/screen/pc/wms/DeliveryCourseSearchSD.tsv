@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	selection	選択		1	1		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	centerCd	センタ		1	0		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	deliveryCourseCd	配送コースCD		1	1		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	deliveryCourseNm	配送コース名称		1	1		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	search	検索		1	1		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	1	text	1	0		0	125				
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	deliveryCourse	配送コースマスタ検索グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	2	text	1	0		0	300				
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	close	閉じる		1	1		0	1													
+DeliveryCourseSearchSD	配送コースマスタ検索	wms_sd	searchResultTitle	合計件数		1	1		0	1													

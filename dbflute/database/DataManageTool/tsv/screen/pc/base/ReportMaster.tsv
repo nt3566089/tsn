@@ -1,0 +1,13 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReportMaster	帳票マスタメンテナンス	base	reportCd	帳票CD		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	reportNm	帳票名称		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	search	検索		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	excelOutput	Excel出力		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	reportList	帳票マスタメンテナンスグリッド	grid	1	1		0	1	reportCd	帳票CD	1	text	1	1		1	200			1	200
+ReportMaster	帳票マスタメンテナンス	base	reportList	帳票マスタメンテナンスグリッド	grid	1	1		0	1	reportNm	帳票名称	2	text	1	1		1	300			2	300
+ReportMaster	帳票マスタメンテナンス	base	reportList	帳票マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	3	dropdown	1	1		0	110			3	110
+ReportMaster	帳票マスタメンテナンス	base	addRow	行追加		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	removeRow	行削除		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	reportLayoutList	帳票レイアウト一覧		1	1		0	1													
+ReportMaster	帳票マスタメンテナンス	base	register	登録		1	1		0	1													

@@ -1,0 +1,38 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+BillOfLadingPrint	Bill of Lading発行	wms	centerCd	センタ		1	0		1	1													
+BillOfLadingPrint	Bill of Lading発行	wms	clientCd	荷主		1	0		1	1													
+BillOfLadingPrint	Bill of Lading発行	wms	shippingDtFrom	出荷日(From)		1	1		1	1													
+BillOfLadingPrint	Bill of Lading発行	wms	shippingDtTo	出荷日(To)		1	1		1	1													
+BillOfLadingPrint	Bill of Lading発行	wms	bolOutputTargetFlg	発行対象のみ表示		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	carrierCd	運送業者		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	deliveryCourseCd	配送コース		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	supplyCustomerCd	納品先CD		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	pickingWorkNo	出庫作業No		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	bolNo	Bill of lading No		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	bolOutFlg	未発行のみ表示		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	search	検索		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	bolNo	Bill of lading No	1	text	1	0		0	235			1	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	pickingWorkNo	出庫作業No	2	text	1	0		0	235			2	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	shippingDt	出荷日	3	date	1	0		0	170			3	170
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	carrierCd	運送業者CD	4	text	1	0		0	235			4	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	carrierNm	運送業者名称	5	text	1	0		0	300			5	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	deliveryCourseCd	配送コースCD	6	text	1	0		0	235			6	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	deliveryCourseNm	配送コース名称	7	text	1	0		0	300			7	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	supplyCustomerCd	納品先CD	8	text	1	0		0	235			8	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	supplyCustomerNm	納品先名称	9	text	1	0		0	300			9	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivCustomerCd	届先CD	10	text	1	0		0	235			10	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivCustomerNm	届先名称	11	text	1	0		0	300			11	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivAddress1	届先住所１	12	text	1	0		0	300			12	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivAddress2	届先住所２	13	text	1	0		0	300			13	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivAddress3	届先住所３	14	text	1	0		0	300			14	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	delivZipCd	届先郵便番号	15	text	1	0		0	235			15	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	carrierTraceNum	貨物追跡番号	16	text	1	0		0	235			16	235
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	bolOutFlg	Bill of Lading発行フラグ	17	text	1	0		0	300			17	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	bolOutNm	Bill of Lading発行フラグ名称	18	text	1	0		0	300			18	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	bolOutDt	Bill of lading発行時間	19	datetime	1	0		0	300			19	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	userNm	Bill of lading発行者名称	20	text	1	0		0	300			20	300
+BillOfLadingPrint	Bill of Lading発行	wms	billOfLadingPrintB	Bill of Lading発行グリッド	grid	1	0		0	1	pickingHId	出庫ヘッダID	21	text	0	0		0	300			21	300
+BillOfLadingPrint	Bill of Lading発行	wms	carrierTrace	貨物追跡番号登録		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	issueCancel	発行取消		1	1		0	1													
+BillOfLadingPrint	Bill of Lading発行	wms	issue	発行		1	1		0	1													

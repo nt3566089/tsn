@@ -1,0 +1,30 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		1	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	productCd	銘柄CD		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	validType	有効区分		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	UpdateDate	更新日		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	rcvFrDateFrom	適用開始日(From)		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	rcvFrDateTo	適用開始日(To)		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	rcvToDateFrom	適用終了日(From)		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	rcvToDateTo	適用終了日(To)		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	productCd	銘柄CD	1	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	productNm	銘柄名称	2	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	rcvfrdate	適用開始日	3	date	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	rcvtodate	適用終了日	4	date	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	validTypeNm	有効区分	5	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	distributionCdNm	流通識別CD	6	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	designFlgNm	デザイン区分	7	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	delFlgNm	削除	8	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	addDt	登録日時	9	datetime	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	addUser	登録者	10	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	updDt	更新日時	11	datetime	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	updUser	更新者	12	text	1	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	usernum3	銘柄出力順	13	number	0	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	clientCd	荷主CD	14	text	0	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	bodyList	受入デザインマスタメンテナンスグリッド	grid	1	1		0	1	clientNm	荷主名称	15	text	0	0		0					
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	copy	新規		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	new	複製		1	1		0	1													
+ReceiveDesignMasterList	受入デザインマスタメンテナンス(一覧)	wms	update	削除		1	1		0	1													

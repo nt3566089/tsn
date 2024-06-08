@@ -1,0 +1,21 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LogList	ログ一覧	base	logStatus	ログステータス		1	1		0	0													
+LogList	ログ一覧	base	processDtFrom	処理日(From)		1	1		0	1													
+LogList	ログ一覧	base	processDtTo	処理日(To)		1	1		0	1													
+LogList	ログ一覧	base	pgm	プログラム		1	1		0	0													
+LogList	ログ一覧	base	centerCd	センタ		1	1		0	1													
+LogList	ログ一覧	base	clientCd	荷主		1	1		0	1													
+LogList	ログ一覧	base	search	検索		1	1		0	1													
+LogList	ログ一覧	base	excelOutput	Excel出力		1	1		0	1													
+LogList	ログ一覧	base	AutomaticSearch	自動検索		1	1		0	1													
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	dictNm	ログステータス	1	text	1	0		0	125			1	125
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	processStartDt	処理開始日時	2	datetime	1	0		0	180			2	180
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	processEndDt	処理終了日時	3	datetime	1	0		0	180			3	180
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	pgmCd	プログラムCD	4	text	1	0		0	300			4	300
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	pgmNm	プログラム名称	5	text	1	0		0	300			5	300
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	attribute1	センタCD	6	text	1	0		0	90			6	120
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	centerNm	センタ名称	7	text	1	0		0	300			7	300
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	attribute2	荷主CD	8	text	1	0		0	85			8	130
+LogList	ログ一覧	base	logList	ログ一覧グリッド	grid	1	1		0	1	clientNm	荷主名称	9	text	1	0		0	300			9	300
+LogList	ログ一覧	base	detail	明細		1	1		0	1													

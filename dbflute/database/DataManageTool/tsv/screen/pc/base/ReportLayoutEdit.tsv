@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportCd	帳票CD		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportNm	帳票名		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutNm	帳票レイアウト名称		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayout	帳票レイアウト		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	updatable	更新可否		1	1		1	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	attribute1	帳票レイアウト属性1		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	attribute2	帳票レイアウト属性2		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	attribute3	帳票レイアウト属性3		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	attribute4	帳票レイアウト属性4		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	attribute5	帳票レイアウト属性5		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	printerGroupId	プリンタグループ		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	printerId	プリンタ		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	printerAttributeId	プリンタ属性		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	printNum	部数		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	sheetCollate	部単位印刷要否		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	autoPrintTargetFlg	自動印刷対象レイアウト		1	1		1	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	delFlg	削除フラグ		1	1		1	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	itemCd	項目CD	1	text	1	1		1	200				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	項目名	2	text	1	1		0	300				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	itemType	項目型	3	dropdown	1	1		0	200				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	visible	表示可否	4	dropdown	1	1		1	200				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	itemFormat	項目書式	5	text	1	1		0	200				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	reportLayoutEdit	帳票レイアウトマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	6	dropdown	1	1		0	110				
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	addRow	行追加		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	removeRow	行削除		1	1		0	1													
+ReportLayoutEdit	帳票レイアウトマスタメンテナンス(編集)	base	register	登録		1	1		0	1													

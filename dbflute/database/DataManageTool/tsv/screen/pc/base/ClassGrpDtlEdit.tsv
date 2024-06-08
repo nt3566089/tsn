@@ -1,0 +1,12 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classCd	区分値CD		1	0		0	1													
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpCd	区分値グループCD		1	1		1	1													
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	search	検索		1	1		0	1													
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtl.bclass.classCd	区分値CD	1	text	1	0		0	300			1	300
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtl.bclass.classComment	区分値解説	2	text	1	0		0	300			2	300
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtl.classDtlCd	区分値明細CD	3	text	1	0		0	300			3	300
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtl.vdict.dictNm	区分値明細名	4	text	1	0		0	300			4	300
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	selectFlg	選択	5	checkbox	1	1		0	40			5	80
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	classGrpDtlList	区分値グループ明細マスタメンテナンスグリッド	grid	1	1		0	1	defaultFlg	デフォルト	6	checkbox	1	1		0	80			6	80
+ClassGrpDtlEdit	区分値グループ明細マスタメンテナンス(編集)	base	register	登録		1	1		0	1													

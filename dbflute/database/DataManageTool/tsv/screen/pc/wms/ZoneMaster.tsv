@@ -1,0 +1,18 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneCd	ゾーンCD		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	search	検索		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	mwarehouse.mcenter.centerCd	センタ	1	dropdown	1	1		1	200				
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	mwarehouse.warehouseCd	倉庫	2	dropdown	1	1		1	300	2			
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	zoneCd	ゾーンCD	3	text	1	1		1	90	3			
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	zoneNm	ゾーン名称	4	text	1	1		1	170	4			
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	pickingOrder	ピッキング順序	5	number	1	1	right	1	125	5			
+ZoneMaster	ゾーンマスタメンテナンス	wms	zoneList	ゾーンマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	6	dropdown	1	1		1	110	6			
+ZoneMaster	ゾーンマスタメンテナンス	wms	centerCd	センタ		1	1		1	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	register	登録		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	warehouseCd	倉庫		1	1		0	1													
+ZoneMaster	ゾーンマスタメンテナンス	wms	excelUpload	ファイル取込		1	1		0	1													

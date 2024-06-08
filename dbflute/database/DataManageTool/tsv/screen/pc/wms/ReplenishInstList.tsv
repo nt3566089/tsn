@@ -1,0 +1,34 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ReplenishInstList	補充指示一覧	wms	centerCd_H	センタ		1	1		1	1													
+ReplenishInstList	補充指示一覧	wms	clientCd_H	荷主		1	1		1	1													
+ReplenishInstList	補充指示一覧	wms	productCd_H	商品CD		1	1		0	0													
+ReplenishInstList	補充指示一覧	wms	replenishToWarehouseCd_H	補充先倉庫		1	1		0	0													
+ReplenishInstList	補充指示一覧	wms	replenishToZoneCd_H	補充先ゾーン		1	1		0	0													
+ReplenishInstList	補充指示一覧	wms	replenishToLocationCdFrom_H	補充先ロケーションCD(From)		1	1		0	0													
+ReplenishInstList	補充指示一覧	wms	replenishToLocationCdTo_H	補充先ロケーションCD(To)		1	1		0	0													
+ReplenishInstList	補充指示一覧	wms	replenishMinNumCond_H	補充点		1	1		0	1													
+ReplenishInstList	補充指示一覧	wms	search	検索		1	1		0	1													
+ReplenishInstList	補充指示一覧	wms	excelOutput	Excel出力		1	1		0	1													
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishToLocationNm	補充先ロケーション名称	1	text	1	0		0	250			1	250
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	productCd	商品CD	2	text	1	0		0	245			2	245
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	productNm	商品名称	3	text	1	0		0	300			3	300
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	productAbbr	商品略称	4	text	1	0		0	300			4	300
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	productUnit	商品単位	5	text	1	0		0	90			5	90
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	stockTypeCd	在庫区分CD	6	text	1	0		0	110			6	180
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	stockTypeNm	在庫区分名称	7	text	1	0		0	110			7	180
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	depositCd	預託CD	8	text	1	0		0	160			8	160
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	depositNm	預託名称	9	text	1	0		0	300			9	300
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishFromStockNum	補充元在庫数	10	number	1	0	right	0	125			10	200
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishToStockNum	補充先在庫数	11	number	1	0	right	0	125			11	200
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishInstOverNum	補充指示済数	12	number	1	0	right	0	125			12	280
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishMinNum	補充点	13	number	1	0	right	0	125			13	160
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishMinUnit	単位	14	text	1	0		0	125			14	125
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishMaxNum	最大格納数	15	number	1	0	right	0	125			15	160
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishMaxUnit	単位	16	text	1	0		0	125			16	125
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	replenishInstNum	補充指示数	17	number	1	0	right	0	125			17	190
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	clientCd	荷主CD	18	text	1	0		0	200			18	
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	clientNm	荷主名称	19	text	1	0		0	200			19	
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	centerCd	センタCD	20	text	1	0		0	200			20	
+ReplenishInstList	補充指示一覧	wms	replenishInstList	補充指示一覧グリッド	grid	1	1		0	1	centerNm	センタ名称	21	text	1	0		0	200			21	
+ReplenishInstList	補充指示一覧	wms	replenishInst	補充指示		1	1		0	1													

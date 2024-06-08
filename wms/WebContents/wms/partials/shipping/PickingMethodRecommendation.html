@@ -1,0 +1,40 @@
+<div ng-controller="PickingMethodRecommendation" owd-screen="PickingMethodRecommendation">
+	<form id="searchform" name="searchform" novalidate>
+		<owd-accordion>
+	        <owd-accordion-group is-open="isopen">
+		    <fieldset>
+			    <div class="row">
+					<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				    <owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+			    </div>
+		    </fieldset>
+		    </owd-accordion-group>
+		</owd-accordion>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendcolorred"><owd-span id="emergencyTitle" label-text="緊急"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="pickingMethodRecommendationList" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="recommendationAgain" class="btn-success" ng-click="recommendationAgain()">再提案</owd-button>
+				</div>
+				<div class="col-xs-6" align="right"style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="detail" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="detail()">明細</owd-button>
+					<owd-button id="issue" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="issue()">発行</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

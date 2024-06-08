@@ -1,0 +1,26 @@
+<div ng-controller="MoveLabelPrint" owd-screen="MoveLabelPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.01.19 sja Start -->
+				<!-- 
+				<owd-select id="centerCd" ng-model="searchCondition.tmoveInstH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				 -->
+				<owd-select id="centerCd" ng-model="searchCondition.tmoveInstH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.01.19 sja End -->
+				<owd-select id="clientCd" ng-model="searchCondition.tmoveInstH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="searchCondition.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫_"></owd-select>
+				<owd-date id="instDt" ng-model="searchCondition.tmoveInstH.instDt" label-text="指示日_"></owd-date>
+				<owd-text id="moveSlipNo" ng-model="searchCondition.tmoveInstH.moveSlipNo" label-text="WMS在庫移動伝票No._"></owd-text>
+				<owd-text id="storeLabelNo" ng-model="searchCondition.storeLabelNo" label-text="入庫ラベルNo."></owd-text>
+				<owd-text id="addUser" ng-model="searchCondition.addUser" label-text="ユーザCD"></owd-text>
+				<owd-select id="printCondition" ng-model="searchCondition.printCondition" owd-models="printCondition" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行条件" owd-remove-blank></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

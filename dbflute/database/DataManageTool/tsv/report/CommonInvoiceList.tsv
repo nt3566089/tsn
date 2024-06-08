@@ -1,0 +1,151 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblInvoice1	送り状	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblYuan1	元　払	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtY1	年	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtM1	月	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtD1	日	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblAbstract1	摘要	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblTakeDelivery	受　領　印	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblStoreControl	発　店　控	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShipmentControl	発送元控	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblPackingCnt1	個数	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblGrossWeight1	容積重量	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblTotalVolume1	容積	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblHave1	必着	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDelivTelNo1	TEL	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDelivTelNo2	TEL	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDestination1	お届け先	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblCharge1	荷送主	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDepositNum1	様	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblCarrierTraceNum1	お問合せNo.	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblNum1	個	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblKg1	Kg	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblM31	M3	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblEachNme1	毎度ありがとうございます。	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtY2	年	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtM2	月	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblShippingDtD2	日	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblCarrierTraceNum2	お問合せNo.	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblAbstract2	摘要	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblHave2	必着	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDestination2	お届け先	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDelivTelNo3	TEL	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblCharge2	荷送主	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDelivTelNo4	TEL	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDepositNum2	様	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblPackingCnt2	個数	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblNum2	個	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblGrossWeight2	容積重量	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblKg2	Kg	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblTotalVolume2	容積	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblM32	M3	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblRemember	左記の貨物を受領致しました。	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblYY	年	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblMM	月	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblDD	日	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblInvoice2	受　領　印	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblEachNme2	毎度ありがとうございます。	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblZipMark1	〒	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblZipMark2	〒	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblZipMark3	〒	String	1	
+CommonInvoiceList	共通送り状	共通送り状	../../../../../../reports/shipping/CommonInvoiceList.jrxml	1						0	0	lblZipMark4	〒	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblInvoice1	送り状	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblYuan1	元　払	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtY1	年	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtM1	月	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtD1	日	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblAbstract1	摘要	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblTakeDelivery	受　領　印	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblStoreControl	発　店　控	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShipmentControl	発送元控	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblPackingCnt1	個数	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblGrossWeight1	容積重量	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblTotalVolume1	容積	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblHave1	必着	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDelivTelNo1	TEL	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDelivTelNo2	TEL	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDestination1	お届け先	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblCharge1	荷送主	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDepositNum1	様	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblCarrierTraceNum1	お問合せNo.	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblNum1	個	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblKg1	Kg	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblM31	M3	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblEachNme1	毎度ありがとうございます。	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtY2	年	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtM2	月	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblShippingDtD2	日	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblCarrierTraceNum2	お問合せNo.	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblAbstract2	摘要	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblHave2	必着	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDestination2	お届け先	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDelivTelNo3	TEL	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblCharge2	荷送主	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDelivTelNo4	TEL	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDepositNum2	様	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblPackingCnt2	個数	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblNum2	個	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblGrossWeight2	容積重量	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblKg2	Kg	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblTotalVolume2	容積	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblM32	M3	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblRemember	左記の貨物を受領致しました。	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblYY	年	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblMM	月	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblDD	日	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblInvoice2	受　領　印	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblEachNme2	毎度ありがとうございます。	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblZipMark1	〒	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblZipMark2	〒	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblZipMark3	〒	String	1	
+CommonInvoiceList	Common Invoice List	Common Invoice List	../../../../../../reports/shipping/CommonInvoiceList_enUS.jrxml	1						0	1	lblZipMark4	〒	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblInvoice1	送り状	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblYuan1	元　払	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtY1	年	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtM1	月	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtD1	日	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblAbstract1	摘要	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblTakeDelivery	受　領　印	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblStoreControl	発　店　控	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShipmentControl	発送元控	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblPackingCnt1	個数	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblGrossWeight1	容積重量	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblTotalVolume1	容積	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblHave1	必着	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDelivTelNo1	TEL	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDelivTelNo2	TEL	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDestination1	お届け先	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblCharge1	荷送主	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDepositNum1	様	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblCarrierTraceNum1	お問合せNo.	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblNum1	個	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblKg1	Kg	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblM31	M3	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblEachNme1	毎度ありがとうございます。	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtY2	年	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtM2	月	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblShippingDtD2	日	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblCarrierTraceNum2	お問合せNo.	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblAbstract2	摘要	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblHave2	必着	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDestination2	お届け先	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDelivTelNo3	TEL	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblCharge2	荷送主	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDelivTelNo4	TEL	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDepositNum2	様	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblPackingCnt2	個数	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblNum2	個	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblGrossWeight2	容積重量	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblKg2	Kg	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblTotalVolume2	容積	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblM32	M3	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblRemember	左記の貨物を受領致しました。	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblYY	年	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblMM	月	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblDD	日	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblInvoice2	受　領　印	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblEachNme2	毎度ありがとうございます。	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblZipMark1	〒	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblZipMark2	〒	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblZipMark3	〒	String	1	
+CommonInvoiceList	共通送货单	共通送货单	../../../../../../reports/shipping/CommonInvoiceList_zhCN.jrxml	1						0	1	lblZipMark4	〒	String	1	

@@ -1,0 +1,34 @@
+<div ng-controller="CarrierMasterEdit" owd-screen="CarrierMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<div class="well">
+				<div class="row">
+					<owd-select id="centerCd" ng-model="head.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+					<owd-text id="carrierCd" ng-model="head.carrierCd" label-text="運送業者CD"></owd-text>
+					<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" owd-remove-blank></owd-select>
+				</div>
+			</div>
+			<div class="well">
+			<div class="row">
+				<owd-text id="carrierNm" ng-model="head.carrierNm" label-text="運送業者名称"  ng-blur="carrierNmBlur()"></owd-text>
+				<owd-text id="carrierAbbr" ng-model="head.carrierAbbr" label-text="運送業者略称"></owd-text>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.07 PYM Start -->
+				<!-- [#3643][Ver3.0] 項目CDの変更対応 2018.02.15 miyabe UPD Start -->
+				<owd-select id="commonCarrierCd" owd-blank-row ng-model="head.mcommonCarrier.carrierCd" owd-models="commonCarrierList" owd-repeat-key="carrierCd" owd-repeat-value="carrierNm" label-text="共通運送業者" ng-change="checkCarrierCd()" ></owd-select>
+				<!-- [#3643][Ver3.0] 項目CDの変更対応 2018.02.15 miyabe UPD End -->
+				<owd-select id="mcommonCarrier.bolOutputTargetFlg" owd-blank-row ng-model="head.mcommonCarrier.bolOutputTargetFlg" owd-models="bolOutputTargetFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="共通運送業者" ></owd-select>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.07 PYM End -->
+			</div>
+			</div>
+			<!-- [#7234]brタグを削除 2020.03.12 ono del  -->
+			<div owd-grid="gridOptions" id="mcarrierBoxList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

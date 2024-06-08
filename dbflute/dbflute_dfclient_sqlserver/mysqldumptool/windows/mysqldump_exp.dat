@@ -1,0 +1,119 @@
+@ECHO OFF
+
+SET NOW_DATE=%DATE:~-10,-6%%DATE:~-5,-3%%DATE:~-2%
+SET NOW_TIME=%TIME:~0,2%%TIME:~3,2%
+SET NOW_TIME=%NOW_TIME: =0%
+SET NOW_DATE_TIME=%NOW_DATE%_%NOW_TIME%
+
+SET WORK_FOLDER=%CD%
+
+SET ENV_FILE=mysqldump.env
+IF EXIST "%ENV_FILE%" (
+  TYPE NUL>"%ENV_FILE%.bat"
+  FOR /F "usebackq eol=; delims=" %%i IN ("%ENV_FILE%") DO (
+    IF NOT "%%i"=="" (
+      ECHO SET %%i>>"%ENV_FILE%.bat"
+    )
+  )
+  CALL "%ENV_FILE%.bat"
+  DEL /F "%ENV_FILE%.bat"
+)
+
+SET ENV_FILE=%~1.env
+IF EXIST "%ENV_FILE%" (
+  TYPE NUL>"%ENV_FILE%.bat"
+  FOR /F "usebackq eol=; delims=" %%i IN ("%ENV_FILE%") DO (
+    IF NOT "%%i"=="" (
+      ECHO SET %%i>>"%ENV_FILE%.bat"
+    )
+  )
+  CALL "%ENV_FILE%.bat"
+  DEL /F "%ENV_FILE%.bat"
+)
+
+SET SQL_FILE=%~n0.sql
+SET IGN_FILE=%~n0.ign
+
+SET LOG_FILE=%~1_%NOW_DATE_TIME%.log
+SET TMP_FILE=%~1_%NOW_DATE_TIME%.tmp
+SET CTL_FILE=%~1_%NOW_DATE_TIME%.ctl
+
+SET IGNORE_MSG=Using a password on the command line interface can be insecure
+
+SET PATH=C:\Program Files\MySQL\MySQL Server 8.0\bin;%PATH%
+
+ECHO.
+ECHO MySQLからのエクスポート処理を開始します。
+ECHO.
+ECHO 以下パラメータで実行されます。
+
+ECHO.
+ECHO User     ：%USER%
+ECHO Host     ：%HOST%
+ECHO Database ：%DBNM%
+
+ECHO.
+ECHO SQL出力先：%DBNM%_%NOW_DATE_TIME%
+
+ECHO.
+ECHO ※【%IGN_FILE%】に指定されたTableは除外されます。
+
+ECHO.
+PAUSE
+
+ECHO.
+ECHO 実行中...
+ECHO.
+
+TYPE NUL>"%LOG_FILE%"
+TYPE NUL>"%TMP_FILE%"
+TYPE NUL>"%CTL_FILE%"
+
+ECHO select table_name from information_schema.tables where table_schema = schema() and table_type = 'BASE TABLE' and lcase(TABLE_NAME) not in (''>>"%TMP_FILE%"
+
+FOR /F "usebackq eol=; delims=" %%i in (%IGN_FILE%) DO (
+  ECHO ,lcase('%%i'^)>>"%TMP_FILE%"
+)
+
+ECHO ) order by table_name;>>"%TMP_FILE%"
+
+mysql --default-character-set=utf8mb4 -N -u %USER% -p%PASS% -h %HOST% %DBNM% < "%TMP_FILE%" 2> "%LOG_FILE%.$$$" > "%CTL_FILE%"
+IF ERRORLEVEL 1 (
+  FINDSTR /L /V /C:"%IGNORE_MSG%" "%LOG_FILE%.$$$" >> "%LOG_FILE%"
+  ECHO 事前準備処理でエラーが発生しました。
+  PAUSE
+  GOTO :EOF
+)
+FINDSTR /L /V /C:"%IGNORE_MSG%" "%LOG_FILE%.$$$" >> "%LOG_FILE%"
+
+MD %DBNM%_%NOW_DATE_TIME%
+PUSHD %DBNM%_%NOW_DATE_TIME%
+
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+FOR /F "usebackq delims=" %%i in ("%WORK_FOLDER%\%CTL_FILE%") DO (
+  SET OUT_MSG=!DATE! !TIME!
+  ECHO !OUT_MSG! ^> mysqldump table %%i start.
+  ECHO !OUT_MSG! ^> mysqldump table %%i start.>> "%WORK_FOLDER%\%LOG_FILE%"
+  mysqldump --default-character-set=utf8mb4 -u %USER% -p%PASS% -h %HOST% -n -t --hex-blob --set-gtid-purged=OFF -c -r "%%i.sql" --log-error="%WORK_FOLDER%\%LOG_FILE%.$$$" %DBNM% %%i 2>NUL
+  IF ERRORLEVEL 1 (
+    FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+    ECHO mysqldumpでエラーが発生しました。
+    PAUSE
+    POPD
+    GOTO :EOF
+  )
+  FINDSTR /L /V /C:"%IGNORE_MSG%" "%WORK_FOLDER%\%LOG_FILE%.$$$" >> "%WORK_FOLDER%\%LOG_FILE%"
+  SET OUT_MSG=!DATE! !TIME!
+  ECHO !OUT_MSG! ^> mysqldump table %%i end.
+  ECHO !OUT_MSG! ^> mysqldump table %%i end.>> "%WORK_FOLDER%\%LOG_FILE%"
+)
+
+ENDLOCAL
+
+POPD
+
+DEL "%TMP_FILE%">NUL
+DEL "%CTL_FILE%">NUL
+DEL "%LOG_FILE%.$$$">NUL
+

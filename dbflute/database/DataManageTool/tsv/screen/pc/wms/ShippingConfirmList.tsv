@@ -1,0 +1,54 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingConfirmList	出荷確定一覧	wms	centerCd	センタ		1	1		1	1													
+ShippingConfirmList	出荷確定一覧	wms	clientCd	荷主		1	1		1	1													
+ShippingConfirmList	出荷確定一覧	wms	noConfirmedFlg	未確定のみ表示		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	shippingStatus	出荷ステータス		1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	shippingDtFrom	出荷日(From)		1	1		1	1													
+ShippingConfirmList	出荷確定一覧	wms	shippingDtTo	出荷日(To)		1	1		1	1													
+ShippingConfirmList	出荷確定一覧	wms	deliveryCourseCd	配送コースCD		1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	carrierCd	運送業者		1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	supplyCustomerCd	納品先CD		1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	pickingWorkNo	出庫作業No.		1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	noStockOutFlg	欠品フラグ	dropdown	1	1		0	0													
+ShippingConfirmList	出荷確定一覧	wms	search	検索		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	excelOutput	Excel出力		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	noConfirmed	未確定		1	0	center	0	1													
+ShippingConfirmList	出荷確定一覧	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+ShippingConfirmList	出荷確定一覧	wms	Confirmed	出荷確定済		1	0	center	0	1													
+ShippingConfirmList	出荷確定一覧	wms	shippingStop	出荷停止		1	0	center	0	1													
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	shippingDt	出荷日	1	date	1	0		0	150			1	150
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	pickingStatus	出荷ステータス	2	text	1	0		0	125			2	150
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	pickingStatusNm	出荷ステータス名称	3	text	1	0		0	155			3	190
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	bolNo	Bill of lading No	4	text	0	0		0	300			4	300
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	deliveryCourseCd	配送コースCD	5	text	1	0		0	125			5	220
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	deliveryCourseNm	配送コース名称	6	text	1	0		0	300			6	300
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	carrierCd	運送業者CD	7	text	1	0		0	110			7	110
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	carrierNm	運送業者名称	8	text	1	0		0	300			8	300
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	supplyCustomerCd	納品先CD	9	text	1	0		0	200			9	200
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	supplyCustomerNm	納品先名称	10	text	1	0		0	300			10	300
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	delivCustomerCd	届先CD	11	text	1	0		0	200			11	200
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	delivCustomerNm	届先名称	12	text	1	0		0	300			12	300
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	pickingWorkNo	出庫作業No.	13	text	1	0		0	125			13	125
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	shippingSlipNo	伝票数	14	number	1	0	right	0	150			14	150
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	allocNum	総数	15	number	1	0	right	0	150			15	150
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	packingHId	個口数	16	number	1	0	right	0	60			16	180
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	totalVolume	容積	17	number	1	0	right	0	150			17	150
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	grossWeight	重量(グロス)(g)	18	number	1	0	right	0	170			18	170
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	shippingTime	出荷予定時刻	19	text	1	0		0	110			19	200
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	pickingTime	出庫開始時刻	20	datetime	1	0		0	180			20	180
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	stowageTime	積込予定時刻	21	datetime	1	0		0	180			21	200
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	invoiceCreateFlgNm	送り状データ出力	22	text	1	0		0	160			22	160
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	shippingStopFlgNm	納品先出荷停止フラグ	23	text	1	0		0	170			23	170
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	stopFlgNm	商品出荷停止フラグ	24	text	1	0		0	160			24	160
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	forceFixedFlgNm	強制確定フラグ	25	text	1	0		0	125			25	125
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	clientCd	荷主CD	26	text	1	0		0	200			26	
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	clientNm	荷主名称	27	text	1	0		0	200			27	
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	centerCd	センタCD	28	text	1	0		0	200			28	
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	centerNm	センタ名称	29	text	1	0		0	200			29	
+ShippingConfirmList	出荷確定一覧	wms	shippingConfirmList	出荷確定一覧グリッド	grid	1	1		0	1	pickingHId	出庫ヘッダID	30	text	0	0		0	200			30	
+ShippingConfirmList	出荷確定一覧	wms	compulsory	強制確定		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	shippingInstList	出庫指示一覧		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	carrierTrace	貨物追跡番号登録		0	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	confirmCancel	出荷確定解除		1	1		0	1													
+ShippingConfirmList	出荷確定一覧	wms	confirm	出荷確定		1	1		0	1													

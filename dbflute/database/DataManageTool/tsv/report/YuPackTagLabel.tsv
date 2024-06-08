@@ -1,0 +1,35 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblTitle1	代金引換まとめ送金	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDestination1	お届け先	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblAccording1	ご依頼主	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblProductNames1	品名等	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblCod1	代金引換金額	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblAmouth1	個口	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDestination2	お届け先	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblAccording2	ご依頼主	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblProductNames2	品名等	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblCod2	代金引換金額	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblRegistrationNumber1	お問い合わせ番号	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblRegistrationNumber2	お問い合わせ番号	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblCarrierTraceNum	追跡システムバーコード	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDelivTelNo	TEL:	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDelivTelNo2	TEL:	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDelivTelNo3	TEL:	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDelivTelNo4	TEL:	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblT1	〒	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblT2	〒	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblT3	〒	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblT4	〒	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblMM1	月	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblMM2	月	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDD1	日	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDD2	日	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblNoStockCls	下積み厳禁	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblNoUpsideDownCls	逆さま厳禁	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblYen1	円	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblYen2	円	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblDeliCertPreYears	(          年保存)	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblAgain	再	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblTitle2	ゆうパック	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblSendNm	【受付局】	String	1	
+YuPackTagLabel	ゆうパック荷札	ゆうパック荷札	../../../../../../reports/shipping/YuPackTagLabel.jrxml	1						1	0	lblCodTax	(内消費税額                円)	String	1	

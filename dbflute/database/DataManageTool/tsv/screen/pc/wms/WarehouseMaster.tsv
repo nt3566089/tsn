@@ -1,0 +1,17 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseCd	倉庫CD		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseNm	倉庫名称		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	search	検索		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタ	1	dropdown	1	1		1	300				
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	warehouseCd	倉庫CD	2	text	1	1		1	85				
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	warehouseNm	倉庫名称	3	text	1	1		1	300				
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	warehouseAbbr	倉庫略称	4	text	1	1		1	170				
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	foreignFlg	外貨フラグ	5	dropdown	1	1		1	95				
+WarehouseMaster	倉庫マスタメンテナンス	wms	warehouseList	倉庫マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	6	dropdown	1	1		1	110				
+WarehouseMaster	倉庫マスタメンテナンス	wms	centerCd	センタ		1	1		1	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	register	登録		1	1		0	1													
+WarehouseMaster	倉庫マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													

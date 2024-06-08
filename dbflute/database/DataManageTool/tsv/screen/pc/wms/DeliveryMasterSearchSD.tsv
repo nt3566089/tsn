@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	clientCd	荷主		1	0		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	deliveryCd	納品先CD		1	1		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	deliveryNm	納品先名称		1	1		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	search	検索		1	1		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	list	納品先マスタ検索グリッド	grid	1	1		0	1	customerCd	納品先CD	1	text	1	0		0	200				
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	list	納品先マスタ検索グリッド	grid	1	1		0	1	customerNm	納品先名称	2	text	1	0		0	300				
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	selection	選択		1	1		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	close	閉じる		1	1		0	1													
+DeliveryMasterSearchSD	納品先マスタ検索	wms_sd	searchResultTitle	合計件数		1	1		0	1													

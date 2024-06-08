@@ -1,0 +1,36 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+NonconformityLabelPrint	不適品ラベル出力	wms	centerCd	拠点		1	0		1	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	clientCd	荷主		1	0		1	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	createddateFrom	ラベル作成日(From)		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	createddateTo	ラベル作成日(To)		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	targetmon	対象月		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	reprintedflg	印刷ステータス		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	inoutkbn	内外区分		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	vaExtdata2	銘柄区分		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	itemcd	銘柄CD		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	baditemcd	ラベル番号		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	todayPrintOnlyFlg	当日作成ラベル枚数		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	search	検索		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	excelOutput	Excel出力		1	1		0	1													
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	createddate	ラベル作成日	1	date	1	0		0	180			1	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	targetmon	対象月	2	date	1	0		0	180			2	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	itemcd	銘柄CD	3	text	1	0		0	180			3	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	productAbbr	銘柄名称	4	text	1	0		0	180			4	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	lblkbn	ラベル区分	5	text	1	0		0	180			5	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	inoutkbn	内外区分	6	text	1	0		0	180			6	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	vaExtdata2	銘柄区分	7	text	1	0		0	180			7	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	allocpolicykey	特販業者	8	text	1	0		0	180			8	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	caseNum	ケース当個装数	9	number	1	0	right	0	180			9	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	baditemcd	ラベル番号	10	number	1	0	right	0	180			10	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	todayCnt	当日作成ラベル枚数	11	number	1	0	right	0	180			11	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	reprintedflg	印刷ステータス	12	text	1	0		0	180			12	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	vaExtdata1	再印刷区分	13	text	1	0		0	180			13	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	1	0		0	0	rtnCompanyName	返送先拠点名称	14	text	1	0		0	180			14	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	itemkbn	銘柄区分CD	15	text	0	0		0	180			15	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	usernum3	一般出力順	16	text	0	0		0	180			16	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	centerCd	拠点CD	17	text	0	0		0	180			17	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	centerAbbr	拠点名称	18	text	0	0		0	180			18	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	clientCd	荷主CD	19	text	0	0		0	180			19	180
+NonconformityLabelPrint	不適品ラベル出力	wms	nonconformityLabelPrintList	不適品ラベル出力グリッド	grid	0	0		0	0	clientAbbr	荷主名称	20	text	0	0		0	180			20	180
+NonconformityLabelPrint	不適品ラベル出力	wms	output	発行		1	1		0	1													

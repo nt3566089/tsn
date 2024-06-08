@@ -1,0 +1,16 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	macAddress	MACアドレス		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	centerCd	センタ		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	clientCd	荷主		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	delFlg	削除		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	search	検索		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	excelOutput	Excel出力		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	webhtinfoList	HT管理マスタメンテナンスグリッド	grid	1	1		0	1	macAddress	MACアドレス	1	text	1	1		1	150			1	150
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	webhtinfoList	HT管理マスタメンテナンスグリッド	grid	1	1		0	1	mclient.clientCd	荷主	2	dropdown	1	1		1	200			2	200
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	webhtinfoList	HT管理マスタメンテナンスグリッド	grid	1	1		0	1	mcenter.centerCd	センタ	3	dropdown	1	1		1	300			3	300
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	webhtinfoList	HT管理マスタメンテナンスグリッド	grid	1	1		0	1	printerNm	プリンタ名称	4	text	1	1		0	300			4	300
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	webhtinfoList	HT管理マスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	5	dropdown	1	1		1	110			5	110
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	addRow	行追加		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	removeRow	行削除		1	1		0	1													
+WebHTinfoMaster	HT管理マスタメンテナンス	wms	register	登録		1	1		0	1													

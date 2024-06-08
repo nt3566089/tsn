@@ -1,0 +1,81 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<style type="text/css">
+	.title {
+		border-right: 1px solid #dddddd;
+		border-left: 1px solid #dddddd;
+		background-color: #f5f5f5;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+	.data {
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+	.rowBorder {
+		border-top: 1px solid #dddddd;
+		border-right: 1px solid #dddddd;
+	}
+	.rowBottom {
+		border-bottom: 1px solid #dddddd;
+	}
+</style>
+
+<div owd-screen="LogDtlBrowse">
+	<div class="container-modal-large" ng-controller="AlertCtrl" ng-cloak>
+		<div class="row" ng-show="modalAlerts.LogDtlBrowse">
+			<div class="col-xs-12">
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+				<alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+			</div>
+		</div>
+	</div>
+	
+	<form id="searchform" name="searchform" novalidate>
+		<div class="container-modal-large container">
+			<div class="row rowBorder">
+				<div class="col-xs-2 title">
+					{{bclassDtlByLogDtlStatusFieldDisplayName}}
+				</div>
+				<div class="col-xs-10 data">
+					{{bclassDtlByLogDtlStatusValue}}
+				</div>
+			</div>
+			<div class="row rowBorder">
+				<div class="col-xs-2 title">
+					{{processDtFieldDisplayName}}
+				</div>
+				<div class="col-xs-10 data">
+					{{processDtValue | date:'medium'}}
+				</div>
+			</div>
+			<div class="row rowBorder">
+				<div class="col-xs-2 title">
+					{{logDtlSectionNmFieldDisplayName}}
+				</div>
+				<div class="col-xs-10 data">
+					{{logDtlSectionNmValue}}
+				</div>
+			</div>
+			<div class="row rowBorder rowBottom">
+ 				<div class="col-xs-2 title" ng-style="{height:displayAreaHeight+'px'};">
+ 					{{processInfoFieldDisplayName}}
+ 				</div>
+				<div class="col-xs-10 data" ng-style="{height:displayAreaHeight+'px'};" style="overflow-x: scroll;overflow-y: scroll">
+					<span ng-repeat="line in logDtlProcessInfoLines track by $index">
+						{{line}}<br>
+					</span>
+				</div>
+			</div>
+ 			<br>
+			<div class="row">
+				<div class="col-xs-12" align="right">
+					<owd-button id="close" class="btn-danger" ng-click="close()">閉じる</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

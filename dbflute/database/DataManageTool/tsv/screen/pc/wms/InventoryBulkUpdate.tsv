@@ -1,0 +1,60 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryBulkUpdate	棚卸在庫一括更新	wms	centerCd	センタ		1	1		1	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	clientCd	荷主		1	1		1	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	warehouseCd	倉庫		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryDt	棚卸日		1	1		1	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	depositCd	預託		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	stockTypeCd	在庫区分		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	fromLocationCd	ロケーションCD(From)		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	toLocationCd	ロケーションCD(To)		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	zoneCd	ゾーン		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	storeLabelNo	入庫ラベルNo.		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	productCd	商品CD		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	stockTakingInput	棚卸入力有		1	1		0	0													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	unmatch	アンマッチ有		1	1		0	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	search	検索		1	1		0	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	excelOutput	Excel出力		1	1		0	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	stockChanged	在庫変更あり		1	0	center	0	1													
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mproduct.productCd	商品CD	1	text	1	0		0	245			1	245
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	2	text	1	0		0	205			2	205
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300			3	300
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	4	text	1	0		0	300			4	300
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	productUnit	商品単位	5	text	1	0		0	90			5	90
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mcustomerByDepositId.customerCd	預託CD	6	text	1	0		0	160			6	160
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mcustomerByDepositId.customerNm	預託名称	7	text	1	0		0	300			7	300
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mstockType.stockTypeCd	在庫区分CD	8	text	1	0		0	110			8	190
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mstockType.vdict.dictNm	在庫区分名称	9	text	1	0		0	110			9	190
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	10	text	1	0	right	0	220			10	220
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	storeLabelNo	入庫ラベルNo.	11	text	1	0		0	140			11	140
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mcustomerBySupplierId.customerCd	仕入先CD	12	text	1	0		0	200			12	200
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mcustomerBySupplierId.customerNm	仕入先名称	13	text	1	0		0	300			13	300
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mcustomerBySupplierId.customerAbbr	仕入先略称	14	text	1	0		0	250			14	250
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	lot	ロット	15	text	1	0		0	170			15	170
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	limitDt	期限日	16	date	1	0		0	150			16	150
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mlocation.locationNm	ロケーション名称	17	text	1	0		0	250			17	250
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	storeDt	入庫日	18	date	1	0		0	150			18	150
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	chargeNum	棚卸前引当可能数	19	number	1	0	right	0	140			19	185
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	allocNum	棚卸前引当済数	20	number	1	0	right	0	125			20	185
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	moveNum	棚卸前作業中数	21	number	1	0	right	0	125			21	210
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	inventoryBeforeBreakdown	棚卸前内訳	22	text	1	0	right	0	200			22	200
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tstock.chargeNum	現時点引当可能数	23	number	1	0	right	0	140			23	210
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tstock.allocNum	現時点引当済数	24	number	1	0	right	0	125			24	210
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tstock.moveNum	現時点作業中数	25	number	1	0	right	0	125			25	210
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	adjQty	現時点調整可能数	26	number	1	0	right	0	140			26	210
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	breakdownN	現時点内訳	27	text	1	0	right	0	200			27	200
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	inventoryNum	棚卸数量	28	number	1	0	right	0	95			28	170
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	inventoryBreakdown	棚卸内訳	29	text	1	0	right	0	200			29	200
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	diffQty	棚卸差異数	30	number	1	0	right	0	95			30	170
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	histAddUser	入力者	31	text	1	0		0	160			31	160
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	inputDt	入力日時	32	datetime	1	0		0	180			32	180
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	bclassDtlByStockAdjustFlg.vdict.dictNm	棚卸調整入力	33	text	1	0		0	160			33	160
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mwarehouse.warehouseCd	倉庫CD	34	text	1	0		0	85			34	160
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mwarehouse.warehouseNm	倉庫名称	35	text	1	0		0	300			35	300
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mlocation.mzone.zoneCd	ゾーンCD	36	text	1	0		0	90			36	110
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	mlocation.mzone.zoneNm	ゾーン名称	37	text	1	0		0	170			37	170
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tinventoryH.mclient.clientCd	荷主CD	38	text	1	0		0	200			38	
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tinventoryH.mclient.clientNm	荷主名称	39	text	1	0		0	200			39	
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tinventoryH.mcenter.centerCd	センタCD	40	text	1	0		0	200			40	
+InventoryBulkUpdate	棚卸在庫一括更新	wms	inventoryBulkUpdateList	棚卸在庫一括更新グリッド	grid	1	1		0	1	tinventoryH.mcenter.centerNm	センタ名称	41	text	1	0		0	200			41	
+InventoryBulkUpdate	棚卸在庫一括更新	wms	register	在庫一括更新		1	1		0	1													

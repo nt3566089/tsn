@@ -1,0 +1,27 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	companyFlg	大口事業所フラグ	dropdown	1	1		1	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	zipCd	郵便番号	text	1	1		1	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	publicCd	全国地方公共団体コード	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	zipCd5	旧郵便番号	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	addressKn1	都道府県カナ	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	addressKn2	市区町村カナ	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	addressKn3	町域カナ	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	companyKn	大口事業所名カナ	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	address1	都道府県	text	1	1		1	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	address2	市区町村	text	1	1		1	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	address3	町域	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	address4	小字	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	companyNm	大口事業所名	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg1	フラグ1	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg2	フラグ2	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg3	フラグ3	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg4	フラグ4	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	updType	更新区分	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	reasonType	変更理由	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	handlingAddress	取扱局	text	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg5	フラグ5	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	flg6	フラグ6	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	updCd	修正コード	dropdown	1	1		0	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													
+ZipMasterEdit	郵便番号マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

@@ -1,0 +1,33 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	productNm	商品名称		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	productAbbr	商品略称		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	janCd	ソースCD		1	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	lotManagFlg	ロット管理フラグ		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	limitDtManagFlg	期限日管理フラグ		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	limitDtReverseFlg	期限日逆転防止フラグ		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	receiveLimitNum	入荷期限日数		1	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	shippingLimitNum	出荷期限日数		1	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	mergeCls	入庫No.マージ区分		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	shippingStopFlg	出荷停止フラグ		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	clientCd	荷主		1	0		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	productCd	商品CD		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mshape.shapeCd	荷姿	1	text	1	0		0	150			1	150
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mshape.vdictByShapeDictId.dictNm	荷姿名称	2	text	1	0		0	300			2	300
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].unitNum	入数	3	number	1	1	right	1	85			3	85
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].unitNumUnit	入数単位	4	text	1	0		0	150			4	85
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].length	縦(mm)	5	number	1	1	right	0	90			5	120
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].width	横(mm)	6	number	1	1	right	0	90			6	120
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].height	高さ(mm)	7	number	1	1	right	0	110			7	110
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].volume	容積(mm3)	8	number	1	1	right	0	190			8	190
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].netWeight	商品重量(g)	9	number	1	1	right	0	125			9	140
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	product	商品マスタメンテナンスグリッド	grid	1	1		0	1	mproductShapeList[0].grossWeight	総重量(g)	10	number	1	1	right	0	110			10	150
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	fixedPoint	定点		1	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	shapeGrpCd	在庫管理単位		1	1		1	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	nmfcCode	NMFC Code		0	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	freightCls	Freight Class		0	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	counntryOfOrigin	Country of Origin		0	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	unitVal	Unit Value		0	1		0	1													
+ProductMasterEdit	商品マスタメンテナンス(編集)	wms	htsCd	Harmonized Code		0	1		0	1													

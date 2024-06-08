@@ -1,0 +1,11 @@
+/*
+* このソースは基盤ソースです。変更は行わないで下さい。
+*/
+
+
+/*
+* The license and copyright of this source are documented in the "LICENSE" file in the same folder.
+*/
+
+
+.overlayContainer{display:none}.overlayBackground{top:0;left:0;padding-left:100px;position:fixed;z-index:9000;height:100%;width:100%;background-color:grey;opacity:.3}.overlayContent{font-weight:700;height:100px;width:300px;z-index:9000;text-align:center;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}

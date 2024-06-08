@@ -1,0 +1,277 @@
+@CHARSET "UTF-8";
+
+.wmslegend ,
+.ui-grid-canvas .ui-grid-row .wmslegend
+{
+	padding: .2em .6em .2em;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+}
+
+.wmslegendwhite ,
+.ui-grid-canvas .ui-grid-row .wmslegendwhite
+{
+	color: black;
+	background-color: white;
+}
+
+.wmslegendred ,
+.ui-grid-canvas .ui-grid-row .wmslegendred
+{
+	color: black;
+	background-color: red;
+}
+
+.wmslegendlightgreen ,
+.ui-grid-canvas .ui-grid-row .wmslegendlightgreen
+{
+	color: black;
+	background-color: lightgreen;
+}
+
+.wmslegendcyan ,
+.ui-grid-canvas .ui-grid-row .wmslegendcyan
+{
+	color: black;
+	background-color: cyan;
+}
+
+.wmslegendpink ,
+.ui-grid-canvas .ui-grid-row .wmslegendpink
+{
+	color: black;
+	background-color: pink;
+	font-weight: bold;
+}
+
+/*add by yangn start 20140721*/
+.wmslegendlightyellow ,
+.ui-grid-canvas .ui-grid-row .wmslegendlightyellow
+{
+	color: black;
+	background-color: lightyellow;
+}
+/*add by yangn end 20140721*/
+
+/*add by wangsm start 20140724*/
+/*ライトブルー*/
+.wmslegendlightblue ,
+.ui-grid-canvas .ui-grid-row .wmslegendlightblue
+{
+	color: black;
+	background-color: lightblue;
+}
+/*アクア*/
+.wmslegendaqua ,
+.ui-grid-canvas .ui-grid-row .wmslegendaqua
+{
+	color: black;
+	background-color: aqua;
+}
+/*ターコイズ*/
+.wmslegendturquoise ,
+.ui-grid-canvas .ui-grid-row .wmslegendturquoise
+{
+	color: black;
+	background-color: turquoise;
+}
+/*ダークグレイ*/
+.wmslegenddarkgray ,
+.ui-grid-canvas .ui-grid-row .wmslegenddarkgray
+{
+	color: khaki;
+	background-color: darkgray;
+}
+/*ダークグレイ2*/
+.wmslegenddarkgray2 ,
+.ui-grid-canvas .ui-grid-row .wmslegenddarkgray2
+{
+	color: sandybrown;
+	background-color:#999999;
+}
+
+/*インディアンレッド*/
+.wmslegendindianred ,
+.ui-grid-canvas .ui-grid-row .wmslegendindianred
+{
+	color: black;
+	background-color: indianred;
+}
+/*add by kawana 2015.07.31 Start*/
+/*イエロー*/
+.wmslegendyellow ,
+.ui-grid-canvas .ui-grid-row .wmslegendyellow
+{
+	color: black;
+	background-color: yellow;
+}
+/*add by kawana 2015.07.31 End*/
+/*ブルー*/
+.wmslegendblue ,
+.ui-grid-canvas .ui-grid-row .wmslegendblue
+{
+	color: blue;
+}
+/*レッド*/
+.wmslegendcolorred ,
+.ui-grid-canvas .ui-grid-row .wmslegendcolorred
+{
+	color: red;
+}
+/*add by wangsm end 20140724*/
+
+/*add by lisy start 20140724*/
+/*ゴールド*/
+.wmslegendgold ,
+.ui-grid-canvas .ui-grid-row .wmslegendgold
+{
+	color: black;
+	background-color: gold;
+}
+/*文字シアン*/
+.wmslegendcyan2 ,
+.ui-grid-canvas .ui-grid-row .wmslegendcyan2
+{
+	color: cyan;
+	background-color: white;
+}
+.wmslegendredcyan ,
+.ui-grid-canvas .ui-grid-row .wmslegendredcyan
+{
+	color: blue;
+	background-color: indianred;
+}
+/*ピンク*/
+.wmslegendhotpink ,
+.ui-grid-canvas .ui-grid-row .wmslegendhotpink
+{
+	color: black;
+	background-color: hotpink;
+}
+/*add by lisy end 20140724*/
+/*add by kawana 2016.10.19 Start*/
+/*オレンジ*/
+.wmslegendorange ,
+.ui-grid-canvas .ui-grid-row .wmslegendorange
+{
+	color: black;
+	background-color: orange;
+}
+/*add by kawana 2016.10.19 End*/
+/*add by sja-shen start 20140806*/
+.wmslegendcyanTxt ,
+.ui-grid-canvas .ui-grid-row .wmslegendcyanTxt
+{
+    color: blue;
+    background-color: transparent;
+}
+
+/*add by sja-she end 20140806*/
+/*add by lisy start 20141117*/
+.wmslegendborder {
+    border-top:1px solid #FFF;
+    border-left:1px solid #FFF;
+    border-right:1px solid #FFF;
+    padding-left:0px;
+	text-align: left;
+	height:33px;
+}
+/*add by lisy end 20141117*/
+.list-box {
+  display: table;
+}
+.list-img,
+.list-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+/* [1.1.4-CT-024]パラメータマスタメンテナンス(編集) 項目のカテゴリわけ対応 2016.05.20 kawana Start */
+.wmsfildsetwell {
+  min-height: 20px;
+  padding: 19px;
+  padding-top: 14px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.wmsfildsetwell blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.wmsfildsetwell-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+.wmsfildsetwell-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+
+.wmsfildsetwell-legend {
+  margin-bottom: 0px;
+  border-bottom-width: 0px;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #888;
+  width: auto;
+}
+/* [1.1.4-CT-024]パラメータマスタメンテナンス(編集) 項目のカテゴリわけ対応 2016.05.20 kawana End */
+
+/* ONEsLOGI Logo CSS */
+.oneslogi-logo {
+	position: static;
+	bottom: 30px;
+	right: 50px;
+}
+.oneslogi-logo img {
+	max-width: 200px;
+	opacity:0.7;
+	float: right !important;
+}
+@media (min-width: 768px) {
+	.oneslogi-logo {
+		position: fixed;
+	}
+	.oneslogi-logo img {
+		max-width: 280px;
+	}
+}
+@media (min-width: 992px) {
+	.oneslogi-logo {
+		position: fixed;
+	}
+	.oneslogi-logo img {
+		max-width: 280px;
+	}
+}
+@media (min-width: 1200px) {
+	.oneslogi-logo {
+		position: fixed;
+	}
+	.oneslogi-logo img {
+		max-width: 280px;
+	}
+}
+
+/* [#5115][v3.1] 出荷検品用エラー画面追加 kawana Start */
+
+/* 特大ボタン */
+.wms-btn-big {
+  padding: 20px 20px;
+  font-size: 36px;
+  line-height: 1.33;
+  border-radius: 10px;
+}
+
+/* [#5115][v3.1] 出荷検品用エラー画面追加 kawana End */

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <!-- Stop output INFO at start -->
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="com.oneslogi.base.logger.WebTimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/logback_app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>366</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%logger	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>error</level>
+        </filter>
+        <rollingPolicy class="com.oneslogi.base.logger.WebTimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/logback_error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>366</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%logger	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ACCESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="com.oneslogi.base.logger.WebTimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/logback_access.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>366</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- msgの内容：IPアドレス、ユーザーCD、URIをタブ区切りで出力 -->
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="TRACE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="com.oneslogi.base.logger.WebTimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/logback_trace.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- １処理単位に処理時間やリクエスト情報を出力します。 -->
+            <!-- msgの内容(info) ：対象クラス・メソッド名と出力内容をタブ区切りで出力 -->
+            <!-- msgの内容(debug)：IPアドレス、ユーザーCD、URI、対象クラス・メソッド名と出力内容をタブ区切りで出力 -->
+            <!-- msgの内容(trace)：出力内容がHTTP Header/Body、それ以外の構成はdebugと同様 -->
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="PERFORMANCE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <prudent>true</prudent>
+        <rollingPolicy class="com.oneslogi.base.logger.WebTimeBasedRollingPolicy">
+            <fileNamePattern>${catalina.base}/logs/logback_performance.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- 処理全体、各SQLの実行状況をパフォーマンスログとして出力します。 -->
+            <!-- 処理全体の実行状況も必要な場合は「debug」、各SQLの実行状況のみ必要な場合は「info」をログレベルに指定して下さい。既定は「warn」です。 -->
+            <!-- ログの内容は出力順となる為、リクエスト処理別にソートする場合は、「ロググループ、スレッドID、ログ出力順」でソートして下さい。 -->
+            <!-- 処理のグルーピングを「ロググループ」のみで行う場合、他のスレッド処理結果とグループが重複する可能性がある為、厳密にグルーピングする場合には「ロググループ、スレッドID」として下さい。 -->
+            <!-- msgの内容(info) ：「ログ出力日時	スレッド情報	ログレベル	ログ出力クラス・メソッド	ログ名称	ロググループ	スレッドID	ログ出力順	SQLコマンド名	SQL文(30,000Byteまで)	処理開始クラス・メソッド	SQL実行依頼クラス・メソッド	DBFlute処理実行クラス・メソッド	処理時間(ナノ)	処理時間(マイクロ)	処理時間(ミリ)	処理時間(秒)」で出力 -->
+            <!-- msgの内容(debug)：リクエスト開始時と終了時のログを出力（終了側の処理時間には開始から終了までの処理時間を出力） -->
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%logger	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <pattern>%date{yyyy/MM/dd HH:mm:ss.SSS}	[%thread]	%level	%logger	%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- WeldのValidatorログの警告は無視 -->
+    <logger name="org.jboss.weld.Validator" level="error" />
+    <logger name="org.jboss.resteasy.resteasy_jaxrs.i18n" level="error" />
+
+    <!-- RESTEasyのHibernate Validatorログの詳細は無視 -->
+    <logger name="org.hibernate" level="warn" />
+
+    <logger name="org.dbflute" level="warn" />
+    <logger name="com.oneslogi.base" level="warn" />
+    <logger name="com.oneslogi.base.cdi.interceptor.BeginTransactionInterceptor" level="warn" />
+    <logger name="com.oneslogi.base.cdi.interceptor.ReadOnlyTransactionInterceptor" level="warn" />
+    <logger name="com.oneslogi.base.cdi.interceptor.NotUseConnectionInterceptor" level="warn" />
+
+    <logger name="com.oneslogi.base.cdi.interceptor.AccessInterceptor" additivity="false" level="info">
+        <appender-ref ref="ACCESS" />
+    </logger>
+
+    <logger name="com.oneslogi.base.cdi.interceptor.TraceInterceptor" additivity="false" level="warn">
+        <appender-ref ref="TRACE" />
+    </logger>
+
+    <logger name="com.oneslogi.base.cdi.interceptor.DBFluteAccessContextInterceptor" additivity="false" level="debug">
+        <appender-ref ref="PERFORMANCE" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="warn">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="ERROR" />
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

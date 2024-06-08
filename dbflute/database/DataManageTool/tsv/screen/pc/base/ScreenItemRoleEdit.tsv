@@ -1,0 +1,12 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	roleCd	権限		1	0		1	1													
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenCd	画面		1	1		1	1													
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	search	検索		1	1		0	1													
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	itemCd	項目CD	1	text	1	0		0	300				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	項目名	2	text	1	0		0	300				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByVisible.vdict.dictNm	表示可否	3	text	1	0		0	75				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	bclassDtlByEditable.vdict.dictNm	編集可否	4	text	1	0		0	75				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	roleItemVisible	権限別 表示可否	5	dropdown	1	1		0	140				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	screenItemRoleList	画面項目権限マスタメンテナンスグリッド	grid	1	1		0	1	roleItemEditable	権限別 編集可否	6	dropdown	1	1		0	140				
+ScreenItemRoleEdit	画面項目権限マスタメンテナンス(編集)	base	register	登録		1	1		0	1													

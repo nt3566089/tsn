@@ -1,0 +1,31 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblConsignee	荷受人	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblDelivTelNo	TEL:	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblCorporation	名寄せ№:	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblShippingDt	出荷日:	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblDelivDt	指定日:	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblDutchSendPeople	荷送人	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblCod	代引金額　　　　                       円	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblTitle	納品書在中	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblAgain	再	String	1	
+CommonTagLabel	汎用荷札	汎用荷札	../../../../../../reports/shipping/CommonTagLabel.jrxml	1						1	0	lblFraction	個	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblConsignee	荷受人	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblDelivTelNo	TEL:	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblCorporation	名寄せ№:	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblShippingDt	出荷日:	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblDelivDt	指定日:	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblDutchSendPeople	荷送人	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblCod	代引金額　　　　                       円	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblTitle	納品書在中	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblAgain	再	String	1	
+CommonTagLabel	Common Tag Label	Common Tag Label	../../../../../../reports/shipping/CommonTagLabel_enUS.jrxml	1						0	1	lblFraction	個	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblConsignee	荷受人	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblDelivTelNo	TEL:	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblCorporation	名寄せ№:	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblShippingDt	出荷日:	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblDelivDt	指定日:	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblDutchSendPeople	荷送人	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblCod	代引金額　　　　                       円	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblTitle	納品書在中	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblAgain	再	String	1	
+CommonTagLabel	通用荷札	通用荷札	../../../../../../reports/shipping/CommonTagLabel_zhCN.jrxml	1						0	1	lblFraction	個	String	1	

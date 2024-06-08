@@ -1,0 +1,86 @@
+<div ng-controller="InventoryInput" owd-screen="InventoryInput">
+	<form id="inputform" name="inputform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+				<fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="conditionH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点" ng-change="centerChange()"></owd-select>
+						<owd-select id="clientCd" ng-model="conditionH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+						<owd-select id="inventoryInstKbn" ng-model="conditionI.inventoryInstKbn" owd-models="inventoryInstKbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫調査区分" ng-change="inventoryInstKbnChange()"></owd-select>
+						<owd-select id="inventoryKeyFlg" ng-model="conditionH.inventoryKeyFlg" owd-models="maxInvFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫調査キーフラグ"  ng-change="keyFlgChange()"></owd-select>
+						<owd-text id="inventoryInstKey" ng-model="conditionH.inventoryKey" label-text="在庫調査指示キー" ></owd-text>
+						<owd-date id="inventoryInstAddDt" ng-model="conditionI.registDt" label-text="在庫調査指示作成日"></owd-date>
+						<owd-select id="warehouseCd" ng-model="conditionB.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ></owd-select>
+						<owd-date id="inventoryDtFrom" ng-model="conditionH.inventoryDtFrom" label-text="棚卸日From"></owd-date>
+						<owd-date id="inventoryDtTo" ng-model="conditionH.inventoryDtTo" label-text="棚卸日From" owd-validate="fromToCheck(conditionH.inventoryDtFrom, $value)" owd-validate-watch="'conditionH.inventoryDtFrom'" owd-validate-message="fromToMessage"></owd-date>
+						<owd-select id="depositCd" ng-model="conditionB.mcustomerByDepositId.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+						<owd-select id="stockTypeCd" ng-model="conditionB.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+						<owd-select id="locationGrp" ng-model="conditionI.locationGrp" owd-models="locationGrpList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ロケーショングループ"></owd-select>
+
+						<owd-text id="fromLocationCd" ng-model="conditionI.fromLocationCd" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+							<owd-info ng-model="conditionI.fromLocationNm"></owd-info>
+						</owd-text>
+						<owd-text id="toLocationCd" ng-model="conditionI.toLocationCd" label-text="ロケーション(To)" owd-add-button="showLocation(2)" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(conditionI.fromLocationCd, $value)" owd-validate-watch="'conditionI.fromLocationCd'" owd-validate-message="fromToMessage">
+							<owd-info ng-model="conditionI.toLocationNm"></owd-info>
+						</owd-text>
+
+						<owd-select id="zoneCd" ng-model="conditionI.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+
+						<owd-text id="productCd" ng-model="conditionB.mproduct.productCd" label-text="銘柄CD" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="conditionB.mproduct.productNm"></owd-info>
+						</owd-text>
+						<owd-text id="storeLabelNo" ng-model="conditionB.storeLabelNo" label-text="入庫ラベルNo."></owd-text>
+
+						<owd-select id="capProduct" ng-model="conditionH.capProduct" owd-models="capProductList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="CAP製品"></owd-select>
+
+						<owd-select id="productType" ng-model="conditionH.productType" owd-models="cggdList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="たばこ商品区分"  ></owd-select>
+
+						<owd-select id="stockTakingInput" ng-model="conditionI.stockTakingInput" owd-models="stockTakingInputList" owd-repeat-key="classCd"  owd-repeat-value="classNm" label-text="棚卸入力有"></owd-select>
+
+						<owd-select id="unmatch" ng-model="conditionI.unmatch" owd-models="unmatchList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アンマッチ有"  ></owd-select>
+
+					</div>
+				</fieldset>
+
+			</owd-accordion-group>
+		</owd-accordion>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="inputform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="inputform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="right">
+            	<div class="list-box">
+					<table border="1">
+						<tr hidden="">
+							<td class="wmslegend wmslegendwhite"><owd-span id="inventroyParcentTitle" label-text="進捗率"></owd-span></td>
+						</tr>
+						<tr>
+							<td class="wmslegend wmslegendpink"><owd-info id="inventroyParcent" ng-model="inventroyParcent"></owd-info></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<br>
+
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="inventoryList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-multitext-options="multiTextOptions" owd-grid-multitext-options="gridMultiTextOptions"  owd-form-name="inputform"></div>
+
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="stockAdjust" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length" ng-click="stockAdjust()">在庫調整</owd-button>
+					<owd-button id="register" class="btn-success" ng-disabled="inputform.$invalid" ng-click="register()">登録</owd-button>
+
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,105 @@
+<div ng-controller="AttendanceEntry" owd-screen="AttendanceEntry">
+
+	<form id="searchform" name="searchform" novalidate>
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<owd-span id="currentTime" label-text="現在の時間"></owd-span>
+			</div>
+			<div class="panel-body">
+				<div id="time_now" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+			</div>
+		</div>
+
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center panel_button panel_btn_view" >
+					<owd-button id="attendance" class="attendance-leaving-rest-button btn-primary" ng-disabled="STATE.hasAttnedance()" ng-click="selectAttendance()"></owd-button>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center panel_button panel_btn_view" >
+					<owd-button id="leaveWork" class="attendance-leaving-rest-button btn-danger" ng-disabled="STATE.hasLeaving()"  ng-click="selectLeaveWork()"></owd-button>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center panel_button panel_btn_view" >
+					<owd-button id="startBreak" class="attendance-leaving-rest-button btn-info" ng-disabled="STATE.hasStartRest()"  ng-click="selectStartBreak()"></owd-button>
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center panel_button panel_btn_view" >
+					<owd-button id="endBreak" class="attendance-leaving-rest-button btn-info" ng-disabled="STATE.hasEndRest()"  ng-click="selectEndBreak()"></owd-button>
+				</div>
+			</div>
+		</div>
+
+		<div id="content-footer"></div>
+
+		<div style="height: 35vh;">
+			<div class="col-xs-6 col-sm-8 col-md-8 col-lg-9" style="height: 35vh;">
+				<div class="panel panel-default" style="height: 100%;">
+					<div class="panel-heading">
+						<owd-span id="outputLog" label-text="ログ出力"></owd-span>
+					</div>
+					<div class="panel-body" style="height: 85%;">
+						<pre style="height: 100%;"></pre>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3" style="height: 100%;">
+				<table class="tableClass">
+					<tr>
+						<td ng-keydown="workerCodeKeyUp($event)">
+							<label for="userCd"><owd-span id="userCd" label-text="作業者CD"></owd-span></label>
+							<input type="text" id="userCdValue" ng-model="head.userCdValue" class ="form-control input_size" style="border-radius:0px" required>
+						</td>
+					</tr>
+					<tr ng-if="byPasswordisShow">
+						<td>
+						<br>
+							<label for="password"><owd-span id="password" label-text="パスワード"></owd-span></label>
+							<input type="password" id="password" ng-model="head.password" label-text="パスワード" class ="form-control input_size" style="border-radius:0px" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<br>
+							<owd-button id="register" class="btn-success" ng-click="userRegister()" ng-disabled="searchform.$invalid" >register</owd-button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</form>
+
+	<style>
+	.table-margin.table-responsive {
+		overflow-x: auto;
+		margin: 20px 0;
+		border: none;
+	}
+
+	#time_now {
+		font-size: 7vw;
+		text-align: center;
+	}
+
+	.attendance-leaving-rest-button {
+		height: 20vh;
+		width: 20vw;
+		font-size: 2vw
+	}
+
+	.tableClass {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+
+	.panel_btn_view {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.input_size {
+		width: 60%;
+	}
+	</style>
+
+</div>

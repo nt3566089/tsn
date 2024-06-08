@@ -1,0 +1,28 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	screenCd	画面		1	0		1	1													
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	grid	グリッド		1	1		1	1													
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	search	検索		1	1		1	1													
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	colCd	列CD	1	text	1	1		1	300			1	300
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	vdict.dictNm	列名	2	text	1	1		1	300			2	300
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	colOrder	列順序	3	number	1	1	right	0	70			3	170
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	colType	列型	4	dropdown	1	1		0	270			4	270
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	visible	表示可否	5	dropdown	1	1		1	110			5	110
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	editable	編集可否	6	dropdown	1	1		1	130			6	130
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	textAlign	表示位置	7	dropdown	1	1		0	185			7	185
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	necessary	必須	8	dropdown	1	1		1	95			8	95
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	colWidth	列幅	9	number	1	1	right	0	60			9	150
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	inColIndex	入力ファイル列位置	10	number	1	1	right	0	155			10	230
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	inColDefaultValue	入力ファイル列規定値	11	text	1	1		0	300			11	300
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.inputLimit	入力文字制限	12	dropdown	1	1		0	450			12	450
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.limitMessageCd	制限メッセージCD	13	text	1	1		0	420			13	420
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.minChars	最小文字数	14	number	1	1	right	0	90			14	110
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.maxChars	最大文字数	15	number	1	1	right	0	90			15	110
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.minNumber	最小値	16	number	1	1	right	0	230			16	230
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.maxNumber	最大値	17	number	1	1	right	0	230			17	230
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.integerLength	整数桁数	18	number	1	1	right	0	75			18	75
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	bcolValidAsOne.decimalLength	小数桁数	19	number	1	1	right	0	75			19	140
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	body	画面グリッドマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	20	dropdown	1	1		0	110			20	110
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	addRow	行追加		1	1		0	1													
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	removeRow	行削除		1	1		0	1													
+ScreenColEdit	画面グリッドマスタメンテナンス(編集)	base	update	登録		1	1		0	1													

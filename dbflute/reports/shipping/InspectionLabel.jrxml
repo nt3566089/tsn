@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InspectionLabel" pageWidth="325" pageHeight="226" orientation="Landscape" columnWidth="279" leftMargin="23" rightMargin="23" topMargin="23" bottomMargin="10" uuid="70c4b647-a018-48bb-a08c-acad170da23b">
+	<property name="ireport.zoom" value="1.4641000000000024"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<style name="Barcode" fill="Solid" hAlign="Left" vAlign="Middle" fontName="IPAexゴシック" fontSize="28" isBold="true" isItalic="false" isUnderline="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\Source_20140709\\Source\\reports\\master\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_JASPER_FILE" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="REPORT_BARCODE_PRINT" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="packingCalCls" class="java.lang.String">
+		<fieldDescription><![CDATA[packingCalCls]]></fieldDescription>
+	</field>
+	<field name="cultureId" class="java.lang.Long">
+		<fieldDescription><![CDATA[cultureId]]></fieldDescription>
+	</field>
+	<field name="pickingWorkNo" class="java.lang.String">
+		<fieldDescription><![CDATA[pickingWorkNo]]></fieldDescription>
+	</field>
+	<field name="shippingPackingNo" class="java.lang.String"/>
+	<field name="userCd" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<detail>
+		<band height="180" splitType="Stretch">
+			<rectangle radius="0">
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="278" height="180" isRemoveLineWhenBlank="true" uuid="851aeef6-7015-4e11-a620-ec139b6e6a72"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblPickingWorkNo" mode="Opaque" x="2" y="25" width="275" height="35" uuid="3a548f4b-ff55-4a7c-8020-63bd43d6fba2">
+					<printWhenExpression><![CDATA[$F{packingCalCls}.equals("0")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="26"/>
+				</textElement>
+				<text><![CDATA[*出庫作業No. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblShippingPackingNo" mode="Opaque" x="2" y="25" width="275" height="35" uuid="aeb1595c-1c8f-43ab-8898-280d01666eff">
+					<printWhenExpression><![CDATA[$F{packingCalCls}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="26"/>
+				</textElement>
+				<text><![CDATA[*出荷梱包No.]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement style="Barcode" x="2" y="60" width="275" height="45" uuid="1c04a2c1-edac-48b2-9248-c9c17914a692"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" moduleWidth="2.5" textPosition="none" quietZone="0.0" verticalQuietZone="0.0">
+					<jr:codeExpression><![CDATA[$F{packingCalCls}.equals("1") ? $F{shippingPackingNo} : $F{pickingWorkNo}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtShippingPackingNoPickingWorkNo" mode="Opaque" x="2" y="105" width="275" height="35" uuid="92420877-5868-45ea-97c7-0a023e3bbc75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="26" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{packingCalCls}.equals("1") ? $F{shippingPackingNo} : $F{pickingWorkNo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="datetime" isBlankWhenNull="true">
+				<reportElement key="" mode="Transparent" x="2" y="145" width="275" height="18" uuid="31e99548-7182-4b11-a7c6-2f0f53d22269"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.now()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtUserCd" mode="Opaque" x="2" y="163" width="275" height="17" uuid="eed6501e-1013-4521-9ca6-3c36ca56a369"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userCd}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,14 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	clientCd	荷主		1	0		0	1													
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	productCd	親商品CD		1	1		1	1													
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mproduct.productCd	構成品CD	1	text	1	1		1	340			1	340
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mproduct.productNm	構成品名称	2	text	1	0		0	300			2	300
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mproduct.productAbbr	構成品略称	3	text	1	0		0	300			3	300
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	4	text	1	0		0	205			4	205
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	unitNum	セット入数	5	number	1	1	right	1	110			5	150
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	list	セット品構成マスタメンテナンス(編集)グリッド	grid	1	1		0	1	delFlg	削除	6	dropdown	1	1		1	110			6	110
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	removeRow	行削除		1	1		0	1													
+SetStructureEdit	セット品構成マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

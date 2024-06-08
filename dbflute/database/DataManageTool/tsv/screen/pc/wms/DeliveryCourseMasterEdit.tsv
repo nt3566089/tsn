@@ -1,0 +1,26 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	centerCd	センタ		1	0		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseCd	配送コースCD		1	1		1	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseNm	配送コース名称		1	1		1	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	carrierCd	運送業者		1	1		1	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	pickingTime	出庫開始時刻		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	stowageTime	積込予定時刻		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	shippingTime	出荷予定時刻		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	addRow	行追加		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	removeRow	行削除		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	register	登録		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseMasterEdit	配送コースマスタメンテナンスグリッド	grid	1	1		0	1	mcustomer.customerCd	納品先CD	1	text	1	1		1	200			1	200
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseMasterEdit	配送コースマスタメンテナンスグリッド	grid	1	1		0	1	mcustomer.customerNm	納品先名称	2	text	1	0		0	300			2	300
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseMasterEdit	配送コースマスタメンテナンスグリッド	grid	1	1		0	1	deliveryOrder	配送順	3	number	1	1	right	0	70			3	160
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseMasterEdit	配送コースマスタメンテナンスグリッド	grid	1	1		0	1	deliveryReadTime	配送リードタイム	4	number	1	1	right	0	140			4	160
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	deliveryCourseMasterEdit	配送コースマスタメンテナンスグリッド	grid	1	1		0	1	delFlg	削除	5	dropdown	1	1		1	110			5	110
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	tagType	送り状種別		1	1		1	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	trackingNumberingKey	追跡番号採番キー		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	trackingNumberingAfterKey	追跡番号採番キー(代引時、2枚目以降)		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	trackingNumberingUnit	追跡番号採番単位		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	tagTypeAfter	送り状種別(代引時、2枚目以降)		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	tagDataType	送り状データ種別		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	slipTagType	送り状定義		1	1		0	1													
+DeliveryCourseMasterEdit	配送コースマスタメンテナンス(編集)	wms	paymentTerm	Payment Term		0	1		0	1													

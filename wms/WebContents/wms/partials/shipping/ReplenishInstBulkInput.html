@@ -1,0 +1,42 @@
+<div ng-controller="ReplenishInstBulkInput" owd-screen="ReplenishInstBulkInput">
+	<form id="inputform" name="inputform" novalidate>
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	
+			    <fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="head.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+						<owd-select id="clientCd" ng-model="head.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-checkbutton style="margin-top:-25px;" id="errorOnly" ng-model="head.chkErrorShow" label-text="エラーのみ表示" btn-checkbox-true="1" btn-checkbox-false="0" ng-change="alertMessage.deleteAll();search();"></owd-checkbutton>
+					</div>
+				</fieldset>
+	
+			</owd-accordion-group>
+		</owd-accordion>
+		
+		<div owd-grid="gridOptions" id="replenishInstBulkInputList"
+			owd-select-options="gridSelectOptions"
+			owd-button-options="gridButtonOptions"
+			owd-event-options="gridEventOptions" owd-form-name="inputform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-4">
+	                <br>
+					<owd-file id="fileInput" class="btn-info" owd-before-upload="fileBeforeUpload" owd-success="fileUploadSuccess" owd-options="fileOptions" ng-disabled="inputform.$invalid">Excel取込</owd-file>
+					<owd-button id="excelOutput" class="btn-info" ng-click="excelOutput()" ng-disabled="dataCount==0">Excel出力</owd-button>
+				</div>
+				<div class="col-xs-4 col-xs-offset-4">
+					<div class="row">
+						<owd-select id="errorProcessMet" owd-grid-system-option="col-xs-8" ng-model="head.errorProcessMet" owd-models="errorProcessMetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラー処理方法" owd-remove-blank></owd-select>
+						<div class="col-xs-4" align="right">
+		                	<br>
+							<owd-button id="register" class="btn-info" ng-click="register()" ng-disabled="dataCount==0">登録</owd-button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,24 @@
+<div ng-controller="DeliverySlipListPrint" owd-screen="DeliverySlipListPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主_" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-date id="shippingDt" ng-model="searchCondition.tallocInstH.shippingDt" label-text="出荷日_"></owd-date>
+				<owd-text id="supplierCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先ＣＤ_" owd-add-button="showVendor()" ng-blur="deliveryCourseBlur()">
+				 <owd-info ng-model="searchCondition.tallocInstH.supplyCustomerNm"></owd-info>
+				</owd-text>
+				<owd-select id="printCondition" ng-model="searchCondition.printCondition" owd-models="printConditionList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行区分_" owd-remove-blank></owd-select>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.08 PYM Start -->
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.tpickingH.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-text id="clientShippingNo" ng-model="searchCondition.clientShippingNo" label-text="顧客出荷指示No."></owd-text>
+				<!-- 米国出荷ドキュメント追加対応 2018.01.08 PYM End -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

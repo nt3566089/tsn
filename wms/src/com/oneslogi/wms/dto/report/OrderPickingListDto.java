@@ -1,0 +1,214 @@
+package com.oneslogi.wms.dto.report;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.oneslogi.base.dbflute.dto.customize.SqlOrderPickingListPrintDto;
+import com.oneslogi.base.dto.BaseDto;
+
+@XmlRootElement(name = BaseDto.XML_ROOT_NAME)
+public class OrderPickingListDto extends SqlOrderPickingListPrintDto {
+
+	//名寄せ分子/名寄せ分母
+	private String strFraction;
+
+	// [Ver3.0][#2379] 複数荷姿対応 2017.11.10 miyabe Start
+	//入数
+	private String stringUnitNum;
+
+	//内訳
+	private String breakdown;
+
+	//最小梱包単位
+	private String minimumPackingUnit;
+	// [Ver3.0][#2379] 複数荷姿対応 2017.11.10 miyabe End
+
+	//時間Id
+	private long cultureId;
+
+	//帳票CD
+	private String reportId;
+
+	//再Flg
+	private String printFlg;
+
+	//伝票№件数
+	private String shippingSlipNoNum;
+
+	// [ON推-品向-555] 5桁の出庫作業Noをjava側で作成 2015.01.15 kawana Start
+	// 出庫作業No.(省略形)
+	private String pickingWorkNoAbbr;
+	// [ON推-品向-555] 5桁の出庫作業Noをjava側で作成 2015.01.15 kawana End
+
+	// [エンハンス PH2.0] 梱包計算有り時、出庫作業Noを出荷梱包Noに変更 2015.11.25 sja Start
+	// 出荷梱包No.(省略形)
+	private String shippingPackingNoAbbr;
+	// [エンハンス PH2.0] 梱包計算有り時、出庫作業Noを出荷梱包Noに変更 2015.11.25 sja End
+
+	//[ON推-1.1.4-CT-042]CT指摘の修正対応 2016.05.19 chou Add Start
+	//入庫日
+	private String storeDt;
+	//入庫No.管理フラグ
+	private String storeNoFlg;
+	//[ON推-1.1.4-CT-042]CT指摘の修正対応 2016.05.19 chou Add End
+
+	// [#1561][#1713][#1750] SD用の項目を追加 2017.05.09 kawana Start
+
+	// 梱包ステータス
+	private String packingStatus;
+	// 梱包ステータス名称
+	private String packingStatusNm;
+	// 更新ユーザCD
+	private String userCd;
+	// 更新ユーザ名
+	private String userNm;
+
+	// [#1561][#1713][#1750] SD用の項目を追加 2017.05.09 kawana End
+
+	public String getStrFraction() {
+		return strFraction;
+	}
+
+	public void setStrFraction(String strFraction) {
+		this.strFraction = strFraction;
+	}
+
+	// [Ver3.0][#2379] 複数荷姿対応 2017.11.10 miyabe Start
+	//入数
+	public String getStringUnitNum() {
+		return stringUnitNum;
+	}
+
+	public void setStringUnitNum(String StringUnitNum) {
+		this.stringUnitNum = StringUnitNum;
+	}
+
+	//内訳
+	public String getBreakdown() {
+		return breakdown;
+	}
+
+	public void setBreakdown(String breakdown) {
+		this.breakdown = breakdown;
+	}
+
+	//最小梱包単位
+	public String getMinimumPackingUnit() {
+		return minimumPackingUnit;
+	}
+
+	public void setMinimumPackingUnit(String minimumPackingUnit) {
+		this.minimumPackingUnit = minimumPackingUnit;
+	}
+	// [Ver3.0][#2379] 複数荷姿対応 2017.11.10 miyabe End
+
+	public long getCultureId() {
+		return cultureId;
+	}
+
+	public void setCultureId(long cultureId) {
+		this.cultureId = cultureId;
+	}
+
+	public String getReportId() {
+		return reportId;
+	}
+
+	public void setReportId(String reportId) {
+		this.reportId = reportId;
+	}
+
+	public String getPrintFlg() {
+		return printFlg;
+	}
+
+	public void setPrintFlg(String printFlg) {
+		this.printFlg = printFlg;
+	}
+
+	public String getShippingSlipNoNum() {
+		return shippingSlipNoNum;
+	}
+
+	public void setShippingSlipNoNum(String shippingSlipNoNum) {
+		this.shippingSlipNoNum = shippingSlipNoNum;
+	}
+
+	// [ON推-品向-555] 5桁の出庫作業Noをjava側で作成 2015.01.15 kawana Start
+	public String getPickingWorkNoAbbr() {
+		return pickingWorkNoAbbr;
+	}
+
+	public void setPickingWorkNoAbbr(String pickingWorkNoAbbr) {
+		this.pickingWorkNoAbbr = pickingWorkNoAbbr;
+	}
+
+	// [ON推-品向-555] 5桁の出庫作業Noをjava側で作成 2015.01.15 kawana End
+
+	// [エンハンス PH2.0] 梱包計算有り時、出庫作業Noを出荷梱包Noに変更 2015.11.25 sja Start
+	/**
+	 * @return the shippingPackingNoAbbr
+	 */
+	public String getShippingPackingNoAbbr() {
+		return shippingPackingNoAbbr;
+	}
+
+	/**
+	 * @param shippingPackingNoAbbr the shippingPackingNoAbbr to set
+	 */
+	public void setShippingPackingNoAbbr(String shippingPackingNoAbbr) {
+		this.shippingPackingNoAbbr = shippingPackingNoAbbr;
+	}
+
+	// [エンハンス PH2.0] 梱包計算有り時、出庫作業Noを出荷梱包Noに変更 2015.11.25 sja End
+
+	//[ON推-1.1.4-CT-042]CT指摘の修正対応 2016.05.19 chou Add Start
+	public String getStoreDt() {
+		return storeDt;
+	}
+
+	public void setStoreDt(String storeDt) {
+		this.storeDt = storeDt;
+	}
+
+	public String getStoreNoFlg() {
+		return storeNoFlg;
+	}
+
+	public void setStoreNoFlg(String storeNoFlg) {
+		this.storeNoFlg = storeNoFlg;
+	}
+
+	//[ON推-1.1.4-CT-042]CT指摘の修正対応 2016.05.19 chou Add End
+
+	public String getPackingStatus() {
+		return packingStatus;
+	}
+
+	public String getPackingStatusNm() {
+		return packingStatusNm;
+	}
+
+	public String getUserCd() {
+		return userCd;
+	}
+
+	public String getUserNm() {
+		return userNm;
+	}
+
+	public void setPackingStatus(String packingStatus) {
+		this.packingStatus = packingStatus;
+	}
+
+	public void setPackingStatusNm(String packingStatusNm) {
+		this.packingStatusNm = packingStatusNm;
+	}
+
+	public void setUserCd(String userCd) {
+		this.userCd = userCd;
+	}
+
+	public void setUserNm(String userNm) {
+		this.userNm = userNm;
+	}
+}

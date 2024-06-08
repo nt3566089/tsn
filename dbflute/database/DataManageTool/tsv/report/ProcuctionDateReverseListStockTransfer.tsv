@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblProductCd	銘柄コード	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblProductNm	銘柄名称	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblLineBlock	補充先	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblSortingRackNo	仕分ラック番号	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblAsSortedUnit	仕分ロケ	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblLot3	デザイン区分	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblLot4	製造年月日	String	1	
+ProcuctionDateReverseListStockTransfer	製造年月日逆転リスト（山出し）	製造年月日逆転リスト（山出し）	../../../../../../reports/inventory/ProcuctionDateReverseListStockTransfer.jrxml	1						0	0	lblQty	数量	String	1	

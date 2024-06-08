@@ -1,0 +1,53 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ShippingPlanInput	出荷指示入力	wms	clientCd	荷主		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	centerCd	センタ		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	shippingSlipNo	WMS出荷伝票No.		1	0		0	1													
+ShippingPlanInput	出荷指示入力	wms	clientShippingNo	顧客出荷指示No.		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	emergencyFlg	緊急フラグ		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	supplyCustomerCd	納品先CD		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	delivPlanDt	納品予定日		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	workDt	作業日		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	shippingDt	出荷日		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	processTypeCd	処理区分		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	delivDt	納品指定日		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivTz	納品時間帯		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	addRow	行追加		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	removeRow	行削除		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	register	登録		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	60			1	60
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	productCd	商品CD	2	text	1	1		1	245			2	245
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	mproduct.productNm	商品名称	3	text	1	0		0	300			3	300
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	mproduct.productAbbr	商品略称	4	text	1	0		0	300			4	300
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	mproduct.janCd	ソースCD	5	text	1	0		0	205			5	205
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	unitNumBreakdown	入数内訳	6	text	1	0	right	0	220			6	220
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	instNum	指示数	7	calcnumber	1	1	right	1	290			7	290
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	instNumMultiText	指示数荷姿	8	number	0	1	right	0	110			8	110
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	chargeNum	引当可能数	9	number	1	0	right	0	95			9	120
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	lot	指定ロット	10	text	1	1		0	170			10	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	limitDt	指定期限日	11	date	1	1		0	150			11	210
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	depositCd	預託	12	dropdown	1	1		1	300			12	300
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	stockTypeCd	在庫区分	13	dropdown	1	1		1	195			13	195
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	warehouseCd	指定倉庫	14	dropdown	1	1		0	300			14	300
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	locationCd	指定ロケーションCD	15	text	1	1		0	200			15	200
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	unitPrice	単価	16	number	1	1	right	0	170			16	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	price	金額	17	number	1	1	right	0	170			17	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tax	消費税	18	number	1	1	right	0	170			18	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr1	予備項目１(文字列)	19	text	0	1		0	170			19	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr2	予備項目２(文字列)	20	text	0	1		0	170			20	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareStr3	予備項目３(文字列)	21	text	0	1		0	170			21	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum1	予備項目１(数値)	22	number	0	1	right	0	170			22	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum2	予備項目２(数値)	23	number	0	1	right	0	170			23	170
+ShippingPlanInput	出荷指示入力	wms	shippingPlanInputList	出荷指示入力グリッド	grid	1	1		0	1	tshippingInstSpareAsOne.spareNum3	予備項目３(数値)	24	number	0	1	right	0	170			24	170
+ShippingPlanInput	出荷指示入力	wms	deliveryCourseCd	配送コースCD		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	pickingWorkMessage	出庫作業メッセージ		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivZipCd	届先郵便番号	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivAddress1	届先住所1	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivAddress2	届先住所2	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivAddress3	届先住所3	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivAddressSupply	届先住所補足	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivCustomerNm	届先名称	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivTelNo	届先電話番号	text	1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	delivCustomerCd	届先CD		1	1		1	1													
+ShippingPlanInput	出荷指示入力	wms	totalPrice	合計金額		1	1		0	1													
+ShippingPlanInput	出荷指示入力	wms	totalTax	合計消費税		1	1		0	1													

@@ -1,0 +1,40 @@
+/*
+ [df:title]
+ 仕分場構成マスタリストを取得します。
+
+ [df:description]
+  SQL Description here.
+
+*/
+-- #df:entity#
+-- ##String LOCIDFRNK_NM##
+-- ##String LOCIDFBRCTG##
+-- ##String CLIENT_CD##
+-- !df:pmb extends Paging!
+-- !!AutoDetect!!
+-- !!Long centerId!!
+SELECT	SRW.LOCIDFRNK,
+		SRW.LOCIDFBRCTG1,
+		SRW.LOCIDFBRCTG2,
+		SRW.LOCIDFBRCTG3,
+		SRW.LOCIDFBRCTG4,
+		SRW.LOCIDFBRCTG5,
+		SRW.LOCIDFBRCTG6,
+		SRW.LOCIDFBRCTG7,
+		SRW.LOCIDFBRCTG8,
+		SRW.LOCIDFBRCTG9,
+		SRW.LOCIDFBRCTG10,
+		
+		SRW.SORT_PLACE_MANAGE_ID,
+		SRW.VERSION_NO,
+		SRW.CENTER_ID,
+		CTR.CENTER_CD,
+		NULL			AS	CLIENT_ID,
+		NULL			AS	CLIENT_CD
+		
+FROM	T_CSRWHADM					SRW
+LEFT	JOIN	M_CENTER			CTR
+		ON		SRW.CENTER_ID		=		CTR.CENTER_ID
+		AND		CTR.DEL_FLG 		=		'0'
+
+WHERE	SRW.CENTER_ID	=	/*pmb.centerId*/1

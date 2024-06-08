@@ -1,0 +1,10 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblTitle1	カートン補充はり紙	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblTitle2	ケースはり紙	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblCaseCd	はり紙管理番号	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblTransportCd	輸送番号	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblLocCd	保管場ロケ	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblPalletNo	パレット管理番号	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblDesignCd	デザイン区分	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblPicklistKey	山出しリストNo.	String	1	
+CaseLabel	ケースはり紙	ケースはり紙	../../../../../../reports/receive/CaseLabel.jrxml	1						0	0	lblSotedUnit	補充先	String	1	

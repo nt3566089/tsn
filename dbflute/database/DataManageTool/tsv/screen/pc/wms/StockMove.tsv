@@ -1,0 +1,31 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockMove	在庫移動	wms	clientCd	荷主		1	1		1	1													
+StockMove	在庫移動	wms	centerCd	センタ		1	1		1	1													
+StockMove	在庫移動	wms	productCd	商品CD		1	1		1	1													
+StockMove	在庫移動	wms	productUnit	商品単位		1	0		0	1													
+StockMove	在庫移動	wms	depositCd_F	預託(From)		1	1		1	1													
+StockMove	在庫移動	wms	locationCd_F	ロケーションCD(From)		1	1		1	1													
+StockMove	在庫移動	wms	chargeNum_F	在庫数		1	0	right	0	1													
+StockMove	在庫移動	wms	chargeNum_FMultiText	在庫数荷姿		1	0	right	0	1													
+StockMove	在庫移動	wms	stockTypeCd_F	在庫区分(From)		1	1		1	1													
+StockMove	在庫移動	wms	chargeNum_F_T	総在庫数		1	0	right	0	1													
+StockMove	在庫移動	wms	chargeNum_F_TMultiText	総在庫数荷姿		1	0	right	0	1													
+StockMove	在庫移動	wms	unitNumBreakdown	入数内訳		1	0	right	0	1													
+StockMove	在庫移動	wms	lot	ロット		1	1		0	1													
+StockMove	在庫移動	wms	limitDt	期限日		1	1		0	1													
+StockMove	在庫移動	wms	supplierCustomerCd	仕入先CD		1	1		0	1													
+StockMove	在庫移動	wms	storeLabelNo	入庫ラベルNo.		1	1		0	1													
+StockMove	在庫移動	wms	storeLabelNo_B	元入庫ラベルNo.		1	0		0	1													
+StockMove	在庫移動	wms	depositCd_T	預託(To)		1	1		1	1													
+StockMove	在庫移動	wms	locationCd_T	ロケーションCD(To)		1	1		1	1													
+StockMove	在庫移動	wms	chargeNum_T	移動先総在庫数		1	0	right	0	1													
+StockMove	在庫移動	wms	chargeNum_TMultiText	移動先総在庫数荷姿		1	0	right	0	1													
+StockMove	在庫移動	wms	moveNum	移動総数		1	1	right	1	1													
+StockMove	在庫移動	wms	moveNumMultiText	移動総数荷姿		1	1	right	0	1													
+StockMove	在庫移動	wms	stockTypeCd_T	在庫区分(To)		1	1		1	1													
+StockMove	在庫移動	wms	moveInstComment	在庫移動指示備考		1	1		0	1													
+StockMove	在庫移動	wms	confirm	確定		1	1		0	1													
+StockMove	在庫移動	wms	update	登録		1	1		0	1													
+StockMove	在庫移動	wms	storeDt_F	入庫日		1	1		1	1													
+StockMove	在庫移動	wms	storeDt_T	入庫日		1	1		1	1													

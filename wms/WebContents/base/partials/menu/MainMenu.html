@@ -1,0 +1,39 @@
+<div ng-controller="MainMenuCtrl" owd-screen="MainMenu">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div ng-repeat="menuHead in bMenuGroup">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="panel panel-success">
+                        <div class="panel-heading"><span ng-bind-html="menuHead.vdict.dictNm"></span></div>
+                        <div class="panel-body">
+                            <ul style="word-wrap:break-word">
+                                <li ng-repeat="menu in menuHead.bmenuList"><a ng-href="{{menu.urlPath}}" target="{{targetWindow(menu.targetWindow,menu.bscreen.screenCd)}}"><span ng-bind-html="menu.vdict.dictNm"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><span ng-bind-html="'infoTitle' | owfMessage"></span></div>
+                    <div class="panel-body">
+                        <ul style="word-wrap:break-word" ng-repeat="info in bInfos">
+                            <li><span ng-bind-html="info.bInfo.infoNm | owfNoHTML | owfNewlines"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="oneslogi-logo"><img src="base/image/ONEsLOGI-logo.png"></div>
+</div>

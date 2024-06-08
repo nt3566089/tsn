@@ -1,0 +1,34 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	clientCd	荷主	dropdown	1	0		1	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	productCd	銘柄CD	text	1	1		1	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	pickfrdateFrom	適用開始日(From)	date	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	pickfrdateTo	適用開始日(To)	date	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	picktodateFrom	適用終了日(From)	date	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	picktodateTo	適用終了日(To)	date	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	designflg	デザイン区分	dropdown	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	validtype	有効区分	dropdown	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	search	検索	button	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	excelOutput	Excel出力	button	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	productCd	銘柄CD	1	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	productNm	銘柄名称	2	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickfrdate	適用開始日	3	date	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	picktodate	適用終了日	4	date	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	validtypeNm	有効区分	5	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickrank1Nm	デ変(優先1)	6	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickrank2Nm	デ変(優先2)	7	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickrank3Nm	デ変(優先3)	8	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickrank4Nm	デ変(優先4)	9	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	pickrank5Nm	デ変(優先5)	10	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	updDt	更新日時	11	datetime	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	1	0		0	0	updUser	更新者	12	text	1	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	usernum1	内外区分	13	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	usernum3	一般出力順	14	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	centerCd	拠点CD	15	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	centerNm	拠点名称	16	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	clientCd	荷主CD	17	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	AllocateControlMasterList	引当制御マスタメンテナンスグリッド	grid	0	0		0	0	clientNm	荷主名称	18	text	0	0		0					
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	copy	複製	button	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	new	新規	button	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	update	修正	button	1	1		0	1													
+AllocateControlMasterList	引当制御マスタメンテナンス(一覧)	wms	delete	削除	button	1	1		0	1													

@@ -1,0 +1,32 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InstKeyList	在庫調査指示一覧	wms	centerCd	拠点		1	0		1	1													
+InstKeyList	在庫調査指示一覧	wms	clientCd	荷主		1	0		1	1													
+InstKeyList	在庫調査指示一覧	wms	inventoryInstKbn	在庫調査区分		1	1		1	1													
+InstKeyList	在庫調査指示一覧	wms	instKey	在庫調査指示キー		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	inventoryDt	在庫調査指示作成日	date	1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	locationGrp	ロケーショングループ		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	search	検索		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	excelOutput	Excel出力		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	inventoryInstKbnNm	在庫調査区分	1	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	inventoryKey	在庫調査指示キー	2	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	inventoryDt	在庫調査指示作成日時	3	date	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	productDivisionNm	銘柄区分	4	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	lineBlock	ライン/ブロック	5	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	directionalPiston	方面ピストン	6	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	locationGrpNm	ロケーショングループ	7	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	locationCd	ロケーションCD	8	text	1	0		0	200				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	fromLocationCd	ロケーションCD(From)	9	text	1	0		0	200				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	toLocationCd	ロケーションCD(To)	10	text	1	0		0	200				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	productCd	銘柄CD	11	text	1	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	productNm	銘柄名称	12	text	1	0		0	300				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	centerCd	拠点CD	13	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	centerNm	拠点名称	14	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	clientCd	荷主CD	15	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	clientNm	荷主名称	16	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	inventoryInstKbn	在庫調査区分CD	17	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	locationGrp	ロケーショングループCD	18	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	instKeyList	在庫調査指示一覧グリッド	grid	1	1		0	0	productDivision	銘柄区分CD	19	text	0	0		0	150				
+InstKeyList	在庫調査指示一覧	wms	inventoryUnsuitablePrint	不適品在庫調査表発行		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	stockCheck	国免在庫照合		1	1		0	1													
+InstKeyList	在庫調査指示一覧	wms	inventoryInput	在庫調査結果確認		1	1		0	1													

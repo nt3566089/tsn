@@ -1,0 +1,62 @@
+<div ng-controller="StockAdj" owd-screen="StockAdj">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+			    <owd-select id="centerCd" ng-model="stockDataH.mlocation.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="stockDataH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm"  label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()" ></owd-select>
+				<!-- [EC-CT1-130] 不要な項目削除 2015.3.19 Sakata Start -->
+				<!-- [EC-CT1-130] 不要な項目削除 2015.3.19 Sakata End -->
+                <owd-text id="productCd" ng-model="stockDataH.mproduct.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()" owd-validate-message="productCdMessage">
+					<owd-info ng-model="stockDataH.mproduct.productNm"></owd-info>
+				</owd-text>
+				<!--  [Ver3.0] unit of measure対応 2017.11.27 ライ Start -->
+				<owd-text id="productUnit" ng-model="stockDataH.productUnit" label-text="商品単位"></owd-text>
+				<!--  [Ver3.0] unit of measure対応 2017.11.27 ライ END -->
+                <owd-select id="depositCd" ng-model="stockDataH.mcustomer.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託在庫区分"></owd-select>
+				<owd-select id="stockTypeCd" ng-model="stockDataH.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+				<!-- [ON推-品向-980] ロケーションCDの下にロケーション名称を表示 2015.10.15 kawana Start -->
+				<owd-text id="locationCd" ng-model="stockDataH.mlocation.locationCd" label-text="ロケーション" owd-add-button="showLocation()" ng-blur="locationCdBlur()"  owd-validate-message="locationCdMessage">
+					<owd-info ng-model="stockDataH.mlocation.locationNm"></owd-info>
+				</owd-text>
+				<!-- [ON推-品向-980] ロケーションCDの下にロケーション名称を表示 2015.10.15 kawana End -->
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod Start -->
+				<owd-text id="unitNumBreakdown" ng-model="stockDataH.unitNumBreakdown" label-text="入数内訳"></owd-text>
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod End -->
+				<owd-text id="lot" ng-model="stockDataH.tlot.lot" label-text="ロット"></owd-text>
+				<owd-date id="limitDt" ng-model="stockDataH.tlot.limitDt" label-text="期限日"></owd-date>
+                <owd-text id="storeLabelNo" ng-model="stockDataH.tstoreNo.storeLabelNo" label-text="入庫ラベルNo."></owd-text>
+                <owd-text id="supplierCustomerCd" ng-model="stockDataH.tstoreNo.mcustomer.customerCd" label-text="仕入先コード" owd-add-button="showCustomer()" ng-blur="customerCdBlur()" owd-validate-message="vendorCdMessage">
+					<owd-info ng-model="stockDataH.tstoreNo.mcustomer.customerNm"></owd-info>
+				</owd-text>
+                <owd-text id="storeLabelNo_B" ng-model="stockDataH.tstoreNo.tstoreNoSelf.storeLabelNo" label-text="元入庫ラベルNo."></owd-text>
+				<!-- [エンハンス PH2.0] 入庫日を追加 2015.11.18 sja Start -->
+                <owd-date id="storeDt" ng-model="stockDataH.tstoreNo.storeDt" label-text="入庫日"></owd-date>
+                <!-- [エンハンス PH2.0] 入庫日を追加 2015.11.18 sja End -->
+			</div>
+			<div class="row" align="right">
+			    <owd-button id="confirm" class="btn-info" ng-disabled="searchform.$invalid" ng-click="confirm()">確定</owd-button>
+			</div>
+		</div>
+	</form>
+	<form id="updateform" name="updateform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod Start -->
+				<owd-calc-number id="chargeNum" ng-model="stockDataH.chargeNum" owd-multitext-options="multiTextOptions" owd-multitext-id="chargeNumMultiText" owd-productid-model="stockDataH.mproduct.productId" label-text="調整前総数"></owd-calc-number>
+				<owd-calc-number id="chargeNum_A" ng-model="stockDataH.chargeNum_A" owd-multitext-options="multiTextOptions" owd-multitext-id="chargeNum_AMultiText" owd-productid-model="stockDataH.mproduct.productId" label-text="調整後総数"></owd-calc-number>
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod End -->
+				<owd-select id="processTypeCd" ng-model="stockDataH.processTypeCd" owd-models="processTypeList" owd-repeat-key="processTypeCd" owd-repeat-value="processTypeNm" ng-change="adjNumBlur()" ng-blur="adjNumBlur()" label-text="処理区分"></owd-select>
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod Start -->
+				<owd-calc-number id="adjNum" ng-model="stockDataH.adjNum" ng-blur="adjNumBlur()" ng-change="adjNumBlur()" owd-multitext-blur="adjNumBlur()" owd-multitext-change="adjNumBlur()" owd-multitext-options="multiTextOptions" owd-multitext-id="adjNumMultiText" owd-productid-model="stockDataH.mproduct.productId" label-text="調整総数"></owd-calc-number>
+				<!-- [#2799][Ver3.0] unit of measure 対応 2017.11.13 honma Mod End -->
+				<owd-text id="moveInstComment" ng-model="stockDataH.instComment" label-text="在庫移動指示備考"></owd-text>
+			</div>
+			<div class="row" align="right">
+				<!-- [ON推-品向-808] 必須エラーの場合は登録ボタンは無効にする 2015.05.14 kawana Start -->
+				<right><owd-button id="update" class="btn-success" ng-disabled="searchform.$invalid || updateform.$invalid" ng-click="update()">登録</owd-button></right>
+				<!-- [ON推-品向-808] 必須エラーの場合は登録ボタンは無効にする 2015.05.14 kawana End -->
+			</div>
+		</div>
+     </form>
+
+</div>

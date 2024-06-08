@@ -1,0 +1,24 @@
+<div ng-controller="PickingMethodRecommendationDetail" owd-screen="PickingMethodRecommendationDetail">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="picMthdRcmdH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="picMthdRcmdH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-text id="pickingBatchNo" ng-model="picMthdRcmdH.pickingBatchNo" label-text="バッチNo." ></owd-text>
+				<owd-text id="rcmdPickingCls" ng-model="picMthdRcmdH.bclassDtlByRcmdPickingCls.vdict.dictNm" label-text="提案ピッキング方法" ></owd-text>
+				<owd-text id="packingNum" ng-model="picMthdRcmdH.packingNum"  label-text="梱包数"></owd-text>
+				<owd-text id="workVolume" ng-model="picMthdRcmdH.workVolume" label-text="仕事量"></owd-text>
+				<owd-select id="emergencyFlg" ng-model="picMthdRcmdH.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急"></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12" align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendcolorred"><owd-span id="emergencyTitle" label-text="緊急"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" owd-dblclick-option="gridDblClick(row)" id="picMthdRcmdDetailB" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+	</form>

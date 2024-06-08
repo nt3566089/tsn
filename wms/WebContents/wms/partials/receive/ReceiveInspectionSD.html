@@ -1,0 +1,25 @@
+<!-- [#981] SD用基盤改修 2017.02.06 honma Mod Start -->
+<ion-view owd-screen="ReceiveInspectionSD" title="{{screenTitle}}">
+<!-- [#981] SD用基盤改修 2017.02.06 honma Mod End -->
+	<ion-content ng-class="{'has-footer' : alerts.length > 0}">
+
+		<form id="form.searchform" name="form.searchform" novalidate>
+			<div class="tablet-row responsive-sm" style="flex-wrap: wrap;">
+				<owd-date class="tablet-col tablet-col-50" id="receivePlanDtFrom" ng-model="searchCondition.receivePlanDtFrom" label-text="入荷予定日From" ng-focus="inputValueAllSelectOnFocus($event)"></owd-date>
+				<owd-date class="tablet-col tablet-col-50" id="receivePlanDtTo" ng-model="searchCondition.receivePlanDtTo" label-text="入荷予定日To" owd-validate="fromToCheck(searchCondition.receivePlanDtFrom, $value)" owd-validate-watch="'searchCondition.receivePlanDtFrom'" owd-validate-message="fromToMessage" ng-focus="inputValueAllSelectOnFocus($event)"></owd-date>
+				<owd-select class="tablet-col tablet-col-50" id="receiveStatus" ng-model="searchCondition.receiveStatus" owd-models="receiveStatusList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="商品別入荷ステータス"></owd-select>
+				<owd-text class="tablet-col tablet-col-50" id="planSupplierCd" ng-model="searchCondition.planSupplierCd" label-text="仕入先CD" owd-add-button="showCustomer()" ng-blur="customerCdBlur()" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="productCd" ng-model="searchCondition.productCd" label-text="商品CD" owd-add-button="showProduct()" ng-blur="productCdBlur()" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+				<owd-text class="tablet-col tablet-col-50" id="clientReceiveNo" ng-model="searchCondition.planClientReceiveNo" label-text="予定顧客入荷指示No." ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+			</div>
+
+			<owd-divider id="preEntry" class="item-divider-calm" label-text="仮入力"></owd-divider>
+
+			<div class = "tablet-row responsive-sm" style="flex-wrap: wrap;">
+				<owd-text class="tablet-col" id="locationCd" ng-model="defaultCondition.locationCd" label-text="ロケーションCD" owd-add-button="showLocation()" ng-blur="locationCdBlur()" ng-focus="inputValueAllSelectOnFocus($event)"></owd-text>
+			</div>
+
+			<owd-button id="search" class="button-positive" ng-disabled="form.searchform.$invalid" ng-click="search()">検索</owd-button>
+		</form>
+	</ion-content>
+</ion-view>

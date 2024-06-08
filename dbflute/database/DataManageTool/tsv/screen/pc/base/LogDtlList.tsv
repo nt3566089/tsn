@@ -1,0 +1,9 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LogDtlList	ログ明細一覧	base	pgmCd	プログラムCD		1	0		0	1													
+LogDtlList	ログ明細一覧	base	pgmNm	プログラム名称		1	0		0	1													
+LogDtlList	ログ明細一覧	base	logDtlList	ログ明細一覧グリッド	grid	1	1		0	1	bclassDtlByLogDtlStatus.vdict.dictNm	ログ明細ステータス	1	text	1	0		0	155				
+LogDtlList	ログ明細一覧	base	logDtlList	ログ明細一覧グリッド	grid	1	1		0	1	processDt	処理日時	2	datetime	1	0		0	180				
+LogDtlList	ログ明細一覧	base	logDtlList	ログ明細一覧グリッド	grid	1	1		0	1	logDtlSectionNm	ログ明細セクション名称	3	text	1	0		0	300				
+LogDtlList	ログ明細一覧	base	logDtlList	ログ明細一覧グリッド	grid	1	1		0	1	processInfo	処理情報	4	text	1	0		0	1100				
+LogDtlList	ログ明細一覧	base	logDtlBrowse	明細詳細		1	1		0	1													

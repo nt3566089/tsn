@@ -1,0 +1,6 @@
+ROLE_CD	DICT_NM
+SystemAdministrator	開発
+OfficeSupervisor	本社(主管)
+Office	本社
+Administrators	管理者
+Workers	作業者

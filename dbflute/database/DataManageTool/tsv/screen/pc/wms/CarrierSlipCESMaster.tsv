@@ -1,0 +1,76 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	clientCd	荷主		1	0		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	customerCd	取引先		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	delFlg	削除		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	new	新規		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	update	修正		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	search	検索		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	excelOutput	Excel出力		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	copy	コピー		1	1		0	1													
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	mcustomer.customerCd	取引先CD	1	text	1	0		0	300			1	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	mcustomer.customerNm	取引先名称	2	text	1	0		0	300			2	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectAccountNoBillTo	Collect Account# (Bill To)	3	text	1	0		0	300			3	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectZipCdBillTo	Collect Zip Code (Bill To)	4	text	1	0		0	300			4	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectCountryCdBillTo	Collect Country Code (Bill To)	5	text	1	0		0	300			5	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	paymentTermCdTaxesTo	Payment Term Code (Taxes To)	6	text	1	0		0	300			6	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectAccountNoTaxesTo	Collect Account# (Taxes To)	7	text	1	0		0	300			7	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectZipCdTaxesTo	Collect Zip Code (Taxes To)	8	text	1	0		0	300			8	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	collectCountryCdTaxesTo	Collect Country Code (Taxes To)	9	text	1	0		0	300			9	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	codPaymentTermCd	COD Payment Term Code	10	text	1	0		0	300			10	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	codAmount	COD Amount	11	text	1	0	right	0	300			11	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	codFeePayer	COD Fee Payer	12	text	1	0		0	300			12	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	termsOfSales	Terms of Sales	13	text	1	0		0	300			13	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	brokerName	Broker Name	14	text	1	0		0	300			14	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	brokerPhoneNo	Broker Phone#	15	text	1	0		0	300			15	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	brokerFaxNo	Broker Fax#	16	text	1	0		0	300			16	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	satDeliveryFlg	Saturday Delivery フラグCD	17	text	1	0		0	300			17	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	satDeliveryFlgNm	Saturday Delivery フラグ名称	18	text	1	0		0	300			18	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	residentialDeliveryFlg	Residential Delivery フラグCD	19	text	1	0		0	300			19	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	residentialDeliveryFlgNm	Residential Delivery フラグ名称	20	text	1	0		0	300			20	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	codFlg	Collect On Delivery フラグCD	21	text	1	0		0	300			21	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	codFlgNm	Collect On Delivery フラグ名称	22	text	1	0		0	300			22	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	signatureRequiredFlg	Signature Required フラグCD	23	text	1	0		0	300			23	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	signatureRequiredFlgNm	Signature Required フラグ名称	24	text	1	0		0	300			24	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	signatureReleaseFlg	Signature ReleaseフラグCD	25	text	1	0		0	300			25	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	signatureReleaseFlgNm	Signature Releaseフラグ名称	26	text	1	0		0	300			26	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	callBeforeDeliveryFlg	Call Before Delivery フラグCD	27	text	1	0		0	300			27	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	callBeforeDeliveryFlgNm	Call Before Delivery フラグ名称	28	text	1	0		0	300			28	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	freezableProtectionFlg	Freezable Protection フラグCD	29	text	1	0		0	300			29	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	freezableProtectionFlgNm	Freezable Protection フラグ名称	30	text	1	0		0	300			30	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	guaranteedPlusFlg	Guaranteed Plus フラグCD	31	text	1	0		0	300			31	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	guaranteedPlusFlgNm	Guaranteed Plus フラグ名称	32	text	1	0		0	300			32	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	residentialPickupFlg	Residential Pickup フラグCD	33	text	1	0		0	300			33	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	residentialPickupFlgNm	Residential Pickup フラグ名称	34	text	1	0		0	300			34	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	doNotStackStackFlg	Do Not Stack Pallets フラグCD	35	text	1	0		0	300			35	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	doNotStackPalletsFlgNm	Do Not Stack Pallets フラグ名称	36	text	1	0		0	300			36	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	limitedAccessDeliveryFlg	Limited Access Delivery フラグCD	37	text	1	0		0	300			37	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	limitedAccessDeliveryFlgNm	Limited Access Delivery フラグ名称	38	text	1	0		0	300			38	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	limitedAccessPickupFlg	Limited Access Pickup フラグCD	39	text	1	0		0	300			39	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	limitedAccessPickupFlgNm	Limited Access Pickup フラグ名称	40	text	1	0		0	300			40	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	overSizedFlg	Over-Sized/Extreme Length フラグCD	41	text	1	0		0	300			41	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	overSizedFlgNm	Over-Sized/Extreme Length フラグ名称	42	text	1	0		0	300			42	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	poisonFlg	Poison フラグCD	43	text	1	0		0	300			43	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	poisonFlgNm	Poison フラグ名称	44	text	1	0		0	300			44	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	foogFlg	Food フラグCD	45	text	1	0		0	300			45	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	foodFlgNm	Food フラグ名称	46	text	1	0		0	300			46	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgateDeliveryPrepaidFlg	Liftgate at delivery フラグCD (Prepaid)	47	text	1	0		0	300			47	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgateDeliveryPrepaidFlgNm	Liftgate at delivery フラグ名称 (Prepaid)	48	text	1	0		0	300			48	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgateDeliveryCollectFlg	Liftgate at delivery フラグCD (Collect)	49	text	1	0		0	300			49	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgateDeliveryCollectFlgNm	Liftgate at delivery フラグ名称 (Collect)	50	text	1	0		0	300			50	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgatePickupPrepaidFlg	Liftgate at pickup フラグCD (Prepaid)	51	text	1	0		0	300			51	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgatePickupPrepaidFlgNm	Liftgate at pickup フラグ名称 (Prepaid)	52	text	1	0		0	300			52	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgatePickupCollectFlg	Liftgate at pickup フラグCD (Collect)	53	text	1	0		0	300			53	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	liftgatePickupCollectFlgNm	Liftgate at pickup フラグ名称 (Collect)	54	text	1	0		0	300			54	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insideDeliveryPrepaidFlg	Inside Delivery フラグCD (Prepaid)	55	text	1	0		0	300			55	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insideDeliveryPrepaidFlgNm	Inside Delivery フラグ名称 (Prepaid)	56	text	1	0		0	300			56	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insideDeliveryCollectFlg	Inside Delivery フラグCD (Collect)	57	text	1	0		0	300			57	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insideDeliveryCollectFlgNm	Inside Delivery フラグ名称 (Collect)	58	text	1	0		0	300			58	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insidePickupPrepaidFlg	Inside Pickup フラグCD (Prepaid)	59	text	1	0		0	300			59	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insidePickupPrepaidFlgNm	Inside Pickup フラグ名称 (Prepaid)	60	text	1	0		0	300			60	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insidePickupCollectFlg	Inside Pickup フラグCD (Collect)	61	text	1	0		0	300			61	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	insidePickupCollectFlgNm	Inside Pickup フラグ名称 (Collect)	62	text	1	0		0	300			62	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	addDt	登録日時	63	datetime	1	0		0	300			63	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	updDt	更新日時	64	datetime	1	0		0	300			64	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	delFlg	削除フラグCD	65	text	1	0		0	300			65	300
+CarrierSlipCESMaster	キャリアEDIシステム送り状マスタメンテナンス(一覧)	wms	carrierSlipList	キャリアEDIシステム送り状マスタ一覧グリッド	grid	1	0		0	1	bclassDtlByDelFlg.vdict.dictNm	削除フラグ名称	66	text	1	0		0	300			66	300

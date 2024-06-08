@@ -1,0 +1,90 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	centerCd	センタ	dropdown	1	0		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	clientCd	荷主	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	delFlg	削除	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleStockManage	在庫管理		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	storeNoFlg	入庫No.管理フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	mergeCls	入庫No.マージ区分	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	storeDtFlg	入庫日管理フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleDaily	日次締処理		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	tkeepingDays	トランザクション保持期間	number	1	1	right	1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	hkeepingDays	履歴保持期間	number	1	1	right	1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	dkeepingDays	削除保持期間	number	1	1	right	1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleHt	HT/SD		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	overStoreNumFlg	HT/SD過入荷可フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	pastStoreDtFlg	HT/SD過去日入力可フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	useHtShipFlg	HT/SDケースピック使用フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	htCharReadFlg	HT文字認識使用フラグ	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	htLotInputType	HTロット入力方式	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	htSerialInputType	HTシリアル入力方式	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	inspectionLabelOutFlg	SD検品ラベル出力フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleShipInst	出庫指示		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	autoShipInstFlg	自動出庫指示フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	stockOutAutoInstFlg	欠品時自動出庫指示フラグ	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	autoEmgSetFlg	自動緊急フラグ設定フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	autoEmgSetTgt	自動緊急フラグ判断対象		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	autoEmgSetMinute	自動緊急フラグ判断時間(分)		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	stockOutInstCxlFlg	欠品時出庫指示取消フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	stockOutAllocCls	欠品時引当区分	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titlePackingCal	梱包計算		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	packingCalCls	梱包計算処理区分	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	packingProcessCls	詰込区分	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productPartPacking	商品毎別梱包	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	decimalProductPacking	小数管理商品梱包単位	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	boxGrpCd	梱包荷材グループ	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titlePicking	ピッキング		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	totalPicFlg	トータルピックフラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	multiPicCls	マルチピック計算区分	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	backetColNum	バケット列数	number	1	1	right	0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	backetRowNum	バケット段数	number	1	1	right	0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	sglRowPicFlg	単行ピックフラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	sglRowPicMaxInstNum	単行ピック上限指示数	number	1	1	right	0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	casePicFlg	ケースピックフラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titlePicMthdRcmd	ピッキング提案		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	picMthdRcmdFlg	最適ピック提案フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	picMthdRcmdApiKey	最適ピック提案APIキー		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	picMthdRcmdBreakKey	最適ピック提案ブレイクキー		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	picMthdRcmdMltPlOut	マルチピック摘み取りリスト出力フラグ	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	picMthdRcmdSplSlOut	単行ピック種蒔きリスト出力フラグ	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleShipInspection	出荷検品		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	boxSelectSkip	荷材選択スキップ		1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	defaultBoxCd	デフォルト荷材		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	errorSoundPlayFlg	エラー音再生フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	warnSoundPlayFlg	警告音再生フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	inspSoundPlayFlg	検品音再生フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	inspCompSoundPlayFlg	検品完了音再生フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleReplenish	在庫補充		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	rgReplenishUnitCls	定期補充単位	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	emReplenishUnitCls	緊急補充単位	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	warehouseCd	緊急補充倉庫	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	zoneCd	緊急補充ゾーン	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	emReplenishAllocCls	緊急補充ロケ割付方法	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleProductLabelOut	入庫/商品ラベル出力		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	resultAfterProductLabel	実績入力後入庫/商品ラベル出力フラグ		1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	resultAfterProductTarget	実績入力後入庫/商品ラベル出力対象		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelOutUnit	商品ラベル出力単位		1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelJanBarcode	商品ラベルソースCDバーコード種別		1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelProdBarcode	商品ラベル商品CDバーコード種別		1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelJanStartbit	商品ラベルバーコードソースCDスタートビット	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelJanEndbit	商品ラベルバーコードソースCDエンドビット	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelProdStartbit	商品ラベルバーコード商品CDスタートビット	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	productLabelProdEndbit	商品ラベルバーコード商品CDエンドビット	text	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleInvoice	送り状・荷札・納品明細		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	afterTagOutFlg	検品後荷札出力フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	tagDeliveryOutFlg	荷札納品書在中出力フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	afterDelivSlipOutFlg	検品後納品明細出力フラグ	dropdown	1	1		1	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	afterDelivSlipOutTgt	検品後納品明細出力対象		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	sglRowInspAfterOutCls	単行出荷検品荷札/納品明細出力区分		1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	packingSlipAutoOutputFlg	納品明細書自動発行フラグ	dropdown	0	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	cesIntegrationFlg	CES連携フラグ	dropdown	0	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	titleSort	引当順序		1	0		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey1	引当ソートキー1	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey2	引当ソートキー2	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey3	引当ソートキー3	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey4	引当ソートキー4	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey5	引当ソートキー5	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey6	引当ソートキー6	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey7	引当ソートキー7	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	allocSortKey8	引当ソートキー8	dropdown	1	1		0	1													
+ParameterMasterEdit	パラメータマスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

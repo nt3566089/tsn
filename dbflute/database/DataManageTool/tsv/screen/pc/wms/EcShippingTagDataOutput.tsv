@@ -1,0 +1,53 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+EcShippingTagDataOutput	EC送り状データ出力	wms	dtCls	取込日/出荷日/作業日	dropdown	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	dtFrom	日付(From)	text	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	dtTo	日付(To)	text	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	centerCd	センタ	dropdown	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	clientCd	荷主	dropdown	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	orderNo	受注番号	text	1	1		0	0													
+EcShippingTagDataOutput	EC送り状データ出力	wms	shippingStatus	出荷ステータス	dropdown	1	1		0	0													
+EcShippingTagDataOutput	EC送り状データ出力	wms	importType	取込種別	dropdown	1	1		1	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	tagDataType	送り状データ種別	dropdown	1	1		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	deliveryCourseCd	配送コースCD	text	1	1		0	0													
+EcShippingTagDataOutput	EC送り状データ出力	wms	invoiceCreateFlg	EC送り状データ出力	dropdown	1	1		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	stockOutFlg	欠品フラグ	dropdown	1	1		0	0													
+EcShippingTagDataOutput	EC送り状データ出力	wms	search	検索		1	1		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	shippingInstedTitle	出庫指示済		1	0		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	inspectionedTitle	出荷検品済		1	0		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	shippingFixedTitle	出荷確定済		1	0		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	shippingStopTitle	出荷停止		1	0		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	stockOutFlgTitle	欠品		1	0		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	mimportType.mimportTypeBList[0].mediColumn.medi.ediNm	EDI名称	1	text	1	0		0	160			1	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	importDt	取込日	2	date	1	0		0	150			2	150
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.shippingDt	出荷日	3	date	1	0		0	150			3	150
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.workDt	作業日	4	date	1	0		0	150			4	150
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	orderNo	受注番号	5	text	1	0		0	300			5	300
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	mimportType.importTypeCd	取込種別	6	text	1	0		0	160			6	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	mimportType.importTypeNm	取込種別名称	7	text	1	0		0	160			7	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.shippingStatus	出荷ステータス	8	text	1	0		0	125			8	140
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByShippingStatus.vdict.dictNm	出荷ステータス名称	9	text	1	0		0	155			9	180
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.deliveryCourseCd	配送コースCD	10	text	1	0		0	125			10	220
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.mdeliveryCourse.deliveryCourseNm	配送コース名称	11	text	1	0		0	300			11	300
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tecOrderRAsOne.invoiceCreateFlg	EC送り状データ出力フラグ	12	text	1	0		0	220			12	220
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tecOrderRAsOne.bclassDtlByInvoiceCreateFlg.vdict.dictNm	EC送り状データ出力フラグ名称	13	text	1	0		0	250			13	250
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.stockOutFlg	欠品フラグ	14	text	1	0		0	90			14	130
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.bclassDtlByStockOutFlg.vdict.dictNm	欠品フラグ名称	15	text	1	0		0	160			15	180
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivMethod	配送方法	16	text	1	0		0	160			16	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivType	配送区分	17	text	1	0		0	160			17	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivCompany	配送会社	18	text	1	0		0	160			18	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivDt	納品指定日	19	date	1	0		0	150			19	190
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivTz	お届け時間帯	20	text	1	0		0	160			20	190
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	priorityFlg	優先フラグ	21	text	1	0		0	160			21	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	bclassDtlByPriorityFlg.vdict.dictNm	優先フラグ名称	22	text	1	0		0	160			22	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	noshi	のし	23	text	1	0		0	170			23	170
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	giftFlg	ギフトフラグ	24	text	1	0		0	160			24	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	bclassDtlByGiftFlg.vdict.dictNm	ギフトフラグ名称	25	text	1	0		0	160			25	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivZipCd	送付先郵便番号	26	text	1	0		0	160			26	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivAddress1	送付先住所：都道府県	27	text	1	0		0	300			27	300
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivAddress2	送付先住所：都市区	28	text	1	0		0	300			28	300
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	delivAddress3	送付先住所：町以降	29	text	1	0		0	300			29	300
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.mdeliveryCourse.tagDataType	送り状データ種別	30	text	1	0		0	160			30	160
+EcShippingTagDataOutput	EC送り状データ出力	wms	ecShippingTagDataOutputGrid	EC送り状データ出力グリッド	grid	1	0		0	1	tshippingInstH.mdeliveryCourse.mcenterClassDtlByTagDataType.vdict.dictNm	送り状データ種別名称	31	text	1	0		0	170			31	170
+EcShippingTagDataOutput	EC送り状データ出力	wms	registerAddress	住所変更		1	1		0	1													
+EcShippingTagDataOutput	EC送り状データ出力	wms	csvOutput	データ出力		1	1		0	1													

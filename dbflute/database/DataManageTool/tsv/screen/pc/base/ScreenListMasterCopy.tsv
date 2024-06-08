@@ -1,0 +1,7 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+ScreenListMasterCopy	画面マスタコピー	base	copyTitle	コピー		1	1		0	1													
+ScreenListMasterCopy	画面マスタコピー	base	register	登録		1	1		0	1													
+ScreenListMasterCopy	画面マスタコピー	base	close	閉じる		1	1		0	1													
+ScreenListMasterCopy	画面マスタコピー	base	screenCd	画面CD		1	1		1	1													
+ScreenListMasterCopy	画面マスタコピー	base	screenNm	画面名		1	1		1	1													

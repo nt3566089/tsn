@@ -1,0 +1,35 @@
+<div owd-screen="EcDelivAddressModify">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.EcDelivAddressModify">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+    <form id="delivAddressModifyform" name="delivAddressModifyform" novalidate >
+		 <div class="container-modal">
+			<div class="well">
+				<div class="row">
+					<owd-date id="importDt" ng-model="conditionH.importDt" label-text="取込日"></owd-date>
+					<owd-text id="orderNo" ng-model="conditionH.orderNo" label-text="受注番号"></owd-text>
+					<owd-select id="importType" ng-model="conditionH.mimportType.importTypeCd" owd-models="importTypeList" owd-repeat-key="importTypeCd" owd-repeat-value="importTypeNm" label-text="取込種別"></owd-select>
+					<owd-text id="deliveryCourseCd" ng-model="conditionH.tshippingInstH.mdeliveryCourse.deliveryCourseCd" label-text="配送コース" owd-add-button="deliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+					    <owd-info ng-model="conditionH.tshippingInstH.mdeliveryCourse.deliveryCourseNm"></owd-info>
+					</owd-text>
+					<owd-text id="delivAddress1" ng-model="conditionH.delivAddress1" label-text="送付先住所：都道府県"></owd-text>
+					<owd-text id="delivAddress2" ng-model="conditionH.delivAddress2" label-text="送付先住所：都市区"></owd-text>
+					<owd-text id="delivAddress3" ng-model="conditionH.delivAddress3" label-text="送付先住所：町以降"></owd-text>
+				</div>
+			</div>
+	        <div class="row">
+	            <div class="col-xs-6">
+	                <owd-button id="register" class="btn-success" ng-disabled="delivAddressModifyform.$invalid" ng-click="register()">登録</owd-button>
+	            </div>
+	            <div class="col-xs-6" align="right">
+                   <owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+               </div>
+	        </div>
+		</div>
+    </form>
+</div>

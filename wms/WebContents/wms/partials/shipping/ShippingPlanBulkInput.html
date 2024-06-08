@@ -1,0 +1,43 @@
+<div ng-controller="ShippingPlanBulkInput" owd-screen="ShippingPlanBulkInput">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="centerCd" ng-model="shippingInstH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				<owd-select id="clientCd" ng-model="shippingInstH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-checkbutton style="margin-top:-25px;" id="chkErrorShow" ng-model="shippingInstH.chkErrorShow" label-text="エラーのみ表示" btn-checkbox-true="1" btn-checkbox-false="0" ng-change="alertMessage.deleteAll();search();"></owd-checkbutton>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="shippingPlan"
+			owd-select-options="gridSelectOptions"
+			owd-button-options="gridButtonOptions"
+			owd-event-options="gridEventOptions" owd-form-name="inputform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-4">
+	                <br>
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana Start -->
+					<owd-file id="excelUpload" class="btn-info" owd-before-upload="excelBeforeUpload" owd-success="excelUploadSuccess" owd-options="fileOptions" ng-disabled="inputform.$invalid">Excel取込</owd-file>
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana End -->
+					<!-- <owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button> -->
+					<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka Start -->
+					<owd-button id="excelOutput" class="btn-info" ng-click="excelOutput()" ng-disabled="dataCount==0">Excel出力</owd-button>
+					<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka End -->
+				</div>
+				<div class="col-xs-4 col-xs-offset-4">
+					<div class="row">
+						<owd-select id="errorProcessMet" owd-grid-system-option="col-xs-8" ng-model="shippingInstH.errorProcessMet" owd-models="errorProcessMetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラー処理方法" owd-remove-blank></owd-select>
+						<div class="col-xs-4" align="right">
+		                	<br>
+		                	<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka Start -->
+							<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="dataCount==0">登録</owd-button>
+							<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka End -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

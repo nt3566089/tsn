@@ -1,0 +1,32 @@
+<div ng-controller="Daily" owd-screen="Daily">
+	<form id="searchinputform" name="searchinputform" novalidate>
+			<accordion><accordion-group is-open="isopen">
+			<accordion-heading> {{"searchCondition" |owfMessage}} <span class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></span>
+			</accordion-heading>
+			<fieldset>
+				<div class="row">
+				<!-- 荷主センタ変更対応 201７.02.06 sja Start -->
+				<!--
+					<owd-select id="centerCd" ng-model="dailySearch.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="倉庫1"></owd-select>
+				 -->
+					<owd-select id="centerCd" ng-model="dailySearch.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="倉庫1" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 201７.02.06 sja End -->
+				</div>
+			</fieldset>
+			</accordion-group></accordion>
+			<!-- [#7234] brタグを削除 2020.03.12 ono del -->
+			<div owd-grid="gridOptions" id="dailyList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)"></div>
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<!-- [C-CWMS-0066] 非同期処理化 2016.10.14 kawana Start -->
+						<owd-button id="daily" class="btn-success" ng-click="daily(0)">締切</owd-button>
+						<owd-button id="dailyBatch" class="btn-success" ng-click="daily(1)">締切</owd-button>
+						<!-- [C-CWMS-0066] 非同期処理化 2016.10.14 kawana End -->
+					</div>
+				</div>
+			</div>
+	</form>
+</div>

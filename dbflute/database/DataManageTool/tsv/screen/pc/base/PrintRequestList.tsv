@@ -1,0 +1,32 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PrintRequestList	印刷情報一覧	base	reportCd	帳票		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	reportLayoutId	帳票レイアウト		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	printerGroupId	プリンタグループ		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	printStatus	印刷ステータス		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	printedFlg	再印刷有無		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	queueAddDtFromYmd	キュー登録日(From)		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	queueAddDtFromTime	キュー登録時間(From)		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	queueAddDtToYmd	キュー登録日(To)		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	queueAddDtToTime	キュー登録時間(To)		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	errorFlg	エラーのみ		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	userCd	印刷ユーザCD		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	printDataType	印刷データタイプ		1	1		0	0													
+PrintRequestList	印刷情報一覧	base	search	検索		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	reportNm	帳票	4	text	1	0		0	200				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	reportLayoutNm	帳票レイアウト	5	text	1	0		0	200				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	printerGroupNm	プリンタグループ	7	text	1	0		0	200				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	bclassDtlByPrintStatus.vdict.dictNm	印刷ステータス	1	text	1	0		0	140				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	bclassDtlByPrintedFlg.vdict.dictNm	再印刷有無	11	text	1	0		0	100				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	printerNm	プリンタ	8	text	1	0		0	170				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	trayNm	給紙トレイ	9	text	1	0		0	170				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	printNum	部数	12	number	1	0	right	0	100				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	bclassDtlBySheetCollate.vdict.dictNm	部単位印刷要否	14	text	1	0		0	130				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	latestPrintDt	印刷日時	3	datetime	1	0		0	180				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	queueAddDt	キュー登録日時	2	datetime	1	0		0	180				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	documentPageSize	ページ総数	13	number	1	0	right	0	100				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	addUser	印刷ユーザCD	10	text	1	0		0	120				
+PrintRequestList	印刷情報一覧	base	printRequestListGrid	印刷情報一覧グリッド	grid	1	1		0	1	bclassDtlByPrintDataType.vdict.dictNm	印刷データタイプ	6	text	1	0		0	130				
+PrintRequestList	印刷情報一覧	base	reprint	再印刷		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	printRequestHistList	印刷履歴一覧		1	1		0	1													
+PrintRequestList	印刷情報一覧	base	printRequestHistBrowse	印刷履歴詳細		1	1		0	1													

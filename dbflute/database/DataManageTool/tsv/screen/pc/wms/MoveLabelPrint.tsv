@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+MoveLabelPrint	搬送ラベル発行	wms	centerCd	センタ		1	1		1	1													
+MoveLabelPrint	搬送ラベル発行	wms	clientCd	荷主		1	1		1	1													
+MoveLabelPrint	搬送ラベル発行	wms	warehouseCd	倉庫		1	1		0	1													
+MoveLabelPrint	搬送ラベル発行	wms	instDt	指示日		1	1		1	1													
+MoveLabelPrint	搬送ラベル発行	wms	moveSlipNo	WMS在庫移動伝票No.	text	1	1		0	1													
+MoveLabelPrint	搬送ラベル発行	wms	storeLabelNo	入庫ラベルNo.	text	1	1		0	1													
+MoveLabelPrint	搬送ラベル発行	wms	addUser	ユーザCD	text	1	1		0	1													
+MoveLabelPrint	搬送ラベル発行	wms	printCondition	発行状況	dropdown	1	1		0	1													
+MoveLabelPrint	搬送ラベル発行	wms	register	発行		1	1		0	1													

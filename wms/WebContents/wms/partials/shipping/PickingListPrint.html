@@ -1,0 +1,91 @@
+<div ng-controller="PickingListPrint" owd-screen="PickingListPrint">
+	<form id="searchform" name="searchform" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion> <owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<fieldset>
+			<div class="row">
+				<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana Start -->
+				<owd-select id="takingShippingFlg" ng-model="searchCondition.takingShippingFlg" owd-models="takingShippingFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="作業日/出荷日" owd-remove-blank></owd-select>
+				<!-- [ON推-品向-584]空の選択肢を削除 2015.04.20 kawana End -->
+				<owd-date id="dtFrom" ng-model="searchCondition.dtFrom" label-text="日付(From)"></owd-date>
+				<owd-date id="dtTo" ng-model="searchCondition.dtTo" label-text="日付(To)" owd-validate="fromToCheck(searchCondition.dtFrom, $value)" owd-validate-watch="'searchCondition.dtFrom'" owd-validate-message="fromToMessage"></owd-date>
+				<!-- 荷主センタ変更対応 2017.05.18 sja Start -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-change="clientChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.05.18 sja End -->
+				<!-- [ON推-品質問題点指摘（新ｿﾘV2-038）]修正対応 2016.08.01 chou Del Start -->
+				<!--owd-select id="warehouseCd" ng-model="searchCondition.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫"></owd-select-->
+				<!-- [ON推-品質問題点指摘（新ｿﾘV2-038）]修正対応 2016.08.01 chou Del End -->
+				<owd-text id="pickingBatchNo" ng-model="searchCondition.pickingBatchNo" label-text="出庫指示バッチNo."></owd-text>
+				<owd-text id="pickingWorkNo" ng-model="searchCondition.pickingWorkNo" label-text="出庫作業No."></owd-text>
+				<owd-text id="pickingGroupNo" ng-model="searchCondition.pickingGroupNo" label-text="ピッキンググループNo."></owd-text>
+				<owd-text id="supplyCustomerCd" ng-model="searchCondition.tallocInstH.supplyCustomerCd" label-text="納品先" owd-add-button="showVendor()" ng-blur="customerCdBlur()">
+					<owd-info ng-model="searchCondition.tallocInstH.mcustomerBySupplyCustomerId.customerNm"></owd-info>
+				</owd-text>
+				<!-- [#5133][v3.1] リスト発行区分にケースピッキングを追加 2018.08.27 kawana Start -->
+				<owd-select id="picCls" owd-remove-blank ng-model="searchCondition.picCls" owd-models="picClsList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="リスト発行区分" ng-change="changePicCls()"></owd-select>
+				<!-- [#5133][v3.1] リスト発行区分にケースピッキングを追加 2018.08.27 kawana End -->
+				<owd-select id="listOutKbn" owd-remove-blank ng-model="searchCondition.listOutKbn" owd-models="listOutKbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="発行区分"></owd-select>
+                <owd-select id="emergencyFlg" owd-remove-blank ng-model="searchCondition.emergencyFlg" owd-models="emergencyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="緊急のみ"></owd-select>
+				<!-- [C-EC-004] 欠品有無のみ検索条件追加 2015.1.27 Sakata Start -->
+				<owd-select id="noStockOutFlg" ng-model="searchCondition.noStockOutFlg" owd-models="noStockOutFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="欠品フラグ"></owd-select>
+				<!-- [C-EC-004] 欠品有無のみ検索条件追加 2015.1.27 Sakata End -->
+				<!-- [ON推-品向-1029] 配送コースCD検索条件追加 2015.11.30 ichikawa Start -->
+				<owd-text id="deliveryCourseCd" ng-model="searchCondition.deliveryCourseCd" label-text="配送コースCD" owd-add-button="deliveryCourse()" ng-blur="deliveryCourseCdBlur()">
+				    <owd-info ng-model="searchCondition.deliveryCourseNm"></owd-info>
+				</owd-text>
+				<!-- [ON推-品向-1029] 配送コースCD検索条件追加 2015.11.30 ichikawa End -->
+				<!-- [ver3.1][#5129] ケースピックフラグ、単行ピックフラグ追加 2018.09.20 miyabe Start -->
+				<owd-select id="sglRowPicFlg" ng-model="searchCondition.sglRowPicFlg" owd-models="sglRowPicFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="単行ピックフラグ"></owd-select>
+				<owd-select id="casePicFlg" ng-model="searchCondition.casePicFlg" owd-models="casePicFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="ケースピックフラグ"></owd-select>
+				<!-- [ver3.1][#5129] ケースピックフラグ、単行ピックフラグ追加 2018.09.20 miyabe End -->
+			</div>
+		</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		</owd-accordion-group> </owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+		    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+				<owd-button id="excelOutput" class="btn-info" ng-disabled="searchform.$invalid" ng-click="excelOutput()">Excel出力</owd-button>
+			</div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"  align="right">
+            	<div class="list-box">
+            		<div class="list-text wmslegend wmslegendcolorred"><owd-span id="emergencyTitle" label-text="緊急"></owd-span></div>
+            		<div class="list-text wmslegend wmslegendblue"><owd-span id="stockOutFlgTitle" label-text="欠品"></owd-span></div>
+            	</div>
+			</div>
+		</div>
+<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana Start -->
+	</form>
+	<form id="issueform" name="issueform" novalidate>
+<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana End -->
+		<br>
+		<div owd-grid="gridOptions" id="pickingListPrintB" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-select id="picListCls1" ng-model="footer.picListCls1" owd-models="picListCls1List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="リスト発行区分(一次ピッキング)"></owd-select>
+					<owd-select id="picListCls2" ng-model="footer.picListCls2" owd-models="picListCls2List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="リスト発行区分(二次ピッキング)"></owd-select>
+	                <!-- Ver２．１向けエンハンス 荷札出力対応 C-CWMS-0058 2016/07/14 SJA Start -->
+				    <owd-select id="picListCls3"  ng-model="footer.picListCls3" owd-models="picListCls3List" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="リスト発行区分(送り状・荷札)"></owd-select>
+				    <!-- Ver２．１向けエンハンス 荷札出力対応 C-CWMS-0058 2016/07/14 SJA End -->
+                	<br>
+                	<div align="right">
+                	<!-- [Ver3.1][#5127]発行解除ボタン追加 2018.08.21 matsumoto Start -->
+                   	<owd-button id="clearIssue" class="btn-danger" ng-disabled="disabledClearIssue()" ng-click="clearIssue()">発行解除</owd-button>
+                	<!-- [Ver3.1][#5127]発行解除ボタン追加 2018.08.21 matsumoto End -->
+                	<!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI Start -->
+						<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana Start -->
+                    	<owd-button id="issue" class="btn-info" ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length || issueform.$invalid" ng-click="issue()">発行_</owd-button>
+						<!-- [#1059] ng-disabledの2重定義を修正 2017.03.09 kawana End -->
+                    <!-- [ON推-横並-43] 明細行が無い場合、非活性化に修正 2014.11.21 KI End -->
+                	</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

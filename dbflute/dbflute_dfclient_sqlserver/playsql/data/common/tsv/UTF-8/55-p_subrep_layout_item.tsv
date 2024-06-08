@@ -1,0 +1,16 @@
+SUBREP_LAYOUT_ITEM_ID	SUBREP_LAYOUT_ID	ITEM_CD	DICT_ID	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+1	1	lblCarrierInformation	3191	String	1	
+2	1	lblHandlingUnit	3192	String	1	
+3	1	lblPackage1	3193	String	1	
+4	1	lblQty1	3194	String	1	
+5	1	lblType1	3195	String	1	
+6	1	lblQty2	3194	String	1	
+7	1	lblType2	3195	String	1	
+8	1	lblWeight	3170	String	1	
+9	1	lblHm	3196	String	1	
+10	1	lblX1	3197	String	1	
+11	1	lblCommondity	3198	String	1	
+12	1	lblGrandTotal	3199	String	1	
+13	1	lblPackage2	3206	String	1	
+14	1	lblType3	3207	String	1	
+15	1	lblType4	3208	String	1	

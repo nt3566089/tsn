@@ -1,0 +1,34 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	REPORT_LAYOUT_DATA	UPDATABLE	ATTRIBUTE1	ATTRIBUTE2	ATTRIBUTE3	ATTRIBUTE4	ATTRIBUTE5	AUTO_PRINT_TARGET_FLG	DEL_FLG	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	packingReportTitle	お買い上げ明細書	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	giftPackingReportTitle	送付ご案内書	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	greetingMessage1	このたびはお買い上げいただきまして、誠にありがとうございました。	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	greetingMessage2	お客様のお買い上げ明細書を送付いたしますので、	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	greetingMessage3	お客様への送付ご案内書を送付いたしますので、	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	greetingMessage4	ご確認いただきますよう、お願いいたします。	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	clientNm	ONEs総合商社	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	clientZip	〒 431-0431	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	clientAdd	東京都江東区東陽7-2-14東陽MKビル8F	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	clientTel	03-5634-0328	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	clientFax	03-5634-0329	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	urlMessage1	明細内容に関してご不明な点は、下記のページアドレス(URL)を	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	urlMessage2	ご確認の上、当店「	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	urlMessage3	」までお問い合わせください。	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	packingReportSubTitle	お買い上げ明細	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	giftPackingReportSubTitle	送付ご案内明細	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblOrderNum	個数	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblUnitPrice	単価	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblSubtotal	小計	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblTotal	合計	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblTax	消費税	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblCarriage	送料	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblCod	代引き手数料	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblToralAmount	総合計	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblCouponUse	クーポン利用額	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblPointUse	ポイント利用額	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblOtherDiscount	その他値引額	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblAmountBilled	請求金額	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblDelivInfo	■お届け先 :	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblOrderDt	■ご注文日 :	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblDelivPaymentMethod1	■お支払方法 :	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblOrderNo	■受注番号 :	String	1	
+EcDeliverySlipList	ECお買上明細	ECお買上明細	../../../../../../reports/ecorder/EcDeliverySlipList.jrxml	1						1	0	lblProduct	商品名／商品番号／項目：選択肢	String	1	

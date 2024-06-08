@@ -1,0 +1,43 @@
+<div ng-controller="ProductShapeMasterBulkInput" owd-screen="ProductShapeMasterBulkInput">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<owd-select id="clientCd" ng-model="productMaster.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-checkbutton style="margin-top:-25px;" id="chkErrorShow" ng-model="productMaster.chkErrorShow" label-text="エラーのみ表示" btn-checkbox-true="1" btn-checkbox-false="0" ng-change="alertMessage.deleteAll();search();"></owd-checkbutton>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="productShapeMaster"
+			owd-select-options="gridSelectOptions"
+			owd-button-options="gridButtonOptions"
+			owd-event-options="gridEventOptions" owd-form-name="inputform"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-4">
+	                <br>
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana Start -->
+					<!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu Start  -->
+					<owd-file id="excelUpload" class="btn-info" owd-before-upload="excelBeforeUpload" owd-success="excelUploadSuccess" owd-options="fileOptions" ng-disabled="inputform.$invalid">ファイル取込</owd-file>
+					<!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu End  -->
+					<!-- [#1864] センタ・荷主を空にして押下すると致命的エラー発生 2017.06.05 kawana End -->
+					<!-- 一括取込画面の編集機能を削除により行追加・行削除ボタンを削除 -->
+					<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka Start -->
+					<owd-button id="excelOutput" class="btn-info" ng-click="excelOutput()" ng-disabled="dataCount==0">Excel出力</owd-button>
+					<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka End -->
+				</div>
+				<div class="col-xs-4 col-xs-offset-4">
+					<div class="row">
+						<owd-select id="errorProcessMet" owd-grid-system-option="col-xs-8" ng-model="productMaster.errorProcessMet" owd-models="errorProcessMetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラー処理方法" owd-remove-blank></owd-select>
+						<div class="col-xs-4" align="right">
+		                	<br>
+		                	<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka Start -->
+							<owd-button id="register" class="btn-success" ng-click="register()" ng-disabled="dataCount==0">登録</owd-button>
+							<!-- [Ver3.1][#5754] データが0件の場合にボタンを非活性にするよう修正 2018.12.17 tanaka End -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

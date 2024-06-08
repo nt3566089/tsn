@@ -1,0 +1,43 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PrinterAttributeList" owd-screen="PrinterAttributeList">
+	<form id="searchform" name="searchform" novalidate>
+	
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	
+				<fieldset>
+					<div class="row">
+						<owd-select id="printerGroupId" ng-model="head.pprinter.printerGroupId" owd-models="printerGroupList" owd-repeat-key="printerGroupId" owd-repeat-value="printerGroupNm" label-text="プリンタグループ"></owd-select>
+						<owd-text id="printerNm" ng-model="head.pprinter.printerNm" label-text="プリンタ名称"></owd-text>
+						<owd-select id="printerVisible" ng-model="head.pprinter.visible" owd-models="visibleList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="プリンタ表示可否"></owd-select>
+						<owd-text id="trayNm" ng-model="head.trayNm" label-text="トレイ名称"></owd-text>
+						<owd-select id="trayVisible" ng-model="head.visible" owd-models="visibleList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="トレイ表示可否"></owd-select>
+					</div>
+				</fieldset>
+	
+			</owd-accordion-group>
+		</owd-accordion>
+	
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+		<br>
+		<div owd-grid="gridOptions" id="printerAttributeListGrid" owd-form-name="searchform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-dblclick-option="gridDblClick(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="register()">登録</owd-button>
+					<owd-button id="remove" class="btn-danger" ng-click="remove()">削除</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

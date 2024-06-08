@@ -1,0 +1,42 @@
+<div ng-controller="BarcodeLabelBulkPrint" owd-screen="BarcodeLabelBulkPrint">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+				<div class="col-xs-12">
+					<owd-checkbutton style="margin-top:-25px;" id="chkErrorShow" ng-model="head.chkErrorShow" label-text="エラーのみ表示" btn-checkbox-true="1" btn-checkbox-false="0" ng-change="search()"></owd-checkbutton>
+				</div>
+				<div class="col-xs-12">
+				</div>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="barcodeLabelBulkPrintList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions"
+			 owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-control" class="container">
+			<div class="row">
+				<div class="col-xs-2">
+	                <br>
+	                <!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu Start -->
+					<owd-file id="excelUpload" class="btn-info" owd-before-upload="excelBeforeUpload" owd-success="excelUploadSuccess" owd-options="fileOptions">ファイル取込</owd-file>
+					<!-- [Ver3.0][#4087] 項目名に不備 2018.03.16 shimizu End -->
+					<owd-button id="excelOutput" class="btn-info" ng-click="excelOutput()">Excel出力</owd-button>
+				</div>
+				<div class="col-xs-7 col-xs-offset-2">
+					<div class="row">
+						<!-- [#1407] バーコード種別を最初に選択するときにCODE39が強制的に選択される 2017.03.15 kawana Start -->
+						<owd-select id="barcodeType" owd-grid-system-option="col-xs-4" ng-model="head.barcodeType" owd-models="barcodeTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="バーコード種別" ng-blur="barcodeTypeBlur()"></owd-select>
+						<!-- [#1407] バーコード種別を最初に選択するときにCODE39が強制的に選択される 2017.03.15 kawana End -->
+						<owd-text id="startBit" owd-grid-system-option="col-xs-2" ng-model="head.startBit" label-text="スタートビット"></owd-text>
+						<owd-text id="endBit" owd-grid-system-option="col-xs-2" ng-model="head.endBit" label-text="エンドビット"></owd-text>
+						<owd-select id="errorProcessMet" owd-grid-system-option="col-xs-4" ng-model="head.errorProcessMet" owd-models="errorProcessMetList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="エラー処理方法" owd-remove-blank></owd-select>
+					</div>
+				</div>
+				<div class="col-xs-1" align="right">
+	                <br>
+					<owd-button id="labelPrint" class="btn-info" ng-disabled="inputform.$invalid" ng-click="print()">ラベル出力</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,30 @@
+<div ng-controller="LocationBarcodeListPrint" owd-screen="LocationBarcodeListPrint">
+	<form id="searchform" name="searchform" novalidate>
+	<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.15 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_"></owd-select>
+				  -->
+				<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ_" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.15 sja End -->
+				<!-- [検査-097] 倉庫変更「取得したゾーンデータが１件の場合、１件目を選択状態にする。」を修正 2014.11.28 xiangy Start -->
+				<owd-select id="warehouseCd" ng-model="searchCondition.mzone.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫_"  ng-focus="warehouseFocus()" ng-change="warehouseChange()" ng-blur="warehouseBlur()"></owd-select>
+			    <!-- [検査-097] 倉庫変更「取得したゾーンデータが１件の場合、１件目を選択状態にする。」を修正 2014.11.28 xiangy End -->
+			    <owd-select id="zoneCd" ng-model="searchCondition.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン_"></owd-select>
+		 		<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+		 		<owd-text id="locationCdFrom" ng-model="searchCondition.locationCdFrom" label-text="ロケーションCD（From）_" owd-add-button="showLocationF()" ng-blur="locationCdBlur(1)">
+					<owd-info ng-model="searchCondition.locationNmFrom"></owd-info>
+				</owd-text>
+			    <owd-text id="locationCdTo" ng-model="searchCondition.locationCdTo" label-text="ロケーションCD（To）_" owd-add-button="showLocationT()" ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(searchCondition.locationCdFrom, $value)" owd-validate-watch="'searchCondition.locationCdFrom'" owd-validate-message="fromToMessage">
+			    	<owd-info ng-model="searchCondition.locationNmTo"></owd-info>
+			    </owd-text>
+			    <!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->		</div>
+	</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

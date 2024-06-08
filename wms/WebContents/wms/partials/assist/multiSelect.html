@@ -1,0 +1,12 @@
+<ion-header-bar class="bar-positive" align-title="center">
+	<button class="button button-icon ion-android-close" ng-click="closePopup();"></button>
+    <h1 class="title">{{multiSelect.title}}</h1>
+    <button class="button button-icon ion-android-done" ng-click="saveSelection();"></button>
+</ion-header-bar>
+<ion-content>
+	<ion-list>
+		<div ng-repeat="option in multiSelect.tempOptions">
+			<ion-checkbox ng-model="option[multiSelect.selectedTag]">{{ formatViewValue(option) }}</ion-checkbox>
+		</div>
+	</ion-list>
+</ion-content>

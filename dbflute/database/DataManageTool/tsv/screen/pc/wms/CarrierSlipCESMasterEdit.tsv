@@ -1,0 +1,43 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	clientCd	荷主		1	1		1	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	delFlg	削除		1	1		1	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	customerCd	取引先		1	1		1	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectAccountNoBillTo	Collect Account# (Bill To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectZipCdBillTo	Collect Zip Code (Bill To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectCountryCdBillTo	Collect Country Code (Bill To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	paymentTermCdTaxesTo	Payment Term Code (Taxes To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectAccountNoTaxesTo	Collect Account# (Taxes To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectZipCdTaxesTo	Collect Zip Code (Taxes To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	collectCountryCdTaxesTo	Collect Country Code (Taxes To)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	codPaymentTermCd	COD Payment Term Code		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	codAmount	COD Amount		1	1	right	0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	codFeePayer	COD Fee Payer		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	termsOfSales	Terms of Sales		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	brokerName	Broker Name		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	brokerPhoneNo	Broker Phone#		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	brokerFaxNo	Broker Fax#		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	satDeliveryFlg	Saturday Delivery Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	residentialDeliveryFlg	Residential Delivery Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	codFlg	Collect On Delivery Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	signatureRequiredFlg	Signature Required Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	signatureReleaseFlg	Signature Release Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	callBeforeDeliveryFlg	Call Before Delivery Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	freezableProtectionFlg	Freezable Protection Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	guaranteedPlusFlg	Guaranteed Plus Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	residentialPickupFlg	Residential Pickup Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	doNotStackStackFlg	Do Not Stack Pallets Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	limitedAccessDeliveryFlg	Limited Access Delivery Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	limitedAccessPickupFlg	Limited Access Pickup Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	overSizedFlg	Over-Sized/Extreme Length Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	poisonFlg	Poison Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	foogFlg	Food Flag		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	liftgateDeliveryPrepaidFlg	Liftgate at delivery Flag (Prepaid)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	liftgateDeliveryCollectFlg	Liftgate at delivery Flag (Collect)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	liftgatePickupPrepaidFlg	Liftgate at pickup Flag (Prepaid)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	liftgatePickupCollectFlg	Liftgate at pickup Flag (Collect)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	insideDeliveryPrepaidFlg	Inside Delivery Flag (Prepaid)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	insideDeliveryCollectFlg	Inside Delivery Flag (Collect)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	insidePickupPrepaidFlg	Inside Pickup Flag (Prepaid)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	insidePickupCollectFlg	Inside Pickup Flag (Collect)		1	1		0	1													
+CarrierSlipCESMasterEdit	キャリアEDIシステム送り状マスタメンテナンス(編集)	wms	register	登録		1	1		0	1													

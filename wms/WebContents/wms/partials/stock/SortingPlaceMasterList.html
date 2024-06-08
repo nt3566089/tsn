@@ -1,0 +1,61 @@
+<div ng-controller="SortingPlaceMasterList" owd-screen="SortingPlaceMasterList">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			    <fieldset>
+					<div class="row">
+						<owd-select id="centerCd" ng-model="searchCondition.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+						<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+						<owd-select	id="delFlg" ng-model="searchCondition.delFlg"  owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+
+					</div>
+				</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+			</owd-accordion-group>
+		</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="searchClick()">検索</owd-button>
+			</div>
+
+		</div>
+	</form>
+	<form id="searchResultListForm" name="searchResultListForm" novalidate>
+		<owd-label id="lbltitleCommon" label-text="共通"></owd-label>
+		<br>
+		<accordion id="titleCommon">
+			<accordion-group is-open="isopen">
+				<fieldset>
+				<div class="row">
+		 			<owd-text id="locidfrnkNm" ng-model="resultSrw.locidfrnkNm" label-text="ロケ不定間口貼付順"></owd-text>
+		 			<owd-text id="zonelocidfbrctg" ng-model="resultSrw.locidfbrctg" label-text="ロケ不定銘柄カテゴリ貼付順"></owd-text>
+		 			</owd-text>
+				</div>
+				</fieldset>
+			</accordion-group>
+		</accordion>
+		<owd-label id="lblSortingPlaceMasterListLin" label-text="ライン"></owd-label>
+		<br>
+		<div owd-grid="gridOptions" id="sortingPlaceMasterListLin" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchResultListForm" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+		<br>
+		<owd-label id="lblSortingPlaceMasterListBlk" label-text="ブロック"></owd-label>
+		<br>
+		<div owd-grid="gridOptions2" id="sortingPlaceMasterListBlk" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchResultListForm" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+		<div id="content-footer-button" class="container">
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+
+				<div class="col-xs-12" align="right">
+						<owd-button id="AddLine"	class="btn-success"	ng-click="AddLineClick()">ライン追加</owd-button>
+						<owd-button id="AddBlock"	class="btn-success"	ng-click="AddBlockClick()">ブロック追加</owd-button>
+						<owd-button id="Edit"	class="btn-success"	ng-click="EditClick()">編集</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

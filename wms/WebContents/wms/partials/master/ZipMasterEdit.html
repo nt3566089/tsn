@@ -1,0 +1,49 @@
+<div ng-controller="ZipMasterEdit" owd-screen="ZipMasterEdit">
+	<form id="searchinputform" name="searchinputform" novalidate>
+
+		<div class="well">
+			<div class = "row">
+<!-- [#7147][OSS] 大口事業所フラグを先頭に移動し、フラグ変更時に処理が走るように変更 2020.02.06 tsuboi Start -->
+<owd-select id="companyFlg" ng-model="head.companyFlg" owd-models="companyFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm"  label-text="大口事業所フラグ" ng-change="checkCompanyFlg()"></owd-select>
+<!-- [#7147][OSS] 大口事業所フラグを先頭に移動し、フラグ変更時に処理が走るように変更 2020.02.06 tsuboi End -->
+<owd-text id="zipCd" ng-model="head.zipCd" label-text="郵便番号"></owd-text>
+<owd-text id="publicCd" ng-model="head.publicCd" label-text="全国地方公共団体コード"></owd-text>
+<owd-text id="zipCd5" ng-model="head.zipCd5" label-text="旧郵便番号"></owd-text>
+<owd-text id="addressKn1" ng-model="head.addressKn1" label-text="都道府県カナ"></owd-text>
+<owd-text id="addressKn2" ng-model="head.addressKn2" label-text="市区町村カナ"></owd-text>
+<owd-text id="addressKn3" ng-model="head.addressKn3" label-text="町域カナ"></owd-text>
+<owd-text id="companyKn" ng-model="head.companyKn" label-text="大口事業所名カナ"></owd-text>
+<owd-text id="address1" ng-model="head.address1" label-text="都道府県"></owd-text>
+<owd-text id="address2" ng-model="head.address2" label-text="市区町村"></owd-text>
+<owd-text id="address3" ng-model="head.address3" label-text="町域"></owd-text>
+<owd-text id="address4" ng-model="head.address4" label-text="小字"></owd-text>
+<owd-text id="companyNm" ng-model="head.companyNm" label-text="大口事業所名"></owd-text>
+<owd-select id="flg1" ng-model="head.flg1" owd-models="flgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="フラグ１"></owd-select>
+<owd-select id="flg2" ng-model="head.flg2" owd-models="flgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="フラグ２"></owd-select>
+<owd-select id="flg3" ng-model="head.flg3" owd-models="flgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="フラグ３"></owd-select>
+<owd-select id="flg4" ng-model="head.flg4" owd-models="flgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="フラグ４"></owd-select>
+<owd-select id="updType" ng-model="head.updType" owd-models="updTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="更新区分"></owd-select>
+<owd-select id="reasonType" ng-model="head.reasonType" owd-models="reasonTypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="変更理由"></owd-select>
+<owd-text id="handlingAddress" ng-model="head.handlingAddress" label-text="取扱局"></owd-text>
+<owd-select id="flg5" ng-model="head.flg5" owd-models="flg5List" owd-repeat-key="classCd" owd-repeat-value="classNm"  label-text="フラグ５"></owd-select>
+<owd-select id="flg6" ng-model="head.flg6" owd-models="flg6List" owd-repeat-key="classCd" owd-repeat-value="classNm"  label-text="フラグ６"></owd-select>
+<owd-select id="updCd" ng-model="head.updCd" owd-models="updCdList" owd-repeat-key="classCd" owd-repeat-value="classNm"  label-text="修正コード"></owd-select>
+<owd-select id="delFlg" ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除"></owd-select>
+
+			</div>
+		</div>
+        <!-- [#7234]brタグを削除 2020.03.12 ono del -->
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+        	<div class="row">
+        	<!-- [#7234]class="col-xs-6" ⇒ class="col-xs-12"に変更 -->
+            	<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<!-- [#356][Ver2.1.0 品質検査] 郵便番号マスタメンテナンス（編集） 都道府県、市区町村、町域いずれか必須チェック追加 2016.12.05 Mod honma Start -->
+                	<!-- owd-button id="register" ng-disabled="searchinputform.$invalid" class="btn-success" ng-click="register()">登録</owd-button -->
+                	<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					<!-- [#356][Ver2.1.0 品質検査] 郵便番号マスタメンテナンス（編集） 都道府県、市区町村、町域いずれか必須チェック追加 2016.12.05 Mod honma End -->
+            	</div>
+        	</div>
+         </div>
+    </form>
+</div>

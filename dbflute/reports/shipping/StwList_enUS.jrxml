@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StwList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="4" bottomMargin="7" uuid="83910e9e-d10d-4232-9474-133686151a90">
+	<property name="ireport.zoom" value="1.6105100000000339"/>
+	<property name="ireport.x" value="347"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.text.truncate.at.char" value="true"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<field name="cultureId" class="java.lang.Long">
+		<fieldDescription><![CDATA[cultureId]]></fieldDescription>
+	</field>
+	<field name="printFlg" class="java.lang.String"/>
+	<field name="clientCd" class="java.lang.String">
+		<fieldDescription><![CDATA[clientCd]]></fieldDescription>
+	</field>
+	<field name="centerNm" class="java.lang.String">
+		<fieldDescription><![CDATA[centerNm]]></fieldDescription>
+	</field>
+	<field name="centerCd" class="java.lang.String">
+		<fieldDescription><![CDATA[centerCd]]></fieldDescription>
+	</field>
+	<field name="clientNm" class="java.lang.String">
+		<fieldDescription><![CDATA[clientNm]]></fieldDescription>
+	</field>
+	<field name="shippingDt" class="java.lang.String"/>
+	<field name="deliveryCourseCd" class="java.lang.String"/>
+	<field name="deliveryCourseNm" class="java.lang.String"/>
+	<field name="carrierCd" class="java.lang.String"/>
+	<field name="processTypeCd" class="java.lang.String"/>
+	<field name="processTypeNm" class="java.lang.String"/>
+	<field name="reportCd" class="java.lang.String"/>
+	<field name="carrierNm" class="java.lang.String"/>
+	<field name="supplierCustomerCd" class="java.lang.String"/>
+	<field name="supplierCustomerNm" class="java.lang.String"/>
+	<field name="pickingWorkNo" class="java.lang.String"/>
+	<field name="sumPickingHCount" class="java.lang.Long"/>
+	<field name="delivAddress1" class="java.lang.String"/>
+	<field name="delivAddress2" class="java.lang.String"/>
+	<variable name="pickingNumSubTotal" class="java.lang.Long" resetType="Group" resetGroup="processTypeCd" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumPickingHCount}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="printFlg" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{printFlg}]]></groupExpression>
+	</group>
+	<group name="clientCd" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{clientCd}]]></groupExpression>
+	</group>
+	<group name="centerCd" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{cultureId}]]></groupExpression>
+	</group>
+	<group name="shippingDt" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{shippingDt}]]></groupExpression>
+	</group>
+	<group name="deliveryCourseCd" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{deliveryCourseCd}]]></groupExpression>
+	</group>
+	<group name="processTypeCd" isStartNewPage="true" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{processTypeCd}]]></groupExpression>
+		<groupFooter>
+			<band height="25">
+				<staticText>
+					<reportElement key="lblTotal" mode="Opaque" x="596" y="3" width="102" height="20" backcolor="#D3D3D3" uuid="a62d89b9-1eb8-4f17-9fe4-a38a73063a7a"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<pen lineWidth="0.25"/>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック"/>
+					</textElement>
+					<text><![CDATA[*Total Packages]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="true">
+					<reportElement key="txtPickingNumSubTotal" x="698" y="3" width="102" height="20" uuid="45f615de-1e08-490e-8f5f-0d518020ed8b"/>
+					<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="IPAexゴシック" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{pickingNumSubTotal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="153" splitType="Stretch">
+			<staticText>
+				<reportElement key="lblClientNm" mode="Opaque" x="2" y="38" width="112" height="18" backcolor="#D3D3D3" uuid="97fbf07c-b4b7-440a-8f1e-4640fea12ccb"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Shipper]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtClientNm" x="114" y="38" width="461" height="18" uuid="68174c2e-8f73-4d9f-9cfe-b62c06a6ffb5"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientCd} + " : " + $F{clientNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblCntrNm" mode="Opaque" x="2" y="56" width="112" height="18" backcolor="#D3D3D3" uuid="088ff552-5a5b-43c1-b5d0-f326c70f8327"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Center]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtCntrNm" x="114" y="56" width="461" height="18" uuid="3eae11b7-aa0c-44e8-931f-fec5b7b8a8fe"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{centerCd} + " : " + $F{centerNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblShippingDate" mode="Opaque" x="2" y="74" width="112" height="18" backcolor="#D3D3D3" uuid="ffa6ec02-a9a1-4292-9690-b27299fa3cb4"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Ship Date]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtShippingDate" x="114" y="74" width="461" height="18" uuid="c2b032d2-f33e-4dfb-bf65-160919e1fb90"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.parse($F{shippingDt})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtDeliveryCourseCd" x="114" y="92" width="461" height="18" uuid="38a838ad-971a-4754-9d2f-d08c097859e7"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deliveryCourseCd}+ " : " +$F{deliveryCourseNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblDeliveryCourseCd" mode="Opaque" x="2" y="92" width="112" height="18" backcolor="#D3D3D3" uuid="5c15e782-eb56-4b95-9066-c56c4874197c"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Carrier Service Level]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtCarrierNm" x="114" y="110" width="189" height="18" uuid="2e4f618c-857c-4054-9f51-346085c14138"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{carrierCd}+ " : " +$F{carrierNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblCarrierNm" mode="Opaque" x="2" y="110" width="112" height="18" backcolor="#D3D3D3" uuid="1faf7358-060f-45ba-8823-5c941e16bdd9"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Carrier]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtProcessTypeNm" x="381" y="110" width="194" height="18" uuid="ae238c16-1c20-4d10-9263-538ffc9387cd"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{processTypeCd}+ " : " +$F{processTypeNm}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblProcessTypeNm" mode="Opaque" x="303" y="110" width="78" height="18" backcolor="#D3D3D3" uuid="ca9f4a8a-3986-43f4-9f4f-abaea82578c5"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Process Class]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="634" y="41" width="56" height="56" uuid="fa33e78c-8904-42f5-8947-c9fb734688c2"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement key="txtPageTotal" x="772" y="23" width="30" height="16" uuid="08739332-6938-4421-9297-32efa51a4bd2"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="datetime" isBlankWhenNull="true">
+				<reportElement key="txtDate" x="682" y="10" width="120" height="16" uuid="9a95df3c-1610-4920-87fd-bcb5acd50975"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.oneslogi.report.jasperreports.JasperReportFormat.now()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblPage" x="682" y="23" width="50" height="16" uuid="b477c26f-29f4-4e78-b559-57c9992694fd"/>
+				<box topPadding="1" leftPadding="20" bottomPadding="1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[PAGE:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="746" y="41" width="56" height="56" uuid="7a8f2f52-1458-4149-99c1-7b5621bb95b3"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="690" y="41" width="56" height="56" uuid="0088c6fa-80e1-40be-9b21-e114ed1276d1"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement key="lblMark1" x="762" y="24" width="10" height="16" uuid="0132aaca-0aaf-40d6-98f7-dce42056515c"/>
+				<box topPadding="1" bottomPadding="1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement key="txtPageNow" x="732" y="23" width="30" height="16" uuid="eb5c9c93-bea3-4294-87ee-24a8508b715f"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="lblTitle" x="2" y="2" width="801" height="40" uuid="1918772b-26ee-4592-9ab5-57d1f5861e10"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*Loading List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblSupplierCustomerNm" mode="Opaque" x="2" y="132" width="523" height="20" backcolor="#D3D3D3" uuid="8dc83d14-5496-4cac-8ff6-8f8f798baa28"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Ship To]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblPickingWorkNo" mode="Opaque" x="525" y="132" width="116" height="20" backcolor="#D3D3D3" uuid="68977280-f48f-4a07-91b1-ed7aa646f257"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Pick No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblConfirm" mode="Opaque" x="746" y="132" width="56" height="20" backcolor="#D3D3D3" uuid="c0572c80-f064-4719-a13f-9dc1fc8d5796"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック"/>
+				</textElement>
+				<text><![CDATA[*Check]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblSumPickingHCount" mode="Opaque" x="641" y="132" width="105" height="20" backcolor="#D3D3D3" uuid="5f51251a-696b-4c4a-9ee5-96360d2abb13"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="9"/>
+				</textElement>
+				<text><![CDATA[*Number of Packages]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="lblMarkRepeat" mode="Opaque" x="618" y="14" width="64" height="24" forecolor="#FFFFFF" backcolor="#333333" uuid="f786f365-f446-45ae-bc9c-0ab9489c7013">
+					<printWhenExpression><![CDATA[$F{printFlg}.equals("1")]]></printWhenExpression>
+				</reportElement>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="IPAexゴシック" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*Copy]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<rectangle>
+				<reportElement x="766" y="4" width="10" height="10" isRemoveLineWhenBlank="true" uuid="4b64440d-140f-453b-9452-f7a73553e724"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtPickingWorkNo" x="525" y="0" width="116" height="16" uuid="d3256780-ed8f-49f0-a08a-9a711b55e012"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pickingWorkNo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtSupplierCustomerNm" x="2" y="0" width="523" height="16" uuid="5c489c54-8848-4238-8f9c-49d7972082ec"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{supplierCustomerCd}+ " : " +$F{supplierCustomerNm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtSumPickingHCount" x="641" y="0" width="105" height="16" uuid="a964bdcf-7a9a-4821-93ae-734bafcb8425"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumPickingHCount}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="31" width="799" height="1" uuid="35822cef-0902-4053-accb-1659199d273f"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="txtDelivAddress" x="2" y="15" width="523" height="15" uuid="88e47377-60ea-43c0-8c3b-b75d74c54d83"/>
+				<box topPadding="1" leftPadding="5" bottomPadding="1" rightPadding="5">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="IPAexゴシック" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{delivAddress1}+ "  " +$F{delivAddress2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,52 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="PrinterGroupList" owd-screen="PrinterGroupList">
+	
+	<form id="searchform" name="searchform" novalidate>
+	
+		<owd-accordion>
+			<owd-accordion-group is-open="isopen">
+	
+				<fieldset>
+					<div class="row">
+						<owd-text id="printerGroupNm" ng-model="head.printerGroupNm" label-text="プリンターグループ名称"></owd-text>
+						<owd-text id="attribute1" ng-model="head.attribute1" label-text="属性１"></owd-text>
+						<owd-text id="attribute2" ng-model="head.attribute2" label-text="属性２"></owd-text>
+						<owd-text id="attribute3" ng-model="head.attribute3" label-text="属性３"></owd-text>
+						<owd-text id="attribute4" ng-model="head.attribute4" label-text="属性４"></owd-text>
+						<owd-text id="attribute5" ng-model="head.attribute5" label-text="属性５"></owd-text>
+					</div>
+				</fieldset>
+	
+			</owd-accordion-group>
+		</owd-accordion>
+	
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-button id="search" class="btn-info" ng-disabled="searchform.$invalid" ng-click="search()">検索</owd-button>
+			</div>
+		</div>
+	</form>
+		<br>
+	<form id="searchinputform" name="searchinputform" novalidate>
+	
+		<div owd-grid="gridOptions" id="printerGroupListGrid" owd-form-name="searchinputform" owd-backcolor-option="getClassForRow(row)" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+					<owd-button id="remove" class="btn-danger" ng-click="remove()">削除</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

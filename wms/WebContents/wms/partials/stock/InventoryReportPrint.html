@@ -1,0 +1,28 @@
+<div ng-controller="InventoryReportPrint" owd-screen="InventoryReportPrint">
+	<form id="searchform" name="searchform" novalidate>
+			<owd-accordion> <owd-accordion-group is-open="isopen">
+			<fieldset>
+				<div class="row">
+					<owd-select id="centerCd" ng-model="searchCondition.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="拠点"></owd-select>
+					<owd-select id="clientCd" ng-model="searchCondition.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+					<owd-select id="inventoryReport" ng-model="searchCondition.inventoryReport" owd-models="inventoryReportList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="出力帳票" ng-change="dataInventoryReportAndInoutkbnChange()"></owd-select>
+					<owd-date id="executedate" ng-model="searchCondition.executedate" label-text="在庫調査日"　></owd-date>	
+					<owd-select id="inoutkbn" ng-model="searchCondition.inoutkbn" owd-models="inoutkbnList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="内外区分" ng-change="dataInventoryReportAndInoutkbnChange()"></owd-select>
+					<owd-select id="diffoccarea" ng-model="searchCondition.diffoccarea" owd-models="diffoccareaList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="過不足発生場所"></owd-select>
+
+					<owd-text id="itemcd" ng-model="searchCondition.itemcd" label-text="銘柄CD" owd-add-button="showitem()" ng-blur="itemCdBlur()">
+						<owd-info ng-model="productNm"></owd-info>
+					</owd-text>
+					
+					<owd-select id="capitemflg" ng-model="searchCondition.capitemflg" owd-models="capitemflgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="CAP製品"></owd-select>
+					<owd-select id="unmatch" ng-model="searchCondition.unmatch" owd-models="unmatchList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="アンマッチ有"></owd-select>
+				</div>
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+							<owd-button id="stockAdjustInst" class="btn-info" ng-disabled="searchform.$invalid" ng-click="stockAdjustInst()">在庫照合指示_</owd-button>
+							<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行_</owd-button>
+					</div>
+				</div>
+			</fieldset>
+	</form>
+</div>

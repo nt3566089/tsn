@@ -1,0 +1,16 @@
+REPORT_CD	REPORT_NM	REPORT_LAYOUT_NM	SUBREP_LAYOUT_DATA	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	ITEM_FORMAT
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblCarrierInformation	CARRIER INFORMATION	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblHandlingUnit	HANDLING UNIT	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblPackage1	PACKAGE	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblQty1	QTY	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblType1	TYPE	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblQty2	QTY	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblType2	TYPE	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblWeight	WEIGHT	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblHm	H.M.	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblX1	(X)	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblCommondity	COMMONDITY DESCRIPTION	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblGrandTotal	GRAND TOTAL	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblPackage2	LTL Only	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblType3	NMFC#	String	1	
+BillOfLading	Bill of Lading	Bill of Lading	../../../../../../reports/shipping/BillOfLading_sub.jrxml	lblType4	CLASS	String	1	

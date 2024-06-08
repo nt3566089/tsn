@@ -1,0 +1,3 @@
+CLASS_CD	METHOD_CD	FUNC_CD	FUNC_NM	ARG_CD	DICT_NM	ARG_TYPE	NECESSARY
+SerialReceiveInspectionWorkNoResource	send	send	HTｼﾘｱﾙ登入(伝票No)送信	receiveSlipNo	伝票No	text	0
+SerialReceiveInspectionWorkNoResource	send	send	HTｼﾘｱﾙ登入(伝票No)送信	supplierCd	仕入先CD	text	0

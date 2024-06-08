@@ -1,0 +1,20 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+InventoryInputAddRow	棚卸入力(行追加)	wms	clientCd	荷主		1	0		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	centerCd	センタ		1	0		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	warehouseCd	倉庫		1	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	inventoryDt	棚卸日		1	0		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	locationCd	ロケーションCD		1	1		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	productCd	商品CD		1	1		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	stockTypeCd	在庫区分		1	1		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	lot	ロット		1	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	limitDt	期限日		1	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	inventoryNum	棚卸数		1	1	right	1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	inventoryNumMultiText	棚卸数荷姿		1	1	right	0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	storeLabelNo	入庫ラベルNo.		0	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	supplierCustomerCd	仕入先CD		0	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	addRow	追加		1	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	depositCd	預託		1	1		1	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	close	閉じる		1	1		0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	unitNumBreakdown	入数内訳		1	0	right	0	1													
+InventoryInputAddRow	棚卸入力(行追加)	wms	storeDt	入庫日		1	1		1	1													

@@ -1,0 +1,27 @@
+<div owd-screen="ProductMasterListNum">
+    <div class="container-modal" ng-controller="AlertCtrl" ng-cloak>
+        <div class="row" ng-show="modalAlerts.ProductMasterListNum">
+            <div class="col-xs-12">
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="$first" type="alert.type" close="closeAlert(alert.id, $first)" class="alertblink"><span ng-bind-html="alert.msg"></span><a href="" class="alert-link" ng-click="viewAlertToggle()"><span class="badge btn-info pull-right common-margin" ng-show="alerts.length > 1">{{alerts.length}}</span></a><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	            <alert ng-repeat="alert in alerts | orderBy:'addDt':true" ng-show="isViewAlert && !$first" type="alert.type" close="closeAlert(alert.id)" class="alert-sub"><span ng-bind-html="alert.msg"></span><span class="pull-right common-margin" ng-bind-html="alert.addDt | date:'medium'"></span></alert>
+	        </div>
+	    </div>
+    </div>
+	<form id="inputform" name="inputform" novalidate>
+		<div class="container-modal">
+		    <fieldset>
+				<div class="row">
+					<owd-number id="labelOutputCnt" ng-model="labelOutputCnt" label-text="出力枚数"></owd-number>
+				</div>
+		    </fieldset>
+			<div class="row">
+				<div class="col-xs-6">
+					<owd-button id="print" class="btn-info" ng-disabled="checkInvalid()" ng-click="print()" >発行</owd-button>
+				</div>
+		        <div class="col-xs-6" align="right">
+		            <owd-button id="close" class="btn-danger" ng-click="modalClose()">閉じる</owd-button>
+		        </div>
+			</div>
+		</div>
+	</form>
+</div>

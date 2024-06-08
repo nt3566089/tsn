@@ -1,0 +1,33 @@
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+<!-- このソースは基盤ソースです。変更は行わないで下さい。 -->
+<!-- ※※※※※※※※※※※※※※※※※※※※※※※※※※ -->
+
+
+<div ng-controller="SystemEdit" owd-screen="SystemEdit">
+	<br>
+	<form id="inputform" name="inputform" novalidate>
+		<div class="row">
+			<div class="col-xs-12">
+				<owd-text id="systemNm" ng-model="bSystem.systemNm" label-text="システム名称"></owd-text>
+
+
+ 				
+					
+					
+					
+
+ 				<system-password id="password" ng-model="bSystem.password" label-text="パスワード"></system-password>
+
+			</div>
+		</div>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" align="right">
+					<owd-button id="update" class="btn-success" ng-disabled="inputform.$invalid" ng-click="update()">更新</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+

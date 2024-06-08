@@ -1,0 +1,108 @@
+#!/bin/sh
+
+NOW_DATE_TIME=`date +%Y%m%d_%H%M`
+
+WORK_FOLDER=`pwd`
+
+ENV_FILE=mysqldump.env
+if [ -e "$ENV_FILE" ]; then
+  while read line; do
+    if [ ! "`echo $line`" = "" -a ! "`echo $line | cut -c 1`" = ";" ]; then
+      export $line
+    fi
+  done < $ENV_FILE
+fi
+
+ENV_FILE=$1.env
+if [ -e "$ENV_FILE" ]; then
+  while read line; do
+    if [ ! "`echo $line`" = "" -a ! "`echo $line | cut -c 1`" = ";" ]; then
+      export $line
+    fi
+  done < $ENV_FILE
+fi
+
+SQL_FILE=`basename $0 .sh`.sql
+IGN_FILE=`basename $0 .sh`.ign
+
+LOG_FILE=$1_$NOW_DATE_TIME.log
+TMP_FILE=$1_$NOW_DATE_TIME.tmp
+CTL_FILE=$1_$NOW_DATE_TIME.ctl
+
+IGNORE_MSG="Warning: Using a password on the command line interface can be insecure."
+
+echo
+echo "MySQLからのエクスポート処理を開始します。"
+echo
+echo "以下パラメータで実行されます。"
+
+echo
+echo "User     ：$USER"
+echo "Host     ：$HOST"
+echo "Database ：$DBNM"
+
+echo
+echo "SQL出力先：$DBNM_$NOW_DATE_TIME"
+
+echo
+echo "※【$IGN_FILE】に指定されたTableは除外されます。"
+
+echo
+echo "よろしければEnterキーを押してください。"
+read Wait
+
+echo
+echo "実行中..."
+echo
+
+cp /dev/null $LOG_FILE
+cp /dev/null $TMP_FILE
+cp /dev/null $CTL_FILE
+
+echo "select table_name from information_schema.tables where table_schema = schema() and table_type = 'BASE TABLE' and lcase(TABLE_NAME) not in (''">>$TMP_FILE
+
+while read line; do
+  if [ ! "`echo $line`" = "" -a ! "`echo $line | cut -c 1`" = ";" ]; then
+    echo ",lcase('$line')">>$TMP_FILE
+  fi
+done < $IGN_FILE
+
+echo ") order by table_name;">>$TMP_FILE
+
+mysql --default-character-set=utf8mb4 -N -u $USER -p$PASS -h $HOST $DBNM < $TMP_FILE 2> $LOG_FILE.tmp > $CTL_FILE
+if [ ! $? -eq 0 ]; then
+  fgrep -F -i -v "$IGNORE_MSG" $LOG_FILE.tmp >> $LOG_FILE
+  echo "事前準備処理でエラーが発生しました。"
+  echo "Enterキーを押してください。"
+  read Wait
+  exit 1
+fi
+fgrep -F -i -v "$IGNORE_MSG" $LOG_FILE.tmp >> $LOG_FILE
+
+mkdir $DBNM_$NOW_DATE_TIME
+pushd $DBNM_$NOW_DATE_TIME>/dev/null
+
+while read line; do
+  OUT_MSG=`date +%Y/%m/%d\ %H:%M:%S`
+  echo "$OUT_MSG > mysqldump table $line start."
+  echo "$OUT_MSG > mysqldump table $line start.">> $WORK_FOLDER/$LOG_FILE
+  mysqldump --default-character-set=utf8mb4 -u $USER -p$PASS -h $HOST -n -t --hex-blob --set-gtid-purged=OFF -c -r $line.sql --log-error=$WORK_FOLDER/$LOG_FILE.tmp $DBNM $line 2>/dev/null
+  if [ ! $? -eq 0 ]; then
+    fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+    echo "mysqldumpでエラーが発生しました。"
+    echo "Enterキーを押してください。"
+    read Wait
+    exit 1
+  fi
+  fgrep -F -i -v "$IGNORE_MSG" $WORK_FOLDER/$LOG_FILE.tmp >> $WORK_FOLDER/$LOG_FILE
+  OUT_MSG=`date +%Y/%m/%d\ %H:%M:%S`
+  echo "$OUT_MSG > mysqldump table $line end."
+  echo "$OUT_MSG > mysqldump table $line end.">> $WORK_FOLDER/$LOG_FILE
+done < $WORK_FOLDER/$CTL_FILE
+
+popd>/dev/null
+
+rm $TMP_FILE>/dev/null
+rm $CTL_FILE>/dev/null
+rm $LOG_FILE.tmp>/dev/null
+

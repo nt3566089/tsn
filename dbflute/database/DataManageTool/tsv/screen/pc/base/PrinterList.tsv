@@ -1,0 +1,11 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PrinterList	プリンタマスタメンテナンス	base	printerNm	プリンタ名称		1	1		0	1													
+PrinterList	プリンタマスタメンテナンス	base	visible	表示可否		1	1		0	1													
+PrinterList	プリンタマスタメンテナンス	base	printerGroupId	プリンタグループ		1	1		1	1													
+PrinterList	プリンタマスタメンテナンス	base	printerListGrid	プリンタマスタメンテナンスグリッド	grid	1	1		0	1	pprinterGroup.printerGroupNm	プリンタグループ	1	text	1	0		0	300				
+PrinterList	プリンタマスタメンテナンス	base	printerListGrid	プリンタマスタメンテナンスグリッド	grid	1	1		0	1	printerNm	プリンタ名称	2	text	1	0		0	300				
+PrinterList	プリンタマスタメンテナンス	base	printerListGrid	プリンタマスタメンテナンスグリッド	grid	1	1		0	1	visible	プリンタ表示可否	3	dropdown	1	1		1	250				
+PrinterList	プリンタマスタメンテナンス	base	search	検索		1	1		0	1													
+PrinterList	プリンタマスタメンテナンス	base	register	登録		1	1		0	1													
+PrinterList	プリンタマスタメンテナンス	base	remove	削除		1	1		0	1													

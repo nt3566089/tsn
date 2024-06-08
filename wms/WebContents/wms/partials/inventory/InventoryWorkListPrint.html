@@ -1,0 +1,37 @@
+<div ng-controller="InventoryWorkListPrint" owd-screen="InventoryWorkListPrint">
+	<form id="searchform" name="searchform" novalidate>
+		<div class="well">
+			<div class="row">
+				<!-- 荷主センタ変更対応 2017.02.15 sja Start -->
+				<!--
+				<owd-select id="centerCd" ng-model="conditionH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ"></owd-select>
+				  -->
+				<owd-select id="centerCd" ng-model="conditionH.mcenter.centerCd" owd-models="centerList" owd-repeat-key="centerCd" owd-repeat-value="centerNm" label-text="センタ" ng-change="centerChange()"></owd-select>
+				<!-- 荷主センタ変更対応 2017.02.15 sja End -->
+				<owd-select id="clientCd" ng-model="conditionH.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主" ng-focus="clientFocus()" ng-change="clientChange()" ng-blur="clientBlur()"></owd-select>
+				<owd-select id="warehouseCd" ng-model="conditionB.mwarehouse.warehouseCd" owd-models="warehouseList" owd-repeat-key="warehouseCd" owd-repeat-value="warehouseNm" label-text="倉庫" ng-focus="warehouseFocus()" ng-change="warehouseChange()" ng-blur="warehouseBlur()"></owd-select>
+				<owd-date id="inventoryDt" ng-model="conditionH.inventoryDt" label-text="棚卸日"></owd-date>
+				<owd-select id="depositCd" ng-model="conditionB.mcustomerByDepositId.customerCd" owd-models="depositStockTypeList" owd-repeat-key="mCustomer.customerCd" owd-repeat-value="mCustomer.customerNm" label-text="預託"></owd-select>
+				<owd-select id="stockTypeCd" ng-model="conditionB.mstockType.stockTypeCd" owd-models="stockTypeList" owd-repeat-key="stockTypeCd" owd-repeat-value="stockTypeNm" label-text="在庫区分"></owd-select>
+				<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu Start -->
+				<owd-text id="fromLocationCd" ng-model="conditionI.fromLocationCd" label-text="ロケーション(From)" owd-add-button="showLocation(1)" ng-blur="locationCdBlur(1)">
+					<owd-info ng-model="conditionI.fromLocationNm"></owd-info>
+				</owd-text>
+				<owd-text id="toLocationCd" ng-model="conditionI.toLocationCd" label-text="ロケーション(To)" owd-add-button="showLocation(2)"  ng-blur="locationCdBlur(2)" owd-validate="fromToCheck(conditionI.fromLocationCd, $value)" owd-validate-watch="'conditionI.fromLocationCd'" owd-validate-message="fromToMessage">
+					<owd-info ng-model="conditionI.toLocationNm"></owd-info>
+				</owd-text>
+				<!-- [#250][ONEsLOGI Cloud/WMS バグ・品質向上対策] アシスト機能不具合修正 2016.11.16 shimizu End -->
+				<owd-select id="zoneCd" ng-model="conditionI.mzone.zoneCd" owd-models="zoneList" owd-repeat-key="zoneCd" owd-repeat-value="zoneNm" label-text="ゾーン"></owd-select>
+				<owd-text id="productCd" ng-model="conditionB.mproduct.productCd" label-text="商品" owd-add-button="showProduct()" ng-blur="productCdBlur()">
+					<owd-info ng-model="conditionB.mproduct.productNm"></owd-info>
+				</owd-text>
+				<owd-select id="stockExistOnlyFlg" ng-model="conditionI.stockExistOnlyFlg" owd-models="stockExistOnlyFlg" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="在庫数表示あり" owd-remove-blank></owd-select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6" align="left">
+				<owd-button id="register" class="btn-info" ng-disabled="searchform.$invalid" ng-click="issue()">発行</owd-button>
+			</div>
+		</div>
+	</form>
+</div>

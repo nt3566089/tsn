@@ -1,0 +1,15 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceNm	印刷サービス名称		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	terminalNm	端末名称		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	macAddress	MACアドレス		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printerGroupId	プリンタグループ		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceStatus	印刷サービスステータス		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceListGrid	印刷サービス情報メンテナンスグリッド	grid	1	1		0	1	printServiceNm	印刷サービス名称	1	text	1	0		0	300				
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceListGrid	印刷サービス情報メンテナンスグリッド	grid	1	1		0	1	terminalNm	端末名称	2	text	1	0		0	300				
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceListGrid	印刷サービス情報メンテナンスグリッド	grid	1	1		0	1	macAddress	MACアドレス	3	text	1	0		0	250				
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceListGrid	印刷サービス情報メンテナンスグリッド	grid	1	1		0	1	printerGroupNm	プリンタグループ	4	dropdown	1	0		0	200				
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	printServiceListGrid	印刷サービス情報メンテナンスグリッド	grid	1	1		0	1	bclassDtlByPrintServiceStatus.vdict.dictNm	印刷サービスステータス	5	dropdown	1	0		0	200				
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	search	検索		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	update	修正		1	1		0	1													
+PrintServiceList	印刷サービス情報メンテナンス(一覧)	base	remove	削除		1	1		0	1													

@@ -1,0 +1,26 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	lineNo	No.	1	number	1	0	right	0	70	1		1	70
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	locationCd	ロケーションCD	2	text	1	0		0	200	2		2	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	locationNm	ロケーション名称	3	text	1	0		0	200	3		3	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	warehouseCd	倉庫	4	text	1	0		0	170	4		4	170
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	zoneCd	ゾーン	5	text	1	0		0	140	5		5	140
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	locationType	ロケーション種別	6	text	1	0		0	200	6		6	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	pickingLocationFlg	ピックロケフラグ	7	text	1	0		0	200	7		7	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	allocNgFlg	引当禁止フラグ	8	text	1	0		0	130	8		8	160
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	pickingOrder	ピッキング順序	9	number	1	0	right	0	125	9		9	160
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	allocOrder	引当順序	10	number	1	0	right	0	75	10		10	160
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	replenishProductCd	補充商品CD	11	text	1	0		0	200	11		11	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	replenishStockTypeCd	補充在庫区分	12	text	1	0		0	170	12		12	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	replenishDepositCd	補充預託	13	text	1	0		0	170	13		13	200
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	replenishPProductShapeCd	補充点荷姿CD	14	text	1	0		0	170	14		14	250
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	replenishPNum	補充点	15	number	1	0	right	0	130	15		15	160
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	maxStoreProductShapeCd	最大格納数商品荷姿CD	16	text	1	0		0	170	16		16	240
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	maxStoreNum	最大格納数	17	number	1	0	right	0	130	17		17	160
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	locationMasterBulkInputList	ロケーションマスタ一括取込グリッド	grid	1	1		0	1	messageNm	エラー内容	18	text	1	0		0	400	18		18	400
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	chkErrorShow	エラーのみ表示	checkbox	1	1		0	1													
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	centerCd	センタ	dropdown	1	1		1	1													
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	errorProcessMet	エラー処理方法	dropdown	1	1		0	1													
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	excelOutput	Excel出力		1	1		0	1													
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	excelUpload	ファイル取込		1	1		0	1													
+LocationMasterBulkInput	ロケーションマスタ一括取込	wms	register	登録		1	1		0	1													

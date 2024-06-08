@@ -1,0 +1,27 @@
+<div ng-controller="ShapeGroupMasterEdit" owd-screen="ShapeGroupMasterEdit">
+	<form id="inputform" name="inputform" novalidate>
+		<div class="well">
+			<div class="row">
+		    	<owd-select id="clientCd" ng-model="head.mclient.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+				<owd-text id="shapeGrpCd" ng-model="head.shapeGrpCd" label-text="荷姿グループCD"></owd-text>
+				<owd-text id="shapeGrpName" ng-model="head.shapeGrpName" label-text="荷姿グループ名称"></owd-text>
+				<owd-select id="decimalExistFlg" ng-model="head.decimalExistFlg" owd-models="decimalExistFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="小数有無フラグ"></owd-select>
+				<owd-select id="delFlg" owd-remove-blank ng-model="head.delFlg" owd-models="delFlgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="削除" ></owd-select>
+			</div>
+		</div>
+		<div owd-grid="gridOptions" id="list" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="inputform" owd-backcolor-option="getClassForRow(row)"></div>
+		<br>
+		<div id="content-footer"></div>
+		<div id="content-footer-button" class="container">
+			<div class="row">
+				<div class="col-xs-6" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="addRow" class="btn-info" ng-click="addRow()">行追加</owd-button>
+					<owd-button id="removeRow" class="btn-danger" ng-click="removeRow()">行削除</owd-button>
+				</div>
+				<div class="col-xs-6" align="right" style="overflow-x:auto;overflow-y:hidden;">
+					<owd-button id="register" class="btn-success" ng-click="register()">登録</owd-button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

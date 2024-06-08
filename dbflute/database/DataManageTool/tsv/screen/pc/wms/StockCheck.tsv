@@ -1,0 +1,30 @@
+画面マスタ	画面マスタ	画面マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	項目マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ	列マスタ拡張基本	列マスタ拡張基本
+SCREEN_CD	DICT_NM	SYSTEM_TYPE	ITEM_CD	DICT_NM	ITEM_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	DISPLAY_REQUIRED	COL_CD	DICT_NM	COL_ORDER	COL_TYPE	VISIBLE	EDITABLE	TEXT_ALIGN	NECESSARY	COL_WIDTH	IN_COL_INDEX	IN_COL_DEFAULT_VALUE	COL_ORDER	COL_WIDTH
+StockCheck	国免在庫照合	wms	centerCd	拠点	dropdown	1	0		1	1													
+StockCheck	国免在庫照合	wms	clientCd	荷主	dropdown	1	0		1	1													
+StockCheck	国免在庫照合	wms	inventoryInstKey	在庫調査指示キー	text	1	1		1	1													
+StockCheck	国免在庫照合	wms	productCd	銘柄CD	text	1	1		0	1													
+StockCheck	国免在庫照合	wms	unmatch	アンマッチ有	dropdown	1	1		0	1													
+StockCheck	国免在庫照合	wms	search	検索	button	1	1		0	1													
+StockCheck	国免在庫照合	wms	excelOutput	Excel出力	button	1	1		0	1													
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	productCd	銘柄CD	1	text	1	0		0	180			1	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	sname	銘柄名称	2	text	1	0		0	180			2	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	stockQtyCase	販物在庫数量(ケース)	3	number	1	0	right	0	180			3	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	stockQtyCarton	販物在庫数量(カートン)	4	number	1	0	right	0	180			4	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	chargeNumCase	システム在庫数量(ケース)	5	number	1	0	right	0	180			5	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	chargeNumCarton	システム在庫数量(カートン)	6	number	1	0	right	0	195			6	195
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	inventoryNumCase	調査数量(ケース)	7	number	1	0	right	0	180			7	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	inventoryNumCarton	調査数量(カートン)	8	number	1	0	right	0	180			8	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffExpectHanCase	差異数量(システムｰ販物)(ケース)	9	number	1	0	right	0	230			9	230
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffExpectHanCarton	差異数量(システムｰ販物)(カートン)	10	number	1	0	right	0	245			10	245
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffInvHanCase	差異数量(調査ｰ販物)(ケース)	11	number	1	0	right	0	205			11	205
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffInvHanCarton	差異数量(調査ｰ販物)(カートン)	12	number	1	0	right	0	215			12	215
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffInvExpectCase	差異数量(調査ｰシステム)(ケース)	13	number	1	0	right	0	230			13	230
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	diffInvExpectCarton	差異数量(調査ｰシステム)(カートン)	14	number	1	0	right	0	245			14	245
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	inventoryKey	在庫調査指示キー	15	text	0	0		0	180			15	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	addDt	販物在庫登録日時	16	datetime	0	0		0	180			16	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	usernum3	一般出力順	17	text	0	0		0	180			17	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	mcenter.centerCd	拠点CD	18	text	0	0		0	180			18	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	mcenter.centerNm	拠点名称	19	text	0	0		0	180			19	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	mclient.clientCd	荷主CD	20	text	0	0		0	180			20	180
+StockCheck	国免在庫照合	wms	StockCheck	国免在庫照合グリッド	grid	1	0		0	0	mclient.clientNm	荷主名称	21	text	0	0		0	180			21	180

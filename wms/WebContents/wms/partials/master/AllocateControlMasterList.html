@@ -1,0 +1,50 @@
+<div ng-controller="AllocateControlMasterList" owd-screen="AllocateControlMasterList">
+	<form id="searchConditionForm" name="searchConditionForm" novalidate>
+	<!-- [#] アコーディオン拡張版の適用 2017.09.26 fujiwara Start -->
+			<owd-accordion>
+				<owd-accordion-group is-open="isopen">
+	<!-- [#] アコーディオン拡張版の適用 2017.09.26 fujiwara Endt -->
+					<fieldset>
+						<div class="row">
+							<owd-select id="clientCd" ng-model="searchCondition.clientCd" owd-models="clientList" owd-repeat-key="clientCd" owd-repeat-value="clientNm" label-text="荷主"></owd-select>
+							<owd-text id="productCd" ng-model="searchCondition.productCd" label-text="銘柄CD" owd-add-button="modalProduct()" ng-blur="productCdBlur()">
+							<owd-info ng-model="searchCondition.productNm"></owd-info>
+							</owd-text>
+
+							<owd-date id="pickfrdateFrom" ng-model="searchCondition.pickfrdateFrom" label-text="適用開始日From"></owd-date>
+							<owd-date id="pickfrdateTo" ng-model="searchCondition.pickfrdateTo" label-text="適用開始日To" owd-validate="fromToCheck(searchCondition.pickfrdateFrom, $value)" owd-validate-watch="'searchCondition.pickfrdateFrom'" owd-validate-message="fromToMessage"></owd-date>
+							<owd-date id="picktodateFrom" ng-model="searchCondition.picktodateFrom" label-text="適用終了日From"></owd-date>
+							<owd-date id="picktodateTo" ng-model="searchCondition.picktodateTo" label-text="適用終了日To" owd-validate="fromToCheck(searchCondition.picktodateFrom, $value)" owd-validate-watch="'searchCondition.picktodateFrom'" owd-validate-message="fromToMessage"></owd-date>
+							<owd-select id="designflg" ng-model="searchCondition.designflg" owd-models="designflgList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="デザイン区分）"></owd-select>
+							<owd-select id="validtype" ng-model="searchCondition.validtype" owd-models="validtypeList" owd-repeat-key="classCd" owd-repeat-value="classNm" label-text="有効区分"></owd-select>
+						</div>
+					</fieldset>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara Start  -->
+				</owd-accordion-group>
+			</owd-accordion>
+	<!-- [#2719] アコーディオン拡張版の適用 2017.09.26 fujiwara End  -->
+			<div class="row">
+				<div class="col-xs-12" >
+					<owd-button id="search" class="btn-info" ng-disabled="searchConditionForm.$invalid" ng-click="searchClick()">検索</owd-button>
+					<owd-button id="excelOutput" class="btn-info" ng-disabled="searchConditionForm.$invalid" ng-click="excelOutputClick()">Excel出力</owd-button>
+				</div>
+
+			</div>
+			<br>
+			<form id="searchResultListForm" name="searchResultListForm" novalidate>
+			<div owd-grid="gridOptions" id="AllocateControlMasterList" owd-select-options="gridSelectOptions" owd-button-options="gridButtonOptions" owd-event-options="gridEventOptions" owd-form-name="searchResultListForm" owd-backcolor-option="getClassForRow(row)" owd-dblclick-option="gridDblClick(row)"></div>
+		<div id="content-footer-button" class="container">
+			<br>
+			<div id="content-footer"></div>
+			<div id="content-footer-button" class="container">
+				<div class="row">
+					<div class="col-xs-12" align="right" style="overflow-x:auto;overflow-y:hidden;">
+						<owd-button id="copy"	class="btn-success"	ng-click="copyClick()"		ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">複製</owd-button>
+						<owd-button id="new"	class="btn-success"	ng-click="newClick()">新規</owd-button>
+						<owd-button id="update"	class="btn-success"	ng-click="updateClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">修正</owd-button>
+						<owd-button id="delete"	class="btn-info"	ng-click="deleteClick()"	ng-disabled="!gridOptions.gridApi.selection.getSelectedRows().length">削除</owd-button>
+					</div>
+				</div>
+			</div>
+	</form>
+</div>
