@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_MOVE_INST_H, M_WAREHOUSE, T_LOT, M_LOCATION, M_SHAPE, M_PRODUCT, M_STOCK_TYPE, T_STORE_NO, M_CUSTOMER, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
+ *     M_CUSTOMER, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
  *
  * [referrer table]
  *     T_MOVE_RECORD_B, T_MOVE_INST_B_SUB
  *
  * [foreign property]
- *     tMoveInstH, mWarehouse, tLot, mLocation, mShape, mProduct, mStockType, tStoreNo, mCustomerBySupplierId, mCustomerByDepositId, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
+ *     mCustomerByDepositId, mLocation, tLot, tMoveInstH, mProduct, mShape, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
  *
  * [referrer property]
  *     tMoveRecordBList
@@ -98,25 +98,11 @@ public class LoaderOfTMoveInstB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTMoveInstH _foreignTMoveInstHLoader;
-    public LoaderOfTMoveInstH pulloutTMoveInstH() {
-        if (_foreignTMoveInstHLoader == null)
-        { _foreignTMoveInstHLoader = new LoaderOfTMoveInstH().ready(myBhv().pulloutTMoveInstH(_selectedList), _selector); }
-        return _foreignTMoveInstHLoader;
-    }
-
-    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
-    public LoaderOfMWarehouse pulloutMWarehouse() {
-        if (_foreignMWarehouseLoader == null)
-        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
-        return _foreignMWarehouseLoader;
-    }
-
-    protected LoaderOfTLot _foreignTLotLoader;
-    public LoaderOfTLot pulloutTLot() {
-        if (_foreignTLotLoader == null)
-        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
-        return _foreignTLotLoader;
+    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
+    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
+        if (_foreignMCustomerByDepositIdLoader == null)
+        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
+        return _foreignMCustomerByDepositIdLoader;
     }
 
     protected LoaderOfMLocation _foreignMLocationLoader;
@@ -126,11 +112,18 @@ public class LoaderOfTMoveInstB {
         return _foreignMLocationLoader;
     }
 
-    protected LoaderOfMShape _foreignMShapeLoader;
-    public LoaderOfMShape pulloutMShape() {
-        if (_foreignMShapeLoader == null)
-        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
-        return _foreignMShapeLoader;
+    protected LoaderOfTLot _foreignTLotLoader;
+    public LoaderOfTLot pulloutTLot() {
+        if (_foreignTLotLoader == null)
+        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
+        return _foreignTLotLoader;
+    }
+
+    protected LoaderOfTMoveInstH _foreignTMoveInstHLoader;
+    public LoaderOfTMoveInstH pulloutTMoveInstH() {
+        if (_foreignTMoveInstHLoader == null)
+        { _foreignTMoveInstHLoader = new LoaderOfTMoveInstH().ready(myBhv().pulloutTMoveInstH(_selectedList), _selector); }
+        return _foreignTMoveInstHLoader;
     }
 
     protected LoaderOfMProduct _foreignMProductLoader;
@@ -138,6 +131,13 @@ public class LoaderOfTMoveInstB {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
+    }
+
+    protected LoaderOfMShape _foreignMShapeLoader;
+    public LoaderOfMShape pulloutMShape() {
+        if (_foreignMShapeLoader == null)
+        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
+        return _foreignMShapeLoader;
     }
 
     protected LoaderOfMStockType _foreignMStockTypeLoader;
@@ -161,11 +161,11 @@ public class LoaderOfTMoveInstB {
         return _foreignMCustomerBySupplierIdLoader;
     }
 
-    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
-    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
-        if (_foreignMCustomerByDepositIdLoader == null)
-        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
-        return _foreignMCustomerByDepositIdLoader;
+    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
+    public LoaderOfMWarehouse pulloutMWarehouse() {
+        if (_foreignMWarehouseLoader == null)
+        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
+        return _foreignMWarehouseLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInoutTypeLoader;

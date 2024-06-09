@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_REPORT_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_REPORT_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pReportLayout, bDict, vDict
+ *     bDict, pReportLayout, vDict
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfPReportLayoutItem {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfPReportLayout _foreignPReportLayoutLoader;
-    public LoaderOfPReportLayout pulloutPReportLayout() {
-        if (_foreignPReportLayoutLoader == null)
-        { _foreignPReportLayoutLoader = new LoaderOfPReportLayout().ready(myBhv().pulloutPReportLayout(_selectedList), _selector); }
-        return _foreignPReportLayoutLoader;
-    }
-
     protected LoaderOfBDict _foreignBDictLoader;
     public LoaderOfBDict pulloutBDict() {
         if (_foreignBDictLoader == null)
         { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
         return _foreignBDictLoader;
+    }
+
+    protected LoaderOfPReportLayout _foreignPReportLayoutLoader;
+    public LoaderOfPReportLayout pulloutPReportLayout() {
+        if (_foreignPReportLayoutLoader == null)
+        { _foreignPReportLayoutLoader = new LoaderOfPReportLayout().ready(myBhv().pulloutPReportLayout(_selectedList), _selector); }
+        return _foreignPReportLayoutLoader;
     }
 
     protected LoaderOfVDict _foreignVDictLoader;

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_ZONE, T_INVENTORY_H, M_CUSTOMER, B_CLASS_DTL(ByStockExistOnlyFlg)
+ *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByStockExistOnlyFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mZone, tInventoryH, mCustomer, bClassDtlByStockExistOnlyFlg
+ *     mCustomer, tInventoryH, mStockType, mZone, bClassDtlByStockExistOnlyFlg
  *
  * [referrer property]
  *     
@@ -403,6 +403,22 @@ public abstract class BsTInventoryInstBhv extends AbstractBehaviorWritable<TInve
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MCustomer'.
+     * @param tInventoryInstList The list of tInventoryInst. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCustomer> pulloutMCustomer(List<TInventoryInst> tInventoryInstList)
+    { return helpPulloutInternally(tInventoryInstList, "mCustomer"); }
+
+    /**
+     * Pull out the list of foreign table 'TInventoryH'.
+     * @param tInventoryInstList The list of tInventoryInst. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TInventoryH> pulloutTInventoryH(List<TInventoryInst> tInventoryInstList)
+    { return helpPulloutInternally(tInventoryInstList, "tInventoryH"); }
+
+    /**
      * Pull out the list of foreign table 'MStockType'.
      * @param tInventoryInstList The list of tInventoryInst. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -417,22 +433,6 @@ public abstract class BsTInventoryInstBhv extends AbstractBehaviorWritable<TInve
      */
     public List<MZone> pulloutMZone(List<TInventoryInst> tInventoryInstList)
     { return helpPulloutInternally(tInventoryInstList, "mZone"); }
-
-    /**
-     * Pull out the list of foreign table 'TInventoryH'.
-     * @param tInventoryInstList The list of tInventoryInst. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TInventoryH> pulloutTInventoryH(List<TInventoryInst> tInventoryInstList)
-    { return helpPulloutInternally(tInventoryInstList, "tInventoryH"); }
-
-    /**
-     * Pull out the list of foreign table 'MCustomer'.
-     * @param tInventoryInstList The list of tInventoryInst. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCustomer> pulloutMCustomer(List<TInventoryInst> tInventoryInstList)
-    { return helpPulloutInternally(tInventoryInstList, "mCustomer"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

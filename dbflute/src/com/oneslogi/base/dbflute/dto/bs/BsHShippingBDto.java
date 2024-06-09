@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_STOCK_TYPE, H_SHIPPING_H, H_SHIPPING_SPARE(AsOne)
+ *     H_SHIPPING_H, M_STOCK_TYPE, H_SHIPPING_SPARE(AsOne)
  *
  * [referrer-table]
  *     H_PACKING_B, H_SHIPPING_SPARE
  *
  * [foreign-property]
- *     mStockType, hShippingH, hShippingSpareAsOne
+ *     hShippingH, mStockType, hShippingSpareAsOne
  *
  * [referrer-property]
  *     hPackingBList
@@ -241,16 +241,6 @@ public abstract class BsHShippingBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MStockTypeDto _mStockType;
-
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
-    }
-
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
-    }
-
     protected HShippingHDto _hShippingH;
 
     public HShippingHDto getHShippingH() {
@@ -259,6 +249,16 @@ public abstract class BsHShippingBDto implements Serializable {
 
     public void setHShippingH(HShippingHDto hShippingH) {
         this._hShippingH = hShippingH;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
     }
 
     protected HShippingSpareDto _hShippingSpareAsOne;

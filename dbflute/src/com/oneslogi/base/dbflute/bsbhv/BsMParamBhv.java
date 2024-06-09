@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_BOX_GRP, M_BOX, M_ZONE, M_CLIENT_CENTER, B_CLASS_DTL(ByAfterTagOutFlg)
+ *     M_CLIENT_CENTER, M_BOX, M_DELIVERY_COURSE, M_ZONE, M_BOX_GRP, B_CLASS_DTL(ByAfterTagOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mBoxGrp, mBox, mZone, mClientCenter, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
+ *     mClientCenter, mBox, mDeliveryCourse, mZone, mBoxGrp, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
  *
  * [referrer property]
  *     
@@ -393,20 +393,12 @@ public abstract class BsMParamBhv extends AbstractBehaviorWritable<MParam, MPara
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MDeliveryCourse'.
+     * Pull out the list of foreign table 'MClientCenter'.
      * @param mParamList The list of mParam. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MDeliveryCourse> pulloutMDeliveryCourse(List<MParam> mParamList)
-    { return helpPulloutInternally(mParamList, "mDeliveryCourse"); }
-
-    /**
-     * Pull out the list of foreign table 'MBoxGrp'.
-     * @param mParamList The list of mParam. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MBoxGrp> pulloutMBoxGrp(List<MParam> mParamList)
-    { return helpPulloutInternally(mParamList, "mBoxGrp"); }
+    public List<MClientCenter> pulloutMClientCenter(List<MParam> mParamList)
+    { return helpPulloutInternally(mParamList, "mClientCenter"); }
 
     /**
      * Pull out the list of foreign table 'MBox'.
@@ -417,6 +409,14 @@ public abstract class BsMParamBhv extends AbstractBehaviorWritable<MParam, MPara
     { return helpPulloutInternally(mParamList, "mBox"); }
 
     /**
+     * Pull out the list of foreign table 'MDeliveryCourse'.
+     * @param mParamList The list of mParam. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MDeliveryCourse> pulloutMDeliveryCourse(List<MParam> mParamList)
+    { return helpPulloutInternally(mParamList, "mDeliveryCourse"); }
+
+    /**
      * Pull out the list of foreign table 'MZone'.
      * @param mParamList The list of mParam. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -425,12 +425,12 @@ public abstract class BsMParamBhv extends AbstractBehaviorWritable<MParam, MPara
     { return helpPulloutInternally(mParamList, "mZone"); }
 
     /**
-     * Pull out the list of foreign table 'MClientCenter'.
+     * Pull out the list of foreign table 'MBoxGrp'.
      * @param mParamList The list of mParam. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MClientCenter> pulloutMClientCenter(List<MParam> mParamList)
-    { return helpPulloutInternally(mParamList, "mClientCenter"); }
+    public List<MBoxGrp> pulloutMBoxGrp(List<MParam> mParamList)
+    { return helpPulloutInternally(mParamList, "mBoxGrp"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

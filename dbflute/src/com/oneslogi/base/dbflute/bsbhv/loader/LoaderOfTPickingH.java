@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PROCESS_TYPE, M_CENTER, M_CLIENT, T_ALLOC_INST_H, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_H, T_PICKING_B, T_PIC_MTHD_RCMD_DATA, T_RECEIVE_PLAN_H, W_SGL_ROW_SHIP_INSP_B, T_PICKING_R
  *
  * [foreign property]
- *     mProcessType, mCenter, mClient, tAllocInstH, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
+ *     tAllocInstH, mCenter, mClient, mProcessType, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
  *
  * [referrer property]
  *     tPackingHList, tPickingBList, tPicMthdRcmdDataList, tReceivePlanHList, wSglRowShipInspBList
@@ -234,11 +234,11 @@ public class LoaderOfTPickingH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
-    public LoaderOfMProcessType pulloutMProcessType() {
-        if (_foreignMProcessTypeLoader == null)
-        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
-        return _foreignMProcessTypeLoader;
+    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
+    public LoaderOfTAllocInstH pulloutTAllocInstH() {
+        if (_foreignTAllocInstHLoader == null)
+        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
+        return _foreignTAllocInstHLoader;
     }
 
     protected LoaderOfMCenter _foreignMCenterLoader;
@@ -255,11 +255,11 @@ public class LoaderOfTPickingH {
         return _foreignMClientLoader;
     }
 
-    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
-    public LoaderOfTAllocInstH pulloutTAllocInstH() {
-        if (_foreignTAllocInstHLoader == null)
-        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
-        return _foreignTAllocInstHLoader;
+    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
+    public LoaderOfMProcessType pulloutMProcessType() {
+        if (_foreignMProcessTypeLoader == null)
+        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
+        return _foreignMProcessTypeLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByCenterTransitFlgLoader;

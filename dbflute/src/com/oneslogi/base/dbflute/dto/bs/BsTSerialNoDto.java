@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, M_PRODUCT, M_CLIENT
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCenter, mProduct, mClient
+ *     mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     
@@ -183,16 +183,6 @@ public abstract class BsTSerialNoDto implements Serializable {
         this._mCenter = mCenter;
     }
 
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
-    }
-
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -201,6 +191,16 @@ public abstract class BsTSerialNoDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

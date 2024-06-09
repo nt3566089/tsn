@@ -47,7 +47,7 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     
  *
  * [foreign-property]
- *     bUserByTagOutUserId, bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
+ *     bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bUserByTagOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
  *
  * [referrer-property]
  *     
@@ -70,10 +70,10 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUserByTagOutUserId;
     protected boolean _suppressBUserByInspectionOutUserId;
     protected boolean _suppressTPackingH;
     protected boolean _suppressBUserByStwOutUserId;
+    protected boolean _suppressBUserByTagOutUserId;
     protected boolean _suppressBClassDtlByStwOutFlg;
     protected boolean _suppressBClassDtlByTagOutFlg;
     protected boolean _suppressBClassDtlByInspectionOutFlg;
@@ -155,32 +155,6 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUserByTagOutUserId && entity.getBUserByTagOutUserId() != null) {
-            BUser relationEntity = entity.getBUserByTagOutUserId();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUserByTagOutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPackingRByTagOutUserIdList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPackingRByTagOutUserIdList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUserByTagOutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPackingRByTagOutUserIdList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUserByTagOutUserId());
-                }
-            }
-        };
         if (!_suppressBUserByInspectionOutUserId && entity.getBUserByInspectionOutUserId() != null) {
             BUser relationEntity = entity.getBUserByInspectionOutUserId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -256,6 +230,32 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBUserByStwOutUserId());
+                }
+            }
+        };
+        if (!_suppressBUserByTagOutUserId && entity.getBUserByTagOutUserId() != null) {
+            BUser relationEntity = entity.getBUserByTagOutUserId();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUserByTagOutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPackingRByTagOutUserIdList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPackingRByTagOutUserIdList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUserByTagOutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPackingRByTagOutUserIdList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUserByTagOutUserId());
                 }
             }
         };
@@ -435,32 +435,6 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUserByTagOutUserId && dto.getBUserByTagOutUserId() != null) {
-            BUserDto relationDto = dto.getBUserByTagOutUserId();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUserByTagOutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPackingRByTagOutUserIdList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPackingRByTagOutUserIdList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUserByTagOutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPackingRByTagOutUserIdList().add(entity);
-                }
-                if (instanceCache && entity.getBUserByTagOutUserId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUserByTagOutUserId());
-                }
-            }
-        };
         if (!_suppressBUserByInspectionOutUserId && dto.getBUserByInspectionOutUserId() != null) {
             BUserDto relationDto = dto.getBUserByInspectionOutUserId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -536,6 +510,32 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
                 }
                 if (instanceCache && entity.getBUserByStwOutUserId().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBUserByStwOutUserId());
+                }
+            }
+        };
+        if (!_suppressBUserByTagOutUserId && dto.getBUserByTagOutUserId() != null) {
+            BUserDto relationDto = dto.getBUserByTagOutUserId();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUserByTagOutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPackingRByTagOutUserIdList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPackingRByTagOutUserIdList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUserByTagOutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPackingRByTagOutUserIdList().add(entity);
+                }
+                if (instanceCache && entity.getBUserByTagOutUserId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUserByTagOutUserId());
                 }
             }
         };
@@ -726,9 +726,6 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUserByTagOutUserId() {
-        _suppressBUserByTagOutUserId = true;
-    }
     public void suppressBUserByInspectionOutUserId() {
         _suppressBUserByInspectionOutUserId = true;
     }
@@ -737,6 +734,9 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
     }
     public void suppressBUserByStwOutUserId() {
         _suppressBUserByStwOutUserId = true;
+    }
+    public void suppressBUserByTagOutUserId() {
+        _suppressBUserByTagOutUserId = true;
     }
     public void suppressBClassDtlByStwOutFlg() {
         _suppressBClassDtlByStwOutFlg = true;
@@ -748,19 +748,19 @@ public abstract class BsTPackingRDtoMapper implements DtoMapper<TPackingR, TPack
         _suppressBClassDtlByInspectionOutFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBUserByTagOutUserId();
         suppressBUserByInspectionOutUserId();
         suppressTPackingH();
         suppressBUserByStwOutUserId();
+        suppressBUserByTagOutUserId();
         suppressBClassDtlByStwOutFlg();
         suppressBClassDtlByTagOutFlg();
         suppressBClassDtlByInspectionOutFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUserByTagOutUserId = false;
         _suppressBUserByInspectionOutUserId = false;
         _suppressTPackingH = false;
         _suppressBUserByStwOutUserId = false;
+        _suppressBUserByTagOutUserId = false;
         _suppressBClassDtlByStwOutFlg = false;
         _suppressBClassDtlByTagOutFlg = false;
         _suppressBClassDtlByInspectionOutFlg = false;

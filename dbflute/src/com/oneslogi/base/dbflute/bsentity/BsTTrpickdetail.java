@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_STOCK, M_LOCATION, T_YTRSODETAIL
+ *     M_LOCATION, T_STOCK, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TR_PICKLIST
  *
  * [foreign property]
- *     tStock, mLocation, tYtrsodetail
+ *     mLocation, tStock, tYtrsodetail
  *
  * [referrer property]
  *     tTrPicklistList
@@ -343,25 +343,6 @@ public abstract class BsTTrpickdetail extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_STOCK by my STOCK_ID, named 'TStock'. */
-    protected TStock _tStock;
-
-    /**
-     * [get] T_STOCK by my STOCK_ID, named 'TStock'. <br>
-     * @return The entity of foreign property 'TStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TStock getTStock() {
-        return _tStock;
-    }
-
-    /**
-     * [set] T_STOCK by my STOCK_ID, named 'TStock'.
-     * @param tStock The entity of foreign property 'TStock'. (NullAllowed)
-     */
-    public void setTStock(TStock tStock) {
-        _tStock = tStock;
-    }
-
     /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
     protected MLocation _mLocation;
 
@@ -379,6 +360,25 @@ public abstract class BsTTrpickdetail extends AbstractEntity implements DomainEn
      */
     public void setMLocation(MLocation mLocation) {
         _mLocation = mLocation;
+    }
+
+    /** T_STOCK by my STOCK_ID, named 'TStock'. */
+    protected TStock _tStock;
+
+    /**
+     * [get] T_STOCK by my STOCK_ID, named 'TStock'. <br>
+     * @return The entity of foreign property 'TStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TStock getTStock() {
+        return _tStock;
+    }
+
+    /**
+     * [set] T_STOCK by my STOCK_ID, named 'TStock'.
+     * @param tStock The entity of foreign property 'TStock'. (NullAllowed)
+     */
+    public void setTStock(TStock tStock) {
+        _tStock = tStock;
     }
 
     /** T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'. */
@@ -452,10 +452,10 @@ public abstract class BsTTrpickdetail extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tStock != null)
-        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tStock != null)
+        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
         if (_tYtrsodetail != null)
         { sb.append(li).append(xbRDS(_tYtrsodetail, "tYtrsodetail")); }
         if (_tTrPicklistList != null) { for (TTrPicklist et : _tTrPicklistList)
@@ -508,10 +508,10 @@ public abstract class BsTTrpickdetail extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tStock != null)
-        { sb.append(dm).append("tStock"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
+        if (_tStock != null)
+        { sb.append(dm).append("tStock"); }
         if (_tYtrsodetail != null)
         { sb.append(dm).append("tYtrsodetail"); }
         if (_tTrPicklistList != null && !_tTrPicklistList.isEmpty())

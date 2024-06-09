@@ -398,63 +398,23 @@ public class BsTAllocLotCQ extends AbstractBsTAllocLotCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TAllocLotCQ bq = (TAllocLotCQ)bqs;
         TAllocLotCQ uq = (TAllocLotCQ)uqs;
-        if (bq.hasConditionQueryTLot()) {
-            uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
-        }
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
         if (bq.hasConditionQueryTAllocInstB()) {
             uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
         }
         if (bq.hasConditionQueryMCustomer()) {
             uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
         }
+        if (bq.hasConditionQueryTLot()) {
+            uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
+        }
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TLotCQ queryTLot() {
-        return xdfgetConditionQueryTLot();
-    }
-    public TLotCQ xdfgetConditionQueryTLot() {
-        String prop = "tLot";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTLot()); xsetupOuterJoinTLot(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TLotCQ xcreateQueryTLot() {
-        String nrp = xresolveNRP("T_ALLOC_LOT", "tLot"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TLotCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tLot", nrp);
-    }
-    protected void xsetupOuterJoinTLot() { xregOutJo("tLot"); }
-    public boolean hasConditionQueryTLot() { return xhasQueRlMap("tLot"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
-    }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("T_ALLOC_LOT", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
-    }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
@@ -494,6 +454,46 @@ public class BsTAllocLotCQ extends AbstractBsTAllocLotCQ {
     }
     protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
     public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TLotCQ queryTLot() {
+        return xdfgetConditionQueryTLot();
+    }
+    public TLotCQ xdfgetConditionQueryTLot() {
+        String prop = "tLot";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTLot()); xsetupOuterJoinTLot(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TLotCQ xcreateQueryTLot() {
+        String nrp = xresolveNRP("T_ALLOC_LOT", "tLot"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TLotCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tLot", nrp);
+    }
+    protected void xsetupOuterJoinTLot() { xregOutJo("tLot"); }
+    public boolean hasConditionQueryTLot() { return xhasQueRlMap("tLot"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
+    }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("T_ALLOC_LOT", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

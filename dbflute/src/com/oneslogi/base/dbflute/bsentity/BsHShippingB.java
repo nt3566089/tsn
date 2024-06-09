@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, H_SHIPPING_H, H_SHIPPING_SPARE(AsOne)
+ *     H_SHIPPING_H, M_STOCK_TYPE, H_SHIPPING_SPARE(AsOne)
  *
  * [referrer table]
  *     H_PACKING_B, H_SHIPPING_SPARE
  *
  * [foreign property]
- *     mStockType, hShippingH, hShippingSpareAsOne
+ *     hShippingH, mStockType, hShippingSpareAsOne
  *
  * [referrer property]
  *     hPackingBList
@@ -378,25 +378,6 @@ public abstract class BsHShippingB extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
-
-    /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MStockType getMStockType() {
-        return _mStockType;
-    }
-
-    /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
-     */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
-    }
-
     /** H_SHIPPING_H by my SHIPPING_INST_H_ID, named 'HShippingH'. */
     protected HShippingH _hShippingH;
 
@@ -414,6 +395,25 @@ public abstract class BsHShippingB extends AbstractEntity implements DomainEntit
      */
     public void setHShippingH(HShippingH hShippingH) {
         _hShippingH = hShippingH;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
     }
 
     /** H_SHIPPING_SPARE by SHIPPING_INST_B_ID, named 'HShippingSpareAsOne'. */
@@ -487,10 +487,10 @@ public abstract class BsHShippingB extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_hShippingH != null)
         { sb.append(li).append(xbRDS(_hShippingH, "hShippingH")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_hShippingSpareAsOne != null)
         { sb.append(li).append(xbRDS(_hShippingSpareAsOne, "hShippingSpareAsOne")); }
         if (_hPackingBList != null) { for (HPackingB et : _hPackingBList)
@@ -550,10 +550,10 @@ public abstract class BsHShippingB extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_hShippingH != null)
         { sb.append(dm).append("hShippingH"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
         if (_hShippingSpareAsOne != null)
         { sb.append(dm).append("hShippingSpareAsOne"); }
         if (_hPackingBList != null && !_hPackingBList.isEmpty())

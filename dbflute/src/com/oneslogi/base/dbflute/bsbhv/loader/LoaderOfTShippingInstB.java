@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_WAREHOUSE, T_LOT, T_ALLOC_INST_B, T_STORE_NO, M_STOCK_TYPE, M_LOCATION, T_SHIPPING_INST_H, M_PRODUCT, M_CUSTOMER, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
+ *     T_ALLOC_INST_B, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, T_SHIPPING_INST_H, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
  *
  * [referrer table]
  *     T_PICKING_B, T_SHIPPING_INST_SPARE
  *
  * [foreign property]
- *     mShape, mWarehouse, tLot, tAllocInstB, tStoreNo, mStockType, mLocation, tShippingInstH, mProduct, mCustomer, bClassDtlByErrorFlg, tShippingInstSpareAsOne
+ *     tAllocInstB, mCustomer, mLocation, tLot, mProduct, mShape, tShippingInstH, mStockType, tStoreNo, mWarehouse, bClassDtlByErrorFlg, tShippingInstSpareAsOne
  *
  * [referrer property]
  *     tPickingBList
@@ -98,27 +98,6 @@ public class LoaderOfTShippingInstB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMShape _foreignMShapeLoader;
-    public LoaderOfMShape pulloutMShape() {
-        if (_foreignMShapeLoader == null)
-        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
-        return _foreignMShapeLoader;
-    }
-
-    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
-    public LoaderOfMWarehouse pulloutMWarehouse() {
-        if (_foreignMWarehouseLoader == null)
-        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
-        return _foreignMWarehouseLoader;
-    }
-
-    protected LoaderOfTLot _foreignTLotLoader;
-    public LoaderOfTLot pulloutTLot() {
-        if (_foreignTLotLoader == null)
-        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
-        return _foreignTLotLoader;
-    }
-
     protected LoaderOfTAllocInstB _foreignTAllocInstBLoader;
     public LoaderOfTAllocInstB pulloutTAllocInstB() {
         if (_foreignTAllocInstBLoader == null)
@@ -126,18 +105,11 @@ public class LoaderOfTShippingInstB {
         return _foreignTAllocInstBLoader;
     }
 
-    protected LoaderOfTStoreNo _foreignTStoreNoLoader;
-    public LoaderOfTStoreNo pulloutTStoreNo() {
-        if (_foreignTStoreNoLoader == null)
-        { _foreignTStoreNoLoader = new LoaderOfTStoreNo().ready(myBhv().pulloutTStoreNo(_selectedList), _selector); }
-        return _foreignTStoreNoLoader;
-    }
-
-    protected LoaderOfMStockType _foreignMStockTypeLoader;
-    public LoaderOfMStockType pulloutMStockType() {
-        if (_foreignMStockTypeLoader == null)
-        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
-        return _foreignMStockTypeLoader;
+    protected LoaderOfMCustomer _foreignMCustomerLoader;
+    public LoaderOfMCustomer pulloutMCustomer() {
+        if (_foreignMCustomerLoader == null)
+        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
+        return _foreignMCustomerLoader;
     }
 
     protected LoaderOfMLocation _foreignMLocationLoader;
@@ -147,11 +119,11 @@ public class LoaderOfTShippingInstB {
         return _foreignMLocationLoader;
     }
 
-    protected LoaderOfTShippingInstH _foreignTShippingInstHLoader;
-    public LoaderOfTShippingInstH pulloutTShippingInstH() {
-        if (_foreignTShippingInstHLoader == null)
-        { _foreignTShippingInstHLoader = new LoaderOfTShippingInstH().ready(myBhv().pulloutTShippingInstH(_selectedList), _selector); }
-        return _foreignTShippingInstHLoader;
+    protected LoaderOfTLot _foreignTLotLoader;
+    public LoaderOfTLot pulloutTLot() {
+        if (_foreignTLotLoader == null)
+        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
+        return _foreignTLotLoader;
     }
 
     protected LoaderOfMProduct _foreignMProductLoader;
@@ -161,11 +133,39 @@ public class LoaderOfTShippingInstB {
         return _foreignMProductLoader;
     }
 
-    protected LoaderOfMCustomer _foreignMCustomerLoader;
-    public LoaderOfMCustomer pulloutMCustomer() {
-        if (_foreignMCustomerLoader == null)
-        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
-        return _foreignMCustomerLoader;
+    protected LoaderOfMShape _foreignMShapeLoader;
+    public LoaderOfMShape pulloutMShape() {
+        if (_foreignMShapeLoader == null)
+        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
+        return _foreignMShapeLoader;
+    }
+
+    protected LoaderOfTShippingInstH _foreignTShippingInstHLoader;
+    public LoaderOfTShippingInstH pulloutTShippingInstH() {
+        if (_foreignTShippingInstHLoader == null)
+        { _foreignTShippingInstHLoader = new LoaderOfTShippingInstH().ready(myBhv().pulloutTShippingInstH(_selectedList), _selector); }
+        return _foreignTShippingInstHLoader;
+    }
+
+    protected LoaderOfMStockType _foreignMStockTypeLoader;
+    public LoaderOfMStockType pulloutMStockType() {
+        if (_foreignMStockTypeLoader == null)
+        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
+        return _foreignMStockTypeLoader;
+    }
+
+    protected LoaderOfTStoreNo _foreignTStoreNoLoader;
+    public LoaderOfTStoreNo pulloutTStoreNo() {
+        if (_foreignTStoreNoLoader == null)
+        { _foreignTStoreNoLoader = new LoaderOfTStoreNo().ready(myBhv().pulloutTStoreNo(_selectedList), _selector); }
+        return _foreignTStoreNoLoader;
+    }
+
+    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
+    public LoaderOfMWarehouse pulloutMWarehouse() {
+        if (_foreignMWarehouseLoader == null)
+        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
+        return _foreignMWarehouseLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByErrorFlgLoader;

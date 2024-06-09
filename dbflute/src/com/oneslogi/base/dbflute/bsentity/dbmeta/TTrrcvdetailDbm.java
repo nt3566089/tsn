@@ -128,8 +128,8 @@ public class TTrrcvdetailDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TTrrcvdetail)et).getTTrrcv(), (et, vl) -> ((TTrrcvdetail)et).setTTrrcv((TTrrcv)vl), "TTrrcv");
         setupEfpg(_efpgMap, et -> ((TTrrcvdetail)et).getTReceivePlanB(), (et, vl) -> ((TTrrcvdetail)et).setTReceivePlanB((TReceivePlanB)vl), "TReceivePlanB");
+        setupEfpg(_efpgMap, et -> ((TTrrcvdetail)et).getTTrrcv(), (et, vl) -> ((TTrrcvdetail)et).setTTrrcv((TTrrcv)vl), "TTrrcv");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -710,20 +710,20 @@ public class TTrrcvdetailDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTTrrcv() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TTrrcvDbm.getInstance().columnReceivePlanHId());
-        return cfi("T_TRRCVDETAIL_FK2", "TTrrcv", this, TTrrcvDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrrcvdetailList", false);
-    }
-    /**
      * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTReceivePlanB() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanBId(), TReceivePlanBDbm.getInstance().columnReceivePlanBId());
-        return cfi("T_TRRCVDETAIL_FK1", "TReceivePlanB", this, TReceivePlanBDbm.getInstance(), mp, 1, null, true, false, false, false, null, null, false, "TTrrcvdetailAsOne", false);
+        return cfi("T_TRRCVDETAIL_FK1", "TReceivePlanB", this, TReceivePlanBDbm.getInstance(), mp, 0, null, true, false, false, false, null, null, false, "TTrrcvdetailAsOne", false);
+    }
+    /**
+     * T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTTrrcv() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TTrrcvDbm.getInstance().columnReceivePlanHId());
+        return cfi("T_TRRCVDETAIL_FK2", "TTrrcv", this, TTrrcvDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrrcvdetailList", false);
     }
 
     // -----------------------------------------------------

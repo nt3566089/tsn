@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_IMPORT_TYPE, T_SHIPPING_INST_H, M_CENTER, M_CLIENT, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_IMPORT_TYPE, T_SHIPPING_INST_H, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
  *
  * [referrer-table]
  *     T_EC_ORDER_B, T_EC_ORDER_R
  *
  * [foreign-property]
- *     mImportType, tShippingInstH, mCenter, mClient, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
+ *     mCenter, mClient, mImportType, tShippingInstH, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
  *
  * [referrer-property]
  *     tEcOrderBList
@@ -70,10 +70,10 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMImportType;
-    protected boolean _suppressTShippingInstH;
     protected boolean _suppressMCenter;
     protected boolean _suppressMClient;
+    protected boolean _suppressMImportType;
+    protected boolean _suppressTShippingInstH;
     protected boolean _suppressBClassDtlByDelivMatchFlg;
     protected boolean _suppressBClassDtlByErrorFlg;
     protected boolean _suppressBClassDtlByGiftFlg;
@@ -222,58 +222,6 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMImportType && entity.getMImportType() != null) {
-            MImportType relationEntity = entity.getMImportType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MImportTypeDto relationDto = (MImportTypeDto)cachedDto;
-                dto.setMImportType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderHList().add(dto);
-                }
-            } else {
-                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderHList();
-                MImportTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMImportType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderHList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMImportType());
-                }
-            }
-        };
-        if (!_suppressTShippingInstH && entity.getTShippingInstH() != null) {
-            TShippingInstH relationEntity = entity.getTShippingInstH();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TShippingInstHDto relationDto = (TShippingInstHDto)cachedDto;
-                dto.setTShippingInstH(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderHList().add(dto);
-                }
-            } else {
-                TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderHList();
-                TShippingInstHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTShippingInstH(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderHList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTShippingInstH());
-                }
-            }
-        };
         if (!_suppressMCenter && entity.getMCenter() != null) {
             MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -323,6 +271,58 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
+        if (!_suppressMImportType && entity.getMImportType() != null) {
+            MImportType relationEntity = entity.getMImportType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MImportTypeDto relationDto = (MImportTypeDto)cachedDto;
+                dto.setMImportType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderHList().add(dto);
+                }
+            } else {
+                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderHList();
+                MImportTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMImportType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderHList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMImportType());
+                }
+            }
+        };
+        if (!_suppressTShippingInstH && entity.getTShippingInstH() != null) {
+            TShippingInstH relationEntity = entity.getTShippingInstH();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TShippingInstHDto relationDto = (TShippingInstHDto)cachedDto;
+                dto.setTShippingInstH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderHList().add(dto);
+                }
+            } else {
+                TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderHList();
+                TShippingInstHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTShippingInstH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderHList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTShippingInstH());
                 }
             }
         };
@@ -777,58 +777,6 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMImportType && dto.getMImportType() != null) {
-            MImportTypeDto relationDto = dto.getMImportType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MImportType relationEntity = (MImportType)cachedEntity;
-                entity.setMImportType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderHList().add(entity);
-                }
-            } else {
-                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderHList();
-                MImportType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMImportType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderHList().add(entity);
-                }
-                if (instanceCache && entity.getMImportType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMImportType());
-                }
-            }
-        };
-        if (!_suppressTShippingInstH && dto.getTShippingInstH() != null) {
-            TShippingInstHDto relationDto = dto.getTShippingInstH();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TShippingInstH relationEntity = (TShippingInstH)cachedEntity;
-                entity.setTShippingInstH(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderHList().add(entity);
-                }
-            } else {
-                TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderHList();
-                TShippingInstH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTShippingInstH(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderHList().add(entity);
-                }
-                if (instanceCache && entity.getTShippingInstH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTShippingInstH());
-                }
-            }
-        };
         if (!_suppressMCenter && dto.getMCenter() != null) {
             MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -878,6 +826,58 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
                 }
                 if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
+        if (!_suppressMImportType && dto.getMImportType() != null) {
+            MImportTypeDto relationDto = dto.getMImportType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MImportType relationEntity = (MImportType)cachedEntity;
+                entity.setMImportType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderHList().add(entity);
+                }
+            } else {
+                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderHList();
+                MImportType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMImportType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderHList().add(entity);
+                }
+                if (instanceCache && entity.getMImportType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMImportType());
+                }
+            }
+        };
+        if (!_suppressTShippingInstH && dto.getTShippingInstH() != null) {
+            TShippingInstHDto relationDto = dto.getTShippingInstH();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TShippingInstH relationEntity = (TShippingInstH)cachedEntity;
+                entity.setTShippingInstH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderHList().add(entity);
+                }
+            } else {
+                TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderHList();
+                TShippingInstH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTShippingInstH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderHList().add(entity);
+                }
+                if (instanceCache && entity.getTShippingInstH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTShippingInstH());
                 }
             }
         };
@@ -1154,17 +1154,17 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMImportType() {
-        _suppressMImportType = true;
-    }
-    public void suppressTShippingInstH() {
-        _suppressTShippingInstH = true;
-    }
     public void suppressMCenter() {
         _suppressMCenter = true;
     }
     public void suppressMClient() {
         _suppressMClient = true;
+    }
+    public void suppressMImportType() {
+        _suppressMImportType = true;
+    }
+    public void suppressTShippingInstH() {
+        _suppressTShippingInstH = true;
     }
     public void suppressBClassDtlByDelivMatchFlg() {
         _suppressBClassDtlByDelivMatchFlg = true;
@@ -1188,10 +1188,10 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
         _suppressTEcOrderRAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMImportType();
-        suppressTShippingInstH();
         suppressMCenter();
         suppressMClient();
+        suppressMImportType();
+        suppressTShippingInstH();
         suppressBClassDtlByDelivMatchFlg();
         suppressBClassDtlByErrorFlg();
         suppressBClassDtlByGiftFlg();
@@ -1201,10 +1201,10 @@ public abstract class BsTEcOrderHDtoMapper implements DtoMapper<TEcOrderH, TEcOr
         suppressTEcOrderRAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressMImportType = false;
-        _suppressTShippingInstH = false;
         _suppressMCenter = false;
         _suppressMClient = false;
+        _suppressMImportType = false;
+        _suppressTShippingInstH = false;
         _suppressBClassDtlByDelivMatchFlg = false;
         _suppressBClassDtlByErrorFlg = false;
         _suppressBClassDtlByGiftFlg = false;

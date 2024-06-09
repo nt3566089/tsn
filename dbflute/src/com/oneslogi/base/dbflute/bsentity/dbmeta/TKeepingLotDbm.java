@@ -66,8 +66,8 @@ public class TKeepingLotDbm extends AbstractDBMeta {
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((TKeepingLot)et).getMCustomer(), (et, vl) -> ((TKeepingLot)et).setMCustomer((MCustomer)vl), "MCustomer");
-        setupEfpg(_efpgMap, et -> ((TKeepingLot)et).getMProduct(), (et, vl) -> ((TKeepingLot)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((TKeepingLot)et).getTLot(), (et, vl) -> ((TKeepingLot)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((TKeepingLot)et).getMProduct(), (et, vl) -> ((TKeepingLot)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -215,20 +215,20 @@ public class TKeepingLotDbm extends AbstractDBMeta {
         return cfi("T_KEEPING_LOT_FK3", "MCustomer", this, MCustomerDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TKeepingLotList", false);
     }
     /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("T_KEEPING_LOT_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TKeepingLotList", false);
-    }
-    /**
      * T_LOT by my LOT_ID, named 'TLot'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTLot() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("T_KEEPING_LOT_FK2", "TLot", this, TLotDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TKeepingLotList", false);
+        return cfi("T_KEEPING_LOT_FK2", "TLot", this, TLotDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TKeepingLotList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("T_KEEPING_LOT_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TKeepingLotList", false);
     }
 
     // -----------------------------------------------------

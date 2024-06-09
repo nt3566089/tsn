@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, T_EC_ORDER_H, B_CLASS_DTL(ByInvoiceCreateFlg)
+ *     T_EC_ORDER_H, B_USER, B_CLASS_DTL(ByInvoiceCreateFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, tEcOrderH, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
+ *     tEcOrderH, bUser, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
  *
  * [referrer-property]
  *     
@@ -145,16 +145,6 @@ public abstract class BsTEcOrderRDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BUserDto _bUser;
-
-    public BUserDto getBUser() {
-        return _bUser;
-    }
-
-    public void setBUser(BUserDto bUser) {
-        this._bUser = bUser;
-    }
-
     protected TEcOrderHDto _tEcOrderH;
 
     public TEcOrderHDto getTEcOrderH() {
@@ -163,6 +153,16 @@ public abstract class BsTEcOrderRDto implements Serializable {
 
     public void setTEcOrderH(TEcOrderHDto tEcOrderH) {
         this._tEcOrderH = tEcOrderH;
+    }
+
+    protected BUserDto _bUser;
+
+    public BUserDto getBUser() {
+        return _bUser;
+    }
+
+    public void setBUser(BUserDto bUser) {
+        this._bUser = bUser;
     }
 
     protected BClassDtlDto _bClassDtlByInvoiceCreateFlg;

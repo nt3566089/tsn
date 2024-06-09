@@ -91,16 +91,16 @@ public class TShippingInstBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMShape(), (et, vl) -> ((TShippingInstB)et).setMShape((MShape)vl), "MShape");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMWarehouse(), (et, vl) -> ((TShippingInstB)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTLot(), (et, vl) -> ((TShippingInstB)et).setTLot((TLot)vl), "TLot");
         setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTAllocInstB(), (et, vl) -> ((TShippingInstB)et).setTAllocInstB((TAllocInstB)vl), "TAllocInstB");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTStoreNo(), (et, vl) -> ((TShippingInstB)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMStockType(), (et, vl) -> ((TShippingInstB)et).setMStockType((MStockType)vl), "MStockType");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMLocation(), (et, vl) -> ((TShippingInstB)et).setMLocation((MLocation)vl), "MLocation");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTShippingInstH(), (et, vl) -> ((TShippingInstB)et).setTShippingInstH((TShippingInstH)vl), "TShippingInstH");
-        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMProduct(), (et, vl) -> ((TShippingInstB)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMCustomer(), (et, vl) -> ((TShippingInstB)et).setMCustomer((MCustomer)vl), "MCustomer");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMLocation(), (et, vl) -> ((TShippingInstB)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTLot(), (et, vl) -> ((TShippingInstB)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMProduct(), (et, vl) -> ((TShippingInstB)et).setMProduct((MProduct)vl), "MProduct");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMShape(), (et, vl) -> ((TShippingInstB)et).setMShape((MShape)vl), "MShape");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTShippingInstH(), (et, vl) -> ((TShippingInstB)et).setTShippingInstH((TShippingInstH)vl), "TShippingInstH");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMStockType(), (et, vl) -> ((TShippingInstB)et).setMStockType((MStockType)vl), "MStockType");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTStoreNo(), (et, vl) -> ((TShippingInstB)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
+        setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getMWarehouse(), (et, vl) -> ((TShippingInstB)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
         setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getBClassDtlByErrorFlg(), (et, vl) -> ((TShippingInstB)et).setBClassDtlByErrorFlg((BClassDtl)vl), "BClassDtlByErrorFlg");
         setupEfpg(_efpgMap, et -> ((TShippingInstB)et).getTShippingInstSpareAsOne(), (et, vl) -> ((TShippingInstB)et).setTShippingInstSpareAsOne((TShippingInstSpare)vl), "TShippingInstSpareAsOne");
     }
@@ -424,76 +424,12 @@ public class TShippingInstBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMShape() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
-        return cfi("T_SHIPPING_INST_B_FK2", "MShape", this, MShapeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMWarehouse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("T_SHIPPING_INST_B_FK6", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTLot() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("T_SHIPPING_INST_B_FK1", "TLot", this, TLotDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
      * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTAllocInstB() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
-        return cfi("T_SHIPPING_INST_B_FK4", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTStoreNo() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreNoId(), TStoreNoDbm.getInstance().columnStoreNoId());
-        return cfi("T_SHIPPING_INST_B_FK8", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("T_SHIPPING_INST_B_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_SHIPPING_INST_B_FK7", "MLocation", this, MLocationDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTShippingInstH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstHId(), TShippingInstHDbm.getInstance().columnShippingInstHId());
-        return cfi("T_SHIPPING_INST_B_FK10", "TShippingInstH", this, TShippingInstHDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
-    }
-    /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("T_SHIPPING_INST_B_FK9", "MProduct", this, MProductDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+        return cfi("T_SHIPPING_INST_B_FK4", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
     }
     /**
      * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
@@ -501,7 +437,71 @@ public class TShippingInstBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_SHIPPING_INST_B_FK5", "MCustomer", this, MCustomerDbm.getInstance(), mp, 9, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+        return cfi("T_SHIPPING_INST_B_FK5", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("T_SHIPPING_INST_B_FK7", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTLot() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
+        return cfi("T_SHIPPING_INST_B_FK1", "TLot", this, TLotDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("T_SHIPPING_INST_B_FK9", "MProduct", this, MProductDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMShape() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
+        return cfi("T_SHIPPING_INST_B_FK2", "MShape", this, MShapeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTShippingInstH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstHId(), TShippingInstHDbm.getInstance().columnShippingInstHId());
+        return cfi("T_SHIPPING_INST_B_FK10", "TShippingInstH", this, TShippingInstHDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("T_SHIPPING_INST_B_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTStoreNo() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreNoId(), TStoreNoDbm.getInstance().columnStoreNoId());
+        return cfi("T_SHIPPING_INST_B_FK8", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
+    }
+    /**
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMWarehouse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
+        return cfi("T_SHIPPING_INST_B_FK6", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 9, null, false, false, false, false, null, null, false, "TShippingInstBList", false);
     }
     /**
      * B_CLASS_DTL by my ERROR_FLG, named 'BClassDtlByErrorFlg'.

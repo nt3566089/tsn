@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_PRODUCT, T_LOT
+ *     M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCustomer, mProduct, tLot
+ *     mCustomer, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -427,20 +427,20 @@ public abstract class BsTLastLotBhv extends AbstractBehaviorWritable<TLastLot, T
     { return helpPulloutInternally(tLastLotList, "mCustomer"); }
 
     /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param tLastLotList The list of tLastLot. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<TLastLot> tLastLotList)
-    { return helpPulloutInternally(tLastLotList, "mProduct"); }
-
-    /**
      * Pull out the list of foreign table 'TLot'.
      * @param tLastLotList The list of tLastLot. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TLot> pulloutTLot(List<TLastLot> tLastLotList)
     { return helpPulloutInternally(tLastLotList, "tLot"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param tLastLotList The list of tLastLot. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<TLastLot> tLastLotList)
+    { return helpPulloutInternally(tLastLotList, "mProduct"); }
 
     // ===================================================================================
     //                                                                      Extract Column

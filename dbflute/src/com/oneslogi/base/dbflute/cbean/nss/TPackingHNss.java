@@ -20,21 +20,12 @@ public class TPackingHNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TPickingHNss withTPickingH() {
-        _query.xdoNss(() -> _query.queryTPickingH());
-        return new TPickingHNss(_query.queryTPickingH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public TAllocInstHNss withTAllocInstH() {
+        _query.xdoNss(() -> _query.queryTAllocInstH());
+        return new TAllocInstHNss(_query.queryTAllocInstH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -47,12 +38,12 @@ public class TPackingHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstHNss withTAllocInstH() {
-        _query.xdoNss(() -> _query.queryTAllocInstH());
-        return new TAllocInstHNss(_query.queryTAllocInstH());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -62,6 +53,15 @@ public class TPackingHNss {
     public MClientNss withMClient() {
         _query.xdoNss(() -> _query.queryMClient());
         return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TPickingHNss withTPickingH() {
+        _query.xdoNss(() -> _query.queryTPickingH());
+        return new TPickingHNss(_query.queryTPickingH());
     }
     /**
      * With nested relation columns to select clause. <br>

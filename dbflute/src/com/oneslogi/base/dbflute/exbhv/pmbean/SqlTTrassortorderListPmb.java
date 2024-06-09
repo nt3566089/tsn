@@ -4,7 +4,7 @@ import com.oneslogi.base.dbflute.bsbhv.pmbean.BsSqlTTrassortorderListPmb;
 
 /**
  * <!-- df:beginClassDescription -->
- * The typed parameter-bean of SqlTTrassortorderList. <span style="color: #AD4747">(typed to entity, auto-paging)</span><br>
+ * The typed parameter-bean of SqlTTrassortorderList. <span style="color: #AD4747">(typed to list, entity)</span><br>
  * This is related to "<span style="color: #AD4747">selectSqlTTrassortorderList</span>" on TTrassortorderBhv, <br>
  * described as "追跡情報(棚卸)をリスト検索、追跡情報(棚卸)を取得する。". <br>
  * <!-- df:endClassDescription -->

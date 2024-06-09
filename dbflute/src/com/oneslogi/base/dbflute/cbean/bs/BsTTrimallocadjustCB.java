@@ -252,35 +252,6 @@ public class BsTTrimallocadjustCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TTrimallocstockNss _nssTTrimallocstock;
-    public TTrimallocstockNss xdfgetNssTTrimallocstock() {
-        if (_nssTTrimallocstock == null) { _nssTTrimallocstock = new TTrimallocstockNss(null); }
-        return _nssTTrimallocstock;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
-     * <pre>
-     * <span style="color: #0000C0">tTrimallocadjustBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrimallocstock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tTrimallocadjust</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tTrimallocadjust</span>.<span style="color: #CC4747">getTTrimallocstock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TTrimallocstockNss setupSelect_TTrimallocstock() {
-        assertSetupSelectPurpose("tTrimallocstock");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTrimallocstockId();
-        }
-        doSetupSelect(() -> query().queryTTrimallocstock());
-        if (_nssTTrimallocstock == null || !_nssTTrimallocstock.hasConditionQuery())
-        { _nssTTrimallocstock = new TTrimallocstockNss(query().queryTTrimallocstock()); }
-        return _nssTTrimallocstock;
-    }
-
     protected TTrimallocschkriNss _nssTTrimallocschkri;
     public TTrimallocschkriNss xdfgetNssTTrimallocschkri() {
         if (_nssTTrimallocschkri == null) { _nssTTrimallocschkri = new TTrimallocschkriNss(null); }
@@ -308,6 +279,35 @@ public class BsTTrimallocadjustCB extends AbstractConditionBean {
         if (_nssTTrimallocschkri == null || !_nssTTrimallocschkri.hasConditionQuery())
         { _nssTTrimallocschkri = new TTrimallocschkriNss(query().queryTTrimallocschkri()); }
         return _nssTTrimallocschkri;
+    }
+
+    protected TTrimallocstockNss _nssTTrimallocstock;
+    public TTrimallocstockNss xdfgetNssTTrimallocstock() {
+        if (_nssTTrimallocstock == null) { _nssTTrimallocstock = new TTrimallocstockNss(null); }
+        return _nssTTrimallocstock;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
+     * <pre>
+     * <span style="color: #0000C0">tTrimallocadjustBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrimallocstock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tTrimallocadjust</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tTrimallocadjust</span>.<span style="color: #CC4747">getTTrimallocstock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TTrimallocstockNss setupSelect_TTrimallocstock() {
+        assertSetupSelectPurpose("tTrimallocstock");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTrimallocstockId();
+        }
+        doSetupSelect(() -> query().queryTTrimallocstock());
+        if (_nssTTrimallocstock == null || !_nssTTrimallocstock.hasConditionQuery())
+        { _nssTTrimallocstock = new TTrimallocstockNss(query().queryTTrimallocstock()); }
+        return _nssTTrimallocstock;
     }
 
     // [DBFlute-0.7.4]
@@ -351,8 +351,8 @@ public class BsTTrimallocadjustCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TTrimallocadjustCQ> {
-        protected TTrimallocstockCB.HpSpecification _tTrimallocstock;
         protected TTrimallocschkriCB.HpSpecification _tTrimallocschkri;
+        protected TTrimallocstockCB.HpSpecification _tTrimallocstock;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TTrimallocadjustCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -442,37 +442,17 @@ public class BsTTrimallocadjustCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnTrimallocadjustId(); // PK
-            if (qyCall().qy().hasConditionQueryTTrimallocstock()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TTrimallocstockCQ) {
-                columnTrimallocstockId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryTTrimallocschkri()
                     || qyCall().qy().xgetReferrerQuery() instanceof TTrimallocschkriCQ) {
                 columnTrimallocschId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTTrimallocstock()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TTrimallocstockCQ) {
+                columnTrimallocstockId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_TRIMALLOCADJUST"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TTrimallocstockCB.HpSpecification specifyTTrimallocstock() {
-            assertRelation("tTrimallocstock");
-            if (_tTrimallocstock == null) {
-                _tTrimallocstock = new TTrimallocstockCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrimallocstock()
-                                    , () -> _qyCall.qy().queryTTrimallocstock())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tTrimallocstock.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrimallocstock()
-                      , () -> xsyncQyCall().qy().queryTTrimallocstock()));
-                }
-            }
-            return _tTrimallocstock;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * T_TRIMALLOCSCHKRI by my TRIMALLOCSCH_ID, named 'TTrimallocschkri'.
@@ -492,6 +472,26 @@ public class BsTTrimallocadjustCB extends AbstractConditionBean {
                 }
             }
             return _tTrimallocschkri;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TTrimallocstockCB.HpSpecification specifyTTrimallocstock() {
+            assertRelation("tTrimallocstock");
+            if (_tTrimallocstock == null) {
+                _tTrimallocstock = new TTrimallocstockCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrimallocstock()
+                                    , () -> _qyCall.qy().queryTTrimallocstock())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tTrimallocstock.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrimallocstock()
+                      , () -> xsyncQyCall().qy().queryTTrimallocstock()));
+                }
+            }
+            return _tTrimallocstock;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

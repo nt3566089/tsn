@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CARRIER_SLIP_YUPK, M_CENTER, M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
+ *     M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, M_CARRIER_SLIP_YUPK, M_CENTER, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
  *
  * [referrer table]
  *     M_CENTER_CUSTOMER, M_PARAM, T_ALLOC_INST_H, T_SHIPPING_INST_H, W_HT_LOADING
  *
  * [foreign property]
- *     mCarrierSlipYupk, mCenter, mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
+ *     mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, mCarrierSlipYupk, mCenter, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
  *
  * [referrer property]
  *     mCenterCustomerList, mParamList, tAllocInstHList, tShippingInstHList, wHtLoadingList
@@ -994,44 +994,6 @@ public abstract class BsMDeliveryCourse extends AbstractEntity implements Domain
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'. */
-    protected MCarrierSlipYupk _mCarrierSlipYupk;
-
-    /**
-     * [get] M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'. <br>
-     * @return The entity of foreign property 'MCarrierSlipYupk'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCarrierSlipYupk getMCarrierSlipYupk() {
-        return _mCarrierSlipYupk;
-    }
-
-    /**
-     * [set] M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-     * @param mCarrierSlipYupk The entity of foreign property 'MCarrierSlipYupk'. (NullAllowed)
-     */
-    public void setMCarrierSlipYupk(MCarrierSlipYupk mCarrierSlipYupk) {
-        _mCarrierSlipYupk = mCarrierSlipYupk;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
-    }
-
     /** M_CARRIER by my CARRIER_ID, named 'MCarrier'. */
     protected MCarrier _mCarrier;
 
@@ -1087,6 +1049,44 @@ public abstract class BsMDeliveryCourse extends AbstractEntity implements Domain
      */
     public void setMCarrierSlipYmt(MCarrierSlipYmt mCarrierSlipYmt) {
         _mCarrierSlipYmt = mCarrierSlipYmt;
+    }
+
+    /** M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'. */
+    protected MCarrierSlipYupk _mCarrierSlipYupk;
+
+    /**
+     * [get] M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'. <br>
+     * @return The entity of foreign property 'MCarrierSlipYupk'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCarrierSlipYupk getMCarrierSlipYupk() {
+        return _mCarrierSlipYupk;
+    }
+
+    /**
+     * [set] M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+     * @param mCarrierSlipYupk The entity of foreign property 'MCarrierSlipYupk'. (NullAllowed)
+     */
+    public void setMCarrierSlipYupk(MCarrierSlipYupk mCarrierSlipYupk) {
+        _mCarrierSlipYupk = mCarrierSlipYupk;
+    }
+
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'. */
@@ -1335,16 +1335,16 @@ public abstract class BsMDeliveryCourse extends AbstractEntity implements Domain
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mCarrierSlipYupk != null)
-        { sb.append(li).append(xbRDS(_mCarrierSlipYupk, "mCarrierSlipYupk")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mCarrier != null)
         { sb.append(li).append(xbRDS(_mCarrier, "mCarrier")); }
         if (_mCarrierSlipSgw != null)
         { sb.append(li).append(xbRDS(_mCarrierSlipSgw, "mCarrierSlipSgw")); }
         if (_mCarrierSlipYmt != null)
         { sb.append(li).append(xbRDS(_mCarrierSlipYmt, "mCarrierSlipYmt")); }
+        if (_mCarrierSlipYupk != null)
+        { sb.append(li).append(xbRDS(_mCarrierSlipYupk, "mCarrierSlipYupk")); }
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByDelFlg, "bClassDtlByDelFlg")); }
         if (_mCenterClassDtlByTagDataType != null)
@@ -1410,16 +1410,16 @@ public abstract class BsMDeliveryCourse extends AbstractEntity implements Domain
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mCarrierSlipYupk != null)
-        { sb.append(dm).append("mCarrierSlipYupk"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_mCarrier != null)
         { sb.append(dm).append("mCarrier"); }
         if (_mCarrierSlipSgw != null)
         { sb.append(dm).append("mCarrierSlipSgw"); }
         if (_mCarrierSlipYmt != null)
         { sb.append(dm).append("mCarrierSlipYmt"); }
+        if (_mCarrierSlipYupk != null)
+        { sb.append(dm).append("mCarrierSlipYupk"); }
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(dm).append("bClassDtlByDelFlg"); }
         if (_mCenterClassDtlByTagDataType != null)

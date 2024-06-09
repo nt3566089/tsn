@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_BOX_GRP, M_BOX, M_ZONE, M_CLIENT_CENTER, B_CLASS_DTL(ByAfterTagOutFlg)
+ *     M_CLIENT_CENTER, M_BOX, M_DELIVERY_COURSE, M_ZONE, M_BOX_GRP, B_CLASS_DTL(ByAfterTagOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mBoxGrp, mBox, mZone, mClientCenter, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
+ *     mClientCenter, mBox, mDeliveryCourse, mZone, mBoxGrp, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
  *
  * [referrer property]
  *     
@@ -59,18 +59,11 @@ public class LoaderOfMParam {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
-    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
-        if (_foreignMDeliveryCourseLoader == null)
-        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
-        return _foreignMDeliveryCourseLoader;
-    }
-
-    protected LoaderOfMBoxGrp _foreignMBoxGrpLoader;
-    public LoaderOfMBoxGrp pulloutMBoxGrp() {
-        if (_foreignMBoxGrpLoader == null)
-        { _foreignMBoxGrpLoader = new LoaderOfMBoxGrp().ready(myBhv().pulloutMBoxGrp(_selectedList), _selector); }
-        return _foreignMBoxGrpLoader;
+    protected LoaderOfMClientCenter _foreignMClientCenterLoader;
+    public LoaderOfMClientCenter pulloutMClientCenter() {
+        if (_foreignMClientCenterLoader == null)
+        { _foreignMClientCenterLoader = new LoaderOfMClientCenter().ready(myBhv().pulloutMClientCenter(_selectedList), _selector); }
+        return _foreignMClientCenterLoader;
     }
 
     protected LoaderOfMBox _foreignMBoxLoader;
@@ -80,6 +73,13 @@ public class LoaderOfMParam {
         return _foreignMBoxLoader;
     }
 
+    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
+    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
+        if (_foreignMDeliveryCourseLoader == null)
+        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
+        return _foreignMDeliveryCourseLoader;
+    }
+
     protected LoaderOfMZone _foreignMZoneLoader;
     public LoaderOfMZone pulloutMZone() {
         if (_foreignMZoneLoader == null)
@@ -87,11 +87,11 @@ public class LoaderOfMParam {
         return _foreignMZoneLoader;
     }
 
-    protected LoaderOfMClientCenter _foreignMClientCenterLoader;
-    public LoaderOfMClientCenter pulloutMClientCenter() {
-        if (_foreignMClientCenterLoader == null)
-        { _foreignMClientCenterLoader = new LoaderOfMClientCenter().ready(myBhv().pulloutMClientCenter(_selectedList), _selector); }
-        return _foreignMClientCenterLoader;
+    protected LoaderOfMBoxGrp _foreignMBoxGrpLoader;
+    public LoaderOfMBoxGrp pulloutMBoxGrp() {
+        if (_foreignMBoxGrpLoader == null)
+        { _foreignMBoxGrpLoader = new LoaderOfMBoxGrp().ready(myBhv().pulloutMBoxGrp(_selectedList), _selector); }
+        return _foreignMBoxGrpLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByAfterTagOutFlgLoader;

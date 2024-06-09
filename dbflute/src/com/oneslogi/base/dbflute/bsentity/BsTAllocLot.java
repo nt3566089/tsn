@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_PRODUCT, T_ALLOC_INST_B, M_CUSTOMER
+ *     T_ALLOC_INST_B, M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tLot, mProduct, tAllocInstB, mCustomer
+ *     tAllocInstB, mCustomer, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -248,44 +248,6 @@ public abstract class BsTAllocLot extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_LOT by my LOT_ID, named 'TLot'. */
-    protected TLot _tLot;
-
-    /**
-     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
-     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TLot getTLot() {
-        return _tLot;
-    }
-
-    /**
-     * [set] T_LOT by my LOT_ID, named 'TLot'.
-     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
-     */
-    public void setTLot(TLot tLot) {
-        _tLot = tLot;
-    }
-
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
-
-    /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProduct getMProduct() {
-        return _mProduct;
-    }
-
-    /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
-     */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
-    }
-
     /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
     protected TAllocInstB _tAllocInstB;
 
@@ -324,6 +286,44 @@ public abstract class BsTAllocLot extends AbstractEntity implements DomainEntity
         _mCustomer = mCustomer;
     }
 
+    /** T_LOT by my LOT_ID, named 'TLot'. */
+    protected TLot _tLot;
+
+    /**
+     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
+     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TLot getTLot() {
+        return _tLot;
+    }
+
+    /**
+     * [set] T_LOT by my LOT_ID, named 'TLot'.
+     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
+     */
+    public void setTLot(TLot tLot) {
+        _tLot = tLot;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
+    }
+
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
@@ -356,14 +356,14 @@ public abstract class BsTAllocLot extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_tAllocInstB != null)
         { sb.append(li).append(xbRDS(_tAllocInstB, "tAllocInstB")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -393,14 +393,14 @@ public abstract class BsTAllocLot extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
         if (_tAllocInstB != null)
         { sb.append(dm).append("tAllocInstB"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

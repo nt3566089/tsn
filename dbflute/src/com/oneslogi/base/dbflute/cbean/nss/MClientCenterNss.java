@@ -20,12 +20,12 @@ public class MClientCenterNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCustomerNss withMCustomer() {
-        _query.xdoNss(() -> _query.queryMCustomer());
-        return new MCustomerNss(_query.queryMCustomer());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,12 +38,12 @@ public class MClientCenterNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public MCustomerNss withMCustomer() {
+        _query.xdoNss(() -> _query.queryMCustomer());
+        return new MCustomerNss(_query.queryMCustomer());
     }
     /**
      * With nested relation columns to select clause. <br>

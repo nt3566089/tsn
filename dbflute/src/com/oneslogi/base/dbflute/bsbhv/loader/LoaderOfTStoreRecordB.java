@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, T_STORE_RECORD_H, T_RECEIVE_PLAN_B, B_CLASS_DTL(ByInputType)
+ *     T_RECEIVE_PLAN_B, M_LOCATION, T_STORE_RECORD_H, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     mLocation, tStoreRecordH, tReceivePlanB, bClassDtlByInputType, bClassDtlByStoreFlg
+ *     tReceivePlanB, mLocation, tStoreRecordH, bClassDtlByInputType, bClassDtlByStoreFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -98,6 +98,13 @@ public class LoaderOfTStoreRecordB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfTReceivePlanB _foreignTReceivePlanBLoader;
+    public LoaderOfTReceivePlanB pulloutTReceivePlanB() {
+        if (_foreignTReceivePlanBLoader == null)
+        { _foreignTReceivePlanBLoader = new LoaderOfTReceivePlanB().ready(myBhv().pulloutTReceivePlanB(_selectedList), _selector); }
+        return _foreignTReceivePlanBLoader;
+    }
+
     protected LoaderOfMLocation _foreignMLocationLoader;
     public LoaderOfMLocation pulloutMLocation() {
         if (_foreignMLocationLoader == null)
@@ -110,13 +117,6 @@ public class LoaderOfTStoreRecordB {
         if (_foreignTStoreRecordHLoader == null)
         { _foreignTStoreRecordHLoader = new LoaderOfTStoreRecordH().ready(myBhv().pulloutTStoreRecordH(_selectedList), _selector); }
         return _foreignTStoreRecordHLoader;
-    }
-
-    protected LoaderOfTReceivePlanB _foreignTReceivePlanBLoader;
-    public LoaderOfTReceivePlanB pulloutTReceivePlanB() {
-        if (_foreignTReceivePlanBLoader == null)
-        { _foreignTReceivePlanBLoader = new LoaderOfTReceivePlanB().ready(myBhv().pulloutTReceivePlanB(_selectedList), _selector); }
-        return _foreignTReceivePlanBLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInputTypeLoader;

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_SHAPE
+ *     M_SHAPE, M_STOCK_TYPE
  *
  * [referrer table]
  *     H_INVENTORY_B, H_MOVE_B, H_PACKING_B, H_RECEIVE_B, H_STOCK_INOUT, H_STOCK_REPORT
  *
  * [foreign property]
- *     mStockType, mShape
+ *     mShape, mStockType
  *
  * [referrer property]
  *     hInventoryBList, hMoveBList, hPackingBList, hReceiveBList, hStockInoutList, hStockReportList
@@ -428,25 +428,6 @@ public abstract class BsHStock extends AbstractEntity implements DomainEntity, E
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
-
-    /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MStockType getMStockType() {
-        return _mStockType;
-    }
-
-    /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
-     */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
-    }
-
     /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
     protected MShape _mShape;
 
@@ -464,6 +445,25 @@ public abstract class BsHStock extends AbstractEntity implements DomainEntity, E
      */
     public void setMShape(MShape mShape) {
         _mShape = mShape;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
     }
 
     // ===================================================================================
@@ -618,10 +618,10 @@ public abstract class BsHStock extends AbstractEntity implements DomainEntity, E
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mShape != null)
         { sb.append(li).append(xbRDS(_mShape, "mShape")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_hInventoryBList != null) { for (HInventoryB et : _hInventoryBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "hInventoryBList")); } } }
         if (_hMoveBList != null) { for (HMoveB et : _hMoveBList)
@@ -699,10 +699,10 @@ public abstract class BsHStock extends AbstractEntity implements DomainEntity, E
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_mShape != null)
         { sb.append(dm).append("mShape"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
         if (_hInventoryBList != null && !_hInventoryBList.isEmpty())
         { sb.append(dm).append("hInventoryBList"); }
         if (_hMoveBList != null && !_hMoveBList.isEmpty())

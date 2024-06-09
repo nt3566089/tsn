@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CARRIER, M_BOX
+ *     M_BOX, M_CARRIER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCarrier, mBox
+ *     mBox, mCarrier
  *
  * [referrer-property]
  *     
@@ -137,16 +137,6 @@ public abstract class BsMCarrierBoxDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MCarrierDto _mCarrier;
-
-    public MCarrierDto getMCarrier() {
-        return _mCarrier;
-    }
-
-    public void setMCarrier(MCarrierDto mCarrier) {
-        this._mCarrier = mCarrier;
-    }
-
     protected MBoxDto _mBox;
 
     public MBoxDto getMBox() {
@@ -155,6 +145,16 @@ public abstract class BsMCarrierBoxDto implements Serializable {
 
     public void setMBox(MBoxDto mBox) {
         this._mBox = mBox;
+    }
+
+    protected MCarrierDto _mCarrier;
+
+    public MCarrierDto getMCarrier() {
+        return _mCarrier;
+    }
+
+    public void setMCarrier(MCarrierDto mCarrier) {
+        this._mCarrier = mCarrier;
     }
 
     // ===================================================================================

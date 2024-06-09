@@ -101,8 +101,8 @@ public class HStockDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((HStock)et).getMStockType(), (et, vl) -> ((HStock)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((HStock)et).getMShape(), (et, vl) -> ((HStock)et).setMShape((MShape)vl), "MShape");
+        setupEfpg(_efpgMap, et -> ((HStock)et).getMStockType(), (et, vl) -> ((HStock)et).setMStockType((MStockType)vl), "MStockType");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -494,20 +494,20 @@ public class HStockDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("H_STOCK_FK2", "MStockType", this, MStockTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HStockList", false);
-    }
-    /**
      * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMShape() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
-        return cfi("H_STOCK_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HStockList", false);
+        return cfi("H_STOCK_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HStockList", false);
+    }
+    /**
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("H_STOCK_FK2", "MStockType", this, MStockTypeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HStockList", false);
     }
 
     // -----------------------------------------------------

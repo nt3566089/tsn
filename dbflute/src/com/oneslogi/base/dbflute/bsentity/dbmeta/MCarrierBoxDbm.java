@@ -65,8 +65,8 @@ public class MCarrierBoxDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MCarrierBox)et).getMCarrier(), (et, vl) -> ((MCarrierBox)et).setMCarrier((MCarrier)vl), "MCarrier");
         setupEfpg(_efpgMap, et -> ((MCarrierBox)et).getMBox(), (et, vl) -> ((MCarrierBox)et).setMBox((MBox)vl), "MBox");
+        setupEfpg(_efpgMap, et -> ((MCarrierBox)et).getMCarrier(), (et, vl) -> ((MCarrierBox)et).setMCarrier((MCarrier)vl), "MCarrier");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -216,20 +216,20 @@ public class MCarrierBoxDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCarrier() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierId(), MCarrierDbm.getInstance().columnCarrierId());
-        return cfi("M_CARRIER_BOX_FK2", "MCarrier", this, MCarrierDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCarrierBoxList", false);
-    }
-    /**
      * M_BOX by my BOX_ID, named 'MBox'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMBox() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("M_CARRIER_BOX_FK1", "MBox", this, MBoxDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCarrierBoxList", false);
+        return cfi("M_CARRIER_BOX_FK1", "MBox", this, MBoxDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCarrierBoxList", false);
+    }
+    /**
+     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCarrier() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierId(), MCarrierDbm.getInstance().columnCarrierId());
+        return cfi("M_CARRIER_BOX_FK2", "MCarrier", this, MCarrierDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCarrierBoxList", false);
     }
 
     // -----------------------------------------------------

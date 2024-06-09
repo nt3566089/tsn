@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     
@@ -338,25 +338,6 @@ public abstract class BsTCcopam extends AbstractEntity implements DomainEntity, 
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
-    protected MClient _mClient;
-
-    /**
-     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
-     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MClient getMClient() {
-        return _mClient;
-    }
-
-    /**
-     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
-     */
-    public void setMClient(MClient mClient) {
-        _mClient = mClient;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -374,6 +355,25 @@ public abstract class BsTCcopam extends AbstractEntity implements DomainEntity, 
      */
     public void setMCenter(MCenter mCenter) {
         _mCenter = mCenter;
+    }
+
+    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
+    protected MClient _mClient;
+
+    /**
+     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
+     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MClient getMClient() {
+        return _mClient;
+    }
+
+    /**
+     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
+     */
+    public void setMClient(MClient mClient) {
+        _mClient = mClient;
     }
 
     // ===================================================================================
@@ -408,10 +408,10 @@ public abstract class BsTCcopam extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         return sb.toString();
     }
 
@@ -459,10 +459,10 @@ public abstract class BsTCcopam extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

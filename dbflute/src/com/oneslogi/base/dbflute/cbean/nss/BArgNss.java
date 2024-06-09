@@ -20,19 +20,19 @@ public class BArgNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_FUNC by my FUNC_ID, named 'BFunc'.
-     */
-    public void withBFunc() {
-        _query.xdoNss(() -> _query.queryBFunc());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BDictNss withBDict() {
         _query.xdoNss(() -> _query.queryBDict());
         return new BDictNss(_query.queryBDict());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_FUNC by my FUNC_ID, named 'BFunc'.
+     */
+    public void withBFunc() {
+        _query.xdoNss(() -> _query.queryBFunc());
     }
     /**
      * With nested relation columns to select clause. <br>

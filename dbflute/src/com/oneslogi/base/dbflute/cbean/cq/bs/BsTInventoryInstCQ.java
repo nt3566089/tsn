@@ -698,17 +698,17 @@ public class BsTInventoryInstCQ extends AbstractBsTInventoryInstCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TInventoryInstCQ bq = (TInventoryInstCQ)bqs;
         TInventoryInstCQ uq = (TInventoryInstCQ)uqs;
+        if (bq.hasConditionQueryMCustomer()) {
+            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
+        }
+        if (bq.hasConditionQueryTInventoryH()) {
+            uq.queryTInventoryH().reflectRelationOnUnionQuery(bq.queryTInventoryH(), uq.queryTInventoryH());
+        }
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
         }
         if (bq.hasConditionQueryMZone()) {
             uq.queryMZone().reflectRelationOnUnionQuery(bq.queryMZone(), uq.queryMZone());
-        }
-        if (bq.hasConditionQueryTInventoryH()) {
-            uq.queryTInventoryH().reflectRelationOnUnionQuery(bq.queryTInventoryH(), uq.queryTInventoryH());
-        }
-        if (bq.hasConditionQueryMCustomer()) {
-            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
         }
         if (bq.hasConditionQueryBClassDtlByStockExistOnlyFlg()) {
             uq.queryBClassDtlByStockExistOnlyFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByStockExistOnlyFlg(), uq.queryBClassDtlByStockExistOnlyFlg());
@@ -718,6 +718,46 @@ public class BsTInventoryInstCQ extends AbstractBsTInventoryInstCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCustomerCQ queryMCustomer() {
+        return xdfgetConditionQueryMCustomer();
+    }
+    public MCustomerCQ xdfgetConditionQueryMCustomer() {
+        String prop = "mCustomer";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCustomerCQ xcreateQueryMCustomer() {
+        String nrp = xresolveNRP("T_INVENTORY_INST", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
+    }
+    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
+    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TInventoryHCQ queryTInventoryH() {
+        return xdfgetConditionQueryTInventoryH();
+    }
+    public TInventoryHCQ xdfgetConditionQueryTInventoryH() {
+        String prop = "tInventoryH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTInventoryH()); xsetupOuterJoinTInventoryH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TInventoryHCQ xcreateQueryTInventoryH() {
+        String nrp = xresolveNRP("T_INVENTORY_INST", "tInventoryH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TInventoryHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tInventoryH", nrp);
+    }
+    protected void xsetupOuterJoinTInventoryH() { xregOutJo("tInventoryH"); }
+    public boolean hasConditionQueryTInventoryH() { return xhasQueRlMap("tInventoryH"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
@@ -757,46 +797,6 @@ public class BsTInventoryInstCQ extends AbstractBsTInventoryInstCQ {
     }
     protected void xsetupOuterJoinMZone() { xregOutJo("mZone"); }
     public boolean hasConditionQueryMZone() { return xhasQueRlMap("mZone"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TInventoryHCQ queryTInventoryH() {
-        return xdfgetConditionQueryTInventoryH();
-    }
-    public TInventoryHCQ xdfgetConditionQueryTInventoryH() {
-        String prop = "tInventoryH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTInventoryH()); xsetupOuterJoinTInventoryH(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TInventoryHCQ xcreateQueryTInventoryH() {
-        String nrp = xresolveNRP("T_INVENTORY_INST", "tInventoryH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TInventoryHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tInventoryH", nrp);
-    }
-    protected void xsetupOuterJoinTInventoryH() { xregOutJo("tInventoryH"); }
-    public boolean hasConditionQueryTInventoryH() { return xhasQueRlMap("tInventoryH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCustomerCQ queryMCustomer() {
-        return xdfgetConditionQueryMCustomer();
-    }
-    public MCustomerCQ xdfgetConditionQueryMCustomer() {
-        String prop = "mCustomer";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCustomerCQ xcreateQueryMCustomer() {
-        String nrp = xresolveNRP("T_INVENTORY_INST", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
-    }
-    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
-    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
 
     /**
      * Get the condition-query for relation table. <br>

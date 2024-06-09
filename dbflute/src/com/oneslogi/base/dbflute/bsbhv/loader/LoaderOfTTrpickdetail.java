@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_STOCK, M_LOCATION, T_YTRSODETAIL
+ *     M_LOCATION, T_STOCK, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TR_PICKLIST
  *
  * [foreign property]
- *     tStock, mLocation, tYtrsodetail
+ *     mLocation, tStock, tYtrsodetail
  *
  * [referrer property]
  *     tTrPicklistList
@@ -98,18 +98,18 @@ public class LoaderOfTTrpickdetail {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTStock _foreignTStockLoader;
-    public LoaderOfTStock pulloutTStock() {
-        if (_foreignTStockLoader == null)
-        { _foreignTStockLoader = new LoaderOfTStock().ready(myBhv().pulloutTStock(_selectedList), _selector); }
-        return _foreignTStockLoader;
-    }
-
     protected LoaderOfMLocation _foreignMLocationLoader;
     public LoaderOfMLocation pulloutMLocation() {
         if (_foreignMLocationLoader == null)
         { _foreignMLocationLoader = new LoaderOfMLocation().ready(myBhv().pulloutMLocation(_selectedList), _selector); }
         return _foreignMLocationLoader;
+    }
+
+    protected LoaderOfTStock _foreignTStockLoader;
+    public LoaderOfTStock pulloutTStock() {
+        if (_foreignTStockLoader == null)
+        { _foreignTStockLoader = new LoaderOfTStock().ready(myBhv().pulloutTStock(_selectedList), _selector); }
+        return _foreignTStockLoader;
     }
 
     protected LoaderOfTYtrsodetail _foreignTYtrsodetailLoader;

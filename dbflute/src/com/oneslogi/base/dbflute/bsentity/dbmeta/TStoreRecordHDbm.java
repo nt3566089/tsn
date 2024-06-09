@@ -71,13 +71,13 @@ public class TStoreRecordHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMCustomerByDepositId(), (et, vl) -> ((TStoreRecordH)et).setMCustomerByDepositId((MCustomer)vl), "MCustomerByDepositId");
-        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getTReceivePlanH(), (et, vl) -> ((TStoreRecordH)et).setTReceivePlanH((TReceivePlanH)vl), "TReceivePlanH");
         setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMCenter(), (et, vl) -> ((TStoreRecordH)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMCustomerBySupplierId(), (et, vl) -> ((TStoreRecordH)et).setMCustomerBySupplierId((MCustomer)vl), "MCustomerBySupplierId");
-        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMProcessType(), (et, vl) -> ((TStoreRecordH)et).setMProcessType((MProcessType)vl), "MProcessType");
-        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMStockType(), (et, vl) -> ((TStoreRecordH)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMClient(), (et, vl) -> ((TStoreRecordH)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMCustomerByDepositId(), (et, vl) -> ((TStoreRecordH)et).setMCustomerByDepositId((MCustomer)vl), "MCustomerByDepositId");
+        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMProcessType(), (et, vl) -> ((TStoreRecordH)et).setMProcessType((MProcessType)vl), "MProcessType");
+        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getTReceivePlanH(), (et, vl) -> ((TStoreRecordH)et).setTReceivePlanH((TReceivePlanH)vl), "TReceivePlanH");
+        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMStockType(), (et, vl) -> ((TStoreRecordH)et).setMStockType((MStockType)vl), "MStockType");
+        setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getMCustomerBySupplierId(), (et, vl) -> ((TStoreRecordH)et).setMCustomerBySupplierId((MCustomer)vl), "MCustomerBySupplierId");
         setupEfpg(_efpgMap, et -> ((TStoreRecordH)et).getTStoreRecordRAsOne(), (et, vl) -> ((TStoreRecordH)et).setTStoreRecordRAsOne((TStoreRecordR)vl), "TStoreRecordRAsOne");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -260,36 +260,28 @@ public class TStoreRecordHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCustomerByDepositId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_STORE_RECORD_H_FK6", "MCustomerByDepositId", this, MCustomerDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStoreRecordHByDepositIdList", false);
-    }
-    /**
-     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTReceivePlanH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
-        return cfi("T_STORE_RECORD_H_FK7", "TReceivePlanH", this, TReceivePlanHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_STORE_RECORD_H_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
+        return cfi("T_STORE_RECORD_H_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
     }
     /**
-     * M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCustomerBySupplierId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSupplierId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_STORE_RECORD_H_FK5", "MCustomerBySupplierId", this, MCustomerDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStoreRecordHBySupplierIdList", false);
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("T_STORE_RECORD_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
+    }
+    /**
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCustomerByDepositId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_STORE_RECORD_H_FK6", "MCustomerByDepositId", this, MCustomerDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStoreRecordHByDepositIdList", false);
     }
     /**
      * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
@@ -297,7 +289,15 @@ public class TStoreRecordHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMProcessType() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_STORE_RECORD_H_FK4", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
+        return cfi("T_STORE_RECORD_H_FK4", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
+    }
+    /**
+     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTReceivePlanH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
+        return cfi("T_STORE_RECORD_H_FK7", "TReceivePlanH", this, TReceivePlanHDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
     }
     /**
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
@@ -308,12 +308,12 @@ public class TStoreRecordHDbm extends AbstractDBMeta {
         return cfi("T_STORE_RECORD_H_FK2", "MStockType", this, MStockTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
     }
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_STORE_RECORD_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStoreRecordHList", false);
+    public ForeignInfo foreignMCustomerBySupplierId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSupplierId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_STORE_RECORD_H_FK5", "MCustomerBySupplierId", this, MCustomerDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStoreRecordHBySupplierIdList", false);
     }
     /**
      * T_STORE_RECORD_R by STORE_RECORD_H_ID, named 'TStoreRecordRAsOne'.

@@ -67,8 +67,8 @@ public class TEcOrderRDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TEcOrderR)et).getBUser(), (et, vl) -> ((TEcOrderR)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((TEcOrderR)et).getTEcOrderH(), (et, vl) -> ((TEcOrderR)et).setTEcOrderH((TEcOrderH)vl), "TEcOrderH");
+        setupEfpg(_efpgMap, et -> ((TEcOrderR)et).getBUser(), (et, vl) -> ((TEcOrderR)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((TEcOrderR)et).getBClassDtlByInvoiceCreateFlg(), (et, vl) -> ((TEcOrderR)et).setBClassDtlByInvoiceCreateFlg((BClassDtl)vl), "BClassDtlByInvoiceCreateFlg");
         setupEfpg(_efpgMap, et -> ((TEcOrderR)et).getBClassDtlByStatementOutFlg(), (et, vl) -> ((TEcOrderR)et).setBClassDtlByStatementOutFlg((BClassDtl)vl), "BClassDtlByStatementOutFlg");
     }
@@ -224,20 +224,20 @@ public class TEcOrderRDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUser() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStatementOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_EC_ORDER_R_FK2", "BUser", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TEcOrderRList", false);
-    }
-    /**
      * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTEcOrderH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnEcOrderHId(), TEcOrderHDbm.getInstance().columnEcOrderHId());
-        return cfi("T_EC_ORDER_R_FK1", "TEcOrderH", this, TEcOrderHDbm.getInstance(), mp, 1, null, true, false, false, false, null, null, false, "TEcOrderRAsOne", false);
+        return cfi("T_EC_ORDER_R_FK1", "TEcOrderH", this, TEcOrderHDbm.getInstance(), mp, 0, null, true, false, false, false, null, null, false, "TEcOrderRAsOne", false);
+    }
+    /**
+     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUser() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStatementOutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_EC_ORDER_R_FK2", "BUser", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TEcOrderRList", false);
     }
     /**
      * B_CLASS_DTL by my INVOICE_CREATE_FLG, named 'BClassDtlByInvoiceCreateFlg'.

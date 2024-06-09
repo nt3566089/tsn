@@ -25,6 +25,7 @@ import com.oneslogi.base.dbflute.exbhv.TDrcdizqaBhv;
 import com.oneslogi.base.dbflute.exbhv.TInventoryBBhv;
 import com.oneslogi.base.dbflute.exbhv.TInventoryHBhv;
 import com.oneslogi.base.dbflute.exbhv.TInventoryInstBhv;
+import com.oneslogi.base.dbflute.exbhv.TInventoryRBhv;
 import com.oneslogi.base.dbflute.exbhv.TStockBhv;
 import com.oneslogi.base.dbflute.exbhv.TTrassortorderBhv;
 import com.oneslogi.base.dbflute.exbhv.TTrcasedetailBhv;
@@ -63,6 +64,7 @@ import com.oneslogi.base.dbflute.exentity.TCsrwhadm;
 import com.oneslogi.base.dbflute.exentity.TInventoryB;
 import com.oneslogi.base.dbflute.exentity.TInventoryH;
 import com.oneslogi.base.dbflute.exentity.TInventoryInst;
+import com.oneslogi.base.dbflute.exentity.TInventoryR;
 import com.oneslogi.base.dbflute.exentity.TTrassortorder;
 import com.oneslogi.base.dbflute.exentity.TTrcasedetail;
 import com.oneslogi.base.dbflute.exentity.TTrcaseinventory;
@@ -111,6 +113,9 @@ public class InventoryCreateLogic extends AbstractWmsLogic {
 	private TStockBhv tStockBhv;
 	@Inject
 	private TInventoryBBhv tInventoryBhv;
+	
+	@Inject
+	private TInventoryRBhv tInventoryRBhv;
 	@Inject
 	private TTrsymbolBhv tTrsymbolBhv;
 	@Inject
@@ -629,29 +634,29 @@ public class InventoryCreateLogic extends AbstractWmsLogic {
 				ListResultBean<SqlTrhanbaiinvBackOneRegistList> backOneRegistList = tTrhanbaiinvBhv.outsideSql().selectList(tTrhanbaiinvBhv.PATH_selectSqlTrhanbaiinvBackOneRegistList, backOneRegistListPmb, SqlTrhanbaiinvBackOneRegistList.class);
 				
 				//過不足計(返品)情報
-				Map<String,BigDecimal> returnItemMap = new HashMap<String, BigDecimal>();
+				Map<String,Long> returnItemMap = new HashMap<String, Long>();
 				//過不足計(国税還付品)情報
-				Map<String,BigDecimal> taxMap = new HashMap<String, BigDecimal>();
+				Map<String,Long> taxMap = new HashMap<String, Long>();
 				//り災品情報
-				Map<String,BigDecimal> backItemMap = new HashMap<String, BigDecimal>();
+				Map<String,Long> backItemMap = new HashMap<String, Long>();
 				//不適品ラベル作成個装数情報
-				Map<String,BigDecimal> badItemMap = new HashMap<String, BigDecimal>();
+				Map<String,Long> badItemMap = new HashMap<String, Long>();
 				//一括登録個装数情報
-				Map<String,BigDecimal> registItemMap = new HashMap<String, BigDecimal>();
+				Map<String,Long> registItemMap = new HashMap<String, Long>();
 				for(SqlTrhanbaiinvDiffQtyList result : diffQtyList) {
-					returnItemMap.put(result.getPcd(), result.getTotal());
+					returnItemMap.put(result.getPcd(), result.getTotal().longValue());
 				}
 				for(SqlTrhanbaiinvDiffQtyCountryTaxList result : diffQtyCountryTaxList) {
-					taxMap.put(result.getPcd(), result.getTotal());
+					taxMap.put(result.getPcd(), result.getTotal().longValue());
 				}
 				for(SqlTrhanbaiinvBackList result : backList) {
-					backItemMap.put(result.getPcd(), result.getTotal());
+					backItemMap.put(result.getPcd(), result.getTotal().longValue());
 				}
 				for(SqlTrhanbaiinvNotObjectList result : notObjectList) {
-					badItemMap.put(result.getPcd(), result.getTotal());
+					badItemMap.put(result.getPcd(), result.getTotal().longValue());
 				}
 				for(SqlTrhanbaiinvBackOneRegistList result : backOneRegistList) {
-					registItemMap.put(result.getPcd(), result.getTotal());
+					registItemMap.put(result.getPcd(), result.getTotal().longValue());
 				}
 				for(SqlTrhanbaiinvList06 result : inv06List) {
 					TInventoryInst entity = new TInventoryInst();
@@ -661,101 +666,111 @@ public class InventoryCreateLogic extends AbstractWmsLogic {
 					entity.setProductionId(result.getPid());
 					entity.setProductCd(result.getPcd());
 					entity.setInoutKbn(result.getInoutkbn());
-					for(Entry<String, BigDecimal> entry : returnItemMap.entrySet()) {
+					for(Entry<String, Long> entry : returnItemMap.entrySet()) {
 						if(result.getPcd().equals(entry.getKey())) {
 							entity.setRetrunTotal(entry.getValue());
 						}
 					}
-					for(Entry<String, BigDecimal> entry : taxMap.entrySet()) {
+					for(Entry<String, Long> entry : taxMap.entrySet()) {
 						if(result.getPcd().equals(entry.getKey())) {
 							entity.setTaxlessTotal(entry.getValue());
 						}
 					}
-					for(Entry<String, BigDecimal> entry : backItemMap.entrySet()) {
+					for(Entry<String, Long> entry : backItemMap.entrySet()) {
 						if(result.getPcd().equals(entry.getKey())) {
 							entity.setBackTotal(entry.getValue());
 						}
 					}
-					for(Entry<String, BigDecimal> entry : badItemMap.entrySet()) {
+					for(Entry<String, Long> entry : badItemMap.entrySet()) {
 						if(result.getPcd().equals(entry.getKey())) {
 							entity.setNotObjectTotal(entry.getValue());
 						}
 					}
-					for(Entry<String, BigDecimal> entry : registItemMap.entrySet()) {
+					for(Entry<String, Long> entry : registItemMap.entrySet()) {
 						if(result.getPcd().equals(entry.getKey())) {
 							entity.setRegistTotal(entry.getValue());
 						}
 					}
-					entity.setTaxTotal(BigDecimal.valueOf(result.getTaxtota()));
+					entity.setTaxTotal(result.getTaxtota());
 					tInventoryInstList.add(entity);
 				}
-				//拠点採番マスタからWMS棚卸バッチNo.を取得する
-				String numberTake = numberingCenterLogic.getNumbering(clientCenter.getCenterId(), WmsNumberingConst.INVENTORY_BATCH_NUM);
-				if(numberTake == null || numberTake.isEmpty()) {
-					this.getErrorManager().add(errSts, WmsMessageConst.NUMBERING_CENTER_NOT_FOUND_ERROR);
-					return;
-				}
-				//在庫調査指示キー初期化
-				instKey = String.format("%10s", numberTake).replace(" ", "0");
-				//棚卸ヘッダデータの登録
-				TInventoryH tInventoryH = new TInventoryH();
-				tInventoryH.setClientId(clientCenter.getClientId());
-				tInventoryH.setCenterId(clientCenter.getCenterId());
-				tInventoryH.setBatchNum(Long.valueOf(numberTake));
-				tInventoryH.setInventoryDt(clientCenter.getSystemDt());
-				tInventoryH.setInventoryKey(Long.valueOf(instKey));
-				List<TInventoryB> bodyList = new ArrayList<TInventoryB>();
-				for(TInventoryInst entity : tInventoryInstList) {
-					int index = 0;
-					TInventoryB body = new TInventoryB();
-					body.setProductId(entity.getProductionId());
-					body.setLocationId(entity.getLocationId());
-					body.setChargeNum(entity.getSumcharge());
-					body.setAllocNum(entity.getSumalloc());
-					body.setMoveNum(entity.getMoveNum());
-					body.setInventoryNum(WCC.ZERO);
-					body.setInputType_$00();
-					body.setStockAdjustFlg_$0();
-					body.setProductCd(entity.getProductCd());
-					body.setFirmtransportCd(entity.getLot1());
-					body.setManufactureDt(entity.getLot4());
-					body.setManufactureSymbol(entity.getLot2());
-					body.setFcflg(entity.getInoutKbn());
-					body.setDiffqtyHenpin(entity.getRetrunTotal().longValue());
-					body.setDiffqtyTaxrefond(entity.getTaxlessTotal().longValue());
-					body.setSuffererQty(entity.getBackTotal().longValue());
-					body.setMonthStatussu(entity.getNotObjectTotal().longValue());
-					body.setBlukRecivedQty(entity.getRegistTotal().longValue());
-					body.setRefunditemQty(entity.getTaxTotal().longValue());
-//					TInventoryR report = new TInventoryR();
-//					report.setTwlOutFlg_$0();
-					body.getTInventoryRAsOne().setTwlOutFlg_$0();
-					//棚卸ボディ
-					//bodyList.add(body);
-					tInventoryH.getTInventoryBList().set(index, body);
-					index++;
-				}
-				//tInventoryHBhv.insert(tInventoryH);
-				TInventoryInst inst = new TInventoryInst();
-				inst.setFromLocationCd(fromLocationCd);
-				inst.setToLocationCd(toLocationCd);
-				inst.setStockExistOnlyFlg_$0();
-				inst.setInventoryInstKbn(inventoryInstKbn);
-				inst.setLineBlock(tInventoryInst.getLineBlock());
-				if(CDef.InventoryInstKbn.$02.code().equals(inventoryInstKbn)) {
-					inst.setDirectionalPiston(tInventoryInstList.get(0).getDirectionalPiston());
-					inst.setSortingOrder(tInventoryInstList.get(0).getSortingOrder());
-					inst.setSortingNumTimes(tInventoryInstList.get(0).getSortingWrokNumtimes());
-				}
-				inst.setLocationCd(tInventoryInst.getLocationCd());
-				inst.setProductCd(tInventoryInst.getProductCd());
-				inst.setProductDivision(tInventoryInst.getProductDivision());
-				inst.setLocationGrp(tInventoryInst.getLocationGrp());
-				inst.setTInventoryH(tInventoryH);
-				tInventoryInstBhv.insert(inst);
+				
 				break;
 			default:
 		}
+		//拠点採番マスタからWMS棚卸バッチNo.を取得する
+		String numberTake = numberingCenterLogic.getNumbering(clientCenter.getCenterId(), WmsNumberingConst.INVENTORY_BATCH_NUM);
+		if(numberTake == null || numberTake.isEmpty()) {
+			this.getErrorManager().add(errSts, WmsMessageConst.NUMBERING_CENTER_NOT_FOUND_ERROR);
+			return;
+		}
+		//在庫調査指示キー初期化
+		instKey = String.format("%10s", numberTake).replace(" ", "0");
+		//棚卸ヘッダデータの登録
+		TInventoryH tInventoryH = new TInventoryH();
+		tInventoryH.setClientId(clientCenter.getClientId());
+		tInventoryH.setCenterId(clientCenter.getCenterId());
+		tInventoryH.setBatchNum(Long.valueOf(numberTake));
+		tInventoryH.setInventoryDt(clientCenter.getSystemDt());
+		tInventoryH.setInventoryKey(Long.valueOf(instKey));
+		tInventoryHBhv.insert(tInventoryH);
+		Long headId = tInventoryH.getInventoryHId();
+		//棚卸ボディデータを登録
+		List<TInventoryB> bodyList = new ArrayList<TInventoryB>();
+		for(TInventoryInst entity : tInventoryInstList) {
+			TInventoryB body = new TInventoryB();
+			body.setInventoryHId(headId);
+			body.setProductId(entity.getProductionId());
+			body.setLocationId(entity.getLocationId());
+			body.setChargeNum(entity.getSumcharge());
+			body.setAllocNum(entity.getSumalloc());
+			body.setMoveNum(entity.getMoveNum());
+			body.setInventoryNum(WCC.ZERO);
+			body.setInputType_$00();
+			body.setStockAdjustFlg_$0();
+			body.setProductCd(entity.getProductCd());
+			body.setFirmtransportCd(entity.getLot1());
+			body.setManufactureDt(entity.getLot4());
+			body.setManufactureSymbol(entity.getLot2());
+			body.setFcflg(entity.getInoutKbn());
+			body.setDiffqtyHenpin(entity.getRetrunTotal());
+			body.setDiffqtyTaxrefond(entity.getTaxlessTotal());
+			body.setSuffererQty(entity.getBackTotal());
+			body.setMonthStatussu(entity.getNotObjectTotal());
+			body.setBlukRecivedQty(entity.getRegistTotal());
+			body.setRefunditemQty(entity.getTaxTotal());
+			//棚卸ボディ
+			bodyList.add(body);
+		}
+		tInventoryBhv.batchInsert(bodyList);
+		//棚卸帳票データを登録
+		List<TInventoryR> reportList = new ArrayList<TInventoryR>();
+		for(TInventoryB body : bodyList) {
+			TInventoryR report = new TInventoryR();
+			report.setInventoryBId(body.getInventoryBId());
+			report.setTwlOutFlg_$0();
+			reportList.add(report);
+		}
+		tInventoryRBhv.batchInsert(reportList);
+		//tInventoryHBhv.insert(tInventoryH);
+		//棚卸指示データの登録
+		TInventoryInst inst = new TInventoryInst();
+		inst.setInventoryHId(headId);
+		inst.setFromLocationCd(fromLocationCd);
+		inst.setToLocationCd(toLocationCd);
+		inst.setStockExistOnlyFlg_$0();
+		inst.setInventoryInstKbn(inventoryInstKbn);
+		inst.setLineBlock(tInventoryInst.getLineBlock());
+		if(CDef.InventoryInstKbn.$02.code().equals(inventoryInstKbn)) {
+			inst.setDirectionalPiston(tInventoryInstList.get(0).getDirectionalPiston());
+			inst.setSortingOrder(tInventoryInstList.get(0).getSortingOrder());
+			inst.setSortingNumTimes(tInventoryInstList.get(0).getSortingWrokNumtimes());
+		}
+		inst.setLocationCd(tInventoryInst.getLocationCd());
+		inst.setProductCd(tInventoryInst.getProductCd());
+		inst.setProductDivision(tInventoryInst.getProductDivision());
+		inst.setLocationGrp(tInventoryInst.getLocationGrp());
+		tInventoryInstBhv.insert(inst);
 		//入力.在庫調査区分が'01'(仕分場(開始))または'03'(仕分場(終了))の場合
 		if(Arrays.asList(CDef.InventoryInstKbn.$01.code(),CDef.InventoryInstKbn.$03.code()).contains(inventoryInstKbn)) {
 			SqlInventoryBInvCreatePmb sqlInventoryBInvCreatePmb = new SqlInventoryBInvCreatePmb();

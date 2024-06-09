@@ -4,7 +4,7 @@ import com.oneslogi.base.dbflute.bsbhv.pmbean.BsSqlInventoryInfoOffsetPmb;
 
 /**
  * <!-- df:beginClassDescription -->
- * The typed parameter-bean of SqlInventoryInfoOffset. <span style="color: #AD4747">(typed to entity, auto-paging)</span><br>
+ * The typed parameter-bean of SqlInventoryInfoOffset. <span style="color: #AD4747">(typed to list, entity)</span><br>
  * This is related to "<span style="color: #AD4747">selectSqlInventoryInfoOffset</span>" on TInventoryHBhv, <br>
  * described as "棚卸ヘッダをリスト検索、ケース在庫調査情報、在庫調査補正情報を取得する。". <br>
  * <!-- df:endClassDescription -->

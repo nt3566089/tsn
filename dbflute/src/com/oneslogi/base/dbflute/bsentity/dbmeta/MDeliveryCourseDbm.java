@@ -79,11 +79,11 @@ public class MDeliveryCourseDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCarrierSlipYupk(), (et, vl) -> ((MDeliveryCourse)et).setMCarrierSlipYupk((MCarrierSlipYupk)vl), "MCarrierSlipYupk");
-        setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCenter(), (et, vl) -> ((MDeliveryCourse)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCarrier(), (et, vl) -> ((MDeliveryCourse)et).setMCarrier((MCarrier)vl), "MCarrier");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCarrierSlipSgw(), (et, vl) -> ((MDeliveryCourse)et).setMCarrierSlipSgw((MCarrierSlipSgw)vl), "MCarrierSlipSgw");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCarrierSlipYmt(), (et, vl) -> ((MDeliveryCourse)et).setMCarrierSlipYmt((MCarrierSlipYmt)vl), "MCarrierSlipYmt");
+        setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCarrierSlipYupk(), (et, vl) -> ((MDeliveryCourse)et).setMCarrierSlipYupk((MCarrierSlipYupk)vl), "MCarrierSlipYupk");
+        setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCenter(), (et, vl) -> ((MDeliveryCourse)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getBClassDtlByDelFlg(), (et, vl) -> ((MDeliveryCourse)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCenterClassDtlByTagDataType(), (et, vl) -> ((MDeliveryCourse)et).setMCenterClassDtlByTagDataType((MCenterClassDtl)vl), "MCenterClassDtlByTagDataType");
         setupEfpg(_efpgMap, et -> ((MDeliveryCourse)et).getMCenterClassDtlByTagType(), (et, vl) -> ((MDeliveryCourse)et).setMCenterClassDtlByTagType((MCenterClassDtl)vl), "MCenterClassDtlByTagType");
@@ -337,28 +337,12 @@ public class MDeliveryCourseDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCarrierSlipYupk() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierSlipYupkId(), MCarrierSlipYupkDbm.getInstance().columnCarrierSlipYupkId());
-        return cfi("M_DELIVERY_COURSE_FK4", "MCarrierSlipYupk", this, MCarrierSlipYupkDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("M_DELIVERY_COURSE_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
-    }
-    /**
      * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCarrier() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierId(), MCarrierDbm.getInstance().columnCarrierId());
-        return cfi("M_DELIVERY_COURSE_FK2", "MCarrier", this, MCarrierDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
+        return cfi("M_DELIVERY_COURSE_FK2", "MCarrier", this, MCarrierDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
     }
     /**
      * M_CARRIER_SLIP_SGW by my CARRIER_SLIP_SGW_ID, named 'MCarrierSlipSgw'.
@@ -366,7 +350,7 @@ public class MDeliveryCourseDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCarrierSlipSgw() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierSlipSgwId(), MCarrierSlipSgwDbm.getInstance().columnCarrierSlipSgwId());
-        return cfi("M_DELIVERY_COURSE_FK1", "MCarrierSlipSgw", this, MCarrierSlipSgwDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
+        return cfi("M_DELIVERY_COURSE_FK1", "MCarrierSlipSgw", this, MCarrierSlipSgwDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
     }
     /**
      * M_CARRIER_SLIP_YMT by my CARRIER_SLIP_YMT_ID, named 'MCarrierSlipYmt'.
@@ -374,7 +358,23 @@ public class MDeliveryCourseDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCarrierSlipYmt() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierSlipYmtId(), MCarrierSlipYmtDbm.getInstance().columnCarrierSlipYmtId());
-        return cfi("M_DELIVERY_COURSE_FK5", "MCarrierSlipYmt", this, MCarrierSlipYmtDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
+        return cfi("M_DELIVERY_COURSE_FK5", "MCarrierSlipYmt", this, MCarrierSlipYmtDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
+    }
+    /**
+     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCarrierSlipYupk() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCarrierSlipYupkId(), MCarrierSlipYupkDbm.getInstance().columnCarrierSlipYupkId());
+        return cfi("M_DELIVERY_COURSE_FK4", "MCarrierSlipYupk", this, MCarrierSlipYupkDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
+    }
+    /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("M_DELIVERY_COURSE_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "MDeliveryCourseList", false);
     }
     /**
      * B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'.

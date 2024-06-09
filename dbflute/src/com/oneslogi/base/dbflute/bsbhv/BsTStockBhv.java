@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, T_LOT, M_STOCK_TYPE, M_CLIENT, M_PRODUCT, M_WAREHOUSE, M_CUSTOMER, T_STORE_NO, M_LOCATION, T_STOCK_REPORT(AsOne)
+ *     M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, T_STOCK_REPORT(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_B, T_PALLET, T_PICKING_B, T_STOCK_INOUT, T_TRIMALLOCSTOCK, T_TRPICKDETAIL, T_STOCK_REPORT
  *
  * [foreign property]
- *     mShape, tLot, mStockType, mClient, mProduct, mWarehouse, mCustomer, tStoreNo, mLocation, tStockReportAsOne
+ *     mClient, mCustomer, mLocation, tLot, mProduct, mShape, mStockType, tStoreNo, mWarehouse, tStockReportAsOne
  *
  * [referrer property]
  *     tInventoryBList, tPalletList, tPickingBList, tStockInoutList, tTrimallocstockList, tTrpickdetailList
@@ -957,52 +957,12 @@ public abstract class BsTStockBhv extends AbstractBehaviorWritable<TStock, TStoc
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MShape'.
-     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MShape> pulloutMShape(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "mShape"); }
-
-    /**
-     * Pull out the list of foreign table 'TLot'.
-     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TLot> pulloutTLot(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "tLot"); }
-
-    /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "mStockType"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MClient> pulloutMClient(List<TStock> tStockList)
     { return helpPulloutInternally(tStockList, "mClient"); }
-
-    /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "mProduct"); }
-
-    /**
-     * Pull out the list of foreign table 'MWarehouse'.
-     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MWarehouse> pulloutMWarehouse(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "mWarehouse"); }
 
     /**
      * Pull out the list of foreign table 'MCustomer'.
@@ -1013,6 +973,46 @@ public abstract class BsTStockBhv extends AbstractBehaviorWritable<TStock, TStoc
     { return helpPulloutInternally(tStockList, "mCustomer"); }
 
     /**
+     * Pull out the list of foreign table 'MLocation'.
+     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MLocation> pulloutMLocation(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "mLocation"); }
+
+    /**
+     * Pull out the list of foreign table 'TLot'.
+     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TLot> pulloutTLot(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "tLot"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'MShape'.
+     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MShape> pulloutMShape(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "mShape"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "mStockType"); }
+
+    /**
      * Pull out the list of foreign table 'TStoreNo'.
      * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -1021,12 +1021,12 @@ public abstract class BsTStockBhv extends AbstractBehaviorWritable<TStock, TStoc
     { return helpPulloutInternally(tStockList, "tStoreNo"); }
 
     /**
-     * Pull out the list of foreign table 'MLocation'.
+     * Pull out the list of foreign table 'MWarehouse'.
      * @param tStockList The list of tStock. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MLocation> pulloutMLocation(List<TStock> tStockList)
-    { return helpPulloutInternally(tStockList, "mLocation"); }
+    public List<MWarehouse> pulloutMWarehouse(List<TStock> tStockList)
+    { return helpPulloutInternally(tStockList, "mWarehouse"); }
 
     /**
      * Pull out the list of referrer-as-one table 'TStockReport'.

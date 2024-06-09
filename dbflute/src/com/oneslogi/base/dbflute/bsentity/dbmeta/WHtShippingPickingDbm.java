@@ -86,9 +86,9 @@ public class WHtShippingPickingDbm extends AbstractDBMeta {
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getMCenter(), (et, vl) -> ((WHtShippingPicking)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getMClient(), (et, vl) -> ((WHtShippingPicking)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getMProduct(), (et, vl) -> ((WHtShippingPicking)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getTLot(), (et, vl) -> ((WHtShippingPicking)et).setTLot((TLot)vl), "TLot");
         setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getMLocation(), (et, vl) -> ((WHtShippingPicking)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getTLot(), (et, vl) -> ((WHtShippingPicking)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((WHtShippingPicking)et).getMProduct(), (et, vl) -> ((WHtShippingPicking)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -377,12 +377,12 @@ public class WHtShippingPickingDbm extends AbstractDBMeta {
         return cfi("W_HT_SHIPPING_PICKING_FK1", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
     }
     /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_HT_SHIPPING_PICKING_FK5", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("W_HT_SHIPPING_PICKING_FK3", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
     }
     /**
      * T_LOT by my LOT_ID, named 'TLot'.
@@ -393,12 +393,12 @@ public class WHtShippingPickingDbm extends AbstractDBMeta {
         return cfi("W_HT_SHIPPING_PICKING_FK4", "TLot", this, TLotDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
     }
     /**
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("W_HT_SHIPPING_PICKING_FK3", "MLocation", this, MLocationDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("W_HT_SHIPPING_PICKING_FK5", "MProduct", this, MProductDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtShippingPickingList", false);
     }
 
     // -----------------------------------------------------

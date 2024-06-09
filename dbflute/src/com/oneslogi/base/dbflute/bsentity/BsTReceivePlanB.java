@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, M_WAREHOUSE, T_RECEIVE_PLAN_H, M_PRODUCT, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
+ *     M_LOCATION, M_WAREHOUSE, M_PRODUCT, T_RECEIVE_PLAN_H, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_RECEIVE_PLAN_SPARE, T_TRRCVDETAIL
  *
  * [foreign property]
- *     mLocation, mWarehouse, tReceivePlanH, mProduct, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
+ *     mLocation, mWarehouse, mProduct, tReceivePlanH, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -544,25 +544,6 @@ public abstract class BsTReceivePlanB extends AbstractEntity implements DomainEn
         _mWarehouse = mWarehouse;
     }
 
-    /** T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. */
-    protected TReceivePlanH _tReceivePlanH;
-
-    /**
-     * [get] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. <br>
-     * @return The entity of foreign property 'TReceivePlanH'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TReceivePlanH getTReceivePlanH() {
-        return _tReceivePlanH;
-    }
-
-    /**
-     * [set] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @param tReceivePlanH The entity of foreign property 'TReceivePlanH'. (NullAllowed)
-     */
-    public void setTReceivePlanH(TReceivePlanH tReceivePlanH) {
-        _tReceivePlanH = tReceivePlanH;
-    }
-
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
     protected MProduct _mProduct;
 
@@ -580,6 +561,25 @@ public abstract class BsTReceivePlanB extends AbstractEntity implements DomainEn
      */
     public void setMProduct(MProduct mProduct) {
         _mProduct = mProduct;
+    }
+
+    /** T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. */
+    protected TReceivePlanH _tReceivePlanH;
+
+    /**
+     * [get] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. <br>
+     * @return The entity of foreign property 'TReceivePlanH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TReceivePlanH getTReceivePlanH() {
+        return _tReceivePlanH;
+    }
+
+    /**
+     * [set] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @param tReceivePlanH The entity of foreign property 'TReceivePlanH'. (NullAllowed)
+     */
+    public void setTReceivePlanH(TReceivePlanH tReceivePlanH) {
+        _tReceivePlanH = tReceivePlanH;
     }
 
     /** B_CLASS_DTL by my ERROR_FLG, named 'BClassDtlByErrorFlg'. */
@@ -714,10 +714,10 @@ public abstract class BsTReceivePlanB extends AbstractEntity implements DomainEn
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
         if (_mWarehouse != null)
         { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
-        if (_tReceivePlanH != null)
-        { sb.append(li).append(xbRDS(_tReceivePlanH, "tReceivePlanH")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_tReceivePlanH != null)
+        { sb.append(li).append(xbRDS(_tReceivePlanH, "tReceivePlanH")); }
         if (_bClassDtlByErrorFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByErrorFlg, "bClassDtlByErrorFlg")); }
         if (_bClassDtlByReceiveStatus != null)
@@ -774,10 +774,10 @@ public abstract class BsTReceivePlanB extends AbstractEntity implements DomainEn
         { sb.append(dm).append("mLocation"); }
         if (_mWarehouse != null)
         { sb.append(dm).append("mWarehouse"); }
-        if (_tReceivePlanH != null)
-        { sb.append(dm).append("tReceivePlanH"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
+        if (_tReceivePlanH != null)
+        { sb.append(dm).append("tReceivePlanH"); }
         if (_bClassDtlByErrorFlg != null)
         { sb.append(dm).append("bClassDtlByErrorFlg"); }
         if (_bClassDtlByReceiveStatus != null)

@@ -83,12 +83,12 @@ public class TAllocInstHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCustomerBySupplyCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCustomerBySupplyCustomerId((MCustomer)vl), "MCustomerBySupplyCustomerId");
-        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMProcessType(), (et, vl) -> ((TAllocInstH)et).setMProcessType((MProcessType)vl), "MProcessType");
         setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCenter(), (et, vl) -> ((TAllocInstH)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCustomerByDelivCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCustomerByDelivCustomerId((MCustomer)vl), "MCustomerByDelivCustomerId");
-        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMDeliveryCourse(), (et, vl) -> ((TAllocInstH)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
         setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMClient(), (et, vl) -> ((TAllocInstH)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMDeliveryCourse(), (et, vl) -> ((TAllocInstH)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
+        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCustomerByDelivCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCustomerByDelivCustomerId((MCustomer)vl), "MCustomerByDelivCustomerId");
+        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMProcessType(), (et, vl) -> ((TAllocInstH)et).setMProcessType((MProcessType)vl), "MProcessType");
+        setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCustomerBySupplyCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCustomerBySupplyCustomerId((MCustomer)vl), "MCustomerBySupplyCustomerId");
         setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getTPickingH(), (et, vl) -> ((TAllocInstH)et).setTPickingH((TPickingH)vl), "TPickingH");
         setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCenterCustomerByDelivCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCenterCustomerByDelivCustomerId((MCenterCustomer)vl), "MCenterCustomerByDelivCustomerId");
         setupEfpg(_efpgMap, et -> ((TAllocInstH)et).getMCenterCustomerBySupplyCustomerId(), (et, vl) -> ((TAllocInstH)et).setMCenterCustomerBySupplyCustomerId((MCenterCustomer)vl), "MCenterCustomerBySupplyCustomerId");
@@ -358,28 +358,28 @@ public class TAllocInstHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCustomerBySupplyCustomerId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSupplyCustomerId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_ALLOC_INST_H_FK4", "MCustomerBySupplyCustomerId", this, MCustomerDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TAllocInstHBySupplyCustomerIdList", false);
-    }
-    /**
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProcessType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_ALLOC_INST_H_FK6", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_ALLOC_INST_H_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
+        return cfi("T_ALLOC_INST_H_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
+    }
+    /**
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("T_ALLOC_INST_H_FK5", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
+    }
+    /**
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMDeliveryCourse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
+        return cfi("T_ALLOC_INST_H_FK2", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
     }
     /**
      * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
@@ -390,20 +390,20 @@ public class TAllocInstHDbm extends AbstractDBMeta {
         return cfi("T_ALLOC_INST_H_FK1", "MCustomerByDelivCustomerId", this, MCustomerDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TAllocInstHByDelivCustomerIdList", false);
     }
     /**
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMDeliveryCourse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
-        return cfi("T_ALLOC_INST_H_FK2", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
+    public ForeignInfo foreignMProcessType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
+        return cfi("T_ALLOC_INST_H_FK6", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
     }
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_ALLOC_INST_H_FK5", "MClient", this, MClientDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TAllocInstHList", false);
+    public ForeignInfo foreignMCustomerBySupplyCustomerId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSupplyCustomerId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_ALLOC_INST_H_FK4", "MCustomerBySupplyCustomerId", this, MCustomerDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TAllocInstHBySupplyCustomerIdList", false);
     }
     /**
      * T_PICKING_H by my ALLOC_INST_H_ID, named 'TPickingH'.

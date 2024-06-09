@@ -1684,20 +1684,20 @@ public class BsMParamCQ extends AbstractBsMParamCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MParamCQ bq = (MParamCQ)bqs;
         MParamCQ uq = (MParamCQ)uqs;
-        if (bq.hasConditionQueryMDeliveryCourse()) {
-            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
-        }
-        if (bq.hasConditionQueryMBoxGrp()) {
-            uq.queryMBoxGrp().reflectRelationOnUnionQuery(bq.queryMBoxGrp(), uq.queryMBoxGrp());
+        if (bq.hasConditionQueryMClientCenter()) {
+            uq.queryMClientCenter().reflectRelationOnUnionQuery(bq.queryMClientCenter(), uq.queryMClientCenter());
         }
         if (bq.hasConditionQueryMBox()) {
             uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
         }
+        if (bq.hasConditionQueryMDeliveryCourse()) {
+            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
+        }
         if (bq.hasConditionQueryMZone()) {
             uq.queryMZone().reflectRelationOnUnionQuery(bq.queryMZone(), uq.queryMZone());
         }
-        if (bq.hasConditionQueryMClientCenter()) {
-            uq.queryMClientCenter().reflectRelationOnUnionQuery(bq.queryMClientCenter(), uq.queryMClientCenter());
+        if (bq.hasConditionQueryMBoxGrp()) {
+            uq.queryMBoxGrp().reflectRelationOnUnionQuery(bq.queryMBoxGrp(), uq.queryMBoxGrp());
         }
         if (bq.hasConditionQueryBClassDtlByAfterTagOutFlg()) {
             uq.queryBClassDtlByAfterTagOutFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByAfterTagOutFlg(), uq.queryBClassDtlByAfterTagOutFlg());
@@ -1850,43 +1850,23 @@ public class BsMParamCQ extends AbstractBsMParamCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MDeliveryCourseCQ queryMDeliveryCourse() {
-        return xdfgetConditionQueryMDeliveryCourse();
+    public MClientCenterCQ queryMClientCenter() {
+        return xdfgetConditionQueryMClientCenter();
     }
-    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
-        String prop = "mDeliveryCourse";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
+    public MClientCenterCQ xdfgetConditionQueryMClientCenter() {
+        String prop = "mClientCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClientCenter()); xsetupOuterJoinMClientCenter(); }
         return xgetQueRlMap(prop);
     }
-    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
-        String nrp = xresolveNRP("M_PARAM", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
+    protected MClientCenterCQ xcreateQueryMClientCenter() {
+        String nrp = xresolveNRP("M_PARAM", "mClientCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClientCenter", nrp);
     }
-    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
-    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MBoxGrpCQ queryMBoxGrp() {
-        return xdfgetConditionQueryMBoxGrp();
-    }
-    public MBoxGrpCQ xdfgetConditionQueryMBoxGrp() {
-        String prop = "mBoxGrp";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBoxGrp()); xsetupOuterJoinMBoxGrp(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MBoxGrpCQ xcreateQueryMBoxGrp() {
-        String nrp = xresolveNRP("M_PARAM", "mBoxGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MBoxGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBoxGrp", nrp);
-    }
-    protected void xsetupOuterJoinMBoxGrp() { xregOutJo("mBoxGrp"); }
-    public boolean hasConditionQueryMBoxGrp() { return xhasQueRlMap("mBoxGrp"); }
+    protected void xsetupOuterJoinMClientCenter() { xregOutJo("mClientCenter"); }
+    public boolean hasConditionQueryMClientCenter() { return xhasQueRlMap("mClientCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1910,6 +1890,26 @@ public class BsMParamCQ extends AbstractBsMParamCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MDeliveryCourseCQ queryMDeliveryCourse() {
+        return xdfgetConditionQueryMDeliveryCourse();
+    }
+    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
+        String prop = "mDeliveryCourse";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
+        String nrp = xresolveNRP("M_PARAM", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
+    }
+    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
+    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * M_ZONE by my EM_REPLENISH_ZONE_ID, named 'MZone'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1930,23 +1930,23 @@ public class BsMParamCQ extends AbstractBsMParamCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MClientCenterCQ queryMClientCenter() {
-        return xdfgetConditionQueryMClientCenter();
+    public MBoxGrpCQ queryMBoxGrp() {
+        return xdfgetConditionQueryMBoxGrp();
     }
-    public MClientCenterCQ xdfgetConditionQueryMClientCenter() {
-        String prop = "mClientCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClientCenter()); xsetupOuterJoinMClientCenter(); }
+    public MBoxGrpCQ xdfgetConditionQueryMBoxGrp() {
+        String prop = "mBoxGrp";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBoxGrp()); xsetupOuterJoinMBoxGrp(); }
         return xgetQueRlMap(prop);
     }
-    protected MClientCenterCQ xcreateQueryMClientCenter() {
-        String nrp = xresolveNRP("M_PARAM", "mClientCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClientCenter", nrp);
+    protected MBoxGrpCQ xcreateQueryMBoxGrp() {
+        String nrp = xresolveNRP("M_PARAM", "mBoxGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MBoxGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBoxGrp", nrp);
     }
-    protected void xsetupOuterJoinMClientCenter() { xregOutJo("mClientCenter"); }
-    public boolean hasConditionQueryMClientCenter() { return xhasQueRlMap("mClientCenter"); }
+    protected void xsetupOuterJoinMBoxGrp() { xregOutJo("mBoxGrp"); }
+    public boolean hasConditionQueryMBoxGrp() { return xhasQueRlMap("mBoxGrp"); }
 
     /**
      * Get the condition-query for relation table. <br>

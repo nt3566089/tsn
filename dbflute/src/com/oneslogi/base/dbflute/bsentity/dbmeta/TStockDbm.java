@@ -84,15 +84,15 @@ public class TStockDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TStock)et).getMShape(), (et, vl) -> ((TStock)et).setMShape((MShape)vl), "MShape");
-        setupEfpg(_efpgMap, et -> ((TStock)et).getTLot(), (et, vl) -> ((TStock)et).setTLot((TLot)vl), "TLot");
-        setupEfpg(_efpgMap, et -> ((TStock)et).getMStockType(), (et, vl) -> ((TStock)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((TStock)et).getMClient(), (et, vl) -> ((TStock)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((TStock)et).getMProduct(), (et, vl) -> ((TStock)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((TStock)et).getMWarehouse(), (et, vl) -> ((TStock)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
         setupEfpg(_efpgMap, et -> ((TStock)et).getMCustomer(), (et, vl) -> ((TStock)et).setMCustomer((MCustomer)vl), "MCustomer");
-        setupEfpg(_efpgMap, et -> ((TStock)et).getTStoreNo(), (et, vl) -> ((TStock)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
         setupEfpg(_efpgMap, et -> ((TStock)et).getMLocation(), (et, vl) -> ((TStock)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getTLot(), (et, vl) -> ((TStock)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getMProduct(), (et, vl) -> ((TStock)et).setMProduct((MProduct)vl), "MProduct");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getMShape(), (et, vl) -> ((TStock)et).setMShape((MShape)vl), "MShape");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getMStockType(), (et, vl) -> ((TStock)et).setMStockType((MStockType)vl), "MStockType");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getTStoreNo(), (et, vl) -> ((TStock)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
+        setupEfpg(_efpgMap, et -> ((TStock)et).getMWarehouse(), (et, vl) -> ((TStock)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
         setupEfpg(_efpgMap, et -> ((TStock)et).getTStockReportAsOne(), (et, vl) -> ((TStock)et).setTStockReportAsOne((TStockReport)vl), "TStockReportAsOne");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -376,12 +376,28 @@ public class TStockDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMShape() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
-        return cfi("T_STOCK_FK2", "MShape", this, MShapeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStockList", false);
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("T_STOCK_FK5", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStockList", false);
+    }
+    /**
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCustomer() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_STOCK_FK9", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStockList", false);
+    }
+    /**
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("T_STOCK_FK7", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
      * T_LOT by my LOT_ID, named 'TLot'.
@@ -389,23 +405,7 @@ public class TStockDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTLot() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("T_STOCK_FK3", "TLot", this, TLotDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStockList", false);
-    }
-    /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("T_STOCK_FK6", "MStockType", this, MStockTypeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStockList", false);
-    }
-    /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_STOCK_FK5", "MClient", this, MClientDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStockList", false);
+        return cfi("T_STOCK_FK3", "TLot", this, TLotDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -416,20 +416,20 @@ public class TStockDbm extends AbstractDBMeta {
         return cfi("T_STOCK_FK8", "MProduct", this, MProductDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMWarehouse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("T_STOCK_FK4", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TStockList", false);
+    public ForeignInfo foreignMShape() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
+        return cfi("T_STOCK_FK2", "MShape", this, MShapeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCustomer() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_STOCK_FK9", "MCustomer", this, MCustomerDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStockList", false);
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("T_STOCK_FK6", "MStockType", this, MStockTypeDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
      * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
@@ -440,12 +440,12 @@ public class TStockDbm extends AbstractDBMeta {
         return cfi("T_STOCK_FK1", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_STOCK_FK7", "MLocation", this, MLocationDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TStockList", false);
+    public ForeignInfo foreignMWarehouse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
+        return cfi("T_STOCK_FK4", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TStockList", false);
     }
     /**
      * T_STOCK_REPORT by STOCK_ID, named 'TStockReportAsOne'.

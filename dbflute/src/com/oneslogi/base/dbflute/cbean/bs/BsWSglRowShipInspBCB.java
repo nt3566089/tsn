@@ -265,33 +265,33 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BUserNss _nssBUser;
-    public BUserNss xdfgetNssBUser() {
-        if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
-        return _nssBUser;
+    protected TPickingHNss _nssTPickingH;
+    public TPickingHNss xdfgetNssTPickingH() {
+        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
+        return _nssTPickingH;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * B_USER by my USER_ID, named 'BUser'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * <pre>
      * <span style="color: #0000C0">wSglRowShipInspBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUser()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wSglRowShipInspB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wSglRowShipInspB</span>.<span style="color: #CC4747">getBUser()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wSglRowShipInspB</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public BUserNss setupSelect_BUser() {
-        assertSetupSelectPurpose("bUser");
+    public TPickingHNss setupSelect_TPickingH() {
+        assertSetupSelectPurpose("tPickingH");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnUserId();
+            specify().columnPickingHId();
         }
-        doSetupSelect(() -> query().queryBUser());
-        if (_nssBUser == null || !_nssBUser.hasConditionQuery())
-        { _nssBUser = new BUserNss(query().queryBUser()); }
-        return _nssBUser;
+        doSetupSelect(() -> query().queryTPickingH());
+        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
+        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
+        return _nssTPickingH;
     }
 
     protected WSglRowShipInspHNss _nssWSglRowShipInspH;
@@ -323,33 +323,33 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
         return _nssWSglRowShipInspH;
     }
 
-    protected TPickingHNss _nssTPickingH;
-    public TPickingHNss xdfgetNssTPickingH() {
-        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
-        return _nssTPickingH;
+    protected BUserNss _nssBUser;
+    public BUserNss xdfgetNssBUser() {
+        if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
+        return _nssBUser;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * B_USER by my USER_ID, named 'BUser'.
      * <pre>
      * <span style="color: #0000C0">wSglRowShipInspBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUser()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wSglRowShipInspB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wSglRowShipInspB</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wSglRowShipInspB</span>.<span style="color: #CC4747">getBUser()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TPickingHNss setupSelect_TPickingH() {
-        assertSetupSelectPurpose("tPickingH");
+    public BUserNss setupSelect_BUser() {
+        assertSetupSelectPurpose("bUser");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnPickingHId();
+            specify().columnUserId();
         }
-        doSetupSelect(() -> query().queryTPickingH());
-        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
-        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
-        return _nssTPickingH;
+        doSetupSelect(() -> query().queryBUser());
+        if (_nssBUser == null || !_nssBUser.hasConditionQuery())
+        { _nssBUser = new BUserNss(query().queryBUser()); }
+        return _nssBUser;
     }
 
     protected BClassDtlNss _nssBClassDtlByInspectionFlg;
@@ -422,9 +422,9 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WSglRowShipInspBCQ> {
-        protected BUserCB.HpSpecification _bUser;
-        protected WSglRowShipInspHCB.HpSpecification _wSglRowShipInspH;
         protected TPickingHCB.HpSpecification _tPickingH;
+        protected WSglRowShipInspHCB.HpSpecification _wSglRowShipInspH;
+        protected BUserCB.HpSpecification _bUser;
         protected BClassDtlCB.HpSpecification _bClassDtlByInspectionFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WSglRowShipInspBCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -510,17 +510,17 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnSglRowShipInspBId(); // PK
-            if (qyCall().qy().hasConditionQueryBUser()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnUserId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTPickingH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
+                columnPickingHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryWSglRowShipInspH()
                     || qyCall().qy().xgetReferrerQuery() instanceof WSglRowShipInspHCQ) {
                 columnSglRowShipInspHId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTPickingH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
-                columnPickingHId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryBUser()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
+                columnUserId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByInspectionFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -531,23 +531,23 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
         protected String getTableDbName() { return "W_SGL_ROW_SHIP_INSP_B"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_USER by my USER_ID, named 'BUser'.
+         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public BUserCB.HpSpecification specifyBUser() {
-            assertRelation("bUser");
-            if (_bUser == null) {
-                _bUser = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
-                                    , () -> _qyCall.qy().queryBUser())
+        public TPickingHCB.HpSpecification specifyTPickingH() {
+            assertRelation("tPickingH");
+            if (_tPickingH == null) {
+                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
+                                    , () -> _qyCall.qy().queryTPickingH())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
-                      , () -> xsyncQyCall().qy().queryBUser()));
+                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
+                      , () -> xsyncQyCall().qy().queryTPickingH()));
                 }
             }
-            return _bUser;
+            return _tPickingH;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -571,23 +571,23 @@ public class BsWSglRowShipInspBCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+         * B_USER by my USER_ID, named 'BUser'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TPickingHCB.HpSpecification specifyTPickingH() {
-            assertRelation("tPickingH");
-            if (_tPickingH == null) {
-                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
-                                    , () -> _qyCall.qy().queryTPickingH())
+        public BUserCB.HpSpecification specifyBUser() {
+            assertRelation("bUser");
+            if (_bUser == null) {
+                _bUser = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
+                                    , () -> _qyCall.qy().queryBUser())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
-                      , () -> xsyncQyCall().qy().queryTPickingH()));
+                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
+                      , () -> xsyncQyCall().qy().queryBUser()));
                 }
             }
-            return _tPickingH;
+            return _bUser;
         }
         /**
          * Prepare to specify functions about relation table. <br>

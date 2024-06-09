@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     T_YTRSODETAIL
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     tYtrsodetailList
@@ -481,20 +481,20 @@ public abstract class BsTYtrsoBhv extends AbstractBehaviorWritable<TYtrso, TYtrs
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tYtrsoList The list of tYtrso. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TYtrso> tYtrsoList)
-    { return helpPulloutInternally(tYtrsoList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tYtrsoList The list of tYtrso. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<TYtrso> tYtrsoList)
     { return helpPulloutInternally(tYtrsoList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tYtrsoList The list of tYtrso. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TYtrso> tYtrsoList)
+    { return helpPulloutInternally(tYtrsoList, "mClient"); }
 
     // ===================================================================================
     //                                                                      Extract Column

@@ -20,12 +20,12 @@ public class WHtShippingNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_BOX by my BOX_ID, named 'MBox'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
+    public MBoxNss withMBox() {
+        _query.xdoNss(() -> _query.queryMBox());
+        return new MBoxNss(_query.queryMBox());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,20 +38,20 @@ public class WHtShippingNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MBoxNss withMBox() {
-        _query.xdoNss(() -> _query.queryMBox());
-        return new MBoxNss(_query.queryMBox());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MClientNss withMClient() {
         _query.xdoNss(() -> _query.queryMClient());
         return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
 }

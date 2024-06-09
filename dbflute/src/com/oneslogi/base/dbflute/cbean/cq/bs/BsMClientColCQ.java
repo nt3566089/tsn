@@ -452,11 +452,11 @@ public class BsMClientColCQ extends AbstractBsMClientColCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MClientColCQ bq = (MClientColCQ)bqs;
         MClientColCQ uq = (MClientColCQ)uqs;
-        if (bq.hasConditionQueryBCol()) {
-            uq.queryBCol().reflectRelationOnUnionQuery(bq.queryBCol(), uq.queryBCol());
-        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryBCol()) {
+            uq.queryBCol().reflectRelationOnUnionQuery(bq.queryBCol(), uq.queryBCol());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -467,26 +467,6 @@ public class BsMClientColCQ extends AbstractBsMClientColCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_COL by my COL_ID, named 'BCol'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BColCQ queryBCol() {
-        return xdfgetConditionQueryBCol();
-    }
-    public BColCQ xdfgetConditionQueryBCol() {
-        String prop = "bCol";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBCol()); xsetupOuterJoinBCol(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BColCQ xcreateQueryBCol() {
-        String nrp = xresolveNRP("M_CLIENT_COL", "bCol"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BColCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bCol", nrp);
-    }
-    protected void xsetupOuterJoinBCol() { xregOutJo("bCol"); }
-    public boolean hasConditionQueryBCol() { return xhasQueRlMap("bCol"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -506,6 +486,26 @@ public class BsMClientColCQ extends AbstractBsMClientColCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_COL by my COL_ID, named 'BCol'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BColCQ queryBCol() {
+        return xdfgetConditionQueryBCol();
+    }
+    public BColCQ xdfgetConditionQueryBCol() {
+        String prop = "bCol";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBCol()); xsetupOuterJoinBCol(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BColCQ xcreateQueryBCol() {
+        String nrp = xresolveNRP("M_CLIENT_COL", "bCol"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BColCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bCol", nrp);
+    }
+    protected void xsetupOuterJoinBCol() { xregOutJo("bCol"); }
+    public boolean hasConditionQueryBCol() { return xhasQueRlMap("bCol"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_SUBREP_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_SUBREP_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pSubrepLayout, bDict, vDict
+ *     bDict, pSubrepLayout, vDict
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsPSubrepLayoutItemBhv extends AbstractBehaviorWritable<PS
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'PSubrepLayout'.
-     * @param pSubrepLayoutItemList The list of pSubrepLayoutItem. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<PSubrepLayout> pulloutPSubrepLayout(List<PSubrepLayoutItem> pSubrepLayoutItemList)
-    { return helpPulloutInternally(pSubrepLayoutItemList, "pSubrepLayout"); }
-
-    /**
      * Pull out the list of foreign table 'BDict'.
      * @param pSubrepLayoutItemList The list of pSubrepLayoutItem. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BDict> pulloutBDict(List<PSubrepLayoutItem> pSubrepLayoutItemList)
     { return helpPulloutInternally(pSubrepLayoutItemList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'PSubrepLayout'.
+     * @param pSubrepLayoutItemList The list of pSubrepLayoutItem. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<PSubrepLayout> pulloutPSubrepLayout(List<PSubrepLayoutItem> pSubrepLayoutItemList)
+    { return helpPulloutInternally(pSubrepLayoutItemList, "pSubrepLayout"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

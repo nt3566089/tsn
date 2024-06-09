@@ -265,35 +265,6 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected PSubrepLayoutNss _nssPSubrepLayout;
-    public PSubrepLayoutNss xdfgetNssPSubrepLayout() {
-        if (_nssPSubrepLayout == null) { _nssPSubrepLayout = new PSubrepLayoutNss(null); }
-        return _nssPSubrepLayout;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-     * <pre>
-     * <span style="color: #0000C0">pSubrepLayoutItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PSubrepLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">pSubrepLayoutItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">pSubrepLayoutItem</span>.<span style="color: #CC4747">getPSubrepLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public PSubrepLayoutNss setupSelect_PSubrepLayout() {
-        assertSetupSelectPurpose("pSubrepLayout");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnSubrepLayoutId();
-        }
-        doSetupSelect(() -> query().queryPSubrepLayout());
-        if (_nssPSubrepLayout == null || !_nssPSubrepLayout.hasConditionQuery())
-        { _nssPSubrepLayout = new PSubrepLayoutNss(query().queryPSubrepLayout()); }
-        return _nssPSubrepLayout;
-    }
-
     protected BDictNss _nssBDict;
     public BDictNss xdfgetNssBDict() {
         if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
@@ -321,6 +292,35 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
         if (_nssBDict == null || !_nssBDict.hasConditionQuery())
         { _nssBDict = new BDictNss(query().queryBDict()); }
         return _nssBDict;
+    }
+
+    protected PSubrepLayoutNss _nssPSubrepLayout;
+    public PSubrepLayoutNss xdfgetNssPSubrepLayout() {
+        if (_nssPSubrepLayout == null) { _nssPSubrepLayout = new PSubrepLayoutNss(null); }
+        return _nssPSubrepLayout;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+     * <pre>
+     * <span style="color: #0000C0">pSubrepLayoutItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PSubrepLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">pSubrepLayoutItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">pSubrepLayoutItem</span>.<span style="color: #CC4747">getPSubrepLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public PSubrepLayoutNss setupSelect_PSubrepLayout() {
+        assertSetupSelectPurpose("pSubrepLayout");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnSubrepLayoutId();
+        }
+        doSetupSelect(() -> query().queryPSubrepLayout());
+        if (_nssPSubrepLayout == null || !_nssPSubrepLayout.hasConditionQuery())
+        { _nssPSubrepLayout = new PSubrepLayoutNss(query().queryPSubrepLayout()); }
+        return _nssPSubrepLayout;
     }
 
     /**
@@ -385,8 +385,8 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<PSubrepLayoutItemCQ> {
-        protected PSubrepLayoutCB.HpSpecification _pSubrepLayout;
         protected BDictCB.HpSpecification _bDict;
+        protected PSubrepLayoutCB.HpSpecification _pSubrepLayout;
         protected VDictCB.HpSpecification _vDict;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<PSubrepLayoutItemCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -477,13 +477,13 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnSubrepLayoutItemId(); // PK
-            if (qyCall().qy().hasConditionQueryPSubrepLayout()
-                    || qyCall().qy().xgetReferrerQuery() instanceof PSubrepLayoutCQ) {
-                columnSubrepLayoutId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
                 columnDictId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryPSubrepLayout()
+                    || qyCall().qy().xgetReferrerQuery() instanceof PSubrepLayoutCQ) {
+                columnSubrepLayoutId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VDictCQ) {
@@ -492,26 +492,6 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "P_SUBREP_LAYOUT_ITEM"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public PSubrepLayoutCB.HpSpecification specifyPSubrepLayout() {
-            assertRelation("pSubrepLayout");
-            if (_pSubrepLayout == null) {
-                _pSubrepLayout = new PSubrepLayoutCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPSubrepLayout()
-                                    , () -> _qyCall.qy().queryPSubrepLayout())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _pSubrepLayout.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPSubrepLayout()
-                      , () -> xsyncQyCall().qy().queryPSubrepLayout()));
-                }
-            }
-            return _pSubrepLayout;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_DICT by my DICT_ID, named 'BDict'.
@@ -531,6 +511,26 @@ public class BsPSubrepLayoutItemCB extends AbstractConditionBean {
                 }
             }
             return _bDict;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public PSubrepLayoutCB.HpSpecification specifyPSubrepLayout() {
+            assertRelation("pSubrepLayout");
+            if (_pSubrepLayout == null) {
+                _pSubrepLayout = new PSubrepLayoutCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPSubrepLayout()
+                                    , () -> _qyCall.qy().queryPSubrepLayout())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _pSubrepLayout.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPSubrepLayout()
+                      , () -> xsyncQyCall().qy().queryPSubrepLayout()));
+                }
+            }
+            return _pSubrepLayout;
         }
         /**
          * Prepare to specify functions about relation table. <br>

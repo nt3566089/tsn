@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, M_WAREHOUSE, T_RECEIVE_PLAN_H, M_PRODUCT, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
+ *     M_LOCATION, M_WAREHOUSE, M_PRODUCT, T_RECEIVE_PLAN_H, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_RECEIVE_PLAN_SPARE, T_TRRCVDETAIL
  *
  * [foreign property]
- *     mLocation, mWarehouse, tReceivePlanH, mProduct, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
+ *     mLocation, mWarehouse, mProduct, tReceivePlanH, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -501,20 +501,20 @@ public abstract class BsTReceivePlanBBhv extends AbstractBehaviorWritable<TRecei
     { return helpPulloutInternally(tReceivePlanBList, "mWarehouse"); }
 
     /**
-     * Pull out the list of foreign table 'TReceivePlanH'.
-     * @param tReceivePlanBList The list of tReceivePlanB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TReceivePlanH> pulloutTReceivePlanH(List<TReceivePlanB> tReceivePlanBList)
-    { return helpPulloutInternally(tReceivePlanBList, "tReceivePlanH"); }
-
-    /**
      * Pull out the list of foreign table 'MProduct'.
      * @param tReceivePlanBList The list of tReceivePlanB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MProduct> pulloutMProduct(List<TReceivePlanB> tReceivePlanBList)
     { return helpPulloutInternally(tReceivePlanBList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'TReceivePlanH'.
+     * @param tReceivePlanBList The list of tReceivePlanB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TReceivePlanH> pulloutTReceivePlanH(List<TReceivePlanB> tReceivePlanBList)
+    { return helpPulloutInternally(tReceivePlanBList, "tReceivePlanH"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

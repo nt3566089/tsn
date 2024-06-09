@@ -432,14 +432,14 @@ public class BsMWebHtInfoCQ extends AbstractBsMWebHtInfoCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MWebHtInfoCQ bq = (MWebHtInfoCQ)bqs;
         MWebHtInfoCQ uq = (MWebHtInfoCQ)uqs;
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
         if (bq.hasConditionQueryMWarehouse()) {
             uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryBClassDtlByDelFlg()) {
             uq.queryBClassDtlByDelFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelFlg(), uq.queryBClassDtlByDelFlg());
@@ -449,6 +449,26 @@ public class BsMWebHtInfoCQ extends AbstractBsMWebHtInfoCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
+    }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("M_WEB_HT_INFO", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -488,26 +508,6 @@ public class BsMWebHtInfoCQ extends AbstractBsMWebHtInfoCQ {
     }
     protected void xsetupOuterJoinMWarehouse() { xregOutJo("mWarehouse"); }
     public boolean hasConditionQueryMWarehouse() { return xhasQueRlMap("mWarehouse"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("M_WEB_HT_INFO", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>

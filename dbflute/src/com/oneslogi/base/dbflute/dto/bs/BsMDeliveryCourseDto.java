@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CARRIER_SLIP_YUPK, M_CENTER, M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
+ *     M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, M_CARRIER_SLIP_YUPK, M_CENTER, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
  *
  * [referrer-table]
  *     M_CENTER_CUSTOMER, M_PARAM, T_ALLOC_INST_H, T_SHIPPING_INST_H, W_HT_LOADING
  *
  * [foreign-property]
- *     mCarrierSlipYupk, mCenter, mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
+ *     mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, mCarrierSlipYupk, mCenter, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
  *
  * [referrer-property]
  *     mCenterCustomerList, mParamList, tAllocInstHList, tShippingInstHList, wHtLoadingList
@@ -193,26 +193,6 @@ public abstract class BsMDeliveryCourseDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MCarrierSlipYupkDto _mCarrierSlipYupk;
-
-    public MCarrierSlipYupkDto getMCarrierSlipYupk() {
-        return _mCarrierSlipYupk;
-    }
-
-    public void setMCarrierSlipYupk(MCarrierSlipYupkDto mCarrierSlipYupk) {
-        this._mCarrierSlipYupk = mCarrierSlipYupk;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
-    }
-
     protected MCarrierDto _mCarrier;
 
     public MCarrierDto getMCarrier() {
@@ -241,6 +221,26 @@ public abstract class BsMDeliveryCourseDto implements Serializable {
 
     public void setMCarrierSlipYmt(MCarrierSlipYmtDto mCarrierSlipYmt) {
         this._mCarrierSlipYmt = mCarrierSlipYmt;
+    }
+
+    protected MCarrierSlipYupkDto _mCarrierSlipYupk;
+
+    public MCarrierSlipYupkDto getMCarrierSlipYupk() {
+        return _mCarrierSlipYupk;
+    }
+
+    public void setMCarrierSlipYupk(MCarrierSlipYupkDto mCarrierSlipYupk) {
+        this._mCarrierSlipYupk = mCarrierSlipYupk;
+    }
+
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected BClassDtlDto _bClassDtlByDelFlg;

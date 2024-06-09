@@ -352,26 +352,6 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-     * <pre>
-     * <span style="color: #0000C0">tCenterSymbolBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrsymbol()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tCenterSymbol</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tCenterSymbol</span>.<span style="color: #CC4747">getTTrsymbol()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_TTrsymbol() {
-        assertSetupSelectPurpose("tTrsymbol");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTrsymbolId();
-        }
-        doSetupSelect(() -> query().queryTTrsymbol());
-    }
-
     protected TPalletNss _nssTPallet;
     public TPalletNss xdfgetNssTPallet() {
         if (_nssTPallet == null) { _nssTPallet = new TPalletNss(null); }
@@ -399,6 +379,26 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
         if (_nssTPallet == null || !_nssTPallet.hasConditionQuery())
         { _nssTPallet = new TPalletNss(query().queryTPallet()); }
         return _nssTPallet;
+    }
+
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+     * <pre>
+     * <span style="color: #0000C0">tCenterSymbolBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrsymbol()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tCenterSymbol</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tCenterSymbol</span>.<span style="color: #CC4747">getTTrsymbol()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_TTrsymbol() {
+        assertSetupSelectPurpose("tTrsymbol");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTrsymbolId();
+        }
+        doSetupSelect(() -> query().queryTTrsymbol());
     }
 
     // [DBFlute-0.7.4]
@@ -445,8 +445,8 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
         protected MCenterCB.HpSpecification _mCenter;
         protected TCenterSymbolCB.HpSpecification _tCenterSymbolSelf;
         protected MClientCB.HpSpecification _mClient;
-        protected TTrsymbolCB.HpSpecification _tTrsymbol;
         protected TPalletCB.HpSpecification _tPallet;
+        protected TTrsymbolCB.HpSpecification _tTrsymbol;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TCenterSymbolCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -563,13 +563,13 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTTrsymbol()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TTrsymbolCQ) {
-                columnTrsymbolId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryTPallet()
                     || qyCall().qy().xgetReferrerQuery() instanceof TPalletCQ) {
                 columnPalletId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTTrsymbol()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TTrsymbolCQ) {
+                columnTrsymbolId(); // FK or one-to-one referrer
             }
         }
         @Override
@@ -636,26 +636,6 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TTrsymbolCB.HpSpecification specifyTTrsymbol() {
-            assertRelation("tTrsymbol");
-            if (_tTrsymbol == null) {
-                _tTrsymbol = new TTrsymbolCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrsymbol()
-                                    , () -> _qyCall.qy().queryTTrsymbol())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tTrsymbol.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrsymbol()
-                      , () -> xsyncQyCall().qy().queryTTrsymbol()));
-                }
-            }
-            return _tTrsymbol;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * T_PALLET by my PALLET_ID, named 'TPallet'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -673,6 +653,26 @@ public class BsTCenterSymbolCB extends AbstractConditionBean {
                 }
             }
             return _tPallet;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TTrsymbolCB.HpSpecification specifyTTrsymbol() {
+            assertRelation("tTrsymbol");
+            if (_tTrsymbol == null) {
+                _tTrsymbol = new TTrsymbolCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrsymbol()
+                                    , () -> _qyCall.qy().queryTTrsymbol())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tTrsymbol.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrsymbol()
+                      , () -> xsyncQyCall().qy().queryTTrsymbol()));
+                }
+            }
+            return _tTrsymbol;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

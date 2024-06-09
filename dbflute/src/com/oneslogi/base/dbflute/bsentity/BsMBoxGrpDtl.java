@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_BOX, M_BOX_GRP
+ *     M_BOX_GRP, M_BOX
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mBox, mBoxGrp
+ *     mBoxGrp, mBox
  *
  * [referrer property]
  *     
@@ -256,25 +256,6 @@ public abstract class BsMBoxGrpDtl extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_BOX by my BOX_ID, named 'MBox'. */
-    protected MBox _mBox;
-
-    /**
-     * [get] M_BOX by my BOX_ID, named 'MBox'. <br>
-     * @return The entity of foreign property 'MBox'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MBox getMBox() {
-        return _mBox;
-    }
-
-    /**
-     * [set] M_BOX by my BOX_ID, named 'MBox'.
-     * @param mBox The entity of foreign property 'MBox'. (NullAllowed)
-     */
-    public void setMBox(MBox mBox) {
-        _mBox = mBox;
-    }
-
     /** M_BOX_GRP by my BOX_GRP_ID, named 'MBoxGrp'. */
     protected MBoxGrp _mBoxGrp;
 
@@ -292,6 +273,25 @@ public abstract class BsMBoxGrpDtl extends AbstractEntity implements DomainEntit
      */
     public void setMBoxGrp(MBoxGrp mBoxGrp) {
         _mBoxGrp = mBoxGrp;
+    }
+
+    /** M_BOX by my BOX_ID, named 'MBox'. */
+    protected MBox _mBox;
+
+    /**
+     * [get] M_BOX by my BOX_ID, named 'MBox'. <br>
+     * @return The entity of foreign property 'MBox'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MBox getMBox() {
+        return _mBox;
+    }
+
+    /**
+     * [set] M_BOX by my BOX_ID, named 'MBox'.
+     * @param mBox The entity of foreign property 'MBox'. (NullAllowed)
+     */
+    public void setMBox(MBox mBox) {
+        _mBox = mBox;
     }
 
     // ===================================================================================
@@ -326,10 +326,10 @@ public abstract class BsMBoxGrpDtl extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mBox != null)
-        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
         if (_mBoxGrp != null)
         { sb.append(li).append(xbRDS(_mBoxGrp, "mBoxGrp")); }
+        if (_mBox != null)
+        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
         return sb.toString();
     }
 
@@ -358,10 +358,10 @@ public abstract class BsMBoxGrpDtl extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mBox != null)
-        { sb.append(dm).append("mBox"); }
         if (_mBoxGrp != null)
         { sb.append(dm).append("mBoxGrp"); }
+        if (_mBox != null)
+        { sb.append(dm).append("mBox"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

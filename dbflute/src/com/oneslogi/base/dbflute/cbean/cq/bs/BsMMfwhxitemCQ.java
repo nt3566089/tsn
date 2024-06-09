@@ -992,14 +992,14 @@ public class BsMMfwhxitemCQ extends AbstractBsMMfwhxitemCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MMfwhxitemCQ bq = (MMfwhxitemCQ)bqs;
         MMfwhxitemCQ uq = (MMfwhxitemCQ)uqs;
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
         }
     }
 
@@ -1008,23 +1008,23 @@ public class BsMMfwhxitemCQ extends AbstractBsMMfwhxitemCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
     }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
         return xgetQueRlMap(prop);
     }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("M_MFWHxITEM", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("M_MFWHxITEM", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
     }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1048,23 +1048,23 @@ public class BsMMfwhxitemCQ extends AbstractBsMMfwhxitemCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
     }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
         return xgetQueRlMap(prop);
     }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("M_MFWHxITEM", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("M_MFWHxITEM", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
     }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

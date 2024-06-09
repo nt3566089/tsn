@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, T_RECEIVE_PLAN_H, M_CENTER, M_PROCESS_TYPE, M_STOCK_TYPE, M_CLIENT, T_STORE_RECORD_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_PROCESS_TYPE, T_RECEIVE_PLAN_H, M_STOCK_TYPE, T_STORE_RECORD_R(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_STORE_RECORD_R
  *
  * [foreign property]
- *     mCustomerByDepositId, tReceivePlanH, mCenter, mCustomerBySupplierId, mProcessType, mStockType, mClient, tStoreRecordRAsOne
+ *     mCenter, mClient, mCustomerByDepositId, mProcessType, tReceivePlanH, mStockType, mCustomerBySupplierId, tStoreRecordRAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -278,44 +278,6 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'. */
-    protected MCustomer _mCustomerByDepositId;
-
-    /**
-     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'. <br>
-     * @return The entity of foreign property 'MCustomerByDepositId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCustomer getMCustomerByDepositId() {
-        return _mCustomerByDepositId;
-    }
-
-    /**
-     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
-     * @param mCustomerByDepositId The entity of foreign property 'MCustomerByDepositId'. (NullAllowed)
-     */
-    public void setMCustomerByDepositId(MCustomer mCustomerByDepositId) {
-        _mCustomerByDepositId = mCustomerByDepositId;
-    }
-
-    /** T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. */
-    protected TReceivePlanH _tReceivePlanH;
-
-    /**
-     * [get] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. <br>
-     * @return The entity of foreign property 'TReceivePlanH'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TReceivePlanH getTReceivePlanH() {
-        return _tReceivePlanH;
-    }
-
-    /**
-     * [set] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @param tReceivePlanH The entity of foreign property 'TReceivePlanH'. (NullAllowed)
-     */
-    public void setTReceivePlanH(TReceivePlanH tReceivePlanH) {
-        _tReceivePlanH = tReceivePlanH;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -335,23 +297,42 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
         _mCenter = mCenter;
     }
 
-    /** M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'. */
-    protected MCustomer _mCustomerBySupplierId;
+    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
+    protected MClient _mClient;
 
     /**
-     * [get] M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'. <br>
-     * @return The entity of foreign property 'MCustomerBySupplierId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
+     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCustomer getMCustomerBySupplierId() {
-        return _mCustomerBySupplierId;
+    public MClient getMClient() {
+        return _mClient;
     }
 
     /**
-     * [set] M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
-     * @param mCustomerBySupplierId The entity of foreign property 'MCustomerBySupplierId'. (NullAllowed)
+     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
      */
-    public void setMCustomerBySupplierId(MCustomer mCustomerBySupplierId) {
-        _mCustomerBySupplierId = mCustomerBySupplierId;
+    public void setMClient(MClient mClient) {
+        _mClient = mClient;
+    }
+
+    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'. */
+    protected MCustomer _mCustomerByDepositId;
+
+    /**
+     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'. <br>
+     * @return The entity of foreign property 'MCustomerByDepositId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCustomer getMCustomerByDepositId() {
+        return _mCustomerByDepositId;
+    }
+
+    /**
+     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * @param mCustomerByDepositId The entity of foreign property 'MCustomerByDepositId'. (NullAllowed)
+     */
+    public void setMCustomerByDepositId(MCustomer mCustomerByDepositId) {
+        _mCustomerByDepositId = mCustomerByDepositId;
     }
 
     /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
@@ -373,6 +354,25 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
         _mProcessType = mProcessType;
     }
 
+    /** T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. */
+    protected TReceivePlanH _tReceivePlanH;
+
+    /**
+     * [get] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'. <br>
+     * @return The entity of foreign property 'TReceivePlanH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TReceivePlanH getTReceivePlanH() {
+        return _tReceivePlanH;
+    }
+
+    /**
+     * [set] T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @param tReceivePlanH The entity of foreign property 'TReceivePlanH'. (NullAllowed)
+     */
+    public void setTReceivePlanH(TReceivePlanH tReceivePlanH) {
+        _tReceivePlanH = tReceivePlanH;
+    }
+
     /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
     protected MStockType _mStockType;
 
@@ -392,23 +392,23 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
         _mStockType = mStockType;
     }
 
-    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
-    protected MClient _mClient;
+    /** M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'. */
+    protected MCustomer _mCustomerBySupplierId;
 
     /**
-     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
-     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'. <br>
+     * @return The entity of foreign property 'MCustomerBySupplierId'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MClient getMClient() {
-        return _mClient;
+    public MCustomer getMCustomerBySupplierId() {
+        return _mCustomerBySupplierId;
     }
 
     /**
-     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
+     * [set] M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
+     * @param mCustomerBySupplierId The entity of foreign property 'MCustomerBySupplierId'. (NullAllowed)
      */
-    public void setMClient(MClient mClient) {
-        _mClient = mClient;
+    public void setMCustomerBySupplierId(MCustomer mCustomerBySupplierId) {
+        _mCustomerBySupplierId = mCustomerBySupplierId;
     }
 
     /** T_STORE_RECORD_R by STORE_RECORD_H_ID, named 'TStoreRecordRAsOne'. */
@@ -482,20 +482,20 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mCustomerByDepositId != null)
-        { sb.append(li).append(xbRDS(_mCustomerByDepositId, "mCustomerByDepositId")); }
-        if (_tReceivePlanH != null)
-        { sb.append(li).append(xbRDS(_tReceivePlanH, "tReceivePlanH")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_mCustomerBySupplierId != null)
-        { sb.append(li).append(xbRDS(_mCustomerBySupplierId, "mCustomerBySupplierId")); }
-        if (_mProcessType != null)
-        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mCustomerByDepositId != null)
+        { sb.append(li).append(xbRDS(_mCustomerByDepositId, "mCustomerByDepositId")); }
+        if (_mProcessType != null)
+        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
+        if (_tReceivePlanH != null)
+        { sb.append(li).append(xbRDS(_tReceivePlanH, "tReceivePlanH")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
+        if (_mCustomerBySupplierId != null)
+        { sb.append(li).append(xbRDS(_mCustomerBySupplierId, "mCustomerBySupplierId")); }
         if (_tStoreRecordRAsOne != null)
         { sb.append(li).append(xbRDS(_tStoreRecordRAsOne, "tStoreRecordRAsOne")); }
         if (_tStoreRecordBList != null) { for (TStoreRecordB et : _tStoreRecordBList)
@@ -535,20 +535,20 @@ public abstract class BsTStoreRecordH extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mCustomerByDepositId != null)
-        { sb.append(dm).append("mCustomerByDepositId"); }
-        if (_tReceivePlanH != null)
-        { sb.append(dm).append("tReceivePlanH"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
-        if (_mCustomerBySupplierId != null)
-        { sb.append(dm).append("mCustomerBySupplierId"); }
-        if (_mProcessType != null)
-        { sb.append(dm).append("mProcessType"); }
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_mCustomerByDepositId != null)
+        { sb.append(dm).append("mCustomerByDepositId"); }
+        if (_mProcessType != null)
+        { sb.append(dm).append("mProcessType"); }
+        if (_tReceivePlanH != null)
+        { sb.append(dm).append("tReceivePlanH"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
+        if (_mCustomerBySupplierId != null)
+        { sb.append(dm).append("mCustomerBySupplierId"); }
         if (_tStoreRecordRAsOne != null)
         { sb.append(dm).append("tStoreRecordRAsOne"); }
         if (_tStoreRecordBList != null && !_tStoreRecordBList.isEmpty())

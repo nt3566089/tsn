@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_CLIENT, M_CENTER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
  *
  * [referrer table]
  *     M_PARAM
  *
  * [foreign property]
- *     mCustomer, mClient, mCenter, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
+ *     mCenter, mClient, mCustomer, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfMClientCenter {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMCustomer _foreignMCustomerLoader;
-    public LoaderOfMCustomer pulloutMCustomer() {
-        if (_foreignMCustomerLoader == null)
-        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
-        return _foreignMCustomerLoader;
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
     }
 
     protected LoaderOfMClient _foreignMClientLoader;
@@ -73,11 +73,11 @@ public class LoaderOfMClientCenter {
         return _foreignMClientLoader;
     }
 
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
+    protected LoaderOfMCustomer _foreignMCustomerLoader;
+    public LoaderOfMCustomer pulloutMCustomer() {
+        if (_foreignMCustomerLoader == null)
+        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
+        return _foreignMCustomerLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByBatchProgressFlgLoader;

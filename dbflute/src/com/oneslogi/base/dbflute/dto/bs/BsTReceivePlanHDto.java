@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_RECEIVE_PLAN_H, M_CUSTOMER, M_CLIENT, M_STOCK_TYPE, M_CENTER, M_PROCESS_TYPE, T_PICKING_H, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
+ *     M_CENTER, M_CLIENT, T_RECEIVE_PLAN_H, T_PICKING_H, M_CUSTOMER, M_PROCESS_TYPE, M_STOCK_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
  *
  * [referrer-table]
  *     T_RECEIVE_PLAN_B, T_RECEIVE_PLAN_H, T_STORE_RECORD_H, T_RECEIVE_PLAN_R, T_TRRCV
  *
  * [foreign-property]
- *     tReceivePlanHSelf, mCustomerByPlanDepositId, mClient, mStockType, mCenter, mProcessType, mCustomerByPlanSupplierId, tPickingH, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
+ *     mCenter, mClient, tReceivePlanHSelf, tPickingH, mCustomerByPlanDepositId, mCustomerByPlanSupplierId, mProcessType, mStockType, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
  *
  * [referrer-property]
  *     tReceivePlanBList, tReceivePlanHSelfList, tStoreRecordHList
@@ -201,24 +201,14 @@ public abstract class BsTReceivePlanHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TReceivePlanHDto _tReceivePlanHSelf;
+    protected MCenterDto _mCenter;
 
-    public TReceivePlanHDto getTReceivePlanHSelf() {
-        return _tReceivePlanHSelf;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setTReceivePlanHSelf(TReceivePlanHDto tReceivePlanHSelf) {
-        this._tReceivePlanHSelf = tReceivePlanHSelf;
-    }
-
-    protected MCustomerDto _mCustomerByPlanDepositId;
-
-    public MCustomerDto getMCustomerByPlanDepositId() {
-        return _mCustomerByPlanDepositId;
-    }
-
-    public void setMCustomerByPlanDepositId(MCustomerDto mCustomerByPlanDepositId) {
-        this._mCustomerByPlanDepositId = mCustomerByPlanDepositId;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -231,34 +221,34 @@ public abstract class BsTReceivePlanHDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MStockTypeDto _mStockType;
+    protected TReceivePlanHDto _tReceivePlanHSelf;
 
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
+    public TReceivePlanHDto getTReceivePlanHSelf() {
+        return _tReceivePlanHSelf;
     }
 
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
+    public void setTReceivePlanHSelf(TReceivePlanHDto tReceivePlanHSelf) {
+        this._tReceivePlanHSelf = tReceivePlanHSelf;
     }
 
-    protected MCenterDto _mCenter;
+    protected TPickingHDto _tPickingH;
 
-    public MCenterDto getMCenter() {
-        return _mCenter;
+    public TPickingHDto getTPickingH() {
+        return _tPickingH;
     }
 
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setTPickingH(TPickingHDto tPickingH) {
+        this._tPickingH = tPickingH;
     }
 
-    protected MProcessTypeDto _mProcessType;
+    protected MCustomerDto _mCustomerByPlanDepositId;
 
-    public MProcessTypeDto getMProcessType() {
-        return _mProcessType;
+    public MCustomerDto getMCustomerByPlanDepositId() {
+        return _mCustomerByPlanDepositId;
     }
 
-    public void setMProcessType(MProcessTypeDto mProcessType) {
-        this._mProcessType = mProcessType;
+    public void setMCustomerByPlanDepositId(MCustomerDto mCustomerByPlanDepositId) {
+        this._mCustomerByPlanDepositId = mCustomerByPlanDepositId;
     }
 
     protected MCustomerDto _mCustomerByPlanSupplierId;
@@ -271,14 +261,24 @@ public abstract class BsTReceivePlanHDto implements Serializable {
         this._mCustomerByPlanSupplierId = mCustomerByPlanSupplierId;
     }
 
-    protected TPickingHDto _tPickingH;
+    protected MProcessTypeDto _mProcessType;
 
-    public TPickingHDto getTPickingH() {
-        return _tPickingH;
+    public MProcessTypeDto getMProcessType() {
+        return _mProcessType;
     }
 
-    public void setTPickingH(TPickingHDto tPickingH) {
-        this._tPickingH = tPickingH;
+    public void setMProcessType(MProcessTypeDto mProcessType) {
+        this._mProcessType = mProcessType;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
     }
 
     protected BClassDtlDto _bClassDtlByCenterTransitFlg;

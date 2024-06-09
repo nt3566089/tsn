@@ -252,64 +252,6 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MCustomerNss _nssMCustomerBySupplyCustomerId;
-    public MCustomerNss xdfgetNssMCustomerBySupplyCustomerId() {
-        if (_nssMCustomerBySupplyCustomerId == null) { _nssMCustomerBySupplyCustomerId = new MCustomerNss(null); }
-        return _nssMCustomerBySupplyCustomerId;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-     * <pre>
-     * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerBySupplyCustomerId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMCustomerBySupplyCustomerId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCustomerNss setupSelect_MCustomerBySupplyCustomerId() {
-        assertSetupSelectPurpose("mCustomerBySupplyCustomerId");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnSupplyCustomerId();
-        }
-        doSetupSelect(() -> query().queryMCustomerBySupplyCustomerId());
-        if (_nssMCustomerBySupplyCustomerId == null || !_nssMCustomerBySupplyCustomerId.hasConditionQuery())
-        { _nssMCustomerBySupplyCustomerId = new MCustomerNss(query().queryMCustomerBySupplyCustomerId()); }
-        return _nssMCustomerBySupplyCustomerId;
-    }
-
-    protected MProcessTypeNss _nssMProcessType;
-    public MProcessTypeNss xdfgetNssMProcessType() {
-        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
-        return _nssMProcessType;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * <pre>
-     * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MProcessTypeNss setupSelect_MProcessType() {
-        assertSetupSelectPurpose("mProcessType");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnProcessTypeId();
-        }
-        doSetupSelect(() -> query().queryMProcessType());
-        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
-        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
-        return _nssMProcessType;
-    }
-
     protected MCenterNss _nssMCenter;
     public MCenterNss xdfgetNssMCenter() {
         if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
@@ -339,33 +281,33 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         return _nssMCenter;
     }
 
-    protected MCustomerNss _nssMCustomerByDelivCustomerId;
-    public MCustomerNss xdfgetNssMCustomerByDelivCustomerId() {
-        if (_nssMCustomerByDelivCustomerId == null) { _nssMCustomerByDelivCustomerId = new MCustomerNss(null); }
-        return _nssMCustomerByDelivCustomerId;
+    protected MClientNss _nssMClient;
+    public MClientNss xdfgetNssMClient() {
+        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
+        return _nssMClient;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * <pre>
      * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByDelivCustomerId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMCustomerByDelivCustomerId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCustomerNss setupSelect_MCustomerByDelivCustomerId() {
-        assertSetupSelectPurpose("mCustomerByDelivCustomerId");
+    public MClientNss setupSelect_MClient() {
+        assertSetupSelectPurpose("mClient");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnDelivCustomerId();
+            specify().columnClientId();
         }
-        doSetupSelect(() -> query().queryMCustomerByDelivCustomerId());
-        if (_nssMCustomerByDelivCustomerId == null || !_nssMCustomerByDelivCustomerId.hasConditionQuery())
-        { _nssMCustomerByDelivCustomerId = new MCustomerNss(query().queryMCustomerByDelivCustomerId()); }
-        return _nssMCustomerByDelivCustomerId;
+        doSetupSelect(() -> query().queryMClient());
+        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
+        { _nssMClient = new MClientNss(query().queryMClient()); }
+        return _nssMClient;
     }
 
     protected MDeliveryCourseNss _nssMDeliveryCourse;
@@ -397,33 +339,91 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         return _nssMDeliveryCourse;
     }
 
-    protected MClientNss _nssMClient;
-    public MClientNss xdfgetNssMClient() {
-        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
-        return _nssMClient;
+    protected MCustomerNss _nssMCustomerByDelivCustomerId;
+    public MCustomerNss xdfgetNssMCustomerByDelivCustomerId() {
+        if (_nssMCustomerByDelivCustomerId == null) { _nssMCustomerByDelivCustomerId = new MCustomerNss(null); }
+        return _nssMCustomerByDelivCustomerId;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
      * <pre>
      * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByDelivCustomerId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMCustomerByDelivCustomerId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MClientNss setupSelect_MClient() {
-        assertSetupSelectPurpose("mClient");
+    public MCustomerNss setupSelect_MCustomerByDelivCustomerId() {
+        assertSetupSelectPurpose("mCustomerByDelivCustomerId");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnClientId();
+            specify().columnDelivCustomerId();
         }
-        doSetupSelect(() -> query().queryMClient());
-        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
-        { _nssMClient = new MClientNss(query().queryMClient()); }
-        return _nssMClient;
+        doSetupSelect(() -> query().queryMCustomerByDelivCustomerId());
+        if (_nssMCustomerByDelivCustomerId == null || !_nssMCustomerByDelivCustomerId.hasConditionQuery())
+        { _nssMCustomerByDelivCustomerId = new MCustomerNss(query().queryMCustomerByDelivCustomerId()); }
+        return _nssMCustomerByDelivCustomerId;
+    }
+
+    protected MProcessTypeNss _nssMProcessType;
+    public MProcessTypeNss xdfgetNssMProcessType() {
+        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
+        return _nssMProcessType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * <pre>
+     * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MProcessTypeNss setupSelect_MProcessType() {
+        assertSetupSelectPurpose("mProcessType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnProcessTypeId();
+        }
+        doSetupSelect(() -> query().queryMProcessType());
+        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
+        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
+        return _nssMProcessType;
+    }
+
+    protected MCustomerNss _nssMCustomerBySupplyCustomerId;
+    public MCustomerNss xdfgetNssMCustomerBySupplyCustomerId() {
+        if (_nssMCustomerBySupplyCustomerId == null) { _nssMCustomerBySupplyCustomerId = new MCustomerNss(null); }
+        return _nssMCustomerBySupplyCustomerId;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
+     * <pre>
+     * <span style="color: #0000C0">tAllocInstHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerBySupplyCustomerId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tAllocInstH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tAllocInstH</span>.<span style="color: #CC4747">getMCustomerBySupplyCustomerId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCustomerNss setupSelect_MCustomerBySupplyCustomerId() {
+        assertSetupSelectPurpose("mCustomerBySupplyCustomerId");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnSupplyCustomerId();
+        }
+        doSetupSelect(() -> query().queryMCustomerBySupplyCustomerId());
+        if (_nssMCustomerBySupplyCustomerId == null || !_nssMCustomerBySupplyCustomerId.hasConditionQuery())
+        { _nssMCustomerBySupplyCustomerId = new MCustomerNss(query().queryMCustomerBySupplyCustomerId()); }
+        return _nssMCustomerBySupplyCustomerId;
     }
 
     protected TPickingHNss _nssTPickingH;
@@ -584,12 +584,12 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TAllocInstHCQ> {
-        protected MCustomerCB.HpSpecification _mCustomerBySupplyCustomerId;
-        protected MProcessTypeCB.HpSpecification _mProcessType;
         protected MCenterCB.HpSpecification _mCenter;
-        protected MCustomerCB.HpSpecification _mCustomerByDelivCustomerId;
-        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
         protected MClientCB.HpSpecification _mClient;
+        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
+        protected MCustomerCB.HpSpecification _mCustomerByDelivCustomerId;
+        protected MProcessTypeCB.HpSpecification _mProcessType;
+        protected MCustomerCB.HpSpecification _mCustomerBySupplyCustomerId;
         protected TPickingHCB.HpSpecification _tPickingH;
         protected MCenterCustomerCB.HpSpecification _mCenterCustomerByDelivCustomerId;
         protected MCenterCustomerCB.HpSpecification _mCenterCustomerBySupplyCustomerId;
@@ -758,29 +758,29 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnAllocInstHId(); // PK
-            if (qyCall().qy().hasConditionQueryMCustomerBySupplyCustomerId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnSupplyCustomerId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMProcessType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
-                columnProcessTypeId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCustomerByDelivCustomerId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnDelivCustomerId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMClient()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
+                columnClientId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMDeliveryCourse()
                     || qyCall().qy().xgetReferrerQuery() instanceof MDeliveryCourseCQ) {
                 columnDeliveryCourseId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMClient()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
-                columnClientId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCustomerByDelivCustomerId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnDelivCustomerId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMProcessType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
+                columnProcessTypeId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMCustomerBySupplyCustomerId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnSupplyCustomerId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMCenterCustomerByDelivCustomerId()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCustomerCQ) {
@@ -803,46 +803,6 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_ALLOC_INST_H"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCustomerCB.HpSpecification specifyMCustomerBySupplyCustomerId() {
-            assertRelation("mCustomerBySupplyCustomerId");
-            if (_mCustomerBySupplyCustomerId == null) {
-                _mCustomerBySupplyCustomerId = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerBySupplyCustomerId()
-                                    , () -> _qyCall.qy().queryMCustomerBySupplyCustomerId())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCustomerBySupplyCustomerId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerBySupplyCustomerId()
-                      , () -> xsyncQyCall().qy().queryMCustomerBySupplyCustomerId()));
-                }
-            }
-            return _mCustomerBySupplyCustomerId;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MProcessTypeCB.HpSpecification specifyMProcessType() {
-            assertRelation("mProcessType");
-            if (_mProcessType == null) {
-                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
-                                    , () -> _qyCall.qy().queryMProcessType())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
-                      , () -> xsyncQyCall().qy().queryMProcessType()));
-                }
-            }
-            return _mProcessType;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -863,23 +823,23 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
+         * M_CLIENT by my CLIENT_ID, named 'MClient'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCustomerCB.HpSpecification specifyMCustomerByDelivCustomerId() {
-            assertRelation("mCustomerByDelivCustomerId");
-            if (_mCustomerByDelivCustomerId == null) {
-                _mCustomerByDelivCustomerId = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByDelivCustomerId()
-                                    , () -> _qyCall.qy().queryMCustomerByDelivCustomerId())
+        public MClientCB.HpSpecification specifyMClient() {
+            assertRelation("mClient");
+            if (_mClient == null) {
+                _mClient = new MClientCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
+                                    , () -> _qyCall.qy().queryMClient())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCustomerByDelivCustomerId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByDelivCustomerId()
-                      , () -> xsyncQyCall().qy().queryMCustomerByDelivCustomerId()));
+                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
+                      , () -> xsyncQyCall().qy().queryMClient()));
                 }
             }
-            return _mCustomerByDelivCustomerId;
+            return _mClient;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -903,23 +863,63 @@ public class BsTAllocInstHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CLIENT by my CLIENT_ID, named 'MClient'.
+         * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MClientCB.HpSpecification specifyMClient() {
-            assertRelation("mClient");
-            if (_mClient == null) {
-                _mClient = new MClientCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
-                                    , () -> _qyCall.qy().queryMClient())
+        public MCustomerCB.HpSpecification specifyMCustomerByDelivCustomerId() {
+            assertRelation("mCustomerByDelivCustomerId");
+            if (_mCustomerByDelivCustomerId == null) {
+                _mCustomerByDelivCustomerId = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByDelivCustomerId()
+                                    , () -> _qyCall.qy().queryMCustomerByDelivCustomerId())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
-                      , () -> xsyncQyCall().qy().queryMClient()));
+                    _mCustomerByDelivCustomerId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByDelivCustomerId()
+                      , () -> xsyncQyCall().qy().queryMCustomerByDelivCustomerId()));
                 }
             }
-            return _mClient;
+            return _mCustomerByDelivCustomerId;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MProcessTypeCB.HpSpecification specifyMProcessType() {
+            assertRelation("mProcessType");
+            if (_mProcessType == null) {
+                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
+                                    , () -> _qyCall.qy().queryMProcessType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
+                      , () -> xsyncQyCall().qy().queryMProcessType()));
+                }
+            }
+            return _mProcessType;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCustomerCB.HpSpecification specifyMCustomerBySupplyCustomerId() {
+            assertRelation("mCustomerBySupplyCustomerId");
+            if (_mCustomerBySupplyCustomerId == null) {
+                _mCustomerBySupplyCustomerId = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerBySupplyCustomerId()
+                                    , () -> _qyCall.qy().queryMCustomerBySupplyCustomerId())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCustomerBySupplyCustomerId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerBySupplyCustomerId()
+                      , () -> xsyncQyCall().qy().queryMCustomerBySupplyCustomerId()));
+                }
+            }
+            return _mCustomerBySupplyCustomerId;
         }
         /**
          * Prepare to specify functions about relation table. <br>

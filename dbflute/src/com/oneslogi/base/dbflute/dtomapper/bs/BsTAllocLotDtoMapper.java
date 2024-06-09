@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_LOT, M_PRODUCT, T_ALLOC_INST_B, M_CUSTOMER
+ *     T_ALLOC_INST_B, M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tLot, mProduct, tAllocInstB, mCustomer
+ *     tAllocInstB, mCustomer, tLot, mProduct
  *
  * [referrer-property]
  *     
@@ -70,10 +70,10 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTLot;
-    protected boolean _suppressMProduct;
     protected boolean _suppressTAllocInstB;
     protected boolean _suppressMCustomer;
+    protected boolean _suppressTLot;
+    protected boolean _suppressMProduct;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -145,58 +145,6 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTLot && entity.getTLot() != null) {
-            TLot relationEntity = entity.getTLot();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TLotDto relationDto = (TLotDto)cachedDto;
-                dto.setTLot(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocLotList().add(dto);
-                }
-            } else {
-                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocLotList();
-                TLotDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTLot(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocLotList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTLot());
-                }
-            }
-        };
-        if (!_suppressMProduct && entity.getMProduct() != null) {
-            MProduct relationEntity = entity.getMProduct();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MProductDto relationDto = (MProductDto)cachedDto;
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocLotList().add(dto);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocLotList();
-                MProductDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocLotList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProduct());
-                }
-            }
-        };
         if (!_suppressTAllocInstB && entity.getTAllocInstB() != null) {
             TAllocInstB relationEntity = entity.getTAllocInstB();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -246,6 +194,58 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCustomer());
+                }
+            }
+        };
+        if (!_suppressTLot && entity.getTLot() != null) {
+            TLot relationEntity = entity.getTLot();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TLotDto relationDto = (TLotDto)cachedDto;
+                dto.setTLot(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocLotList().add(dto);
+                }
+            } else {
+                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocLotList();
+                TLotDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTLot(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocLotList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTLot());
+                }
+            }
+        };
+        if (!_suppressMProduct && entity.getMProduct() != null) {
+            MProduct relationEntity = entity.getMProduct();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MProductDto relationDto = (MProductDto)cachedDto;
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocLotList().add(dto);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocLotList();
+                MProductDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocLotList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMProduct());
                 }
             }
         };
@@ -335,58 +335,6 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTLot && dto.getTLot() != null) {
-            TLotDto relationDto = dto.getTLot();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TLot relationEntity = (TLot)cachedEntity;
-                entity.setTLot(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocLotList().add(entity);
-                }
-            } else {
-                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocLotList();
-                TLot relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTLot(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocLotList().add(entity);
-                }
-                if (instanceCache && entity.getTLot().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTLot());
-                }
-            }
-        };
-        if (!_suppressMProduct && dto.getMProduct() != null) {
-            MProductDto relationDto = dto.getMProduct();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MProduct relationEntity = (MProduct)cachedEntity;
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocLotList().add(entity);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocLotList();
-                MProduct relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocLotList().add(entity);
-                }
-                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProduct());
-                }
-            }
-        };
         if (!_suppressTAllocInstB && dto.getTAllocInstB() != null) {
             TAllocInstBDto relationDto = dto.getTAllocInstB();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -436,6 +384,58 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
                 }
                 if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCustomer());
+                }
+            }
+        };
+        if (!_suppressTLot && dto.getTLot() != null) {
+            TLotDto relationDto = dto.getTLot();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TLot relationEntity = (TLot)cachedEntity;
+                entity.setTLot(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocLotList().add(entity);
+                }
+            } else {
+                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocLotList();
+                TLot relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTLot(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocLotList().add(entity);
+                }
+                if (instanceCache && entity.getTLot().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTLot());
+                }
+            }
+        };
+        if (!_suppressMProduct && dto.getMProduct() != null) {
+            MProductDto relationDto = dto.getMProduct();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MProduct relationEntity = (MProduct)cachedEntity;
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocLotList().add(entity);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocLotList();
+                MProduct relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocLotList().add(entity);
+                }
+                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProduct());
                 }
             }
         };
@@ -557,29 +557,29 @@ public abstract class BsTAllocLotDtoMapper implements DtoMapper<TAllocLot, TAllo
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTLot() {
-        _suppressTLot = true;
-    }
-    public void suppressMProduct() {
-        _suppressMProduct = true;
-    }
     public void suppressTAllocInstB() {
         _suppressTAllocInstB = true;
     }
     public void suppressMCustomer() {
         _suppressMCustomer = true;
     }
+    public void suppressTLot() {
+        _suppressTLot = true;
+    }
+    public void suppressMProduct() {
+        _suppressMProduct = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressTLot();
-        suppressMProduct();
         suppressTAllocInstB();
         suppressMCustomer();
+        suppressTLot();
+        suppressMProduct();
     }
     protected void doSuppressClear() { // internal
-        _suppressTLot = false;
-        _suppressMProduct = false;
         _suppressTAllocInstB = false;
         _suppressMCustomer = false;
+        _suppressTLot = false;
+        _suppressMProduct = false;
     }
 
     // ===================================================================================

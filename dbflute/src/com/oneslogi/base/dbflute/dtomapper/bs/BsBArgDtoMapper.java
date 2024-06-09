@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_FUNC, B_DICT, V_HT_DICT, B_ARG_VALID(AsOne)
+ *     B_DICT, B_FUNC, V_HT_DICT, B_ARG_VALID(AsOne)
  *
  * [referrer-table]
  *     B_ARG_VALID
  *
  * [foreign-property]
- *     bFunc, bDict, vHtDict, bArgValidAsOne
+ *     bDict, bFunc, vHtDict, bArgValidAsOne
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBFunc;
     protected boolean _suppressBDict;
+    protected boolean _suppressBFunc;
     protected boolean _suppressVHtDict;
     protected boolean _suppressBArgValidAsOne;
 
@@ -147,32 +147,6 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBFunc && entity.getBFunc() != null) {
-            BFunc relationEntity = entity.getBFunc();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BFuncDto relationDto = (BFuncDto)cachedDto;
-                dto.setBFunc(relationDto);
-                if (reverseReference) {
-                    relationDto.getBArgList().add(dto);
-                }
-            } else {
-                BFuncDtoMapper mapper = new BFuncDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBArgList();
-                BFuncDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBFunc(relationDto);
-                if (reverseReference) {
-                    relationDto.getBArgList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBFunc());
-                }
-            }
-        };
         if (!_suppressBDict && entity.getBDict() != null) {
             BDict relationEntity = entity.getBDict();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -196,6 +170,32 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
+                }
+            }
+        };
+        if (!_suppressBFunc && entity.getBFunc() != null) {
+            BFunc relationEntity = entity.getBFunc();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BFuncDto relationDto = (BFuncDto)cachedDto;
+                dto.setBFunc(relationDto);
+                if (reverseReference) {
+                    relationDto.getBArgList().add(dto);
+                }
+            } else {
+                BFuncDtoMapper mapper = new BFuncDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBArgList();
+                BFuncDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBFunc(relationDto);
+                if (reverseReference) {
+                    relationDto.getBArgList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBFunc());
                 }
             }
         };
@@ -340,32 +340,6 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBFunc && dto.getBFunc() != null) {
-            BFuncDto relationDto = dto.getBFunc();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BFunc relationEntity = (BFunc)cachedEntity;
-                entity.setBFunc(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBArgList().add(entity);
-                }
-            } else {
-                BFuncDtoMapper mapper = new BFuncDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBArgList();
-                BFunc relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBFunc(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBArgList().add(entity);
-                }
-                if (instanceCache && entity.getBFunc().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBFunc());
-                }
-            }
-        };
         if (!_suppressBDict && dto.getBDict() != null) {
             BDictDto relationDto = dto.getBDict();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -389,6 +363,32 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
+                }
+            }
+        };
+        if (!_suppressBFunc && dto.getBFunc() != null) {
+            BFuncDto relationDto = dto.getBFunc();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BFunc relationEntity = (BFunc)cachedEntity;
+                entity.setBFunc(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBArgList().add(entity);
+                }
+            } else {
+                BFuncDtoMapper mapper = new BFuncDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBArgList();
+                BFunc relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBFunc(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBArgList().add(entity);
+                }
+                if (instanceCache && entity.getBFunc().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBFunc());
                 }
             }
         };
@@ -559,11 +559,11 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBFunc() {
-        _suppressBFunc = true;
-    }
     public void suppressBDict() {
         _suppressBDict = true;
+    }
+    public void suppressBFunc() {
+        _suppressBFunc = true;
     }
     public void suppressVHtDict() {
         _suppressVHtDict = true;
@@ -572,14 +572,14 @@ public abstract class BsBArgDtoMapper implements DtoMapper<BArg, BArgDto>, Seria
         _suppressBArgValidAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBFunc();
         suppressBDict();
+        suppressBFunc();
         suppressVHtDict();
         suppressBArgValidAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressBFunc = false;
         _suppressBDict = false;
+        _suppressBFunc = false;
         _suppressVHtDict = false;
         _suppressBArgValidAsOne = false;
     }

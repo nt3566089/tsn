@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_STORE_NO, B_CLASS_DTL(ByTwlOutFlg)
+ *     T_STORE_NO, B_USER, B_CLASS_DTL(ByTwlOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tStoreNo, bClassDtlByTwlOutFlg
+ *     tStoreNo, bUser, bClassDtlByTwlOutFlg
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfTStoreNoR {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBUser _foreignBUserLoader;
-    public LoaderOfBUser pulloutBUser() {
-        if (_foreignBUserLoader == null)
-        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
-        return _foreignBUserLoader;
-    }
-
     protected LoaderOfTStoreNo _foreignTStoreNoLoader;
     public LoaderOfTStoreNo pulloutTStoreNo() {
         if (_foreignTStoreNoLoader == null)
         { _foreignTStoreNoLoader = new LoaderOfTStoreNo().ready(myBhv().pulloutTStoreNo(_selectedList), _selector); }
         return _foreignTStoreNoLoader;
+    }
+
+    protected LoaderOfBUser _foreignBUserLoader;
+    public LoaderOfBUser pulloutBUser() {
+        if (_foreignBUserLoader == null)
+        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
+        return _foreignBUserLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByTwlOutFlgLoader;

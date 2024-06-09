@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_SHIPPING_INST_B, T_PICKING_H, T_ALLOC_INST_B, T_STOCK, M_SHAPE
+ *     T_ALLOC_INST_B, T_PICKING_H, M_SHAPE, T_SHIPPING_INST_B, T_STOCK
  *
  * [referrer-table]
  *     T_PACKING_B
  *
  * [foreign-property]
- *     tShippingInstB, tPickingH, tAllocInstB, tStock, mShape
+ *     tAllocInstB, tPickingH, mShape, tShippingInstB, tStock
  *
  * [referrer-property]
  *     tPackingBList
@@ -157,14 +157,14 @@ public abstract class BsTPickingBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TShippingInstBDto _tShippingInstB;
+    protected TAllocInstBDto _tAllocInstB;
 
-    public TShippingInstBDto getTShippingInstB() {
-        return _tShippingInstB;
+    public TAllocInstBDto getTAllocInstB() {
+        return _tAllocInstB;
     }
 
-    public void setTShippingInstB(TShippingInstBDto tShippingInstB) {
-        this._tShippingInstB = tShippingInstB;
+    public void setTAllocInstB(TAllocInstBDto tAllocInstB) {
+        this._tAllocInstB = tAllocInstB;
     }
 
     protected TPickingHDto _tPickingH;
@@ -177,14 +177,24 @@ public abstract class BsTPickingBDto implements Serializable {
         this._tPickingH = tPickingH;
     }
 
-    protected TAllocInstBDto _tAllocInstB;
+    protected MShapeDto _mShape;
 
-    public TAllocInstBDto getTAllocInstB() {
-        return _tAllocInstB;
+    public MShapeDto getMShape() {
+        return _mShape;
     }
 
-    public void setTAllocInstB(TAllocInstBDto tAllocInstB) {
-        this._tAllocInstB = tAllocInstB;
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
+    }
+
+    protected TShippingInstBDto _tShippingInstB;
+
+    public TShippingInstBDto getTShippingInstB() {
+        return _tShippingInstB;
+    }
+
+    public void setTShippingInstB(TShippingInstBDto tShippingInstB) {
+        this._tShippingInstB = tShippingInstB;
     }
 
     protected TStockDto _tStock;
@@ -195,16 +205,6 @@ public abstract class BsTPickingBDto implements Serializable {
 
     public void setTStock(TStockDto tStock) {
         this._tStock = tStock;
-    }
-
-    protected MShapeDto _mShape;
-
-    public MShapeDto getMShape() {
-        return _mShape;
-    }
-
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
     }
 
     // ===================================================================================

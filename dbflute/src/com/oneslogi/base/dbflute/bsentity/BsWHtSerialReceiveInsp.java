@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CUSTOMER, M_CENTER
+ *     M_CENTER, M_CLIENT, M_CUSTOMER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCustomer, mCenter
+ *     mCenter, mClient, mCustomer
  *
  * [referrer property]
  *     
@@ -278,6 +278,25 @@ public abstract class BsWHtSerialReceiveInsp extends AbstractEntity implements D
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -316,25 +335,6 @@ public abstract class BsWHtSerialReceiveInsp extends AbstractEntity implements D
         _mCustomer = mCustomer;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
-    }
-
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
@@ -367,12 +367,12 @@ public abstract class BsWHtSerialReceiveInsp extends AbstractEntity implements D
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         return sb.toString();
     }
 
@@ -408,12 +408,12 @@ public abstract class BsWHtSerialReceiveInsp extends AbstractEntity implements D
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

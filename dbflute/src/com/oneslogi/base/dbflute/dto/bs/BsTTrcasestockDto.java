@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer-property]
  *     
@@ -153,16 +153,6 @@ public abstract class BsTTrcasestockDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MClientDto _mClient;
-
-    public MClientDto getMClient() {
-        return _mClient;
-    }
-
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -171,6 +161,16 @@ public abstract class BsTTrcasestockDto implements Serializable {
 
     public void setMCenter(MCenterDto mCenter) {
         this._mCenter = mCenter;
+    }
+
+    protected MClientDto _mClient;
+
+    public MClientDto getMClient() {
+        return _mClient;
+    }
+
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
     }
 
     // ===================================================================================

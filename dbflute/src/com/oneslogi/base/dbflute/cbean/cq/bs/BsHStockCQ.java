@@ -1190,37 +1190,17 @@ public class BsHStockCQ extends AbstractBsHStockCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         HStockCQ bq = (HStockCQ)bqs;
         HStockCQ uq = (HStockCQ)uqs;
-        if (bq.hasConditionQueryMStockType()) {
-            uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
-        }
         if (bq.hasConditionQueryMShape()) {
             uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
+        }
+        if (bq.hasConditionQueryMStockType()) {
+            uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MStockTypeCQ queryMStockType() {
-        return xdfgetConditionQueryMStockType();
-    }
-    public MStockTypeCQ xdfgetConditionQueryMStockType() {
-        String prop = "mStockType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMStockType()); xsetupOuterJoinMStockType(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MStockTypeCQ xcreateQueryMStockType() {
-        String nrp = xresolveNRP("H_STOCK", "mStockType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MStockTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mStockType", nrp);
-    }
-    protected void xsetupOuterJoinMStockType() { xregOutJo("mStockType"); }
-    public boolean hasConditionQueryMStockType() { return xhasQueRlMap("mStockType"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_SHAPE by my SHAPE_ID, named 'MShape'.
@@ -1240,6 +1220,26 @@ public class BsHStockCQ extends AbstractBsHStockCQ {
     }
     protected void xsetupOuterJoinMShape() { xregOutJo("mShape"); }
     public boolean hasConditionQueryMShape() { return xhasQueRlMap("mShape"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MStockTypeCQ queryMStockType() {
+        return xdfgetConditionQueryMStockType();
+    }
+    public MStockTypeCQ xdfgetConditionQueryMStockType() {
+        String prop = "mStockType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMStockType()); xsetupOuterJoinMStockType(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MStockTypeCQ xcreateQueryMStockType() {
+        String nrp = xresolveNRP("H_STOCK", "mStockType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MStockTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mStockType", nrp);
+    }
+    protected void xsetupOuterJoinMStockType() { xregOutJo("mStockType"); }
+    public boolean hasConditionQueryMStockType() { return xhasQueRlMap("mStockType"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

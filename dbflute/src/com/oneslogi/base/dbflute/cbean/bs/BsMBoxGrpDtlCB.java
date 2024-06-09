@@ -265,35 +265,6 @@ public class BsMBoxGrpDtlCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MBoxNss _nssMBox;
-    public MBoxNss xdfgetNssMBox() {
-        if (_nssMBox == null) { _nssMBox = new MBoxNss(null); }
-        return _nssMBox;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * <pre>
-     * <span style="color: #0000C0">mBoxGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBox()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mBoxGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mBoxGrpDtl</span>.<span style="color: #CC4747">getMBox()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MBoxNss setupSelect_MBox() {
-        assertSetupSelectPurpose("mBox");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnBoxId();
-        }
-        doSetupSelect(() -> query().queryMBox());
-        if (_nssMBox == null || !_nssMBox.hasConditionQuery())
-        { _nssMBox = new MBoxNss(query().queryMBox()); }
-        return _nssMBox;
-    }
-
     protected MBoxGrpNss _nssMBoxGrp;
     public MBoxGrpNss xdfgetNssMBoxGrp() {
         if (_nssMBoxGrp == null) { _nssMBoxGrp = new MBoxGrpNss(null); }
@@ -321,6 +292,35 @@ public class BsMBoxGrpDtlCB extends AbstractConditionBean {
         if (_nssMBoxGrp == null || !_nssMBoxGrp.hasConditionQuery())
         { _nssMBoxGrp = new MBoxGrpNss(query().queryMBoxGrp()); }
         return _nssMBoxGrp;
+    }
+
+    protected MBoxNss _nssMBox;
+    public MBoxNss xdfgetNssMBox() {
+        if (_nssMBox == null) { _nssMBox = new MBoxNss(null); }
+        return _nssMBox;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_BOX by my BOX_ID, named 'MBox'.
+     * <pre>
+     * <span style="color: #0000C0">mBoxGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBox()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mBoxGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mBoxGrpDtl</span>.<span style="color: #CC4747">getMBox()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MBoxNss setupSelect_MBox() {
+        assertSetupSelectPurpose("mBox");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnBoxId();
+        }
+        doSetupSelect(() -> query().queryMBox());
+        if (_nssMBox == null || !_nssMBox.hasConditionQuery())
+        { _nssMBox = new MBoxNss(query().queryMBox()); }
+        return _nssMBox;
     }
 
     // [DBFlute-0.7.4]
@@ -364,8 +364,8 @@ public class BsMBoxGrpDtlCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MBoxGrpDtlCQ> {
-        protected MBoxCB.HpSpecification _mBox;
         protected MBoxGrpCB.HpSpecification _mBoxGrp;
+        protected MBoxCB.HpSpecification _mBox;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MBoxGrpDtlCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -435,37 +435,17 @@ public class BsMBoxGrpDtlCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnBoxGrpDtlId(); // PK
-            if (qyCall().qy().hasConditionQueryMBox()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
-                columnBoxId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMBoxGrp()
                     || qyCall().qy().xgetReferrerQuery() instanceof MBoxGrpCQ) {
                 columnBoxGrpId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMBox()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
+                columnBoxId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "M_BOX_GRP_DTL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_BOX by my BOX_ID, named 'MBox'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MBoxCB.HpSpecification specifyMBox() {
-            assertRelation("mBox");
-            if (_mBox == null) {
-                _mBox = new MBoxCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBox()
-                                    , () -> _qyCall.qy().queryMBox())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mBox.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBox()
-                      , () -> xsyncQyCall().qy().queryMBox()));
-                }
-            }
-            return _mBox;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_BOX_GRP by my BOX_GRP_ID, named 'MBoxGrp'.
@@ -485,6 +465,26 @@ public class BsMBoxGrpDtlCB extends AbstractConditionBean {
                 }
             }
             return _mBoxGrp;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_BOX by my BOX_ID, named 'MBox'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MBoxCB.HpSpecification specifyMBox() {
+            assertRelation("mBox");
+            if (_mBox == null) {
+                _mBox = new MBoxCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBox()
+                                    , () -> _qyCall.qy().queryMBox())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mBox.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBox()
+                      , () -> xsyncQyCall().qy().queryMBox()));
+                }
+            }
+            return _mBox;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

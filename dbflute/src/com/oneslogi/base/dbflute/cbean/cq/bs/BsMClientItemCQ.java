@@ -452,11 +452,11 @@ public class BsMClientItemCQ extends AbstractBsMClientItemCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MClientItemCQ bq = (MClientItemCQ)bqs;
         MClientItemCQ uq = (MClientItemCQ)uqs;
-        if (bq.hasConditionQueryBItem()) {
-            uq.queryBItem().reflectRelationOnUnionQuery(bq.queryBItem(), uq.queryBItem());
-        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryBItem()) {
+            uq.queryBItem().reflectRelationOnUnionQuery(bq.queryBItem(), uq.queryBItem());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -467,26 +467,6 @@ public class BsMClientItemCQ extends AbstractBsMClientItemCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_ITEM by my ITEM_ID, named 'BItem'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BItemCQ queryBItem() {
-        return xdfgetConditionQueryBItem();
-    }
-    public BItemCQ xdfgetConditionQueryBItem() {
-        String prop = "bItem";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBItem()); xsetupOuterJoinBItem(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BItemCQ xcreateQueryBItem() {
-        String nrp = xresolveNRP("M_CLIENT_ITEM", "bItem"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BItemCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bItem", nrp);
-    }
-    protected void xsetupOuterJoinBItem() { xregOutJo("bItem"); }
-    public boolean hasConditionQueryBItem() { return xhasQueRlMap("bItem"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -506,6 +486,26 @@ public class BsMClientItemCQ extends AbstractBsMClientItemCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_ITEM by my ITEM_ID, named 'BItem'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BItemCQ queryBItem() {
+        return xdfgetConditionQueryBItem();
+    }
+    public BItemCQ xdfgetConditionQueryBItem() {
+        String prop = "bItem";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBItem()); xsetupOuterJoinBItem(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BItemCQ xcreateQueryBItem() {
+        String nrp = xresolveNRP("M_CLIENT_ITEM", "bItem"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BItemCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bItem", nrp);
+    }
+    protected void xsetupOuterJoinBItem() { xregOutJo("bItem"); }
+    public boolean hasConditionQueryBItem() { return xhasQueRlMap("bItem"); }
 
     /**
      * Get the condition-query for relation table. <br>

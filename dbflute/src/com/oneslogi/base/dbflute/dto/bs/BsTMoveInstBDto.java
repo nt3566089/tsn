@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_MOVE_INST_H, M_WAREHOUSE, T_LOT, M_LOCATION, M_SHAPE, M_PRODUCT, M_STOCK_TYPE, T_STORE_NO, M_CUSTOMER, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
+ *     M_CUSTOMER, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
  *
  * [referrer-table]
  *     T_MOVE_RECORD_B, T_MOVE_INST_B_SUB
  *
  * [foreign-property]
- *     tMoveInstH, mWarehouse, tLot, mLocation, mShape, mProduct, mStockType, tStoreNo, mCustomerBySupplierId, mCustomerByDepositId, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
+ *     mCustomerByDepositId, mLocation, tLot, tMoveInstH, mProduct, mShape, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
  *
  * [referrer-property]
  *     tMoveRecordBList
@@ -277,34 +277,14 @@ public abstract class BsTMoveInstBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TMoveInstHDto _tMoveInstH;
+    protected MCustomerDto _mCustomerByDepositId;
 
-    public TMoveInstHDto getTMoveInstH() {
-        return _tMoveInstH;
+    public MCustomerDto getMCustomerByDepositId() {
+        return _mCustomerByDepositId;
     }
 
-    public void setTMoveInstH(TMoveInstHDto tMoveInstH) {
-        this._tMoveInstH = tMoveInstH;
-    }
-
-    protected MWarehouseDto _mWarehouse;
-
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
-    }
-
-    protected TLotDto _tLot;
-
-    public TLotDto getTLot() {
-        return _tLot;
-    }
-
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
+    public void setMCustomerByDepositId(MCustomerDto mCustomerByDepositId) {
+        this._mCustomerByDepositId = mCustomerByDepositId;
     }
 
     protected MLocationDto _mLocation;
@@ -317,14 +297,24 @@ public abstract class BsTMoveInstBDto implements Serializable {
         this._mLocation = mLocation;
     }
 
-    protected MShapeDto _mShape;
+    protected TLotDto _tLot;
 
-    public MShapeDto getMShape() {
-        return _mShape;
+    public TLotDto getTLot() {
+        return _tLot;
     }
 
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
+    }
+
+    protected TMoveInstHDto _tMoveInstH;
+
+    public TMoveInstHDto getTMoveInstH() {
+        return _tMoveInstH;
+    }
+
+    public void setTMoveInstH(TMoveInstHDto tMoveInstH) {
+        this._tMoveInstH = tMoveInstH;
     }
 
     protected MProductDto _mProduct;
@@ -335,6 +325,16 @@ public abstract class BsTMoveInstBDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
+    }
+
+    protected MShapeDto _mShape;
+
+    public MShapeDto getMShape() {
+        return _mShape;
+    }
+
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
     }
 
     protected MStockTypeDto _mStockType;
@@ -367,14 +367,14 @@ public abstract class BsTMoveInstBDto implements Serializable {
         this._mCustomerBySupplierId = mCustomerBySupplierId;
     }
 
-    protected MCustomerDto _mCustomerByDepositId;
+    protected MWarehouseDto _mWarehouse;
 
-    public MCustomerDto getMCustomerByDepositId() {
-        return _mCustomerByDepositId;
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
     }
 
-    public void setMCustomerByDepositId(MCustomerDto mCustomerByDepositId) {
-        this._mCustomerByDepositId = mCustomerByDepositId;
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     protected BClassDtlDto _bClassDtlByInoutType;

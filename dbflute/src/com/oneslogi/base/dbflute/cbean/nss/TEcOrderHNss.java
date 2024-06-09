@@ -20,24 +20,6 @@ public class TEcOrderHNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MImportTypeNss withMImportType() {
-        _query.xdoNss(() -> _query.queryMImportType());
-        return new MImportTypeNss(_query.queryMImportType());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TShippingInstHNss withTShippingInstH() {
-        _query.xdoNss(() -> _query.queryTShippingInstH());
-        return new TShippingInstHNss(_query.queryTShippingInstH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -53,6 +35,24 @@ public class TEcOrderHNss {
     public MClientNss withMClient() {
         _query.xdoNss(() -> _query.queryMClient());
         return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MImportTypeNss withMImportType() {
+        _query.xdoNss(() -> _query.queryMImportType());
+        return new MImportTypeNss(_query.queryMImportType());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TShippingInstHNss withTShippingInstH() {
+        _query.xdoNss(() -> _query.queryTShippingInstH());
+        return new TShippingInstHNss(_query.queryTShippingInstH());
     }
     /**
      * With nested relation columns to select clause. <br>

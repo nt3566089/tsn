@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_PROCESS_TYPE, M_CENTER, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_MOVE_INST_R
  *
  * [foreign property]
- *     mClient, mProcessType, mCenter, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
+ *     mCenter, mClient, mProcessType, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
  *
  * [referrer property]
  *     tInventoryBList, tMoveInstBList, tMoveRecordBList
@@ -166,6 +166,13 @@ public class LoaderOfTMoveInstH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
+    }
+
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
@@ -178,13 +185,6 @@ public class LoaderOfTMoveInstH {
         if (_foreignMProcessTypeLoader == null)
         { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
         return _foreignMProcessTypeLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInputTypeLoader;

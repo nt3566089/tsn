@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, M_CLIENT, M_CENTER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
  *
  * [referrer-table]
  *     M_PARAM
  *
  * [foreign-property]
- *     mCustomer, mClient, mCenter, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
+ *     mCenter, mClient, mCustomer, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMCustomer;
-    protected boolean _suppressMClient;
     protected boolean _suppressMCenter;
+    protected boolean _suppressMClient;
+    protected boolean _suppressMCustomer;
     protected boolean _suppressBClassDtlByBatchProgressFlg;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressMParamAsOne;
@@ -150,29 +150,29 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCustomer && entity.getMCustomer() != null) {
-            MCustomer relationEntity = entity.getMCustomer();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCustomerDto relationDto = (MCustomerDto)cachedDto;
-                dto.setMCustomer(relationDto);
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
                     relationDto.getMClientCenterList().add(dto);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMClientCenterList();
-                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCustomer(relationDto);
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
                     relationDto.getMClientCenterList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCustomer());
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -202,29 +202,29 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
                 }
             }
         };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
+        if (!_suppressMCustomer && entity.getMCustomer() != null) {
+            MCustomer relationEntity = entity.getMCustomer();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
+                MCustomerDto relationDto = (MCustomerDto)cachedDto;
+                dto.setMCustomer(relationDto);
                 if (reverseReference) {
                     relationDto.getMClientCenterList().add(dto);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMClientCenterList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
+                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCustomer(relationDto);
                 if (reverseReference) {
                     relationDto.getMClientCenterList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                    _relationDtoMap.put(relationKey, dto.getMCustomer());
                 }
             }
         };
@@ -395,29 +395,29 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCustomer && dto.getMCustomer() != null) {
-            MCustomerDto relationDto = dto.getMCustomer();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCustomer relationEntity = (MCustomer)cachedEntity;
-                entity.setMCustomer(relationEntity);
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMClientCenterList().add(entity);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMClientCenterList();
-                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCustomer(relationEntity);
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMClientCenterList().add(entity);
                 }
-                if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCustomer());
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -447,29 +447,29 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
                 }
             }
         };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
+        if (!_suppressMCustomer && dto.getMCustomer() != null) {
+            MCustomerDto relationDto = dto.getMCustomer();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
+                MCustomer relationEntity = (MCustomer)cachedEntity;
+                entity.setMCustomer(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMClientCenterList().add(entity);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMClientCenterList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
+                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCustomer(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMClientCenterList().add(entity);
                 }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCustomer());
                 }
             }
         };
@@ -663,14 +663,14 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMCustomer() {
-        _suppressMCustomer = true;
+    public void suppressMCenter() {
+        _suppressMCenter = true;
     }
     public void suppressMClient() {
         _suppressMClient = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
+    public void suppressMCustomer() {
+        _suppressMCustomer = true;
     }
     public void suppressBClassDtlByBatchProgressFlg() {
         _suppressBClassDtlByBatchProgressFlg = true;
@@ -682,17 +682,17 @@ public abstract class BsMClientCenterDtoMapper implements DtoMapper<MClientCente
         _suppressMParamAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMCustomer();
-        suppressMClient();
         suppressMCenter();
+        suppressMClient();
+        suppressMCustomer();
         suppressBClassDtlByBatchProgressFlg();
         suppressBClassDtlByDelFlg();
         suppressMParamAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressMCustomer = false;
-        _suppressMClient = false;
         _suppressMCenter = false;
+        _suppressMClient = false;
+        _suppressMCustomer = false;
         _suppressBClassDtlByBatchProgressFlg = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressMParamAsOne = false;

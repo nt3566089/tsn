@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_MOVE_INST_B, T_MOVE_INST_H, M_LOCATION, B_CLASS_DTL(ByAllShippingFlg)
+ *     M_LOCATION, T_MOVE_INST_B, T_MOVE_INST_H, B_CLASS_DTL(ByAllShippingFlg)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tMoveInstB, tMoveInstH, mLocation, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
+ *     mLocation, tMoveInstB, tMoveInstH, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -481,6 +481,14 @@ public abstract class BsTMoveRecordBBhv extends AbstractBehaviorWritable<TMoveRe
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MLocation'.
+     * @param tMoveRecordBList The list of tMoveRecordB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MLocation> pulloutMLocation(List<TMoveRecordB> tMoveRecordBList)
+    { return helpPulloutInternally(tMoveRecordBList, "mLocation"); }
+
+    /**
      * Pull out the list of foreign table 'TMoveInstB'.
      * @param tMoveRecordBList The list of tMoveRecordB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -495,14 +503,6 @@ public abstract class BsTMoveRecordBBhv extends AbstractBehaviorWritable<TMoveRe
      */
     public List<TMoveInstH> pulloutTMoveInstH(List<TMoveRecordB> tMoveRecordBList)
     { return helpPulloutInternally(tMoveRecordBList, "tMoveInstH"); }
-
-    /**
-     * Pull out the list of foreign table 'MLocation'.
-     * @param tMoveRecordBList The list of tMoveRecordB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MLocation> pulloutMLocation(List<TMoveRecordB> tMoveRecordBList)
-    { return helpPulloutInternally(tMoveRecordBList, "mLocation"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

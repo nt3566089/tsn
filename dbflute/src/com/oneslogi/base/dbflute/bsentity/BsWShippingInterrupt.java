@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_BOX, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mBox, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -288,25 +288,6 @@ public abstract class BsWShippingInterrupt extends AbstractEntity implements Dom
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
-    protected MClient _mClient;
-
-    /**
-     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
-     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MClient getMClient() {
-        return _mClient;
-    }
-
-    /**
-     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
-     */
-    public void setMClient(MClient mClient) {
-        _mClient = mClient;
-    }
-
     /** M_BOX by my BOX_ID, named 'MBox'. */
     protected MBox _mBox;
 
@@ -326,25 +307,6 @@ public abstract class BsWShippingInterrupt extends AbstractEntity implements Dom
         _mBox = mBox;
     }
 
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
-
-    /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProduct getMProduct() {
-        return _mProduct;
-    }
-
-    /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
-     */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -362,6 +324,44 @@ public abstract class BsWShippingInterrupt extends AbstractEntity implements Dom
      */
     public void setMCenter(MCenter mCenter) {
         _mCenter = mCenter;
+    }
+
+    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
+    protected MClient _mClient;
+
+    /**
+     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
+     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MClient getMClient() {
+        return _mClient;
+    }
+
+    /**
+     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
+     */
+    public void setMClient(MClient mClient) {
+        _mClient = mClient;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -396,14 +396,14 @@ public abstract class BsWShippingInterrupt extends AbstractEntity implements Dom
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mBox != null)
         { sb.append(li).append(xbRDS(_mBox, "mBox")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -441,14 +441,14 @@ public abstract class BsWShippingInterrupt extends AbstractEntity implements Dom
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
         if (_mBox != null)
         { sb.append(dm).append("mBox"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

@@ -95,9 +95,9 @@ public class MMfwhxitemDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MMfwhxitem)et).getMProduct(), (et, vl) -> ((MMfwhxitem)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((MMfwhxitem)et).getMClient(), (et, vl) -> ((MMfwhxitem)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((MMfwhxitem)et).getMCenter(), (et, vl) -> ((MMfwhxitem)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((MMfwhxitem)et).getMClient(), (et, vl) -> ((MMfwhxitem)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((MMfwhxitem)et).getMProduct(), (et, vl) -> ((MMfwhxitem)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -447,12 +447,12 @@ public class MMfwhxitemDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("M_MFWHxITEM_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MMfwhxitemList", false);
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("M_MFWHxITEM_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MMfwhxitemList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -463,12 +463,12 @@ public class MMfwhxitemDbm extends AbstractDBMeta {
         return cfi("M_MFWHxITEM_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MMfwhxitemList", false);
     }
     /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("M_MFWHxITEM_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MMfwhxitemList", false);
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("M_MFWHxITEM_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MMfwhxitemList", false);
     }
 
     // -----------------------------------------------------

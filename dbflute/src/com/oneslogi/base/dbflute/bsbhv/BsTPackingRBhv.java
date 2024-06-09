@@ -45,7 +45,7 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     
  *
  * [foreign property]
- *     bUserByTagOutUserId, bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
+ *     bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bUserByTagOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
  *
  * [referrer property]
  *     
@@ -397,14 +397,6 @@ public abstract class BsTPackingRBhv extends AbstractBehaviorWritable<TPackingR,
      * @param tPackingRList The list of tPackingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUserByTagOutUserId(List<TPackingR> tPackingRList)
-    { return helpPulloutInternally(tPackingRList, "bUserByTagOutUserId"); }
-
-    /**
-     * Pull out the list of foreign table 'BUser'.
-     * @param tPackingRList The list of tPackingR. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
     public List<BUser> pulloutBUserByInspectionOutUserId(List<TPackingR> tPackingRList)
     { return helpPulloutInternally(tPackingRList, "bUserByInspectionOutUserId"); }
 
@@ -423,6 +415,14 @@ public abstract class BsTPackingRBhv extends AbstractBehaviorWritable<TPackingR,
      */
     public List<BUser> pulloutBUserByStwOutUserId(List<TPackingR> tPackingRList)
     { return helpPulloutInternally(tPackingRList, "bUserByStwOutUserId"); }
+
+    /**
+     * Pull out the list of foreign table 'BUser'.
+     * @param tPackingRList The list of tPackingR. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BUser> pulloutBUserByTagOutUserId(List<TPackingR> tPackingRList)
+    { return helpPulloutInternally(tPackingRList, "bUserByTagOutUserId"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

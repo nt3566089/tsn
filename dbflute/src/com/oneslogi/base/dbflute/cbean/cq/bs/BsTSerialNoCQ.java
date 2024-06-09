@@ -575,11 +575,11 @@ public class BsTSerialNoCQ extends AbstractBsTSerialNoCQ {
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
         }
     }
 
@@ -608,26 +608,6 @@ public class BsTSerialNoCQ extends AbstractBsTSerialNoCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
-    }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("T_SERIAL_NO", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
-    }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -645,6 +625,26 @@ public class BsTSerialNoCQ extends AbstractBsTSerialNoCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
+    }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("T_SERIAL_NO", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

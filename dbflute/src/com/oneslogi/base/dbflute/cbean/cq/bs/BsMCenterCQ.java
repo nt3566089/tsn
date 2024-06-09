@@ -2006,11 +2006,11 @@ public class BsMCenterCQ extends AbstractBsMCenterCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MCenterCQ bq = (MCenterCQ)bqs;
         MCenterCQ uq = (MCenterCQ)uqs;
-        if (bq.hasConditionQueryBTimeZone()) {
-            uq.queryBTimeZone().reflectRelationOnUnionQuery(bq.queryBTimeZone(), uq.queryBTimeZone());
-        }
         if (bq.hasConditionQueryBCulture()) {
             uq.queryBCulture().reflectRelationOnUnionQuery(bq.queryBCulture(), uq.queryBCulture());
+        }
+        if (bq.hasConditionQueryBTimeZone()) {
+            uq.queryBTimeZone().reflectRelationOnUnionQuery(bq.queryBTimeZone(), uq.queryBTimeZone());
         }
         if (bq.hasConditionQueryBClassDtlByDelFlg()) {
             uq.queryBClassDtlByDelFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelFlg(), uq.queryBClassDtlByDelFlg());
@@ -2020,26 +2020,6 @@ public class BsMCenterCQ extends AbstractBsMCenterCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BTimeZoneCQ queryBTimeZone() {
-        return xdfgetConditionQueryBTimeZone();
-    }
-    public BTimeZoneCQ xdfgetConditionQueryBTimeZone() {
-        String prop = "bTimeZone";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBTimeZone()); xsetupOuterJoinBTimeZone(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BTimeZoneCQ xcreateQueryBTimeZone() {
-        String nrp = xresolveNRP("M_CENTER", "bTimeZone"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BTimeZoneCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bTimeZone", nrp);
-    }
-    protected void xsetupOuterJoinBTimeZone() { xregOutJo("bTimeZone"); }
-    public boolean hasConditionQueryBTimeZone() { return xhasQueRlMap("bTimeZone"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -2059,6 +2039,26 @@ public class BsMCenterCQ extends AbstractBsMCenterCQ {
     }
     protected void xsetupOuterJoinBCulture() { xregOutJo("bCulture"); }
     public boolean hasConditionQueryBCulture() { return xhasQueRlMap("bCulture"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BTimeZoneCQ queryBTimeZone() {
+        return xdfgetConditionQueryBTimeZone();
+    }
+    public BTimeZoneCQ xdfgetConditionQueryBTimeZone() {
+        String prop = "bTimeZone";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBTimeZone()); xsetupOuterJoinBTimeZone(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BTimeZoneCQ xcreateQueryBTimeZone() {
+        String nrp = xresolveNRP("M_CENTER", "bTimeZone"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BTimeZoneCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bTimeZone", nrp);
+    }
+    protected void xsetupOuterJoinBTimeZone() { xregOutJo("bTimeZone"); }
+    public boolean hasConditionQueryBTimeZone() { return xhasQueRlMap("bTimeZone"); }
 
     /**
      * Get the condition-query for relation table. <br>

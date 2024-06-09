@@ -27,16 +27,16 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_ALLOC_INST_B, T_STOCK_INOUT, T_STORE_RECORD_B, M_PROCESS_TYPE, T_MOVE_RECORD_B, T_STOCK, B_CLASS_DTL(ByCorrectType)
+ *     T_ALLOC_INST_B, T_STOCK_INOUT, T_MOVE_RECORD_B, M_PROCESS_TYPE, T_STOCK, T_STORE_RECORD_B, B_CLASS_DTL(ByCorrectType)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     tAllocInstB, tStockInoutByFsStockInoutIdSelf, tStoreRecordB, mProcessType, tMoveRecordB, tStock, tStockInoutByBfStockInoutIdSelf, bClassDtlByCorrectType, bClassDtlByInoutType
+ *     tAllocInstB, tStockInoutByBfStockInoutIdSelf, tStockInoutByFsStockInoutIdSelf, tMoveRecordB, mProcessType, tStock, tStoreRecordB, bClassDtlByCorrectType, bClassDtlByInoutType
  *
  * [referrer-property]
- *     tStockInoutByFsStockInoutIdSelfList, tStockInoutByBfStockInoutIdSelfList
+ *     tStockInoutByBfStockInoutIdSelfList, tStockInoutByFsStockInoutIdSelfList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -183,6 +183,16 @@ public abstract class BsTStockInoutDto implements Serializable {
         this._tAllocInstB = tAllocInstB;
     }
 
+    protected TStockInoutDto _tStockInoutByBfStockInoutIdSelf;
+
+    public TStockInoutDto getTStockInoutByBfStockInoutIdSelf() {
+        return _tStockInoutByBfStockInoutIdSelf;
+    }
+
+    public void setTStockInoutByBfStockInoutIdSelf(TStockInoutDto tStockInoutByBfStockInoutIdSelf) {
+        this._tStockInoutByBfStockInoutIdSelf = tStockInoutByBfStockInoutIdSelf;
+    }
+
     protected TStockInoutDto _tStockInoutByFsStockInoutIdSelf;
 
     public TStockInoutDto getTStockInoutByFsStockInoutIdSelf() {
@@ -191,26 +201,6 @@ public abstract class BsTStockInoutDto implements Serializable {
 
     public void setTStockInoutByFsStockInoutIdSelf(TStockInoutDto tStockInoutByFsStockInoutIdSelf) {
         this._tStockInoutByFsStockInoutIdSelf = tStockInoutByFsStockInoutIdSelf;
-    }
-
-    protected TStoreRecordBDto _tStoreRecordB;
-
-    public TStoreRecordBDto getTStoreRecordB() {
-        return _tStoreRecordB;
-    }
-
-    public void setTStoreRecordB(TStoreRecordBDto tStoreRecordB) {
-        this._tStoreRecordB = tStoreRecordB;
-    }
-
-    protected MProcessTypeDto _mProcessType;
-
-    public MProcessTypeDto getMProcessType() {
-        return _mProcessType;
-    }
-
-    public void setMProcessType(MProcessTypeDto mProcessType) {
-        this._mProcessType = mProcessType;
     }
 
     protected TMoveRecordBDto _tMoveRecordB;
@@ -223,6 +213,16 @@ public abstract class BsTStockInoutDto implements Serializable {
         this._tMoveRecordB = tMoveRecordB;
     }
 
+    protected MProcessTypeDto _mProcessType;
+
+    public MProcessTypeDto getMProcessType() {
+        return _mProcessType;
+    }
+
+    public void setMProcessType(MProcessTypeDto mProcessType) {
+        this._mProcessType = mProcessType;
+    }
+
     protected TStockDto _tStock;
 
     public TStockDto getTStock() {
@@ -233,14 +233,14 @@ public abstract class BsTStockInoutDto implements Serializable {
         this._tStock = tStock;
     }
 
-    protected TStockInoutDto _tStockInoutByBfStockInoutIdSelf;
+    protected TStoreRecordBDto _tStoreRecordB;
 
-    public TStockInoutDto getTStockInoutByBfStockInoutIdSelf() {
-        return _tStockInoutByBfStockInoutIdSelf;
+    public TStoreRecordBDto getTStoreRecordB() {
+        return _tStoreRecordB;
     }
 
-    public void setTStockInoutByBfStockInoutIdSelf(TStockInoutDto tStockInoutByBfStockInoutIdSelf) {
-        this._tStockInoutByBfStockInoutIdSelf = tStockInoutByBfStockInoutIdSelf;
+    public void setTStoreRecordB(TStoreRecordBDto tStoreRecordB) {
+        this._tStoreRecordB = tStoreRecordB;
     }
 
     protected BClassDtlDto _bClassDtlByCorrectType;
@@ -266,17 +266,6 @@ public abstract class BsTStockInoutDto implements Serializable {
     // ===================================================================================
     //                                                                      Referrer Table
     //                                                                      ==============
-    protected List<TStockInoutDto> _tStockInoutByFsStockInoutIdSelfList;
-
-    public List<TStockInoutDto> getTStockInoutByFsStockInoutIdSelfList() {
-        if (_tStockInoutByFsStockInoutIdSelfList == null) { _tStockInoutByFsStockInoutIdSelfList = new ArrayList<TStockInoutDto>(); }
-        return _tStockInoutByFsStockInoutIdSelfList;
-    }
-
-    public void setTStockInoutByFsStockInoutIdSelfList(List<TStockInoutDto> tStockInoutByFsStockInoutIdSelfList) {
-        this._tStockInoutByFsStockInoutIdSelfList = tStockInoutByFsStockInoutIdSelfList;
-    }
-
     protected List<TStockInoutDto> _tStockInoutByBfStockInoutIdSelfList;
 
     public List<TStockInoutDto> getTStockInoutByBfStockInoutIdSelfList() {
@@ -286,6 +275,17 @@ public abstract class BsTStockInoutDto implements Serializable {
 
     public void setTStockInoutByBfStockInoutIdSelfList(List<TStockInoutDto> tStockInoutByBfStockInoutIdSelfList) {
         this._tStockInoutByBfStockInoutIdSelfList = tStockInoutByBfStockInoutIdSelfList;
+    }
+
+    protected List<TStockInoutDto> _tStockInoutByFsStockInoutIdSelfList;
+
+    public List<TStockInoutDto> getTStockInoutByFsStockInoutIdSelfList() {
+        if (_tStockInoutByFsStockInoutIdSelfList == null) { _tStockInoutByFsStockInoutIdSelfList = new ArrayList<TStockInoutDto>(); }
+        return _tStockInoutByFsStockInoutIdSelfList;
+    }
+
+    public void setTStockInoutByFsStockInoutIdSelfList(List<TStockInoutDto> tStockInoutByFsStockInoutIdSelfList) {
+        this._tStockInoutByFsStockInoutIdSelfList = tStockInoutByFsStockInoutIdSelfList;
     }
 
     // ===================================================================================

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_COL, B_DICT, M_CENTER, V_DICT
+ *     M_CENTER, B_COL, B_DICT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bCol, bDict, mCenter, vDict
+ *     mCenter, bCol, bDict, vDict
  *
  * [referrer property]
  *     
@@ -278,6 +278,25 @@ public abstract class BsMCenterCol extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** B_COL by my COL_ID, named 'BCol'. */
     protected BCol _bCol;
 
@@ -314,25 +333,6 @@ public abstract class BsMCenterCol extends AbstractEntity implements DomainEntit
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -386,12 +386,12 @@ public abstract class BsMCenterCol extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_bCol != null)
         { sb.append(li).append(xbRDS(_bCol, "bCol")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         return sb.toString();
@@ -426,12 +426,12 @@ public abstract class BsMCenterCol extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_bCol != null)
         { sb.append(dm).append("bCol"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (sb.length() > dm.length()) {

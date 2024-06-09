@@ -395,11 +395,11 @@ public class BsTLastLotCQ extends AbstractBsTLastLotCQ {
         if (bq.hasConditionQueryMCustomer()) {
             uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
         }
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
         if (bq.hasConditionQueryTLot()) {
             uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
+        }
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
         }
     }
 
@@ -428,26 +428,6 @@ public class BsTLastLotCQ extends AbstractBsTLastLotCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
-    }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("T_LAST_LOT", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
-    }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * T_LOT by my LOT_ID, named 'TLot'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -465,6 +445,26 @@ public class BsTLastLotCQ extends AbstractBsTLastLotCQ {
     }
     protected void xsetupOuterJoinTLot() { xregOutJo("tLot"); }
     public boolean hasConditionQueryTLot() { return xhasQueRlMap("tLot"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
+    }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("T_LAST_LOT", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

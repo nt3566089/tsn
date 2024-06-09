@@ -2,7 +2,6 @@ package com.oneslogi.base.dbflute.bsbhv.pmbean;
 
 import java.util.*;
 
-import org.dbflute.outsidesql.paging.SimplePagingBean;
 import org.dbflute.outsidesql.typed.*;
 import org.dbflute.jdbc.*;
 import org.dbflute.outsidesql.PmbCustodial;
@@ -16,19 +15,22 @@ import com.oneslogi.base.dbflute.exentity.customize.*;
  * This is related to "<span style="color: #AD4747">selectSqlInventoryInfoOffset</span>" on TInventoryHBhv.
  * @author DBFlute(AutoGenerator)
  */
-public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements EntityHandlingPmb<TInventoryHBhv, SqlInventoryInfoOffset>, AutoPagingHandlingPmb<TInventoryHBhv, SqlInventoryInfoOffset>, FetchBean {
+public class BsSqlInventoryInfoOffsetPmb implements ListHandlingPmb<TInventoryHBhv, SqlInventoryInfoOffset>, EntityHandlingPmb<TInventoryHBhv, SqlInventoryInfoOffset>, FetchBean {
 
     // ===================================================================================
     //                                                                           Attribute
     //                                                                           =========
-    /** The parameter of systemDt. */
-    protected String _systemDt;
-
     /** The parameter of centerId. */
     protected Long _centerId;
 
     /** The parameter of clientId. */
     protected Long _clientId;
+
+    /** The parameter of systemDt. */
+    protected String _systemDt;
+
+    /** The max size of safety result. */
+    protected int _safetyMaxResultSize;
 
     /** The time-zone for filtering e.g. from-to. (NullAllowed: if null, default zone) */
     protected TimeZone _timeZone;
@@ -41,9 +43,6 @@ public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements Ent
      * This is related to "<span style="color: #AD4747">selectSqlInventoryInfoOffset</span>" on TInventoryHBhv.
      */
     public BsSqlInventoryInfoOffsetPmb() {
-        if (DBFluteConfig.getInstance().isPagingCountLater()) {
-            enablePagingCountLater();
-        }
     }
 
     // ===================================================================================
@@ -59,6 +58,23 @@ public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements Ent
      * @return The type instance of an entity, customize entity. (NotNull)
      */
     public Class<SqlInventoryInfoOffset> getEntityType() { return SqlInventoryInfoOffset.class; }
+
+    // ===================================================================================
+    //                                                                       Safety Result
+    //                                                                       =============
+    /**
+     * {@inheritDoc}
+     */
+    public void checkSafetyResult(int safetyMaxResultSize) {
+        _safetyMaxResultSize = safetyMaxResultSize;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public int getSafetyMaxResultSize() {
+        return _safetyMaxResultSize;
+    }
 
     // ===================================================================================
     //                                                                       Assist Helper
@@ -100,9 +116,9 @@ public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements Ent
     protected String xbuildColumnString() {
         final String dm = ", ";
         final StringBuilder sb = new StringBuilder();
-        sb.append(dm).append(_systemDt);
         sb.append(dm).append(_centerId);
         sb.append(dm).append(_clientId);
+        sb.append(dm).append(_systemDt);
         if (sb.length() > 0) { sb.delete(0, dm.length()); }
         sb.insert(0, "{").append("}");
         return sb.toString();
@@ -111,22 +127,6 @@ public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements Ent
     // ===================================================================================
     //                                                                            Accessor
     //                                                                            ========
-    /**
-     * [get] systemDt <br>
-     * @return The value of systemDt. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
-     */
-    public String getSystemDt() {
-        return filterStringParameter(_systemDt);
-    }
-
-    /**
-     * [set] systemDt <br>
-     * @param systemDt The value of systemDt. (NullAllowed)
-     */
-    public void setSystemDt(String systemDt) {
-        _systemDt = systemDt;
-    }
-
     /**
      * [get] centerId <br>
      * @return The value of centerId. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
@@ -157,5 +157,21 @@ public class BsSqlInventoryInfoOffsetPmb extends SimplePagingBean implements Ent
      */
     public void setClientId(Long clientId) {
         _clientId = clientId;
+    }
+
+    /**
+     * [get] systemDt <br>
+     * @return The value of systemDt. (NullAllowed, NotEmptyString(when String): if empty string, returns null)
+     */
+    public String getSystemDt() {
+        return filterStringParameter(_systemDt);
+    }
+
+    /**
+     * [set] systemDt <br>
+     * @param systemDt The value of systemDt. (NullAllowed)
+     */
+    public void setSystemDt(String systemDt) {
+        _systemDt = systemDt;
     }
 }

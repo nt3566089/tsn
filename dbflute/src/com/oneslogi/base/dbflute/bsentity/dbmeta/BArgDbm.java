@@ -67,8 +67,8 @@ public class BArgDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((BArg)et).getBFunc(), (et, vl) -> ((BArg)et).setBFunc((BFunc)vl), "BFunc");
         setupEfpg(_efpgMap, et -> ((BArg)et).getBDict(), (et, vl) -> ((BArg)et).setBDict((BDict)vl), "BDict");
+        setupEfpg(_efpgMap, et -> ((BArg)et).getBFunc(), (et, vl) -> ((BArg)et).setBFunc((BFunc)vl), "BFunc");
         setupEfpg(_efpgMap, et -> ((BArg)et).getVHtDict(), (et, vl) -> ((BArg)et).setVHtDict((VHtDict)vl), "VHtDict");
         setupEfpg(_efpgMap, et -> ((BArg)et).getBArgValidAsOne(), (et, vl) -> ((BArg)et).setBArgValidAsOne((BArgValid)vl), "BArgValidAsOne");
     }
@@ -234,20 +234,20 @@ public class BArgDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_FUNC by my FUNC_ID, named 'BFunc'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBFunc() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnFuncId(), BFuncDbm.getInstance().columnFuncId());
-        return cfi("B_ARG_FK1", "BFunc", this, BFuncDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BArgList", false);
-    }
-    /**
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("B_ARG_FK2", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BArgList", false);
+        return cfi("B_ARG_FK2", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BArgList", false);
+    }
+    /**
+     * B_FUNC by my FUNC_ID, named 'BFunc'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBFunc() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnFuncId(), BFuncDbm.getInstance().columnFuncId());
+        return cfi("B_ARG_FK1", "BFunc", this, BFuncDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BArgList", false);
     }
     /**
      * V_HT_DICT by my DICT_ID, named 'VHtDict'.

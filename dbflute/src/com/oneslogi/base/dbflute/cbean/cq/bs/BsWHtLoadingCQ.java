@@ -472,14 +472,14 @@ public class BsWHtLoadingCQ extends AbstractBsWHtLoadingCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         WHtLoadingCQ bq = (WHtLoadingCQ)bqs;
         WHtLoadingCQ uq = (WHtLoadingCQ)uqs;
-        if (bq.hasConditionQueryMDeliveryCourse()) {
-            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        if (bq.hasConditionQueryMDeliveryCourse()) {
+            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
         }
     }
 
@@ -488,23 +488,23 @@ public class BsWHtLoadingCQ extends AbstractBsWHtLoadingCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MDeliveryCourseCQ queryMDeliveryCourse() {
-        return xdfgetConditionQueryMDeliveryCourse();
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
     }
-    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
-        String prop = "mDeliveryCourse";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
         return xgetQueRlMap(prop);
     }
-    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
-        String nrp = xresolveNRP("W_HT_LOADING", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("W_HT_LOADING", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
     }
-    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
-    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -528,23 +528,23 @@ public class BsWHtLoadingCQ extends AbstractBsWHtLoadingCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
+    public MDeliveryCourseCQ queryMDeliveryCourse() {
+        return xdfgetConditionQueryMDeliveryCourse();
     }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
+        String prop = "mDeliveryCourse";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
         return xgetQueRlMap(prop);
     }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("W_HT_LOADING", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
+        String nrp = xresolveNRP("W_HT_LOADING", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
     }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
+    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

@@ -20,12 +20,12 @@ public class TPickingBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TShippingInstBNss withTShippingInstB() {
-        _query.xdoNss(() -> _query.queryTShippingInstB());
-        return new TShippingInstBNss(_query.queryTShippingInstB());
+    public TAllocInstBNss withTAllocInstB() {
+        _query.xdoNss(() -> _query.queryTAllocInstB());
+        return new TAllocInstBNss(_query.queryTAllocInstB());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,12 +38,21 @@ public class TPickingBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstBNss withTAllocInstB() {
-        _query.xdoNss(() -> _query.queryTAllocInstB());
-        return new TAllocInstBNss(_query.queryTAllocInstB());
+    public MShapeNss withMShape() {
+        _query.xdoNss(() -> _query.queryMShape());
+        return new MShapeNss(_query.queryMShape());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TShippingInstBNss withTShippingInstB() {
+        _query.xdoNss(() -> _query.queryTShippingInstB());
+        return new TShippingInstBNss(_query.queryTShippingInstB());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -53,14 +62,5 @@ public class TPickingBNss {
     public TStockNss withTStock() {
         _query.xdoNss(() -> _query.queryTStock());
         return new TStockNss(_query.queryTStock());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MShapeNss withMShape() {
-        _query.xdoNss(() -> _query.queryMShape());
-        return new MShapeNss(_query.queryMShape());
     }
 }

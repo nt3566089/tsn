@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_LOCATION, T_STORE_RECORD_H, T_RECEIVE_PLAN_B, B_CLASS_DTL(ByInputType)
+ *     T_RECEIVE_PLAN_B, M_LOCATION, T_STORE_RECORD_H, B_CLASS_DTL(ByInputType)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     mLocation, tStoreRecordH, tReceivePlanB, bClassDtlByInputType, bClassDtlByStoreFlg
+ *     tReceivePlanB, mLocation, tStoreRecordH, bClassDtlByInputType, bClassDtlByStoreFlg
  *
  * [referrer-property]
  *     tStockInoutList
@@ -70,9 +70,9 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressTReceivePlanB;
     protected boolean _suppressMLocation;
     protected boolean _suppressTStoreRecordH;
-    protected boolean _suppressTReceivePlanB;
     protected boolean _suppressBClassDtlByInputType;
     protected boolean _suppressBClassDtlByStoreFlg;
     protected boolean _suppressTStockInoutList;
@@ -158,6 +158,32 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressTReceivePlanB && entity.getTReceivePlanB() != null) {
+            TReceivePlanB relationEntity = entity.getTReceivePlanB();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TReceivePlanBDto relationDto = (TReceivePlanBDto)cachedDto;
+                dto.setTReceivePlanB(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStoreRecordBList().add(dto);
+                }
+            } else {
+                TReceivePlanBDtoMapper mapper = new TReceivePlanBDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStoreRecordBList();
+                TReceivePlanBDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTReceivePlanB(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStoreRecordBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTReceivePlanB());
+                }
+            }
+        };
         if (!_suppressMLocation && entity.getMLocation() != null) {
             MLocation relationEntity = entity.getMLocation();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -207,32 +233,6 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTStoreRecordH());
-                }
-            }
-        };
-        if (!_suppressTReceivePlanB && entity.getTReceivePlanB() != null) {
-            TReceivePlanB relationEntity = entity.getTReceivePlanB();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TReceivePlanBDto relationDto = (TReceivePlanBDto)cachedDto;
-                dto.setTReceivePlanB(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStoreRecordBList().add(dto);
-                }
-            } else {
-                TReceivePlanBDtoMapper mapper = new TReceivePlanBDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStoreRecordBList();
-                TReceivePlanBDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTReceivePlanB(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStoreRecordBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTReceivePlanB());
                 }
             }
         };
@@ -415,6 +415,32 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressTReceivePlanB && dto.getTReceivePlanB() != null) {
+            TReceivePlanBDto relationDto = dto.getTReceivePlanB();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TReceivePlanB relationEntity = (TReceivePlanB)cachedEntity;
+                entity.setTReceivePlanB(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStoreRecordBList().add(entity);
+                }
+            } else {
+                TReceivePlanBDtoMapper mapper = new TReceivePlanBDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStoreRecordBList();
+                TReceivePlanB relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTReceivePlanB(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStoreRecordBList().add(entity);
+                }
+                if (instanceCache && entity.getTReceivePlanB().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTReceivePlanB());
+                }
+            }
+        };
         if (!_suppressMLocation && dto.getMLocation() != null) {
             MLocationDto relationDto = dto.getMLocation();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -464,32 +490,6 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
                 }
                 if (instanceCache && entity.getTStoreRecordH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTStoreRecordH());
-                }
-            }
-        };
-        if (!_suppressTReceivePlanB && dto.getTReceivePlanB() != null) {
-            TReceivePlanBDto relationDto = dto.getTReceivePlanB();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TReceivePlanB relationEntity = (TReceivePlanB)cachedEntity;
-                entity.setTReceivePlanB(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStoreRecordBList().add(entity);
-                }
-            } else {
-                TReceivePlanBDtoMapper mapper = new TReceivePlanBDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStoreRecordBList();
-                TReceivePlanB relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTReceivePlanB(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStoreRecordBList().add(entity);
-                }
-                if (instanceCache && entity.getTReceivePlanB().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTReceivePlanB());
                 }
             }
         };
@@ -671,14 +671,14 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressTReceivePlanB() {
+        _suppressTReceivePlanB = true;
+    }
     public void suppressMLocation() {
         _suppressMLocation = true;
     }
     public void suppressTStoreRecordH() {
         _suppressTStoreRecordH = true;
-    }
-    public void suppressTReceivePlanB() {
-        _suppressTReceivePlanB = true;
     }
     public void suppressBClassDtlByInputType() {
         _suppressBClassDtlByInputType = true;
@@ -690,17 +690,17 @@ public abstract class BsTStoreRecordBDtoMapper implements DtoMapper<TStoreRecord
         _suppressTStockInoutList = true;
     }
     protected void doSuppressAll() { // internal
+        suppressTReceivePlanB();
         suppressMLocation();
         suppressTStoreRecordH();
-        suppressTReceivePlanB();
         suppressBClassDtlByInputType();
         suppressBClassDtlByStoreFlg();
         suppressTStockInoutList();
     }
     protected void doSuppressClear() { // internal
+        _suppressTReceivePlanB = false;
         _suppressMLocation = false;
         _suppressTStoreRecordH = false;
-        _suppressTReceivePlanB = false;
         _suppressBClassDtlByInputType = false;
         _suppressBClassDtlByStoreFlg = false;
         _suppressTStockInoutList = false;

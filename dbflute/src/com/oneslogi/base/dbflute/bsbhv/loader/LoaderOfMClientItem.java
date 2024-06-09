@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ITEM, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_DICT, B_ITEM, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bItem, mClient, bDict, vDict
+ *     mClient, bDict, bItem, vDict
  *
  * [referrer property]
  *     
@@ -59,13 +59,6 @@ public class LoaderOfMClientItem {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBItem _foreignBItemLoader;
-    public LoaderOfBItem pulloutBItem() {
-        if (_foreignBItemLoader == null)
-        { _foreignBItemLoader = new LoaderOfBItem().ready(myBhv().pulloutBItem(_selectedList), _selector); }
-        return _foreignBItemLoader;
-    }
-
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
@@ -78,6 +71,13 @@ public class LoaderOfMClientItem {
         if (_foreignBDictLoader == null)
         { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
         return _foreignBDictLoader;
+    }
+
+    protected LoaderOfBItem _foreignBItemLoader;
+    public LoaderOfBItem pulloutBItem() {
+        if (_foreignBItemLoader == null)
+        { _foreignBItemLoader = new LoaderOfBItem().ready(myBhv().pulloutBItem(_selectedList), _selector); }
+        return _foreignBItemLoader;
     }
 
     protected LoaderOfVDict _foreignVDictLoader;

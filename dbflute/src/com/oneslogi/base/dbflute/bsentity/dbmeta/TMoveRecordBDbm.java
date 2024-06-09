@@ -70,9 +70,9 @@ public class TMoveRecordBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getMLocation(), (et, vl) -> ((TMoveRecordB)et).setMLocation((MLocation)vl), "MLocation");
         setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getTMoveInstB(), (et, vl) -> ((TMoveRecordB)et).setTMoveInstB((TMoveInstB)vl), "TMoveInstB");
         setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getTMoveInstH(), (et, vl) -> ((TMoveRecordB)et).setTMoveInstH((TMoveInstH)vl), "TMoveInstH");
-        setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getMLocation(), (et, vl) -> ((TMoveRecordB)et).setMLocation((MLocation)vl), "MLocation");
         setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getBClassDtlByAllShippingFlg(), (et, vl) -> ((TMoveRecordB)et).setBClassDtlByAllShippingFlg((BClassDtl)vl), "BClassDtlByAllShippingFlg");
         setupEfpg(_efpgMap, et -> ((TMoveRecordB)et).getBClassDtlByStoreNoMergeFlg(), (et, vl) -> ((TMoveRecordB)et).setBClassDtlByStoreNoMergeFlg((BClassDtl)vl), "BClassDtlByStoreNoMergeFlg");
     }
@@ -249,12 +249,20 @@ public class TMoveRecordBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("T_MOVE_RECORD_B_FK2", "MLocation", this, MLocationDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
+    }
+    /**
      * T_MOVE_INST_B by my MOVE_INST_B_ID, named 'TMoveInstB'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTMoveInstB() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMoveInstBId(), TMoveInstBDbm.getInstance().columnMoveInstBId());
-        return cfi("T_MOVE_RECORD_B_FK3", "TMoveInstB", this, TMoveInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
+        return cfi("T_MOVE_RECORD_B_FK3", "TMoveInstB", this, TMoveInstBDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
     }
     /**
      * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
@@ -262,15 +270,7 @@ public class TMoveRecordBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTMoveInstH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMoveInstHId(), TMoveInstHDbm.getInstance().columnMoveInstHId());
-        return cfi("T_MOVE_RECORD_B_FK1", "TMoveInstH", this, TMoveInstHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
-    }
-    /**
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_MOVE_RECORD_B_FK2", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
+        return cfi("T_MOVE_RECORD_B_FK1", "TMoveInstH", this, TMoveInstHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TMoveRecordBList", false);
     }
     /**
      * B_CLASS_DTL by my ALL_SHIPPING_FLG, named 'BClassDtlByAllShippingFlg'.

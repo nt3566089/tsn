@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, T_RECEIVE_PLAN_H, M_CENTER, M_PROCESS_TYPE, M_STOCK_TYPE, M_CLIENT, T_STORE_RECORD_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_PROCESS_TYPE, T_RECEIVE_PLAN_H, M_STOCK_TYPE, T_STORE_RECORD_R(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_STORE_RECORD_R
  *
  * [foreign property]
- *     mCustomerByDepositId, tReceivePlanH, mCenter, mCustomerBySupplierId, mProcessType, mStockType, mClient, tStoreRecordRAsOne
+ *     mCenter, mClient, mCustomerByDepositId, mProcessType, tReceivePlanH, mStockType, mCustomerBySupplierId, tStoreRecordRAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -98,20 +98,6 @@ public class LoaderOfTStoreRecordH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
-    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
-        if (_foreignMCustomerByDepositIdLoader == null)
-        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
-        return _foreignMCustomerByDepositIdLoader;
-    }
-
-    protected LoaderOfTReceivePlanH _foreignTReceivePlanHLoader;
-    public LoaderOfTReceivePlanH pulloutTReceivePlanH() {
-        if (_foreignTReceivePlanHLoader == null)
-        { _foreignTReceivePlanHLoader = new LoaderOfTReceivePlanH().ready(myBhv().pulloutTReceivePlanH(_selectedList), _selector); }
-        return _foreignTReceivePlanHLoader;
-    }
-
     protected LoaderOfMCenter _foreignMCenterLoader;
     public LoaderOfMCenter pulloutMCenter() {
         if (_foreignMCenterLoader == null)
@@ -119,11 +105,18 @@ public class LoaderOfTStoreRecordH {
         return _foreignMCenterLoader;
     }
 
-    protected LoaderOfMCustomer _foreignMCustomerBySupplierIdLoader;
-    public LoaderOfMCustomer pulloutMCustomerBySupplierId() {
-        if (_foreignMCustomerBySupplierIdLoader == null)
-        { _foreignMCustomerBySupplierIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerBySupplierId(_selectedList), _selector); }
-        return _foreignMCustomerBySupplierIdLoader;
+    protected LoaderOfMClient _foreignMClientLoader;
+    public LoaderOfMClient pulloutMClient() {
+        if (_foreignMClientLoader == null)
+        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
+        return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
+    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
+        if (_foreignMCustomerByDepositIdLoader == null)
+        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
+        return _foreignMCustomerByDepositIdLoader;
     }
 
     protected LoaderOfMProcessType _foreignMProcessTypeLoader;
@@ -133,6 +126,13 @@ public class LoaderOfTStoreRecordH {
         return _foreignMProcessTypeLoader;
     }
 
+    protected LoaderOfTReceivePlanH _foreignTReceivePlanHLoader;
+    public LoaderOfTReceivePlanH pulloutTReceivePlanH() {
+        if (_foreignTReceivePlanHLoader == null)
+        { _foreignTReceivePlanHLoader = new LoaderOfTReceivePlanH().ready(myBhv().pulloutTReceivePlanH(_selectedList), _selector); }
+        return _foreignTReceivePlanHLoader;
+    }
+
     protected LoaderOfMStockType _foreignMStockTypeLoader;
     public LoaderOfMStockType pulloutMStockType() {
         if (_foreignMStockTypeLoader == null)
@@ -140,11 +140,11 @@ public class LoaderOfTStoreRecordH {
         return _foreignMStockTypeLoader;
     }
 
-    protected LoaderOfMClient _foreignMClientLoader;
-    public LoaderOfMClient pulloutMClient() {
-        if (_foreignMClientLoader == null)
-        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
-        return _foreignMClientLoader;
+    protected LoaderOfMCustomer _foreignMCustomerBySupplierIdLoader;
+    public LoaderOfMCustomer pulloutMCustomerBySupplierId() {
+        if (_foreignMCustomerBySupplierIdLoader == null)
+        { _foreignMCustomerBySupplierIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerBySupplierId(_selectedList), _selector); }
+        return _foreignMCustomerBySupplierIdLoader;
     }
 
     protected LoaderOfTStoreRecordR _foreignTStoreRecordRAsOneLoader;

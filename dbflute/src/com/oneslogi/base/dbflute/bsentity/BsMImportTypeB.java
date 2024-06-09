@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, M_EDI_COLUMN
+ *     M_EDI_COLUMN, M_IMPORT_TYPE
  *
  * [referrer table]
  *     M_IMPORT_TYPE_B_COPY_B, M_IMPORT_TYPE_B_COPY_H
  *
  * [foreign property]
- *     mImportType, mEdiColumn
+ *     mEdiColumn, mImportType
  *
  * [referrer property]
  *     mImportTypeBCopyBList, mImportTypeBCopyHList
@@ -253,25 +253,6 @@ public abstract class BsMImportTypeB extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. */
-    protected MImportType _mImportType;
-
-    /**
-     * [get] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. <br>
-     * @return The entity of foreign property 'MImportType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MImportType getMImportType() {
-        return _mImportType;
-    }
-
-    /**
-     * [set] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @param mImportType The entity of foreign property 'MImportType'. (NullAllowed)
-     */
-    public void setMImportType(MImportType mImportType) {
-        _mImportType = mImportType;
-    }
-
     /** M_EDI_COLUMN by my EDI_COLUMN_ID, named 'MEdiColumn'. */
     protected MEdiColumn _mEdiColumn;
 
@@ -289,6 +270,25 @@ public abstract class BsMImportTypeB extends AbstractEntity implements DomainEnt
      */
     public void setMEdiColumn(MEdiColumn mEdiColumn) {
         _mEdiColumn = mEdiColumn;
+    }
+
+    /** M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. */
+    protected MImportType _mImportType;
+
+    /**
+     * [get] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. <br>
+     * @return The entity of foreign property 'MImportType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MImportType getMImportType() {
+        return _mImportType;
+    }
+
+    /**
+     * [set] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @param mImportType The entity of foreign property 'MImportType'. (NullAllowed)
+     */
+    public void setMImportType(MImportType mImportType) {
+        _mImportType = mImportType;
     }
 
     // ===================================================================================
@@ -363,10 +363,10 @@ public abstract class BsMImportTypeB extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mImportType != null)
-        { sb.append(li).append(xbRDS(_mImportType, "mImportType")); }
         if (_mEdiColumn != null)
         { sb.append(li).append(xbRDS(_mEdiColumn, "mEdiColumn")); }
+        if (_mImportType != null)
+        { sb.append(li).append(xbRDS(_mImportType, "mImportType")); }
         if (_mImportTypeBCopyBList != null) { for (MImportTypeBCopyB et : _mImportTypeBCopyBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "mImportTypeBCopyBList")); } } }
         if (_mImportTypeBCopyHList != null) { for (MImportTypeBCopyH et : _mImportTypeBCopyHList)
@@ -401,10 +401,10 @@ public abstract class BsMImportTypeB extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mImportType != null)
-        { sb.append(dm).append("mImportType"); }
         if (_mEdiColumn != null)
         { sb.append(dm).append("mEdiColumn"); }
+        if (_mImportType != null)
+        { sb.append(dm).append("mImportType"); }
         if (_mImportTypeBCopyBList != null && !_mImportTypeBCopyBList.isEmpty())
         { sb.append(dm).append("mImportTypeBCopyBList"); }
         if (_mImportTypeBCopyHList != null && !_mImportTypeBCopyHList.isEmpty())

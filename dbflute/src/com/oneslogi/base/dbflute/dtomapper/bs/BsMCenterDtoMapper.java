@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_TIME_ZONE, B_CULTURE, B_CLASS_DTL(ByDelFlg)
+ *     B_CULTURE, B_TIME_ZONE, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer-table]
  *     M_BOX, M_BOX_GRP, M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, M_CARRIER_SLIP_YUPK, M_CBLK, M_CBRCTG, M_CDRCATT, M_CENTER_CLASS, M_CENTER_COL, M_CENTER_CUSTOMER, M_CENTER_ITEM, M_CENTER_SCREEN, M_CLIENT_CENTER, M_CLIN, M_CORG, M_DELIVERY_COURSE, M_LOCATION, M_MFINVOPERATION, M_MFMONTHCHG, M_MFSTOCKITEM, M_MFWHSTRCT, M_MFWHxITEM, M_NUMBERING_CENTER, M_USER_CENTER, M_USER_LOGIN, M_WAREHOUSE, M_WEB_HT_INFO, T_ALLOC_INST_H, T_CCOPAM, T_CENTER_SYMBOL, T_CORDHDR, T_CSRWHADM, T_EC_ORDER_H, T_INVENTORY_H, T_MFLASTSHIPLOT, T_MOVE_INST_H, T_PACKING_H, T_PALLET, T_PICKING_H, T_PIC_MTHD_RCMD, T_RECEIVE_PLAN_H, T_SERIAL_NO, T_SHIPPING_INST_H, T_SPLINFO, T_STORE_RECORD_H, T_TRALLINV, T_TRALLINVHISTORY, T_TRCASEINVENTORY, T_TRCASENUM, T_TRCASESTOCK, T_TRHANBAIINV, T_TRINVCHECKINFO, T_TRINVCORRECT, T_TRINVREANSWER, T_TRINVREQUEST, T_TRITEMCONVRESULT, T_TRJUKYUINV, T_TRMANUFACTUREDATE, T_TRMANUFACTUREDATEDETAIL, T_TRMANUFACTUREDATEHISTORY, T_TRPALLETTRACE, T_TRREVERSESTOCK, T_TRSTOCKDIFFHISTORY, T_TRSYMBOLTRACE, T_TRSYMBOLTRACEEXTEND, T_TRTRACE, T_YTRSO, W_HT_INVENTORY_INPUT_PROD, W_HT_LOADING, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SERIAL_RECEIVE_INSP, W_HT_SERIAL_SHIPPING_INSP, W_HT_SHIPPING, W_HT_SHIPPING_PICKING, W_SGL_ROW_SHIP_INSP_H, W_SHIPPING_INTERRUPT
  *
  * [foreign-property]
- *     bTimeZone, bCulture, bClassDtlByDelFlg
+ *     bCulture, bTimeZone, bClassDtlByDelFlg
  *
  * [referrer-property]
  *     mBoxList, mBoxGrpList, mCarrierList, mCarrierSlipSgwList, mCarrierSlipYmtList, mCarrierSlipYupkList, mCblkList, mCbrctgList, mCdrcattList, mCenterClassList, mCenterColList, mCenterCustomerList, mCenterItemList, mCenterScreenList, mClientCenterList, mClinList, mCorgList, mDeliveryCourseList, mLocationList, mMfinvoperationList, mMfmonthchgList, mMfstockitemList, mMfwhstrctList, mMfwhxitemList, mNumberingCenterList, mUserCenterList, mUserLoginList, mWarehouseList, mWebHtInfoList, tAllocInstHList, tCcopamList, tCenterSymbolList, tCordhdrList, tCsrwhadmList, tEcOrderHList, tInventoryHList, tMflastshiplotList, tMoveInstHList, tPackingHList, tPalletList, tPickingHList, tPicMthdRcmdList, tReceivePlanHList, tSerialNoList, tShippingInstHList, tSplinfoList, tStoreRecordHList, tTrallinvList, tTrallinvhistoryList, tTrcaseinventoryList, tTrcasenumList, tTrcasestockList, tTrhanbaiinvList, tTrinvcheckinfoList, tTrinvcorrectList, tTrinvreanswerList, tTrinvrequestList, tTritemconvresultList, tTrjukyuinvList, tTrmanufacturedateList, tTrmanufacturedatedetailList, tTrmanufacturedatehistoryList, tTrpallettraceList, tTrreversestockList, tTrstockdiffhistoryList, tTrsymboltraceList, tTrsymboltraceextendList, tTrtraceList, tYtrsoList, wHtInventoryInputProdList, wHtLoadingList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtSerialReceiveInspList, wHtSerialShippingInspList, wHtShippingList, wHtShippingPickingList, wSglRowShipInspHList, wShippingInterruptList
@@ -70,8 +70,8 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBTimeZone;
     protected boolean _suppressBCulture;
+    protected boolean _suppressBTimeZone;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressMBoxList;
     protected boolean _suppressMBoxGrpList;
@@ -249,32 +249,6 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBTimeZone && entity.getBTimeZone() != null) {
-            BTimeZone relationEntity = entity.getBTimeZone();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BTimeZoneDto relationDto = (BTimeZoneDto)cachedDto;
-                dto.setBTimeZone(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCenterList().add(dto);
-                }
-            } else {
-                BTimeZoneDtoMapper mapper = new BTimeZoneDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCenterList();
-                BTimeZoneDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBTimeZone(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCenterList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBTimeZone());
-                }
-            }
-        };
         if (!_suppressBCulture && entity.getBCulture() != null) {
             BCulture relationEntity = entity.getBCulture();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -298,6 +272,32 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBTimeZone && entity.getBTimeZone() != null) {
+            BTimeZone relationEntity = entity.getBTimeZone();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BTimeZoneDto relationDto = (BTimeZoneDto)cachedDto;
+                dto.setBTimeZone(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCenterList().add(dto);
+                }
+            } else {
+                BTimeZoneDtoMapper mapper = new BTimeZoneDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCenterList();
+                BTimeZoneDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBTimeZone(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCenterList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBTimeZone());
                 }
             }
         };
@@ -1605,32 +1605,6 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBTimeZone && dto.getBTimeZone() != null) {
-            BTimeZoneDto relationDto = dto.getBTimeZone();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BTimeZone relationEntity = (BTimeZone)cachedEntity;
-                entity.setBTimeZone(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCenterList().add(entity);
-                }
-            } else {
-                BTimeZoneDtoMapper mapper = new BTimeZoneDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCenterList();
-                BTimeZone relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBTimeZone(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCenterList().add(entity);
-                }
-                if (instanceCache && entity.getBTimeZone().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBTimeZone());
-                }
-            }
-        };
         if (!_suppressBCulture && dto.getBCulture() != null) {
             BCultureDto relationDto = dto.getBCulture();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -1654,6 +1628,32 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
                 }
                 if (instanceCache && entity.getBCulture().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBTimeZone && dto.getBTimeZone() != null) {
+            BTimeZoneDto relationDto = dto.getBTimeZone();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BTimeZone relationEntity = (BTimeZone)cachedEntity;
+                entity.setBTimeZone(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCenterList().add(entity);
+                }
+            } else {
+                BTimeZoneDtoMapper mapper = new BTimeZoneDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCenterList();
+                BTimeZone relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBTimeZone(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCenterList().add(entity);
+                }
+                if (instanceCache && entity.getBTimeZone().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBTimeZone());
                 }
             }
         };
@@ -2918,11 +2918,11 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBTimeZone() {
-        _suppressBTimeZone = true;
-    }
     public void suppressBCulture() {
         _suppressBCulture = true;
+    }
+    public void suppressBTimeZone() {
+        _suppressBTimeZone = true;
     }
     public void suppressBClassDtlByDelFlg() {
         _suppressBClassDtlByDelFlg = true;
@@ -3168,8 +3168,8 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
         _suppressWShippingInterruptList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBTimeZone();
         suppressBCulture();
+        suppressBTimeZone();
         suppressBClassDtlByDelFlg();
         suppressMBoxList();
         suppressMBoxGrpList();
@@ -3253,8 +3253,8 @@ public abstract class BsMCenterDtoMapper implements DtoMapper<MCenter, MCenterDt
         suppressWShippingInterruptList();
     }
     protected void doSuppressClear() { // internal
-        _suppressBTimeZone = false;
         _suppressBCulture = false;
+        _suppressBTimeZone = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressMBoxList = false;
         _suppressMBoxGrpList = false;

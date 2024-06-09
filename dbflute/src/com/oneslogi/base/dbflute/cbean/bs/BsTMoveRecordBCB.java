@@ -252,6 +252,35 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected MLocationNss _nssMLocation;
+    public MLocationNss xdfgetNssMLocation() {
+        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
+        return _nssMLocation;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * <pre>
+     * <span style="color: #0000C0">tMoveRecordBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tMoveRecordB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tMoveRecordB</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MLocationNss setupSelect_MLocation() {
+        assertSetupSelectPurpose("mLocation");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnLocationId();
+        }
+        doSetupSelect(() -> query().queryMLocation());
+        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
+        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
+        return _nssMLocation;
+    }
+
     protected TMoveInstBNss _nssTMoveInstB;
     public TMoveInstBNss xdfgetNssTMoveInstB() {
         if (_nssTMoveInstB == null) { _nssTMoveInstB = new TMoveInstBNss(null); }
@@ -308,35 +337,6 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
         if (_nssTMoveInstH == null || !_nssTMoveInstH.hasConditionQuery())
         { _nssTMoveInstH = new TMoveInstHNss(query().queryTMoveInstH()); }
         return _nssTMoveInstH;
-    }
-
-    protected MLocationNss _nssMLocation;
-    public MLocationNss xdfgetNssMLocation() {
-        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
-        return _nssMLocation;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * <pre>
-     * <span style="color: #0000C0">tMoveRecordBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tMoveRecordB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveRecordB</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MLocationNss setupSelect_MLocation() {
-        assertSetupSelectPurpose("mLocation");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnLocationId();
-        }
-        doSetupSelect(() -> query().queryMLocation());
-        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
-        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
-        return _nssMLocation;
     }
 
     protected BClassDtlNss _nssBClassDtlByAllShippingFlg;
@@ -438,9 +438,9 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TMoveRecordBCQ> {
+        protected MLocationCB.HpSpecification _mLocation;
         protected TMoveInstBCB.HpSpecification _tMoveInstB;
         protected TMoveInstHCB.HpSpecification _tMoveInstH;
-        protected MLocationCB.HpSpecification _mLocation;
         protected BClassDtlCB.HpSpecification _bClassDtlByAllShippingFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByStoreNoMergeFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TMoveRecordBCQ> qyCall
@@ -542,6 +542,10 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnMoveRecordBId(); // PK
+            if (qyCall().qy().hasConditionQueryMLocation()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
+                columnLocationId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryTMoveInstB()
                     || qyCall().qy().xgetReferrerQuery() instanceof TMoveInstBCQ) {
                 columnMoveInstBId(); // FK or one-to-one referrer
@@ -549,10 +553,6 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryTMoveInstH()
                     || qyCall().qy().xgetReferrerQuery() instanceof TMoveInstHCQ) {
                 columnMoveInstHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMLocation()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
-                columnLocationId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByAllShippingFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -565,6 +565,26 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_MOVE_RECORD_B"; }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MLocationCB.HpSpecification specifyMLocation() {
+            assertRelation("mLocation");
+            if (_mLocation == null) {
+                _mLocation = new MLocationCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
+                                    , () -> _qyCall.qy().queryMLocation())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
+                      , () -> xsyncQyCall().qy().queryMLocation()));
+                }
+            }
+            return _mLocation;
+        }
         /**
          * Prepare to specify functions about relation table. <br>
          * T_MOVE_INST_B by my MOVE_INST_B_ID, named 'TMoveInstB'.
@@ -604,26 +624,6 @@ public class BsTMoveRecordBCB extends AbstractConditionBean {
                 }
             }
             return _tMoveInstH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MLocationCB.HpSpecification specifyMLocation() {
-            assertRelation("mLocation");
-            if (_mLocation == null) {
-                _mLocation = new MLocationCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
-                                    , () -> _qyCall.qy().queryMLocation())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
-                      , () -> xsyncQyCall().qy().queryMLocation()));
-                }
-            }
-            return _mLocation;
         }
         /**
          * Prepare to specify functions about relation table. <br>

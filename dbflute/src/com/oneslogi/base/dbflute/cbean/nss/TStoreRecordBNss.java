@@ -20,6 +20,15 @@ public class TStoreRecordBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TReceivePlanBNss withTReceivePlanB() {
+        _query.xdoNss(() -> _query.queryTReceivePlanB());
+        return new TReceivePlanBNss(_query.queryTReceivePlanB());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_LOCATION by my STORE_LOCATION_ID, named 'MLocation'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -35,15 +44,6 @@ public class TStoreRecordBNss {
     public TStoreRecordHNss withTStoreRecordH() {
         _query.xdoNss(() -> _query.queryTStoreRecordH());
         return new TStoreRecordHNss(_query.queryTStoreRecordH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TReceivePlanBNss withTReceivePlanB() {
-        _query.xdoNss(() -> _query.queryTReceivePlanB());
-        return new TReceivePlanBNss(_query.queryTReceivePlanB());
     }
     /**
      * With nested relation columns to select clause. <br>

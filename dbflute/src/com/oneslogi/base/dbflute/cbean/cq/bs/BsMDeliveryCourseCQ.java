@@ -754,12 +754,6 @@ public class BsMDeliveryCourseCQ extends AbstractBsMDeliveryCourseCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MDeliveryCourseCQ bq = (MDeliveryCourseCQ)bqs;
         MDeliveryCourseCQ uq = (MDeliveryCourseCQ)uqs;
-        if (bq.hasConditionQueryMCarrierSlipYupk()) {
-            uq.queryMCarrierSlipYupk().reflectRelationOnUnionQuery(bq.queryMCarrierSlipYupk(), uq.queryMCarrierSlipYupk());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
-        }
         if (bq.hasConditionQueryMCarrier()) {
             uq.queryMCarrier().reflectRelationOnUnionQuery(bq.queryMCarrier(), uq.queryMCarrier());
         }
@@ -768,6 +762,12 @@ public class BsMDeliveryCourseCQ extends AbstractBsMDeliveryCourseCQ {
         }
         if (bq.hasConditionQueryMCarrierSlipYmt()) {
             uq.queryMCarrierSlipYmt().reflectRelationOnUnionQuery(bq.queryMCarrierSlipYmt(), uq.queryMCarrierSlipYmt());
+        }
+        if (bq.hasConditionQueryMCarrierSlipYupk()) {
+            uq.queryMCarrierSlipYupk().reflectRelationOnUnionQuery(bq.queryMCarrierSlipYupk(), uq.queryMCarrierSlipYupk());
+        }
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryBClassDtlByDelFlg()) {
             uq.queryBClassDtlByDelFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelFlg(), uq.queryBClassDtlByDelFlg());
@@ -795,46 +795,6 @@ public class BsMDeliveryCourseCQ extends AbstractBsMDeliveryCourseCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCarrierSlipYupkCQ queryMCarrierSlipYupk() {
-        return xdfgetConditionQueryMCarrierSlipYupk();
-    }
-    public MCarrierSlipYupkCQ xdfgetConditionQueryMCarrierSlipYupk() {
-        String prop = "mCarrierSlipYupk";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCarrierSlipYupk()); xsetupOuterJoinMCarrierSlipYupk(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCarrierSlipYupkCQ xcreateQueryMCarrierSlipYupk() {
-        String nrp = xresolveNRP("M_DELIVERY_COURSE", "mCarrierSlipYupk"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCarrierSlipYupkCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCarrierSlipYupk", nrp);
-    }
-    protected void xsetupOuterJoinMCarrierSlipYupk() { xregOutJo("mCarrierSlipYupk"); }
-    public boolean hasConditionQueryMCarrierSlipYupk() { return xhasQueRlMap("mCarrierSlipYupk"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("M_DELIVERY_COURSE", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
@@ -894,6 +854,46 @@ public class BsMDeliveryCourseCQ extends AbstractBsMDeliveryCourseCQ {
     }
     protected void xsetupOuterJoinMCarrierSlipYmt() { xregOutJo("mCarrierSlipYmt"); }
     public boolean hasConditionQueryMCarrierSlipYmt() { return xhasQueRlMap("mCarrierSlipYmt"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCarrierSlipYupkCQ queryMCarrierSlipYupk() {
+        return xdfgetConditionQueryMCarrierSlipYupk();
+    }
+    public MCarrierSlipYupkCQ xdfgetConditionQueryMCarrierSlipYupk() {
+        String prop = "mCarrierSlipYupk";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCarrierSlipYupk()); xsetupOuterJoinMCarrierSlipYupk(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCarrierSlipYupkCQ xcreateQueryMCarrierSlipYupk() {
+        String nrp = xresolveNRP("M_DELIVERY_COURSE", "mCarrierSlipYupk"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCarrierSlipYupkCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCarrierSlipYupk", nrp);
+    }
+    protected void xsetupOuterJoinMCarrierSlipYupk() { xregOutJo("mCarrierSlipYupk"); }
+    public boolean hasConditionQueryMCarrierSlipYupk() { return xhasQueRlMap("mCarrierSlipYupk"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
+    }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("M_DELIVERY_COURSE", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>

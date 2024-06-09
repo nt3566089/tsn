@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_IMPORT_TYPE, T_SHIPPING_INST_H, M_CENTER, M_CLIENT, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_IMPORT_TYPE, T_SHIPPING_INST_H, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
  *
  * [referrer-table]
  *     T_EC_ORDER_B, T_EC_ORDER_R
  *
  * [foreign-property]
- *     mImportType, tShippingInstH, mCenter, mClient, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
+ *     mCenter, mClient, mImportType, tShippingInstH, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
  *
  * [referrer-property]
  *     tEcOrderBList
@@ -417,26 +417,6 @@ public abstract class BsTEcOrderHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MImportTypeDto _mImportType;
-
-    public MImportTypeDto getMImportType() {
-        return _mImportType;
-    }
-
-    public void setMImportType(MImportTypeDto mImportType) {
-        this._mImportType = mImportType;
-    }
-
-    protected TShippingInstHDto _tShippingInstH;
-
-    public TShippingInstHDto getTShippingInstH() {
-        return _tShippingInstH;
-    }
-
-    public void setTShippingInstH(TShippingInstHDto tShippingInstH) {
-        this._tShippingInstH = tShippingInstH;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -455,6 +435,26 @@ public abstract class BsTEcOrderHDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected MImportTypeDto _mImportType;
+
+    public MImportTypeDto getMImportType() {
+        return _mImportType;
+    }
+
+    public void setMImportType(MImportTypeDto mImportType) {
+        this._mImportType = mImportType;
+    }
+
+    protected TShippingInstHDto _tShippingInstH;
+
+    public TShippingInstHDto getTShippingInstH() {
+        return _tShippingInstH;
+    }
+
+    public void setTShippingInstH(TShippingInstHDto tShippingInstH) {
+        this._tShippingInstH = tShippingInstH;
     }
 
     protected BClassDtlDto _bClassDtlByDelivMatchFlg;

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSO, M_PRODUCT
+ *     M_PRODUCT, T_YTRSO
  *
  * [referrer table]
  *     T_TRIMALLOCSCHKRI, T_TRPICKDETAIL
  *
  * [foreign property]
- *     tYtrso, mProduct
+ *     mProduct, tYtrso
  *
  * [referrer property]
  *     tTrimallocschkriList, tTrpickdetailList
@@ -132,18 +132,18 @@ public class LoaderOfTYtrsodetail {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTYtrso _foreignTYtrsoLoader;
-    public LoaderOfTYtrso pulloutTYtrso() {
-        if (_foreignTYtrsoLoader == null)
-        { _foreignTYtrsoLoader = new LoaderOfTYtrso().ready(myBhv().pulloutTYtrso(_selectedList), _selector); }
-        return _foreignTYtrsoLoader;
-    }
-
     protected LoaderOfMProduct _foreignMProductLoader;
     public LoaderOfMProduct pulloutMProduct() {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
+    }
+
+    protected LoaderOfTYtrso _foreignTYtrsoLoader;
+    public LoaderOfTYtrso pulloutTYtrso() {
+        if (_foreignTYtrsoLoader == null)
+        { _foreignTYtrsoLoader = new LoaderOfTYtrso().ready(myBhv().pulloutTYtrso(_selectedList), _selector); }
+        return _foreignTYtrsoLoader;
     }
 
     // ===================================================================================

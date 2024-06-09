@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mClient, mCenter
+ *     mCenter, mClient, mDeliveryCourse
  *
  * [referrer property]
  *     
@@ -393,12 +393,12 @@ public abstract class BsWHtLoadingBhv extends AbstractBehaviorWritable<WHtLoadin
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MDeliveryCourse'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param wHtLoadingList The list of wHtLoading. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MDeliveryCourse> pulloutMDeliveryCourse(List<WHtLoading> wHtLoadingList)
-    { return helpPulloutInternally(wHtLoadingList, "mDeliveryCourse"); }
+    public List<MCenter> pulloutMCenter(List<WHtLoading> wHtLoadingList)
+    { return helpPulloutInternally(wHtLoadingList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MClient'.
@@ -409,12 +409,12 @@ public abstract class BsWHtLoadingBhv extends AbstractBehaviorWritable<WHtLoadin
     { return helpPulloutInternally(wHtLoadingList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'MCenter'.
+     * Pull out the list of foreign table 'MDeliveryCourse'.
      * @param wHtLoadingList The list of wHtLoading. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCenter> pulloutMCenter(List<WHtLoading> wHtLoadingList)
-    { return helpPulloutInternally(wHtLoadingList, "mCenter"); }
+    public List<MDeliveryCourse> pulloutMDeliveryCourse(List<WHtLoading> wHtLoadingList)
+    { return helpPulloutInternally(wHtLoadingList, "mDeliveryCourse"); }
 
     // ===================================================================================
     //                                                                      Extract Column

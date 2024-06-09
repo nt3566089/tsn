@@ -20,12 +20,12 @@ public class TPickingHNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProcessTypeNss withMProcessType() {
-        _query.xdoNss(() -> _query.queryMProcessType());
-        return new MProcessTypeNss(_query.queryMProcessType());
+    public TAllocInstHNss withTAllocInstH() {
+        _query.xdoNss(() -> _query.queryTAllocInstH());
+        return new TAllocInstHNss(_query.queryTAllocInstH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -47,12 +47,12 @@ public class TPickingHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstHNss withTAllocInstH() {
-        _query.xdoNss(() -> _query.queryTAllocInstH());
-        return new TAllocInstHNss(_query.queryTAllocInstH());
+    public MProcessTypeNss withMProcessType() {
+        _query.xdoNss(() -> _query.queryMProcessType());
+        return new MProcessTypeNss(_query.queryMProcessType());
     }
     /**
      * With nested relation columns to select clause. <br>

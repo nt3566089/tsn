@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_DICT, B_SCREEN, B_MENU_GRP, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
+ *     B_DICT, B_MENU_GRP, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bDict, bScreen, bMenuGrp, vDict, vHtDict, bClassDtlByTargetWindow
+ *     bDict, bMenuGrp, bScreen, vDict, vHtDict, bClassDtlByTargetWindow
  *
  * [referrer-property]
  *     
@@ -71,8 +71,8 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressBDict;
-    protected boolean _suppressBScreen;
     protected boolean _suppressBMenuGrp;
+    protected boolean _suppressBScreen;
     protected boolean _suppressVDict;
     protected boolean _suppressVHtDict;
     protected boolean _suppressBClassDtlByTargetWindow;
@@ -176,32 +176,6 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
                 }
             }
         };
-        if (!_suppressBScreen && entity.getBScreen() != null) {
-            BScreen relationEntity = entity.getBScreen();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BScreenDto relationDto = (BScreenDto)cachedDto;
-                dto.setBScreen(relationDto);
-                if (reverseReference) {
-                    relationDto.getBMenuList().add(dto);
-                }
-            } else {
-                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBMenuList();
-                BScreenDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBScreen(relationDto);
-                if (reverseReference) {
-                    relationDto.getBMenuList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBScreen());
-                }
-            }
-        };
         if (!_suppressBMenuGrp && entity.getBMenuGrp() != null) {
             BMenuGrp relationEntity = entity.getBMenuGrp();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -225,6 +199,32 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBMenuGrp());
+                }
+            }
+        };
+        if (!_suppressBScreen && entity.getBScreen() != null) {
+            BScreen relationEntity = entity.getBScreen();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BScreenDto relationDto = (BScreenDto)cachedDto;
+                dto.setBScreen(relationDto);
+                if (reverseReference) {
+                    relationDto.getBMenuList().add(dto);
+                }
+            } else {
+                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBMenuList();
+                BScreenDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBScreen(relationDto);
+                if (reverseReference) {
+                    relationDto.getBMenuList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBScreen());
                 }
             }
         };
@@ -418,32 +418,6 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
                 }
             }
         };
-        if (!_suppressBScreen && dto.getBScreen() != null) {
-            BScreenDto relationDto = dto.getBScreen();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BScreen relationEntity = (BScreen)cachedEntity;
-                entity.setBScreen(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBMenuList().add(entity);
-                }
-            } else {
-                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBMenuList();
-                BScreen relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBScreen(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBMenuList().add(entity);
-                }
-                if (instanceCache && entity.getBScreen().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBScreen());
-                }
-            }
-        };
         if (!_suppressBMenuGrp && dto.getBMenuGrp() != null) {
             BMenuGrpDto relationDto = dto.getBMenuGrp();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -467,6 +441,32 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
                 }
                 if (instanceCache && entity.getBMenuGrp().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBMenuGrp());
+                }
+            }
+        };
+        if (!_suppressBScreen && dto.getBScreen() != null) {
+            BScreenDto relationDto = dto.getBScreen();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BScreen relationEntity = (BScreen)cachedEntity;
+                entity.setBScreen(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBMenuList().add(entity);
+                }
+            } else {
+                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBMenuList();
+                BScreen relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBScreen(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBMenuList().add(entity);
+                }
+                if (instanceCache && entity.getBScreen().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBScreen());
                 }
             }
         };
@@ -660,11 +660,11 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
     public void suppressBDict() {
         _suppressBDict = true;
     }
-    public void suppressBScreen() {
-        _suppressBScreen = true;
-    }
     public void suppressBMenuGrp() {
         _suppressBMenuGrp = true;
+    }
+    public void suppressBScreen() {
+        _suppressBScreen = true;
     }
     public void suppressVDict() {
         _suppressVDict = true;
@@ -677,16 +677,16 @@ public abstract class BsBMenuDtoMapper implements DtoMapper<BMenu, BMenuDto>, Se
     }
     protected void doSuppressAll() { // internal
         suppressBDict();
-        suppressBScreen();
         suppressBMenuGrp();
+        suppressBScreen();
         suppressVDict();
         suppressVHtDict();
         suppressBClassDtlByTargetWindow();
     }
     protected void doSuppressClear() { // internal
         _suppressBDict = false;
-        _suppressBScreen = false;
         _suppressBMenuGrp = false;
+        _suppressBScreen = false;
         _suppressVDict = false;
         _suppressVHtDict = false;
         _suppressBClassDtlByTargetWindow = false;

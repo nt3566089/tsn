@@ -252,33 +252,33 @@ public class BsWHtLoadingCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MDeliveryCourseNss _nssMDeliveryCourse;
-    public MDeliveryCourseNss xdfgetNssMDeliveryCourse() {
-        if (_nssMDeliveryCourse == null) { _nssMDeliveryCourse = new MDeliveryCourseNss(null); }
-        return _nssMDeliveryCourse;
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * <pre>
      * <span style="color: #0000C0">wHtLoadingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MDeliveryCourse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtLoading</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtLoading</span>.<span style="color: #CC4747">getMDeliveryCourse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtLoading</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MDeliveryCourseNss setupSelect_MDeliveryCourse() {
-        assertSetupSelectPurpose("mDeliveryCourse");
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnDeliveryCourseId();
+            specify().columnCenterId();
         }
-        doSetupSelect(() -> query().queryMDeliveryCourse());
-        if (_nssMDeliveryCourse == null || !_nssMDeliveryCourse.hasConditionQuery())
-        { _nssMDeliveryCourse = new MDeliveryCourseNss(query().queryMDeliveryCourse()); }
-        return _nssMDeliveryCourse;
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected MClientNss _nssMClient;
@@ -310,33 +310,33 @@ public class BsWHtLoadingCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
+    protected MDeliveryCourseNss _nssMDeliveryCourse;
+    public MDeliveryCourseNss xdfgetNssMDeliveryCourse() {
+        if (_nssMDeliveryCourse == null) { _nssMDeliveryCourse = new MDeliveryCourseNss(null); }
+        return _nssMDeliveryCourse;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
      * <pre>
      * <span style="color: #0000C0">wHtLoadingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MDeliveryCourse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtLoading</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtLoading</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtLoading</span>.<span style="color: #CC4747">getMDeliveryCourse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
+    public MDeliveryCourseNss setupSelect_MDeliveryCourse() {
+        assertSetupSelectPurpose("mDeliveryCourse");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
+            specify().columnDeliveryCourseId();
         }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryMDeliveryCourse());
+        if (_nssMDeliveryCourse == null || !_nssMDeliveryCourse.hasConditionQuery())
+        { _nssMDeliveryCourse = new MDeliveryCourseNss(query().queryMDeliveryCourse()); }
+        return _nssMDeliveryCourse;
     }
 
     // [DBFlute-0.7.4]
@@ -380,9 +380,9 @@ public class BsWHtLoadingCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WHtLoadingCQ> {
-        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
-        protected MClientCB.HpSpecification _mClient;
         protected MCenterCB.HpSpecification _mCenter;
+        protected MClientCB.HpSpecification _mClient;
+        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WHtLoadingCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -477,40 +477,40 @@ public class BsWHtLoadingCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnHtLoadingId(); // PK
-            if (qyCall().qy().hasConditionQueryMDeliveryCourse()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MDeliveryCourseCQ) {
-                columnDeliveryCourseId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMDeliveryCourse()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MDeliveryCourseCQ) {
+                columnDeliveryCourseId(); // FK or one-to-one referrer
             }
         }
         @Override
         protected String getTableDbName() { return "W_HT_LOADING"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MDeliveryCourseCB.HpSpecification specifyMDeliveryCourse() {
-            assertRelation("mDeliveryCourse");
-            if (_mDeliveryCourse == null) {
-                _mDeliveryCourse = new MDeliveryCourseCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMDeliveryCourse()
-                                    , () -> _qyCall.qy().queryMDeliveryCourse())
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mDeliveryCourse.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMDeliveryCourse()
-                      , () -> xsyncQyCall().qy().queryMDeliveryCourse()));
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
                 }
             }
-            return _mDeliveryCourse;
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -534,23 +534,23 @@ public class BsWHtLoadingCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
+        public MDeliveryCourseCB.HpSpecification specifyMDeliveryCourse() {
+            assertRelation("mDeliveryCourse");
+            if (_mDeliveryCourse == null) {
+                _mDeliveryCourse = new MDeliveryCourseCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMDeliveryCourse()
+                                    , () -> _qyCall.qy().queryMDeliveryCourse())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
+                    _mDeliveryCourse.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMDeliveryCourse()
+                      , () -> xsyncQyCall().qy().queryMDeliveryCourse()));
                 }
             }
-            return _mCenter;
+            return _mDeliveryCourse;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

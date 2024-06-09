@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_LOCATION, M_CLIENT, M_WAREHOUSE, M_CENTER, M_PRODUCT, M_STOCK_TYPE
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tLot, mLocation, mClient, mWarehouse, mCenter, mProduct, mStockType
+ *     mCenter, mClient, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -338,42 +338,23 @@ public abstract class BsWHtReceiveStore extends AbstractEntity implements Domain
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_LOT by my LOT_ID, named 'TLot'. */
-    protected TLot _tLot;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
-     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TLot getTLot() {
-        return _tLot;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] T_LOT by my LOT_ID, named 'TLot'.
-     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setTLot(TLot tLot) {
-        _tLot = tLot;
-    }
-
-    /** M_LOCATION by my LOC_ID, named 'MLocation'. */
-    protected MLocation _mLocation;
-
-    /**
-     * [get] M_LOCATION by my LOC_ID, named 'MLocation'. <br>
-     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MLocation getMLocation() {
-        return _mLocation;
-    }
-
-    /**
-     * [set] M_LOCATION by my LOC_ID, named 'MLocation'.
-     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
-     */
-    public void setMLocation(MLocation mLocation) {
-        _mLocation = mLocation;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -395,42 +376,42 @@ public abstract class BsWHtReceiveStore extends AbstractEntity implements Domain
         _mClient = mClient;
     }
 
-    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
-    protected MWarehouse _mWarehouse;
+    /** M_LOCATION by my LOC_ID, named 'MLocation'. */
+    protected MLocation _mLocation;
 
     /**
-     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
-     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_LOCATION by my LOC_ID, named 'MLocation'. <br>
+     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MWarehouse getMWarehouse() {
-        return _mWarehouse;
+    public MLocation getMLocation() {
+        return _mLocation;
     }
 
     /**
-     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     * [set] M_LOCATION by my LOC_ID, named 'MLocation'.
+     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
      */
-    public void setMWarehouse(MWarehouse mWarehouse) {
-        _mWarehouse = mWarehouse;
+    public void setMLocation(MLocation mLocation) {
+        _mLocation = mLocation;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
+    /** T_LOT by my LOT_ID, named 'TLot'. */
+    protected TLot _tLot;
 
     /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
+     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCenter getMCenter() {
-        return _mCenter;
+    public TLot getTLot() {
+        return _tLot;
     }
 
     /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     * [set] T_LOT by my LOT_ID, named 'TLot'.
+     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
      */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setTLot(TLot tLot) {
+        _tLot = tLot;
     }
 
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
@@ -471,6 +452,25 @@ public abstract class BsWHtReceiveStore extends AbstractEntity implements Domain
         _mStockType = mStockType;
     }
 
+    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
+    protected MWarehouse _mWarehouse;
+
+    /**
+     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
+     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MWarehouse getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    /**
+     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     */
+    public void setMWarehouse(MWarehouse mWarehouse) {
+        _mWarehouse = mWarehouse;
+    }
+
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
@@ -503,20 +503,20 @@ public abstract class BsWHtReceiveStore extends AbstractEntity implements Domain
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
-        if (_mLocation != null)
-        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_mWarehouse != null)
-        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mLocation != null)
+        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_mStockType != null)
         { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
+        if (_mWarehouse != null)
+        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         return sb.toString();
     }
 
@@ -564,20 +564,20 @@ public abstract class BsWHtReceiveStore extends AbstractEntity implements Domain
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
-        if (_mLocation != null)
-        { sb.append(dm).append("mLocation"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
-        if (_mWarehouse != null)
-        { sb.append(dm).append("mWarehouse"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mLocation != null)
+        { sb.append(dm).append("mLocation"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
         if (_mStockType != null)
         { sb.append(dm).append("mStockType"); }
+        if (_mWarehouse != null)
+        { sb.append(dm).append("mWarehouse"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

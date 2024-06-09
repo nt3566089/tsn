@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE, B_ITEM, B_CLASS_DTL(ByVisible)
+ *     B_ITEM, B_ROLE, B_CLASS_DTL(ByVisible)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bRole, bItem, bClassDtlByVisible, bClassDtlByEditable
+ *     bItem, bRole, bClassDtlByVisible, bClassDtlByEditable
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfBItemRole {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBRole _foreignBRoleLoader;
-    public LoaderOfBRole pulloutBRole() {
-        if (_foreignBRoleLoader == null)
-        { _foreignBRoleLoader = new LoaderOfBRole().ready(myBhv().pulloutBRole(_selectedList), _selector); }
-        return _foreignBRoleLoader;
-    }
-
     protected LoaderOfBItem _foreignBItemLoader;
     public LoaderOfBItem pulloutBItem() {
         if (_foreignBItemLoader == null)
         { _foreignBItemLoader = new LoaderOfBItem().ready(myBhv().pulloutBItem(_selectedList), _selector); }
         return _foreignBItemLoader;
+    }
+
+    protected LoaderOfBRole _foreignBRoleLoader;
+    public LoaderOfBRole pulloutBRole() {
+        if (_foreignBRoleLoader == null)
+        { _foreignBRoleLoader = new LoaderOfBRole().ready(myBhv().pulloutBRole(_selectedList), _selector); }
+        return _foreignBRoleLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByVisibleLoader;

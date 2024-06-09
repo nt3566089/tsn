@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_PRODUCT, T_LOT
+ *     M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCustomer, mProduct, tLot
+ *     mCustomer, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -280,25 +280,6 @@ public abstract class BsTLastLot extends AbstractEntity implements DomainEntity,
         _mCustomer = mCustomer;
     }
 
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
-
-    /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProduct getMProduct() {
-        return _mProduct;
-    }
-
-    /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
-     */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
-    }
-
     /** T_LOT by my LOT_ID, named 'TLot'. */
     protected TLot _tLot;
 
@@ -316,6 +297,25 @@ public abstract class BsTLastLot extends AbstractEntity implements DomainEntity,
      */
     public void setTLot(TLot tLot) {
         _tLot = tLot;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -352,10 +352,10 @@ public abstract class BsTLastLot extends AbstractEntity implements DomainEntity,
         StringBuilder sb = new StringBuilder();
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_tLot != null)
         { sb.append(li).append(xbRDS(_tLot, "tLot")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -387,10 +387,10 @@ public abstract class BsTLastLot extends AbstractEntity implements DomainEntity,
         StringBuilder sb = new StringBuilder();
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
         if (_tLot != null)
         { sb.append(dm).append("tLot"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

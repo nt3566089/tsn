@@ -266,35 +266,6 @@ public class BsBRoleGrpDtlCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BRoleNss _nssBRole;
-    public BRoleNss xdfgetNssBRole() {
-        if (_nssBRole == null) { _nssBRole = new BRoleNss(null); }
-        return _nssBRole;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * <pre>
-     * <span style="color: #0000C0">bRoleGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRole()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bRoleGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bRoleGrpDtl</span>.<span style="color: #CC4747">getBRole()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BRoleNss setupSelect_BRole() {
-        assertSetupSelectPurpose("bRole");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnRoleId();
-        }
-        doSetupSelect(() -> query().queryBRole());
-        if (_nssBRole == null || !_nssBRole.hasConditionQuery())
-        { _nssBRole = new BRoleNss(query().queryBRole()); }
-        return _nssBRole;
-    }
-
     protected BRoleGrpNss _nssBRoleGrp;
     public BRoleGrpNss xdfgetNssBRoleGrp() {
         if (_nssBRoleGrp == null) { _nssBRoleGrp = new BRoleGrpNss(null); }
@@ -322,6 +293,35 @@ public class BsBRoleGrpDtlCB extends AbstractConditionBean {
         if (_nssBRoleGrp == null || !_nssBRoleGrp.hasConditionQuery())
         { _nssBRoleGrp = new BRoleGrpNss(query().queryBRoleGrp()); }
         return _nssBRoleGrp;
+    }
+
+    protected BRoleNss _nssBRole;
+    public BRoleNss xdfgetNssBRole() {
+        if (_nssBRole == null) { _nssBRole = new BRoleNss(null); }
+        return _nssBRole;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * <pre>
+     * <span style="color: #0000C0">bRoleGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRole()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bRoleGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bRoleGrpDtl</span>.<span style="color: #CC4747">getBRole()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BRoleNss setupSelect_BRole() {
+        assertSetupSelectPurpose("bRole");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnRoleId();
+        }
+        doSetupSelect(() -> query().queryBRole());
+        if (_nssBRole == null || !_nssBRole.hasConditionQuery())
+        { _nssBRole = new BRoleNss(query().queryBRole()); }
+        return _nssBRole;
     }
 
     // [DBFlute-0.7.4]
@@ -365,8 +365,8 @@ public class BsBRoleGrpDtlCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BRoleGrpDtlCQ> {
-        protected BRoleCB.HpSpecification _bRole;
         protected BRoleGrpCB.HpSpecification _bRoleGrp;
+        protected BRoleCB.HpSpecification _bRole;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<BRoleGrpDtlCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -441,37 +441,17 @@ public class BsBRoleGrpDtlCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnRoleGrpDtlId(); // PK
-            if (qyCall().qy().hasConditionQueryBRole()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleCQ) {
-                columnRoleId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBRoleGrp()
                     || qyCall().qy().xgetReferrerQuery() instanceof BRoleGrpCQ) {
                 columnRoleGrpId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryBRole()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleCQ) {
+                columnRoleId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "B_ROLE_GRP_DTL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_ROLE by my ROLE_ID, named 'BRole'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BRoleCB.HpSpecification specifyBRole() {
-            assertRelation("bRole");
-            if (_bRole == null) {
-                _bRole = new BRoleCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRole()
-                                    , () -> _qyCall.qy().queryBRole())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bRole.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRole()
-                      , () -> xsyncQyCall().qy().queryBRole()));
-                }
-            }
-            return _bRole;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
@@ -491,6 +471,26 @@ public class BsBRoleGrpDtlCB extends AbstractConditionBean {
                 }
             }
             return _bRoleGrp;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_ROLE by my ROLE_ID, named 'BRole'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BRoleCB.HpSpecification specifyBRole() {
+            assertRelation("bRole");
+            if (_bRole == null) {
+                _bRole = new BRoleCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRole()
+                                    , () -> _qyCall.qy().queryBRole())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bRole.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRole()
+                      , () -> xsyncQyCall().qy().queryBRole()));
+                }
+            }
+            return _bRole;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

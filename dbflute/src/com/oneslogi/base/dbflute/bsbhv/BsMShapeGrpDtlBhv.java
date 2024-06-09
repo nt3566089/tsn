@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_SHAPE_GRP, B_CLASS_DTL(ByCasePickFlg)
+ *     M_SHAPE_GRP, M_SHAPE, B_CLASS_DTL(ByCasePickFlg)
  *
  * [referrer table]
  *     M_PRODUCT_SHAPE
  *
  * [foreign property]
- *     mShape, mShapeGrp, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
+ *     mShapeGrp, mShape, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
  *
  * [referrer property]
  *     mProductShapeList
@@ -481,20 +481,20 @@ public abstract class BsMShapeGrpDtlBhv extends AbstractBehaviorWritable<MShapeG
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MShape'.
-     * @param mShapeGrpDtlList The list of mShapeGrpDtl. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MShape> pulloutMShape(List<MShapeGrpDtl> mShapeGrpDtlList)
-    { return helpPulloutInternally(mShapeGrpDtlList, "mShape"); }
-
-    /**
      * Pull out the list of foreign table 'MShapeGrp'.
      * @param mShapeGrpDtlList The list of mShapeGrpDtl. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MShapeGrp> pulloutMShapeGrp(List<MShapeGrpDtl> mShapeGrpDtlList)
     { return helpPulloutInternally(mShapeGrpDtlList, "mShapeGrp"); }
+
+    /**
+     * Pull out the list of foreign table 'MShape'.
+     * @param mShapeGrpDtlList The list of mShapeGrpDtl. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MShape> pulloutMShape(List<MShapeGrpDtl> mShapeGrpDtlList)
+    { return helpPulloutInternally(mShapeGrpDtlList, "mShape"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

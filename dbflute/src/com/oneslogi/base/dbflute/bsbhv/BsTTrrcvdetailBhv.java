@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_TRRCV, T_RECEIVE_PLAN_B
+ *     T_RECEIVE_PLAN_B, T_TRRCV
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tTrrcv, tReceivePlanB
+ *     tReceivePlanB, tTrrcv
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTTrrcvdetailBhv extends AbstractBehaviorWritable<TTrrcvd
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TTrrcv'.
-     * @param tTrrcvdetailList The list of tTrrcvdetail. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TTrrcv> pulloutTTrrcv(List<TTrrcvdetail> tTrrcvdetailList)
-    { return helpPulloutInternally(tTrrcvdetailList, "tTrrcv"); }
-
-    /**
      * Pull out the list of foreign table 'TReceivePlanB'.
      * @param tTrrcvdetailList The list of tTrrcvdetail. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TReceivePlanB> pulloutTReceivePlanB(List<TTrrcvdetail> tTrrcvdetailList)
     { return helpPulloutInternally(tTrrcvdetailList, "tReceivePlanB"); }
+
+    /**
+     * Pull out the list of foreign table 'TTrrcv'.
+     * @param tTrrcvdetailList The list of tTrrcvdetail. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TTrrcv> pulloutTTrrcv(List<TTrrcvdetail> tTrrcvdetailList)
+    { return helpPulloutInternally(tTrrcvdetailList, "tTrrcv"); }
 
     // ===================================================================================
     //                                                                      Extract Column

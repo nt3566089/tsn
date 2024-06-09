@@ -265,35 +265,6 @@ public class BsBItemCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BScreenNss _nssBScreen;
-    public BScreenNss xdfgetNssBScreen() {
-        if (_nssBScreen == null) { _nssBScreen = new BScreenNss(null); }
-        return _nssBScreen;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * <pre>
-     * <span style="color: #0000C0">bItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BScreen()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bItem</span>.<span style="color: #CC4747">getBScreen()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BScreenNss setupSelect_BScreen() {
-        assertSetupSelectPurpose("bScreen");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnScreenId();
-        }
-        doSetupSelect(() -> query().queryBScreen());
-        if (_nssBScreen == null || !_nssBScreen.hasConditionQuery())
-        { _nssBScreen = new BScreenNss(query().queryBScreen()); }
-        return _nssBScreen;
-    }
-
     protected BDictNss _nssBDict;
     public BDictNss xdfgetNssBDict() {
         if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
@@ -321,6 +292,35 @@ public class BsBItemCB extends AbstractConditionBean {
         if (_nssBDict == null || !_nssBDict.hasConditionQuery())
         { _nssBDict = new BDictNss(query().queryBDict()); }
         return _nssBDict;
+    }
+
+    protected BScreenNss _nssBScreen;
+    public BScreenNss xdfgetNssBScreen() {
+        if (_nssBScreen == null) { _nssBScreen = new BScreenNss(null); }
+        return _nssBScreen;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * <pre>
+     * <span style="color: #0000C0">bItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BScreen()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bItem</span>.<span style="color: #CC4747">getBScreen()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BScreenNss setupSelect_BScreen() {
+        assertSetupSelectPurpose("bScreen");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnScreenId();
+        }
+        doSetupSelect(() -> query().queryBScreen());
+        if (_nssBScreen == null || !_nssBScreen.hasConditionQuery())
+        { _nssBScreen = new BScreenNss(query().queryBScreen()); }
+        return _nssBScreen;
     }
 
     /**
@@ -606,8 +606,8 @@ public class BsBItemCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BItemCQ> {
-        protected BScreenCB.HpSpecification _bScreen;
         protected BDictCB.HpSpecification _bDict;
+        protected BScreenCB.HpSpecification _bScreen;
         protected VDictCB.HpSpecification _vDict;
         protected VHtDictCB.HpSpecification _vHtDict;
         protected BClassDtlCB.HpSpecification _bClassDtlByItemType;
@@ -721,13 +721,13 @@ public class BsBItemCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnItemId(); // PK
-            if (qyCall().qy().hasConditionQueryBScreen()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BScreenCQ) {
-                columnScreenId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
                 columnDictId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBScreen()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BScreenCQ) {
+                columnScreenId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VDictCQ) {
@@ -766,26 +766,6 @@ public class BsBItemCB extends AbstractConditionBean {
         protected String getTableDbName() { return "B_ITEM"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BScreenCB.HpSpecification specifyBScreen() {
-            assertRelation("bScreen");
-            if (_bScreen == null) {
-                _bScreen = new BScreenCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBScreen()
-                                    , () -> _qyCall.qy().queryBScreen())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bScreen.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBScreen()
-                      , () -> xsyncQyCall().qy().queryBScreen()));
-                }
-            }
-            return _bScreen;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * B_DICT by my DICT_ID, named 'BDict'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -803,6 +783,26 @@ public class BsBItemCB extends AbstractConditionBean {
                 }
             }
             return _bDict;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BScreenCB.HpSpecification specifyBScreen() {
+            assertRelation("bScreen");
+            if (_bScreen == null) {
+                _bScreen = new BScreenCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBScreen()
+                                    , () -> _qyCall.qy().queryBScreen())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bScreen.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBScreen()
+                      , () -> xsyncQyCall().qy().queryBScreen()));
+                }
+            }
+            return _bScreen;
         }
         /**
          * Prepare to specify functions about relation table. <br>

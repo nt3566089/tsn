@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_SHIPPING_INST_B, T_PICKING_H, T_ALLOC_INST_B, T_STOCK, M_SHAPE
+ *     T_ALLOC_INST_B, T_PICKING_H, M_SHAPE, T_SHIPPING_INST_B, T_STOCK
  *
  * [referrer-table]
  *     T_PACKING_B
  *
  * [foreign-property]
- *     tShippingInstB, tPickingH, tAllocInstB, tStock, mShape
+ *     tAllocInstB, tPickingH, mShape, tShippingInstB, tStock
  *
  * [referrer-property]
  *     tPackingBList
@@ -70,11 +70,11 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTShippingInstB;
-    protected boolean _suppressTPickingH;
     protected boolean _suppressTAllocInstB;
-    protected boolean _suppressTStock;
+    protected boolean _suppressTPickingH;
     protected boolean _suppressMShape;
+    protected boolean _suppressTShippingInstB;
+    protected boolean _suppressTStock;
     protected boolean _suppressTPackingBList;
 
     // ===================================================================================
@@ -152,29 +152,29 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTShippingInstB && entity.getTShippingInstB() != null) {
-            TShippingInstB relationEntity = entity.getTShippingInstB();
+        if (!_suppressTAllocInstB && entity.getTAllocInstB() != null) {
+            TAllocInstB relationEntity = entity.getTAllocInstB();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TShippingInstBDto relationDto = (TShippingInstBDto)cachedDto;
-                dto.setTShippingInstB(relationDto);
+                TAllocInstBDto relationDto = (TAllocInstBDto)cachedDto;
+                dto.setTAllocInstB(relationDto);
                 if (reverseReference) {
                     relationDto.getTPickingBList().add(dto);
                 }
             } else {
-                TShippingInstBDtoMapper mapper = new TShippingInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                TAllocInstBDtoMapper mapper = new TAllocInstBDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTPickingBList();
-                TShippingInstBDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTShippingInstB(relationDto);
+                TAllocInstBDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTAllocInstB(relationDto);
                 if (reverseReference) {
                     relationDto.getTPickingBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTShippingInstB());
+                    _relationDtoMap.put(relationKey, dto.getTAllocInstB());
                 }
             }
         };
@@ -204,29 +204,55 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
                 }
             }
         };
-        if (!_suppressTAllocInstB && entity.getTAllocInstB() != null) {
-            TAllocInstB relationEntity = entity.getTAllocInstB();
+        if (!_suppressMShape && entity.getMShape() != null) {
+            MShape relationEntity = entity.getMShape();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TAllocInstBDto relationDto = (TAllocInstBDto)cachedDto;
-                dto.setTAllocInstB(relationDto);
+                MShapeDto relationDto = (MShapeDto)cachedDto;
+                dto.setMShape(relationDto);
                 if (reverseReference) {
                     relationDto.getTPickingBList().add(dto);
                 }
             } else {
-                TAllocInstBDtoMapper mapper = new TAllocInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTPickingBList();
-                TAllocInstBDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTAllocInstB(relationDto);
+                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMShape(relationDto);
                 if (reverseReference) {
                     relationDto.getTPickingBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTAllocInstB());
+                    _relationDtoMap.put(relationKey, dto.getMShape());
+                }
+            }
+        };
+        if (!_suppressTShippingInstB && entity.getTShippingInstB() != null) {
+            TShippingInstB relationEntity = entity.getTShippingInstB();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TShippingInstBDto relationDto = (TShippingInstBDto)cachedDto;
+                dto.setTShippingInstB(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingBList().add(dto);
+                }
+            } else {
+                TShippingInstBDtoMapper mapper = new TShippingInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingBList();
+                TShippingInstBDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTShippingInstB(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTShippingInstB());
                 }
             }
         };
@@ -253,32 +279,6 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTStock());
-                }
-            }
-        };
-        if (!_suppressMShape && entity.getMShape() != null) {
-            MShape relationEntity = entity.getMShape();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MShapeDto relationDto = (MShapeDto)cachedDto;
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingBList().add(dto);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingBList();
-                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMShape());
                 }
             }
         };
@@ -397,29 +397,29 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTShippingInstB && dto.getTShippingInstB() != null) {
-            TShippingInstBDto relationDto = dto.getTShippingInstB();
+        if (!_suppressTAllocInstB && dto.getTAllocInstB() != null) {
+            TAllocInstBDto relationDto = dto.getTAllocInstB();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TShippingInstB relationEntity = (TShippingInstB)cachedEntity;
-                entity.setTShippingInstB(relationEntity);
+                TAllocInstB relationEntity = (TAllocInstB)cachedEntity;
+                entity.setTAllocInstB(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTPickingBList().add(entity);
                 }
             } else {
-                TShippingInstBDtoMapper mapper = new TShippingInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                TAllocInstBDtoMapper mapper = new TAllocInstBDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTPickingBList();
-                TShippingInstB relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTShippingInstB(relationEntity);
+                TAllocInstB relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTAllocInstB(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTPickingBList().add(entity);
                 }
-                if (instanceCache && entity.getTShippingInstB().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTShippingInstB());
+                if (instanceCache && entity.getTAllocInstB().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTAllocInstB());
                 }
             }
         };
@@ -449,29 +449,55 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
                 }
             }
         };
-        if (!_suppressTAllocInstB && dto.getTAllocInstB() != null) {
-            TAllocInstBDto relationDto = dto.getTAllocInstB();
+        if (!_suppressMShape && dto.getMShape() != null) {
+            MShapeDto relationDto = dto.getMShape();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TAllocInstB relationEntity = (TAllocInstB)cachedEntity;
-                entity.setTAllocInstB(relationEntity);
+                MShape relationEntity = (MShape)cachedEntity;
+                entity.setMShape(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTPickingBList().add(entity);
                 }
             } else {
-                TAllocInstBDtoMapper mapper = new TAllocInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTPickingBList();
-                TAllocInstB relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTAllocInstB(relationEntity);
+                MShape relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMShape(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTPickingBList().add(entity);
                 }
-                if (instanceCache && entity.getTAllocInstB().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTAllocInstB());
+                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMShape());
+                }
+            }
+        };
+        if (!_suppressTShippingInstB && dto.getTShippingInstB() != null) {
+            TShippingInstBDto relationDto = dto.getTShippingInstB();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TShippingInstB relationEntity = (TShippingInstB)cachedEntity;
+                entity.setTShippingInstB(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingBList().add(entity);
+                }
+            } else {
+                TShippingInstBDtoMapper mapper = new TShippingInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingBList();
+                TShippingInstB relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTShippingInstB(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingBList().add(entity);
+                }
+                if (instanceCache && entity.getTShippingInstB().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTShippingInstB());
                 }
             }
         };
@@ -498,32 +524,6 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
                 }
                 if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTStock());
-                }
-            }
-        };
-        if (!_suppressMShape && dto.getMShape() != null) {
-            MShapeDto relationDto = dto.getMShape();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MShape relationEntity = (MShape)cachedEntity;
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingBList().add(entity);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingBList();
-                MShape relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingBList().add(entity);
-                }
-                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMShape());
                 }
             }
         };
@@ -659,38 +659,38 @@ public abstract class BsTPickingBDtoMapper implements DtoMapper<TPickingB, TPick
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTShippingInstB() {
-        _suppressTShippingInstB = true;
+    public void suppressTAllocInstB() {
+        _suppressTAllocInstB = true;
     }
     public void suppressTPickingH() {
         _suppressTPickingH = true;
     }
-    public void suppressTAllocInstB() {
-        _suppressTAllocInstB = true;
+    public void suppressMShape() {
+        _suppressMShape = true;
+    }
+    public void suppressTShippingInstB() {
+        _suppressTShippingInstB = true;
     }
     public void suppressTStock() {
         _suppressTStock = true;
-    }
-    public void suppressMShape() {
-        _suppressMShape = true;
     }
     public void suppressTPackingBList() {
         _suppressTPackingBList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressTShippingInstB();
-        suppressTPickingH();
         suppressTAllocInstB();
-        suppressTStock();
+        suppressTPickingH();
         suppressMShape();
+        suppressTShippingInstB();
+        suppressTStock();
         suppressTPackingBList();
     }
     protected void doSuppressClear() { // internal
-        _suppressTShippingInstB = false;
-        _suppressTPickingH = false;
         _suppressTAllocInstB = false;
-        _suppressTStock = false;
+        _suppressTPickingH = false;
         _suppressMShape = false;
+        _suppressTShippingInstB = false;
+        _suppressTStock = false;
         _suppressTPackingBList = false;
     }
 

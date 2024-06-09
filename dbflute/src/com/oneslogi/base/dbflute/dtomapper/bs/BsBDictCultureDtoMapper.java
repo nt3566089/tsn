@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_DICT, B_CULTURE, M_HT_DICT_CULTURE(AsOne)
+ *     B_CULTURE, B_DICT, M_HT_DICT_CULTURE(AsOne)
  *
  * [referrer-table]
  *     M_HT_DICT_CULTURE
  *
  * [foreign-property]
- *     bDict, bCulture, mHtDictCultureAsOne
+ *     bCulture, bDict, mHtDictCultureAsOne
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBDict;
     protected boolean _suppressBCulture;
+    protected boolean _suppressBDict;
     protected boolean _suppressMHtDictCultureAsOne;
 
     // ===================================================================================
@@ -144,32 +144,6 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBDict && entity.getBDict() != null) {
-            BDict relationEntity = entity.getBDict();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BDictDto relationDto = (BDictDto)cachedDto;
-                dto.setBDict(relationDto);
-                if (reverseReference) {
-                    relationDto.getBDictCultureList().add(dto);
-                }
-            } else {
-                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBDictCultureList();
-                BDictDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBDict(relationDto);
-                if (reverseReference) {
-                    relationDto.getBDictCultureList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBDict());
-                }
-            }
-        };
         if (!_suppressBCulture && entity.getBCulture() != null) {
             BCulture relationEntity = entity.getBCulture();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -193,6 +167,32 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBDict && entity.getBDict() != null) {
+            BDict relationEntity = entity.getBDict();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BDictDto relationDto = (BDictDto)cachedDto;
+                dto.setBDict(relationDto);
+                if (reverseReference) {
+                    relationDto.getBDictCultureList().add(dto);
+                }
+            } else {
+                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBDictCultureList();
+                BDictDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBDict(relationDto);
+                if (reverseReference) {
+                    relationDto.getBDictCultureList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBDict());
                 }
             }
         };
@@ -308,32 +308,6 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBDict && dto.getBDict() != null) {
-            BDictDto relationDto = dto.getBDict();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BDict relationEntity = (BDict)cachedEntity;
-                entity.setBDict(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBDictCultureList().add(entity);
-                }
-            } else {
-                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBDictCultureList();
-                BDict relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBDict(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBDictCultureList().add(entity);
-                }
-                if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBDict());
-                }
-            }
-        };
         if (!_suppressBCulture && dto.getBCulture() != null) {
             BCultureDto relationDto = dto.getBCulture();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -357,6 +331,32 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
                 }
                 if (instanceCache && entity.getBCulture().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBDict && dto.getBDict() != null) {
+            BDictDto relationDto = dto.getBDict();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BDict relationEntity = (BDict)cachedEntity;
+                entity.setBDict(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBDictCultureList().add(entity);
+                }
+            } else {
+                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBDictCultureList();
+                BDict relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBDict(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBDictCultureList().add(entity);
+                }
+                if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBDict());
                 }
             }
         };
@@ -504,23 +504,23 @@ public abstract class BsBDictCultureDtoMapper implements DtoMapper<BDictCulture,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBDict() {
-        _suppressBDict = true;
-    }
     public void suppressBCulture() {
         _suppressBCulture = true;
+    }
+    public void suppressBDict() {
+        _suppressBDict = true;
     }
     public void suppressMHtDictCultureAsOne() {
         _suppressMHtDictCultureAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBDict();
         suppressBCulture();
+        suppressBDict();
         suppressMHtDictCultureAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressBDict = false;
         _suppressBCulture = false;
+        _suppressBDict = false;
         _suppressMHtDictCultureAsOne = false;
     }
 

@@ -265,35 +265,6 @@ public class BsMCarrierBoxCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MCarrierNss _nssMCarrier;
-    public MCarrierNss xdfgetNssMCarrier() {
-        if (_nssMCarrier == null) { _nssMCarrier = new MCarrierNss(null); }
-        return _nssMCarrier;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-     * <pre>
-     * <span style="color: #0000C0">mCarrierBoxBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCarrier()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mCarrierBox</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mCarrierBox</span>.<span style="color: #CC4747">getMCarrier()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCarrierNss setupSelect_MCarrier() {
-        assertSetupSelectPurpose("mCarrier");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCarrierId();
-        }
-        doSetupSelect(() -> query().queryMCarrier());
-        if (_nssMCarrier == null || !_nssMCarrier.hasConditionQuery())
-        { _nssMCarrier = new MCarrierNss(query().queryMCarrier()); }
-        return _nssMCarrier;
-    }
-
     protected MBoxNss _nssMBox;
     public MBoxNss xdfgetNssMBox() {
         if (_nssMBox == null) { _nssMBox = new MBoxNss(null); }
@@ -321,6 +292,35 @@ public class BsMCarrierBoxCB extends AbstractConditionBean {
         if (_nssMBox == null || !_nssMBox.hasConditionQuery())
         { _nssMBox = new MBoxNss(query().queryMBox()); }
         return _nssMBox;
+    }
+
+    protected MCarrierNss _nssMCarrier;
+    public MCarrierNss xdfgetNssMCarrier() {
+        if (_nssMCarrier == null) { _nssMCarrier = new MCarrierNss(null); }
+        return _nssMCarrier;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+     * <pre>
+     * <span style="color: #0000C0">mCarrierBoxBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCarrier()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mCarrierBox</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mCarrierBox</span>.<span style="color: #CC4747">getMCarrier()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCarrierNss setupSelect_MCarrier() {
+        assertSetupSelectPurpose("mCarrier");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnCarrierId();
+        }
+        doSetupSelect(() -> query().queryMCarrier());
+        if (_nssMCarrier == null || !_nssMCarrier.hasConditionQuery())
+        { _nssMCarrier = new MCarrierNss(query().queryMCarrier()); }
+        return _nssMCarrier;
     }
 
     // [DBFlute-0.7.4]
@@ -364,8 +364,8 @@ public class BsMCarrierBoxCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MCarrierBoxCQ> {
-        protected MCarrierCB.HpSpecification _mCarrier;
         protected MBoxCB.HpSpecification _mBox;
+        protected MCarrierCB.HpSpecification _mCarrier;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MCarrierBoxCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -440,37 +440,17 @@ public class BsMCarrierBoxCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnCarrierBoxId(); // PK
-            if (qyCall().qy().hasConditionQueryMCarrier()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCarrierCQ) {
-                columnCarrierId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMBox()
                     || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
                 columnBoxId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMCarrier()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCarrierCQ) {
+                columnCarrierId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "M_CARRIER_BOX"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCarrierCB.HpSpecification specifyMCarrier() {
-            assertRelation("mCarrier");
-            if (_mCarrier == null) {
-                _mCarrier = new MCarrierCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCarrier()
-                                    , () -> _qyCall.qy().queryMCarrier())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCarrier.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCarrier()
-                      , () -> xsyncQyCall().qy().queryMCarrier()));
-                }
-            }
-            return _mCarrier;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_BOX by my BOX_ID, named 'MBox'.
@@ -490,6 +470,26 @@ public class BsMCarrierBoxCB extends AbstractConditionBean {
                 }
             }
             return _mBox;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCarrierCB.HpSpecification specifyMCarrier() {
+            assertRelation("mCarrier");
+            if (_mCarrier == null) {
+                _mCarrier = new MCarrierCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCarrier()
+                                    , () -> _qyCall.qy().queryMCarrier())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCarrier.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCarrier()
+                      , () -> xsyncQyCall().qy().queryMCarrier()));
+                }
+            }
+            return _mCarrier;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

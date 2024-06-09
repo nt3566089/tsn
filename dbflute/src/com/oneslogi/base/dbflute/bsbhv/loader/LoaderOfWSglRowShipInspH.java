@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_BOX, M_CLIENT, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     W_SGL_ROW_SHIP_INSP_B
  *
  * [foreign property]
- *     mBox, mClient, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     wSglRowShipInspBList
@@ -105,6 +105,13 @@ public class LoaderOfWSglRowShipInspH {
         return _foreignMBoxLoader;
     }
 
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
+    }
+
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
@@ -117,13 +124,6 @@ public class LoaderOfWSglRowShipInspH {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
     }
 
     // ===================================================================================

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, M_CLIENT, B_SCREEN, V_DICT, V_HT_DICT
+ *     M_CLIENT, B_DICT, B_SCREEN, V_DICT, V_HT_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, mClient, bScreen, vDict, vHtDict
+ *     mClient, bDict, bScreen, vDict, vHtDict
  *
  * [referrer property]
  *     
@@ -268,25 +268,6 @@ public abstract class BsMClientScreen extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_DICT by my DICT_ID, named 'BDict'. */
-    protected BDict _bDict;
-
-    /**
-     * [get] B_DICT by my DICT_ID, named 'BDict'. <br>
-     * @return The entity of foreign property 'BDict'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BDict getBDict() {
-        return _bDict;
-    }
-
-    /**
-     * [set] B_DICT by my DICT_ID, named 'BDict'.
-     * @param bDict The entity of foreign property 'BDict'. (NullAllowed)
-     */
-    public void setBDict(BDict bDict) {
-        _bDict = bDict;
-    }
-
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -304,6 +285,25 @@ public abstract class BsMClientScreen extends AbstractEntity implements DomainEn
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** B_DICT by my DICT_ID, named 'BDict'. */
+    protected BDict _bDict;
+
+    /**
+     * [get] B_DICT by my DICT_ID, named 'BDict'. <br>
+     * @return The entity of foreign property 'BDict'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BDict getBDict() {
+        return _bDict;
+    }
+
+    /**
+     * [set] B_DICT by my DICT_ID, named 'BDict'.
+     * @param bDict The entity of foreign property 'BDict'. (NullAllowed)
+     */
+    public void setBDict(BDict bDict) {
+        _bDict = bDict;
     }
 
     /** B_SCREEN by my SCREEN_ID, named 'BScreen'. */
@@ -395,10 +395,10 @@ public abstract class BsMClientScreen extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bDict != null)
-        { sb.append(li).append(xbRDS(_bDict, "bDict")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_bDict != null)
+        { sb.append(li).append(xbRDS(_bDict, "bDict")); }
         if (_bScreen != null)
         { sb.append(li).append(xbRDS(_bScreen, "bScreen")); }
         if (_vDict != null)
@@ -435,10 +435,10 @@ public abstract class BsMClientScreen extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bDict != null)
-        { sb.append(dm).append("bDict"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_bDict != null)
+        { sb.append(dm).append("bDict"); }
         if (_bScreen != null)
         { sb.append(dm).append("bScreen"); }
         if (_vDict != null)

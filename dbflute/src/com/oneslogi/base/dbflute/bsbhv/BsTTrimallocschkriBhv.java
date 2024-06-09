@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSODETAIL, T_TRIMALLOC_H
+ *     T_TRIMALLOC_H, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TRIMALLOCADJUST
  *
  * [foreign property]
- *     tYtrsodetail, tTrimallocH
+ *     tTrimallocH, tYtrsodetail
  *
  * [referrer property]
  *     tTrimallocadjustList
@@ -481,20 +481,20 @@ public abstract class BsTTrimallocschkriBhv extends AbstractBehaviorWritable<TTr
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TYtrsodetail'.
-     * @param tTrimallocschkriList The list of tTrimallocschkri. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TYtrsodetail> pulloutTYtrsodetail(List<TTrimallocschkri> tTrimallocschkriList)
-    { return helpPulloutInternally(tTrimallocschkriList, "tYtrsodetail"); }
-
-    /**
      * Pull out the list of foreign table 'TTrimallocH'.
      * @param tTrimallocschkriList The list of tTrimallocschkri. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TTrimallocH> pulloutTTrimallocH(List<TTrimallocschkri> tTrimallocschkriList)
     { return helpPulloutInternally(tTrimallocschkriList, "tTrimallocH"); }
+
+    /**
+     * Pull out the list of foreign table 'TYtrsodetail'.
+     * @param tTrimallocschkriList The list of tTrimallocschkri. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TYtrsodetail> pulloutTYtrsodetail(List<TTrimallocschkri> tTrimallocschkriList)
+    { return helpPulloutInternally(tTrimallocschkriList, "tYtrsodetail"); }
 
     // ===================================================================================
     //                                                                      Extract Column

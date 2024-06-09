@@ -67,8 +67,8 @@ public class MClientDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MClient)et).getMShapeGrp(), (et, vl) -> ((MClient)et).setMShapeGrp((MShapeGrp)vl), "MShapeGrp");
         setupEfpg(_efpgMap, et -> ((MClient)et).getMCustomer(), (et, vl) -> ((MClient)et).setMCustomer((MCustomer)vl), "MCustomer");
+        setupEfpg(_efpgMap, et -> ((MClient)et).getMShapeGrp(), (et, vl) -> ((MClient)et).setMShapeGrp((MShapeGrp)vl), "MShapeGrp");
         setupEfpg(_efpgMap, et -> ((MClient)et).getBClassDtlByDelFlg(), (et, vl) -> ((MClient)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -228,20 +228,20 @@ public class MClientDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMShapeGrp() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeGrpId(), MShapeGrpDbm.getInstance().columnShapeGrpId());
-        return cfi("M_CLIENT_FK1", "MShapeGrp", this, MShapeGrpDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientList", false);
-    }
-    /**
      * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("M_CLIENT_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientList", false);
+        return cfi("M_CLIENT_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientList", false);
+    }
+    /**
+     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMShapeGrp() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeGrpId(), MShapeGrpDbm.getInstance().columnShapeGrpId());
+        return cfi("M_CLIENT_FK1", "MShapeGrp", this, MShapeGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientList", false);
     }
     /**
      * B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'.

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, M_CENTER
+ *     M_CENTER, B_USER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, mCenter
+ *     mCenter, bUser
  *
  * [referrer property]
  *     
@@ -256,25 +256,6 @@ public abstract class BsMUserCenter extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my USER_ID, named 'BUser'. */
-    protected BUser _bUser;
-
-    /**
-     * [get] B_USER by my USER_ID, named 'BUser'. <br>
-     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUser() {
-        return _bUser;
-    }
-
-    /**
-     * [set] B_USER by my USER_ID, named 'BUser'.
-     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
-     */
-    public void setBUser(BUser bUser) {
-        _bUser = bUser;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -292,6 +273,25 @@ public abstract class BsMUserCenter extends AbstractEntity implements DomainEnti
      */
     public void setMCenter(MCenter mCenter) {
         _mCenter = mCenter;
+    }
+
+    /** B_USER by my USER_ID, named 'BUser'. */
+    protected BUser _bUser;
+
+    /**
+     * [get] B_USER by my USER_ID, named 'BUser'. <br>
+     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUser() {
+        return _bUser;
+    }
+
+    /**
+     * [set] B_USER by my USER_ID, named 'BUser'.
+     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
+     */
+    public void setBUser(BUser bUser) {
+        _bUser = bUser;
     }
 
     // ===================================================================================
@@ -326,10 +326,10 @@ public abstract class BsMUserCenter extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_bUser != null)
+        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         return sb.toString();
     }
 
@@ -358,10 +358,10 @@ public abstract class BsMUserCenter extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(dm).append("bUser"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_bUser != null)
+        { sb.append(dm).append("bUser"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

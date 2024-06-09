@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, M_PRODUCT, M_CLIENT
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, mProduct, mClient
+ *     mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -329,25 +329,6 @@ public abstract class BsTSerialNo extends AbstractEntity implements DomainEntity
         _mCenter = mCenter;
     }
 
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
-
-    /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProduct getMProduct() {
-        return _mProduct;
-    }
-
-    /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
-     */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
-    }
-
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -365,6 +346,25 @@ public abstract class BsTSerialNo extends AbstractEntity implements DomainEntity
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -401,10 +401,10 @@ public abstract class BsTSerialNo extends AbstractEntity implements DomainEntity
         StringBuilder sb = new StringBuilder();
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -445,10 +445,10 @@ public abstract class BsTSerialNo extends AbstractEntity implements DomainEntity
         StringBuilder sb = new StringBuilder();
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

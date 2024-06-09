@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_BOX, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mClient, mBox, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     
@@ -169,16 +169,6 @@ public abstract class BsWShippingInterruptDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MClientDto _mClient;
-
-    public MClientDto getMClient() {
-        return _mClient;
-    }
-
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
-    }
-
     protected MBoxDto _mBox;
 
     public MBoxDto getMBox() {
@@ -189,16 +179,6 @@ public abstract class BsWShippingInterruptDto implements Serializable {
         this._mBox = mBox;
     }
 
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -207,6 +187,26 @@ public abstract class BsWShippingInterruptDto implements Serializable {
 
     public void setMCenter(MCenterDto mCenter) {
         this._mCenter = mCenter;
+    }
+
+    protected MClientDto _mClient;
+
+    public MClientDto getMClient() {
+        return _mClient;
+    }
+
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

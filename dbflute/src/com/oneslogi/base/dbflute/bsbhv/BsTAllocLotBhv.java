@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_PRODUCT, T_ALLOC_INST_B, M_CUSTOMER
+ *     T_ALLOC_INST_B, M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tLot, mProduct, tAllocInstB, mCustomer
+ *     tAllocInstB, mCustomer, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -393,22 +393,6 @@ public abstract class BsTAllocLotBhv extends AbstractBehaviorWritable<TAllocLot,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TLot'.
-     * @param tAllocLotList The list of tAllocLot. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TLot> pulloutTLot(List<TAllocLot> tAllocLotList)
-    { return helpPulloutInternally(tAllocLotList, "tLot"); }
-
-    /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param tAllocLotList The list of tAllocLot. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<TAllocLot> tAllocLotList)
-    { return helpPulloutInternally(tAllocLotList, "mProduct"); }
-
-    /**
      * Pull out the list of foreign table 'TAllocInstB'.
      * @param tAllocLotList The list of tAllocLot. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -423,6 +407,22 @@ public abstract class BsTAllocLotBhv extends AbstractBehaviorWritable<TAllocLot,
      */
     public List<MCustomer> pulloutMCustomer(List<TAllocLot> tAllocLotList)
     { return helpPulloutInternally(tAllocLotList, "mCustomer"); }
+
+    /**
+     * Pull out the list of foreign table 'TLot'.
+     * @param tAllocLotList The list of tAllocLot. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TLot> pulloutTLot(List<TAllocLot> tAllocLotList)
+    { return helpPulloutInternally(tAllocLotList, "tLot"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param tAllocLotList The list of tAllocLot. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<TAllocLot> tAllocLotList)
+    { return helpPulloutInternally(tAllocLotList, "mProduct"); }
 
     // ===================================================================================
     //                                                                      Extract Column

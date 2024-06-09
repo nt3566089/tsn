@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, M_CLIENT, M_PRODUCT, T_LOT, M_LOCATION
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCenter, mClient, mProduct, tLot, mLocation
+ *     mCenter, mClient, mLocation, tLot, mProduct
  *
  * [referrer-property]
  *     
@@ -72,9 +72,9 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressMCenter;
     protected boolean _suppressMClient;
-    protected boolean _suppressMProduct;
-    protected boolean _suppressTLot;
     protected boolean _suppressMLocation;
+    protected boolean _suppressTLot;
+    protected boolean _suppressMProduct;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -217,29 +217,29 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
                 }
             }
         };
-        if (!_suppressMProduct && entity.getMProduct() != null) {
-            MProduct relationEntity = entity.getMProduct();
+        if (!_suppressMLocation && entity.getMLocation() != null) {
+            MLocation relationEntity = entity.getMLocation();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MProductDto relationDto = (MProductDto)cachedDto;
-                dto.setMProduct(relationDto);
+                MLocationDto relationDto = (MLocationDto)cachedDto;
+                dto.setMLocation(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtShippingPickingList().add(dto);
                 }
             } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtShippingPickingList();
-                MProductDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProduct(relationDto);
+                MLocationDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMLocation(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtShippingPickingList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProduct());
+                    _relationDtoMap.put(relationKey, dto.getMLocation());
                 }
             }
         };
@@ -269,29 +269,29 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
                 }
             }
         };
-        if (!_suppressMLocation && entity.getMLocation() != null) {
-            MLocation relationEntity = entity.getMLocation();
+        if (!_suppressMProduct && entity.getMProduct() != null) {
+            MProduct relationEntity = entity.getMProduct();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MLocationDto relationDto = (MLocationDto)cachedDto;
-                dto.setMLocation(relationDto);
+                MProductDto relationDto = (MProductDto)cachedDto;
+                dto.setMProduct(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtShippingPickingList().add(dto);
                 }
             } else {
-                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtShippingPickingList();
-                MLocationDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMLocation(relationDto);
+                MProductDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProduct(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtShippingPickingList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMLocation());
+                    _relationDtoMap.put(relationKey, dto.getMProduct());
                 }
             }
         };
@@ -490,29 +490,29 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
                 }
             }
         };
-        if (!_suppressMProduct && dto.getMProduct() != null) {
-            MProductDto relationDto = dto.getMProduct();
+        if (!_suppressMLocation && dto.getMLocation() != null) {
+            MLocationDto relationDto = dto.getMLocation();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MProduct relationEntity = (MProduct)cachedEntity;
-                entity.setMProduct(relationEntity);
+                MLocation relationEntity = (MLocation)cachedEntity;
+                entity.setMLocation(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtShippingPickingList().add(entity);
                 }
             } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtShippingPickingList();
-                MProduct relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProduct(relationEntity);
+                MLocation relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMLocation(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtShippingPickingList().add(entity);
                 }
-                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProduct());
+                if (instanceCache && entity.getMLocation().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMLocation());
                 }
             }
         };
@@ -542,29 +542,29 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
                 }
             }
         };
-        if (!_suppressMLocation && dto.getMLocation() != null) {
-            MLocationDto relationDto = dto.getMLocation();
+        if (!_suppressMProduct && dto.getMProduct() != null) {
+            MProductDto relationDto = dto.getMProduct();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MLocation relationEntity = (MLocation)cachedEntity;
-                entity.setMLocation(relationEntity);
+                MProduct relationEntity = (MProduct)cachedEntity;
+                entity.setMProduct(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtShippingPickingList().add(entity);
                 }
             } else {
-                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtShippingPickingList();
-                MLocation relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMLocation(relationEntity);
+                MProduct relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProduct(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtShippingPickingList().add(entity);
                 }
-                if (instanceCache && entity.getMLocation().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMLocation());
+                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProduct());
                 }
             }
         };
@@ -692,28 +692,28 @@ public abstract class BsWHtShippingPickingDtoMapper implements DtoMapper<WHtShip
     public void suppressMClient() {
         _suppressMClient = true;
     }
-    public void suppressMProduct() {
-        _suppressMProduct = true;
+    public void suppressMLocation() {
+        _suppressMLocation = true;
     }
     public void suppressTLot() {
         _suppressTLot = true;
     }
-    public void suppressMLocation() {
-        _suppressMLocation = true;
+    public void suppressMProduct() {
+        _suppressMProduct = true;
     }
     protected void doSuppressAll() { // internal
         suppressMCenter();
         suppressMClient();
-        suppressMProduct();
-        suppressTLot();
         suppressMLocation();
+        suppressTLot();
+        suppressMProduct();
     }
     protected void doSuppressClear() { // internal
         _suppressMCenter = false;
         _suppressMClient = false;
-        _suppressMProduct = false;
-        _suppressTLot = false;
         _suppressMLocation = false;
+        _suppressTLot = false;
+        _suppressMProduct = false;
     }
 
     // ===================================================================================

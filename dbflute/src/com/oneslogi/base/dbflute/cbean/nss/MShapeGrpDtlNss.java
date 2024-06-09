@@ -20,21 +20,21 @@ public class MShapeGrpDtlNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MShapeNss withMShape() {
-        _query.xdoNss(() -> _query.queryMShape());
-        return new MShapeNss(_query.queryMShape());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MShapeGrpNss withMShapeGrp() {
         _query.xdoNss(() -> _query.queryMShapeGrp());
         return new MShapeGrpNss(_query.queryMShapeGrp());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MShapeNss withMShape() {
+        _query.xdoNss(() -> _query.queryMShape());
+        return new MShapeNss(_query.queryMShape());
     }
     /**
      * With nested relation columns to select clause. <br>

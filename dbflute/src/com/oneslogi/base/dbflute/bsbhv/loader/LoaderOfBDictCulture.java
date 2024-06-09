@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_CULTURE, M_HT_DICT_CULTURE(AsOne)
+ *     B_CULTURE, B_DICT, M_HT_DICT_CULTURE(AsOne)
  *
  * [referrer table]
  *     M_HT_DICT_CULTURE
  *
  * [foreign property]
- *     bDict, bCulture, mHtDictCultureAsOne
+ *     bCulture, bDict, mHtDictCultureAsOne
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfBDictCulture {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBDict _foreignBDictLoader;
-    public LoaderOfBDict pulloutBDict() {
-        if (_foreignBDictLoader == null)
-        { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
-        return _foreignBDictLoader;
-    }
-
     protected LoaderOfBCulture _foreignBCultureLoader;
     public LoaderOfBCulture pulloutBCulture() {
         if (_foreignBCultureLoader == null)
         { _foreignBCultureLoader = new LoaderOfBCulture().ready(myBhv().pulloutBCulture(_selectedList), _selector); }
         return _foreignBCultureLoader;
+    }
+
+    protected LoaderOfBDict _foreignBDictLoader;
+    public LoaderOfBDict pulloutBDict() {
+        if (_foreignBDictLoader == null)
+        { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
+        return _foreignBDictLoader;
     }
 
     protected LoaderOfMHtDictCulture _foreignMHtDictCultureAsOneLoader;

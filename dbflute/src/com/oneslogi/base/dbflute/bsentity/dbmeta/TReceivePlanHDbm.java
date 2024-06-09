@@ -81,14 +81,14 @@ public class TReceivePlanHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getTReceivePlanHSelf(), (et, vl) -> ((TReceivePlanH)et).setTReceivePlanHSelf((TReceivePlanH)vl), "TReceivePlanHSelf");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMCustomerByPlanDepositId(), (et, vl) -> ((TReceivePlanH)et).setMCustomerByPlanDepositId((MCustomer)vl), "MCustomerByPlanDepositId");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMClient(), (et, vl) -> ((TReceivePlanH)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMStockType(), (et, vl) -> ((TReceivePlanH)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMCenter(), (et, vl) -> ((TReceivePlanH)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMProcessType(), (et, vl) -> ((TReceivePlanH)et).setMProcessType((MProcessType)vl), "MProcessType");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMCustomerByPlanSupplierId(), (et, vl) -> ((TReceivePlanH)et).setMCustomerByPlanSupplierId((MCustomer)vl), "MCustomerByPlanSupplierId");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMClient(), (et, vl) -> ((TReceivePlanH)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getTReceivePlanHSelf(), (et, vl) -> ((TReceivePlanH)et).setTReceivePlanHSelf((TReceivePlanH)vl), "TReceivePlanHSelf");
         setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getTPickingH(), (et, vl) -> ((TReceivePlanH)et).setTPickingH((TPickingH)vl), "TPickingH");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMCustomerByPlanDepositId(), (et, vl) -> ((TReceivePlanH)et).setMCustomerByPlanDepositId((MCustomer)vl), "MCustomerByPlanDepositId");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMCustomerByPlanSupplierId(), (et, vl) -> ((TReceivePlanH)et).setMCustomerByPlanSupplierId((MCustomer)vl), "MCustomerByPlanSupplierId");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMProcessType(), (et, vl) -> ((TReceivePlanH)et).setMProcessType((MProcessType)vl), "MProcessType");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getMStockType(), (et, vl) -> ((TReceivePlanH)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getBClassDtlByCenterTransitFlg(), (et, vl) -> ((TReceivePlanH)et).setBClassDtlByCenterTransitFlg((BClassDtl)vl), "BClassDtlByCenterTransitFlg");
         setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getBClassDtlByErrorFlg(), (et, vl) -> ((TReceivePlanH)et).setBClassDtlByErrorFlg((BClassDtl)vl), "BClassDtlByErrorFlg");
         setupEfpg(_efpgMap, et -> ((TReceivePlanH)et).getBClassDtlByInputType(), (et, vl) -> ((TReceivePlanH)et).setBClassDtlByInputType((BClassDtl)vl), "BClassDtlByInputType");
@@ -347,20 +347,12 @@ public class TReceivePlanHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTReceivePlanHSelf() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnOldReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
-        return cfi("T_RECEIVE_PLAN_H_FK2", "TReceivePlanHSelf", this, TReceivePlanHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TReceivePlanHSelfList", false);
-    }
-    /**
-     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCustomerByPlanDepositId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPlanDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_RECEIVE_PLAN_H_FK3", "MCustomerByPlanDepositId", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TReceivePlanHByPlanDepositIdList", false);
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("T_RECEIVE_PLAN_H_FK8", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -368,39 +360,15 @@ public class TReceivePlanHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_RECEIVE_PLAN_H_FK6", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
+        return cfi("T_RECEIVE_PLAN_H_FK6", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
     }
     /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("T_RECEIVE_PLAN_H_FK5", "MStockType", this, MStockTypeDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_RECEIVE_PLAN_H_FK8", "MCenter", this, MCenterDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
-    }
-    /**
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProcessType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_RECEIVE_PLAN_H_FK7", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
-    }
-    /**
-     * M_CUSTOMER by my PLAN_SUPPLIER_ID, named 'MCustomerByPlanSupplierId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCustomerByPlanSupplierId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPlanSupplierId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_RECEIVE_PLAN_H_FK1", "MCustomerByPlanSupplierId", this, MCustomerDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TReceivePlanHByPlanSupplierIdList", false);
+    public ForeignInfo foreignTReceivePlanHSelf() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnOldReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
+        return cfi("T_RECEIVE_PLAN_H_FK2", "TReceivePlanHSelf", this, TReceivePlanHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TReceivePlanHSelfList", false);
     }
     /**
      * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
@@ -408,7 +376,39 @@ public class TReceivePlanHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTPickingH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
-        return cfi("T_RECEIVE_PLAN_H_FK4", "TPickingH", this, TPickingHDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
+        return cfi("T_RECEIVE_PLAN_H_FK4", "TPickingH", this, TPickingHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
+    }
+    /**
+     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCustomerByPlanDepositId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPlanDepositId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_RECEIVE_PLAN_H_FK3", "MCustomerByPlanDepositId", this, MCustomerDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TReceivePlanHByPlanDepositIdList", false);
+    }
+    /**
+     * M_CUSTOMER by my PLAN_SUPPLIER_ID, named 'MCustomerByPlanSupplierId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCustomerByPlanSupplierId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPlanSupplierId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_RECEIVE_PLAN_H_FK1", "MCustomerByPlanSupplierId", this, MCustomerDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TReceivePlanHByPlanSupplierIdList", false);
+    }
+    /**
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProcessType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
+        return cfi("T_RECEIVE_PLAN_H_FK7", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
+    }
+    /**
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("T_RECEIVE_PLAN_H_FK5", "MStockType", this, MStockTypeDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TReceivePlanHList", false);
     }
     /**
      * B_CLASS_DTL by my CENTER_TRANSIT_FLG, named 'BClassDtlByCenterTransitFlg'.

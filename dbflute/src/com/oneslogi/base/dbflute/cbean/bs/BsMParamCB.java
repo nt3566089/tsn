@@ -252,62 +252,30 @@ public class BsMParamCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MDeliveryCourseNss _nssMDeliveryCourse;
-    public MDeliveryCourseNss xdfgetNssMDeliveryCourse() {
-        if (_nssMDeliveryCourse == null) { _nssMDeliveryCourse = new MDeliveryCourseNss(null); }
-        return _nssMDeliveryCourse;
+    protected MClientCenterNss _nssMClientCenter;
+    public MClientCenterNss xdfgetNssMClientCenter() {
+        if (_nssMClientCenter == null) { _nssMClientCenter = new MClientCenterNss(null); }
+        return _nssMClientCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
      * <pre>
      * <span style="color: #0000C0">mParamBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MDeliveryCourse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClientCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">mParam</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMDeliveryCourse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMClientCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MDeliveryCourseNss setupSelect_MDeliveryCourse() {
-        assertSetupSelectPurpose("mDeliveryCourse");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnDeliveryCourseId();
-        }
-        doSetupSelect(() -> query().queryMDeliveryCourse());
-        if (_nssMDeliveryCourse == null || !_nssMDeliveryCourse.hasConditionQuery())
-        { _nssMDeliveryCourse = new MDeliveryCourseNss(query().queryMDeliveryCourse()); }
-        return _nssMDeliveryCourse;
-    }
-
-    protected MBoxGrpNss _nssMBoxGrp;
-    public MBoxGrpNss xdfgetNssMBoxGrp() {
-        if (_nssMBoxGrp == null) { _nssMBoxGrp = new MBoxGrpNss(null); }
-        return _nssMBoxGrp;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-     * <pre>
-     * <span style="color: #0000C0">mParamBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBoxGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mParam</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMBoxGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MBoxGrpNss setupSelect_MBoxGrp() {
-        assertSetupSelectPurpose("mBoxGrp");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPackingBoxGroupId();
-        }
-        doSetupSelect(() -> query().queryMBoxGrp());
-        if (_nssMBoxGrp == null || !_nssMBoxGrp.hasConditionQuery())
-        { _nssMBoxGrp = new MBoxGrpNss(query().queryMBoxGrp()); }
-        return _nssMBoxGrp;
+    public MClientCenterNss setupSelect_MClientCenter() {
+        assertSetupSelectPurpose("mClientCenter");
+        doSetupSelect(() -> query().queryMClientCenter());
+        if (_nssMClientCenter == null || !_nssMClientCenter.hasConditionQuery())
+        { _nssMClientCenter = new MClientCenterNss(query().queryMClientCenter()); }
+        return _nssMClientCenter;
     }
 
     protected MBoxNss _nssMBox;
@@ -339,6 +307,35 @@ public class BsMParamCB extends AbstractConditionBean {
         return _nssMBox;
     }
 
+    protected MDeliveryCourseNss _nssMDeliveryCourse;
+    public MDeliveryCourseNss xdfgetNssMDeliveryCourse() {
+        if (_nssMDeliveryCourse == null) { _nssMDeliveryCourse = new MDeliveryCourseNss(null); }
+        return _nssMDeliveryCourse;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * <pre>
+     * <span style="color: #0000C0">mParamBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MDeliveryCourse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mParam</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMDeliveryCourse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MDeliveryCourseNss setupSelect_MDeliveryCourse() {
+        assertSetupSelectPurpose("mDeliveryCourse");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnDeliveryCourseId();
+        }
+        doSetupSelect(() -> query().queryMDeliveryCourse());
+        if (_nssMDeliveryCourse == null || !_nssMDeliveryCourse.hasConditionQuery())
+        { _nssMDeliveryCourse = new MDeliveryCourseNss(query().queryMDeliveryCourse()); }
+        return _nssMDeliveryCourse;
+    }
+
     protected MZoneNss _nssMZone;
     public MZoneNss xdfgetNssMZone() {
         if (_nssMZone == null) { _nssMZone = new MZoneNss(null); }
@@ -368,30 +365,33 @@ public class BsMParamCB extends AbstractConditionBean {
         return _nssMZone;
     }
 
-    protected MClientCenterNss _nssMClientCenter;
-    public MClientCenterNss xdfgetNssMClientCenter() {
-        if (_nssMClientCenter == null) { _nssMClientCenter = new MClientCenterNss(null); }
-        return _nssMClientCenter;
+    protected MBoxGrpNss _nssMBoxGrp;
+    public MBoxGrpNss xdfgetNssMBoxGrp() {
+        if (_nssMBoxGrp == null) { _nssMBoxGrp = new MBoxGrpNss(null); }
+        return _nssMBoxGrp;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
      * <pre>
      * <span style="color: #0000C0">mParamBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClientCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBoxGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">mParam</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMClientCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">mParam</span>.<span style="color: #CC4747">getMBoxGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MClientCenterNss setupSelect_MClientCenter() {
-        assertSetupSelectPurpose("mClientCenter");
-        doSetupSelect(() -> query().queryMClientCenter());
-        if (_nssMClientCenter == null || !_nssMClientCenter.hasConditionQuery())
-        { _nssMClientCenter = new MClientCenterNss(query().queryMClientCenter()); }
-        return _nssMClientCenter;
+    public MBoxGrpNss setupSelect_MBoxGrp() {
+        assertSetupSelectPurpose("mBoxGrp");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnPackingBoxGroupId();
+        }
+        doSetupSelect(() -> query().queryMBoxGrp());
+        if (_nssMBoxGrp == null || !_nssMBoxGrp.hasConditionQuery())
+        { _nssMBoxGrp = new MBoxGrpNss(query().queryMBoxGrp()); }
+        return _nssMBoxGrp;
     }
 
     protected BClassDtlNss _nssBClassDtlByAfterTagOutFlg;
@@ -1827,11 +1827,11 @@ public class BsMParamCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MParamCQ> {
-        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
-        protected MBoxGrpCB.HpSpecification _mBoxGrp;
-        protected MBoxCB.HpSpecification _mBox;
-        protected MZoneCB.HpSpecification _mZone;
         protected MClientCenterCB.HpSpecification _mClientCenter;
+        protected MBoxCB.HpSpecification _mBox;
+        protected MDeliveryCourseCB.HpSpecification _mDeliveryCourse;
+        protected MZoneCB.HpSpecification _mZone;
+        protected MBoxGrpCB.HpSpecification _mBoxGrp;
         protected BClassDtlCB.HpSpecification _bClassDtlByAfterTagOutFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByAfterDelivSlipOutFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByAfterDelivSlipOutTgt;
@@ -2274,21 +2274,21 @@ public class BsMParamCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnClientCenterId(); // PK
-            if (qyCall().qy().hasConditionQueryMDeliveryCourse()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MDeliveryCourseCQ) {
-                columnDeliveryCourseId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMBoxGrp()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxGrpCQ) {
-                columnPackingBoxGroupId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMBox()
                     || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
                 columnDefaultBoxId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMDeliveryCourse()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MDeliveryCourseCQ) {
+                columnDeliveryCourseId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMZone()
                     || qyCall().qy().xgetReferrerQuery() instanceof MZoneCQ) {
                 columnEmReplenishZoneId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMBoxGrp()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxGrpCQ) {
+                columnPackingBoxGroupId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByAfterTagOutFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -2487,43 +2487,23 @@ public class BsMParamCB extends AbstractConditionBean {
         protected String getTableDbName() { return "M_PARAM"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+         * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MDeliveryCourseCB.HpSpecification specifyMDeliveryCourse() {
-            assertRelation("mDeliveryCourse");
-            if (_mDeliveryCourse == null) {
-                _mDeliveryCourse = new MDeliveryCourseCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMDeliveryCourse()
-                                    , () -> _qyCall.qy().queryMDeliveryCourse())
+        public MClientCenterCB.HpSpecification specifyMClientCenter() {
+            assertRelation("mClientCenter");
+            if (_mClientCenter == null) {
+                _mClientCenter = new MClientCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClientCenter()
+                                    , () -> _qyCall.qy().queryMClientCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mDeliveryCourse.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMDeliveryCourse()
-                      , () -> xsyncQyCall().qy().queryMDeliveryCourse()));
+                    _mClientCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClientCenter()
+                      , () -> xsyncQyCall().qy().queryMClientCenter()));
                 }
             }
-            return _mDeliveryCourse;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MBoxGrpCB.HpSpecification specifyMBoxGrp() {
-            assertRelation("mBoxGrp");
-            if (_mBoxGrp == null) {
-                _mBoxGrp = new MBoxGrpCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBoxGrp()
-                                    , () -> _qyCall.qy().queryMBoxGrp())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mBoxGrp.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBoxGrp()
-                      , () -> xsyncQyCall().qy().queryMBoxGrp()));
-                }
-            }
-            return _mBoxGrp;
+            return _mClientCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -2547,6 +2527,26 @@ public class BsMParamCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MDeliveryCourseCB.HpSpecification specifyMDeliveryCourse() {
+            assertRelation("mDeliveryCourse");
+            if (_mDeliveryCourse == null) {
+                _mDeliveryCourse = new MDeliveryCourseCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMDeliveryCourse()
+                                    , () -> _qyCall.qy().queryMDeliveryCourse())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mDeliveryCourse.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMDeliveryCourse()
+                      , () -> xsyncQyCall().qy().queryMDeliveryCourse()));
+                }
+            }
+            return _mDeliveryCourse;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * M_ZONE by my EM_REPLENISH_ZONE_ID, named 'MZone'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -2567,23 +2567,23 @@ public class BsMParamCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+         * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MClientCenterCB.HpSpecification specifyMClientCenter() {
-            assertRelation("mClientCenter");
-            if (_mClientCenter == null) {
-                _mClientCenter = new MClientCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClientCenter()
-                                    , () -> _qyCall.qy().queryMClientCenter())
+        public MBoxGrpCB.HpSpecification specifyMBoxGrp() {
+            assertRelation("mBoxGrp");
+            if (_mBoxGrp == null) {
+                _mBoxGrp = new MBoxGrpCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBoxGrp()
+                                    , () -> _qyCall.qy().queryMBoxGrp())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mClientCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClientCenter()
-                      , () -> xsyncQyCall().qy().queryMClientCenter()));
+                    _mBoxGrp.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBoxGrp()
+                      , () -> xsyncQyCall().qy().queryMBoxGrp()));
                 }
             }
-            return _mClientCenter;
+            return _mBoxGrp;
         }
         /**
          * Prepare to specify functions about relation table. <br>

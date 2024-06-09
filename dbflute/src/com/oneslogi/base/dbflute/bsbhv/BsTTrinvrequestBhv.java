@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTTrinvrequestBhv extends AbstractBehaviorWritable<TTrinv
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tTrinvrequestList The list of tTrinvrequest. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TTrinvrequest> tTrinvrequestList)
-    { return helpPulloutInternally(tTrinvrequestList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tTrinvrequestList The list of tTrinvrequest. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<TTrinvrequest> tTrinvrequestList)
     { return helpPulloutInternally(tTrinvrequestList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tTrinvrequestList The list of tTrinvrequest. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TTrinvrequest> tTrinvrequestList)
+    { return helpPulloutInternally(tTrinvrequestList, "mClient"); }
 
     // ===================================================================================
     //                                                                      Extract Column

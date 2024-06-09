@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_PICKING_B, T_PACKING_H, T_ALLOC_INST_B, B_CLASS_DTL(ByInspectionFlg)
+ *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_B, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tPickingB, tPackingH, tAllocInstB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
+ *     tAllocInstB, tPackingH, tPickingB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
  *
  * [referrer-property]
  *     
@@ -153,14 +153,14 @@ public abstract class BsTPackingBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TPickingBDto _tPickingB;
+    protected TAllocInstBDto _tAllocInstB;
 
-    public TPickingBDto getTPickingB() {
-        return _tPickingB;
+    public TAllocInstBDto getTAllocInstB() {
+        return _tAllocInstB;
     }
 
-    public void setTPickingB(TPickingBDto tPickingB) {
-        this._tPickingB = tPickingB;
+    public void setTAllocInstB(TAllocInstBDto tAllocInstB) {
+        this._tAllocInstB = tAllocInstB;
     }
 
     protected TPackingHDto _tPackingH;
@@ -173,14 +173,14 @@ public abstract class BsTPackingBDto implements Serializable {
         this._tPackingH = tPackingH;
     }
 
-    protected TAllocInstBDto _tAllocInstB;
+    protected TPickingBDto _tPickingB;
 
-    public TAllocInstBDto getTAllocInstB() {
-        return _tAllocInstB;
+    public TPickingBDto getTPickingB() {
+        return _tPickingB;
     }
 
-    public void setTAllocInstB(TAllocInstBDto tAllocInstB) {
-        this._tAllocInstB = tAllocInstB;
+    public void setTPickingB(TPickingBDto tPickingB) {
+        this._tPickingB = tPickingB;
     }
 
     protected BClassDtlDto _bClassDtlByInspectionFlg;

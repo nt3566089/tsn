@@ -1004,17 +1004,17 @@ public class BsHInventoryBCQ extends AbstractBsHInventoryBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         HInventoryBCQ bq = (HInventoryBCQ)bqs;
         HInventoryBCQ uq = (HInventoryBCQ)uqs;
+        if (bq.hasConditionQueryHInventoryH()) {
+            uq.queryHInventoryH().reflectRelationOnUnionQuery(bq.queryHInventoryH(), uq.queryHInventoryH());
+        }
         if (bq.hasConditionQueryHMoveH()) {
             uq.queryHMoveH().reflectRelationOnUnionQuery(bq.queryHMoveH(), uq.queryHMoveH());
-        }
-        if (bq.hasConditionQueryHStock()) {
-            uq.queryHStock().reflectRelationOnUnionQuery(bq.queryHStock(), uq.queryHStock());
         }
         if (bq.hasConditionQueryMShape()) {
             uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
         }
-        if (bq.hasConditionQueryHInventoryH()) {
-            uq.queryHInventoryH().reflectRelationOnUnionQuery(bq.queryHInventoryH(), uq.queryHInventoryH());
+        if (bq.hasConditionQueryHStock()) {
+            uq.queryHStock().reflectRelationOnUnionQuery(bq.queryHStock(), uq.queryHStock());
         }
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
@@ -1030,6 +1030,26 @@ public class BsHInventoryBCQ extends AbstractBsHInventoryBCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public HInventoryHCQ queryHInventoryH() {
+        return xdfgetConditionQueryHInventoryH();
+    }
+    public HInventoryHCQ xdfgetConditionQueryHInventoryH() {
+        String prop = "hInventoryH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryHInventoryH()); xsetupOuterJoinHInventoryH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected HInventoryHCQ xcreateQueryHInventoryH() {
+        String nrp = xresolveNRP("H_INVENTORY_B", "hInventoryH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new HInventoryHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "hInventoryH", nrp);
+    }
+    protected void xsetupOuterJoinHInventoryH() { xregOutJo("hInventoryH"); }
+    public boolean hasConditionQueryHInventoryH() { return xhasQueRlMap("hInventoryH"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * H_MOVE_H by my MOVE_INST_H_ID, named 'HMoveH'.
@@ -1049,26 +1069,6 @@ public class BsHInventoryBCQ extends AbstractBsHInventoryBCQ {
     }
     protected void xsetupOuterJoinHMoveH() { xregOutJo("hMoveH"); }
     public boolean hasConditionQueryHMoveH() { return xhasQueRlMap("hMoveH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * H_STOCK by my STOCK_ID, named 'HStock'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public HStockCQ queryHStock() {
-        return xdfgetConditionQueryHStock();
-    }
-    public HStockCQ xdfgetConditionQueryHStock() {
-        String prop = "hStock";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryHStock()); xsetupOuterJoinHStock(); }
-        return xgetQueRlMap(prop);
-    }
-    protected HStockCQ xcreateQueryHStock() {
-        String nrp = xresolveNRP("H_INVENTORY_B", "hStock"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new HStockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "hStock", nrp);
-    }
-    protected void xsetupOuterJoinHStock() { xregOutJo("hStock"); }
-    public boolean hasConditionQueryHStock() { return xhasQueRlMap("hStock"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1092,23 +1092,23 @@ public class BsHInventoryBCQ extends AbstractBsHInventoryBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * H_STOCK by my STOCK_ID, named 'HStock'.
      * @return The instance of condition-query. (NotNull)
      */
-    public HInventoryHCQ queryHInventoryH() {
-        return xdfgetConditionQueryHInventoryH();
+    public HStockCQ queryHStock() {
+        return xdfgetConditionQueryHStock();
     }
-    public HInventoryHCQ xdfgetConditionQueryHInventoryH() {
-        String prop = "hInventoryH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryHInventoryH()); xsetupOuterJoinHInventoryH(); }
+    public HStockCQ xdfgetConditionQueryHStock() {
+        String prop = "hStock";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryHStock()); xsetupOuterJoinHStock(); }
         return xgetQueRlMap(prop);
     }
-    protected HInventoryHCQ xcreateQueryHInventoryH() {
-        String nrp = xresolveNRP("H_INVENTORY_B", "hInventoryH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new HInventoryHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "hInventoryH", nrp);
+    protected HStockCQ xcreateQueryHStock() {
+        String nrp = xresolveNRP("H_INVENTORY_B", "hStock"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new HStockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "hStock", nrp);
     }
-    protected void xsetupOuterJoinHInventoryH() { xregOutJo("hInventoryH"); }
-    public boolean hasConditionQueryHInventoryH() { return xhasQueRlMap("hInventoryH"); }
+    protected void xsetupOuterJoinHStock() { xregOutJo("hStock"); }
+    public boolean hasConditionQueryHStock() { return xhasQueRlMap("hStock"); }
 
     /**
      * Get the condition-query for relation table. <br>

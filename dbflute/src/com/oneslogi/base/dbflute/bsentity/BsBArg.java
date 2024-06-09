@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_FUNC, B_DICT, V_HT_DICT, B_ARG_VALID(AsOne)
+ *     B_DICT, B_FUNC, V_HT_DICT, B_ARG_VALID(AsOne)
  *
  * [referrer table]
  *     B_ARG_VALID
  *
  * [foreign property]
- *     bFunc, bDict, vHtDict, bArgValidAsOne
+ *     bDict, bFunc, vHtDict, bArgValidAsOne
  *
  * [referrer property]
  *     
@@ -271,25 +271,6 @@ public abstract class BsBArg extends AbstractEntity implements DomainEntity, Ent
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_FUNC by my FUNC_ID, named 'BFunc'. */
-    protected BFunc _bFunc;
-
-    /**
-     * [get] B_FUNC by my FUNC_ID, named 'BFunc'. <br>
-     * @return The entity of foreign property 'BFunc'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BFunc getBFunc() {
-        return _bFunc;
-    }
-
-    /**
-     * [set] B_FUNC by my FUNC_ID, named 'BFunc'.
-     * @param bFunc The entity of foreign property 'BFunc'. (NullAllowed)
-     */
-    public void setBFunc(BFunc bFunc) {
-        _bFunc = bFunc;
-    }
-
     /** B_DICT by my DICT_ID, named 'BDict'. */
     protected BDict _bDict;
 
@@ -307,6 +288,25 @@ public abstract class BsBArg extends AbstractEntity implements DomainEntity, Ent
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** B_FUNC by my FUNC_ID, named 'BFunc'. */
+    protected BFunc _bFunc;
+
+    /**
+     * [get] B_FUNC by my FUNC_ID, named 'BFunc'. <br>
+     * @return The entity of foreign property 'BFunc'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BFunc getBFunc() {
+        return _bFunc;
+    }
+
+    /**
+     * [set] B_FUNC by my FUNC_ID, named 'BFunc'.
+     * @param bFunc The entity of foreign property 'BFunc'. (NullAllowed)
+     */
+    public void setBFunc(BFunc bFunc) {
+        _bFunc = bFunc;
     }
 
     /** V_HT_DICT by my DICT_ID, named 'VHtDict'. */
@@ -379,10 +379,10 @@ public abstract class BsBArg extends AbstractEntity implements DomainEntity, Ent
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bFunc != null)
-        { sb.append(li).append(xbRDS(_bFunc, "bFunc")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_bFunc != null)
+        { sb.append(li).append(xbRDS(_bFunc, "bFunc")); }
         if (_vHtDict != null)
         { sb.append(li).append(xbRDS(_vHtDict, "vHtDict")); }
         if (_bArgValidAsOne != null)
@@ -418,10 +418,10 @@ public abstract class BsBArg extends AbstractEntity implements DomainEntity, Ent
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bFunc != null)
-        { sb.append(dm).append("bFunc"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_bFunc != null)
+        { sb.append(dm).append("bFunc"); }
         if (_vHtDict != null)
         { sb.append(dm).append("vHtDict"); }
         if (_bArgValidAsOne != null)

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, B_ITEM, B_DICT, V_DICT
+ *     M_CENTER, B_DICT, B_ITEM, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, bItem, bDict, vDict
+ *     mCenter, bDict, bItem, vDict
  *
  * [referrer property]
  *     
@@ -297,25 +297,6 @@ public abstract class BsMCenterItem extends AbstractEntity implements DomainEnti
         _mCenter = mCenter;
     }
 
-    /** B_ITEM by my ITEM_ID, named 'BItem'. */
-    protected BItem _bItem;
-
-    /**
-     * [get] B_ITEM by my ITEM_ID, named 'BItem'. <br>
-     * @return The entity of foreign property 'BItem'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BItem getBItem() {
-        return _bItem;
-    }
-
-    /**
-     * [set] B_ITEM by my ITEM_ID, named 'BItem'.
-     * @param bItem The entity of foreign property 'BItem'. (NullAllowed)
-     */
-    public void setBItem(BItem bItem) {
-        _bItem = bItem;
-    }
-
     /** B_DICT by my DICT_ID, named 'BDict'. */
     protected BDict _bDict;
 
@@ -333,6 +314,25 @@ public abstract class BsMCenterItem extends AbstractEntity implements DomainEnti
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** B_ITEM by my ITEM_ID, named 'BItem'. */
+    protected BItem _bItem;
+
+    /**
+     * [get] B_ITEM by my ITEM_ID, named 'BItem'. <br>
+     * @return The entity of foreign property 'BItem'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BItem getBItem() {
+        return _bItem;
+    }
+
+    /**
+     * [set] B_ITEM by my ITEM_ID, named 'BItem'.
+     * @param bItem The entity of foreign property 'BItem'. (NullAllowed)
+     */
+    public void setBItem(BItem bItem) {
+        _bItem = bItem;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -388,10 +388,10 @@ public abstract class BsMCenterItem extends AbstractEntity implements DomainEnti
         StringBuilder sb = new StringBuilder();
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_bItem != null)
-        { sb.append(li).append(xbRDS(_bItem, "bItem")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_bItem != null)
+        { sb.append(li).append(xbRDS(_bItem, "bItem")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         return sb.toString();
@@ -428,10 +428,10 @@ public abstract class BsMCenterItem extends AbstractEntity implements DomainEnti
         StringBuilder sb = new StringBuilder();
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
-        if (_bItem != null)
-        { sb.append(dm).append("bItem"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_bItem != null)
+        { sb.append(dm).append("bItem"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (sb.length() > dm.length()) {

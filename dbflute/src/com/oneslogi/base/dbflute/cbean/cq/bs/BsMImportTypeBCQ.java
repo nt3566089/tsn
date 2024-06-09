@@ -434,37 +434,17 @@ public class BsMImportTypeBCQ extends AbstractBsMImportTypeBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MImportTypeBCQ bq = (MImportTypeBCQ)bqs;
         MImportTypeBCQ uq = (MImportTypeBCQ)uqs;
-        if (bq.hasConditionQueryMImportType()) {
-            uq.queryMImportType().reflectRelationOnUnionQuery(bq.queryMImportType(), uq.queryMImportType());
-        }
         if (bq.hasConditionQueryMEdiColumn()) {
             uq.queryMEdiColumn().reflectRelationOnUnionQuery(bq.queryMEdiColumn(), uq.queryMEdiColumn());
+        }
+        if (bq.hasConditionQueryMImportType()) {
+            uq.queryMImportType().reflectRelationOnUnionQuery(bq.queryMImportType(), uq.queryMImportType());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MImportTypeCQ queryMImportType() {
-        return xdfgetConditionQueryMImportType();
-    }
-    public MImportTypeCQ xdfgetConditionQueryMImportType() {
-        String prop = "mImportType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMImportType()); xsetupOuterJoinMImportType(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MImportTypeCQ xcreateQueryMImportType() {
-        String nrp = xresolveNRP("M_IMPORT_TYPE_B", "mImportType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MImportTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mImportType", nrp);
-    }
-    protected void xsetupOuterJoinMImportType() { xregOutJo("mImportType"); }
-    public boolean hasConditionQueryMImportType() { return xhasQueRlMap("mImportType"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_EDI_COLUMN by my EDI_COLUMN_ID, named 'MEdiColumn'.
@@ -484,6 +464,26 @@ public class BsMImportTypeBCQ extends AbstractBsMImportTypeBCQ {
     }
     protected void xsetupOuterJoinMEdiColumn() { xregOutJo("mEdiColumn"); }
     public boolean hasConditionQueryMEdiColumn() { return xhasQueRlMap("mEdiColumn"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MImportTypeCQ queryMImportType() {
+        return xdfgetConditionQueryMImportType();
+    }
+    public MImportTypeCQ xdfgetConditionQueryMImportType() {
+        String prop = "mImportType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMImportType()); xsetupOuterJoinMImportType(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MImportTypeCQ xcreateQueryMImportType() {
+        String nrp = xresolveNRP("M_IMPORT_TYPE_B", "mImportType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MImportTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mImportType", nrp);
+    }
+    protected void xsetupOuterJoinMImportType() { xregOutJo("mImportType"); }
+    public boolean hasConditionQueryMImportType() { return xhasQueRlMap("mImportType"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

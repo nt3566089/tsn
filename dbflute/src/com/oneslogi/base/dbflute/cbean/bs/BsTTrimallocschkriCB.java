@@ -252,6 +252,26 @@ public class BsTTrimallocschkriCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
+     * <pre>
+     * <span style="color: #0000C0">tTrimallocschkriBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrimallocH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tTrimallocschkri</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tTrimallocschkri</span>.<span style="color: #CC4747">getTTrimallocH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_TTrimallocH() {
+        assertSetupSelectPurpose("tTrimallocH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTrimallocHId();
+        }
+        doSetupSelect(() -> query().queryTTrimallocH());
+    }
+
     protected TYtrsodetailNss _nssTYtrsodetail;
     public TYtrsodetailNss xdfgetNssTYtrsodetail() {
         if (_nssTYtrsodetail == null) { _nssTYtrsodetail = new TYtrsodetailNss(null); }
@@ -279,26 +299,6 @@ public class BsTTrimallocschkriCB extends AbstractConditionBean {
         if (_nssTYtrsodetail == null || !_nssTYtrsodetail.hasConditionQuery())
         { _nssTYtrsodetail = new TYtrsodetailNss(query().queryTYtrsodetail()); }
         return _nssTYtrsodetail;
-    }
-
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
-     * <pre>
-     * <span style="color: #0000C0">tTrimallocschkriBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrimallocH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tTrimallocschkri</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tTrimallocschkri</span>.<span style="color: #CC4747">getTTrimallocH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_TTrimallocH() {
-        assertSetupSelectPurpose("tTrimallocH");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTrimallocHId();
-        }
-        doSetupSelect(() -> query().queryTTrimallocH());
     }
 
     // [DBFlute-0.7.4]
@@ -342,8 +342,8 @@ public class BsTTrimallocschkriCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TTrimallocschkriCQ> {
-        protected TYtrsodetailCB.HpSpecification _tYtrsodetail;
         protected TTrimallocHCB.HpSpecification _tTrimallocH;
+        protected TYtrsodetailCB.HpSpecification _tYtrsodetail;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TTrimallocschkriCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -453,37 +453,17 @@ public class BsTTrimallocschkriCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnTrimallocschId(); // PK
-            if (qyCall().qy().hasConditionQueryTYtrsodetail()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TYtrsodetailCQ) {
-                columnTrsodetailId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryTTrimallocH()
                     || qyCall().qy().xgetReferrerQuery() instanceof TTrimallocHCQ) {
                 columnTrimallocHId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTYtrsodetail()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TYtrsodetailCQ) {
+                columnTrsodetailId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_TRIMALLOCSCHKRI"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TYtrsodetailCB.HpSpecification specifyTYtrsodetail() {
-            assertRelation("tYtrsodetail");
-            if (_tYtrsodetail == null) {
-                _tYtrsodetail = new TYtrsodetailCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTYtrsodetail()
-                                    , () -> _qyCall.qy().queryTYtrsodetail())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tYtrsodetail.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTYtrsodetail()
-                      , () -> xsyncQyCall().qy().queryTYtrsodetail()));
-                }
-            }
-            return _tYtrsodetail;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
@@ -503,6 +483,26 @@ public class BsTTrimallocschkriCB extends AbstractConditionBean {
                 }
             }
             return _tTrimallocH;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TYtrsodetailCB.HpSpecification specifyTYtrsodetail() {
+            assertRelation("tYtrsodetail");
+            if (_tYtrsodetail == null) {
+                _tYtrsodetail = new TYtrsodetailCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTYtrsodetail()
+                                    , () -> _qyCall.qy().queryTYtrsodetail())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tYtrsodetail.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTYtrsodetail()
+                      , () -> xsyncQyCall().qy().queryTYtrsodetail()));
+                }
+            }
+            return _tYtrsodetail;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

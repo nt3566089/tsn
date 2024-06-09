@@ -41,16 +41,16 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE_GRP, B_CULTURE, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
+ *     B_CULTURE, B_ROLE_GRP, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
  *
  * [referrer-table]
  *     M_USER_CENTER, M_USER_CLIENT, M_USER_DEPOSIT, T_EC_ORDER_R, T_INVENTORY_R, T_MOVE_INST_R, T_PACKING_R, T_PICKING_R, T_RECEIVE_PLAN_R, T_STORE_NO_R, T_STORE_RECORD_R, W_SGL_ROW_SHIP_INSP_B, T_PACKING_H, B_USER_AUTH, M_USER_LOGIN
  *
  * [foreign-property]
- *     bRoleGrp, bCulture, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
+ *     bCulture, bRoleGrp, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
  *
  * [referrer-property]
- *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByTagOutUserIdList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRByPl2OutUserIdList, tPickingRBySlipOutUserIdList, tPickingRByPackingOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
+ *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPackingRByTagOutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByPackingOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByPl2OutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRBySlipOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -70,8 +70,8 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBRoleGrp;
     protected boolean _suppressBCulture;
+    protected boolean _suppressBRoleGrp;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressBUserAuthAsOne;
     protected boolean _suppressMUserCenterList;
@@ -81,15 +81,15 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
     protected boolean _suppressTEcOrderRList;
     protected boolean _suppressTInventoryRList;
     protected boolean _suppressTMoveInstRList;
-    protected boolean _suppressTPackingRByTagOutUserIdList;
     protected boolean _suppressTPackingRByInspectionOutUserIdList;
     protected boolean _suppressTPackingRByStwOutUserIdList;
-    protected boolean _suppressTPickingRByPl1OutUserIdList;
+    protected boolean _suppressTPackingRByTagOutUserIdList;
     protected boolean _suppressTPickingRByCaseOutUserIdList;
-    protected boolean _suppressTPickingRByShippingRecordOutUserIdList;
-    protected boolean _suppressTPickingRByPl2OutUserIdList;
-    protected boolean _suppressTPickingRBySlipOutUserIdList;
     protected boolean _suppressTPickingRByPackingOutUserIdList;
+    protected boolean _suppressTPickingRByPl1OutUserIdList;
+    protected boolean _suppressTPickingRByPl2OutUserIdList;
+    protected boolean _suppressTPickingRByShippingRecordOutUserIdList;
+    protected boolean _suppressTPickingRBySlipOutUserIdList;
     protected boolean _suppressTReceivePlanRList;
     protected boolean _suppressTStoreNoRList;
     protected boolean _suppressTStoreRecordRList;
@@ -167,32 +167,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRoleGrp && entity.getBRoleGrp() != null) {
-            BRoleGrp relationEntity = entity.getBRoleGrp();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BRoleGrpDto relationDto = (BRoleGrpDto)cachedDto;
-                dto.setBRoleGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getBUserList().add(dto);
-                }
-            } else {
-                BRoleGrpDtoMapper mapper = new BRoleGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBUserList();
-                BRoleGrpDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBRoleGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getBUserList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBRoleGrp());
-                }
-            }
-        };
         if (!_suppressBCulture && entity.getBCulture() != null) {
             BCulture relationEntity = entity.getBCulture();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -216,6 +190,32 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBRoleGrp && entity.getBRoleGrp() != null) {
+            BRoleGrp relationEntity = entity.getBRoleGrp();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BRoleGrpDto relationDto = (BRoleGrpDto)cachedDto;
+                dto.setBRoleGrp(relationDto);
+                if (reverseReference) {
+                    relationDto.getBUserList().add(dto);
+                }
+            } else {
+                BRoleGrpDtoMapper mapper = new BRoleGrpDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBUserList();
+                BRoleGrpDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBRoleGrp(relationDto);
+                if (reverseReference) {
+                    relationDto.getBUserList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBRoleGrp());
                 }
             }
         };
@@ -378,20 +378,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPackingRByTagOutUserIdList && !entity.getTPackingRByTagOutUserIdList().isEmpty()) {
-            TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByTagOutUserId();
-            List<TPackingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPackingRByTagOutUserIdList());
-            dto.setTPackingRByTagOutUserIdList(relationDtoList);
-            if (reverseReference) {
-                for (TPackingRDto relationDto : relationDtoList) {
-                    relationDto.setBUserByTagOutUserId(dto);
-                }
-            }
-        };
         if (!_suppressTPackingRByInspectionOutUserIdList && !entity.getTPackingRByInspectionOutUserIdList().isEmpty()) {
             TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -420,17 +406,17 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPickingRByPl1OutUserIdList && !entity.getTPickingRByPl1OutUserIdList().isEmpty()) {
-            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+        if (!_suppressTPackingRByTagOutUserIdList && !entity.getTPackingRByTagOutUserIdList().isEmpty()) {
+            TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
             mapper.setReverseReference(reverseReference);
             if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByPl1OutUserId();
-            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByPl1OutUserIdList());
-            dto.setTPickingRByPl1OutUserIdList(relationDtoList);
+            mapper.suppressBUserByTagOutUserId();
+            List<TPackingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPackingRByTagOutUserIdList());
+            dto.setTPackingRByTagOutUserIdList(relationDtoList);
             if (reverseReference) {
-                for (TPickingRDto relationDto : relationDtoList) {
-                    relationDto.setBUserByPl1OutUserId(dto);
+                for (TPackingRDto relationDto : relationDtoList) {
+                    relationDto.setBUserByTagOutUserId(dto);
                 }
             }
         };
@@ -448,17 +434,31 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPickingRByShippingRecordOutUserIdList && !entity.getTPickingRByShippingRecordOutUserIdList().isEmpty()) {
+        if (!_suppressTPickingRByPackingOutUserIdList && !entity.getTPickingRByPackingOutUserIdList().isEmpty()) {
             TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
             mapper.setReverseReference(reverseReference);
             if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByShippingRecordOutUserId();
-            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByShippingRecordOutUserIdList());
-            dto.setTPickingRByShippingRecordOutUserIdList(relationDtoList);
+            mapper.suppressBUserByPackingOutUserId();
+            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByPackingOutUserIdList());
+            dto.setTPickingRByPackingOutUserIdList(relationDtoList);
             if (reverseReference) {
                 for (TPickingRDto relationDto : relationDtoList) {
-                    relationDto.setBUserByShippingRecordOutUserId(dto);
+                    relationDto.setBUserByPackingOutUserId(dto);
+                }
+            }
+        };
+        if (!_suppressTPickingRByPl1OutUserIdList && !entity.getTPickingRByPl1OutUserIdList().isEmpty()) {
+            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressBUserByPl1OutUserId();
+            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByPl1OutUserIdList());
+            dto.setTPickingRByPl1OutUserIdList(relationDtoList);
+            if (reverseReference) {
+                for (TPickingRDto relationDto : relationDtoList) {
+                    relationDto.setBUserByPl1OutUserId(dto);
                 }
             }
         };
@@ -476,6 +476,20 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
+        if (!_suppressTPickingRByShippingRecordOutUserIdList && !entity.getTPickingRByShippingRecordOutUserIdList().isEmpty()) {
+            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressBUserByShippingRecordOutUserId();
+            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByShippingRecordOutUserIdList());
+            dto.setTPickingRByShippingRecordOutUserIdList(relationDtoList);
+            if (reverseReference) {
+                for (TPickingRDto relationDto : relationDtoList) {
+                    relationDto.setBUserByShippingRecordOutUserId(dto);
+                }
+            }
+        };
         if (!_suppressTPickingRBySlipOutUserIdList && !entity.getTPickingRBySlipOutUserIdList().isEmpty()) {
             TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -487,20 +501,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
             if (reverseReference) {
                 for (TPickingRDto relationDto : relationDtoList) {
                     relationDto.setBUserBySlipOutUserId(dto);
-                }
-            }
-        };
-        if (!_suppressTPickingRByPackingOutUserIdList && !entity.getTPickingRByPackingOutUserIdList().isEmpty()) {
-            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByPackingOutUserId();
-            List<TPickingRDto> relationDtoList = mapper.mappingToDtoList(entity.getTPickingRByPackingOutUserIdList());
-            dto.setTPickingRByPackingOutUserIdList(relationDtoList);
-            if (reverseReference) {
-                for (TPickingRDto relationDto : relationDtoList) {
-                    relationDto.setBUserByPackingOutUserId(dto);
                 }
             }
         };
@@ -663,32 +663,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRoleGrp && dto.getBRoleGrp() != null) {
-            BRoleGrpDto relationDto = dto.getBRoleGrp();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BRoleGrp relationEntity = (BRoleGrp)cachedEntity;
-                entity.setBRoleGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBUserList().add(entity);
-                }
-            } else {
-                BRoleGrpDtoMapper mapper = new BRoleGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBUserList();
-                BRoleGrp relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBRoleGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBUserList().add(entity);
-                }
-                if (instanceCache && entity.getBRoleGrp().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBRoleGrp());
-                }
-            }
-        };
         if (!_suppressBCulture && dto.getBCulture() != null) {
             BCultureDto relationDto = dto.getBCulture();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -712,6 +686,32 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
                 if (instanceCache && entity.getBCulture().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBCulture());
+                }
+            }
+        };
+        if (!_suppressBRoleGrp && dto.getBRoleGrp() != null) {
+            BRoleGrpDto relationDto = dto.getBRoleGrp();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BRoleGrp relationEntity = (BRoleGrp)cachedEntity;
+                entity.setBRoleGrp(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBUserList().add(entity);
+                }
+            } else {
+                BRoleGrpDtoMapper mapper = new BRoleGrpDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBUserList();
+                BRoleGrp relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBRoleGrp(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBUserList().add(entity);
+                }
+                if (instanceCache && entity.getBRoleGrp().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBRoleGrp());
                 }
             }
         };
@@ -874,20 +874,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPackingRByTagOutUserIdList && !dto.getTPackingRByTagOutUserIdList().isEmpty()) {
-            TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByTagOutUserId();
-            List<TPackingR> relationEntityList = mapper.mappingToEntityList(dto.getTPackingRByTagOutUserIdList());
-            entity.setTPackingRByTagOutUserIdList(relationEntityList);
-            if (reverseReference) {
-                for (TPackingR relationEntity : relationEntityList) {
-                    relationEntity.setBUserByTagOutUserId(entity);
-                }
-            }
-        };
         if (!_suppressTPackingRByInspectionOutUserIdList && !dto.getTPackingRByInspectionOutUserIdList().isEmpty()) {
             TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -916,17 +902,17 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPickingRByPl1OutUserIdList && !dto.getTPickingRByPl1OutUserIdList().isEmpty()) {
-            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+        if (!_suppressTPackingRByTagOutUserIdList && !dto.getTPackingRByTagOutUserIdList().isEmpty()) {
+            TPackingRDtoMapper mapper = new TPackingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
             mapper.setReverseReference(reverseReference);
             if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByPl1OutUserId();
-            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByPl1OutUserIdList());
-            entity.setTPickingRByPl1OutUserIdList(relationEntityList);
+            mapper.suppressBUserByTagOutUserId();
+            List<TPackingR> relationEntityList = mapper.mappingToEntityList(dto.getTPackingRByTagOutUserIdList());
+            entity.setTPackingRByTagOutUserIdList(relationEntityList);
             if (reverseReference) {
-                for (TPickingR relationEntity : relationEntityList) {
-                    relationEntity.setBUserByPl1OutUserId(entity);
+                for (TPackingR relationEntity : relationEntityList) {
+                    relationEntity.setBUserByTagOutUserId(entity);
                 }
             }
         };
@@ -944,17 +930,31 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
-        if (!_suppressTPickingRByShippingRecordOutUserIdList && !dto.getTPickingRByShippingRecordOutUserIdList().isEmpty()) {
+        if (!_suppressTPickingRByPackingOutUserIdList && !dto.getTPickingRByPackingOutUserIdList().isEmpty()) {
             TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
             mapper.setReverseReference(reverseReference);
             if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByShippingRecordOutUserId();
-            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByShippingRecordOutUserIdList());
-            entity.setTPickingRByShippingRecordOutUserIdList(relationEntityList);
+            mapper.suppressBUserByPackingOutUserId();
+            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByPackingOutUserIdList());
+            entity.setTPickingRByPackingOutUserIdList(relationEntityList);
             if (reverseReference) {
                 for (TPickingR relationEntity : relationEntityList) {
-                    relationEntity.setBUserByShippingRecordOutUserId(entity);
+                    relationEntity.setBUserByPackingOutUserId(entity);
+                }
+            }
+        };
+        if (!_suppressTPickingRByPl1OutUserIdList && !dto.getTPickingRByPl1OutUserIdList().isEmpty()) {
+            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressBUserByPl1OutUserId();
+            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByPl1OutUserIdList());
+            entity.setTPickingRByPl1OutUserIdList(relationEntityList);
+            if (reverseReference) {
+                for (TPickingR relationEntity : relationEntityList) {
+                    relationEntity.setBUserByPl1OutUserId(entity);
                 }
             }
         };
@@ -972,6 +972,20 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
                 }
             }
         };
+        if (!_suppressTPickingRByShippingRecordOutUserIdList && !dto.getTPickingRByShippingRecordOutUserIdList().isEmpty()) {
+            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressBUserByShippingRecordOutUserId();
+            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByShippingRecordOutUserIdList());
+            entity.setTPickingRByShippingRecordOutUserIdList(relationEntityList);
+            if (reverseReference) {
+                for (TPickingR relationEntity : relationEntityList) {
+                    relationEntity.setBUserByShippingRecordOutUserId(entity);
+                }
+            }
+        };
         if (!_suppressTPickingRBySlipOutUserIdList && !dto.getTPickingRBySlipOutUserIdList().isEmpty()) {
             TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -983,20 +997,6 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
             if (reverseReference) {
                 for (TPickingR relationEntity : relationEntityList) {
                     relationEntity.setBUserBySlipOutUserId(entity);
-                }
-            }
-        };
-        if (!_suppressTPickingRByPackingOutUserIdList && !dto.getTPickingRByPackingOutUserIdList().isEmpty()) {
-            TPickingRDtoMapper mapper = new TPickingRDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressBUserByPackingOutUserId();
-            List<TPickingR> relationEntityList = mapper.mappingToEntityList(dto.getTPickingRByPackingOutUserIdList());
-            entity.setTPickingRByPackingOutUserIdList(relationEntityList);
-            if (reverseReference) {
-                for (TPickingR relationEntity : relationEntityList) {
-                    relationEntity.setBUserByPackingOutUserId(entity);
                 }
             }
         };
@@ -1188,11 +1188,11 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBRoleGrp() {
-        _suppressBRoleGrp = true;
-    }
     public void suppressBCulture() {
         _suppressBCulture = true;
+    }
+    public void suppressBRoleGrp() {
+        _suppressBRoleGrp = true;
     }
     public void suppressBClassDtlByDelFlg() {
         _suppressBClassDtlByDelFlg = true;
@@ -1221,32 +1221,32 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
     public void suppressTMoveInstRList() {
         _suppressTMoveInstRList = true;
     }
-    public void suppressTPackingRByTagOutUserIdList() {
-        _suppressTPackingRByTagOutUserIdList = true;
-    }
     public void suppressTPackingRByInspectionOutUserIdList() {
         _suppressTPackingRByInspectionOutUserIdList = true;
     }
     public void suppressTPackingRByStwOutUserIdList() {
         _suppressTPackingRByStwOutUserIdList = true;
     }
-    public void suppressTPickingRByPl1OutUserIdList() {
-        _suppressTPickingRByPl1OutUserIdList = true;
+    public void suppressTPackingRByTagOutUserIdList() {
+        _suppressTPackingRByTagOutUserIdList = true;
     }
     public void suppressTPickingRByCaseOutUserIdList() {
         _suppressTPickingRByCaseOutUserIdList = true;
     }
-    public void suppressTPickingRByShippingRecordOutUserIdList() {
-        _suppressTPickingRByShippingRecordOutUserIdList = true;
+    public void suppressTPickingRByPackingOutUserIdList() {
+        _suppressTPickingRByPackingOutUserIdList = true;
+    }
+    public void suppressTPickingRByPl1OutUserIdList() {
+        _suppressTPickingRByPl1OutUserIdList = true;
     }
     public void suppressTPickingRByPl2OutUserIdList() {
         _suppressTPickingRByPl2OutUserIdList = true;
     }
+    public void suppressTPickingRByShippingRecordOutUserIdList() {
+        _suppressTPickingRByShippingRecordOutUserIdList = true;
+    }
     public void suppressTPickingRBySlipOutUserIdList() {
         _suppressTPickingRBySlipOutUserIdList = true;
-    }
-    public void suppressTPickingRByPackingOutUserIdList() {
-        _suppressTPickingRByPackingOutUserIdList = true;
     }
     public void suppressTReceivePlanRList() {
         _suppressTReceivePlanRList = true;
@@ -1264,8 +1264,8 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
         _suppressTPackingHByUpdUserList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBRoleGrp();
         suppressBCulture();
+        suppressBRoleGrp();
         suppressBClassDtlByDelFlg();
         suppressBUserAuthAsOne();
         suppressMUserCenterList();
@@ -1275,15 +1275,15 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
         suppressTEcOrderRList();
         suppressTInventoryRList();
         suppressTMoveInstRList();
-        suppressTPackingRByTagOutUserIdList();
         suppressTPackingRByInspectionOutUserIdList();
         suppressTPackingRByStwOutUserIdList();
-        suppressTPickingRByPl1OutUserIdList();
+        suppressTPackingRByTagOutUserIdList();
         suppressTPickingRByCaseOutUserIdList();
-        suppressTPickingRByShippingRecordOutUserIdList();
-        suppressTPickingRByPl2OutUserIdList();
-        suppressTPickingRBySlipOutUserIdList();
         suppressTPickingRByPackingOutUserIdList();
+        suppressTPickingRByPl1OutUserIdList();
+        suppressTPickingRByPl2OutUserIdList();
+        suppressTPickingRByShippingRecordOutUserIdList();
+        suppressTPickingRBySlipOutUserIdList();
         suppressTReceivePlanRList();
         suppressTStoreNoRList();
         suppressTStoreRecordRList();
@@ -1291,8 +1291,8 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
         suppressTPackingHByUpdUserList();
     }
     protected void doSuppressClear() { // internal
-        _suppressBRoleGrp = false;
         _suppressBCulture = false;
+        _suppressBRoleGrp = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressBUserAuthAsOne = false;
         _suppressMUserCenterList = false;
@@ -1302,15 +1302,15 @@ public abstract class BsBUserDtoMapper implements DtoMapper<BUser, BUserDto>, Se
         _suppressTEcOrderRList = false;
         _suppressTInventoryRList = false;
         _suppressTMoveInstRList = false;
-        _suppressTPackingRByTagOutUserIdList = false;
         _suppressTPackingRByInspectionOutUserIdList = false;
         _suppressTPackingRByStwOutUserIdList = false;
-        _suppressTPickingRByPl1OutUserIdList = false;
+        _suppressTPackingRByTagOutUserIdList = false;
         _suppressTPickingRByCaseOutUserIdList = false;
-        _suppressTPickingRByShippingRecordOutUserIdList = false;
-        _suppressTPickingRByPl2OutUserIdList = false;
-        _suppressTPickingRBySlipOutUserIdList = false;
         _suppressTPickingRByPackingOutUserIdList = false;
+        _suppressTPickingRByPl1OutUserIdList = false;
+        _suppressTPickingRByPl2OutUserIdList = false;
+        _suppressTPickingRByShippingRecordOutUserIdList = false;
+        _suppressTPickingRBySlipOutUserIdList = false;
         _suppressTReceivePlanRList = false;
         _suppressTStoreNoRList = false;
         _suppressTStoreRecordRList = false;

@@ -65,8 +65,8 @@ public class BDictCultureDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((BDictCulture)et).getBDict(), (et, vl) -> ((BDictCulture)et).setBDict((BDict)vl), "BDict");
         setupEfpg(_efpgMap, et -> ((BDictCulture)et).getBCulture(), (et, vl) -> ((BDictCulture)et).setBCulture((BCulture)vl), "BCulture");
+        setupEfpg(_efpgMap, et -> ((BDictCulture)et).getBDict(), (et, vl) -> ((BDictCulture)et).setBDict((BDict)vl), "BDict");
         setupEfpg(_efpgMap, et -> ((BDictCulture)et).getMHtDictCultureAsOne(), (et, vl) -> ((BDictCulture)et).setMHtDictCultureAsOne((MHtDictCulture)vl), "MHtDictCultureAsOne");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -217,20 +217,20 @@ public class BDictCultureDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_DICT by my DICT_ID, named 'BDict'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBDict() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("B_DICT_CULTURE_FK1", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BDictCultureList", false);
-    }
-    /**
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBCulture() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCultureId(), BCultureDbm.getInstance().columnCultureId());
-        return cfi("B_DICT_CULTURE_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BDictCultureList", false);
+        return cfi("B_DICT_CULTURE_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BDictCultureList", false);
+    }
+    /**
+     * B_DICT by my DICT_ID, named 'BDict'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBDict() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
+        return cfi("B_DICT_CULTURE_FK1", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BDictCultureList", false);
     }
     /**
      * M_HT_DICT_CULTURE by DICT_CULTURE_ID, named 'MHtDictCultureAsOne'.

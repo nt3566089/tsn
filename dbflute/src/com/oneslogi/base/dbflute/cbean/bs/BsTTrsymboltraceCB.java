@@ -252,35 +252,6 @@ public class BsTTrsymboltraceCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MClientNss _nssMClient;
-    public MClientNss xdfgetNssMClient() {
-        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
-        return _nssMClient;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * <pre>
-     * <span style="color: #0000C0">tTrsymboltraceBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tTrsymboltrace</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tTrsymboltrace</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MClientNss setupSelect_MClient() {
-        assertSetupSelectPurpose("mClient");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnClientId();
-        }
-        doSetupSelect(() -> query().queryMClient());
-        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
-        { _nssMClient = new MClientNss(query().queryMClient()); }
-        return _nssMClient;
-    }
-
     protected MCenterNss _nssMCenter;
     public MCenterNss xdfgetNssMCenter() {
         if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
@@ -308,6 +279,35 @@ public class BsTTrsymboltraceCB extends AbstractConditionBean {
         if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
         { _nssMCenter = new MCenterNss(query().queryMCenter()); }
         return _nssMCenter;
+    }
+
+    protected MClientNss _nssMClient;
+    public MClientNss xdfgetNssMClient() {
+        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
+        return _nssMClient;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * <pre>
+     * <span style="color: #0000C0">tTrsymboltraceBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tTrsymboltrace</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tTrsymboltrace</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MClientNss setupSelect_MClient() {
+        assertSetupSelectPurpose("mClient");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnClientId();
+        }
+        doSetupSelect(() -> query().queryMClient());
+        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
+        { _nssMClient = new MClientNss(query().queryMClient()); }
+        return _nssMClient;
     }
 
     // [DBFlute-0.7.4]
@@ -351,8 +351,8 @@ public class BsTTrsymboltraceCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TTrsymboltraceCQ> {
-        protected MClientCB.HpSpecification _mClient;
         protected MCenterCB.HpSpecification _mCenter;
+        protected MClientCB.HpSpecification _mClient;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TTrsymboltraceCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -572,37 +572,17 @@ public class BsTTrsymboltraceCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnTrsymboltraceId(); // PK
-            if (qyCall().qy().hasConditionQueryMClient()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
-                columnClientId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMClient()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
+                columnClientId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_TRSYMBOLTRACE"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CLIENT by my CLIENT_ID, named 'MClient'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MClientCB.HpSpecification specifyMClient() {
-            assertRelation("mClient");
-            if (_mClient == null) {
-                _mClient = new MClientCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
-                                    , () -> _qyCall.qy().queryMClient())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
-                      , () -> xsyncQyCall().qy().queryMClient()));
-                }
-            }
-            return _mClient;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -622,6 +602,26 @@ public class BsTTrsymboltraceCB extends AbstractConditionBean {
                 }
             }
             return _mCenter;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CLIENT by my CLIENT_ID, named 'MClient'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MClientCB.HpSpecification specifyMClient() {
+            assertRelation("mClient");
+            if (_mClient == null) {
+                _mClient = new MClientCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
+                                    , () -> _qyCall.qy().queryMClient())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
+                      , () -> xsyncQyCall().qy().queryMClient()));
+                }
+            }
+            return _mClient;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

@@ -66,8 +66,8 @@ public class BItemRoleDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((BItemRole)et).getBRole(), (et, vl) -> ((BItemRole)et).setBRole((BRole)vl), "BRole");
         setupEfpg(_efpgMap, et -> ((BItemRole)et).getBItem(), (et, vl) -> ((BItemRole)et).setBItem((BItem)vl), "BItem");
+        setupEfpg(_efpgMap, et -> ((BItemRole)et).getBRole(), (et, vl) -> ((BItemRole)et).setBRole((BRole)vl), "BRole");
         setupEfpg(_efpgMap, et -> ((BItemRole)et).getBClassDtlByVisible(), (et, vl) -> ((BItemRole)et).setBClassDtlByVisible((BClassDtl)vl), "BClassDtlByVisible");
         setupEfpg(_efpgMap, et -> ((BItemRole)et).getBClassDtlByEditable(), (et, vl) -> ((BItemRole)et).setBClassDtlByEditable((BClassDtl)vl), "BClassDtlByEditable");
     }
@@ -226,20 +226,20 @@ public class BItemRoleDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBRole() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleId(), BRoleDbm.getInstance().columnRoleId());
-        return cfi("B_ITEM_ROLE_FK1", "BRole", this, BRoleDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BItemRoleList", false);
-    }
-    /**
      * B_ITEM by my ITEM_ID, named 'BItem'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBItem() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnItemId(), BItemDbm.getInstance().columnItemId());
-        return cfi("B_ITEM_ROLE_FK2", "BItem", this, BItemDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BItemRoleList", false);
+        return cfi("B_ITEM_ROLE_FK2", "BItem", this, BItemDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BItemRoleList", false);
+    }
+    /**
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBRole() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleId(), BRoleDbm.getInstance().columnRoleId());
+        return cfi("B_ITEM_ROLE_FK1", "BRole", this, BRoleDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BItemRoleList", false);
     }
     /**
      * B_CLASS_DTL by my VISIBLE, named 'BClassDtlByVisible'.

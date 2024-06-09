@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, B_ITEM, B_DICT, V_DICT
+ *     M_CENTER, B_DICT, B_ITEM, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, bItem, bDict, vDict
+ *     mCenter, bDict, bItem, vDict
  *
  * [referrer property]
  *     
@@ -428,20 +428,20 @@ public abstract class BsMCenterItemBhv extends AbstractBehaviorWritable<MCenterI
     { return helpPulloutInternally(mCenterItemList, "mCenter"); }
 
     /**
-     * Pull out the list of foreign table 'BItem'.
-     * @param mCenterItemList The list of mCenterItem. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BItem> pulloutBItem(List<MCenterItem> mCenterItemList)
-    { return helpPulloutInternally(mCenterItemList, "bItem"); }
-
-    /**
      * Pull out the list of foreign table 'BDict'.
      * @param mCenterItemList The list of mCenterItem. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BDict> pulloutBDict(List<MCenterItem> mCenterItemList)
     { return helpPulloutInternally(mCenterItemList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'BItem'.
+     * @param mCenterItemList The list of mCenterItem. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BItem> pulloutBItem(List<MCenterItem> mCenterItemList)
+    { return helpPulloutInternally(mCenterItemList, "bItem"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

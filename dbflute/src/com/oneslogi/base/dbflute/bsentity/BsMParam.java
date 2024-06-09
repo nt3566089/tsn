@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_BOX_GRP, M_BOX, M_ZONE, M_CLIENT_CENTER, B_CLASS_DTL(ByAfterTagOutFlg)
+ *     M_CLIENT_CENTER, M_BOX, M_DELIVERY_COURSE, M_ZONE, M_BOX_GRP, B_CLASS_DTL(ByAfterTagOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mBoxGrp, mBox, mZone, mClientCenter, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
+ *     mClientCenter, mBox, mDeliveryCourse, mZone, mBoxGrp, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
  *
  * [referrer property]
  *     
@@ -4068,42 +4068,23 @@ public abstract class BsMParam extends AbstractEntity implements DomainEntity, E
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
-    protected MDeliveryCourse _mDeliveryCourse;
+    /** M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'. */
+    protected MClientCenter _mClientCenter;
 
     /**
-     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
-     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'. <br>
+     * @return The entity of foreign property 'MClientCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MDeliveryCourse getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public MClientCenter getMClientCenter() {
+        return _mClientCenter;
     }
 
     /**
-     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
-     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
+     * [set] M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+     * @param mClientCenter The entity of foreign property 'MClientCenter'. (NullAllowed)
      */
-    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
-        _mDeliveryCourse = mDeliveryCourse;
-    }
-
-    /** M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'. */
-    protected MBoxGrp _mBoxGrp;
-
-    /**
-     * [get] M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'. <br>
-     * @return The entity of foreign property 'MBoxGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MBoxGrp getMBoxGrp() {
-        return _mBoxGrp;
-    }
-
-    /**
-     * [set] M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-     * @param mBoxGrp The entity of foreign property 'MBoxGrp'. (NullAllowed)
-     */
-    public void setMBoxGrp(MBoxGrp mBoxGrp) {
-        _mBoxGrp = mBoxGrp;
+    public void setMClientCenter(MClientCenter mClientCenter) {
+        _mClientCenter = mClientCenter;
     }
 
     /** M_BOX by my DEFAULT_BOX_ID, named 'MBox'. */
@@ -4125,6 +4106,25 @@ public abstract class BsMParam extends AbstractEntity implements DomainEntity, E
         _mBox = mBox;
     }
 
+    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
+    protected MDeliveryCourse _mDeliveryCourse;
+
+    /**
+     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
+     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MDeliveryCourse getMDeliveryCourse() {
+        return _mDeliveryCourse;
+    }
+
+    /**
+     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
+     */
+    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
+        _mDeliveryCourse = mDeliveryCourse;
+    }
+
     /** M_ZONE by my EM_REPLENISH_ZONE_ID, named 'MZone'. */
     protected MZone _mZone;
 
@@ -4144,23 +4144,23 @@ public abstract class BsMParam extends AbstractEntity implements DomainEntity, E
         _mZone = mZone;
     }
 
-    /** M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'. */
-    protected MClientCenter _mClientCenter;
+    /** M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'. */
+    protected MBoxGrp _mBoxGrp;
 
     /**
-     * [get] M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'. <br>
-     * @return The entity of foreign property 'MClientCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'. <br>
+     * @return The entity of foreign property 'MBoxGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MClientCenter getMClientCenter() {
-        return _mClientCenter;
+    public MBoxGrp getMBoxGrp() {
+        return _mBoxGrp;
     }
 
     /**
-     * [set] M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
-     * @param mClientCenter The entity of foreign property 'MClientCenter'. (NullAllowed)
+     * [set] M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
+     * @param mBoxGrp The entity of foreign property 'MBoxGrp'. (NullAllowed)
      */
-    public void setMClientCenter(MClientCenter mClientCenter) {
-        _mClientCenter = mClientCenter;
+    public void setMBoxGrp(MBoxGrp mBoxGrp) {
+        _mBoxGrp = mBoxGrp;
     }
 
     /** B_CLASS_DTL by my AFTER_TAG_OUT_FLG, named 'BClassDtlByAfterTagOutFlg'. */
@@ -5107,16 +5107,16 @@ public abstract class BsMParam extends AbstractEntity implements DomainEntity, E
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
-        if (_mBoxGrp != null)
-        { sb.append(li).append(xbRDS(_mBoxGrp, "mBoxGrp")); }
-        if (_mBox != null)
-        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
-        if (_mZone != null)
-        { sb.append(li).append(xbRDS(_mZone, "mZone")); }
         if (_mClientCenter != null)
         { sb.append(li).append(xbRDS(_mClientCenter, "mClientCenter")); }
+        if (_mBox != null)
+        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
+        if (_mDeliveryCourse != null)
+        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
+        if (_mZone != null)
+        { sb.append(li).append(xbRDS(_mZone, "mZone")); }
+        if (_mBoxGrp != null)
+        { sb.append(li).append(xbRDS(_mBoxGrp, "mBoxGrp")); }
         if (_bClassDtlByAfterTagOutFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByAfterTagOutFlg, "bClassDtlByAfterTagOutFlg")); }
         if (_bClassDtlByAfterDelivSlipOutFlg != null)
@@ -5306,16 +5306,16 @@ public abstract class BsMParam extends AbstractEntity implements DomainEntity, E
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(dm).append("mDeliveryCourse"); }
-        if (_mBoxGrp != null)
-        { sb.append(dm).append("mBoxGrp"); }
-        if (_mBox != null)
-        { sb.append(dm).append("mBox"); }
-        if (_mZone != null)
-        { sb.append(dm).append("mZone"); }
         if (_mClientCenter != null)
         { sb.append(dm).append("mClientCenter"); }
+        if (_mBox != null)
+        { sb.append(dm).append("mBox"); }
+        if (_mDeliveryCourse != null)
+        { sb.append(dm).append("mDeliveryCourse"); }
+        if (_mZone != null)
+        { sb.append(dm).append("mZone"); }
+        if (_mBoxGrp != null)
+        { sb.append(dm).append("mBoxGrp"); }
         if (_bClassDtlByAfterTagOutFlg != null)
         { sb.append(dm).append("bClassDtlByAfterTagOutFlg"); }
         if (_bClassDtlByAfterDelivSlipOutFlg != null)

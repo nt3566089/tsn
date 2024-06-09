@@ -1646,37 +1646,17 @@ public class BsTTrrcvdetailCQ extends AbstractBsTTrrcvdetailCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TTrrcvdetailCQ bq = (TTrrcvdetailCQ)bqs;
         TTrrcvdetailCQ uq = (TTrrcvdetailCQ)uqs;
-        if (bq.hasConditionQueryTTrrcv()) {
-            uq.queryTTrrcv().reflectRelationOnUnionQuery(bq.queryTTrrcv(), uq.queryTTrrcv());
-        }
         if (bq.hasConditionQueryTReceivePlanB()) {
             uq.queryTReceivePlanB().reflectRelationOnUnionQuery(bq.queryTReceivePlanB(), uq.queryTReceivePlanB());
+        }
+        if (bq.hasConditionQueryTTrrcv()) {
+            uq.queryTTrrcv().reflectRelationOnUnionQuery(bq.queryTTrrcv(), uq.queryTTrrcv());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TTrrcvCQ queryTTrrcv() {
-        return xdfgetConditionQueryTTrrcv();
-    }
-    public TTrrcvCQ xdfgetConditionQueryTTrrcv() {
-        String prop = "tTrrcv";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrrcv()); xsetupOuterJoinTTrrcv(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TTrrcvCQ xcreateQueryTTrrcv() {
-        String nrp = xresolveNRP("T_TRRCVDETAIL", "tTrrcv"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TTrrcvCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrrcv", nrp);
-    }
-    protected void xsetupOuterJoinTTrrcv() { xregOutJo("tTrrcv"); }
-    public boolean hasConditionQueryTTrrcv() { return xhasQueRlMap("tTrrcv"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
@@ -1696,6 +1676,26 @@ public class BsTTrrcvdetailCQ extends AbstractBsTTrrcvdetailCQ {
     }
     protected void xsetupOuterJoinTReceivePlanB() { xregOutJo("tReceivePlanB"); }
     public boolean hasConditionQueryTReceivePlanB() { return xhasQueRlMap("tReceivePlanB"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TTrrcvCQ queryTTrrcv() {
+        return xdfgetConditionQueryTTrrcv();
+    }
+    public TTrrcvCQ xdfgetConditionQueryTTrrcv() {
+        String prop = "tTrrcv";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrrcv()); xsetupOuterJoinTTrrcv(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TTrrcvCQ xcreateQueryTTrrcv() {
+        String nrp = xresolveNRP("T_TRRCVDETAIL", "tTrrcv"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TTrrcvCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrrcv", nrp);
+    }
+    protected void xsetupOuterJoinTTrrcv() { xregOutJo("tTrrcv"); }
+    public boolean hasConditionQueryTTrrcv() { return xhasQueRlMap("tTrrcv"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

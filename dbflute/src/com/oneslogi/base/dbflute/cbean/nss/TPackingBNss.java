@@ -20,12 +20,12 @@ public class TPackingBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TPickingBNss withTPickingB() {
-        _query.xdoNss(() -> _query.queryTPickingB());
-        return new TPickingBNss(_query.queryTPickingB());
+    public TAllocInstBNss withTAllocInstB() {
+        _query.xdoNss(() -> _query.queryTAllocInstB());
+        return new TAllocInstBNss(_query.queryTAllocInstB());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,12 +38,12 @@ public class TPackingBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstBNss withTAllocInstB() {
-        _query.xdoNss(() -> _query.queryTAllocInstB());
-        return new TAllocInstBNss(_query.queryTAllocInstB());
+    public TPickingBNss withTPickingB() {
+        _query.xdoNss(() -> _query.queryTPickingB());
+        return new TPickingBNss(_query.queryTPickingB());
     }
     /**
      * With nested relation columns to select clause. <br>

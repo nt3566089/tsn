@@ -50,7 +50,7 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     mClient, mCustomerSelf, mClientCenterByClientId, bClassDtlByDelFlg, bClassDtlByDeliveryFlg, bClassDtlByDepositFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotReverseFlg, bClassDtlByOnetimeFlg, bClassDtlByShippingStopFlg, bClassDtlByVendorFlg, mCarrierSlipCesAsOne
  *
  * [referrer-property]
- *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHBySupplyCustomerIdList, tAllocInstHByDelivCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBBySupplierIdList, tMoveInstBByDepositIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHBySupplyCustomerIdList, tShippingInstHByDelivCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
+ *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHByDelivCustomerIdList, tAllocInstHBySupplyCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBByDepositIdList, tMoveInstBBySupplierIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHByDelivCustomerIdList, tShippingInstHBySupplyCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -89,21 +89,21 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
     protected boolean _suppressMLocationList;
     protected boolean _suppressMUserDepositList;
     protected boolean _suppressTAllocInstBList;
-    protected boolean _suppressTAllocInstHBySupplyCustomerIdList;
     protected boolean _suppressTAllocInstHByDelivCustomerIdList;
+    protected boolean _suppressTAllocInstHBySupplyCustomerIdList;
     protected boolean _suppressTAllocLotList;
     protected boolean _suppressTInventoryBByDepositIdList;
     protected boolean _suppressTInventoryBBySupplierIdList;
     protected boolean _suppressTInventoryInstList;
     protected boolean _suppressTKeepingLotList;
     protected boolean _suppressTLastLotList;
-    protected boolean _suppressTMoveInstBBySupplierIdList;
     protected boolean _suppressTMoveInstBByDepositIdList;
+    protected boolean _suppressTMoveInstBBySupplierIdList;
     protected boolean _suppressTReceivePlanHByPlanDepositIdList;
     protected boolean _suppressTReceivePlanHByPlanSupplierIdList;
     protected boolean _suppressTShippingInstBList;
-    protected boolean _suppressTShippingInstHBySupplyCustomerIdList;
     protected boolean _suppressTShippingInstHByDelivCustomerIdList;
+    protected boolean _suppressTShippingInstHBySupplyCustomerIdList;
     protected boolean _suppressTStockList;
     protected boolean _suppressTStoreNoList;
     protected boolean _suppressTStoreRecordHByDepositIdList;
@@ -594,20 +594,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTAllocInstHBySupplyCustomerIdList && !entity.getTAllocInstHBySupplyCustomerIdList().isEmpty()) {
-            TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplyCustomerId();
-            List<TAllocInstHDto> relationDtoList = mapper.mappingToDtoList(entity.getTAllocInstHBySupplyCustomerIdList());
-            dto.setTAllocInstHBySupplyCustomerIdList(relationDtoList);
-            if (reverseReference) {
-                for (TAllocInstHDto relationDto : relationDtoList) {
-                    relationDto.setMCustomerBySupplyCustomerId(dto);
-                }
-            }
-        };
         if (!_suppressTAllocInstHByDelivCustomerIdList && !entity.getTAllocInstHByDelivCustomerIdList().isEmpty()) {
             TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -619,6 +605,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TAllocInstHDto relationDto : relationDtoList) {
                     relationDto.setMCustomerByDelivCustomerId(dto);
+                }
+            }
+        };
+        if (!_suppressTAllocInstHBySupplyCustomerIdList && !entity.getTAllocInstHBySupplyCustomerIdList().isEmpty()) {
+            TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplyCustomerId();
+            List<TAllocInstHDto> relationDtoList = mapper.mappingToDtoList(entity.getTAllocInstHBySupplyCustomerIdList());
+            dto.setTAllocInstHBySupplyCustomerIdList(relationDtoList);
+            if (reverseReference) {
+                for (TAllocInstHDto relationDto : relationDtoList) {
+                    relationDto.setMCustomerBySupplyCustomerId(dto);
                 }
             }
         };
@@ -706,20 +706,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTMoveInstBBySupplierIdList && !entity.getTMoveInstBBySupplierIdList().isEmpty()) {
-            TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplierId();
-            List<TMoveInstBDto> relationDtoList = mapper.mappingToDtoList(entity.getTMoveInstBBySupplierIdList());
-            dto.setTMoveInstBBySupplierIdList(relationDtoList);
-            if (reverseReference) {
-                for (TMoveInstBDto relationDto : relationDtoList) {
-                    relationDto.setMCustomerBySupplierId(dto);
-                }
-            }
-        };
         if (!_suppressTMoveInstBByDepositIdList && !entity.getTMoveInstBByDepositIdList().isEmpty()) {
             TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -731,6 +717,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TMoveInstBDto relationDto : relationDtoList) {
                     relationDto.setMCustomerByDepositId(dto);
+                }
+            }
+        };
+        if (!_suppressTMoveInstBBySupplierIdList && !entity.getTMoveInstBBySupplierIdList().isEmpty()) {
+            TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplierId();
+            List<TMoveInstBDto> relationDtoList = mapper.mappingToDtoList(entity.getTMoveInstBBySupplierIdList());
+            dto.setTMoveInstBBySupplierIdList(relationDtoList);
+            if (reverseReference) {
+                for (TMoveInstBDto relationDto : relationDtoList) {
+                    relationDto.setMCustomerBySupplierId(dto);
                 }
             }
         };
@@ -776,20 +776,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTShippingInstHBySupplyCustomerIdList && !entity.getTShippingInstHBySupplyCustomerIdList().isEmpty()) {
-            TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplyCustomerId();
-            List<TShippingInstHDto> relationDtoList = mapper.mappingToDtoList(entity.getTShippingInstHBySupplyCustomerIdList());
-            dto.setTShippingInstHBySupplyCustomerIdList(relationDtoList);
-            if (reverseReference) {
-                for (TShippingInstHDto relationDto : relationDtoList) {
-                    relationDto.setMCustomerBySupplyCustomerId(dto);
-                }
-            }
-        };
         if (!_suppressTShippingInstHByDelivCustomerIdList && !entity.getTShippingInstHByDelivCustomerIdList().isEmpty()) {
             TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -801,6 +787,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TShippingInstHDto relationDto : relationDtoList) {
                     relationDto.setMCustomerByDelivCustomerId(dto);
+                }
+            }
+        };
+        if (!_suppressTShippingInstHBySupplyCustomerIdList && !entity.getTShippingInstHBySupplyCustomerIdList().isEmpty()) {
+            TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplyCustomerId();
+            List<TShippingInstHDto> relationDtoList = mapper.mappingToDtoList(entity.getTShippingInstHBySupplyCustomerIdList());
+            dto.setTShippingInstHBySupplyCustomerIdList(relationDtoList);
+            if (reverseReference) {
+                for (TShippingInstHDto relationDto : relationDtoList) {
+                    relationDto.setMCustomerBySupplyCustomerId(dto);
                 }
             }
         };
@@ -1480,20 +1480,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTAllocInstHBySupplyCustomerIdList && !dto.getTAllocInstHBySupplyCustomerIdList().isEmpty()) {
-            TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplyCustomerId();
-            List<TAllocInstH> relationEntityList = mapper.mappingToEntityList(dto.getTAllocInstHBySupplyCustomerIdList());
-            entity.setTAllocInstHBySupplyCustomerIdList(relationEntityList);
-            if (reverseReference) {
-                for (TAllocInstH relationEntity : relationEntityList) {
-                    relationEntity.setMCustomerBySupplyCustomerId(entity);
-                }
-            }
-        };
         if (!_suppressTAllocInstHByDelivCustomerIdList && !dto.getTAllocInstHByDelivCustomerIdList().isEmpty()) {
             TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -1505,6 +1491,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TAllocInstH relationEntity : relationEntityList) {
                     relationEntity.setMCustomerByDelivCustomerId(entity);
+                }
+            }
+        };
+        if (!_suppressTAllocInstHBySupplyCustomerIdList && !dto.getTAllocInstHBySupplyCustomerIdList().isEmpty()) {
+            TAllocInstHDtoMapper mapper = new TAllocInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplyCustomerId();
+            List<TAllocInstH> relationEntityList = mapper.mappingToEntityList(dto.getTAllocInstHBySupplyCustomerIdList());
+            entity.setTAllocInstHBySupplyCustomerIdList(relationEntityList);
+            if (reverseReference) {
+                for (TAllocInstH relationEntity : relationEntityList) {
+                    relationEntity.setMCustomerBySupplyCustomerId(entity);
                 }
             }
         };
@@ -1592,20 +1592,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTMoveInstBBySupplierIdList && !dto.getTMoveInstBBySupplierIdList().isEmpty()) {
-            TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplierId();
-            List<TMoveInstB> relationEntityList = mapper.mappingToEntityList(dto.getTMoveInstBBySupplierIdList());
-            entity.setTMoveInstBBySupplierIdList(relationEntityList);
-            if (reverseReference) {
-                for (TMoveInstB relationEntity : relationEntityList) {
-                    relationEntity.setMCustomerBySupplierId(entity);
-                }
-            }
-        };
         if (!_suppressTMoveInstBByDepositIdList && !dto.getTMoveInstBByDepositIdList().isEmpty()) {
             TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -1617,6 +1603,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TMoveInstB relationEntity : relationEntityList) {
                     relationEntity.setMCustomerByDepositId(entity);
+                }
+            }
+        };
+        if (!_suppressTMoveInstBBySupplierIdList && !dto.getTMoveInstBBySupplierIdList().isEmpty()) {
+            TMoveInstBDtoMapper mapper = new TMoveInstBDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplierId();
+            List<TMoveInstB> relationEntityList = mapper.mappingToEntityList(dto.getTMoveInstBBySupplierIdList());
+            entity.setTMoveInstBBySupplierIdList(relationEntityList);
+            if (reverseReference) {
+                for (TMoveInstB relationEntity : relationEntityList) {
+                    relationEntity.setMCustomerBySupplierId(entity);
                 }
             }
         };
@@ -1662,20 +1662,6 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
                 }
             }
         };
-        if (!_suppressTShippingInstHBySupplyCustomerIdList && !dto.getTShippingInstHBySupplyCustomerIdList().isEmpty()) {
-            TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressMCustomerBySupplyCustomerId();
-            List<TShippingInstH> relationEntityList = mapper.mappingToEntityList(dto.getTShippingInstHBySupplyCustomerIdList());
-            entity.setTShippingInstHBySupplyCustomerIdList(relationEntityList);
-            if (reverseReference) {
-                for (TShippingInstH relationEntity : relationEntityList) {
-                    relationEntity.setMCustomerBySupplyCustomerId(entity);
-                }
-            }
-        };
         if (!_suppressTShippingInstHByDelivCustomerIdList && !dto.getTShippingInstHByDelivCustomerIdList().isEmpty()) {
             TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -1687,6 +1673,20 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
             if (reverseReference) {
                 for (TShippingInstH relationEntity : relationEntityList) {
                     relationEntity.setMCustomerByDelivCustomerId(entity);
+                }
+            }
+        };
+        if (!_suppressTShippingInstHBySupplyCustomerIdList && !dto.getTShippingInstHBySupplyCustomerIdList().isEmpty()) {
+            TShippingInstHDtoMapper mapper = new TShippingInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressMCustomerBySupplyCustomerId();
+            List<TShippingInstH> relationEntityList = mapper.mappingToEntityList(dto.getTShippingInstHBySupplyCustomerIdList());
+            entity.setTShippingInstHBySupplyCustomerIdList(relationEntityList);
+            if (reverseReference) {
+                for (TShippingInstH relationEntity : relationEntityList) {
+                    relationEntity.setMCustomerBySupplyCustomerId(entity);
                 }
             }
         };
@@ -1991,11 +1991,11 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
     public void suppressTAllocInstBList() {
         _suppressTAllocInstBList = true;
     }
-    public void suppressTAllocInstHBySupplyCustomerIdList() {
-        _suppressTAllocInstHBySupplyCustomerIdList = true;
-    }
     public void suppressTAllocInstHByDelivCustomerIdList() {
         _suppressTAllocInstHByDelivCustomerIdList = true;
+    }
+    public void suppressTAllocInstHBySupplyCustomerIdList() {
+        _suppressTAllocInstHBySupplyCustomerIdList = true;
     }
     public void suppressTAllocLotList() {
         _suppressTAllocLotList = true;
@@ -2015,11 +2015,11 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
     public void suppressTLastLotList() {
         _suppressTLastLotList = true;
     }
-    public void suppressTMoveInstBBySupplierIdList() {
-        _suppressTMoveInstBBySupplierIdList = true;
-    }
     public void suppressTMoveInstBByDepositIdList() {
         _suppressTMoveInstBByDepositIdList = true;
+    }
+    public void suppressTMoveInstBBySupplierIdList() {
+        _suppressTMoveInstBBySupplierIdList = true;
     }
     public void suppressTReceivePlanHByPlanDepositIdList() {
         _suppressTReceivePlanHByPlanDepositIdList = true;
@@ -2030,11 +2030,11 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
     public void suppressTShippingInstBList() {
         _suppressTShippingInstBList = true;
     }
-    public void suppressTShippingInstHBySupplyCustomerIdList() {
-        _suppressTShippingInstHBySupplyCustomerIdList = true;
-    }
     public void suppressTShippingInstHByDelivCustomerIdList() {
         _suppressTShippingInstHByDelivCustomerIdList = true;
+    }
+    public void suppressTShippingInstHBySupplyCustomerIdList() {
+        _suppressTShippingInstHBySupplyCustomerIdList = true;
     }
     public void suppressTStockList() {
         _suppressTStockList = true;
@@ -2083,21 +2083,21 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
         suppressMLocationList();
         suppressMUserDepositList();
         suppressTAllocInstBList();
-        suppressTAllocInstHBySupplyCustomerIdList();
         suppressTAllocInstHByDelivCustomerIdList();
+        suppressTAllocInstHBySupplyCustomerIdList();
         suppressTAllocLotList();
         suppressTInventoryBByDepositIdList();
         suppressTInventoryBBySupplierIdList();
         suppressTInventoryInstList();
         suppressTKeepingLotList();
         suppressTLastLotList();
-        suppressTMoveInstBBySupplierIdList();
         suppressTMoveInstBByDepositIdList();
+        suppressTMoveInstBBySupplierIdList();
         suppressTReceivePlanHByPlanDepositIdList();
         suppressTReceivePlanHByPlanSupplierIdList();
         suppressTShippingInstBList();
-        suppressTShippingInstHBySupplyCustomerIdList();
         suppressTShippingInstHByDelivCustomerIdList();
+        suppressTShippingInstHBySupplyCustomerIdList();
         suppressTStockList();
         suppressTStoreNoList();
         suppressTStoreRecordHByDepositIdList();
@@ -2128,21 +2128,21 @@ public abstract class BsMCustomerDtoMapper implements DtoMapper<MCustomer, MCust
         _suppressMLocationList = false;
         _suppressMUserDepositList = false;
         _suppressTAllocInstBList = false;
-        _suppressTAllocInstHBySupplyCustomerIdList = false;
         _suppressTAllocInstHByDelivCustomerIdList = false;
+        _suppressTAllocInstHBySupplyCustomerIdList = false;
         _suppressTAllocLotList = false;
         _suppressTInventoryBByDepositIdList = false;
         _suppressTInventoryBBySupplierIdList = false;
         _suppressTInventoryInstList = false;
         _suppressTKeepingLotList = false;
         _suppressTLastLotList = false;
-        _suppressTMoveInstBBySupplierIdList = false;
         _suppressTMoveInstBByDepositIdList = false;
+        _suppressTMoveInstBBySupplierIdList = false;
         _suppressTReceivePlanHByPlanDepositIdList = false;
         _suppressTReceivePlanHByPlanSupplierIdList = false;
         _suppressTShippingInstBList = false;
-        _suppressTShippingInstHBySupplyCustomerIdList = false;
         _suppressTShippingInstHByDelivCustomerIdList = false;
+        _suppressTShippingInstHBySupplyCustomerIdList = false;
         _suppressTStockList = false;
         _suppressTStoreNoList = false;
         _suppressTStoreRecordHByDepositIdList = false;

@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, T_TRPALLET, M_CENTER, T_STOCK
+ *     M_CENTER, M_CLIENT, T_STOCK, T_TRPALLET
  *
  * [referrer-table]
  *     T_CENTER_SYMBOL
  *
  * [foreign-property]
- *     mClient, tTrpallet, mCenter, tStock
+ *     mCenter, mClient, tStock, tTrpallet
  *
  * [referrer-property]
  *     tCenterSymbolList
@@ -70,10 +70,10 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMClient;
-    protected boolean _suppressTTrpallet;
     protected boolean _suppressMCenter;
+    protected boolean _suppressMClient;
     protected boolean _suppressTStock;
+    protected boolean _suppressTTrpallet;
     protected boolean _suppressTCenterSymbolList;
 
     // ===================================================================================
@@ -148,58 +148,6 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMClient && entity.getMClient() != null) {
-            MClient relationEntity = entity.getMClient();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MClientDto relationDto = (MClientDto)cachedDto;
-                dto.setMClient(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPalletList().add(dto);
-                }
-            } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPalletList();
-                MClientDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMClient(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPalletList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMClient());
-                }
-            }
-        };
-        if (!_suppressTTrpallet && entity.getTTrpallet() != null) {
-            TTrpallet relationEntity = entity.getTTrpallet();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TTrpalletDto relationDto = (TTrpalletDto)cachedDto;
-                dto.setTTrpallet(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPalletList().add(dto);
-                }
-            } else {
-                TTrpalletDtoMapper mapper = new TTrpalletDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPalletList();
-                TTrpalletDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTTrpallet(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPalletList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTTrpallet());
-                }
-            }
-        };
         if (!_suppressMCenter && entity.getMCenter() != null) {
             MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -226,6 +174,32 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
                 }
             }
         };
+        if (!_suppressMClient && entity.getMClient() != null) {
+            MClient relationEntity = entity.getMClient();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MClientDto relationDto = (MClientDto)cachedDto;
+                dto.setMClient(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPalletList().add(dto);
+                }
+            } else {
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPalletList();
+                MClientDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMClient(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPalletList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
         if (!_suppressTStock && entity.getTStock() != null) {
             TStock relationEntity = entity.getTStock();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -249,6 +223,32 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTStock());
+                }
+            }
+        };
+        if (!_suppressTTrpallet && entity.getTTrpallet() != null) {
+            TTrpallet relationEntity = entity.getTTrpallet();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TTrpalletDto relationDto = (TTrpalletDto)cachedDto;
+                dto.setTTrpallet(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPalletList().add(dto);
+                }
+            } else {
+                TTrpalletDtoMapper mapper = new TTrpalletDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPalletList();
+                TTrpalletDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTTrpallet(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPalletList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTTrpallet());
                 }
             }
         };
@@ -358,58 +358,6 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMClient && dto.getMClient() != null) {
-            MClientDto relationDto = dto.getMClient();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MClient relationEntity = (MClient)cachedEntity;
-                entity.setMClient(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPalletList().add(entity);
-                }
-            } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPalletList();
-                MClient relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMClient(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPalletList().add(entity);
-                }
-                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMClient());
-                }
-            }
-        };
-        if (!_suppressTTrpallet && dto.getTTrpallet() != null) {
-            TTrpalletDto relationDto = dto.getTTrpallet();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TTrpallet relationEntity = (TTrpallet)cachedEntity;
-                entity.setTTrpallet(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPalletList().add(entity);
-                }
-            } else {
-                TTrpalletDtoMapper mapper = new TTrpalletDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPalletList();
-                TTrpallet relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTTrpallet(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPalletList().add(entity);
-                }
-                if (instanceCache && entity.getTTrpallet().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTTrpallet());
-                }
-            }
-        };
         if (!_suppressMCenter && dto.getMCenter() != null) {
             MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -436,6 +384,32 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
                 }
             }
         };
+        if (!_suppressMClient && dto.getMClient() != null) {
+            MClientDto relationDto = dto.getMClient();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MClient relationEntity = (MClient)cachedEntity;
+                entity.setMClient(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPalletList().add(entity);
+                }
+            } else {
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPalletList();
+                MClient relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMClient(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPalletList().add(entity);
+                }
+                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
         if (!_suppressTStock && dto.getTStock() != null) {
             TStockDto relationDto = dto.getTStock();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -459,6 +433,32 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
                 }
                 if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTStock());
+                }
+            }
+        };
+        if (!_suppressTTrpallet && dto.getTTrpallet() != null) {
+            TTrpalletDto relationDto = dto.getTTrpallet();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TTrpallet relationEntity = (TTrpallet)cachedEntity;
+                entity.setTTrpallet(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPalletList().add(entity);
+                }
+            } else {
+                TTrpalletDtoMapper mapper = new TTrpalletDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPalletList();
+                TTrpallet relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTTrpallet(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPalletList().add(entity);
+                }
+                if (instanceCache && entity.getTTrpallet().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTTrpallet());
                 }
             }
         };
@@ -594,33 +594,33 @@ public abstract class BsTPalletDtoMapper implements DtoMapper<TPallet, TPalletDt
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMClient() {
-        _suppressMClient = true;
-    }
-    public void suppressTTrpallet() {
-        _suppressTTrpallet = true;
-    }
     public void suppressMCenter() {
         _suppressMCenter = true;
     }
+    public void suppressMClient() {
+        _suppressMClient = true;
+    }
     public void suppressTStock() {
         _suppressTStock = true;
+    }
+    public void suppressTTrpallet() {
+        _suppressTTrpallet = true;
     }
     public void suppressTCenterSymbolList() {
         _suppressTCenterSymbolList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMClient();
-        suppressTTrpallet();
         suppressMCenter();
+        suppressMClient();
         suppressTStock();
+        suppressTTrpallet();
         suppressTCenterSymbolList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMClient = false;
-        _suppressTTrpallet = false;
         _suppressMCenter = false;
+        _suppressMClient = false;
         _suppressTStock = false;
+        _suppressTTrpallet = false;
         _suppressTCenterSymbolList = false;
     }
 

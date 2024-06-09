@@ -31,16 +31,16 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE_GRP, B_CULTURE, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
+ *     B_CULTURE, B_ROLE_GRP, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
  *
  * [referrer table]
  *     M_USER_CENTER, M_USER_CLIENT, M_USER_DEPOSIT, T_EC_ORDER_R, T_INVENTORY_R, T_MOVE_INST_R, T_PACKING_R, T_PICKING_R, T_RECEIVE_PLAN_R, T_STORE_NO_R, T_STORE_RECORD_R, W_SGL_ROW_SHIP_INSP_B, T_PACKING_H, B_USER_AUTH, M_USER_LOGIN
  *
  * [foreign property]
- *     bRoleGrp, bCulture, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
+ *     bCulture, bRoleGrp, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
  *
  * [referrer property]
- *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByTagOutUserIdList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRByPl2OutUserIdList, tPickingRBySlipOutUserIdList, tPickingRByPackingOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
+ *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPackingRByTagOutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByPackingOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByPl2OutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRBySlipOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
  *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -264,25 +264,6 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'. */
-    protected BRoleGrp _bRoleGrp;
-
-    /**
-     * [get] B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'. <br>
-     * @return The entity of foreign property 'BRoleGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BRoleGrp getBRoleGrp() {
-        return _bRoleGrp;
-    }
-
-    /**
-     * [set] B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
-     * @param bRoleGrp The entity of foreign property 'BRoleGrp'. (NullAllowed)
-     */
-    public void setBRoleGrp(BRoleGrp bRoleGrp) {
-        _bRoleGrp = bRoleGrp;
-    }
-
     /** B_CULTURE by my CULTURE_ID, named 'BCulture'. */
     protected BCulture _bCulture;
 
@@ -300,6 +281,25 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
      */
     public void setBCulture(BCulture bCulture) {
         _bCulture = bCulture;
+    }
+
+    /** B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'. */
+    protected BRoleGrp _bRoleGrp;
+
+    /**
+     * [get] B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'. <br>
+     * @return The entity of foreign property 'BRoleGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BRoleGrp getBRoleGrp() {
+        return _bRoleGrp;
+    }
+
+    /**
+     * [set] B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
+     * @param bRoleGrp The entity of foreign property 'BRoleGrp'. (NullAllowed)
+     */
+    public void setBRoleGrp(BRoleGrp bRoleGrp) {
+        _bRoleGrp = bRoleGrp;
     }
 
     /** B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'. */
@@ -482,26 +482,6 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         _tMoveInstRList = tMoveInstRList;
     }
 
-    /** T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'. */
-    protected List<TPackingR> _tPackingRByTagOutUserIdList;
-
-    /**
-     * [get] T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
-     * @return The entity list of referrer property 'TPackingRByTagOutUserIdList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TPackingR> getTPackingRByTagOutUserIdList() {
-        if (_tPackingRByTagOutUserIdList == null) { _tPackingRByTagOutUserIdList = newReferrerList(); }
-        return _tPackingRByTagOutUserIdList;
-    }
-
-    /**
-     * [set] T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
-     * @param tPackingRByTagOutUserIdList The entity list of referrer property 'TPackingRByTagOutUserIdList'. (NullAllowed)
-     */
-    public void setTPackingRByTagOutUserIdList(List<TPackingR> tPackingRByTagOutUserIdList) {
-        _tPackingRByTagOutUserIdList = tPackingRByTagOutUserIdList;
-    }
-
     /** T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdList'. */
     protected List<TPackingR> _tPackingRByInspectionOutUserIdList;
 
@@ -542,24 +522,24 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         _tPackingRByStwOutUserIdList = tPackingRByStwOutUserIdList;
     }
 
-    /** T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'. */
-    protected List<TPickingR> _tPickingRByPl1OutUserIdList;
+    /** T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'. */
+    protected List<TPackingR> _tPackingRByTagOutUserIdList;
 
     /**
-     * [get] T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
-     * @return The entity list of referrer property 'TPickingRByPl1OutUserIdList'. (NotNull: even if no loading, returns empty list)
+     * [get] T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
+     * @return The entity list of referrer property 'TPackingRByTagOutUserIdList'. (NotNull: even if no loading, returns empty list)
      */
-    public List<TPickingR> getTPickingRByPl1OutUserIdList() {
-        if (_tPickingRByPl1OutUserIdList == null) { _tPickingRByPl1OutUserIdList = newReferrerList(); }
-        return _tPickingRByPl1OutUserIdList;
+    public List<TPackingR> getTPackingRByTagOutUserIdList() {
+        if (_tPackingRByTagOutUserIdList == null) { _tPackingRByTagOutUserIdList = newReferrerList(); }
+        return _tPackingRByTagOutUserIdList;
     }
 
     /**
-     * [set] T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
-     * @param tPickingRByPl1OutUserIdList The entity list of referrer property 'TPickingRByPl1OutUserIdList'. (NullAllowed)
+     * [set] T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
+     * @param tPackingRByTagOutUserIdList The entity list of referrer property 'TPackingRByTagOutUserIdList'. (NullAllowed)
      */
-    public void setTPickingRByPl1OutUserIdList(List<TPickingR> tPickingRByPl1OutUserIdList) {
-        _tPickingRByPl1OutUserIdList = tPickingRByPl1OutUserIdList;
+    public void setTPackingRByTagOutUserIdList(List<TPackingR> tPackingRByTagOutUserIdList) {
+        _tPackingRByTagOutUserIdList = tPackingRByTagOutUserIdList;
     }
 
     /** T_PICKING_R by CASE_OUT_USER_ID, named 'TPickingRByCaseOutUserIdList'. */
@@ -582,24 +562,44 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         _tPickingRByCaseOutUserIdList = tPickingRByCaseOutUserIdList;
     }
 
-    /** T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'. */
-    protected List<TPickingR> _tPickingRByShippingRecordOutUserIdList;
+    /** T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'. */
+    protected List<TPickingR> _tPickingRByPackingOutUserIdList;
 
     /**
-     * [get] T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
-     * @return The entity list of referrer property 'TPickingRByShippingRecordOutUserIdList'. (NotNull: even if no loading, returns empty list)
+     * [get] T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
+     * @return The entity list of referrer property 'TPickingRByPackingOutUserIdList'. (NotNull: even if no loading, returns empty list)
      */
-    public List<TPickingR> getTPickingRByShippingRecordOutUserIdList() {
-        if (_tPickingRByShippingRecordOutUserIdList == null) { _tPickingRByShippingRecordOutUserIdList = newReferrerList(); }
-        return _tPickingRByShippingRecordOutUserIdList;
+    public List<TPickingR> getTPickingRByPackingOutUserIdList() {
+        if (_tPickingRByPackingOutUserIdList == null) { _tPickingRByPackingOutUserIdList = newReferrerList(); }
+        return _tPickingRByPackingOutUserIdList;
     }
 
     /**
-     * [set] T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
-     * @param tPickingRByShippingRecordOutUserIdList The entity list of referrer property 'TPickingRByShippingRecordOutUserIdList'. (NullAllowed)
+     * [set] T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
+     * @param tPickingRByPackingOutUserIdList The entity list of referrer property 'TPickingRByPackingOutUserIdList'. (NullAllowed)
      */
-    public void setTPickingRByShippingRecordOutUserIdList(List<TPickingR> tPickingRByShippingRecordOutUserIdList) {
-        _tPickingRByShippingRecordOutUserIdList = tPickingRByShippingRecordOutUserIdList;
+    public void setTPickingRByPackingOutUserIdList(List<TPickingR> tPickingRByPackingOutUserIdList) {
+        _tPickingRByPackingOutUserIdList = tPickingRByPackingOutUserIdList;
+    }
+
+    /** T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'. */
+    protected List<TPickingR> _tPickingRByPl1OutUserIdList;
+
+    /**
+     * [get] T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * @return The entity list of referrer property 'TPickingRByPl1OutUserIdList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TPickingR> getTPickingRByPl1OutUserIdList() {
+        if (_tPickingRByPl1OutUserIdList == null) { _tPickingRByPl1OutUserIdList = newReferrerList(); }
+        return _tPickingRByPl1OutUserIdList;
+    }
+
+    /**
+     * [set] T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * @param tPickingRByPl1OutUserIdList The entity list of referrer property 'TPickingRByPl1OutUserIdList'. (NullAllowed)
+     */
+    public void setTPickingRByPl1OutUserIdList(List<TPickingR> tPickingRByPl1OutUserIdList) {
+        _tPickingRByPl1OutUserIdList = tPickingRByPl1OutUserIdList;
     }
 
     /** T_PICKING_R by PL2_OUT_USER_ID, named 'TPickingRByPl2OutUserIdList'. */
@@ -622,6 +622,26 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         _tPickingRByPl2OutUserIdList = tPickingRByPl2OutUserIdList;
     }
 
+    /** T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'. */
+    protected List<TPickingR> _tPickingRByShippingRecordOutUserIdList;
+
+    /**
+     * [get] T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * @return The entity list of referrer property 'TPickingRByShippingRecordOutUserIdList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TPickingR> getTPickingRByShippingRecordOutUserIdList() {
+        if (_tPickingRByShippingRecordOutUserIdList == null) { _tPickingRByShippingRecordOutUserIdList = newReferrerList(); }
+        return _tPickingRByShippingRecordOutUserIdList;
+    }
+
+    /**
+     * [set] T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * @param tPickingRByShippingRecordOutUserIdList The entity list of referrer property 'TPickingRByShippingRecordOutUserIdList'. (NullAllowed)
+     */
+    public void setTPickingRByShippingRecordOutUserIdList(List<TPickingR> tPickingRByShippingRecordOutUserIdList) {
+        _tPickingRByShippingRecordOutUserIdList = tPickingRByShippingRecordOutUserIdList;
+    }
+
     /** T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdList'. */
     protected List<TPickingR> _tPickingRBySlipOutUserIdList;
 
@@ -640,26 +660,6 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
      */
     public void setTPickingRBySlipOutUserIdList(List<TPickingR> tPickingRBySlipOutUserIdList) {
         _tPickingRBySlipOutUserIdList = tPickingRBySlipOutUserIdList;
-    }
-
-    /** T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'. */
-    protected List<TPickingR> _tPickingRByPackingOutUserIdList;
-
-    /**
-     * [get] T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
-     * @return The entity list of referrer property 'TPickingRByPackingOutUserIdList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TPickingR> getTPickingRByPackingOutUserIdList() {
-        if (_tPickingRByPackingOutUserIdList == null) { _tPickingRByPackingOutUserIdList = newReferrerList(); }
-        return _tPickingRByPackingOutUserIdList;
-    }
-
-    /**
-     * [set] T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
-     * @param tPickingRByPackingOutUserIdList The entity list of referrer property 'TPickingRByPackingOutUserIdList'. (NullAllowed)
-     */
-    public void setTPickingRByPackingOutUserIdList(List<TPickingR> tPickingRByPackingOutUserIdList) {
-        _tPickingRByPackingOutUserIdList = tPickingRByPackingOutUserIdList;
     }
 
     /** T_RECEIVE_PLAN_R by RPL_OUT_USER_ID, named 'TReceivePlanRList'. */
@@ -791,10 +791,10 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bRoleGrp != null)
-        { sb.append(li).append(xbRDS(_bRoleGrp, "bRoleGrp")); }
         if (_bCulture != null)
         { sb.append(li).append(xbRDS(_bCulture, "bCulture")); }
+        if (_bRoleGrp != null)
+        { sb.append(li).append(xbRDS(_bRoleGrp, "bRoleGrp")); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByDelFlg, "bClassDtlByDelFlg")); }
         if (_bUserAuthAsOne != null)
@@ -813,24 +813,24 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         { if (et != null) { sb.append(li).append(xbRDS(et, "tInventoryRList")); } } }
         if (_tMoveInstRList != null) { for (TMoveInstR et : _tMoveInstRList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tMoveInstRList")); } } }
-        if (_tPackingRByTagOutUserIdList != null) { for (TPackingR et : _tPackingRByTagOutUserIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tPackingRByTagOutUserIdList")); } } }
         if (_tPackingRByInspectionOutUserIdList != null) { for (TPackingR et : _tPackingRByInspectionOutUserIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tPackingRByInspectionOutUserIdList")); } } }
         if (_tPackingRByStwOutUserIdList != null) { for (TPackingR et : _tPackingRByStwOutUserIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tPackingRByStwOutUserIdList")); } } }
-        if (_tPickingRByPl1OutUserIdList != null) { for (TPickingR et : _tPickingRByPl1OutUserIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByPl1OutUserIdList")); } } }
+        if (_tPackingRByTagOutUserIdList != null) { for (TPackingR et : _tPackingRByTagOutUserIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tPackingRByTagOutUserIdList")); } } }
         if (_tPickingRByCaseOutUserIdList != null) { for (TPickingR et : _tPickingRByCaseOutUserIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByCaseOutUserIdList")); } } }
-        if (_tPickingRByShippingRecordOutUserIdList != null) { for (TPickingR et : _tPickingRByShippingRecordOutUserIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByShippingRecordOutUserIdList")); } } }
-        if (_tPickingRByPl2OutUserIdList != null) { for (TPickingR et : _tPickingRByPl2OutUserIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByPl2OutUserIdList")); } } }
-        if (_tPickingRBySlipOutUserIdList != null) { for (TPickingR et : _tPickingRBySlipOutUserIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRBySlipOutUserIdList")); } } }
         if (_tPickingRByPackingOutUserIdList != null) { for (TPickingR et : _tPickingRByPackingOutUserIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByPackingOutUserIdList")); } } }
+        if (_tPickingRByPl1OutUserIdList != null) { for (TPickingR et : _tPickingRByPl1OutUserIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByPl1OutUserIdList")); } } }
+        if (_tPickingRByPl2OutUserIdList != null) { for (TPickingR et : _tPickingRByPl2OutUserIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByPl2OutUserIdList")); } } }
+        if (_tPickingRByShippingRecordOutUserIdList != null) { for (TPickingR et : _tPickingRByShippingRecordOutUserIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRByShippingRecordOutUserIdList")); } } }
+        if (_tPickingRBySlipOutUserIdList != null) { for (TPickingR et : _tPickingRBySlipOutUserIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tPickingRBySlipOutUserIdList")); } } }
         if (_tReceivePlanRList != null) { for (TReceivePlanR et : _tReceivePlanRList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tReceivePlanRList")); } } }
         if (_tStoreNoRList != null) { for (TStoreNoR et : _tStoreNoRList)
@@ -871,10 +871,10 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bRoleGrp != null)
-        { sb.append(dm).append("bRoleGrp"); }
         if (_bCulture != null)
         { sb.append(dm).append("bCulture"); }
+        if (_bRoleGrp != null)
+        { sb.append(dm).append("bRoleGrp"); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(dm).append("bClassDtlByDelFlg"); }
         if (_bUserAuthAsOne != null)
@@ -893,24 +893,24 @@ public abstract class BsBUser extends AbstractEntity implements DomainEntity, En
         { sb.append(dm).append("tInventoryRList"); }
         if (_tMoveInstRList != null && !_tMoveInstRList.isEmpty())
         { sb.append(dm).append("tMoveInstRList"); }
-        if (_tPackingRByTagOutUserIdList != null && !_tPackingRByTagOutUserIdList.isEmpty())
-        { sb.append(dm).append("tPackingRByTagOutUserIdList"); }
         if (_tPackingRByInspectionOutUserIdList != null && !_tPackingRByInspectionOutUserIdList.isEmpty())
         { sb.append(dm).append("tPackingRByInspectionOutUserIdList"); }
         if (_tPackingRByStwOutUserIdList != null && !_tPackingRByStwOutUserIdList.isEmpty())
         { sb.append(dm).append("tPackingRByStwOutUserIdList"); }
-        if (_tPickingRByPl1OutUserIdList != null && !_tPickingRByPl1OutUserIdList.isEmpty())
-        { sb.append(dm).append("tPickingRByPl1OutUserIdList"); }
+        if (_tPackingRByTagOutUserIdList != null && !_tPackingRByTagOutUserIdList.isEmpty())
+        { sb.append(dm).append("tPackingRByTagOutUserIdList"); }
         if (_tPickingRByCaseOutUserIdList != null && !_tPickingRByCaseOutUserIdList.isEmpty())
         { sb.append(dm).append("tPickingRByCaseOutUserIdList"); }
-        if (_tPickingRByShippingRecordOutUserIdList != null && !_tPickingRByShippingRecordOutUserIdList.isEmpty())
-        { sb.append(dm).append("tPickingRByShippingRecordOutUserIdList"); }
-        if (_tPickingRByPl2OutUserIdList != null && !_tPickingRByPl2OutUserIdList.isEmpty())
-        { sb.append(dm).append("tPickingRByPl2OutUserIdList"); }
-        if (_tPickingRBySlipOutUserIdList != null && !_tPickingRBySlipOutUserIdList.isEmpty())
-        { sb.append(dm).append("tPickingRBySlipOutUserIdList"); }
         if (_tPickingRByPackingOutUserIdList != null && !_tPickingRByPackingOutUserIdList.isEmpty())
         { sb.append(dm).append("tPickingRByPackingOutUserIdList"); }
+        if (_tPickingRByPl1OutUserIdList != null && !_tPickingRByPl1OutUserIdList.isEmpty())
+        { sb.append(dm).append("tPickingRByPl1OutUserIdList"); }
+        if (_tPickingRByPl2OutUserIdList != null && !_tPickingRByPl2OutUserIdList.isEmpty())
+        { sb.append(dm).append("tPickingRByPl2OutUserIdList"); }
+        if (_tPickingRByShippingRecordOutUserIdList != null && !_tPickingRByShippingRecordOutUserIdList.isEmpty())
+        { sb.append(dm).append("tPickingRByShippingRecordOutUserIdList"); }
+        if (_tPickingRBySlipOutUserIdList != null && !_tPickingRBySlipOutUserIdList.isEmpty())
+        { sb.append(dm).append("tPickingRBySlipOutUserIdList"); }
         if (_tReceivePlanRList != null && !_tReceivePlanRList.isEmpty())
         { sb.append(dm).append("tReceivePlanRList"); }
         if (_tStoreNoRList != null && !_tStoreNoRList.isEmpty())

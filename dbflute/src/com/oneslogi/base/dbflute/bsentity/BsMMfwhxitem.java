@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mClient, mCenter
+ *     mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -398,23 +398,23 @@ public abstract class BsMMfwhxitem extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MProduct getMProduct() {
-        return _mProduct;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -436,23 +436,23 @@ public abstract class BsMMfwhxitem extends AbstractEntity implements DomainEntit
         _mClient = mClient;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
 
     /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCenter getMCenter() {
-        return _mCenter;
+    public MProduct getMProduct() {
+        return _mProduct;
     }
 
     /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
      */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -487,12 +487,12 @@ public abstract class BsMMfwhxitem extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -552,12 +552,12 @@ public abstract class BsMMfwhxitem extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

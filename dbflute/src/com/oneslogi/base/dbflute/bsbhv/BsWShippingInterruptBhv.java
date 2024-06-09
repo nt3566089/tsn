@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_BOX, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mBox, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -393,14 +393,6 @@ public abstract class BsWShippingInterruptBhv extends AbstractBehaviorWritable<W
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<WShippingInterrupt> wShippingInterruptList)
-    { return helpPulloutInternally(wShippingInterruptList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MBox'.
      * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -409,20 +401,28 @@ public abstract class BsWShippingInterruptBhv extends AbstractBehaviorWritable<W
     { return helpPulloutInternally(wShippingInterruptList, "mBox"); }
 
     /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<WShippingInterrupt> wShippingInterruptList)
-    { return helpPulloutInternally(wShippingInterruptList, "mProduct"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<WShippingInterrupt> wShippingInterruptList)
     { return helpPulloutInternally(wShippingInterruptList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<WShippingInterrupt> wShippingInterruptList)
+    { return helpPulloutInternally(wShippingInterruptList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param wShippingInterruptList The list of wShippingInterrupt. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<WShippingInterrupt> wShippingInterruptList)
+    { return helpPulloutInternally(wShippingInterruptList, "mProduct"); }
 
     // ===================================================================================
     //                                                                      Extract Column

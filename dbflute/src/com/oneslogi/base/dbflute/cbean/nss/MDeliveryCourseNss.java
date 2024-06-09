@@ -20,24 +20,6 @@ public class MDeliveryCourseNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCarrierSlipYupkNss withMCarrierSlipYupk() {
-        _query.xdoNss(() -> _query.queryMCarrierSlipYupk());
-        return new MCarrierSlipYupkNss(_query.queryMCarrierSlipYupk());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -62,6 +44,24 @@ public class MDeliveryCourseNss {
     public MCarrierSlipYmtNss withMCarrierSlipYmt() {
         _query.xdoNss(() -> _query.queryMCarrierSlipYmt());
         return new MCarrierSlipYmtNss(_query.queryMCarrierSlipYmt());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCarrierSlipYupkNss withMCarrierSlipYupk() {
+        _query.xdoNss(() -> _query.queryMCarrierSlipYupk());
+        return new MCarrierSlipYupkNss(_query.queryMCarrierSlipYupk());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>

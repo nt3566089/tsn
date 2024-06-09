@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE, B_ITEM, B_CLASS_DTL(ByVisible)
+ *     B_ITEM, B_ROLE, B_CLASS_DTL(ByVisible)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bRole, bItem, bClassDtlByVisible, bClassDtlByEditable
+ *     bItem, bRole, bClassDtlByVisible, bClassDtlByEditable
  *
  * [referrer-property]
  *     
@@ -141,16 +141,6 @@ public abstract class BsBItemRoleDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BRoleDto _bRole;
-
-    public BRoleDto getBRole() {
-        return _bRole;
-    }
-
-    public void setBRole(BRoleDto bRole) {
-        this._bRole = bRole;
-    }
-
     protected BItemDto _bItem;
 
     public BItemDto getBItem() {
@@ -159,6 +149,16 @@ public abstract class BsBItemRoleDto implements Serializable {
 
     public void setBItem(BItemDto bItem) {
         this._bItem = bItem;
+    }
+
+    protected BRoleDto _bRole;
+
+    public BRoleDto getBRole() {
+        return _bRole;
+    }
+
+    public void setBRole(BRoleDto bRole) {
+        this._bRole = bRole;
     }
 
     protected BClassDtlDto _bClassDtlByVisible;

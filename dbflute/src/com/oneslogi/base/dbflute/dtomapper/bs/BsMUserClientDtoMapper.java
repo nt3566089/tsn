@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, M_CLIENT
+ *     M_CLIENT, B_USER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, mClient
+ *     mClient, bUser
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUser;
     protected boolean _suppressMClient;
+    protected boolean _suppressBUser;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -142,32 +142,6 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && entity.getBUser() != null) {
-            BUser relationEntity = entity.getBUser();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getMUserClientList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMUserClientList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getMUserClientList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUser());
-                }
-            }
-        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -191,6 +165,32 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
+        if (!_suppressBUser && entity.getBUser() != null) {
+            BUser relationEntity = entity.getBUser();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getMUserClientList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMUserClientList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getMUserClientList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUser());
                 }
             }
         };
@@ -277,32 +277,6 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && dto.getBUser() != null) {
-            BUserDto relationDto = dto.getBUser();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMUserClientList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMUserClientList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMUserClientList().add(entity);
-                }
-                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUser());
-                }
-            }
-        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -326,6 +300,32 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
                 }
                 if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
+        if (!_suppressBUser && dto.getBUser() != null) {
+            BUserDto relationDto = dto.getBUser();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMUserClientList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMUserClientList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMUserClientList().add(entity);
+                }
+                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUser());
                 }
             }
         };
@@ -447,19 +447,19 @@ public abstract class BsMUserClientDtoMapper implements DtoMapper<MUserClient, M
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUser() {
-        _suppressBUser = true;
-    }
     public void suppressMClient() {
         _suppressMClient = true;
     }
+    public void suppressBUser() {
+        _suppressBUser = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressBUser();
         suppressMClient();
+        suppressBUser();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUser = false;
         _suppressMClient = false;
+        _suppressBUser = false;
     }
 
     // ===================================================================================

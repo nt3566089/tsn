@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PRODUCT, M_PROCESS_TYPE, T_LOT, M_LOCATION, M_STOCK_TYPE, M_CUSTOMER, M_CLIENT, M_CENTER, M_WAREHOUSE
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, T_LOT, M_PROCESS_TYPE, M_PRODUCT, M_LOCATION, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mProduct, mProcessType, tLot, mLocation, mStockType, mCustomerByDepositId, mClient, mCustomerBySupplierId, mCenter, mWarehouse
+ *     mCenter, mClient, mCustomerByDepositId, tLot, mProcessType, mProduct, mLocation, mStockType, mCustomerBySupplierId, mWarehouse
  *
  * [referrer-property]
  *     
@@ -245,14 +245,44 @@ public abstract class BsWHtReceiveNoPlanInspDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MProductDto _mProduct;
+    protected MCenterDto _mCenter;
 
-    public MProductDto getMProduct() {
-        return _mProduct;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
+    protected MClientDto _mClient;
+
+    public MClientDto getMClient() {
+        return _mClient;
+    }
+
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
+    }
+
+    protected MCustomerDto _mCustomerByDepositId;
+
+    public MCustomerDto getMCustomerByDepositId() {
+        return _mCustomerByDepositId;
+    }
+
+    public void setMCustomerByDepositId(MCustomerDto mCustomerByDepositId) {
+        this._mCustomerByDepositId = mCustomerByDepositId;
+    }
+
+    protected TLotDto _tLot;
+
+    public TLotDto getTLot() {
+        return _tLot;
+    }
+
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
     }
 
     protected MProcessTypeDto _mProcessType;
@@ -265,14 +295,14 @@ public abstract class BsWHtReceiveNoPlanInspDto implements Serializable {
         this._mProcessType = mProcessType;
     }
 
-    protected TLotDto _tLot;
+    protected MProductDto _mProduct;
 
-    public TLotDto getTLot() {
-        return _tLot;
+    public MProductDto getMProduct() {
+        return _mProduct;
     }
 
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     protected MLocationDto _mLocation;
@@ -295,26 +325,6 @@ public abstract class BsWHtReceiveNoPlanInspDto implements Serializable {
         this._mStockType = mStockType;
     }
 
-    protected MCustomerDto _mCustomerByDepositId;
-
-    public MCustomerDto getMCustomerByDepositId() {
-        return _mCustomerByDepositId;
-    }
-
-    public void setMCustomerByDepositId(MCustomerDto mCustomerByDepositId) {
-        this._mCustomerByDepositId = mCustomerByDepositId;
-    }
-
-    protected MClientDto _mClient;
-
-    public MClientDto getMClient() {
-        return _mClient;
-    }
-
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
-    }
-
     protected MCustomerDto _mCustomerBySupplierId;
 
     public MCustomerDto getMCustomerBySupplierId() {
@@ -323,16 +333,6 @@ public abstract class BsWHtReceiveNoPlanInspDto implements Serializable {
 
     public void setMCustomerBySupplierId(MCustomerDto mCustomerBySupplierId) {
         this._mCustomerBySupplierId = mCustomerBySupplierId;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
     }
 
     protected MWarehouseDto _mWarehouse;

@@ -538,9 +538,6 @@ public class BsTPackingRCQ extends AbstractBsTPackingRCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPackingRCQ bq = (TPackingRCQ)bqs;
         TPackingRCQ uq = (TPackingRCQ)uqs;
-        if (bq.hasConditionQueryBUserByTagOutUserId()) {
-            uq.queryBUserByTagOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByTagOutUserId(), uq.queryBUserByTagOutUserId());
-        }
         if (bq.hasConditionQueryBUserByInspectionOutUserId()) {
             uq.queryBUserByInspectionOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByInspectionOutUserId(), uq.queryBUserByInspectionOutUserId());
         }
@@ -549,6 +546,9 @@ public class BsTPackingRCQ extends AbstractBsTPackingRCQ {
         }
         if (bq.hasConditionQueryBUserByStwOutUserId()) {
             uq.queryBUserByStwOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByStwOutUserId(), uq.queryBUserByStwOutUserId());
+        }
+        if (bq.hasConditionQueryBUserByTagOutUserId()) {
+            uq.queryBUserByTagOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByTagOutUserId(), uq.queryBUserByTagOutUserId());
         }
         if (bq.hasConditionQueryBClassDtlByStwOutFlg()) {
             uq.queryBClassDtlByStwOutFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByStwOutFlg(), uq.queryBClassDtlByStwOutFlg());
@@ -564,26 +564,6 @@ public class BsTPackingRCQ extends AbstractBsTPackingRCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BUserCQ queryBUserByTagOutUserId() {
-        return xdfgetConditionQueryBUserByTagOutUserId();
-    }
-    public BUserCQ xdfgetConditionQueryBUserByTagOutUserId() {
-        String prop = "bUserByTagOutUserId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByTagOutUserId()); xsetupOuterJoinBUserByTagOutUserId(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BUserCQ xcreateQueryBUserByTagOutUserId() {
-        String nrp = xresolveNRP("T_PACKING_R", "bUserByTagOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByTagOutUserId", nrp);
-    }
-    protected void xsetupOuterJoinBUserByTagOutUserId() { xregOutJo("bUserByTagOutUserId"); }
-    public boolean hasConditionQueryBUserByTagOutUserId() { return xhasQueRlMap("bUserByTagOutUserId"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_USER by my INSPECTION_OUT_USER_ID, named 'BUserByInspectionOutUserId'.
@@ -643,6 +623,26 @@ public class BsTPackingRCQ extends AbstractBsTPackingRCQ {
     }
     protected void xsetupOuterJoinBUserByStwOutUserId() { xregOutJo("bUserByStwOutUserId"); }
     public boolean hasConditionQueryBUserByStwOutUserId() { return xhasQueRlMap("bUserByStwOutUserId"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BUserCQ queryBUserByTagOutUserId() {
+        return xdfgetConditionQueryBUserByTagOutUserId();
+    }
+    public BUserCQ xdfgetConditionQueryBUserByTagOutUserId() {
+        String prop = "bUserByTagOutUserId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByTagOutUserId()); xsetupOuterJoinBUserByTagOutUserId(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BUserCQ xcreateQueryBUserByTagOutUserId() {
+        String nrp = xresolveNRP("T_PACKING_R", "bUserByTagOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByTagOutUserId", nrp);
+    }
+    protected void xsetupOuterJoinBUserByTagOutUserId() { xregOutJo("bUserByTagOutUserId"); }
+    public boolean hasConditionQueryBUserByTagOutUserId() { return xhasQueRlMap("bUserByTagOutUserId"); }
 
     /**
      * Get the condition-query for relation table. <br>

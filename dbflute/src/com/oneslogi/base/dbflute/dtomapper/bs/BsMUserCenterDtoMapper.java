@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, M_CENTER
+ *     M_CENTER, B_USER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, mCenter
+ *     mCenter, bUser
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUser;
     protected boolean _suppressMCenter;
+    protected boolean _suppressBUser;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -142,32 +142,6 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && entity.getBUser() != null) {
-            BUser relationEntity = entity.getBUser();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getMUserCenterList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMUserCenterList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getMUserCenterList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUser());
-                }
-            }
-        };
         if (!_suppressMCenter && entity.getMCenter() != null) {
             MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -191,6 +165,32 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
+        if (!_suppressBUser && entity.getBUser() != null) {
+            BUser relationEntity = entity.getBUser();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getMUserCenterList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMUserCenterList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getMUserCenterList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUser());
                 }
             }
         };
@@ -277,32 +277,6 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && dto.getBUser() != null) {
-            BUserDto relationDto = dto.getBUser();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMUserCenterList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMUserCenterList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMUserCenterList().add(entity);
-                }
-                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUser());
-                }
-            }
-        };
         if (!_suppressMCenter && dto.getMCenter() != null) {
             MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -326,6 +300,32 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
                 }
                 if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
+        if (!_suppressBUser && dto.getBUser() != null) {
+            BUserDto relationDto = dto.getBUser();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMUserCenterList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMUserCenterList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMUserCenterList().add(entity);
+                }
+                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUser());
                 }
             }
         };
@@ -447,19 +447,19 @@ public abstract class BsMUserCenterDtoMapper implements DtoMapper<MUserCenter, M
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUser() {
-        _suppressBUser = true;
-    }
     public void suppressMCenter() {
         _suppressMCenter = true;
     }
+    public void suppressBUser() {
+        _suppressBUser = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressBUser();
         suppressMCenter();
+        suppressBUser();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUser = false;
         _suppressMCenter = false;
+        _suppressBUser = false;
     }
 
     // ===================================================================================

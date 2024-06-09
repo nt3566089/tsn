@@ -252,33 +252,33 @@ public class BsWHtShippingCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MProductNss _nssMProduct;
-    public MProductNss xdfgetNssMProduct() {
-        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
-        return _nssMProduct;
+    protected MBoxNss _nssMBox;
+    public MBoxNss xdfgetNssMBox() {
+        if (_nssMBox == null) { _nssMBox = new MBoxNss(null); }
+        return _nssMBox;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_BOX by my BOX_ID, named 'MBox'.
      * <pre>
      * <span style="color: #0000C0">wHtShippingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBox()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtShipping</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtShipping</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtShipping</span>.<span style="color: #CC4747">getMBox()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MProductNss setupSelect_MProduct() {
-        assertSetupSelectPurpose("mProduct");
+    public MBoxNss setupSelect_MBox() {
+        assertSetupSelectPurpose("mBox");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnProductId();
+            specify().columnBoxId();
         }
-        doSetupSelect(() -> query().queryMProduct());
-        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
-        { _nssMProduct = new MProductNss(query().queryMProduct()); }
-        return _nssMProduct;
+        doSetupSelect(() -> query().queryMBox());
+        if (_nssMBox == null || !_nssMBox.hasConditionQuery())
+        { _nssMBox = new MBoxNss(query().queryMBox()); }
+        return _nssMBox;
     }
 
     protected MCenterNss _nssMCenter;
@@ -310,35 +310,6 @@ public class BsWHtShippingCB extends AbstractConditionBean {
         return _nssMCenter;
     }
 
-    protected MBoxNss _nssMBox;
-    public MBoxNss xdfgetNssMBox() {
-        if (_nssMBox == null) { _nssMBox = new MBoxNss(null); }
-        return _nssMBox;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * <pre>
-     * <span style="color: #0000C0">wHtShippingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MBox()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">wHtShipping</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtShipping</span>.<span style="color: #CC4747">getMBox()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MBoxNss setupSelect_MBox() {
-        assertSetupSelectPurpose("mBox");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnBoxId();
-        }
-        doSetupSelect(() -> query().queryMBox());
-        if (_nssMBox == null || !_nssMBox.hasConditionQuery())
-        { _nssMBox = new MBoxNss(query().queryMBox()); }
-        return _nssMBox;
-    }
-
     protected MClientNss _nssMClient;
     public MClientNss xdfgetNssMClient() {
         if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
@@ -366,6 +337,35 @@ public class BsWHtShippingCB extends AbstractConditionBean {
         if (_nssMClient == null || !_nssMClient.hasConditionQuery())
         { _nssMClient = new MClientNss(query().queryMClient()); }
         return _nssMClient;
+    }
+
+    protected MProductNss _nssMProduct;
+    public MProductNss xdfgetNssMProduct() {
+        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
+        return _nssMProduct;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * <pre>
+     * <span style="color: #0000C0">wHtShippingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">wHtShipping</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">wHtShipping</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MProductNss setupSelect_MProduct() {
+        assertSetupSelectPurpose("mProduct");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnProductId();
+        }
+        doSetupSelect(() -> query().queryMProduct());
+        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
+        { _nssMProduct = new MProductNss(query().queryMProduct()); }
+        return _nssMProduct;
     }
 
     // [DBFlute-0.7.4]
@@ -409,10 +409,10 @@ public class BsWHtShippingCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WHtShippingCQ> {
-        protected MProductCB.HpSpecification _mProduct;
-        protected MCenterCB.HpSpecification _mCenter;
         protected MBoxCB.HpSpecification _mBox;
+        protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
+        protected MProductCB.HpSpecification _mProduct;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WHtShippingCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -557,44 +557,44 @@ public class BsWHtShippingCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnHtShippingId(); // PK
-            if (qyCall().qy().hasConditionQueryMProduct()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
-                columnProductId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMBox()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
+                columnBoxId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMBox()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
-                columnBoxId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMProduct()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
+                columnProductId(); // FK or one-to-one referrer
             }
         }
         @Override
         protected String getTableDbName() { return "W_HT_SHIPPING"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+         * M_BOX by my BOX_ID, named 'MBox'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MProductCB.HpSpecification specifyMProduct() {
-            assertRelation("mProduct");
-            if (_mProduct == null) {
-                _mProduct = new MProductCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
-                                    , () -> _qyCall.qy().queryMProduct())
+        public MBoxCB.HpSpecification specifyMBox() {
+            assertRelation("mBox");
+            if (_mBox == null) {
+                _mBox = new MBoxCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBox()
+                                    , () -> _qyCall.qy().queryMBox())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
-                      , () -> xsyncQyCall().qy().queryMProduct()));
+                    _mBox.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBox()
+                      , () -> xsyncQyCall().qy().queryMBox()));
                 }
             }
-            return _mProduct;
+            return _mBox;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -618,26 +618,6 @@ public class BsWHtShippingCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_BOX by my BOX_ID, named 'MBox'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MBoxCB.HpSpecification specifyMBox() {
-            assertRelation("mBox");
-            if (_mBox == null) {
-                _mBox = new MBoxCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMBox()
-                                    , () -> _qyCall.qy().queryMBox())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mBox.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMBox()
-                      , () -> xsyncQyCall().qy().queryMBox()));
-                }
-            }
-            return _mBox;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * M_CLIENT by my CLIENT_ID, named 'MClient'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -655,6 +635,26 @@ public class BsWHtShippingCB extends AbstractConditionBean {
                 }
             }
             return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MProductCB.HpSpecification specifyMProduct() {
+            assertRelation("mProduct");
+            if (_mProduct == null) {
+                _mProduct = new MProductCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
+                                    , () -> _qyCall.qy().queryMProduct())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
+                      , () -> xsyncQyCall().qy().queryMProduct()));
+                }
+            }
+            return _mProduct;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

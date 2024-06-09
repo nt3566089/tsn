@@ -252,35 +252,6 @@ public class BsTYtrsodetailCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TYtrsoNss _nssTYtrso;
-    public TYtrsoNss xdfgetNssTYtrso() {
-        if (_nssTYtrso == null) { _nssTYtrso = new TYtrsoNss(null); }
-        return _nssTYtrso;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
-     * <pre>
-     * <span style="color: #0000C0">tYtrsodetailBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TYtrso()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tYtrsodetail</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tYtrsodetail</span>.<span style="color: #CC4747">getTYtrso()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TYtrsoNss setupSelect_TYtrso() {
-        assertSetupSelectPurpose("tYtrso");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTrsoId();
-        }
-        doSetupSelect(() -> query().queryTYtrso());
-        if (_nssTYtrso == null || !_nssTYtrso.hasConditionQuery())
-        { _nssTYtrso = new TYtrsoNss(query().queryTYtrso()); }
-        return _nssTYtrso;
-    }
-
     protected MProductNss _nssMProduct;
     public MProductNss xdfgetNssMProduct() {
         if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
@@ -308,6 +279,35 @@ public class BsTYtrsodetailCB extends AbstractConditionBean {
         if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
         { _nssMProduct = new MProductNss(query().queryMProduct()); }
         return _nssMProduct;
+    }
+
+    protected TYtrsoNss _nssTYtrso;
+    public TYtrsoNss xdfgetNssTYtrso() {
+        if (_nssTYtrso == null) { _nssTYtrso = new TYtrsoNss(null); }
+        return _nssTYtrso;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
+     * <pre>
+     * <span style="color: #0000C0">tYtrsodetailBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TYtrso()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tYtrsodetail</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tYtrsodetail</span>.<span style="color: #CC4747">getTYtrso()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TYtrsoNss setupSelect_TYtrso() {
+        assertSetupSelectPurpose("tYtrso");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTrsoId();
+        }
+        doSetupSelect(() -> query().queryTYtrso());
+        if (_nssTYtrso == null || !_nssTYtrso.hasConditionQuery())
+        { _nssTYtrso = new TYtrsoNss(query().queryTYtrso()); }
+        return _nssTYtrso;
     }
 
     // [DBFlute-0.7.4]
@@ -351,8 +351,8 @@ public class BsTYtrsodetailCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TYtrsodetailCQ> {
-        protected TYtrsoCB.HpSpecification _tYtrso;
         protected MProductCB.HpSpecification _mProduct;
+        protected TYtrsoCB.HpSpecification _tYtrso;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TYtrsodetailCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -502,37 +502,17 @@ public class BsTYtrsodetailCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnTrsodetailId(); // PK
-            if (qyCall().qy().hasConditionQueryTYtrso()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TYtrsoCQ) {
-                columnTrsoId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMProduct()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
                 columnProductId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTYtrso()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TYtrsoCQ) {
+                columnTrsoId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_YTRSODETAIL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_YTRSO by my TRSO_ID, named 'TYtrso'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TYtrsoCB.HpSpecification specifyTYtrso() {
-            assertRelation("tYtrso");
-            if (_tYtrso == null) {
-                _tYtrso = new TYtrsoCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTYtrso()
-                                    , () -> _qyCall.qy().queryTYtrso())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tYtrso.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTYtrso()
-                      , () -> xsyncQyCall().qy().queryTYtrso()));
-                }
-            }
-            return _tYtrso;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -552,6 +532,26 @@ public class BsTYtrsodetailCB extends AbstractConditionBean {
                 }
             }
             return _mProduct;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_YTRSO by my TRSO_ID, named 'TYtrso'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TYtrsoCB.HpSpecification specifyTYtrso() {
+            assertRelation("tYtrso");
+            if (_tYtrso == null) {
+                _tYtrso = new TYtrsoCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTYtrso()
+                                    , () -> _qyCall.qy().queryTYtrso())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tYtrso.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTYtrso()
+                      , () -> xsyncQyCall().qy().queryTYtrso()));
+                }
+            }
+            return _tYtrso;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

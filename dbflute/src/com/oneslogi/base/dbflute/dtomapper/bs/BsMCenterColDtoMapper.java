@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_COL, B_DICT, M_CENTER, V_DICT
+ *     M_CENTER, B_COL, B_DICT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bCol, bDict, mCenter, vDict
+ *     mCenter, bCol, bDict, vDict
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressMCenter;
     protected boolean _suppressBCol;
     protected boolean _suppressBDict;
-    protected boolean _suppressMCenter;
     protected boolean _suppressVDict;
 
     // ===================================================================================
@@ -148,6 +148,32 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCenterColList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCenterColList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCenterColList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
         if (!_suppressBCol && entity.getBCol() != null) {
             BCol relationEntity = entity.getBCol();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -197,32 +223,6 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCenterColList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCenterColList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCenterColList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -344,6 +344,32 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCenterColList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCenterColList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCenterColList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
         if (!_suppressBCol && dto.getBCol() != null) {
             BColDto relationDto = dto.getBCol();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -393,32 +419,6 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCenterColList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCenterColList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCenterColList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -563,28 +563,28 @@ public abstract class BsMCenterColDtoMapper implements DtoMapper<MCenterCol, MCe
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressMCenter() {
+        _suppressMCenter = true;
+    }
     public void suppressBCol() {
         _suppressBCol = true;
     }
     public void suppressBDict() {
         _suppressBDict = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
-    }
     public void suppressVDict() {
         _suppressVDict = true;
     }
     protected void doSuppressAll() { // internal
+        suppressMCenter();
         suppressBCol();
         suppressBDict();
-        suppressMCenter();
         suppressVDict();
     }
     protected void doSuppressClear() { // internal
+        _suppressMCenter = false;
         _suppressBCol = false;
         _suppressBDict = false;
-        _suppressMCenter = false;
         _suppressVDict = false;
     }
 

@@ -72,9 +72,9 @@ public class WSglRowShipInspHDbm extends AbstractDBMeta {
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((WSglRowShipInspH)et).getMBox(), (et, vl) -> ((WSglRowShipInspH)et).setMBox((MBox)vl), "MBox");
+        setupEfpg(_efpgMap, et -> ((WSglRowShipInspH)et).getMCenter(), (et, vl) -> ((WSglRowShipInspH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((WSglRowShipInspH)et).getMClient(), (et, vl) -> ((WSglRowShipInspH)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((WSglRowShipInspH)et).getMProduct(), (et, vl) -> ((WSglRowShipInspH)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((WSglRowShipInspH)et).getMCenter(), (et, vl) -> ((WSglRowShipInspH)et).setMCenter((MCenter)vl), "MCenter");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -278,12 +278,20 @@ public class WSglRowShipInspHDbm extends AbstractDBMeta {
         return cfi("W_SGL_ROW_SHIP_INSP_H_FK2", "MBox", this, MBoxDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
     }
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("W_SGL_ROW_SHIP_INSP_H_FK4", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
+    }
+    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_SGL_ROW_SHIP_INSP_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
+        return cfi("W_SGL_ROW_SHIP_INSP_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
     }
     /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -291,15 +299,7 @@ public class WSglRowShipInspHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMProduct() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_SGL_ROW_SHIP_INSP_H_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_SGL_ROW_SHIP_INSP_H_FK4", "MCenter", this, MCenterDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
+        return cfi("W_SGL_ROW_SHIP_INSP_H_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WSglRowShipInspHList", false);
     }
 
     // -----------------------------------------------------

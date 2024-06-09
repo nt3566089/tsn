@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     P_PRINTER_GROUP, P_PRINTER_ATTRIBUTE, P_REPORT_LAYOUT, P_PRINTER, B_CLASS_DTL(BySheetCollate)
+ *     P_PRINTER_ATTRIBUTE, P_PRINTER_GROUP, P_PRINTER, P_REPORT_LAYOUT, B_CLASS_DTL(BySheetCollate)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     pPrinterGroup, pPrinterAttribute, pReportLayout, pPrinter, bClassDtlBySheetCollate
+ *     pPrinterAttribute, pPrinterGroup, pPrinter, pReportLayout, bClassDtlBySheetCollate
  *
  * [referrer-property]
  *     
@@ -149,16 +149,6 @@ public abstract class BsPLayoutPrintSettingDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected PPrinterGroupDto _pPrinterGroup;
-
-    public PPrinterGroupDto getPPrinterGroup() {
-        return _pPrinterGroup;
-    }
-
-    public void setPPrinterGroup(PPrinterGroupDto pPrinterGroup) {
-        this._pPrinterGroup = pPrinterGroup;
-    }
-
     protected PPrinterAttributeDto _pPrinterAttribute;
 
     public PPrinterAttributeDto getPPrinterAttribute() {
@@ -169,14 +159,14 @@ public abstract class BsPLayoutPrintSettingDto implements Serializable {
         this._pPrinterAttribute = pPrinterAttribute;
     }
 
-    protected PReportLayoutDto _pReportLayout;
+    protected PPrinterGroupDto _pPrinterGroup;
 
-    public PReportLayoutDto getPReportLayout() {
-        return _pReportLayout;
+    public PPrinterGroupDto getPPrinterGroup() {
+        return _pPrinterGroup;
     }
 
-    public void setPReportLayout(PReportLayoutDto pReportLayout) {
-        this._pReportLayout = pReportLayout;
+    public void setPPrinterGroup(PPrinterGroupDto pPrinterGroup) {
+        this._pPrinterGroup = pPrinterGroup;
     }
 
     protected PPrinterDto _pPrinter;
@@ -187,6 +177,16 @@ public abstract class BsPLayoutPrintSettingDto implements Serializable {
 
     public void setPPrinter(PPrinterDto pPrinter) {
         this._pPrinter = pPrinter;
+    }
+
+    protected PReportLayoutDto _pReportLayout;
+
+    public PReportLayoutDto getPReportLayout() {
+        return _pReportLayout;
+    }
+
+    public void setPReportLayout(PReportLayoutDto pReportLayout) {
+        this._pReportLayout = pReportLayout;
     }
 
     protected BClassDtlDto _bClassDtlBySheetCollate;

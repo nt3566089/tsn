@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_PROCESS_TYPE, M_CENTER, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
  *
  * [referrer-table]
  *     T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_MOVE_INST_R
  *
  * [foreign-property]
- *     mClient, mProcessType, mCenter, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
+ *     mCenter, mClient, mProcessType, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
  *
  * [referrer-property]
  *     tInventoryBList, tMoveInstBList, tMoveRecordBList
@@ -161,6 +161,16 @@ public abstract class BsTMoveInstHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -179,16 +189,6 @@ public abstract class BsTMoveInstHDto implements Serializable {
 
     public void setMProcessType(MProcessTypeDto mProcessType) {
         this._mProcessType = mProcessType;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
     }
 
     protected BClassDtlDto _bClassDtlByInputType;

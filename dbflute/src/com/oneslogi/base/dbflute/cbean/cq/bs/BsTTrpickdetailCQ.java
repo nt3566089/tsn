@@ -786,11 +786,11 @@ public class BsTTrpickdetailCQ extends AbstractBsTTrpickdetailCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TTrpickdetailCQ bq = (TTrpickdetailCQ)bqs;
         TTrpickdetailCQ uq = (TTrpickdetailCQ)uqs;
-        if (bq.hasConditionQueryTStock()) {
-            uq.queryTStock().reflectRelationOnUnionQuery(bq.queryTStock(), uq.queryTStock());
-        }
         if (bq.hasConditionQueryMLocation()) {
             uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
+        }
+        if (bq.hasConditionQueryTStock()) {
+            uq.queryTStock().reflectRelationOnUnionQuery(bq.queryTStock(), uq.queryTStock());
         }
         if (bq.hasConditionQueryTYtrsodetail()) {
             uq.queryTYtrsodetail().reflectRelationOnUnionQuery(bq.queryTYtrsodetail(), uq.queryTYtrsodetail());
@@ -800,26 +800,6 @@ public class BsTTrpickdetailCQ extends AbstractBsTTrpickdetailCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_STOCK by my STOCK_ID, named 'TStock'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TStockCQ queryTStock() {
-        return xdfgetConditionQueryTStock();
-    }
-    public TStockCQ xdfgetConditionQueryTStock() {
-        String prop = "tStock";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStock()); xsetupOuterJoinTStock(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TStockCQ xcreateQueryTStock() {
-        String nrp = xresolveNRP("T_TRPICKDETAIL", "tStock"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TStockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStock", nrp);
-    }
-    protected void xsetupOuterJoinTStock() { xregOutJo("tStock"); }
-    public boolean hasConditionQueryTStock() { return xhasQueRlMap("tStock"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_LOCATION by my LOCATION_ID, named 'MLocation'.
@@ -839,6 +819,26 @@ public class BsTTrpickdetailCQ extends AbstractBsTTrpickdetailCQ {
     }
     protected void xsetupOuterJoinMLocation() { xregOutJo("mLocation"); }
     public boolean hasConditionQueryMLocation() { return xhasQueRlMap("mLocation"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_STOCK by my STOCK_ID, named 'TStock'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TStockCQ queryTStock() {
+        return xdfgetConditionQueryTStock();
+    }
+    public TStockCQ xdfgetConditionQueryTStock() {
+        String prop = "tStock";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStock()); xsetupOuterJoinTStock(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TStockCQ xcreateQueryTStock() {
+        String nrp = xresolveNRP("T_TRPICKDETAIL", "tStock"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TStockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStock", nrp);
+    }
+    protected void xsetupOuterJoinTStock() { xregOutJo("tStock"); }
+    public boolean hasConditionQueryTStock() { return xhasQueRlMap("tStock"); }
 
     /**
      * Get the condition-query for relation table. <br>

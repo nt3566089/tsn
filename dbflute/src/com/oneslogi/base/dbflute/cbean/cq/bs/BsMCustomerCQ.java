@@ -103,11 +103,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TAllocInstBCQ> xdfgetCustomerId_ExistsReferrer_TAllocInstBList() { return xgetSQueMap("customerId_ExistsReferrer_TAllocInstBList"); }
     public String keepCustomerId_ExistsReferrer_TAllocInstBList(TAllocInstBCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TAllocInstBList", sq); }
 
-    public Map<String, TAllocInstHCQ> xdfgetCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TAllocInstHCQ> xdfgetCustomerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList"); }
     public String keepCustomerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TAllocInstHCQ> xdfgetCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TAllocLotCQ> xdfgetCustomerId_ExistsReferrer_TAllocLotList() { return xgetSQueMap("customerId_ExistsReferrer_TAllocLotList"); }
     public String keepCustomerId_ExistsReferrer_TAllocLotList(TAllocLotCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TAllocLotList", sq); }
@@ -127,11 +127,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TLastLotCQ> xdfgetCustomerId_ExistsReferrer_TLastLotList() { return xgetSQueMap("customerId_ExistsReferrer_TLastLotList"); }
     public String keepCustomerId_ExistsReferrer_TLastLotList(TLastLotCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TLastLotList", sq); }
 
-    public Map<String, TMoveInstBCQ> xdfgetCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_ExistsReferrer_TMoveInstBBySupplierIdList"); }
-    public String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TMoveInstBBySupplierIdList", sq); }
-
     public Map<String, TMoveInstBCQ> xdfgetCustomerId_ExistsReferrer_TMoveInstBByDepositIdList() { return xgetSQueMap("customerId_ExistsReferrer_TMoveInstBByDepositIdList"); }
     public String keepCustomerId_ExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TMoveInstBByDepositIdList", sq); }
+
+    public Map<String, TMoveInstBCQ> xdfgetCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_ExistsReferrer_TMoveInstBBySupplierIdList"); }
+    public String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TMoveInstBBySupplierIdList", sq); }
 
     public Map<String, TReceivePlanHCQ> xdfgetCustomerId_ExistsReferrer_TReceivePlanHByPlanDepositIdList() { return xgetSQueMap("customerId_ExistsReferrer_TReceivePlanHByPlanDepositIdList"); }
     public String keepCustomerId_ExistsReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TReceivePlanHByPlanDepositIdList", sq); }
@@ -142,11 +142,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TShippingInstBCQ> xdfgetCustomerId_ExistsReferrer_TShippingInstBList() { return xgetSQueMap("customerId_ExistsReferrer_TShippingInstBList"); }
     public String keepCustomerId_ExistsReferrer_TShippingInstBList(TShippingInstBCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TShippingInstBList", sq); }
 
-    public Map<String, TShippingInstHCQ> xdfgetCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TShippingInstHCQ> xdfgetCustomerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList"); }
     public String keepCustomerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TShippingInstHCQ> xdfgetCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TStockCQ> xdfgetCustomerId_ExistsReferrer_TStockList() { return xgetSQueMap("customerId_ExistsReferrer_TStockList"); }
     public String keepCustomerId_ExistsReferrer_TStockList(TStockCQ sq) { return xkeepSQue("customerId_ExistsReferrer_TStockList", sq); }
@@ -199,11 +199,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TAllocInstBCQ> xdfgetCustomerId_NotExistsReferrer_TAllocInstBList() { return xgetSQueMap("customerId_NotExistsReferrer_TAllocInstBList"); }
     public String keepCustomerId_NotExistsReferrer_TAllocInstBList(TAllocInstBCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TAllocInstBList", sq); }
 
-    public Map<String, TAllocInstHCQ> xdfgetCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TAllocInstHCQ> xdfgetCustomerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList"); }
     public String keepCustomerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TAllocInstHCQ> xdfgetCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TAllocLotCQ> xdfgetCustomerId_NotExistsReferrer_TAllocLotList() { return xgetSQueMap("customerId_NotExistsReferrer_TAllocLotList"); }
     public String keepCustomerId_NotExistsReferrer_TAllocLotList(TAllocLotCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TAllocLotList", sq); }
@@ -223,11 +223,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TLastLotCQ> xdfgetCustomerId_NotExistsReferrer_TLastLotList() { return xgetSQueMap("customerId_NotExistsReferrer_TLastLotList"); }
     public String keepCustomerId_NotExistsReferrer_TLastLotList(TLastLotCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TLastLotList", sq); }
 
-    public Map<String, TMoveInstBCQ> xdfgetCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TMoveInstBBySupplierIdList"); }
-    public String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TMoveInstBBySupplierIdList", sq); }
-
     public Map<String, TMoveInstBCQ> xdfgetCustomerId_NotExistsReferrer_TMoveInstBByDepositIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TMoveInstBByDepositIdList"); }
     public String keepCustomerId_NotExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TMoveInstBByDepositIdList", sq); }
+
+    public Map<String, TMoveInstBCQ> xdfgetCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TMoveInstBBySupplierIdList"); }
+    public String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TMoveInstBBySupplierIdList", sq); }
 
     public Map<String, TReceivePlanHCQ> xdfgetCustomerId_NotExistsReferrer_TReceivePlanHByPlanDepositIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TReceivePlanHByPlanDepositIdList"); }
     public String keepCustomerId_NotExistsReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TReceivePlanHByPlanDepositIdList", sq); }
@@ -238,11 +238,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TShippingInstBCQ> xdfgetCustomerId_NotExistsReferrer_TShippingInstBList() { return xgetSQueMap("customerId_NotExistsReferrer_TShippingInstBList"); }
     public String keepCustomerId_NotExistsReferrer_TShippingInstBList(TShippingInstBCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TShippingInstBList", sq); }
 
-    public Map<String, TShippingInstHCQ> xdfgetCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TShippingInstHCQ> xdfgetCustomerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList"); }
     public String keepCustomerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TShippingInstHCQ> xdfgetCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TStockCQ> xdfgetCustomerId_NotExistsReferrer_TStockList() { return xgetSQueMap("customerId_NotExistsReferrer_TStockList"); }
     public String keepCustomerId_NotExistsReferrer_TStockList(TStockCQ sq) { return xkeepSQue("customerId_NotExistsReferrer_TStockList", sq); }
@@ -292,11 +292,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TAllocInstBCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TAllocInstBList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TAllocInstBList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstBList(TAllocInstBCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TAllocInstBList", sq); }
 
-    public Map<String, TAllocInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TAllocInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TAllocInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TAllocLotCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TAllocLotList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TAllocLotList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocLotList(TAllocLotCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TAllocLotList", sq); }
@@ -316,11 +316,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TLastLotCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TLastLotList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TLastLotList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TLastLotList(TLastLotCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TLastLotList", sq); }
 
-    public Map<String, TMoveInstBCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList"); }
-    public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList", sq); }
-
     public Map<String, TMoveInstBCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList", sq); }
+
+    public Map<String, TMoveInstBCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList"); }
+    public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList", sq); }
 
     public Map<String, TReceivePlanHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TReceivePlanHByPlanDepositIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TReceivePlanHByPlanDepositIdList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TReceivePlanHByPlanDepositIdList", sq); }
@@ -331,11 +331,11 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, TShippingInstBCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TShippingInstBList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TShippingInstBList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstBList(TShippingInstBCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TShippingInstBList", sq); }
 
-    public Map<String, TShippingInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
-
     public Map<String, TShippingInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList", sq); }
+
+    public Map<String, TShippingInstHCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
 
     public Map<String, TStockCQ> xdfgetCustomerId_SpecifyDerivedReferrer_TStockList() { return xgetSQueMap("customerId_SpecifyDerivedReferrer_TStockList"); }
     public String keepCustomerId_SpecifyDerivedReferrer_TStockList(TStockCQ sq) { return xkeepSQue("customerId_SpecifyDerivedReferrer_TStockList", sq); }
@@ -399,15 +399,15 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstBListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TAllocInstBList"); }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstBListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TAllocInstBList", pm); }
 
-    public Map<String, TAllocInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
-    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList", pm); }
-
     public Map<String, TAllocInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList", sq); }
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList", pm); }
+
+    public Map<String, TAllocInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList", sq); }
+    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList", pm); }
 
     public Map<String, TAllocLotCQ> xdfgetCustomerId_QueryDerivedReferrer_TAllocLotList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TAllocLotList"); }
     public String keepCustomerId_QueryDerivedReferrer_TAllocLotList(TAllocLotCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TAllocLotList", sq); }
@@ -439,15 +439,15 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TLastLotListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TLastLotList"); }
     public String keepCustomerId_QueryDerivedReferrer_TLastLotListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TLastLotList", pm); }
 
-    public Map<String, TMoveInstBCQ> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList", sq); }
-    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList", pm); }
-
     public Map<String, TMoveInstBCQ> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TMoveInstBByDepositIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TMoveInstBByDepositIdList", sq); }
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TMoveInstBByDepositIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TMoveInstBByDepositIdList", pm); }
+
+    public Map<String, TMoveInstBCQ> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList", sq); }
+    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList", pm); }
 
     public Map<String, TReceivePlanHCQ> xdfgetCustomerId_QueryDerivedReferrer_TReceivePlanHByPlanDepositIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TReceivePlanHByPlanDepositIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TReceivePlanHByPlanDepositIdList", sq); }
@@ -464,15 +464,15 @@ public class BsMCustomerCQ extends AbstractBsMCustomerCQ {
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstBListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TShippingInstBList"); }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstBListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TShippingInstBList", pm); }
 
-    public Map<String, TShippingInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
-    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
-    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList", pm); }
-
     public Map<String, TShippingInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList", sq); }
     public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList"); }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList", pm); }
+
+    public Map<String, TShippingInstHCQ> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList", sq); }
+    public Map<String, Object> xdfgetCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter() { return xgetSQuePmMap("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList"); }
+    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object pm) { return xkeepSQuePm("customerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList", pm); }
 
     public Map<String, TStockCQ> xdfgetCustomerId_QueryDerivedReferrer_TStockList() { return xgetSQueMap("customerId_QueryDerivedReferrer_TStockList"); }
     public String keepCustomerId_QueryDerivedReferrer_TStockList(TStockCQ sq) { return xkeepSQue("customerId_QueryDerivedReferrer_TStockList", sq); }

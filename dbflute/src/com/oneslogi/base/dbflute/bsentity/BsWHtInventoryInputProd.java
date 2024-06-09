@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_CENTER, M_CLIENT, M_CUSTOMER, M_WAREHOUSE, T_LOT, M_LOCATION, M_PRODUCT
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mCenter, mClient, mCustomer, mWarehouse, tLot, mLocation, mProduct
+ *     mCenter, mClient, mCustomer, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -383,25 +383,6 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
-
-    /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MStockType getMStockType() {
-        return _mStockType;
-    }
-
-    /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
-     */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -459,23 +440,23 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
         _mCustomer = mCustomer;
     }
 
-    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
-    protected MWarehouse _mWarehouse;
+    /** M_LOCATION by my LOC_ID, named 'MLocation'. */
+    protected MLocation _mLocation;
 
     /**
-     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
-     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_LOCATION by my LOC_ID, named 'MLocation'. <br>
+     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MWarehouse getMWarehouse() {
-        return _mWarehouse;
+    public MLocation getMLocation() {
+        return _mLocation;
     }
 
     /**
-     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     * [set] M_LOCATION by my LOC_ID, named 'MLocation'.
+     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
      */
-    public void setMWarehouse(MWarehouse mWarehouse) {
-        _mWarehouse = mWarehouse;
+    public void setMLocation(MLocation mLocation) {
+        _mLocation = mLocation;
     }
 
     /** T_LOT by my LOT_ID, named 'TLot'. */
@@ -497,25 +478,6 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
         _tLot = tLot;
     }
 
-    /** M_LOCATION by my LOC_ID, named 'MLocation'. */
-    protected MLocation _mLocation;
-
-    /**
-     * [get] M_LOCATION by my LOC_ID, named 'MLocation'. <br>
-     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MLocation getMLocation() {
-        return _mLocation;
-    }
-
-    /**
-     * [set] M_LOCATION by my LOC_ID, named 'MLocation'.
-     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
-     */
-    public void setMLocation(MLocation mLocation) {
-        _mLocation = mLocation;
-    }
-
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
     protected MProduct _mProduct;
 
@@ -533,6 +495,44 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
      */
     public void setMProduct(MProduct mProduct) {
         _mProduct = mProduct;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
+    }
+
+    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
+    protected MWarehouse _mWarehouse;
+
+    /**
+     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
+     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MWarehouse getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    /**
+     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     */
+    public void setMWarehouse(MWarehouse mWarehouse) {
+        _mWarehouse = mWarehouse;
     }
 
     // ===================================================================================
@@ -567,22 +567,22 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
-        if (_mWarehouse != null)
-        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
+        if (_mWarehouse != null)
+        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         return sb.toString();
     }
 
@@ -634,22 +634,22 @@ public abstract class BsWHtInventoryInputProd extends AbstractEntity implements 
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
-        if (_mWarehouse != null)
-        { sb.append(dm).append("mWarehouse"); }
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
+        if (_mWarehouse != null)
+        { sb.append(dm).append("mWarehouse"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

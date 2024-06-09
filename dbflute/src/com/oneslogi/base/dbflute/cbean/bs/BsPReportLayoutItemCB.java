@@ -265,35 +265,6 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected PReportLayoutNss _nssPReportLayout;
-    public PReportLayoutNss xdfgetNssPReportLayout() {
-        if (_nssPReportLayout == null) { _nssPReportLayout = new PReportLayoutNss(null); }
-        return _nssPReportLayout;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * <pre>
-     * <span style="color: #0000C0">pReportLayoutItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PReportLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">pReportLayoutItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">pReportLayoutItem</span>.<span style="color: #CC4747">getPReportLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public PReportLayoutNss setupSelect_PReportLayout() {
-        assertSetupSelectPurpose("pReportLayout");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnReportLayoutId();
-        }
-        doSetupSelect(() -> query().queryPReportLayout());
-        if (_nssPReportLayout == null || !_nssPReportLayout.hasConditionQuery())
-        { _nssPReportLayout = new PReportLayoutNss(query().queryPReportLayout()); }
-        return _nssPReportLayout;
-    }
-
     protected BDictNss _nssBDict;
     public BDictNss xdfgetNssBDict() {
         if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
@@ -321,6 +292,35 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
         if (_nssBDict == null || !_nssBDict.hasConditionQuery())
         { _nssBDict = new BDictNss(query().queryBDict()); }
         return _nssBDict;
+    }
+
+    protected PReportLayoutNss _nssPReportLayout;
+    public PReportLayoutNss xdfgetNssPReportLayout() {
+        if (_nssPReportLayout == null) { _nssPReportLayout = new PReportLayoutNss(null); }
+        return _nssPReportLayout;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * <pre>
+     * <span style="color: #0000C0">pReportLayoutItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PReportLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">pReportLayoutItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">pReportLayoutItem</span>.<span style="color: #CC4747">getPReportLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public PReportLayoutNss setupSelect_PReportLayout() {
+        assertSetupSelectPurpose("pReportLayout");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnReportLayoutId();
+        }
+        doSetupSelect(() -> query().queryPReportLayout());
+        if (_nssPReportLayout == null || !_nssPReportLayout.hasConditionQuery())
+        { _nssPReportLayout = new PReportLayoutNss(query().queryPReportLayout()); }
+        return _nssPReportLayout;
     }
 
     /**
@@ -385,8 +385,8 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<PReportLayoutItemCQ> {
-        protected PReportLayoutCB.HpSpecification _pReportLayout;
         protected BDictCB.HpSpecification _bDict;
+        protected PReportLayoutCB.HpSpecification _pReportLayout;
         protected VDictCB.HpSpecification _vDict;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<PReportLayoutItemCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -477,13 +477,13 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnReportLayoutItemId(); // PK
-            if (qyCall().qy().hasConditionQueryPReportLayout()
-                    || qyCall().qy().xgetReferrerQuery() instanceof PReportLayoutCQ) {
-                columnReportLayoutId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
                 columnDictId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryPReportLayout()
+                    || qyCall().qy().xgetReferrerQuery() instanceof PReportLayoutCQ) {
+                columnReportLayoutId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VDictCQ) {
@@ -492,26 +492,6 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "P_REPORT_LAYOUT_ITEM"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public PReportLayoutCB.HpSpecification specifyPReportLayout() {
-            assertRelation("pReportLayout");
-            if (_pReportLayout == null) {
-                _pReportLayout = new PReportLayoutCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPReportLayout()
-                                    , () -> _qyCall.qy().queryPReportLayout())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _pReportLayout.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPReportLayout()
-                      , () -> xsyncQyCall().qy().queryPReportLayout()));
-                }
-            }
-            return _pReportLayout;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_DICT by my DICT_ID, named 'BDict'.
@@ -531,6 +511,26 @@ public class BsPReportLayoutItemCB extends AbstractConditionBean {
                 }
             }
             return _bDict;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public PReportLayoutCB.HpSpecification specifyPReportLayout() {
+            assertRelation("pReportLayout");
+            if (_pReportLayout == null) {
+                _pReportLayout = new PReportLayoutCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPReportLayout()
+                                    , () -> _qyCall.qy().queryPReportLayout())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _pReportLayout.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPReportLayout()
+                      , () -> xsyncQyCall().qy().queryPReportLayout()));
+                }
+            }
+            return _pReportLayout;
         }
         /**
          * Prepare to specify functions about relation table. <br>

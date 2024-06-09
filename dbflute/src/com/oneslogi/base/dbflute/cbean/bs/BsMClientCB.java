@@ -264,35 +264,6 @@ public class BsMClientCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MShapeGrpNss _nssMShapeGrp;
-    public MShapeGrpNss xdfgetNssMShapeGrp() {
-        if (_nssMShapeGrp == null) { _nssMShapeGrp = new MShapeGrpNss(null); }
-        return _nssMShapeGrp;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-     * <pre>
-     * <span style="color: #0000C0">mClientBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShapeGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mClient</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mClient</span>.<span style="color: #CC4747">getMShapeGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MShapeGrpNss setupSelect_MShapeGrp() {
-        assertSetupSelectPurpose("mShapeGrp");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnShapeGrpId();
-        }
-        doSetupSelect(() -> query().queryMShapeGrp());
-        if (_nssMShapeGrp == null || !_nssMShapeGrp.hasConditionQuery())
-        { _nssMShapeGrp = new MShapeGrpNss(query().queryMShapeGrp()); }
-        return _nssMShapeGrp;
-    }
-
     protected MCustomerNss _nssMCustomer;
     public MCustomerNss xdfgetNssMCustomer() {
         if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
@@ -320,6 +291,35 @@ public class BsMClientCB extends AbstractConditionBean {
         if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
         { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
         return _nssMCustomer;
+    }
+
+    protected MShapeGrpNss _nssMShapeGrp;
+    public MShapeGrpNss xdfgetNssMShapeGrp() {
+        if (_nssMShapeGrp == null) { _nssMShapeGrp = new MShapeGrpNss(null); }
+        return _nssMShapeGrp;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+     * <pre>
+     * <span style="color: #0000C0">mClientBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShapeGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mClient</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mClient</span>.<span style="color: #CC4747">getMShapeGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MShapeGrpNss setupSelect_MShapeGrp() {
+        assertSetupSelectPurpose("mShapeGrp");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShapeGrpId();
+        }
+        doSetupSelect(() -> query().queryMShapeGrp());
+        if (_nssMShapeGrp == null || !_nssMShapeGrp.hasConditionQuery())
+        { _nssMShapeGrp = new MShapeGrpNss(query().queryMShapeGrp()); }
+        return _nssMShapeGrp;
     }
 
     protected BClassDtlNss _nssBClassDtlByDelFlg;
@@ -392,8 +392,8 @@ public class BsMClientCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MClientCQ> {
-        protected MShapeGrpCB.HpSpecification _mShapeGrp;
         protected MCustomerCB.HpSpecification _mCustomer;
+        protected MShapeGrpCB.HpSpecification _mShapeGrp;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MClientCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -479,13 +479,13 @@ public class BsMClientCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnClientId(); // PK
-            if (qyCall().qy().hasConditionQueryMShapeGrp()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeGrpCQ) {
-                columnShapeGrpId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCustomer()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
                 columnCustomerId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMShapeGrp()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeGrpCQ) {
+                columnShapeGrpId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByDelFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -494,26 +494,6 @@ public class BsMClientCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_CLIENT"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MShapeGrpCB.HpSpecification specifyMShapeGrp() {
-            assertRelation("mShapeGrp");
-            if (_mShapeGrp == null) {
-                _mShapeGrp = new MShapeGrpCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShapeGrp()
-                                    , () -> _qyCall.qy().queryMShapeGrp())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mShapeGrp.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShapeGrp()
-                      , () -> xsyncQyCall().qy().queryMShapeGrp()));
-                }
-            }
-            return _mShapeGrp;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
@@ -533,6 +513,26 @@ public class BsMClientCB extends AbstractConditionBean {
                 }
             }
             return _mCustomer;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MShapeGrpCB.HpSpecification specifyMShapeGrp() {
+            assertRelation("mShapeGrp");
+            if (_mShapeGrp == null) {
+                _mShapeGrp = new MShapeGrpCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShapeGrp()
+                                    , () -> _qyCall.qy().queryMShapeGrp())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mShapeGrp.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShapeGrp()
+                      , () -> xsyncQyCall().qy().queryMShapeGrp()));
+                }
+            }
+            return _mShapeGrp;
         }
         /**
          * Prepare to specify functions about relation table. <br>

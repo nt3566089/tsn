@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_WAREHOUSE, T_LOT, T_ALLOC_INST_B, T_STORE_NO, M_STOCK_TYPE, M_LOCATION, T_SHIPPING_INST_H, M_PRODUCT, M_CUSTOMER, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
+ *     T_ALLOC_INST_B, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, T_SHIPPING_INST_H, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
  *
  * [referrer table]
  *     T_PICKING_B, T_SHIPPING_INST_SPARE
  *
  * [foreign property]
- *     mShape, mWarehouse, tLot, tAllocInstB, tStoreNo, mStockType, mLocation, tShippingInstH, mProduct, mCustomer, bClassDtlByErrorFlg, tShippingInstSpareAsOne
+ *     tAllocInstB, mCustomer, mLocation, tLot, mProduct, mShape, tShippingInstH, mStockType, tStoreNo, mWarehouse, bClassDtlByErrorFlg, tShippingInstSpareAsOne
  *
  * [referrer property]
  *     tPickingBList
@@ -483,30 +483,6 @@ public abstract class BsTShippingInstBBhv extends AbstractBehaviorWritable<TShip
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MShape'.
-     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MShape> pulloutMShape(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "mShape"); }
-
-    /**
-     * Pull out the list of foreign table 'MWarehouse'.
-     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MWarehouse> pulloutMWarehouse(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "mWarehouse"); }
-
-    /**
-     * Pull out the list of foreign table 'TLot'.
-     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TLot> pulloutTLot(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "tLot"); }
-
-    /**
      * Pull out the list of foreign table 'TAllocInstB'.
      * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -515,20 +491,12 @@ public abstract class BsTShippingInstBBhv extends AbstractBehaviorWritable<TShip
     { return helpPulloutInternally(tShippingInstBList, "tAllocInstB"); }
 
     /**
-     * Pull out the list of foreign table 'TStoreNo'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TStoreNo> pulloutTStoreNo(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "tStoreNo"); }
-
-    /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "mStockType"); }
+    public List<MCustomer> pulloutMCustomer(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "mCustomer"); }
 
     /**
      * Pull out the list of foreign table 'MLocation'.
@@ -539,12 +507,12 @@ public abstract class BsTShippingInstBBhv extends AbstractBehaviorWritable<TShip
     { return helpPulloutInternally(tShippingInstBList, "mLocation"); }
 
     /**
-     * Pull out the list of foreign table 'TShippingInstH'.
+     * Pull out the list of foreign table 'TLot'.
      * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TShippingInstH> pulloutTShippingInstH(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "tShippingInstH"); }
+    public List<TLot> pulloutTLot(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "tLot"); }
 
     /**
      * Pull out the list of foreign table 'MProduct'.
@@ -555,12 +523,44 @@ public abstract class BsTShippingInstBBhv extends AbstractBehaviorWritable<TShip
     { return helpPulloutInternally(tShippingInstBList, "mProduct"); }
 
     /**
-     * Pull out the list of foreign table 'MCustomer'.
+     * Pull out the list of foreign table 'MShape'.
      * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomer(List<TShippingInstB> tShippingInstBList)
-    { return helpPulloutInternally(tShippingInstBList, "mCustomer"); }
+    public List<MShape> pulloutMShape(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "mShape"); }
+
+    /**
+     * Pull out the list of foreign table 'TShippingInstH'.
+     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TShippingInstH> pulloutTShippingInstH(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "tShippingInstH"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "mStockType"); }
+
+    /**
+     * Pull out the list of foreign table 'TStoreNo'.
+     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TStoreNo> pulloutTStoreNo(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "tStoreNo"); }
+
+    /**
+     * Pull out the list of foreign table 'MWarehouse'.
+     * @param tShippingInstBList The list of tShippingInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MWarehouse> pulloutMWarehouse(List<TShippingInstB> tShippingInstBList)
+    { return helpPulloutInternally(tShippingInstBList, "mWarehouse"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

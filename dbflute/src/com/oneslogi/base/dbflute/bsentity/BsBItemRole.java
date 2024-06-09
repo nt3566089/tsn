@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE, B_ITEM, B_CLASS_DTL(ByVisible)
+ *     B_ITEM, B_ROLE, B_CLASS_DTL(ByVisible)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bRole, bItem, bClassDtlByVisible, bClassDtlByEditable
+ *     bItem, bRole, bClassDtlByVisible, bClassDtlByEditable
  *
  * [referrer property]
  *     
@@ -402,25 +402,6 @@ public abstract class BsBItemRole extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_ROLE by my ROLE_ID, named 'BRole'. */
-    protected BRole _bRole;
-
-    /**
-     * [get] B_ROLE by my ROLE_ID, named 'BRole'. <br>
-     * @return The entity of foreign property 'BRole'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BRole getBRole() {
-        return _bRole;
-    }
-
-    /**
-     * [set] B_ROLE by my ROLE_ID, named 'BRole'.
-     * @param bRole The entity of foreign property 'BRole'. (NullAllowed)
-     */
-    public void setBRole(BRole bRole) {
-        _bRole = bRole;
-    }
-
     /** B_ITEM by my ITEM_ID, named 'BItem'. */
     protected BItem _bItem;
 
@@ -438,6 +419,25 @@ public abstract class BsBItemRole extends AbstractEntity implements DomainEntity
      */
     public void setBItem(BItem bItem) {
         _bItem = bItem;
+    }
+
+    /** B_ROLE by my ROLE_ID, named 'BRole'. */
+    protected BRole _bRole;
+
+    /**
+     * [get] B_ROLE by my ROLE_ID, named 'BRole'. <br>
+     * @return The entity of foreign property 'BRole'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BRole getBRole() {
+        return _bRole;
+    }
+
+    /**
+     * [set] B_ROLE by my ROLE_ID, named 'BRole'.
+     * @param bRole The entity of foreign property 'BRole'. (NullAllowed)
+     */
+    public void setBRole(BRole bRole) {
+        _bRole = bRole;
     }
 
     /** B_CLASS_DTL by my VISIBLE, named 'BClassDtlByVisible'. */
@@ -510,10 +510,10 @@ public abstract class BsBItemRole extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bRole != null)
-        { sb.append(li).append(xbRDS(_bRole, "bRole")); }
         if (_bItem != null)
         { sb.append(li).append(xbRDS(_bItem, "bItem")); }
+        if (_bRole != null)
+        { sb.append(li).append(xbRDS(_bRole, "bRole")); }
         if (_bClassDtlByVisible != null)
         { sb.append(li).append(xbRDS(_bClassDtlByVisible, "bClassDtlByVisible")); }
         if (_bClassDtlByEditable != null)
@@ -548,10 +548,10 @@ public abstract class BsBItemRole extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bRole != null)
-        { sb.append(dm).append("bRole"); }
         if (_bItem != null)
         { sb.append(dm).append("bItem"); }
+        if (_bRole != null)
+        { sb.append(dm).append("bRole"); }
         if (_bClassDtlByVisible != null)
         { sb.append(dm).append("bClassDtlByVisible"); }
         if (_bClassDtlByEditable != null)

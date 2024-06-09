@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, M_CLIENT, M_PRODUCT, T_LOT, M_LOCATION
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, mClient, mProduct, tLot, mLocation
+ *     mCenter, mClient, mLocation, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -409,12 +409,12 @@ public abstract class BsWHtShippingPickingBhv extends AbstractBehaviorWritable<W
     { return helpPulloutInternally(wHtShippingPickingList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'MProduct'.
+     * Pull out the list of foreign table 'MLocation'.
      * @param wHtShippingPickingList The list of wHtShippingPicking. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MProduct> pulloutMProduct(List<WHtShippingPicking> wHtShippingPickingList)
-    { return helpPulloutInternally(wHtShippingPickingList, "mProduct"); }
+    public List<MLocation> pulloutMLocation(List<WHtShippingPicking> wHtShippingPickingList)
+    { return helpPulloutInternally(wHtShippingPickingList, "mLocation"); }
 
     /**
      * Pull out the list of foreign table 'TLot'.
@@ -425,12 +425,12 @@ public abstract class BsWHtShippingPickingBhv extends AbstractBehaviorWritable<W
     { return helpPulloutInternally(wHtShippingPickingList, "tLot"); }
 
     /**
-     * Pull out the list of foreign table 'MLocation'.
+     * Pull out the list of foreign table 'MProduct'.
      * @param wHtShippingPickingList The list of wHtShippingPicking. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MLocation> pulloutMLocation(List<WHtShippingPicking> wHtShippingPickingList)
-    { return helpPulloutInternally(wHtShippingPickingList, "mLocation"); }
+    public List<MProduct> pulloutMProduct(List<WHtShippingPicking> wHtShippingPickingList)
+    { return helpPulloutInternally(wHtShippingPickingList, "mProduct"); }
 
     // ===================================================================================
     //                                                                      Extract Column

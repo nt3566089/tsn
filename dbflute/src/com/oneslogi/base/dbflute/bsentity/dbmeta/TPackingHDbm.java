@@ -80,11 +80,11 @@ public class TPackingHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPackingH)et).getTPickingH(), (et, vl) -> ((TPackingH)et).setTPickingH((TPickingH)vl), "TPickingH");
-        setupEfpg(_efpgMap, et -> ((TPackingH)et).getMCenter(), (et, vl) -> ((TPackingH)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((TPackingH)et).getMBox(), (et, vl) -> ((TPackingH)et).setMBox((MBox)vl), "MBox");
         setupEfpg(_efpgMap, et -> ((TPackingH)et).getTAllocInstH(), (et, vl) -> ((TPackingH)et).setTAllocInstH((TAllocInstH)vl), "TAllocInstH");
+        setupEfpg(_efpgMap, et -> ((TPackingH)et).getMBox(), (et, vl) -> ((TPackingH)et).setMBox((MBox)vl), "MBox");
+        setupEfpg(_efpgMap, et -> ((TPackingH)et).getMCenter(), (et, vl) -> ((TPackingH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TPackingH)et).getMClient(), (et, vl) -> ((TPackingH)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((TPackingH)et).getTPickingH(), (et, vl) -> ((TPackingH)et).setTPickingH((TPickingH)vl), "TPickingH");
         setupEfpg(_efpgMap, et -> ((TPackingH)et).getMProcessType(), (et, vl) -> ((TPackingH)et).setMProcessType((MProcessType)vl), "MProcessType");
         setupEfpg(_efpgMap, et -> ((TPackingH)et).getBUserByUpdUser(), (et, vl) -> ((TPackingH)et).setBUserByUpdUser((BUser)vl), "BUserByUpdUser");
         setupEfpg(_efpgMap, et -> ((TPackingH)et).getBClassDtlByLoadingFlg(), (et, vl) -> ((TPackingH)et).setBClassDtlByLoadingFlg((BClassDtl)vl), "BClassDtlByLoadingFlg");
@@ -336,20 +336,12 @@ public class TPackingHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTPickingH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
-        return cfi("T_PACKING_H_FK4", "TPickingH", this, TPickingHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingHList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_PACKING_H_FK5", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPackingHList", false);
+    public ForeignInfo foreignTAllocInstH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
+        return cfi("T_PACKING_H_FK1", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingHList", false);
     }
     /**
      * M_BOX by my BOX_ID, named 'MBox'.
@@ -357,15 +349,15 @@ public class TPackingHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMBox() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("T_PACKING_H_FK2", "MBox", this, MBoxDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPackingHList", false);
+        return cfi("T_PACKING_H_FK2", "MBox", this, MBoxDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPackingHList", false);
     }
     /**
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTAllocInstH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
-        return cfi("T_PACKING_H_FK1", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPackingHList", false);
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("T_PACKING_H_FK5", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPackingHList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -373,7 +365,15 @@ public class TPackingHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_PACKING_H_FK6", "MClient", this, MClientDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TPackingHList", false);
+        return cfi("T_PACKING_H_FK6", "MClient", this, MClientDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPackingHList", false);
+    }
+    /**
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTPickingH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
+        return cfi("T_PACKING_H_FK4", "TPickingH", this, TPickingHDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TPackingHList", false);
     }
     /**
      * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.

@@ -67,9 +67,9 @@ public class MWebHtInfoDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((MWebHtInfo)et).getMCenter(), (et, vl) -> ((MWebHtInfo)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MWebHtInfo)et).getMClient(), (et, vl) -> ((MWebHtInfo)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((MWebHtInfo)et).getMWarehouse(), (et, vl) -> ((MWebHtInfo)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
-        setupEfpg(_efpgMap, et -> ((MWebHtInfo)et).getMCenter(), (et, vl) -> ((MWebHtInfo)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MWebHtInfo)et).getBClassDtlByDelFlg(), (et, vl) -> ((MWebHtInfo)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -229,12 +229,20 @@ public class MWebHtInfoDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("M_WEB_HT_INFO_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
+    }
+    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("M_WEB_HT_INFO_FK1", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
+        return cfi("M_WEB_HT_INFO_FK1", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
     }
     /**
      * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
@@ -242,15 +250,7 @@ public class MWebHtInfoDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMWarehouse() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("M_WEB_HT_INFO_FK3", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("M_WEB_HT_INFO_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
+        return cfi("M_WEB_HT_INFO_FK3", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MWebHtInfoList", false);
     }
     /**
      * B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'.

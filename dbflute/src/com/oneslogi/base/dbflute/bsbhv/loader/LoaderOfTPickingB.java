@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_SHIPPING_INST_B, T_PICKING_H, T_ALLOC_INST_B, T_STOCK, M_SHAPE
+ *     T_ALLOC_INST_B, T_PICKING_H, M_SHAPE, T_SHIPPING_INST_B, T_STOCK
  *
  * [referrer table]
  *     T_PACKING_B
  *
  * [foreign property]
- *     tShippingInstB, tPickingH, tAllocInstB, tStock, mShape
+ *     tAllocInstB, tPickingH, mShape, tShippingInstB, tStock
  *
  * [referrer property]
  *     tPackingBList
@@ -98,11 +98,11 @@ public class LoaderOfTPickingB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTShippingInstB _foreignTShippingInstBLoader;
-    public LoaderOfTShippingInstB pulloutTShippingInstB() {
-        if (_foreignTShippingInstBLoader == null)
-        { _foreignTShippingInstBLoader = new LoaderOfTShippingInstB().ready(myBhv().pulloutTShippingInstB(_selectedList), _selector); }
-        return _foreignTShippingInstBLoader;
+    protected LoaderOfTAllocInstB _foreignTAllocInstBLoader;
+    public LoaderOfTAllocInstB pulloutTAllocInstB() {
+        if (_foreignTAllocInstBLoader == null)
+        { _foreignTAllocInstBLoader = new LoaderOfTAllocInstB().ready(myBhv().pulloutTAllocInstB(_selectedList), _selector); }
+        return _foreignTAllocInstBLoader;
     }
 
     protected LoaderOfTPickingH _foreignTPickingHLoader;
@@ -112,11 +112,18 @@ public class LoaderOfTPickingB {
         return _foreignTPickingHLoader;
     }
 
-    protected LoaderOfTAllocInstB _foreignTAllocInstBLoader;
-    public LoaderOfTAllocInstB pulloutTAllocInstB() {
-        if (_foreignTAllocInstBLoader == null)
-        { _foreignTAllocInstBLoader = new LoaderOfTAllocInstB().ready(myBhv().pulloutTAllocInstB(_selectedList), _selector); }
-        return _foreignTAllocInstBLoader;
+    protected LoaderOfMShape _foreignMShapeLoader;
+    public LoaderOfMShape pulloutMShape() {
+        if (_foreignMShapeLoader == null)
+        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
+        return _foreignMShapeLoader;
+    }
+
+    protected LoaderOfTShippingInstB _foreignTShippingInstBLoader;
+    public LoaderOfTShippingInstB pulloutTShippingInstB() {
+        if (_foreignTShippingInstBLoader == null)
+        { _foreignTShippingInstBLoader = new LoaderOfTShippingInstB().ready(myBhv().pulloutTShippingInstB(_selectedList), _selector); }
+        return _foreignTShippingInstBLoader;
     }
 
     protected LoaderOfTStock _foreignTStockLoader;
@@ -124,13 +131,6 @@ public class LoaderOfTPickingB {
         if (_foreignTStockLoader == null)
         { _foreignTStockLoader = new LoaderOfTStock().ready(myBhv().pulloutTStock(_selectedList), _selector); }
         return _foreignTStockLoader;
-    }
-
-    protected LoaderOfMShape _foreignMShapeLoader;
-    public LoaderOfMShape pulloutMShape() {
-        if (_foreignMShapeLoader == null)
-        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
-        return _foreignMShapeLoader;
     }
 
     // ===================================================================================

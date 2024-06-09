@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_STOCK, M_LOCATION, T_YTRSODETAIL
+ *     M_LOCATION, T_STOCK, T_YTRSODETAIL
  *
  * [referrer-table]
  *     T_TR_PICKLIST
  *
  * [foreign-property]
- *     tStock, mLocation, tYtrsodetail
+ *     mLocation, tStock, tYtrsodetail
  *
  * [referrer-property]
  *     tTrPicklistList
@@ -70,8 +70,8 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTStock;
     protected boolean _suppressMLocation;
+    protected boolean _suppressTStock;
     protected boolean _suppressTYtrsodetail;
     protected boolean _suppressTTrPicklistList;
 
@@ -164,32 +164,6 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTStock && entity.getTStock() != null) {
-            TStock relationEntity = entity.getTStock();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TStockDto relationDto = (TStockDto)cachedDto;
-                dto.setTStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrpickdetailList().add(dto);
-                }
-            } else {
-                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrpickdetailList();
-                TStockDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrpickdetailList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTStock());
-                }
-            }
-        };
         if (!_suppressMLocation && entity.getMLocation() != null) {
             MLocation relationEntity = entity.getMLocation();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -213,6 +187,32 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMLocation());
+                }
+            }
+        };
+        if (!_suppressTStock && entity.getTStock() != null) {
+            TStock relationEntity = entity.getTStock();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TStockDto relationDto = (TStockDto)cachedDto;
+                dto.setTStock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrpickdetailList().add(dto);
+                }
+            } else {
+                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrpickdetailList();
+                TStockDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTStock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrpickdetailList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTStock());
                 }
             }
         };
@@ -399,32 +399,6 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTStock && dto.getTStock() != null) {
-            TStockDto relationDto = dto.getTStock();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TStock relationEntity = (TStock)cachedEntity;
-                entity.setTStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrpickdetailList().add(entity);
-                }
-            } else {
-                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrpickdetailList();
-                TStock relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrpickdetailList().add(entity);
-                }
-                if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTStock());
-                }
-            }
-        };
         if (!_suppressMLocation && dto.getMLocation() != null) {
             MLocationDto relationDto = dto.getMLocation();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -448,6 +422,32 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
                 }
                 if (instanceCache && entity.getMLocation().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMLocation());
+                }
+            }
+        };
+        if (!_suppressTStock && dto.getTStock() != null) {
+            TStockDto relationDto = dto.getTStock();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TStock relationEntity = (TStock)cachedEntity;
+                entity.setTStock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrpickdetailList().add(entity);
+                }
+            } else {
+                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrpickdetailList();
+                TStock relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTStock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrpickdetailList().add(entity);
+                }
+                if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTStock());
                 }
             }
         };
@@ -609,11 +609,11 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTStock() {
-        _suppressTStock = true;
-    }
     public void suppressMLocation() {
         _suppressMLocation = true;
+    }
+    public void suppressTStock() {
+        _suppressTStock = true;
     }
     public void suppressTYtrsodetail() {
         _suppressTYtrsodetail = true;
@@ -622,14 +622,14 @@ public abstract class BsTTrpickdetailDtoMapper implements DtoMapper<TTrpickdetai
         _suppressTTrPicklistList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressTStock();
         suppressMLocation();
+        suppressTStock();
         suppressTYtrsodetail();
         suppressTTrPicklistList();
     }
     protected void doSuppressClear() { // internal
-        _suppressTStock = false;
         _suppressMLocation = false;
+        _suppressTStock = false;
         _suppressTYtrsodetail = false;
         _suppressTTrPicklistList = false;
     }

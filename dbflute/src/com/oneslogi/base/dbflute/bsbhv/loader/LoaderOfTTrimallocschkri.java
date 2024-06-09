@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSODETAIL, T_TRIMALLOC_H
+ *     T_TRIMALLOC_H, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TRIMALLOCADJUST
  *
  * [foreign property]
- *     tYtrsodetail, tTrimallocH
+ *     tTrimallocH, tYtrsodetail
  *
  * [referrer property]
  *     tTrimallocadjustList
@@ -98,18 +98,18 @@ public class LoaderOfTTrimallocschkri {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTYtrsodetail _foreignTYtrsodetailLoader;
-    public LoaderOfTYtrsodetail pulloutTYtrsodetail() {
-        if (_foreignTYtrsodetailLoader == null)
-        { _foreignTYtrsodetailLoader = new LoaderOfTYtrsodetail().ready(myBhv().pulloutTYtrsodetail(_selectedList), _selector); }
-        return _foreignTYtrsodetailLoader;
-    }
-
     protected LoaderOfTTrimallocH _foreignTTrimallocHLoader;
     public LoaderOfTTrimallocH pulloutTTrimallocH() {
         if (_foreignTTrimallocHLoader == null)
         { _foreignTTrimallocHLoader = new LoaderOfTTrimallocH().ready(myBhv().pulloutTTrimallocH(_selectedList), _selector); }
         return _foreignTTrimallocHLoader;
+    }
+
+    protected LoaderOfTYtrsodetail _foreignTYtrsodetailLoader;
+    public LoaderOfTYtrsodetail pulloutTYtrsodetail() {
+        if (_foreignTYtrsodetailLoader == null)
+        { _foreignTYtrsodetailLoader = new LoaderOfTYtrsodetail().ready(myBhv().pulloutTYtrsodetail(_selectedList), _selector); }
+        return _foreignTYtrsodetailLoader;
     }
 
     // ===================================================================================

@@ -27,16 +27,16 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE_GRP, B_CULTURE, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
+ *     B_CULTURE, B_ROLE_GRP, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
  *
  * [referrer table]
  *     M_USER_CENTER, M_USER_CLIENT, M_USER_DEPOSIT, T_EC_ORDER_R, T_INVENTORY_R, T_MOVE_INST_R, T_PACKING_R, T_PICKING_R, T_RECEIVE_PLAN_R, T_STORE_NO_R, T_STORE_RECORD_R, W_SGL_ROW_SHIP_INSP_B, T_PACKING_H, B_USER_AUTH, M_USER_LOGIN
  *
  * [foreign property]
- *     bRoleGrp, bCulture, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
+ *     bCulture, bRoleGrp, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
  *
  * [referrer property]
- *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByTagOutUserIdList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRByPl2OutUserIdList, tPickingRBySlipOutUserIdList, tPickingRByPackingOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
+ *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPackingRByTagOutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByPackingOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByPl2OutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRBySlipOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -265,40 +265,6 @@ public class LoaderOfBUser {
         return hd -> hd.handle(new LoaderOfTMoveInstR().ready(_referrerTMoveInstRList, _selector));
     }
 
-    protected List<TPackingR> _referrerTPackingRByTagOutUserIdList;
-
-    /**
-     * Load referrer of TPackingRByTagOutUserIdList by the set-upper of referrer. <br>
-     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
-     * <pre>
-     * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPackingRByTagOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">rCB</span>.setupSelect...
-     *         <span style="color: #553000">rCB</span>.query().set...
-     *         <span style="color: #553000">rCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">rLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    rLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
-     *     ... = bUser.<span style="color: #CC4747">getTPackingRByTagOutUserIdList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setTagOutUserId_InScope(pkList);
-     * cb.query().addOrderBy_TagOutUserId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTPackingR> loadTPackingRByTagOutUserIdList(ConditionBeanSetupper<TPackingRCB> refCBLambda) {
-        myBhv().loadTPackingRByTagOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPackingRByTagOutUserIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTPackingR().ready(_referrerTPackingRByTagOutUserIdList, _selector));
-    }
-
     protected List<TPackingR> _referrerTPackingRByInspectionOutUserIdList;
 
     /**
@@ -367,14 +333,14 @@ public class LoaderOfBUser {
         return hd -> hd.handle(new LoaderOfTPackingR().ready(_referrerTPackingRByStwOutUserIdList, _selector));
     }
 
-    protected List<TPickingR> _referrerTPickingRByPl1OutUserIdList;
+    protected List<TPackingR> _referrerTPackingRByTagOutUserIdList;
 
     /**
-     * Load referrer of TPickingRByPl1OutUserIdList by the set-upper of referrer. <br>
-     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * Load referrer of TPackingRByTagOutUserIdList by the set-upper of referrer. <br>
+     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
      * <pre>
      * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByPl1OutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPackingRByTagOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *         <span style="color: #553000">rCB</span>.setupSelect...
      *         <span style="color: #553000">rCB</span>.query().set...
      *         <span style="color: #553000">rCB</span>.query().addOrderBy...
@@ -384,21 +350,21 @@ public class LoaderOfBUser {
      *     <span style="color: #3F7E5E">//});</span>
      * });
      * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
-     *     ... = bUser.<span style="color: #CC4747">getTPickingRByPl1OutUserIdList()</span>;
+     *     ... = bUser.<span style="color: #CC4747">getTPackingRByTagOutUserIdList()</span>;
      * }
      * </pre>
      * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
      * The condition-bean, which the set-upper provides, has settings before callback as follows:
      * <pre>
-     * cb.query().setPl1OutUserId_InScope(pkList);
-     * cb.query().addOrderBy_Pl1OutUserId_Asc();
+     * cb.query().setTagOutUserId_InScope(pkList);
+     * cb.query().addOrderBy_TagOutUserId_Asc();
      * </pre>
      * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
      * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
      */
-    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByPl1OutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
-        myBhv().loadTPickingRByPl1OutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByPl1OutUserIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByPl1OutUserIdList, _selector));
+    public NestedReferrerLoaderGateway<LoaderOfTPackingR> loadTPackingRByTagOutUserIdList(ConditionBeanSetupper<TPackingRCB> refCBLambda) {
+        myBhv().loadTPackingRByTagOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPackingRByTagOutUserIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTPackingR().ready(_referrerTPackingRByTagOutUserIdList, _selector));
     }
 
     protected List<TPickingR> _referrerTPickingRByCaseOutUserIdList;
@@ -435,14 +401,14 @@ public class LoaderOfBUser {
         return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByCaseOutUserIdList, _selector));
     }
 
-    protected List<TPickingR> _referrerTPickingRByShippingRecordOutUserIdList;
+    protected List<TPickingR> _referrerTPickingRByPackingOutUserIdList;
 
     /**
-     * Load referrer of TPickingRByShippingRecordOutUserIdList by the set-upper of referrer. <br>
-     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * Load referrer of TPickingRByPackingOutUserIdList by the set-upper of referrer. <br>
+     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
      * <pre>
      * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByShippingRecordOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByPackingOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *         <span style="color: #553000">rCB</span>.setupSelect...
      *         <span style="color: #553000">rCB</span>.query().set...
      *         <span style="color: #553000">rCB</span>.query().addOrderBy...
@@ -452,21 +418,55 @@ public class LoaderOfBUser {
      *     <span style="color: #3F7E5E">//});</span>
      * });
      * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
-     *     ... = bUser.<span style="color: #CC4747">getTPickingRByShippingRecordOutUserIdList()</span>;
+     *     ... = bUser.<span style="color: #CC4747">getTPickingRByPackingOutUserIdList()</span>;
      * }
      * </pre>
      * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
      * The condition-bean, which the set-upper provides, has settings before callback as follows:
      * <pre>
-     * cb.query().setShippingRecordOutUserId_InScope(pkList);
-     * cb.query().addOrderBy_ShippingRecordOutUserId_Asc();
+     * cb.query().setPackingOutUserId_InScope(pkList);
+     * cb.query().addOrderBy_PackingOutUserId_Asc();
      * </pre>
      * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
      * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
      */
-    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByShippingRecordOutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
-        myBhv().loadTPickingRByShippingRecordOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByShippingRecordOutUserIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByShippingRecordOutUserIdList, _selector));
+    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByPackingOutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
+        myBhv().loadTPickingRByPackingOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByPackingOutUserIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByPackingOutUserIdList, _selector));
+    }
+
+    protected List<TPickingR> _referrerTPickingRByPl1OutUserIdList;
+
+    /**
+     * Load referrer of TPickingRByPl1OutUserIdList by the set-upper of referrer. <br>
+     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * <pre>
+     * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByPl1OutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">rCB</span>.setupSelect...
+     *         <span style="color: #553000">rCB</span>.query().set...
+     *         <span style="color: #553000">rCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">rLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    rLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
+     *     ... = bUser.<span style="color: #CC4747">getTPickingRByPl1OutUserIdList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setPl1OutUserId_InScope(pkList);
+     * cb.query().addOrderBy_Pl1OutUserId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByPl1OutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
+        myBhv().loadTPickingRByPl1OutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByPl1OutUserIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByPl1OutUserIdList, _selector));
     }
 
     protected List<TPickingR> _referrerTPickingRByPl2OutUserIdList;
@@ -503,6 +503,40 @@ public class LoaderOfBUser {
         return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByPl2OutUserIdList, _selector));
     }
 
+    protected List<TPickingR> _referrerTPickingRByShippingRecordOutUserIdList;
+
+    /**
+     * Load referrer of TPickingRByShippingRecordOutUserIdList by the set-upper of referrer. <br>
+     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * <pre>
+     * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByShippingRecordOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">rCB</span>.setupSelect...
+     *         <span style="color: #553000">rCB</span>.query().set...
+     *         <span style="color: #553000">rCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">rLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    rLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
+     *     ... = bUser.<span style="color: #CC4747">getTPickingRByShippingRecordOutUserIdList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setShippingRecordOutUserId_InScope(pkList);
+     * cb.query().addOrderBy_ShippingRecordOutUserId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByShippingRecordOutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
+        myBhv().loadTPickingRByShippingRecordOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByShippingRecordOutUserIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByShippingRecordOutUserIdList, _selector));
+    }
+
     protected List<TPickingR> _referrerTPickingRBySlipOutUserIdList;
 
     /**
@@ -535,40 +569,6 @@ public class LoaderOfBUser {
     public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRBySlipOutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
         myBhv().loadTPickingRBySlipOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRBySlipOutUserIdList = refLs);
         return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRBySlipOutUserIdList, _selector));
-    }
-
-    protected List<TPickingR> _referrerTPickingRByPackingOutUserIdList;
-
-    /**
-     * Load referrer of TPickingRByPackingOutUserIdList by the set-upper of referrer. <br>
-     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
-     * <pre>
-     * <span style="color: #0000C0">bUserBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">bUserList</span>, <span style="color: #553000">userLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">userLoader</span>.<span style="color: #CC4747">loadTPickingRByPackingOutUserIdList</span>(<span style="color: #553000">rCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">rCB</span>.setupSelect...
-     *         <span style="color: #553000">rCB</span>.query().set...
-     *         <span style="color: #553000">rCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">rLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    rLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (BUser bUser : <span style="color: #553000">bUserList</span>) {
-     *     ... = bUser.<span style="color: #CC4747">getTPickingRByPackingOutUserIdList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setPackingOutUserId_InScope(pkList);
-     * cb.query().addOrderBy_PackingOutUserId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTPickingR> loadTPickingRByPackingOutUserIdList(ConditionBeanSetupper<TPickingRCB> refCBLambda) {
-        myBhv().loadTPickingRByPackingOutUserIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTPickingRByPackingOutUserIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTPickingR().ready(_referrerTPickingRByPackingOutUserIdList, _selector));
     }
 
     protected List<TReceivePlanR> _referrerTReceivePlanRList;
@@ -744,18 +744,18 @@ public class LoaderOfBUser {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBRoleGrp _foreignBRoleGrpLoader;
-    public LoaderOfBRoleGrp pulloutBRoleGrp() {
-        if (_foreignBRoleGrpLoader == null)
-        { _foreignBRoleGrpLoader = new LoaderOfBRoleGrp().ready(myBhv().pulloutBRoleGrp(_selectedList), _selector); }
-        return _foreignBRoleGrpLoader;
-    }
-
     protected LoaderOfBCulture _foreignBCultureLoader;
     public LoaderOfBCulture pulloutBCulture() {
         if (_foreignBCultureLoader == null)
         { _foreignBCultureLoader = new LoaderOfBCulture().ready(myBhv().pulloutBCulture(_selectedList), _selector); }
         return _foreignBCultureLoader;
+    }
+
+    protected LoaderOfBRoleGrp _foreignBRoleGrpLoader;
+    public LoaderOfBRoleGrp pulloutBRoleGrp() {
+        if (_foreignBRoleGrpLoader == null)
+        { _foreignBRoleGrpLoader = new LoaderOfBRoleGrp().ready(myBhv().pulloutBRoleGrp(_selectedList), _selector); }
+        return _foreignBRoleGrpLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByDelFlgLoader;

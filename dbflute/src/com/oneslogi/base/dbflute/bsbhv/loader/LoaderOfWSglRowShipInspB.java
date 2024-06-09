@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, W_SGL_ROW_SHIP_INSP_H, T_PICKING_H, B_CLASS_DTL(ByInspectionFlg)
+ *     T_PICKING_H, W_SGL_ROW_SHIP_INSP_H, B_USER, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, wSglRowShipInspH, tPickingH, bClassDtlByInspectionFlg
+ *     tPickingH, wSglRowShipInspH, bUser, bClassDtlByInspectionFlg
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfWSglRowShipInspB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBUser _foreignBUserLoader;
-    public LoaderOfBUser pulloutBUser() {
-        if (_foreignBUserLoader == null)
-        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
-        return _foreignBUserLoader;
+    protected LoaderOfTPickingH _foreignTPickingHLoader;
+    public LoaderOfTPickingH pulloutTPickingH() {
+        if (_foreignTPickingHLoader == null)
+        { _foreignTPickingHLoader = new LoaderOfTPickingH().ready(myBhv().pulloutTPickingH(_selectedList), _selector); }
+        return _foreignTPickingHLoader;
     }
 
     protected LoaderOfWSglRowShipInspH _foreignWSglRowShipInspHLoader;
@@ -73,11 +73,11 @@ public class LoaderOfWSglRowShipInspB {
         return _foreignWSglRowShipInspHLoader;
     }
 
-    protected LoaderOfTPickingH _foreignTPickingHLoader;
-    public LoaderOfTPickingH pulloutTPickingH() {
-        if (_foreignTPickingHLoader == null)
-        { _foreignTPickingHLoader = new LoaderOfTPickingH().ready(myBhv().pulloutTPickingH(_selectedList), _selector); }
-        return _foreignTPickingHLoader;
+    protected LoaderOfBUser _foreignBUserLoader;
+    public LoaderOfBUser pulloutBUser() {
+        if (_foreignBUserLoader == null)
+        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
+        return _foreignBUserLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInspectionFlgLoader;

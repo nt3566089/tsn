@@ -310,33 +310,33 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected MProductNss _nssMProduct;
-    public MProductNss xdfgetNssMProduct() {
-        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
-        return _nssMProduct;
+    protected MLocationNss _nssMLocation;
+    public MLocationNss xdfgetNssMLocation() {
+        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
+        return _nssMLocation;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
      * <pre>
      * <span style="color: #0000C0">wHtShippingPickingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtShippingPicking</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtShippingPicking</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtShippingPicking</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MProductNss setupSelect_MProduct() {
-        assertSetupSelectPurpose("mProduct");
+    public MLocationNss setupSelect_MLocation() {
+        assertSetupSelectPurpose("mLocation");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnProductId();
+            specify().columnLocationId();
         }
-        doSetupSelect(() -> query().queryMProduct());
-        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
-        { _nssMProduct = new MProductNss(query().queryMProduct()); }
-        return _nssMProduct;
+        doSetupSelect(() -> query().queryMLocation());
+        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
+        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
+        return _nssMLocation;
     }
 
     protected TLotNss _nssTLot;
@@ -368,33 +368,33 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
         return _nssTLot;
     }
 
-    protected MLocationNss _nssMLocation;
-    public MLocationNss xdfgetNssMLocation() {
-        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
-        return _nssMLocation;
+    protected MProductNss _nssMProduct;
+    public MProductNss xdfgetNssMProduct() {
+        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
+        return _nssMProduct;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * <pre>
      * <span style="color: #0000C0">wHtShippingPickingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtShippingPicking</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtShippingPicking</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtShippingPicking</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MLocationNss setupSelect_MLocation() {
-        assertSetupSelectPurpose("mLocation");
+    public MProductNss setupSelect_MProduct() {
+        assertSetupSelectPurpose("mProduct");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnLocationId();
+            specify().columnProductId();
         }
-        doSetupSelect(() -> query().queryMLocation());
-        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
-        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
-        return _nssMLocation;
+        doSetupSelect(() -> query().queryMProduct());
+        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
+        { _nssMProduct = new MProductNss(query().queryMProduct()); }
+        return _nssMProduct;
     }
 
     // [DBFlute-0.7.4]
@@ -440,9 +440,9 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
     public static class HpSpecification extends HpAbstractSpecification<WHtShippingPickingCQ> {
         protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
-        protected MProductCB.HpSpecification _mProduct;
-        protected TLotCB.HpSpecification _tLot;
         protected MLocationCB.HpSpecification _mLocation;
+        protected TLotCB.HpSpecification _tLot;
+        protected MProductCB.HpSpecification _mProduct;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WHtShippingPickingCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -620,17 +620,17 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMProduct()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
-                columnProductId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMLocation()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
+                columnLocationId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTLot()
                     || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
                 columnLotId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMLocation()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
-                columnLocationId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMProduct()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
+                columnProductId(); // FK or one-to-one referrer
             }
         }
         @Override
@@ -677,23 +677,23 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+         * M_LOCATION by my LOCATION_ID, named 'MLocation'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MProductCB.HpSpecification specifyMProduct() {
-            assertRelation("mProduct");
-            if (_mProduct == null) {
-                _mProduct = new MProductCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
-                                    , () -> _qyCall.qy().queryMProduct())
+        public MLocationCB.HpSpecification specifyMLocation() {
+            assertRelation("mLocation");
+            if (_mLocation == null) {
+                _mLocation = new MLocationCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
+                                    , () -> _qyCall.qy().queryMLocation())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
-                      , () -> xsyncQyCall().qy().queryMProduct()));
+                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
+                      , () -> xsyncQyCall().qy().queryMLocation()));
                 }
             }
-            return _mProduct;
+            return _mLocation;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -717,23 +717,23 @@ public class BsWHtShippingPickingCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MLocationCB.HpSpecification specifyMLocation() {
-            assertRelation("mLocation");
-            if (_mLocation == null) {
-                _mLocation = new MLocationCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
-                                    , () -> _qyCall.qy().queryMLocation())
+        public MProductCB.HpSpecification specifyMProduct() {
+            assertRelation("mProduct");
+            if (_mProduct == null) {
+                _mProduct = new MProductCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
+                                    , () -> _qyCall.qy().queryMProduct())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
-                      , () -> xsyncQyCall().qy().queryMLocation()));
+                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
+                      , () -> xsyncQyCall().qy().queryMProduct()));
                 }
             }
-            return _mLocation;
+            return _mProduct;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

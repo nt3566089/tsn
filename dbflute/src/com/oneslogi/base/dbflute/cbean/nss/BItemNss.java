@@ -20,21 +20,21 @@ public class BItemNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BScreenNss withBScreen() {
-        _query.xdoNss(() -> _query.queryBScreen());
-        return new BScreenNss(_query.queryBScreen());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BDictNss withBDict() {
         _query.xdoNss(() -> _query.queryBDict());
         return new BDictNss(_query.queryBDict());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BScreenNss withBScreen() {
+        _query.xdoNss(() -> _query.queryBScreen());
+        return new BScreenNss(_query.queryBScreen());
     }
     /**
      * With nested relation columns to select clause. <br>

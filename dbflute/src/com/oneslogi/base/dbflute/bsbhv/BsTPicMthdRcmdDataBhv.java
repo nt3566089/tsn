@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PIC_MTHD_RCMD, T_PICKING_H
+ *     T_PICKING_H, T_PIC_MTHD_RCMD
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPicMthdRcmd, tPickingH
+ *     tPickingH, tPicMthdRcmd
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTPicMthdRcmdDataBhv extends AbstractBehaviorWritable<TPi
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TPicMthdRcmd'.
-     * @param tPicMthdRcmdDataList The list of tPicMthdRcmdData. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TPicMthdRcmd> pulloutTPicMthdRcmd(List<TPicMthdRcmdData> tPicMthdRcmdDataList)
-    { return helpPulloutInternally(tPicMthdRcmdDataList, "tPicMthdRcmd"); }
-
-    /**
      * Pull out the list of foreign table 'TPickingH'.
      * @param tPicMthdRcmdDataList The list of tPicMthdRcmdData. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TPickingH> pulloutTPickingH(List<TPicMthdRcmdData> tPicMthdRcmdDataList)
     { return helpPulloutInternally(tPicMthdRcmdDataList, "tPickingH"); }
+
+    /**
+     * Pull out the list of foreign table 'TPicMthdRcmd'.
+     * @param tPicMthdRcmdDataList The list of tPicMthdRcmdData. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TPicMthdRcmd> pulloutTPicMthdRcmd(List<TPicMthdRcmdData> tPicMthdRcmdDataList)
+    { return helpPulloutInternally(tPicMthdRcmdDataList, "tPicMthdRcmd"); }
 
     // ===================================================================================
     //                                                                      Extract Column

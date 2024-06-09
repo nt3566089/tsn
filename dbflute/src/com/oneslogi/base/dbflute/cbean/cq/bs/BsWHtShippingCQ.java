@@ -678,17 +678,17 @@ public class BsWHtShippingCQ extends AbstractBsWHtShippingCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         WHtShippingCQ bq = (WHtShippingCQ)bqs;
         WHtShippingCQ uq = (WHtShippingCQ)uqs;
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        if (bq.hasConditionQueryMBox()) {
+            uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
         }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
-        if (bq.hasConditionQueryMBox()) {
-            uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
-        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
         }
     }
 
@@ -697,23 +697,23 @@ public class BsWHtShippingCQ extends AbstractBsWHtShippingCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_BOX by my BOX_ID, named 'MBox'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
+    public MBoxCQ queryMBox() {
+        return xdfgetConditionQueryMBox();
     }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+    public MBoxCQ xdfgetConditionQueryMBox() {
+        String prop = "mBox";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBox()); xsetupOuterJoinMBox(); }
         return xgetQueRlMap(prop);
     }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("W_HT_SHIPPING", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    protected MBoxCQ xcreateQueryMBox() {
+        String nrp = xresolveNRP("W_HT_SHIPPING", "mBox"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MBoxCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBox", nrp);
     }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+    protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
+    public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -737,26 +737,6 @@ public class BsWHtShippingCQ extends AbstractBsWHtShippingCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MBoxCQ queryMBox() {
-        return xdfgetConditionQueryMBox();
-    }
-    public MBoxCQ xdfgetConditionQueryMBox() {
-        String prop = "mBox";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBox()); xsetupOuterJoinMBox(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MBoxCQ xcreateQueryMBox() {
-        String nrp = xresolveNRP("W_HT_SHIPPING", "mBox"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MBoxCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBox", nrp);
-    }
-    protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
-    public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -774,6 +754,26 @@ public class BsWHtShippingCQ extends AbstractBsWHtShippingCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
+    }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("W_HT_SHIPPING", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

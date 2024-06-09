@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_PROCESS_TYPE, M_CENTER, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_MOVE_INST_R
  *
  * [foreign property]
- *     mClient, mProcessType, mCenter, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
+ *     mCenter, mClient, mProcessType, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
  *
  * [referrer property]
  *     tInventoryBList, tMoveInstBList, tMoveRecordBList
@@ -490,6 +490,25 @@ public abstract class BsTMoveInstH extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -526,25 +545,6 @@ public abstract class BsTMoveInstH extends AbstractEntity implements DomainEntit
      */
     public void setMProcessType(MProcessType mProcessType) {
         _mProcessType = mProcessType;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
     }
 
     /** B_CLASS_DTL by my INPUT_TYPE, named 'BClassDtlByInputType'. */
@@ -696,12 +696,12 @@ public abstract class BsTMoveInstH extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mProcessType != null)
         { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_bClassDtlByInputType != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInputType, "bClassDtlByInputType")); }
         if (_bClassDtlByMoveInstStatus != null)
@@ -749,12 +749,12 @@ public abstract class BsTMoveInstH extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_mProcessType != null)
         { sb.append(dm).append("mProcessType"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_bClassDtlByInputType != null)
         { sb.append(dm).append("bClassDtlByInputType"); }
         if (_bClassDtlByMoveInstStatus != null)

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT_SHAPE, M_PRODUCT, M_ZONE, M_STOCK_TYPE, M_CUSTOMER, M_CENTER, B_CLASS_DTL(ByAllocNgFlg)
+ *     M_CENTER, M_PRODUCT_SHAPE, M_CUSTOMER, M_PRODUCT, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByAllocNgFlg)
  *
  * [referrer table]
  *     T_ALLOC_INST_B, T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_RECEIVE_PLAN_B, T_SHIPPING_INST_B, T_STOCK, T_STORE_RECORD_B, T_TRPICKDETAIL, W_HT_INVENTORY_INPUT_PROD, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SHIPPING_PICKING
  *
  * [foreign property]
- *     mProductShapeByMaxStoreProductShapeId, mProduct, mZone, mProductShapeByReplenishPProductShapeId, mStockType, mCustomer, mCenter, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
+ *     mCenter, mProductShapeByMaxStoreProductShapeId, mCustomer, mProduct, mProductShapeByReplenishPProductShapeId, mStockType, mZone, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
  *
  * [referrer property]
  *     tAllocInstBList, tInventoryBList, tMoveInstBList, tMoveRecordBList, tReceivePlanBList, tShippingInstBList, tStockList, tStoreRecordBList, tTrpickdetailList, wHtInventoryInputProdList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtShippingPickingList
@@ -605,6 +605,25 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** M_PRODUCT_SHAPE by my MAX_STORE_PRODUCT_SHAPE_ID, named 'MProductShapeByMaxStoreProductShapeId'. */
     protected MProductShape _mProductShapeByMaxStoreProductShapeId;
 
@@ -624,6 +643,25 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
         _mProductShapeByMaxStoreProductShapeId = mProductShapeByMaxStoreProductShapeId;
     }
 
+    /** M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'. */
+    protected MCustomer _mCustomer;
+
+    /**
+     * [get] M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'. <br>
+     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCustomer getMCustomer() {
+        return _mCustomer;
+    }
+
+    /**
+     * [set] M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
+     */
+    public void setMCustomer(MCustomer mCustomer) {
+        _mCustomer = mCustomer;
+    }
+
     /** M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'. */
     protected MProduct _mProduct;
 
@@ -641,25 +679,6 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
      */
     public void setMProduct(MProduct mProduct) {
         _mProduct = mProduct;
-    }
-
-    /** M_ZONE by my ZONE_ID, named 'MZone'. */
-    protected MZone _mZone;
-
-    /**
-     * [get] M_ZONE by my ZONE_ID, named 'MZone'. <br>
-     * @return The entity of foreign property 'MZone'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MZone getMZone() {
-        return _mZone;
-    }
-
-    /**
-     * [set] M_ZONE by my ZONE_ID, named 'MZone'.
-     * @param mZone The entity of foreign property 'MZone'. (NullAllowed)
-     */
-    public void setMZone(MZone mZone) {
-        _mZone = mZone;
     }
 
     /** M_PRODUCT_SHAPE by my REPLENISH_P_PRODUCT_SHAPE_ID, named 'MProductShapeByReplenishPProductShapeId'. */
@@ -700,42 +719,23 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
         _mStockType = mStockType;
     }
 
-    /** M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'. */
-    protected MCustomer _mCustomer;
+    /** M_ZONE by my ZONE_ID, named 'MZone'. */
+    protected MZone _mZone;
 
     /**
-     * [get] M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'. <br>
-     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_ZONE by my ZONE_ID, named 'MZone'. <br>
+     * @return The entity of foreign property 'MZone'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCustomer getMCustomer() {
-        return _mCustomer;
+    public MZone getMZone() {
+        return _mZone;
     }
 
     /**
-     * [set] M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
-     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
+     * [set] M_ZONE by my ZONE_ID, named 'MZone'.
+     * @param mZone The entity of foreign property 'MZone'. (NullAllowed)
      */
-    public void setMCustomer(MCustomer mCustomer) {
-        _mCustomer = mCustomer;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setMZone(MZone mZone) {
+        _mZone = mZone;
     }
 
     /** B_CLASS_DTL by my ALLOC_NG_FLG, named 'BClassDtlByAllocNgFlg'. */
@@ -1126,20 +1126,20 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mProductShapeByMaxStoreProductShapeId != null)
         { sb.append(li).append(xbRDS(_mProductShapeByMaxStoreProductShapeId, "mProductShapeByMaxStoreProductShapeId")); }
+        if (_mCustomer != null)
+        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
-        if (_mZone != null)
-        { sb.append(li).append(xbRDS(_mZone, "mZone")); }
         if (_mProductShapeByReplenishPProductShapeId != null)
         { sb.append(li).append(xbRDS(_mProductShapeByReplenishPProductShapeId, "mProductShapeByReplenishPProductShapeId")); }
         if (_mStockType != null)
         { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
-        if (_mCustomer != null)
-        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mZone != null)
+        { sb.append(li).append(xbRDS(_mZone, "mZone")); }
         if (_bClassDtlByAllocNgFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByAllocNgFlg, "bClassDtlByAllocNgFlg")); }
         if (_bClassDtlByDelFlg != null)
@@ -1233,20 +1233,20 @@ public abstract class BsMLocation extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mProductShapeByMaxStoreProductShapeId != null)
         { sb.append(dm).append("mProductShapeByMaxStoreProductShapeId"); }
+        if (_mCustomer != null)
+        { sb.append(dm).append("mCustomer"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
-        if (_mZone != null)
-        { sb.append(dm).append("mZone"); }
         if (_mProductShapeByReplenishPProductShapeId != null)
         { sb.append(dm).append("mProductShapeByReplenishPProductShapeId"); }
         if (_mStockType != null)
         { sb.append(dm).append("mStockType"); }
-        if (_mCustomer != null)
-        { sb.append(dm).append("mCustomer"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
+        if (_mZone != null)
+        { sb.append(dm).append("mZone"); }
         if (_bClassDtlByAllocNgFlg != null)
         { sb.append(dm).append("bClassDtlByAllocNgFlg"); }
         if (_bClassDtlByDelFlg != null)

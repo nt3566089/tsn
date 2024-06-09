@@ -84,8 +84,8 @@ public class TTrpickdetailDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TTrpickdetail)et).getTStock(), (et, vl) -> ((TTrpickdetail)et).setTStock((TStock)vl), "TStock");
         setupEfpg(_efpgMap, et -> ((TTrpickdetail)et).getMLocation(), (et, vl) -> ((TTrpickdetail)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((TTrpickdetail)et).getTStock(), (et, vl) -> ((TTrpickdetail)et).setTStock((TStock)vl), "TStock");
         setupEfpg(_efpgMap, et -> ((TTrpickdetail)et).getTYtrsodetail(), (et, vl) -> ((TTrpickdetail)et).setTYtrsodetail((TYtrsodetail)vl), "TYtrsodetail");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -359,20 +359,20 @@ public class TTrpickdetailDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_STOCK by my STOCK_ID, named 'TStock'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTStock() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), TStockDbm.getInstance().columnStockId());
-        return cfi("T_TRPICKDETAIL_FK2", "TStock", this, TStockDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrpickdetailList", false);
-    }
-    /**
      * M_LOCATION by my LOCATION_ID, named 'MLocation'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMLocation() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_TRPICKDETAIL_FK3", "MLocation", this, MLocationDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrpickdetailList", false);
+        return cfi("T_TRPICKDETAIL_FK3", "MLocation", this, MLocationDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrpickdetailList", false);
+    }
+    /**
+     * T_STOCK by my STOCK_ID, named 'TStock'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTStock() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), TStockDbm.getInstance().columnStockId());
+        return cfi("T_TRPICKDETAIL_FK2", "TStock", this, TStockDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrpickdetailList", false);
     }
     /**
      * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.

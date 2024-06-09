@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_BOX, M_BOX_GRP
+ *     M_BOX_GRP, M_BOX
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mBox, mBoxGrp
+ *     mBoxGrp, mBox
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsMBoxGrpDtlBhv extends AbstractBehaviorWritable<MBoxGrpDt
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MBox'.
-     * @param mBoxGrpDtlList The list of mBoxGrpDtl. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MBox> pulloutMBox(List<MBoxGrpDtl> mBoxGrpDtlList)
-    { return helpPulloutInternally(mBoxGrpDtlList, "mBox"); }
-
-    /**
      * Pull out the list of foreign table 'MBoxGrp'.
      * @param mBoxGrpDtlList The list of mBoxGrpDtl. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MBoxGrp> pulloutMBoxGrp(List<MBoxGrpDtl> mBoxGrpDtlList)
     { return helpPulloutInternally(mBoxGrpDtlList, "mBoxGrp"); }
+
+    /**
+     * Pull out the list of foreign table 'MBox'.
+     * @param mBoxGrpDtlList The list of mBoxGrpDtl. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MBox> pulloutMBox(List<MBoxGrpDtl> mBoxGrpDtlList)
+    { return helpPulloutInternally(mBoxGrpDtlList, "mBox"); }
 
     // ===================================================================================
     //                                                                      Extract Column

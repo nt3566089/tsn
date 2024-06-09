@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CUSTOMER, M_CENTER
+ *     M_CENTER, M_CLIENT, M_CUSTOMER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCustomer, mCenter
+ *     mCenter, mClient, mCustomer
  *
  * [referrer property]
  *     
@@ -393,6 +393,14 @@ public abstract class BsWHtSerialReceiveInspBhv extends AbstractBehaviorWritable
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param wHtSerialReceiveInspList The list of wHtSerialReceiveInsp. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<WHtSerialReceiveInsp> wHtSerialReceiveInspList)
+    { return helpPulloutInternally(wHtSerialReceiveInspList, "mCenter"); }
+
+    /**
      * Pull out the list of foreign table 'MClient'.
      * @param wHtSerialReceiveInspList The list of wHtSerialReceiveInsp. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -407,14 +415,6 @@ public abstract class BsWHtSerialReceiveInspBhv extends AbstractBehaviorWritable
      */
     public List<MCustomer> pulloutMCustomer(List<WHtSerialReceiveInsp> wHtSerialReceiveInspList)
     { return helpPulloutInternally(wHtSerialReceiveInspList, "mCustomer"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param wHtSerialReceiveInspList The list of wHtSerialReceiveInsp. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<WHtSerialReceiveInsp> wHtSerialReceiveInspList)
-    { return helpPulloutInternally(wHtSerialReceiveInspList, "mCenter"); }
 
     // ===================================================================================
     //                                                                      Extract Column

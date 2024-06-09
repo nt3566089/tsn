@@ -281,6 +281,35 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         return _nssTAllocInstB;
     }
 
+    protected TStockInoutNss _nssTStockInoutByBfStockInoutIdSelf;
+    public TStockInoutNss xdfgetNssTStockInoutByBfStockInoutIdSelf() {
+        if (_nssTStockInoutByBfStockInoutIdSelf == null) { _nssTStockInoutByBfStockInoutIdSelf = new TStockInoutNss(null); }
+        return _nssTStockInoutByBfStockInoutIdSelf;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * <pre>
+     * <span style="color: #0000C0">tStockInoutBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStockInoutByBfStockInoutIdSelf()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tStockInout</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStockInoutByBfStockInoutIdSelf()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TStockInoutNss setupSelect_TStockInoutByBfStockInoutIdSelf() {
+        assertSetupSelectPurpose("tStockInoutByBfStockInoutIdSelf");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnBfStockInoutId();
+        }
+        doSetupSelect(() -> query().queryTStockInoutByBfStockInoutIdSelf());
+        if (_nssTStockInoutByBfStockInoutIdSelf == null || !_nssTStockInoutByBfStockInoutIdSelf.hasConditionQuery())
+        { _nssTStockInoutByBfStockInoutIdSelf = new TStockInoutNss(query().queryTStockInoutByBfStockInoutIdSelf()); }
+        return _nssTStockInoutByBfStockInoutIdSelf;
+    }
+
     protected TStockInoutNss _nssTStockInoutByFsStockInoutIdSelf;
     public TStockInoutNss xdfgetNssTStockInoutByFsStockInoutIdSelf() {
         if (_nssTStockInoutByFsStockInoutIdSelf == null) { _nssTStockInoutByFsStockInoutIdSelf = new TStockInoutNss(null); }
@@ -308,64 +337,6 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         if (_nssTStockInoutByFsStockInoutIdSelf == null || !_nssTStockInoutByFsStockInoutIdSelf.hasConditionQuery())
         { _nssTStockInoutByFsStockInoutIdSelf = new TStockInoutNss(query().queryTStockInoutByFsStockInoutIdSelf()); }
         return _nssTStockInoutByFsStockInoutIdSelf;
-    }
-
-    protected TStoreRecordBNss _nssTStoreRecordB;
-    public TStoreRecordBNss xdfgetNssTStoreRecordB() {
-        if (_nssTStoreRecordB == null) { _nssTStoreRecordB = new TStoreRecordBNss(null); }
-        return _nssTStoreRecordB;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-     * <pre>
-     * <span style="color: #0000C0">tStockInoutBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStoreRecordB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tStockInout</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStoreRecordB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TStoreRecordBNss setupSelect_TStoreRecordB() {
-        assertSetupSelectPurpose("tStoreRecordB");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnStoreRecordBId();
-        }
-        doSetupSelect(() -> query().queryTStoreRecordB());
-        if (_nssTStoreRecordB == null || !_nssTStoreRecordB.hasConditionQuery())
-        { _nssTStoreRecordB = new TStoreRecordBNss(query().queryTStoreRecordB()); }
-        return _nssTStoreRecordB;
-    }
-
-    protected MProcessTypeNss _nssMProcessType;
-    public MProcessTypeNss xdfgetNssMProcessType() {
-        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
-        return _nssMProcessType;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * <pre>
-     * <span style="color: #0000C0">tStockInoutBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tStockInout</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MProcessTypeNss setupSelect_MProcessType() {
-        assertSetupSelectPurpose("mProcessType");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnProcessTypeId();
-        }
-        doSetupSelect(() -> query().queryMProcessType());
-        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
-        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
-        return _nssMProcessType;
     }
 
     protected TMoveRecordBNss _nssTMoveRecordB;
@@ -397,6 +368,35 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         return _nssTMoveRecordB;
     }
 
+    protected MProcessTypeNss _nssMProcessType;
+    public MProcessTypeNss xdfgetNssMProcessType() {
+        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
+        return _nssMProcessType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * <pre>
+     * <span style="color: #0000C0">tStockInoutBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tStockInout</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MProcessTypeNss setupSelect_MProcessType() {
+        assertSetupSelectPurpose("mProcessType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnProcessTypeId();
+        }
+        doSetupSelect(() -> query().queryMProcessType());
+        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
+        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
+        return _nssMProcessType;
+    }
+
     protected TStockNss _nssTStock;
     public TStockNss xdfgetNssTStock() {
         if (_nssTStock == null) { _nssTStock = new TStockNss(null); }
@@ -426,33 +426,33 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         return _nssTStock;
     }
 
-    protected TStockInoutNss _nssTStockInoutByBfStockInoutIdSelf;
-    public TStockInoutNss xdfgetNssTStockInoutByBfStockInoutIdSelf() {
-        if (_nssTStockInoutByBfStockInoutIdSelf == null) { _nssTStockInoutByBfStockInoutIdSelf = new TStockInoutNss(null); }
-        return _nssTStockInoutByBfStockInoutIdSelf;
+    protected TStoreRecordBNss _nssTStoreRecordB;
+    public TStoreRecordBNss xdfgetNssTStoreRecordB() {
+        if (_nssTStoreRecordB == null) { _nssTStoreRecordB = new TStoreRecordBNss(null); }
+        return _nssTStoreRecordB;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
      * <pre>
      * <span style="color: #0000C0">tStockInoutBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStockInoutByBfStockInoutIdSelf()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStoreRecordB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tStockInout</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStockInoutByBfStockInoutIdSelf()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStoreRecordB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TStockInoutNss setupSelect_TStockInoutByBfStockInoutIdSelf() {
-        assertSetupSelectPurpose("tStockInoutByBfStockInoutIdSelf");
+    public TStoreRecordBNss setupSelect_TStoreRecordB() {
+        assertSetupSelectPurpose("tStoreRecordB");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnBfStockInoutId();
+            specify().columnStoreRecordBId();
         }
-        doSetupSelect(() -> query().queryTStockInoutByBfStockInoutIdSelf());
-        if (_nssTStockInoutByBfStockInoutIdSelf == null || !_nssTStockInoutByBfStockInoutIdSelf.hasConditionQuery())
-        { _nssTStockInoutByBfStockInoutIdSelf = new TStockInoutNss(query().queryTStockInoutByBfStockInoutIdSelf()); }
-        return _nssTStockInoutByBfStockInoutIdSelf;
+        doSetupSelect(() -> query().queryTStoreRecordB());
+        if (_nssTStoreRecordB == null || !_nssTStoreRecordB.hasConditionQuery())
+        { _nssTStoreRecordB = new TStoreRecordBNss(query().queryTStoreRecordB()); }
+        return _nssTStoreRecordB;
     }
 
     protected BClassDtlNss _nssBClassDtlByCorrectType;
@@ -555,12 +555,12 @@ public class BsTStockInoutCB extends AbstractConditionBean {
 
     public static class HpSpecification extends HpAbstractSpecification<TStockInoutCQ> {
         protected TAllocInstBCB.HpSpecification _tAllocInstB;
-        protected TStockInoutCB.HpSpecification _tStockInoutByFsStockInoutIdSelf;
-        protected TStoreRecordBCB.HpSpecification _tStoreRecordB;
-        protected MProcessTypeCB.HpSpecification _mProcessType;
-        protected TMoveRecordBCB.HpSpecification _tMoveRecordB;
-        protected TStockCB.HpSpecification _tStock;
         protected TStockInoutCB.HpSpecification _tStockInoutByBfStockInoutIdSelf;
+        protected TStockInoutCB.HpSpecification _tStockInoutByFsStockInoutIdSelf;
+        protected TMoveRecordBCB.HpSpecification _tMoveRecordB;
+        protected MProcessTypeCB.HpSpecification _mProcessType;
+        protected TStockCB.HpSpecification _tStock;
+        protected TStoreRecordBCB.HpSpecification _tStoreRecordB;
         protected BClassDtlCB.HpSpecification _bClassDtlByCorrectType;
         protected BClassDtlCB.HpSpecification _bClassDtlByInoutType;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TStockInoutCQ> qyCall
@@ -686,29 +686,29 @@ public class BsTStockInoutCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstBCQ) {
                 columnAllocInstBId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TStockInoutCQ) {
+                columnBfStockInoutId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryTStockInoutByFsStockInoutIdSelf()
                     || qyCall().qy().xgetReferrerQuery() instanceof TStockInoutCQ) {
                 columnFsStockInoutId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryTStoreRecordB()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TStoreRecordBCQ) {
-                columnStoreRecordBId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMProcessType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
-                columnProcessTypeId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTMoveRecordB()
                     || qyCall().qy().xgetReferrerQuery() instanceof TMoveRecordBCQ) {
                 columnMoveRecordBId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMProcessType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
+                columnProcessTypeId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryTStock()
                     || qyCall().qy().xgetReferrerQuery() instanceof TStockCQ) {
                 columnStockId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TStockInoutCQ) {
-                columnBfStockInoutId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTStoreRecordB()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TStoreRecordBCQ) {
+                columnStoreRecordBId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByCorrectType()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -743,6 +743,26 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TStockInoutCB.HpSpecification specifyTStockInoutByBfStockInoutIdSelf() {
+            assertRelation("tStockInoutByBfStockInoutIdSelf");
+            if (_tStockInoutByBfStockInoutIdSelf == null) {
+                _tStockInoutByBfStockInoutIdSelf = new TStockInoutCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
+                                    , () -> _qyCall.qy().queryTStockInoutByBfStockInoutIdSelf())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tStockInoutByBfStockInoutIdSelf.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
+                      , () -> xsyncQyCall().qy().queryTStockInoutByBfStockInoutIdSelf()));
+                }
+            }
+            return _tStockInoutByBfStockInoutIdSelf;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * T_STOCK_INOUT by my FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelf'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -760,46 +780,6 @@ public class BsTStockInoutCB extends AbstractConditionBean {
                 }
             }
             return _tStockInoutByFsStockInoutIdSelf;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TStoreRecordBCB.HpSpecification specifyTStoreRecordB() {
-            assertRelation("tStoreRecordB");
-            if (_tStoreRecordB == null) {
-                _tStoreRecordB = new TStoreRecordBCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStoreRecordB()
-                                    , () -> _qyCall.qy().queryTStoreRecordB())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tStoreRecordB.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStoreRecordB()
-                      , () -> xsyncQyCall().qy().queryTStoreRecordB()));
-                }
-            }
-            return _tStoreRecordB;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MProcessTypeCB.HpSpecification specifyMProcessType() {
-            assertRelation("mProcessType");
-            if (_mProcessType == null) {
-                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
-                                    , () -> _qyCall.qy().queryMProcessType())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
-                      , () -> xsyncQyCall().qy().queryMProcessType()));
-                }
-            }
-            return _mProcessType;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -823,6 +803,26 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MProcessTypeCB.HpSpecification specifyMProcessType() {
+            assertRelation("mProcessType");
+            if (_mProcessType == null) {
+                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
+                                    , () -> _qyCall.qy().queryMProcessType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
+                      , () -> xsyncQyCall().qy().queryMProcessType()));
+                }
+            }
+            return _mProcessType;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * T_STOCK by my STOCK_ID, named 'TStock'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -843,23 +843,23 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+         * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TStockInoutCB.HpSpecification specifyTStockInoutByBfStockInoutIdSelf() {
-            assertRelation("tStockInoutByBfStockInoutIdSelf");
-            if (_tStockInoutByBfStockInoutIdSelf == null) {
-                _tStockInoutByBfStockInoutIdSelf = new TStockInoutCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
-                                    , () -> _qyCall.qy().queryTStockInoutByBfStockInoutIdSelf())
+        public TStoreRecordBCB.HpSpecification specifyTStoreRecordB() {
+            assertRelation("tStoreRecordB");
+            if (_tStoreRecordB == null) {
+                _tStoreRecordB = new TStoreRecordBCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStoreRecordB()
+                                    , () -> _qyCall.qy().queryTStoreRecordB())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tStockInoutByBfStockInoutIdSelf.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStockInoutByBfStockInoutIdSelf()
-                      , () -> xsyncQyCall().qy().queryTStockInoutByBfStockInoutIdSelf()));
+                    _tStoreRecordB.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStoreRecordB()
+                      , () -> xsyncQyCall().qy().queryTStoreRecordB()));
                 }
             }
-            return _tStockInoutByBfStockInoutIdSelf;
+            return _tStoreRecordB;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -904,23 +904,6 @@ public class BsTStockInoutCB extends AbstractConditionBean {
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
          * {select max(FOO) from T_STOCK_INOUT where ...) as FOO_MAX} <br>
-         * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-         * <pre>
-         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-         *     inoutCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
-         *     inoutCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
-         * }, TStockInout.<span style="color: #CC4747">ALIAS_foo...</span>);
-         * </pre>
-         * @return The object to set up a function for referrer table. (NotNull)
-         */
-        public HpSDRFunction<TStockInoutCB, TStockInoutCQ> derivedTStockInoutByFsStockInoutIdSelfList() {
-            assertDerived("tStockInoutByFsStockInoutIdSelfList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TStockInoutCB> sq, TStockInoutCQ cq, String al, DerivedReferrerOption op)
-                    -> cq.xsderiveTStockInoutByFsStockInoutIdSelfList(fn, sq, al, op), _dbmetaProvider);
-        }
-        /**
-         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from T_STOCK_INOUT where ...) as FOO_MAX} <br>
          * T_STOCK_INOUT by BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelfList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -934,6 +917,23 @@ public class BsTStockInoutCB extends AbstractConditionBean {
             assertDerived("tStockInoutByBfStockInoutIdSelfList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TStockInoutCB> sq, TStockInoutCQ cq, String al, DerivedReferrerOption op)
                     -> cq.xsderiveTStockInoutByBfStockInoutIdSelfList(fn, sq, al, op), _dbmetaProvider);
+        }
+        /**
+         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
+         * {select max(FOO) from T_STOCK_INOUT where ...) as FOO_MAX} <br>
+         * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+         * <pre>
+         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+         *     inoutCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
+         *     inoutCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
+         * }, TStockInout.<span style="color: #CC4747">ALIAS_foo...</span>);
+         * </pre>
+         * @return The object to set up a function for referrer table. (NotNull)
+         */
+        public HpSDRFunction<TStockInoutCB, TStockInoutCQ> derivedTStockInoutByFsStockInoutIdSelfList() {
+            assertDerived("tStockInoutByFsStockInoutIdSelfList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TStockInoutCB> sq, TStockInoutCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveTStockInoutByFsStockInoutIdSelfList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

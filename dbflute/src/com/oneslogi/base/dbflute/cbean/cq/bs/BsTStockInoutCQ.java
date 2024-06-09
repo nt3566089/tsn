@@ -79,33 +79,33 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
       return _stockInoutId; }
     protected ConditionValue xgetCValueStockInoutId() { return xdfgetStockInoutId(); }
 
-    public Map<String, TStockInoutCQ> xdfgetStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList"); }
-    public String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
-
     public Map<String, TStockInoutCQ> xdfgetStockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList"); }
     public String keepStockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList", sq); }
 
-    public Map<String, TStockInoutCQ> xdfgetStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList"); }
-    public String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
+    public Map<String, TStockInoutCQ> xdfgetStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList"); }
+    public String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
 
     public Map<String, TStockInoutCQ> xdfgetStockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList"); }
     public String keepStockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList", sq); }
 
-    public Map<String, TStockInoutCQ> xdfgetStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
-    public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
+    public Map<String, TStockInoutCQ> xdfgetStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList"); }
+    public String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
 
     public Map<String, TStockInoutCQ> xdfgetStockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList"); }
     public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList", sq); }
 
-    public Map<String, TStockInoutCQ> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
-    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
-    public Map<String, Object> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter() { return xgetSQuePmMap("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
-    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object pm) { return xkeepSQuePm("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", pm); }
+    public Map<String, TStockInoutCQ> xdfgetStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
+    public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
 
     public Map<String, TStockInoutCQ> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList"); }
     public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList", sq); }
     public Map<String, Object> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfListParameter() { return xgetSQuePmMap("stockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList"); }
     public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfListParameter(Object pm) { return xkeepSQuePm("stockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList", pm); }
+
+    public Map<String, TStockInoutCQ> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList() { return xgetSQueMap("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
+    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq) { return xkeepSQue("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", sq); }
+    public Map<String, Object> xdfgetStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter() { return xgetSQuePmMap("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList"); }
+    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object pm) { return xkeepSQuePm("stockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList", pm); }
 
     /**
      * Add order-by as ascend. <br>
@@ -627,23 +627,23 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
         if (bq.hasConditionQueryTAllocInstB()) {
             uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
         }
+        if (bq.hasConditionQueryTStockInoutByBfStockInoutIdSelf()) {
+            uq.queryTStockInoutByBfStockInoutIdSelf().reflectRelationOnUnionQuery(bq.queryTStockInoutByBfStockInoutIdSelf(), uq.queryTStockInoutByBfStockInoutIdSelf());
+        }
         if (bq.hasConditionQueryTStockInoutByFsStockInoutIdSelf()) {
             uq.queryTStockInoutByFsStockInoutIdSelf().reflectRelationOnUnionQuery(bq.queryTStockInoutByFsStockInoutIdSelf(), uq.queryTStockInoutByFsStockInoutIdSelf());
-        }
-        if (bq.hasConditionQueryTStoreRecordB()) {
-            uq.queryTStoreRecordB().reflectRelationOnUnionQuery(bq.queryTStoreRecordB(), uq.queryTStoreRecordB());
-        }
-        if (bq.hasConditionQueryMProcessType()) {
-            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
         }
         if (bq.hasConditionQueryTMoveRecordB()) {
             uq.queryTMoveRecordB().reflectRelationOnUnionQuery(bq.queryTMoveRecordB(), uq.queryTMoveRecordB());
         }
+        if (bq.hasConditionQueryMProcessType()) {
+            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
+        }
         if (bq.hasConditionQueryTStock()) {
             uq.queryTStock().reflectRelationOnUnionQuery(bq.queryTStock(), uq.queryTStock());
         }
-        if (bq.hasConditionQueryTStockInoutByBfStockInoutIdSelf()) {
-            uq.queryTStockInoutByBfStockInoutIdSelf().reflectRelationOnUnionQuery(bq.queryTStockInoutByBfStockInoutIdSelf(), uq.queryTStockInoutByBfStockInoutIdSelf());
+        if (bq.hasConditionQueryTStoreRecordB()) {
+            uq.queryTStoreRecordB().reflectRelationOnUnionQuery(bq.queryTStoreRecordB(), uq.queryTStoreRecordB());
         }
         if (bq.hasConditionQueryBClassDtlByCorrectType()) {
             uq.queryBClassDtlByCorrectType().reflectRelationOnUnionQuery(bq.queryBClassDtlByCorrectType(), uq.queryBClassDtlByCorrectType());
@@ -678,6 +678,26 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TStockInoutCQ queryTStockInoutByBfStockInoutIdSelf() {
+        return xdfgetConditionQueryTStockInoutByBfStockInoutIdSelf();
+    }
+    public TStockInoutCQ xdfgetConditionQueryTStockInoutByBfStockInoutIdSelf() {
+        String prop = "tStockInoutByBfStockInoutIdSelf";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStockInoutByBfStockInoutIdSelf()); xsetupOuterJoinTStockInoutByBfStockInoutIdSelf(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TStockInoutCQ xcreateQueryTStockInoutByBfStockInoutIdSelf() {
+        String nrp = xresolveNRP("T_STOCK_INOUT", "tStockInoutByBfStockInoutIdSelf"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TStockInoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStockInoutByBfStockInoutIdSelf", nrp);
+    }
+    protected void xsetupOuterJoinTStockInoutByBfStockInoutIdSelf() { xregOutJo("tStockInoutByBfStockInoutIdSelf"); }
+    public boolean hasConditionQueryTStockInoutByBfStockInoutIdSelf() { return xhasQueRlMap("tStockInoutByBfStockInoutIdSelf"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * T_STOCK_INOUT by my FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelf'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -695,46 +715,6 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
     }
     protected void xsetupOuterJoinTStockInoutByFsStockInoutIdSelf() { xregOutJo("tStockInoutByFsStockInoutIdSelf"); }
     public boolean hasConditionQueryTStockInoutByFsStockInoutIdSelf() { return xhasQueRlMap("tStockInoutByFsStockInoutIdSelf"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TStoreRecordBCQ queryTStoreRecordB() {
-        return xdfgetConditionQueryTStoreRecordB();
-    }
-    public TStoreRecordBCQ xdfgetConditionQueryTStoreRecordB() {
-        String prop = "tStoreRecordB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStoreRecordB()); xsetupOuterJoinTStoreRecordB(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TStoreRecordBCQ xcreateQueryTStoreRecordB() {
-        String nrp = xresolveNRP("T_STOCK_INOUT", "tStoreRecordB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TStoreRecordBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStoreRecordB", nrp);
-    }
-    protected void xsetupOuterJoinTStoreRecordB() { xregOutJo("tStoreRecordB"); }
-    public boolean hasConditionQueryTStoreRecordB() { return xhasQueRlMap("tStoreRecordB"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProcessTypeCQ queryMProcessType() {
-        return xdfgetConditionQueryMProcessType();
-    }
-    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
-        String prop = "mProcessType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProcessTypeCQ xcreateQueryMProcessType() {
-        String nrp = xresolveNRP("T_STOCK_INOUT", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
-    }
-    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
-    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -758,6 +738,26 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProcessTypeCQ queryMProcessType() {
+        return xdfgetConditionQueryMProcessType();
+    }
+    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
+        String prop = "mProcessType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProcessTypeCQ xcreateQueryMProcessType() {
+        String nrp = xresolveNRP("T_STOCK_INOUT", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
+    }
+    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
+    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * T_STOCK by my STOCK_ID, named 'TStock'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -778,23 +778,23 @@ public class BsTStockInoutCQ extends AbstractBsTStockInoutCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TStockInoutCQ queryTStockInoutByBfStockInoutIdSelf() {
-        return xdfgetConditionQueryTStockInoutByBfStockInoutIdSelf();
+    public TStoreRecordBCQ queryTStoreRecordB() {
+        return xdfgetConditionQueryTStoreRecordB();
     }
-    public TStockInoutCQ xdfgetConditionQueryTStockInoutByBfStockInoutIdSelf() {
-        String prop = "tStockInoutByBfStockInoutIdSelf";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStockInoutByBfStockInoutIdSelf()); xsetupOuterJoinTStockInoutByBfStockInoutIdSelf(); }
+    public TStoreRecordBCQ xdfgetConditionQueryTStoreRecordB() {
+        String prop = "tStoreRecordB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTStoreRecordB()); xsetupOuterJoinTStoreRecordB(); }
         return xgetQueRlMap(prop);
     }
-    protected TStockInoutCQ xcreateQueryTStockInoutByBfStockInoutIdSelf() {
-        String nrp = xresolveNRP("T_STOCK_INOUT", "tStockInoutByBfStockInoutIdSelf"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TStockInoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStockInoutByBfStockInoutIdSelf", nrp);
+    protected TStoreRecordBCQ xcreateQueryTStoreRecordB() {
+        String nrp = xresolveNRP("T_STOCK_INOUT", "tStoreRecordB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TStoreRecordBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tStoreRecordB", nrp);
     }
-    protected void xsetupOuterJoinTStockInoutByBfStockInoutIdSelf() { xregOutJo("tStockInoutByBfStockInoutIdSelf"); }
-    public boolean hasConditionQueryTStockInoutByBfStockInoutIdSelf() { return xhasQueRlMap("tStockInoutByBfStockInoutIdSelf"); }
+    protected void xsetupOuterJoinTStoreRecordB() { xregOutJo("tStoreRecordB"); }
+    public boolean hasConditionQueryTStoreRecordB() { return xhasQueRlMap("tStoreRecordB"); }
 
     /**
      * Get the condition-query for relation table. <br>

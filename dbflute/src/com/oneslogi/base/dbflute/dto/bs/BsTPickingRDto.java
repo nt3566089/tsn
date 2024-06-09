@@ -33,7 +33,7 @@ import com.oneslogi.base.dbflute.dto.*;
  *     
  *
  * [foreign-property]
- *     bUserByPl1OutUserId, bUserByCaseOutUserId, bUserByShippingRecordOutUserId, tPickingH, bUserByPl2OutUserId, bUserBySlipOutUserId, bUserByPackingOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
+ *     bUserByCaseOutUserId, bUserByPackingOutUserId, tPickingH, bUserByPl1OutUserId, bUserByPl2OutUserId, bUserByShippingRecordOutUserId, bUserBySlipOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
  *
  * [referrer-property]
  *     
@@ -245,16 +245,6 @@ public abstract class BsTPickingRDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BUserDto _bUserByPl1OutUserId;
-
-    public BUserDto getBUserByPl1OutUserId() {
-        return _bUserByPl1OutUserId;
-    }
-
-    public void setBUserByPl1OutUserId(BUserDto bUserByPl1OutUserId) {
-        this._bUserByPl1OutUserId = bUserByPl1OutUserId;
-    }
-
     protected BUserDto _bUserByCaseOutUserId;
 
     public BUserDto getBUserByCaseOutUserId() {
@@ -265,14 +255,14 @@ public abstract class BsTPickingRDto implements Serializable {
         this._bUserByCaseOutUserId = bUserByCaseOutUserId;
     }
 
-    protected BUserDto _bUserByShippingRecordOutUserId;
+    protected BUserDto _bUserByPackingOutUserId;
 
-    public BUserDto getBUserByShippingRecordOutUserId() {
-        return _bUserByShippingRecordOutUserId;
+    public BUserDto getBUserByPackingOutUserId() {
+        return _bUserByPackingOutUserId;
     }
 
-    public void setBUserByShippingRecordOutUserId(BUserDto bUserByShippingRecordOutUserId) {
-        this._bUserByShippingRecordOutUserId = bUserByShippingRecordOutUserId;
+    public void setBUserByPackingOutUserId(BUserDto bUserByPackingOutUserId) {
+        this._bUserByPackingOutUserId = bUserByPackingOutUserId;
     }
 
     protected TPickingHDto _tPickingH;
@@ -285,6 +275,16 @@ public abstract class BsTPickingRDto implements Serializable {
         this._tPickingH = tPickingH;
     }
 
+    protected BUserDto _bUserByPl1OutUserId;
+
+    public BUserDto getBUserByPl1OutUserId() {
+        return _bUserByPl1OutUserId;
+    }
+
+    public void setBUserByPl1OutUserId(BUserDto bUserByPl1OutUserId) {
+        this._bUserByPl1OutUserId = bUserByPl1OutUserId;
+    }
+
     protected BUserDto _bUserByPl2OutUserId;
 
     public BUserDto getBUserByPl2OutUserId() {
@@ -295,6 +295,16 @@ public abstract class BsTPickingRDto implements Serializable {
         this._bUserByPl2OutUserId = bUserByPl2OutUserId;
     }
 
+    protected BUserDto _bUserByShippingRecordOutUserId;
+
+    public BUserDto getBUserByShippingRecordOutUserId() {
+        return _bUserByShippingRecordOutUserId;
+    }
+
+    public void setBUserByShippingRecordOutUserId(BUserDto bUserByShippingRecordOutUserId) {
+        this._bUserByShippingRecordOutUserId = bUserByShippingRecordOutUserId;
+    }
+
     protected BUserDto _bUserBySlipOutUserId;
 
     public BUserDto getBUserBySlipOutUserId() {
@@ -303,16 +313,6 @@ public abstract class BsTPickingRDto implements Serializable {
 
     public void setBUserBySlipOutUserId(BUserDto bUserBySlipOutUserId) {
         this._bUserBySlipOutUserId = bUserBySlipOutUserId;
-    }
-
-    protected BUserDto _bUserByPackingOutUserId;
-
-    public BUserDto getBUserByPackingOutUserId() {
-        return _bUserByPackingOutUserId;
-    }
-
-    public void setBUserByPackingOutUserId(BUserDto bUserByPackingOutUserId) {
-        this._bUserByPackingOutUserId = bUserByPackingOutUserId;
     }
 
     protected BClassDtlDto _bClassDtlByInvoiceCreateFlg;

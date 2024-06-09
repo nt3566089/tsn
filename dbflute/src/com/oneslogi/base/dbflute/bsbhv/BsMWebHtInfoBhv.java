@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_WAREHOUSE, M_CENTER, B_CLASS_DTL(ByDelFlg)
+ *     M_CENTER, M_CLIENT, M_WAREHOUSE, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mWarehouse, mCenter, bClassDtlByDelFlg
+ *     mCenter, mClient, mWarehouse, bClassDtlByDelFlg
  *
  * [referrer property]
  *     
@@ -418,6 +418,14 @@ public abstract class BsMWebHtInfoBhv extends AbstractBehaviorWritable<MWebHtInf
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param mWebHtInfoList The list of mWebHtInfo. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<MWebHtInfo> mWebHtInfoList)
+    { return helpPulloutInternally(mWebHtInfoList, "mCenter"); }
+
+    /**
      * Pull out the list of foreign table 'MClient'.
      * @param mWebHtInfoList The list of mWebHtInfo. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -432,14 +440,6 @@ public abstract class BsMWebHtInfoBhv extends AbstractBehaviorWritable<MWebHtInf
      */
     public List<MWarehouse> pulloutMWarehouse(List<MWebHtInfo> mWebHtInfoList)
     { return helpPulloutInternally(mWebHtInfoList, "mWarehouse"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param mWebHtInfoList The list of mWebHtInfo. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<MWebHtInfo> mWebHtInfoList)
-    { return helpPulloutInternally(mWebHtInfoList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

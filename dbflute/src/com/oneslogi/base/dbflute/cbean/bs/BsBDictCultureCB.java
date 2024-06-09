@@ -265,35 +265,6 @@ public class BsBDictCultureCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BDictNss _nssBDict;
-    public BDictNss xdfgetNssBDict() {
-        if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
-        return _nssBDict;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_DICT by my DICT_ID, named 'BDict'.
-     * <pre>
-     * <span style="color: #0000C0">bDictCultureBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BDict()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bDictCulture</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bDictCulture</span>.<span style="color: #CC4747">getBDict()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BDictNss setupSelect_BDict() {
-        assertSetupSelectPurpose("bDict");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnDictId();
-        }
-        doSetupSelect(() -> query().queryBDict());
-        if (_nssBDict == null || !_nssBDict.hasConditionQuery())
-        { _nssBDict = new BDictNss(query().queryBDict()); }
-        return _nssBDict;
-    }
-
     protected BCultureNss _nssBCulture;
     public BCultureNss xdfgetNssBCulture() {
         if (_nssBCulture == null) { _nssBCulture = new BCultureNss(null); }
@@ -321,6 +292,35 @@ public class BsBDictCultureCB extends AbstractConditionBean {
         if (_nssBCulture == null || !_nssBCulture.hasConditionQuery())
         { _nssBCulture = new BCultureNss(query().queryBCulture()); }
         return _nssBCulture;
+    }
+
+    protected BDictNss _nssBDict;
+    public BDictNss xdfgetNssBDict() {
+        if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
+        return _nssBDict;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_DICT by my DICT_ID, named 'BDict'.
+     * <pre>
+     * <span style="color: #0000C0">bDictCultureBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BDict()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bDictCulture</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bDictCulture</span>.<span style="color: #CC4747">getBDict()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BDictNss setupSelect_BDict() {
+        assertSetupSelectPurpose("bDict");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnDictId();
+        }
+        doSetupSelect(() -> query().queryBDict());
+        if (_nssBDict == null || !_nssBDict.hasConditionQuery())
+        { _nssBDict = new BDictNss(query().queryBDict()); }
+        return _nssBDict;
     }
 
     protected MHtDictCultureNss _nssMHtDictCultureAsOne;
@@ -390,8 +390,8 @@ public class BsBDictCultureCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BDictCultureCQ> {
-        protected BDictCB.HpSpecification _bDict;
         protected BCultureCB.HpSpecification _bCulture;
+        protected BDictCB.HpSpecification _bDict;
         protected MHtDictCultureCB.HpSpecification _mHtDictCultureAsOne;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<BDictCultureCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -467,37 +467,17 @@ public class BsBDictCultureCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnDictCultureId(); // PK
-            if (qyCall().qy().hasConditionQueryBDict()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
-                columnDictId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBCulture()
                     || qyCall().qy().xgetReferrerQuery() instanceof BCultureCQ) {
                 columnCultureId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryBDict()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
+                columnDictId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "B_DICT_CULTURE"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_DICT by my DICT_ID, named 'BDict'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BDictCB.HpSpecification specifyBDict() {
-            assertRelation("bDict");
-            if (_bDict == null) {
-                _bDict = new BDictCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBDict()
-                                    , () -> _qyCall.qy().queryBDict())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bDict.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBDict()
-                      , () -> xsyncQyCall().qy().queryBDict()));
-                }
-            }
-            return _bDict;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -517,6 +497,26 @@ public class BsBDictCultureCB extends AbstractConditionBean {
                 }
             }
             return _bCulture;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_DICT by my DICT_ID, named 'BDict'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BDictCB.HpSpecification specifyBDict() {
+            assertRelation("bDict");
+            if (_bDict == null) {
+                _bDict = new BDictCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBDict()
+                                    , () -> _qyCall.qy().queryBDict())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bDict.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBDict()
+                      , () -> xsyncQyCall().qy().queryBDict()));
+                }
+            }
+            return _bDict;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -458,14 +458,14 @@ public class BsMClientCenterCQ extends AbstractBsMClientCenterCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MClientCenterCQ bq = (MClientCenterCQ)bqs;
         MClientCenterCQ uq = (MClientCenterCQ)uqs;
-        if (bq.hasConditionQueryMCustomer()) {
-            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        if (bq.hasConditionQueryMCustomer()) {
+            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
         }
         if (bq.hasConditionQueryBClassDtlByBatchProgressFlg()) {
             uq.queryBClassDtlByBatchProgressFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByBatchProgressFlg(), uq.queryBClassDtlByBatchProgressFlg());
@@ -483,23 +483,23 @@ public class BsMClientCenterCQ extends AbstractBsMClientCenterCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCustomerCQ queryMCustomer() {
-        return xdfgetConditionQueryMCustomer();
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
     }
-    public MCustomerCQ xdfgetConditionQueryMCustomer() {
-        String prop = "mCustomer";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
         return xgetQueRlMap(prop);
     }
-    protected MCustomerCQ xcreateQueryMCustomer() {
-        String nrp = xresolveNRP("M_CLIENT_CENTER", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("M_CLIENT_CENTER", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
     }
-    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
-    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -523,23 +523,23 @@ public class BsMClientCenterCQ extends AbstractBsMClientCenterCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
+    public MCustomerCQ queryMCustomer() {
+        return xdfgetConditionQueryMCustomer();
     }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+    public MCustomerCQ xdfgetConditionQueryMCustomer() {
+        String prop = "mCustomer";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
         return xgetQueRlMap(prop);
     }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("M_CLIENT_CENTER", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    protected MCustomerCQ xcreateQueryMCustomer() {
+        String nrp = xresolveNRP("M_CLIENT_CENTER", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
     }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
+    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
 
     /**
      * Get the condition-query for relation table. <br>

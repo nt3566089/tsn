@@ -20,18 +20,18 @@ public class TTrimallocschkriNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
+     */
+    public void withTTrimallocH() {
+        _query.xdoNss(() -> _query.queryTTrimallocH());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TYtrsodetailNss withTYtrsodetail() {
         _query.xdoNss(() -> _query.queryTYtrsodetail());
         return new TYtrsodetailNss(_query.queryTYtrsodetail());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
-     */
-    public void withTTrimallocH() {
-        _query.xdoNss(() -> _query.queryTTrimallocH());
     }
 }

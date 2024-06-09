@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_LOCATION, M_WAREHOUSE, T_RECEIVE_PLAN_H, M_PRODUCT, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
+ *     M_LOCATION, M_WAREHOUSE, M_PRODUCT, T_RECEIVE_PLAN_H, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
  *
  * [referrer-table]
  *     T_STORE_RECORD_B, T_RECEIVE_PLAN_SPARE, T_TRRCVDETAIL
  *
  * [foreign-property]
- *     mLocation, mWarehouse, tReceivePlanH, mProduct, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
+ *     mLocation, mWarehouse, mProduct, tReceivePlanH, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
  *
  * [referrer-property]
  *     tStoreRecordBList
@@ -209,16 +209,6 @@ public abstract class BsTReceivePlanBDto implements Serializable {
         this._mWarehouse = mWarehouse;
     }
 
-    protected TReceivePlanHDto _tReceivePlanH;
-
-    public TReceivePlanHDto getTReceivePlanH() {
-        return _tReceivePlanH;
-    }
-
-    public void setTReceivePlanH(TReceivePlanHDto tReceivePlanH) {
-        this._tReceivePlanH = tReceivePlanH;
-    }
-
     protected MProductDto _mProduct;
 
     public MProductDto getMProduct() {
@@ -227,6 +217,16 @@ public abstract class BsTReceivePlanBDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
+    }
+
+    protected TReceivePlanHDto _tReceivePlanH;
+
+    public TReceivePlanHDto getTReceivePlanH() {
+        return _tReceivePlanH;
+    }
+
+    public void setTReceivePlanH(TReceivePlanHDto tReceivePlanH) {
+        this._tReceivePlanH = tReceivePlanH;
     }
 
     protected BClassDtlDto _bClassDtlByErrorFlg;

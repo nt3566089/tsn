@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_PROCESS_TYPE, T_LOT, M_LOCATION, M_STOCK_TYPE, M_CUSTOMER, M_CLIENT, M_CENTER, M_WAREHOUSE
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, T_LOT, M_PROCESS_TYPE, M_PRODUCT, M_LOCATION, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mProcessType, tLot, mLocation, mStockType, mCustomerByDepositId, mClient, mCustomerBySupplierId, mCenter, mWarehouse
+ *     mCenter, mClient, mCustomerByDepositId, tLot, mProcessType, mProduct, mLocation, mStockType, mCustomerBySupplierId, mWarehouse
  *
  * [referrer property]
  *     
@@ -59,11 +59,32 @@ public class LoaderOfWHtReceiveNoPlanInsp {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMProduct _foreignMProductLoader;
-    public LoaderOfMProduct pulloutMProduct() {
-        if (_foreignMProductLoader == null)
-        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
-        return _foreignMProductLoader;
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
+    }
+
+    protected LoaderOfMClient _foreignMClientLoader;
+    public LoaderOfMClient pulloutMClient() {
+        if (_foreignMClientLoader == null)
+        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
+        return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
+    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
+        if (_foreignMCustomerByDepositIdLoader == null)
+        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
+        return _foreignMCustomerByDepositIdLoader;
+    }
+
+    protected LoaderOfTLot _foreignTLotLoader;
+    public LoaderOfTLot pulloutTLot() {
+        if (_foreignTLotLoader == null)
+        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
+        return _foreignTLotLoader;
     }
 
     protected LoaderOfMProcessType _foreignMProcessTypeLoader;
@@ -73,11 +94,11 @@ public class LoaderOfWHtReceiveNoPlanInsp {
         return _foreignMProcessTypeLoader;
     }
 
-    protected LoaderOfTLot _foreignTLotLoader;
-    public LoaderOfTLot pulloutTLot() {
-        if (_foreignTLotLoader == null)
-        { _foreignTLotLoader = new LoaderOfTLot().ready(myBhv().pulloutTLot(_selectedList), _selector); }
-        return _foreignTLotLoader;
+    protected LoaderOfMProduct _foreignMProductLoader;
+    public LoaderOfMProduct pulloutMProduct() {
+        if (_foreignMProductLoader == null)
+        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
+        return _foreignMProductLoader;
     }
 
     protected LoaderOfMLocation _foreignMLocationLoader;
@@ -94,32 +115,11 @@ public class LoaderOfWHtReceiveNoPlanInsp {
         return _foreignMStockTypeLoader;
     }
 
-    protected LoaderOfMCustomer _foreignMCustomerByDepositIdLoader;
-    public LoaderOfMCustomer pulloutMCustomerByDepositId() {
-        if (_foreignMCustomerByDepositIdLoader == null)
-        { _foreignMCustomerByDepositIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerByDepositId(_selectedList), _selector); }
-        return _foreignMCustomerByDepositIdLoader;
-    }
-
-    protected LoaderOfMClient _foreignMClientLoader;
-    public LoaderOfMClient pulloutMClient() {
-        if (_foreignMClientLoader == null)
-        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
-        return _foreignMClientLoader;
-    }
-
     protected LoaderOfMCustomer _foreignMCustomerBySupplierIdLoader;
     public LoaderOfMCustomer pulloutMCustomerBySupplierId() {
         if (_foreignMCustomerBySupplierIdLoader == null)
         { _foreignMCustomerBySupplierIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerBySupplierId(_selectedList), _selector); }
         return _foreignMCustomerBySupplierIdLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
     }
 
     protected LoaderOfMWarehouse _foreignMWarehouseLoader;

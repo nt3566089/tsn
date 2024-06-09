@@ -29,20 +29,20 @@ public class TSerialNoNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MClientNss withMClient() {
         _query.xdoNss(() -> _query.queryMClient());
         return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
 }

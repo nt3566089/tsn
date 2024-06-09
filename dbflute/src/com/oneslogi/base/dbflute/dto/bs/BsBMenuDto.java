@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_DICT, B_SCREEN, B_MENU_GRP, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
+ *     B_DICT, B_MENU_GRP, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bDict, bScreen, bMenuGrp, vDict, vHtDict, bClassDtlByTargetWindow
+ *     bDict, bMenuGrp, bScreen, vDict, vHtDict, bClassDtlByTargetWindow
  *
  * [referrer-property]
  *     
@@ -159,16 +159,6 @@ public abstract class BsBMenuDto implements Serializable {
         this._bDict = bDict;
     }
 
-    protected BScreenDto _bScreen;
-
-    public BScreenDto getBScreen() {
-        return _bScreen;
-    }
-
-    public void setBScreen(BScreenDto bScreen) {
-        this._bScreen = bScreen;
-    }
-
     protected BMenuGrpDto _bMenuGrp;
 
     public BMenuGrpDto getBMenuGrp() {
@@ -177,6 +167,16 @@ public abstract class BsBMenuDto implements Serializable {
 
     public void setBMenuGrp(BMenuGrpDto bMenuGrp) {
         this._bMenuGrp = bMenuGrp;
+    }
+
+    protected BScreenDto _bScreen;
+
+    public BScreenDto getBScreen() {
+        return _bScreen;
+    }
+
+    public void setBScreen(BScreenDto bScreen) {
+        this._bScreen = bScreen;
     }
 
     protected VDictDto _vDict;

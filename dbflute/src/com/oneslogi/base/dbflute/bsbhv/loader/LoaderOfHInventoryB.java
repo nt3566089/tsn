@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     H_MOVE_H, H_STOCK, M_SHAPE, H_INVENTORY_H, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
+ *     H_INVENTORY_H, H_MOVE_H, M_SHAPE, H_STOCK, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     hMoveH, hStock, mShape, hInventoryH, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
+ *     hInventoryH, hMoveH, mShape, hStock, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfHInventoryB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfHInventoryH _foreignHInventoryHLoader;
+    public LoaderOfHInventoryH pulloutHInventoryH() {
+        if (_foreignHInventoryHLoader == null)
+        { _foreignHInventoryHLoader = new LoaderOfHInventoryH().ready(myBhv().pulloutHInventoryH(_selectedList), _selector); }
+        return _foreignHInventoryHLoader;
+    }
+
     protected LoaderOfHMoveH _foreignHMoveHLoader;
     public LoaderOfHMoveH pulloutHMoveH() {
         if (_foreignHMoveHLoader == null)
         { _foreignHMoveHLoader = new LoaderOfHMoveH().ready(myBhv().pulloutHMoveH(_selectedList), _selector); }
         return _foreignHMoveHLoader;
-    }
-
-    protected LoaderOfHStock _foreignHStockLoader;
-    public LoaderOfHStock pulloutHStock() {
-        if (_foreignHStockLoader == null)
-        { _foreignHStockLoader = new LoaderOfHStock().ready(myBhv().pulloutHStock(_selectedList), _selector); }
-        return _foreignHStockLoader;
     }
 
     protected LoaderOfMShape _foreignMShapeLoader;
@@ -80,11 +80,11 @@ public class LoaderOfHInventoryB {
         return _foreignMShapeLoader;
     }
 
-    protected LoaderOfHInventoryH _foreignHInventoryHLoader;
-    public LoaderOfHInventoryH pulloutHInventoryH() {
-        if (_foreignHInventoryHLoader == null)
-        { _foreignHInventoryHLoader = new LoaderOfHInventoryH().ready(myBhv().pulloutHInventoryH(_selectedList), _selector); }
-        return _foreignHInventoryHLoader;
+    protected LoaderOfHStock _foreignHStockLoader;
+    public LoaderOfHStock pulloutHStock() {
+        if (_foreignHStockLoader == null)
+        { _foreignHStockLoader = new LoaderOfHStock().ready(myBhv().pulloutHStock(_selectedList), _selector); }
+        return _foreignHStockLoader;
     }
 
     protected LoaderOfMStockType _foreignMStockTypeLoader;

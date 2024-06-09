@@ -79,10 +79,10 @@ public class WHtShippingDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMProduct(), (et, vl) -> ((WHtShipping)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMCenter(), (et, vl) -> ((WHtShipping)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMBox(), (et, vl) -> ((WHtShipping)et).setMBox((MBox)vl), "MBox");
+        setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMCenter(), (et, vl) -> ((WHtShipping)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMClient(), (et, vl) -> ((WHtShipping)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((WHtShipping)et).getMProduct(), (et, vl) -> ((WHtShipping)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -320,12 +320,12 @@ public class WHtShippingDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_BOX by my BOX_ID, named 'MBox'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_HT_SHIPPING_FK2", "MProduct", this, MProductDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtShippingList", false);
+    public ForeignInfo foreignMBox() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
+        return cfi("W_HT_SHIPPING_FK3", "MBox", this, MBoxDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtShippingList", false);
     }
     /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -336,20 +336,20 @@ public class WHtShippingDbm extends AbstractDBMeta {
         return cfi("W_HT_SHIPPING_FK4", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtShippingList", false);
     }
     /**
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMBox() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("W_HT_SHIPPING_FK3", "MBox", this, MBoxDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtShippingList", false);
-    }
-    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_HT_SHIPPING_FK1", "MClient", this, MClientDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtShippingList", false);
+        return cfi("W_HT_SHIPPING_FK1", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtShippingList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("W_HT_SHIPPING_FK2", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtShippingList", false);
     }
 
     // -----------------------------------------------------

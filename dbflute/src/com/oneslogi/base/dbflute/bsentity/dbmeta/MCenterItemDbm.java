@@ -69,8 +69,8 @@ public class MCenterItemDbm extends AbstractDBMeta {
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((MCenterItem)et).getMCenter(), (et, vl) -> ((MCenterItem)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((MCenterItem)et).getBItem(), (et, vl) -> ((MCenterItem)et).setBItem((BItem)vl), "BItem");
         setupEfpg(_efpgMap, et -> ((MCenterItem)et).getBDict(), (et, vl) -> ((MCenterItem)et).setBDict((BDict)vl), "BDict");
+        setupEfpg(_efpgMap, et -> ((MCenterItem)et).getBItem(), (et, vl) -> ((MCenterItem)et).setBItem((BItem)vl), "BItem");
         setupEfpg(_efpgMap, et -> ((MCenterItem)et).getVDict(), (et, vl) -> ((MCenterItem)et).setVDict((VDict)vl), "VDict");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -251,20 +251,20 @@ public class MCenterItemDbm extends AbstractDBMeta {
         return cfi("M_CENTER_ITEM_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCenterItemList", false);
     }
     /**
-     * B_ITEM by my ITEM_ID, named 'BItem'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBItem() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnItemId(), BItemDbm.getInstance().columnItemId());
-        return cfi("M_CENTER_ITEM_FK3", "BItem", this, BItemDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterItemList", false);
-    }
-    /**
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("M_CENTER_ITEM_FK2", "BDict", this, BDictDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MCenterItemList", false);
+        return cfi("M_CENTER_ITEM_FK2", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterItemList", false);
+    }
+    /**
+     * B_ITEM by my ITEM_ID, named 'BItem'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBItem() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnItemId(), BItemDbm.getInstance().columnItemId());
+        return cfi("M_CENTER_ITEM_FK3", "BItem", this, BItemDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MCenterItemList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

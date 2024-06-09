@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_STOCK, M_LOCATION, T_YTRSODETAIL
+ *     M_LOCATION, T_STOCK, T_YTRSODETAIL
  *
  * [referrer-table]
  *     T_TR_PICKLIST
  *
  * [foreign-property]
- *     tStock, mLocation, tYtrsodetail
+ *     mLocation, tStock, tYtrsodetail
  *
  * [referrer-property]
  *     tTrPicklistList
@@ -213,16 +213,6 @@ public abstract class BsTTrpickdetailDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TStockDto _tStock;
-
-    public TStockDto getTStock() {
-        return _tStock;
-    }
-
-    public void setTStock(TStockDto tStock) {
-        this._tStock = tStock;
-    }
-
     protected MLocationDto _mLocation;
 
     public MLocationDto getMLocation() {
@@ -231,6 +221,16 @@ public abstract class BsTTrpickdetailDto implements Serializable {
 
     public void setMLocation(MLocationDto mLocation) {
         this._mLocation = mLocation;
+    }
+
+    protected TStockDto _tStock;
+
+    public TStockDto getTStock() {
+        return _tStock;
+    }
+
+    public void setTStock(TStockDto tStock) {
+        this._tStock = tStock;
     }
 
     protected TYtrsodetailDto _tYtrsodetail;

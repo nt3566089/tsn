@@ -252,35 +252,6 @@ public class BsTPicMthdRcmdCartCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TPicMthdRcmdNss _nssTPicMthdRcmd;
-    public TPicMthdRcmdNss xdfgetNssTPicMthdRcmd() {
-        if (_nssTPicMthdRcmd == null) { _nssTPicMthdRcmd = new TPicMthdRcmdNss(null); }
-        return _nssTPicMthdRcmd;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
-     * <pre>
-     * <span style="color: #0000C0">tPicMthdRcmdCartBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPicMthdRcmd()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPicMthdRcmdCart</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPicMthdRcmdCart</span>.<span style="color: #CC4747">getTPicMthdRcmd()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TPicMthdRcmdNss setupSelect_TPicMthdRcmd() {
-        assertSetupSelectPurpose("tPicMthdRcmd");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPicMthdRcmdId();
-        }
-        doSetupSelect(() -> query().queryTPicMthdRcmd());
-        if (_nssTPicMthdRcmd == null || !_nssTPicMthdRcmd.hasConditionQuery())
-        { _nssTPicMthdRcmd = new TPicMthdRcmdNss(query().queryTPicMthdRcmd()); }
-        return _nssTPicMthdRcmd;
-    }
-
     protected TPackingHNss _nssTPackingH;
     public TPackingHNss xdfgetNssTPackingH() {
         if (_nssTPackingH == null) { _nssTPackingH = new TPackingHNss(null); }
@@ -308,6 +279,35 @@ public class BsTPicMthdRcmdCartCB extends AbstractConditionBean {
         if (_nssTPackingH == null || !_nssTPackingH.hasConditionQuery())
         { _nssTPackingH = new TPackingHNss(query().queryTPackingH()); }
         return _nssTPackingH;
+    }
+
+    protected TPicMthdRcmdNss _nssTPicMthdRcmd;
+    public TPicMthdRcmdNss xdfgetNssTPicMthdRcmd() {
+        if (_nssTPicMthdRcmd == null) { _nssTPicMthdRcmd = new TPicMthdRcmdNss(null); }
+        return _nssTPicMthdRcmd;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
+     * <pre>
+     * <span style="color: #0000C0">tPicMthdRcmdCartBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPicMthdRcmd()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPicMthdRcmdCart</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPicMthdRcmdCart</span>.<span style="color: #CC4747">getTPicMthdRcmd()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TPicMthdRcmdNss setupSelect_TPicMthdRcmd() {
+        assertSetupSelectPurpose("tPicMthdRcmd");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnPicMthdRcmdId();
+        }
+        doSetupSelect(() -> query().queryTPicMthdRcmd());
+        if (_nssTPicMthdRcmd == null || !_nssTPicMthdRcmd.hasConditionQuery())
+        { _nssTPicMthdRcmd = new TPicMthdRcmdNss(query().queryTPicMthdRcmd()); }
+        return _nssTPicMthdRcmd;
     }
 
     // [DBFlute-0.7.4]
@@ -351,8 +351,8 @@ public class BsTPicMthdRcmdCartCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPicMthdRcmdCartCQ> {
-        protected TPicMthdRcmdCB.HpSpecification _tPicMthdRcmd;
         protected TPackingHCB.HpSpecification _tPackingH;
+        protected TPicMthdRcmdCB.HpSpecification _tPicMthdRcmd;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TPicMthdRcmdCartCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -427,37 +427,17 @@ public class BsTPicMthdRcmdCartCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPicMthdRcmdCartId(); // PK
-            if (qyCall().qy().hasConditionQueryTPicMthdRcmd()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TPicMthdRcmdCQ) {
-                columnPicMthdRcmdId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryTPackingH()
                     || qyCall().qy().xgetReferrerQuery() instanceof TPackingHCQ) {
                 columnPackingHId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTPicMthdRcmd()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TPicMthdRcmdCQ) {
+                columnPicMthdRcmdId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_PIC_MTHD_RCMD_CART"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TPicMthdRcmdCB.HpSpecification specifyTPicMthdRcmd() {
-            assertRelation("tPicMthdRcmd");
-            if (_tPicMthdRcmd == null) {
-                _tPicMthdRcmd = new TPicMthdRcmdCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPicMthdRcmd()
-                                    , () -> _qyCall.qy().queryTPicMthdRcmd())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tPicMthdRcmd.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPicMthdRcmd()
-                      , () -> xsyncQyCall().qy().queryTPicMthdRcmd()));
-                }
-            }
-            return _tPicMthdRcmd;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * T_PACKING_H by my PACKING_H_ID, named 'TPackingH'.
@@ -477,6 +457,26 @@ public class BsTPicMthdRcmdCartCB extends AbstractConditionBean {
                 }
             }
             return _tPackingH;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TPicMthdRcmdCB.HpSpecification specifyTPicMthdRcmd() {
+            assertRelation("tPicMthdRcmd");
+            if (_tPicMthdRcmd == null) {
+                _tPicMthdRcmd = new TPicMthdRcmdCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPicMthdRcmd()
+                                    , () -> _qyCall.qy().queryTPicMthdRcmd())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tPicMthdRcmd.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPicMthdRcmd()
+                      , () -> xsyncQyCall().qy().queryTPicMthdRcmd()));
+                }
+            }
+            return _tPicMthdRcmd;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

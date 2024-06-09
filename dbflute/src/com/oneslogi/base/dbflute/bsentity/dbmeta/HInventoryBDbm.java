@@ -95,10 +95,10 @@ public class HInventoryBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getHMoveH(), (et, vl) -> ((HInventoryB)et).setHMoveH((HMoveH)vl), "HMoveH");
-        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getHStock(), (et, vl) -> ((HInventoryB)et).setHStock((HStock)vl), "HStock");
-        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getMShape(), (et, vl) -> ((HInventoryB)et).setMShape((MShape)vl), "MShape");
         setupEfpg(_efpgMap, et -> ((HInventoryB)et).getHInventoryH(), (et, vl) -> ((HInventoryB)et).setHInventoryH((HInventoryH)vl), "HInventoryH");
+        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getHMoveH(), (et, vl) -> ((HInventoryB)et).setHMoveH((HMoveH)vl), "HMoveH");
+        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getMShape(), (et, vl) -> ((HInventoryB)et).setMShape((MShape)vl), "MShape");
+        setupEfpg(_efpgMap, et -> ((HInventoryB)et).getHStock(), (et, vl) -> ((HInventoryB)et).setHStock((HStock)vl), "HStock");
         setupEfpg(_efpgMap, et -> ((HInventoryB)et).getMStockType(), (et, vl) -> ((HInventoryB)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((HInventoryB)et).getBClassDtlByInputType(), (et, vl) -> ((HInventoryB)et).setBClassDtlByInputType((BClassDtl)vl), "BClassDtlByInputType");
         setupEfpg(_efpgMap, et -> ((HInventoryB)et).getBClassDtlByStockAdjustFlg(), (et, vl) -> ((HInventoryB)et).setBClassDtlByStockAdjustFlg((BClassDtl)vl), "BClassDtlByStockAdjustFlg");
@@ -451,20 +451,20 @@ public class HInventoryBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignHInventoryH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnInventoryHId(), HInventoryHDbm.getInstance().columnInventoryHId());
+        return cfi("H_INVENTORY_B_FK2", "HInventoryH", this, HInventoryHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HInventoryBList", false);
+    }
+    /**
      * H_MOVE_H by my MOVE_INST_H_ID, named 'HMoveH'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignHMoveH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMoveInstHId(), HMoveHDbm.getInstance().columnMoveInstHId());
-        return cfi("H_INVENTORY_B_FK5", "HMoveH", this, HMoveHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HInventoryBList", false);
-    }
-    /**
-     * H_STOCK by my STOCK_ID, named 'HStock'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignHStock() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), HStockDbm.getInstance().columnStockId());
-        return cfi("H_INVENTORY_B_FK1", "HStock", this, HStockDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HInventoryBList", false);
+        return cfi("H_INVENTORY_B_FK5", "HMoveH", this, HMoveHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HInventoryBList", false);
     }
     /**
      * M_SHAPE by my SHAPE_ID, named 'MShape'.
@@ -475,12 +475,12 @@ public class HInventoryBDbm extends AbstractDBMeta {
         return cfi("H_INVENTORY_B_FK3", "MShape", this, MShapeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "HInventoryBList", false);
     }
     /**
-     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * H_STOCK by my STOCK_ID, named 'HStock'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignHInventoryH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnInventoryHId(), HInventoryHDbm.getInstance().columnInventoryHId());
-        return cfi("H_INVENTORY_B_FK2", "HInventoryH", this, HInventoryHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "HInventoryBList", false);
+    public ForeignInfo foreignHStock() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), HStockDbm.getInstance().columnStockId());
+        return cfi("H_INVENTORY_B_FK1", "HStock", this, HStockDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "HInventoryBList", false);
     }
     /**
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.

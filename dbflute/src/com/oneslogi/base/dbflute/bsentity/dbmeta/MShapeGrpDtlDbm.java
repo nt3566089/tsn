@@ -68,8 +68,8 @@ public class MShapeGrpDtlDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getMShape(), (et, vl) -> ((MShapeGrpDtl)et).setMShape((MShape)vl), "MShape");
         setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getMShapeGrp(), (et, vl) -> ((MShapeGrpDtl)et).setMShapeGrp((MShapeGrp)vl), "MShapeGrp");
+        setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getMShape(), (et, vl) -> ((MShapeGrpDtl)et).setMShape((MShape)vl), "MShape");
         setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getBClassDtlByCasePickFlg(), (et, vl) -> ((MShapeGrpDtl)et).setBClassDtlByCasePickFlg((BClassDtl)vl), "BClassDtlByCasePickFlg");
         setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getBClassDtlByEmReplenishShapeFlg(), (et, vl) -> ((MShapeGrpDtl)et).setBClassDtlByEmReplenishShapeFlg((BClassDtl)vl), "BClassDtlByEmReplenishShapeFlg");
         setupEfpg(_efpgMap, et -> ((MShapeGrpDtl)et).getBClassDtlByDelFlg(), (et, vl) -> ((MShapeGrpDtl)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
@@ -233,20 +233,20 @@ public class MShapeGrpDtlDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMShape() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
-        return cfi("M_SHAPE_GRP_DTL_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MShapeGrpDtlList", false);
-    }
-    /**
      * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMShapeGrp() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeGrpId(), MShapeGrpDbm.getInstance().columnShapeGrpId());
-        return cfi("M_SHAPE_GRP_DTL_FK2", "MShapeGrp", this, MShapeGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MShapeGrpDtlList", false);
+        return cfi("M_SHAPE_GRP_DTL_FK2", "MShapeGrp", this, MShapeGrpDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MShapeGrpDtlList", false);
+    }
+    /**
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMShape() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
+        return cfi("M_SHAPE_GRP_DTL_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MShapeGrpDtlList", false);
     }
     /**
      * B_CLASS_DTL by my CASE_PICK_FLG, named 'BClassDtlByCasePickFlg'.

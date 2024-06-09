@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_DICT, M_CLIENT, B_SCREEN, V_DICT, V_HT_DICT
+ *     M_CLIENT, B_DICT, B_SCREEN, V_DICT, V_HT_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bDict, mClient, bScreen, vDict, vHtDict
+ *     mClient, bDict, bScreen, vDict, vHtDict
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBDict;
     protected boolean _suppressMClient;
+    protected boolean _suppressBDict;
     protected boolean _suppressBScreen;
     protected boolean _suppressVDict;
     protected boolean _suppressVHtDict;
@@ -147,32 +147,6 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBDict && entity.getBDict() != null) {
-            BDict relationEntity = entity.getBDict();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BDictDto relationDto = (BDictDto)cachedDto;
-                dto.setBDict(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientScreenList().add(dto);
-                }
-            } else {
-                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientScreenList();
-                BDictDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBDict(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientScreenList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBDict());
-                }
-            }
-        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -196,6 +170,32 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
+        if (!_suppressBDict && entity.getBDict() != null) {
+            BDict relationEntity = entity.getBDict();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BDictDto relationDto = (BDictDto)cachedDto;
+                dto.setBDict(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientScreenList().add(dto);
+                }
+            } else {
+                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientScreenList();
+                BDictDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBDict(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientScreenList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBDict());
                 }
             }
         };
@@ -360,32 +360,6 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBDict && dto.getBDict() != null) {
-            BDictDto relationDto = dto.getBDict();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BDict relationEntity = (BDict)cachedEntity;
-                entity.setBDict(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientScreenList().add(entity);
-                }
-            } else {
-                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientScreenList();
-                BDict relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBDict(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientScreenList().add(entity);
-                }
-                if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBDict());
-                }
-            }
-        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -409,6 +383,32 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
                 }
                 if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
+        if (!_suppressBDict && dto.getBDict() != null) {
+            BDictDto relationDto = dto.getBDict();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BDict relationEntity = (BDict)cachedEntity;
+                entity.setBDict(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientScreenList().add(entity);
+                }
+            } else {
+                BDictDtoMapper mapper = new BDictDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientScreenList();
+                BDict relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBDict(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientScreenList().add(entity);
+                }
+                if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBDict());
                 }
             }
         };
@@ -602,11 +602,11 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBDict() {
-        _suppressBDict = true;
-    }
     public void suppressMClient() {
         _suppressMClient = true;
+    }
+    public void suppressBDict() {
+        _suppressBDict = true;
     }
     public void suppressBScreen() {
         _suppressBScreen = true;
@@ -618,15 +618,15 @@ public abstract class BsMClientScreenDtoMapper implements DtoMapper<MClientScree
         _suppressVHtDict = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBDict();
         suppressMClient();
+        suppressBDict();
         suppressBScreen();
         suppressVDict();
         suppressVHtDict();
     }
     protected void doSuppressClear() { // internal
-        _suppressBDict = false;
         _suppressMClient = false;
+        _suppressBDict = false;
         _suppressBScreen = false;
         _suppressVDict = false;
         _suppressVHtDict = false;

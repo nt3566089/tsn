@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mClient, mCenter
+ *     mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfMMfwhxitem {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMProduct _foreignMProductLoader;
-    public LoaderOfMProduct pulloutMProduct() {
-        if (_foreignMProductLoader == null)
-        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
-        return _foreignMProductLoader;
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
     }
 
     protected LoaderOfMClient _foreignMClientLoader;
@@ -73,11 +73,11 @@ public class LoaderOfMMfwhxitem {
         return _foreignMClientLoader;
     }
 
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
+    protected LoaderOfMProduct _foreignMProductLoader;
+    public LoaderOfMProduct pulloutMProduct() {
+        if (_foreignMProductLoader == null)
+        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
+        return _foreignMProductLoader;
     }
 
     // ===================================================================================

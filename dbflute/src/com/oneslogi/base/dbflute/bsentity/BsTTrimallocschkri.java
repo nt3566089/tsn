@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSODETAIL, T_TRIMALLOC_H
+ *     T_TRIMALLOC_H, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TRIMALLOCADJUST
  *
  * [foreign property]
- *     tYtrsodetail, tTrimallocH
+ *     tTrimallocH, tYtrsodetail
  *
  * [referrer property]
  *     tTrimallocadjustList
@@ -283,25 +283,6 @@ public abstract class BsTTrimallocschkri extends AbstractEntity implements Domai
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'. */
-    protected TYtrsodetail _tYtrsodetail;
-
-    /**
-     * [get] T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'. <br>
-     * @return The entity of foreign property 'TYtrsodetail'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TYtrsodetail getTYtrsodetail() {
-        return _tYtrsodetail;
-    }
-
-    /**
-     * [set] T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
-     * @param tYtrsodetail The entity of foreign property 'TYtrsodetail'. (NullAllowed)
-     */
-    public void setTYtrsodetail(TYtrsodetail tYtrsodetail) {
-        _tYtrsodetail = tYtrsodetail;
-    }
-
     /** T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'. */
     protected TTrimallocH _tTrimallocH;
 
@@ -319,6 +300,25 @@ public abstract class BsTTrimallocschkri extends AbstractEntity implements Domai
      */
     public void setTTrimallocH(TTrimallocH tTrimallocH) {
         _tTrimallocH = tTrimallocH;
+    }
+
+    /** T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'. */
+    protected TYtrsodetail _tYtrsodetail;
+
+    /**
+     * [get] T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'. <br>
+     * @return The entity of foreign property 'TYtrsodetail'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TYtrsodetail getTYtrsodetail() {
+        return _tYtrsodetail;
+    }
+
+    /**
+     * [set] T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
+     * @param tYtrsodetail The entity of foreign property 'TYtrsodetail'. (NullAllowed)
+     */
+    public void setTYtrsodetail(TYtrsodetail tYtrsodetail) {
+        _tYtrsodetail = tYtrsodetail;
     }
 
     // ===================================================================================
@@ -373,10 +373,10 @@ public abstract class BsTTrimallocschkri extends AbstractEntity implements Domai
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tYtrsodetail != null)
-        { sb.append(li).append(xbRDS(_tYtrsodetail, "tYtrsodetail")); }
         if (_tTrimallocH != null)
         { sb.append(li).append(xbRDS(_tTrimallocH, "tTrimallocH")); }
+        if (_tYtrsodetail != null)
+        { sb.append(li).append(xbRDS(_tYtrsodetail, "tYtrsodetail")); }
         if (_tTrimallocadjustList != null) { for (TTrimallocadjust et : _tTrimallocadjustList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tTrimallocadjustList")); } } }
         return sb.toString();
@@ -415,10 +415,10 @@ public abstract class BsTTrimallocschkri extends AbstractEntity implements Domai
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tYtrsodetail != null)
-        { sb.append(dm).append("tYtrsodetail"); }
         if (_tTrimallocH != null)
         { sb.append(dm).append("tTrimallocH"); }
+        if (_tYtrsodetail != null)
+        { sb.append(dm).append("tYtrsodetail"); }
         if (_tTrimallocadjustList != null && !_tTrimallocadjustList.isEmpty())
         { sb.append(dm).append("tTrimallocadjustList"); }
         if (sb.length() > dm.length()) {

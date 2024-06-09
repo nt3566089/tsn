@@ -20,6 +20,15 @@ public class MLocationNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_PRODUCT_SHAPE by my MAX_STORE_PRODUCT_SHAPE_ID, named 'MProductShapeByMaxStoreProductShapeId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -29,21 +38,21 @@ public class MLocationNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCustomerNss withMCustomer() {
+        _query.xdoNss(() -> _query.queryMCustomer());
+        return new MCustomerNss(_query.queryMCustomer());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MProductNss withMProduct() {
         _query.xdoNss(() -> _query.queryMProduct());
         return new MProductNss(_query.queryMProduct());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_ZONE by my ZONE_ID, named 'MZone'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MZoneNss withMZone() {
-        _query.xdoNss(() -> _query.queryMZone());
-        return new MZoneNss(_query.queryMZone());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -65,21 +74,12 @@ public class MLocationNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * M_ZONE by my ZONE_ID, named 'MZone'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCustomerNss withMCustomer() {
-        _query.xdoNss(() -> _query.queryMCustomer());
-        return new MCustomerNss(_query.queryMCustomer());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public MZoneNss withMZone() {
+        _query.xdoNss(() -> _query.queryMZone());
+        return new MZoneNss(_query.queryMZone());
     }
     /**
      * With nested relation columns to select clause. <br>

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_SHAPE
+ *     M_SHAPE, M_STOCK_TYPE
  *
  * [referrer table]
  *     H_INVENTORY_B, H_MOVE_B, H_PACKING_B, H_RECEIVE_B, H_STOCK_INOUT, H_STOCK_REPORT
  *
  * [foreign property]
- *     mStockType, mShape
+ *     mShape, mStockType
  *
  * [referrer property]
  *     hInventoryBList, hMoveBList, hPackingBList, hReceiveBList, hStockInoutList, hStockReportList
@@ -268,18 +268,18 @@ public class LoaderOfHStock {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMStockType _foreignMStockTypeLoader;
-    public LoaderOfMStockType pulloutMStockType() {
-        if (_foreignMStockTypeLoader == null)
-        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
-        return _foreignMStockTypeLoader;
-    }
-
     protected LoaderOfMShape _foreignMShapeLoader;
     public LoaderOfMShape pulloutMShape() {
         if (_foreignMShapeLoader == null)
         { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
         return _foreignMShapeLoader;
+    }
+
+    protected LoaderOfMStockType _foreignMStockTypeLoader;
+    public LoaderOfMStockType pulloutMStockType() {
+        if (_foreignMStockTypeLoader == null)
+        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
+        return _foreignMStockTypeLoader;
     }
 
     // ===================================================================================

@@ -20,21 +20,12 @@ public class TAllocInstBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TLotNss withTLot() {
-        _query.xdoNss(() -> _query.queryTLot());
-        return new TLotNss(_query.queryTLot());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MWarehouseNss withMWarehouse() {
-        _query.xdoNss(() -> _query.queryMWarehouse());
-        return new MWarehouseNss(_query.queryMWarehouse());
+    public TAllocInstHNss withTAllocInstH() {
+        _query.xdoNss(() -> _query.queryTAllocInstH());
+        return new TAllocInstHNss(_query.queryTAllocInstH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -56,6 +47,15 @@ public class TAllocInstBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TLotNss withTLot() {
+        _query.xdoNss(() -> _query.queryTLot());
+        return new TLotNss(_query.queryTLot());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -74,15 +74,6 @@ public class TAllocInstBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TStoreNoNss withTStoreNo() {
-        _query.xdoNss(() -> _query.queryTStoreNo());
-        return new TStoreNoNss(_query.queryTStoreNo());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -92,12 +83,21 @@ public class TAllocInstBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstHNss withTAllocInstH() {
-        _query.xdoNss(() -> _query.queryTAllocInstH());
-        return new TAllocInstHNss(_query.queryTAllocInstH());
+    public TStoreNoNss withTStoreNo() {
+        _query.xdoNss(() -> _query.queryTStoreNo());
+        return new TStoreNoNss(_query.queryTStoreNo());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MWarehouseNss withMWarehouse() {
+        _query.xdoNss(() -> _query.queryMWarehouse());
+        return new MWarehouseNss(_query.queryMWarehouse());
     }
     /**
      * With nested relation columns to select clause. <br>

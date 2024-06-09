@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_YTRSO, M_PRODUCT
+ *     M_PRODUCT, T_YTRSO
  *
  * [referrer-table]
  *     T_TRIMALLOCSCHKRI, T_TRPICKDETAIL
  *
  * [foreign-property]
- *     tYtrso, mProduct
+ *     mProduct, tYtrso
  *
  * [referrer-property]
  *     tTrimallocschkriList, tTrpickdetailList
@@ -70,8 +70,8 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTYtrso;
     protected boolean _suppressMProduct;
+    protected boolean _suppressTYtrso;
     protected boolean _suppressTTrimallocschkriList;
     protected boolean _suppressTTrpickdetailList;
 
@@ -160,32 +160,6 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTYtrso && entity.getTYtrso() != null) {
-            TYtrso relationEntity = entity.getTYtrso();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TYtrsoDto relationDto = (TYtrsoDto)cachedDto;
-                dto.setTYtrso(relationDto);
-                if (reverseReference) {
-                    relationDto.getTYtrsodetailList().add(dto);
-                }
-            } else {
-                TYtrsoDtoMapper mapper = new TYtrsoDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTYtrsodetailList();
-                TYtrsoDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTYtrso(relationDto);
-                if (reverseReference) {
-                    relationDto.getTYtrsodetailList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTYtrso());
-                }
-            }
-        };
         if (!_suppressMProduct && entity.getMProduct() != null) {
             MProduct relationEntity = entity.getMProduct();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -209,6 +183,32 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMProduct());
+                }
+            }
+        };
+        if (!_suppressTYtrso && entity.getTYtrso() != null) {
+            TYtrso relationEntity = entity.getTYtrso();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TYtrsoDto relationDto = (TYtrsoDto)cachedDto;
+                dto.setTYtrso(relationDto);
+                if (reverseReference) {
+                    relationDto.getTYtrsodetailList().add(dto);
+                }
+            } else {
+                TYtrsoDtoMapper mapper = new TYtrsoDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTYtrsodetailList();
+                TYtrsoDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTYtrso(relationDto);
+                if (reverseReference) {
+                    relationDto.getTYtrsodetailList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTYtrso());
                 }
             }
         };
@@ -371,32 +371,6 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTYtrso && dto.getTYtrso() != null) {
-            TYtrsoDto relationDto = dto.getTYtrso();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TYtrso relationEntity = (TYtrso)cachedEntity;
-                entity.setTYtrso(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTYtrsodetailList().add(entity);
-                }
-            } else {
-                TYtrsoDtoMapper mapper = new TYtrsoDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTYtrsodetailList();
-                TYtrso relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTYtrso(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTYtrsodetailList().add(entity);
-                }
-                if (instanceCache && entity.getTYtrso().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTYtrso());
-                }
-            }
-        };
         if (!_suppressMProduct && dto.getMProduct() != null) {
             MProductDto relationDto = dto.getMProduct();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -420,6 +394,32 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
                 }
                 if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMProduct());
+                }
+            }
+        };
+        if (!_suppressTYtrso && dto.getTYtrso() != null) {
+            TYtrsoDto relationDto = dto.getTYtrso();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TYtrso relationEntity = (TYtrso)cachedEntity;
+                entity.setTYtrso(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTYtrsodetailList().add(entity);
+                }
+            } else {
+                TYtrsoDtoMapper mapper = new TYtrsoDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTYtrsodetailList();
+                TYtrso relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTYtrso(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTYtrsodetailList().add(entity);
+                }
+                if (instanceCache && entity.getTYtrso().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTYtrso());
                 }
             }
         };
@@ -569,11 +569,11 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTYtrso() {
-        _suppressTYtrso = true;
-    }
     public void suppressMProduct() {
         _suppressMProduct = true;
+    }
+    public void suppressTYtrso() {
+        _suppressTYtrso = true;
     }
     public void suppressTTrimallocschkriList() {
         _suppressTTrimallocschkriList = true;
@@ -582,14 +582,14 @@ public abstract class BsTYtrsodetailDtoMapper implements DtoMapper<TYtrsodetail,
         _suppressTTrpickdetailList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressTYtrso();
         suppressMProduct();
+        suppressTYtrso();
         suppressTTrimallocschkriList();
         suppressTTrpickdetailList();
     }
     protected void doSuppressClear() { // internal
-        _suppressTYtrso = false;
         _suppressMProduct = false;
+        _suppressTYtrso = false;
         _suppressTTrimallocschkriList = false;
         _suppressTTrpickdetailList = false;
     }

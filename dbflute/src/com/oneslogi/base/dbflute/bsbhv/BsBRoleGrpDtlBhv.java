@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE, B_ROLE_GRP
+ *     B_ROLE_GRP, B_ROLE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bRole, bRoleGrp
+ *     bRoleGrp, bRole
  *
  * [referrer property]
  *     
@@ -420,20 +420,20 @@ public abstract class BsBRoleGrpDtlBhv extends AbstractBehaviorWritable<BRoleGrp
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BRole'.
-     * @param bRoleGrpDtlList The list of bRoleGrpDtl. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BRole> pulloutBRole(List<BRoleGrpDtl> bRoleGrpDtlList)
-    { return helpPulloutInternally(bRoleGrpDtlList, "bRole"); }
-
-    /**
      * Pull out the list of foreign table 'BRoleGrp'.
      * @param bRoleGrpDtlList The list of bRoleGrpDtl. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BRoleGrp> pulloutBRoleGrp(List<BRoleGrpDtl> bRoleGrpDtlList)
     { return helpPulloutInternally(bRoleGrpDtlList, "bRoleGrp"); }
+
+    /**
+     * Pull out the list of foreign table 'BRole'.
+     * @param bRoleGrpDtlList The list of bRoleGrpDtl. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BRole> pulloutBRole(List<BRoleGrpDtl> bRoleGrpDtlList)
+    { return helpPulloutInternally(bRoleGrpDtlList, "bRole"); }
 
     // ===================================================================================
     //                                                                      Extract Column

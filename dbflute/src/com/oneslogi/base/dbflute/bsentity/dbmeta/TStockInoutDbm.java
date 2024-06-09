@@ -75,12 +75,12 @@ public class TStockInoutDbm extends AbstractDBMeta {
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((TStockInout)et).getTAllocInstB(), (et, vl) -> ((TStockInout)et).setTAllocInstB((TAllocInstB)vl), "TAllocInstB");
-        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStockInoutByFsStockInoutIdSelf(), (et, vl) -> ((TStockInout)et).setTStockInoutByFsStockInoutIdSelf((TStockInout)vl), "TStockInoutByFsStockInoutIdSelf");
-        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStoreRecordB(), (et, vl) -> ((TStockInout)et).setTStoreRecordB((TStoreRecordB)vl), "TStoreRecordB");
-        setupEfpg(_efpgMap, et -> ((TStockInout)et).getMProcessType(), (et, vl) -> ((TStockInout)et).setMProcessType((MProcessType)vl), "MProcessType");
-        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTMoveRecordB(), (et, vl) -> ((TStockInout)et).setTMoveRecordB((TMoveRecordB)vl), "TMoveRecordB");
-        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStock(), (et, vl) -> ((TStockInout)et).setTStock((TStock)vl), "TStock");
         setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStockInoutByBfStockInoutIdSelf(), (et, vl) -> ((TStockInout)et).setTStockInoutByBfStockInoutIdSelf((TStockInout)vl), "TStockInoutByBfStockInoutIdSelf");
+        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStockInoutByFsStockInoutIdSelf(), (et, vl) -> ((TStockInout)et).setTStockInoutByFsStockInoutIdSelf((TStockInout)vl), "TStockInoutByFsStockInoutIdSelf");
+        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTMoveRecordB(), (et, vl) -> ((TStockInout)et).setTMoveRecordB((TMoveRecordB)vl), "TMoveRecordB");
+        setupEfpg(_efpgMap, et -> ((TStockInout)et).getMProcessType(), (et, vl) -> ((TStockInout)et).setMProcessType((MProcessType)vl), "MProcessType");
+        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStock(), (et, vl) -> ((TStockInout)et).setTStock((TStock)vl), "TStock");
+        setupEfpg(_efpgMap, et -> ((TStockInout)et).getTStoreRecordB(), (et, vl) -> ((TStockInout)et).setTStoreRecordB((TStoreRecordB)vl), "TStoreRecordB");
         setupEfpg(_efpgMap, et -> ((TStockInout)et).getBClassDtlByCorrectType(), (et, vl) -> ((TStockInout)et).setBClassDtlByCorrectType((BClassDtl)vl), "BClassDtlByCorrectType");
         setupEfpg(_efpgMap, et -> ((TStockInout)et).getBClassDtlByInoutType(), (et, vl) -> ((TStockInout)et).setBClassDtlByInoutType((BClassDtl)vl), "BClassDtlByInoutType");
     }
@@ -103,7 +103,7 @@ public class TStockInoutDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnStockInoutId = cci("STOCK_INOUT_ID", "STOCK_INOUT_ID", null, null, Long.class, "stockInoutId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, null, "TStockInoutByFsStockInoutIdSelfList,TStockInoutByBfStockInoutIdSelfList", null, false);
+    protected final ColumnInfo _columnStockInoutId = cci("STOCK_INOUT_ID", "STOCK_INOUT_ID", null, null, Long.class, "stockInoutId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, null, "TStockInoutByBfStockInoutIdSelfList,TStockInoutByFsStockInoutIdSelfList", null, false);
     protected final ColumnInfo _columnFsStockInoutId = cci("FS_STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", null, null, Long.class, "fsStockInoutId", null, false, false, false, "bigint", 19, 0, null, null, false, null, null, "TStockInoutByFsStockInoutIdSelf", null, null, false);
     protected final ColumnInfo _columnBfStockInoutId = cci("BF_STOCK_INOUT_ID", "BF_STOCK_INOUT_ID", null, null, Long.class, "bfStockInoutId", null, false, false, false, "bigint", 19, 0, null, null, false, null, null, "TStockInoutByBfStockInoutIdSelf", null, null, false);
     protected final ColumnInfo _columnMoveRecordBId = cci("MOVE_RECORD_B_ID", "MOVE_RECORD_B_ID", null, null, Long.class, "moveRecordBId", null, false, false, false, "bigint", 19, 0, null, null, false, null, null, "TMoveRecordB", null, null, false);
@@ -293,28 +293,20 @@ public class TStockInoutDbm extends AbstractDBMeta {
         return cfi("T_STOCK_INOUT_FK5", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStockInoutList", false);
     }
     /**
+     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTStockInoutByBfStockInoutIdSelf() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBfStockInoutId(), TStockInoutDbm.getInstance().columnStockInoutId());
+        return cfi("T_STOCK_INOUT_FK3", "TStockInoutByBfStockInoutIdSelf", this, TStockInoutDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStockInoutByBfStockInoutIdSelfList", false);
+    }
+    /**
      * T_STOCK_INOUT by my FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelf'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTStockInoutByFsStockInoutIdSelf() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnFsStockInoutId(), TStockInoutDbm.getInstance().columnStockInoutId());
-        return cfi("T_STOCK_INOUT_FK6", "TStockInoutByFsStockInoutIdSelf", this, TStockInoutDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStockInoutByFsStockInoutIdSelfList", false);
-    }
-    /**
-     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTStoreRecordB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreRecordBId(), TStoreRecordBDbm.getInstance().columnStoreRecordBId());
-        return cfi("T_STOCK_INOUT_FK7", "TStoreRecordB", this, TStoreRecordBDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStockInoutList", false);
-    }
-    /**
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProcessType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_STOCK_INOUT_FK1", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStockInoutList", false);
+        return cfi("T_STOCK_INOUT_FK6", "TStockInoutByFsStockInoutIdSelf", this, TStockInoutDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStockInoutByFsStockInoutIdSelfList", false);
     }
     /**
      * T_MOVE_RECORD_B by my MOVE_RECORD_B_ID, named 'TMoveRecordB'.
@@ -322,7 +314,15 @@ public class TStockInoutDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTMoveRecordB() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMoveRecordBId(), TMoveRecordBDbm.getInstance().columnMoveRecordBId());
-        return cfi("T_STOCK_INOUT_FK2", "TMoveRecordB", this, TMoveRecordBDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TStockInoutList", false);
+        return cfi("T_STOCK_INOUT_FK2", "TMoveRecordB", this, TMoveRecordBDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TStockInoutList", false);
+    }
+    /**
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProcessType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
+        return cfi("T_STOCK_INOUT_FK1", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TStockInoutList", false);
     }
     /**
      * T_STOCK by my STOCK_ID, named 'TStock'.
@@ -333,12 +333,12 @@ public class TStockInoutDbm extends AbstractDBMeta {
         return cfi("T_STOCK_INOUT_FK4", "TStock", this, TStockDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TStockInoutList", false);
     }
     /**
-     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTStockInoutByBfStockInoutIdSelf() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBfStockInoutId(), TStockInoutDbm.getInstance().columnStockInoutId());
-        return cfi("T_STOCK_INOUT_FK3", "TStockInoutByBfStockInoutIdSelf", this, TStockInoutDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStockInoutByBfStockInoutIdSelfList", false);
+    public ForeignInfo foreignTStoreRecordB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreRecordBId(), TStoreRecordBDbm.getInstance().columnStoreRecordBId());
+        return cfi("T_STOCK_INOUT_FK7", "TStoreRecordB", this, TStoreRecordBDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TStockInoutList", false);
     }
     /**
      * B_CLASS_DTL by my CORRECT_TYPE, named 'BClassDtlByCorrectType'.
@@ -361,20 +361,20 @@ public class TStockInoutDbm extends AbstractDBMeta {
     //                                     Referrer Property
     //                                     -----------------
     /**
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTStockInoutByFsStockInoutIdSelfList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockInoutId(), TStockInoutDbm.getInstance().columnFsStockInoutId());
-        return cri("T_STOCK_INOUT_FK6", "TStockInoutByFsStockInoutIdSelfList", this, TStockInoutDbm.getInstance(), mp, false, "TStockInoutByFsStockInoutIdSelf");
-    }
-    /**
      * T_STOCK_INOUT by BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelfList'.
      * @return The information object of referrer property. (NotNull)
      */
     public ReferrerInfo referrerTStockInoutByBfStockInoutIdSelfList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockInoutId(), TStockInoutDbm.getInstance().columnBfStockInoutId());
         return cri("T_STOCK_INOUT_FK3", "TStockInoutByBfStockInoutIdSelfList", this, TStockInoutDbm.getInstance(), mp, false, "TStockInoutByBfStockInoutIdSelf");
+    }
+    /**
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTStockInoutByFsStockInoutIdSelfList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockInoutId(), TStockInoutDbm.getInstance().columnFsStockInoutId());
+        return cri("T_STOCK_INOUT_FK6", "TStockInoutByFsStockInoutIdSelfList", this, TStockInoutDbm.getInstance(), mp, false, "TStockInoutByFsStockInoutIdSelf");
     }
 
     // ===================================================================================

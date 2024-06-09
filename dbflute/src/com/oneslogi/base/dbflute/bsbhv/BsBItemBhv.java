@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_SCREEN, B_DICT, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
+ *     B_DICT, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
  *
  * [referrer table]
  *     B_COL, B_COL_EXT_BASE, B_COL_EXT_USER, B_ITEM_ROLE, M_CENTER_ITEM, M_CLIENT_ITEM, B_ITEM_VALID
  *
  * [foreign property]
- *     bScreen, bDict, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
+ *     bDict, bScreen, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
  *
  * [referrer property]
  *     bColList, bColExtBaseList, bColExtUserList, bItemRoleList, mCenterItemList, mClientItemList
@@ -947,20 +947,20 @@ public abstract class BsBItemBhv extends AbstractBehaviorWritable<BItem, BItemCB
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BScreen'.
-     * @param bItemList The list of bItem. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BScreen> pulloutBScreen(List<BItem> bItemList)
-    { return helpPulloutInternally(bItemList, "bScreen"); }
-
-    /**
      * Pull out the list of foreign table 'BDict'.
      * @param bItemList The list of bItem. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BDict> pulloutBDict(List<BItem> bItemList)
     { return helpPulloutInternally(bItemList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'BScreen'.
+     * @param bItemList The list of bItem. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BScreen> pulloutBScreen(List<BItem> bItemList)
+    { return helpPulloutInternally(bItemList, "bScreen"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

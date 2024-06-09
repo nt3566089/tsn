@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_COL, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_COL, B_DICT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bCol, mClient, bDict, vDict
+ *     mClient, bCol, bDict, vDict
  *
  * [referrer-property]
  *     
@@ -149,16 +149,6 @@ public abstract class BsMClientColDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BColDto _bCol;
-
-    public BColDto getBCol() {
-        return _bCol;
-    }
-
-    public void setBCol(BColDto bCol) {
-        this._bCol = bCol;
-    }
-
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -167,6 +157,16 @@ public abstract class BsMClientColDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected BColDto _bCol;
+
+    public BColDto getBCol() {
+        return _bCol;
+    }
+
+    public void setBCol(BColDto bCol) {
+        this._bCol = bCol;
     }
 
     protected BDictDto _bDict;

@@ -252,62 +252,33 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TLotNss _nssTLot;
-    public TLotNss xdfgetNssTLot() {
-        if (_nssTLot == null) { _nssTLot = new TLotNss(null); }
-        return _nssTLot;
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * <pre>
      * <span style="color: #0000C0">wHtReceiveStoreBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TLot()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtReceiveStore</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getTLot()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TLotNss setupSelect_TLot() {
-        assertSetupSelectPurpose("tLot");
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnLotId();
+            specify().columnCenterId();
         }
-        doSetupSelect(() -> query().queryTLot());
-        if (_nssTLot == null || !_nssTLot.hasConditionQuery())
-        { _nssTLot = new TLotNss(query().queryTLot()); }
-        return _nssTLot;
-    }
-
-    protected MLocationNss _nssMLocation;
-    public MLocationNss xdfgetNssMLocation() {
-        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
-        return _nssMLocation;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_LOCATION by my LOC_ID, named 'MLocation'.
-     * <pre>
-     * <span style="color: #0000C0">wHtReceiveStoreBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">wHtReceiveStore</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MLocationNss setupSelect_MLocation() {
-        assertSetupSelectPurpose("mLocation");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnLocId();
-        }
-        doSetupSelect(() -> query().queryMLocation());
-        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
-        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
-        return _nssMLocation;
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected MClientNss _nssMClient;
@@ -339,62 +310,62 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected MWarehouseNss _nssMWarehouse;
-    public MWarehouseNss xdfgetNssMWarehouse() {
-        if (_nssMWarehouse == null) { _nssMWarehouse = new MWarehouseNss(null); }
-        return _nssMWarehouse;
+    protected MLocationNss _nssMLocation;
+    public MLocationNss xdfgetNssMLocation() {
+        if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
+        return _nssMLocation;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * M_LOCATION by my LOC_ID, named 'MLocation'.
      * <pre>
      * <span style="color: #0000C0">wHtReceiveStoreBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MWarehouse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MLocation()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtReceiveStore</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMWarehouse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMLocation()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MWarehouseNss setupSelect_MWarehouse() {
-        assertSetupSelectPurpose("mWarehouse");
+    public MLocationNss setupSelect_MLocation() {
+        assertSetupSelectPurpose("mLocation");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnWarehouseId();
+            specify().columnLocId();
         }
-        doSetupSelect(() -> query().queryMWarehouse());
-        if (_nssMWarehouse == null || !_nssMWarehouse.hasConditionQuery())
-        { _nssMWarehouse = new MWarehouseNss(query().queryMWarehouse()); }
-        return _nssMWarehouse;
+        doSetupSelect(() -> query().queryMLocation());
+        if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
+        { _nssMLocation = new MLocationNss(query().queryMLocation()); }
+        return _nssMLocation;
     }
 
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
+    protected TLotNss _nssTLot;
+    public TLotNss xdfgetNssTLot() {
+        if (_nssTLot == null) { _nssTLot = new TLotNss(null); }
+        return _nssTLot;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * T_LOT by my LOT_ID, named 'TLot'.
      * <pre>
      * <span style="color: #0000C0">wHtReceiveStoreBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TLot()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">wHtReceiveStore</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getTLot()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
+    public TLotNss setupSelect_TLot() {
+        assertSetupSelectPurpose("tLot");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
+            specify().columnLotId();
         }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryTLot());
+        if (_nssTLot == null || !_nssTLot.hasConditionQuery())
+        { _nssTLot = new TLotNss(query().queryTLot()); }
+        return _nssTLot;
     }
 
     protected MProductNss _nssMProduct;
@@ -455,6 +426,35 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
         return _nssMStockType;
     }
 
+    protected MWarehouseNss _nssMWarehouse;
+    public MWarehouseNss xdfgetNssMWarehouse() {
+        if (_nssMWarehouse == null) { _nssMWarehouse = new MWarehouseNss(null); }
+        return _nssMWarehouse;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * <pre>
+     * <span style="color: #0000C0">wHtReceiveStoreBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MWarehouse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">wHtReceiveStore</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">wHtReceiveStore</span>.<span style="color: #CC4747">getMWarehouse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MWarehouseNss setupSelect_MWarehouse() {
+        assertSetupSelectPurpose("mWarehouse");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnWarehouseId();
+        }
+        doSetupSelect(() -> query().queryMWarehouse());
+        if (_nssMWarehouse == null || !_nssMWarehouse.hasConditionQuery())
+        { _nssMWarehouse = new MWarehouseNss(query().queryMWarehouse()); }
+        return _nssMWarehouse;
+    }
+
     // [DBFlute-0.7.4]
     // ===================================================================================
     //                                                                             Specify
@@ -496,13 +496,13 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<WHtReceiveStoreCQ> {
-        protected TLotCB.HpSpecification _tLot;
-        protected MLocationCB.HpSpecification _mLocation;
-        protected MClientCB.HpSpecification _mClient;
-        protected MWarehouseCB.HpSpecification _mWarehouse;
         protected MCenterCB.HpSpecification _mCenter;
+        protected MClientCB.HpSpecification _mClient;
+        protected MLocationCB.HpSpecification _mLocation;
+        protected TLotCB.HpSpecification _tLot;
         protected MProductCB.HpSpecification _mProduct;
         protected MStockTypeCB.HpSpecification _mStockType;
+        protected MWarehouseCB.HpSpecification _mWarehouse;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WHtReceiveStoreCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -667,25 +667,21 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnHtReceiveStoreId(); // PK
-            if (qyCall().qy().hasConditionQueryTLot()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
-                columnLotId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMLocation()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
-                columnLocId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMWarehouse()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MWarehouseCQ) {
-                columnWarehouseId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMLocation()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
+                columnLocId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTLot()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
+                columnLotId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMProduct()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
@@ -695,48 +691,32 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
                 columnStockTypeId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMWarehouse()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MWarehouseCQ) {
+                columnWarehouseId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "W_HT_RECEIVE_STORE"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_LOT by my LOT_ID, named 'TLot'.
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TLotCB.HpSpecification specifyTLot() {
-            assertRelation("tLot");
-            if (_tLot == null) {
-                _tLot = new TLotCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTLot()
-                                    , () -> _qyCall.qy().queryTLot())
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tLot.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTLot()
-                      , () -> xsyncQyCall().qy().queryTLot()));
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
                 }
             }
-            return _tLot;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_LOCATION by my LOC_ID, named 'MLocation'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MLocationCB.HpSpecification specifyMLocation() {
-            assertRelation("mLocation");
-            if (_mLocation == null) {
-                _mLocation = new MLocationCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
-                                    , () -> _qyCall.qy().queryMLocation())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
-                      , () -> xsyncQyCall().qy().queryMLocation()));
-                }
-            }
-            return _mLocation;
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -760,43 +740,43 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+         * M_LOCATION by my LOC_ID, named 'MLocation'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MWarehouseCB.HpSpecification specifyMWarehouse() {
-            assertRelation("mWarehouse");
-            if (_mWarehouse == null) {
-                _mWarehouse = new MWarehouseCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMWarehouse()
-                                    , () -> _qyCall.qy().queryMWarehouse())
+        public MLocationCB.HpSpecification specifyMLocation() {
+            assertRelation("mLocation");
+            if (_mLocation == null) {
+                _mLocation = new MLocationCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMLocation()
+                                    , () -> _qyCall.qy().queryMLocation())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mWarehouse.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMWarehouse()
-                      , () -> xsyncQyCall().qy().queryMWarehouse()));
+                    _mLocation.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMLocation()
+                      , () -> xsyncQyCall().qy().queryMLocation()));
                 }
             }
-            return _mWarehouse;
+            return _mLocation;
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * T_LOT by my LOT_ID, named 'TLot'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
+        public TLotCB.HpSpecification specifyTLot() {
+            assertRelation("tLot");
+            if (_tLot == null) {
+                _tLot = new TLotCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTLot()
+                                    , () -> _qyCall.qy().queryTLot())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
+                    _tLot.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTLot()
+                      , () -> xsyncQyCall().qy().queryTLot()));
                 }
             }
-            return _mCenter;
+            return _tLot;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -837,6 +817,26 @@ public class BsWHtReceiveStoreCB extends AbstractConditionBean {
                 }
             }
             return _mStockType;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MWarehouseCB.HpSpecification specifyMWarehouse() {
+            assertRelation("mWarehouse");
+            if (_mWarehouse == null) {
+                _mWarehouse = new MWarehouseCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMWarehouse()
+                                    , () -> _qyCall.qy().queryMWarehouse())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mWarehouse.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMWarehouse()
+                      , () -> xsyncQyCall().qy().queryMWarehouse()));
+                }
+            }
+            return _mWarehouse;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

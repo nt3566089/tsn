@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_DELIVERY_COURSE, M_BOX_GRP, M_BOX, M_ZONE, M_CLIENT_CENTER, B_CLASS_DTL(ByAfterTagOutFlg)
+ *     M_CLIENT_CENTER, M_BOX, M_DELIVERY_COURSE, M_ZONE, M_BOX_GRP, B_CLASS_DTL(ByAfterTagOutFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mDeliveryCourse, mBoxGrp, mBox, mZone, mClientCenter, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
+ *     mClientCenter, mBox, mDeliveryCourse, mZone, mBoxGrp, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
  *
  * [referrer-property]
  *     
@@ -70,11 +70,11 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMDeliveryCourse;
-    protected boolean _suppressMBoxGrp;
-    protected boolean _suppressMBox;
-    protected boolean _suppressMZone;
     protected boolean _suppressMClientCenter;
+    protected boolean _suppressMBox;
+    protected boolean _suppressMDeliveryCourse;
+    protected boolean _suppressMZone;
+    protected boolean _suppressMBoxGrp;
     protected boolean _suppressBClassDtlByAfterTagOutFlg;
     protected boolean _suppressBClassDtlByAfterDelivSlipOutFlg;
     protected boolean _suppressBClassDtlByAfterDelivSlipOutTgt;
@@ -258,55 +258,29 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMDeliveryCourse && entity.getMDeliveryCourse() != null) {
-            MDeliveryCourse relationEntity = entity.getMDeliveryCourse();
+        if (!_suppressMClientCenter && entity.getMClientCenter() != null) {
+            MClientCenter relationEntity = entity.getMClientCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MDeliveryCourseDto relationDto = (MDeliveryCourseDto)cachedDto;
-                dto.setMDeliveryCourse(relationDto);
+                MClientCenterDto relationDto = (MClientCenterDto)cachedDto;
+                dto.setMClientCenter(relationDto);
                 if (reverseReference) {
-                    relationDto.getMParamList().add(dto);
+                    relationDto.setMParamAsOne(dto);
                 }
             } else {
-                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                MClientCenterDtoMapper mapper = new MClientCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamList();
-                MDeliveryCourseDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMDeliveryCourse(relationDto);
+                mapper.suppressMParamAsOne();
+                MClientCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMClientCenter(relationDto);
                 if (reverseReference) {
-                    relationDto.getMParamList().add(dto);
+                    relationDto.setMParamAsOne(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMDeliveryCourse());
-                }
-            }
-        };
-        if (!_suppressMBoxGrp && entity.getMBoxGrp() != null) {
-            MBoxGrp relationEntity = entity.getMBoxGrp();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MBoxGrpDto relationDto = (MBoxGrpDto)cachedDto;
-                dto.setMBoxGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getMParamList().add(dto);
-                }
-            } else {
-                MBoxGrpDtoMapper mapper = new MBoxGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamList();
-                MBoxGrpDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMBoxGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getMParamList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMBoxGrp());
+                    _relationDtoMap.put(relationKey, dto.getMClientCenter());
                 }
             }
         };
@@ -336,6 +310,32 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
                 }
             }
         };
+        if (!_suppressMDeliveryCourse && entity.getMDeliveryCourse() != null) {
+            MDeliveryCourse relationEntity = entity.getMDeliveryCourse();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MDeliveryCourseDto relationDto = (MDeliveryCourseDto)cachedDto;
+                dto.setMDeliveryCourse(relationDto);
+                if (reverseReference) {
+                    relationDto.getMParamList().add(dto);
+                }
+            } else {
+                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMParamList();
+                MDeliveryCourseDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMDeliveryCourse(relationDto);
+                if (reverseReference) {
+                    relationDto.getMParamList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMDeliveryCourse());
+                }
+            }
+        };
         if (!_suppressMZone && entity.getMZone() != null) {
             MZone relationEntity = entity.getMZone();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -362,29 +362,29 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
                 }
             }
         };
-        if (!_suppressMClientCenter && entity.getMClientCenter() != null) {
-            MClientCenter relationEntity = entity.getMClientCenter();
+        if (!_suppressMBoxGrp && entity.getMBoxGrp() != null) {
+            MBoxGrp relationEntity = entity.getMBoxGrp();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MClientCenterDto relationDto = (MClientCenterDto)cachedDto;
-                dto.setMClientCenter(relationDto);
+                MBoxGrpDto relationDto = (MBoxGrpDto)cachedDto;
+                dto.setMBoxGrp(relationDto);
                 if (reverseReference) {
-                    relationDto.setMParamAsOne(dto);
+                    relationDto.getMParamList().add(dto);
                 }
             } else {
-                MClientCenterDtoMapper mapper = new MClientCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MBoxGrpDtoMapper mapper = new MBoxGrpDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamAsOne();
-                MClientCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMClientCenter(relationDto);
+                mapper.suppressMParamList();
+                MBoxGrpDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMBoxGrp(relationDto);
                 if (reverseReference) {
-                    relationDto.setMParamAsOne(dto);
+                    relationDto.getMParamList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMClientCenter());
+                    _relationDtoMap.put(relationKey, dto.getMBoxGrp());
                 }
             }
         };
@@ -1770,55 +1770,29 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMDeliveryCourse && dto.getMDeliveryCourse() != null) {
-            MDeliveryCourseDto relationDto = dto.getMDeliveryCourse();
+        if (!_suppressMClientCenter && dto.getMClientCenter() != null) {
+            MClientCenterDto relationDto = dto.getMClientCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MDeliveryCourse relationEntity = (MDeliveryCourse)cachedEntity;
-                entity.setMDeliveryCourse(relationEntity);
+                MClientCenter relationEntity = (MClientCenter)cachedEntity;
+                entity.setMClientCenter(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getMParamList().add(entity);
+                    relationEntity.setMParamAsOne(entity);
                 }
             } else {
-                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                MClientCenterDtoMapper mapper = new MClientCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamList();
-                MDeliveryCourse relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMDeliveryCourse(relationEntity);
+                mapper.suppressMParamAsOne();
+                MClientCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMClientCenter(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getMParamList().add(entity);
+                    relationEntity.setMParamAsOne(entity);
                 }
-                if (instanceCache && entity.getMDeliveryCourse().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMDeliveryCourse());
-                }
-            }
-        };
-        if (!_suppressMBoxGrp && dto.getMBoxGrp() != null) {
-            MBoxGrpDto relationDto = dto.getMBoxGrp();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MBoxGrp relationEntity = (MBoxGrp)cachedEntity;
-                entity.setMBoxGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMParamList().add(entity);
-                }
-            } else {
-                MBoxGrpDtoMapper mapper = new MBoxGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamList();
-                MBoxGrp relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMBoxGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMParamList().add(entity);
-                }
-                if (instanceCache && entity.getMBoxGrp().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMBoxGrp());
+                if (instanceCache && entity.getMClientCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMClientCenter());
                 }
             }
         };
@@ -1848,6 +1822,32 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
                 }
             }
         };
+        if (!_suppressMDeliveryCourse && dto.getMDeliveryCourse() != null) {
+            MDeliveryCourseDto relationDto = dto.getMDeliveryCourse();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MDeliveryCourse relationEntity = (MDeliveryCourse)cachedEntity;
+                entity.setMDeliveryCourse(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMParamList().add(entity);
+                }
+            } else {
+                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMParamList();
+                MDeliveryCourse relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMDeliveryCourse(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMParamList().add(entity);
+                }
+                if (instanceCache && entity.getMDeliveryCourse().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMDeliveryCourse());
+                }
+            }
+        };
         if (!_suppressMZone && dto.getMZone() != null) {
             MZoneDto relationDto = dto.getMZone();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -1874,29 +1874,29 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
                 }
             }
         };
-        if (!_suppressMClientCenter && dto.getMClientCenter() != null) {
-            MClientCenterDto relationDto = dto.getMClientCenter();
+        if (!_suppressMBoxGrp && dto.getMBoxGrp() != null) {
+            MBoxGrpDto relationDto = dto.getMBoxGrp();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MClientCenter relationEntity = (MClientCenter)cachedEntity;
-                entity.setMClientCenter(relationEntity);
+                MBoxGrp relationEntity = (MBoxGrp)cachedEntity;
+                entity.setMBoxGrp(relationEntity);
                 if (reverseReference) {
-                    relationEntity.setMParamAsOne(entity);
+                    relationEntity.getMParamList().add(entity);
                 }
             } else {
-                MClientCenterDtoMapper mapper = new MClientCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MBoxGrpDtoMapper mapper = new MBoxGrpDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMParamAsOne();
-                MClientCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMClientCenter(relationEntity);
+                mapper.suppressMParamList();
+                MBoxGrp relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMBoxGrp(relationEntity);
                 if (reverseReference) {
-                    relationEntity.setMParamAsOne(entity);
+                    relationEntity.getMParamList().add(entity);
                 }
-                if (instanceCache && entity.getMClientCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMClientCenter());
+                if (instanceCache && entity.getMBoxGrp().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMBoxGrp());
                 }
             }
         };
@@ -3122,20 +3122,20 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMDeliveryCourse() {
-        _suppressMDeliveryCourse = true;
-    }
-    public void suppressMBoxGrp() {
-        _suppressMBoxGrp = true;
+    public void suppressMClientCenter() {
+        _suppressMClientCenter = true;
     }
     public void suppressMBox() {
         _suppressMBox = true;
     }
+    public void suppressMDeliveryCourse() {
+        _suppressMDeliveryCourse = true;
+    }
     public void suppressMZone() {
         _suppressMZone = true;
     }
-    public void suppressMClientCenter() {
-        _suppressMClientCenter = true;
+    public void suppressMBoxGrp() {
+        _suppressMBoxGrp = true;
     }
     public void suppressBClassDtlByAfterTagOutFlg() {
         _suppressBClassDtlByAfterTagOutFlg = true;
@@ -3282,11 +3282,11 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
         _suppressBClassDtlByPackingSlipAutoOutputFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMDeliveryCourse();
-        suppressMBoxGrp();
-        suppressMBox();
-        suppressMZone();
         suppressMClientCenter();
+        suppressMBox();
+        suppressMDeliveryCourse();
+        suppressMZone();
+        suppressMBoxGrp();
         suppressBClassDtlByAfterTagOutFlg();
         suppressBClassDtlByAfterDelivSlipOutFlg();
         suppressBClassDtlByAfterDelivSlipOutTgt();
@@ -3337,11 +3337,11 @@ public abstract class BsMParamDtoMapper implements DtoMapper<MParam, MParamDto>,
         suppressBClassDtlByPackingSlipAutoOutputFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressMDeliveryCourse = false;
-        _suppressMBoxGrp = false;
-        _suppressMBox = false;
-        _suppressMZone = false;
         _suppressMClientCenter = false;
+        _suppressMBox = false;
+        _suppressMDeliveryCourse = false;
+        _suppressMZone = false;
+        _suppressMBoxGrp = false;
         _suppressBClassDtlByAfterTagOutFlg = false;
         _suppressBClassDtlByAfterDelivSlipOutFlg = false;
         _suppressBClassDtlByAfterDelivSlipOutTgt = false;

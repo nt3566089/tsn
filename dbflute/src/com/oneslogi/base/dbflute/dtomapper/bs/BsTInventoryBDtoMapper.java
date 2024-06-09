@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_LOCATION, M_WAREHOUSE, T_STORE_NO, T_MOVE_INST_H, T_LOT, T_STOCK, M_SHAPE, M_PRODUCT, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
+ *     M_CUSTOMER, T_INVENTORY_H, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, T_STOCK, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
  *
  * [referrer-table]
  *     T_INVENTORY_INP_HIST, T_INVENTORY_R
  *
  * [foreign-property]
- *     mCustomerByDepositId, tInventoryH, mStockType, mLocation, mWarehouse, tStoreNo, mCustomerBySupplierId, tMoveInstH, tLot, tStock, mShape, mProduct, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
+ *     mCustomerByDepositId, tInventoryH, mLocation, tLot, tMoveInstH, mProduct, mShape, tStock, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
  *
  * [referrer-property]
  *     tInventoryInpHistList
@@ -72,16 +72,16 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressMCustomerByDepositId;
     protected boolean _suppressTInventoryH;
-    protected boolean _suppressMStockType;
     protected boolean _suppressMLocation;
-    protected boolean _suppressMWarehouse;
+    protected boolean _suppressTLot;
+    protected boolean _suppressTMoveInstH;
+    protected boolean _suppressMProduct;
+    protected boolean _suppressMShape;
+    protected boolean _suppressTStock;
+    protected boolean _suppressMStockType;
     protected boolean _suppressTStoreNo;
     protected boolean _suppressMCustomerBySupplierId;
-    protected boolean _suppressTMoveInstH;
-    protected boolean _suppressTLot;
-    protected boolean _suppressTStock;
-    protected boolean _suppressMShape;
-    protected boolean _suppressMProduct;
+    protected boolean _suppressMWarehouse;
     protected boolean _suppressBClassDtlByInputType;
     protected boolean _suppressBClassDtlByStockAdjustFlg;
     protected boolean _suppressTInventoryInpHistList;
@@ -242,32 +242,6 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressMStockType && entity.getMStockType() != null) {
-            MStockType relationEntity = entity.getMStockType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
-                dto.setMStockType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-            } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMStockType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMStockType());
-                }
-            }
-        };
         if (!_suppressMLocation && entity.getMLocation() != null) {
             MLocation relationEntity = entity.getMLocation();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -294,29 +268,159 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressMWarehouse && entity.getMWarehouse() != null) {
-            MWarehouse relationEntity = entity.getMWarehouse();
+        if (!_suppressTLot && entity.getTLot() != null) {
+            TLot relationEntity = entity.getTLot();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MWarehouseDto relationDto = (MWarehouseDto)cachedDto;
-                dto.setMWarehouse(relationDto);
+                TLotDto relationDto = (TLotDto)cachedDto;
+                dto.setTLot(relationDto);
                 if (reverseReference) {
                     relationDto.getTInventoryBList().add(dto);
                 }
             } else {
-                MWarehouseDtoMapper mapper = new MWarehouseDtoMapper(_relationDtoMap, _relationEntityMap);
+                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTInventoryBList();
-                MWarehouseDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMWarehouse(relationDto);
+                TLotDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTLot(relationDto);
                 if (reverseReference) {
                     relationDto.getTInventoryBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMWarehouse());
+                    _relationDtoMap.put(relationKey, dto.getTLot());
+                }
+            }
+        };
+        if (!_suppressTMoveInstH && entity.getTMoveInstH() != null) {
+            TMoveInstH relationEntity = entity.getTMoveInstH();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TMoveInstHDto relationDto = (TMoveInstHDto)cachedDto;
+                dto.setTMoveInstH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+            } else {
+                TMoveInstHDtoMapper mapper = new TMoveInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                TMoveInstHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTMoveInstH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTMoveInstH());
+                }
+            }
+        };
+        if (!_suppressMProduct && entity.getMProduct() != null) {
+            MProduct relationEntity = entity.getMProduct();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MProductDto relationDto = (MProductDto)cachedDto;
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MProductDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMProduct());
+                }
+            }
+        };
+        if (!_suppressMShape && entity.getMShape() != null) {
+            MShape relationEntity = entity.getMShape();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MShapeDto relationDto = (MShapeDto)cachedDto;
+                dto.setMShape(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+            } else {
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMShape(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMShape());
+                }
+            }
+        };
+        if (!_suppressTStock && entity.getTStock() != null) {
+            TStock relationEntity = entity.getTStock();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TStockDto relationDto = (TStockDto)cachedDto;
+                dto.setTStock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+            } else {
+                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                TStockDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTStock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTStock());
+                }
+            }
+        };
+        if (!_suppressMStockType && entity.getMStockType() != null) {
+            MStockType relationEntity = entity.getMStockType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMStockType());
                 }
             }
         };
@@ -372,133 +476,29 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressTMoveInstH && entity.getTMoveInstH() != null) {
-            TMoveInstH relationEntity = entity.getTMoveInstH();
+        if (!_suppressMWarehouse && entity.getMWarehouse() != null) {
+            MWarehouse relationEntity = entity.getMWarehouse();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TMoveInstHDto relationDto = (TMoveInstHDto)cachedDto;
-                dto.setTMoveInstH(relationDto);
+                MWarehouseDto relationDto = (MWarehouseDto)cachedDto;
+                dto.setMWarehouse(relationDto);
                 if (reverseReference) {
                     relationDto.getTInventoryBList().add(dto);
                 }
             } else {
-                TMoveInstHDtoMapper mapper = new TMoveInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MWarehouseDtoMapper mapper = new MWarehouseDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTInventoryBList();
-                TMoveInstHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTMoveInstH(relationDto);
+                MWarehouseDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMWarehouse(relationDto);
                 if (reverseReference) {
                     relationDto.getTInventoryBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTMoveInstH());
-                }
-            }
-        };
-        if (!_suppressTLot && entity.getTLot() != null) {
-            TLot relationEntity = entity.getTLot();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TLotDto relationDto = (TLotDto)cachedDto;
-                dto.setTLot(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-            } else {
-                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                TLotDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTLot(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTLot());
-                }
-            }
-        };
-        if (!_suppressTStock && entity.getTStock() != null) {
-            TStock relationEntity = entity.getTStock();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TStockDto relationDto = (TStockDto)cachedDto;
-                dto.setTStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-            } else {
-                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                TStockDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTStock());
-                }
-            }
-        };
-        if (!_suppressMShape && entity.getMShape() != null) {
-            MShape relationEntity = entity.getMShape();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MShapeDto relationDto = (MShapeDto)cachedDto;
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMShape());
-                }
-            }
-        };
-        if (!_suppressMProduct && entity.getMProduct() != null) {
-            MProduct relationEntity = entity.getMProduct();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MProductDto relationDto = (MProductDto)cachedDto;
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MProductDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getTInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProduct());
+                    _relationDtoMap.put(relationKey, dto.getMWarehouse());
                 }
             }
         };
@@ -825,32 +825,6 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressMStockType && dto.getMStockType() != null) {
-            MStockTypeDto relationDto = dto.getMStockType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MStockType relationEntity = (MStockType)cachedEntity;
-                entity.setMStockType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-            } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MStockType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMStockType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMStockType());
-                }
-            }
-        };
         if (!_suppressMLocation && dto.getMLocation() != null) {
             MLocationDto relationDto = dto.getMLocation();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -877,29 +851,159 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressMWarehouse && dto.getMWarehouse() != null) {
-            MWarehouseDto relationDto = dto.getMWarehouse();
+        if (!_suppressTLot && dto.getTLot() != null) {
+            TLotDto relationDto = dto.getTLot();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MWarehouse relationEntity = (MWarehouse)cachedEntity;
-                entity.setMWarehouse(relationEntity);
+                TLot relationEntity = (TLot)cachedEntity;
+                entity.setTLot(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTInventoryBList().add(entity);
                 }
             } else {
-                MWarehouseDtoMapper mapper = new MWarehouseDtoMapper(_relationDtoMap, _relationEntityMap);
+                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTInventoryBList();
-                MWarehouse relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMWarehouse(relationEntity);
+                TLot relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTLot(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTInventoryBList().add(entity);
                 }
-                if (instanceCache && entity.getMWarehouse().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMWarehouse());
+                if (instanceCache && entity.getTLot().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTLot());
+                }
+            }
+        };
+        if (!_suppressTMoveInstH && dto.getTMoveInstH() != null) {
+            TMoveInstHDto relationDto = dto.getTMoveInstH();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TMoveInstH relationEntity = (TMoveInstH)cachedEntity;
+                entity.setTMoveInstH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+            } else {
+                TMoveInstHDtoMapper mapper = new TMoveInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                TMoveInstH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTMoveInstH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getTMoveInstH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTMoveInstH());
+                }
+            }
+        };
+        if (!_suppressMProduct && dto.getMProduct() != null) {
+            MProductDto relationDto = dto.getMProduct();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MProduct relationEntity = (MProduct)cachedEntity;
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MProduct relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProduct());
+                }
+            }
+        };
+        if (!_suppressMShape && dto.getMShape() != null) {
+            MShapeDto relationDto = dto.getMShape();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MShape relationEntity = (MShape)cachedEntity;
+                entity.setMShape(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+            } else {
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MShape relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMShape(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMShape());
+                }
+            }
+        };
+        if (!_suppressTStock && dto.getTStock() != null) {
+            TStockDto relationDto = dto.getTStock();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TStock relationEntity = (TStock)cachedEntity;
+                entity.setTStock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+            } else {
+                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                TStock relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTStock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTStock());
+                }
+            }
+        };
+        if (!_suppressMStockType && dto.getMStockType() != null) {
+            MStockTypeDto relationDto = dto.getMStockType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MStockType relationEntity = (MStockType)cachedEntity;
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTInventoryBList();
+                MStockType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMStockType());
                 }
             }
         };
@@ -955,133 +1059,29 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
                 }
             }
         };
-        if (!_suppressTMoveInstH && dto.getTMoveInstH() != null) {
-            TMoveInstHDto relationDto = dto.getTMoveInstH();
+        if (!_suppressMWarehouse && dto.getMWarehouse() != null) {
+            MWarehouseDto relationDto = dto.getMWarehouse();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TMoveInstH relationEntity = (TMoveInstH)cachedEntity;
-                entity.setTMoveInstH(relationEntity);
+                MWarehouse relationEntity = (MWarehouse)cachedEntity;
+                entity.setMWarehouse(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTInventoryBList().add(entity);
                 }
             } else {
-                TMoveInstHDtoMapper mapper = new TMoveInstHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MWarehouseDtoMapper mapper = new MWarehouseDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTInventoryBList();
-                TMoveInstH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTMoveInstH(relationEntity);
+                MWarehouse relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMWarehouse(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTInventoryBList().add(entity);
                 }
-                if (instanceCache && entity.getTMoveInstH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTMoveInstH());
-                }
-            }
-        };
-        if (!_suppressTLot && dto.getTLot() != null) {
-            TLotDto relationDto = dto.getTLot();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TLot relationEntity = (TLot)cachedEntity;
-                entity.setTLot(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-            } else {
-                TLotDtoMapper mapper = new TLotDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                TLot relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTLot(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getTLot().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTLot());
-                }
-            }
-        };
-        if (!_suppressTStock && dto.getTStock() != null) {
-            TStockDto relationDto = dto.getTStock();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TStock relationEntity = (TStock)cachedEntity;
-                entity.setTStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-            } else {
-                TStockDtoMapper mapper = new TStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                TStock relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getTStock().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTStock());
-                }
-            }
-        };
-        if (!_suppressMShape && dto.getMShape() != null) {
-            MShapeDto relationDto = dto.getMShape();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MShape relationEntity = (MShape)cachedEntity;
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MShape relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMShape());
-                }
-            }
-        };
-        if (!_suppressMProduct && dto.getMProduct() != null) {
-            MProductDto relationDto = dto.getMProduct();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MProduct relationEntity = (MProduct)cachedEntity;
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTInventoryBList();
-                MProduct relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProduct());
+                if (instanceCache && entity.getMWarehouse().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMWarehouse());
                 }
             }
         };
@@ -1295,14 +1295,26 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
     public void suppressTInventoryH() {
         _suppressTInventoryH = true;
     }
-    public void suppressMStockType() {
-        _suppressMStockType = true;
-    }
     public void suppressMLocation() {
         _suppressMLocation = true;
     }
-    public void suppressMWarehouse() {
-        _suppressMWarehouse = true;
+    public void suppressTLot() {
+        _suppressTLot = true;
+    }
+    public void suppressTMoveInstH() {
+        _suppressTMoveInstH = true;
+    }
+    public void suppressMProduct() {
+        _suppressMProduct = true;
+    }
+    public void suppressMShape() {
+        _suppressMShape = true;
+    }
+    public void suppressTStock() {
+        _suppressTStock = true;
+    }
+    public void suppressMStockType() {
+        _suppressMStockType = true;
     }
     public void suppressTStoreNo() {
         _suppressTStoreNo = true;
@@ -1310,20 +1322,8 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
     public void suppressMCustomerBySupplierId() {
         _suppressMCustomerBySupplierId = true;
     }
-    public void suppressTMoveInstH() {
-        _suppressTMoveInstH = true;
-    }
-    public void suppressTLot() {
-        _suppressTLot = true;
-    }
-    public void suppressTStock() {
-        _suppressTStock = true;
-    }
-    public void suppressMShape() {
-        _suppressMShape = true;
-    }
-    public void suppressMProduct() {
-        _suppressMProduct = true;
+    public void suppressMWarehouse() {
+        _suppressMWarehouse = true;
     }
     public void suppressBClassDtlByInputType() {
         _suppressBClassDtlByInputType = true;
@@ -1340,16 +1340,16 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
     protected void doSuppressAll() { // internal
         suppressMCustomerByDepositId();
         suppressTInventoryH();
-        suppressMStockType();
         suppressMLocation();
-        suppressMWarehouse();
+        suppressTLot();
+        suppressTMoveInstH();
+        suppressMProduct();
+        suppressMShape();
+        suppressTStock();
+        suppressMStockType();
         suppressTStoreNo();
         suppressMCustomerBySupplierId();
-        suppressTMoveInstH();
-        suppressTLot();
-        suppressTStock();
-        suppressMShape();
-        suppressMProduct();
+        suppressMWarehouse();
         suppressBClassDtlByInputType();
         suppressBClassDtlByStockAdjustFlg();
         suppressTInventoryInpHistList();
@@ -1358,16 +1358,16 @@ public abstract class BsTInventoryBDtoMapper implements DtoMapper<TInventoryB, T
     protected void doSuppressClear() { // internal
         _suppressMCustomerByDepositId = false;
         _suppressTInventoryH = false;
-        _suppressMStockType = false;
         _suppressMLocation = false;
-        _suppressMWarehouse = false;
+        _suppressTLot = false;
+        _suppressTMoveInstH = false;
+        _suppressMProduct = false;
+        _suppressMShape = false;
+        _suppressTStock = false;
+        _suppressMStockType = false;
         _suppressTStoreNo = false;
         _suppressMCustomerBySupplierId = false;
-        _suppressTMoveInstH = false;
-        _suppressTLot = false;
-        _suppressTStock = false;
-        _suppressMShape = false;
-        _suppressMProduct = false;
+        _suppressMWarehouse = false;
         _suppressBClassDtlByInputType = false;
         _suppressBClassDtlByStockAdjustFlg = false;
         _suppressTInventoryInpHistList = false;

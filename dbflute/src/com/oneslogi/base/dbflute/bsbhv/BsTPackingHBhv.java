@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_H, M_CENTER, M_BOX, T_ALLOC_INST_H, M_CLIENT, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_BOX, M_CENTER, M_CLIENT, T_PICKING_H, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_B, T_PIC_MTHD_RCMD_CART, T_PACKING_R
  *
  * [foreign property]
- *     tPickingH, mCenter, mBox, tAllocInstH, mClient, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
+ *     tAllocInstH, mBox, mCenter, mClient, tPickingH, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
  *
  * [referrer property]
  *     tPackingBList, tPicMthdRcmdCartList
@@ -569,20 +569,12 @@ public abstract class BsTPackingHBhv extends AbstractBehaviorWritable<TPackingH,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TPickingH'.
+     * Pull out the list of foreign table 'TAllocInstH'.
      * @param tPackingHList The list of tPackingH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TPickingH> pulloutTPickingH(List<TPackingH> tPackingHList)
-    { return helpPulloutInternally(tPackingHList, "tPickingH"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param tPackingHList The list of tPackingH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<TPackingH> tPackingHList)
-    { return helpPulloutInternally(tPackingHList, "mCenter"); }
+    public List<TAllocInstH> pulloutTAllocInstH(List<TPackingH> tPackingHList)
+    { return helpPulloutInternally(tPackingHList, "tAllocInstH"); }
 
     /**
      * Pull out the list of foreign table 'MBox'.
@@ -593,12 +585,12 @@ public abstract class BsTPackingHBhv extends AbstractBehaviorWritable<TPackingH,
     { return helpPulloutInternally(tPackingHList, "mBox"); }
 
     /**
-     * Pull out the list of foreign table 'TAllocInstH'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param tPackingHList The list of tPackingH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TAllocInstH> pulloutTAllocInstH(List<TPackingH> tPackingHList)
-    { return helpPulloutInternally(tPackingHList, "tAllocInstH"); }
+    public List<MCenter> pulloutMCenter(List<TPackingH> tPackingHList)
+    { return helpPulloutInternally(tPackingHList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MClient'.
@@ -607,6 +599,14 @@ public abstract class BsTPackingHBhv extends AbstractBehaviorWritable<TPackingH,
      */
     public List<MClient> pulloutMClient(List<TPackingH> tPackingHList)
     { return helpPulloutInternally(tPackingHList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'TPickingH'.
+     * @param tPackingHList The list of tPackingH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TPickingH> pulloutTPickingH(List<TPackingH> tPackingHList)
+    { return helpPulloutInternally(tPackingHList, "tPickingH"); }
 
     /**
      * Pull out the list of foreign table 'MProcessType'.

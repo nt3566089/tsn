@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_CLIENT, M_CENTER, T_ALLOC_INST_H, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer-table]
  *     T_EC_ORDER_H, T_SHIPPING_INST_B
  *
  * [foreign-property]
- *     mDeliveryCourse, mCustomerBySupplyCustomerId, mProcessType, mClient, mCenter, mCustomerByDelivCustomerId, tAllocInstH, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
+ *     tAllocInstH, mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
  *
  * [referrer-property]
  *     tEcOrderHList, tShippingInstBList
@@ -273,44 +273,14 @@ public abstract class BsTShippingInstHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MDeliveryCourseDto _mDeliveryCourse;
+    protected TAllocInstHDto _tAllocInstH;
 
-    public MDeliveryCourseDto getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public TAllocInstHDto getTAllocInstH() {
+        return _tAllocInstH;
     }
 
-    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
-        this._mDeliveryCourse = mDeliveryCourse;
-    }
-
-    protected MCustomerDto _mCustomerBySupplyCustomerId;
-
-    public MCustomerDto getMCustomerBySupplyCustomerId() {
-        return _mCustomerBySupplyCustomerId;
-    }
-
-    public void setMCustomerBySupplyCustomerId(MCustomerDto mCustomerBySupplyCustomerId) {
-        this._mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
-    }
-
-    protected MProcessTypeDto _mProcessType;
-
-    public MProcessTypeDto getMProcessType() {
-        return _mProcessType;
-    }
-
-    public void setMProcessType(MProcessTypeDto mProcessType) {
-        this._mProcessType = mProcessType;
-    }
-
-    protected MClientDto _mClient;
-
-    public MClientDto getMClient() {
-        return _mClient;
-    }
-
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
+    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
+        this._tAllocInstH = tAllocInstH;
     }
 
     protected MCenterDto _mCenter;
@@ -323,6 +293,26 @@ public abstract class BsTShippingInstHDto implements Serializable {
         this._mCenter = mCenter;
     }
 
+    protected MClientDto _mClient;
+
+    public MClientDto getMClient() {
+        return _mClient;
+    }
+
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
+    }
+
+    protected MDeliveryCourseDto _mDeliveryCourse;
+
+    public MDeliveryCourseDto getMDeliveryCourse() {
+        return _mDeliveryCourse;
+    }
+
+    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
+        this._mDeliveryCourse = mDeliveryCourse;
+    }
+
     protected MCustomerDto _mCustomerByDelivCustomerId;
 
     public MCustomerDto getMCustomerByDelivCustomerId() {
@@ -333,14 +323,24 @@ public abstract class BsTShippingInstHDto implements Serializable {
         this._mCustomerByDelivCustomerId = mCustomerByDelivCustomerId;
     }
 
-    protected TAllocInstHDto _tAllocInstH;
+    protected MProcessTypeDto _mProcessType;
 
-    public TAllocInstHDto getTAllocInstH() {
-        return _tAllocInstH;
+    public MProcessTypeDto getMProcessType() {
+        return _mProcessType;
     }
 
-    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
-        this._tAllocInstH = tAllocInstH;
+    public void setMProcessType(MProcessTypeDto mProcessType) {
+        this._mProcessType = mProcessType;
+    }
+
+    protected MCustomerDto _mCustomerBySupplyCustomerId;
+
+    public MCustomerDto getMCustomerBySupplyCustomerId() {
+        return _mCustomerBySupplyCustomerId;
+    }
+
+    public void setMCustomerBySupplyCustomerId(MCustomerDto mCustomerBySupplyCustomerId) {
+        this._mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
     }
 
     protected MZipDto _mZipForDeliv;

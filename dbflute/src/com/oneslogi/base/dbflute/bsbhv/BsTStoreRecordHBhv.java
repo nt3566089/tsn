@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, T_RECEIVE_PLAN_H, M_CENTER, M_PROCESS_TYPE, M_STOCK_TYPE, M_CLIENT, T_STORE_RECORD_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_PROCESS_TYPE, T_RECEIVE_PLAN_H, M_STOCK_TYPE, T_STORE_RECORD_R(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_STORE_RECORD_R
  *
  * [foreign property]
- *     mCustomerByDepositId, tReceivePlanH, mCenter, mCustomerBySupplierId, mProcessType, mStockType, mClient, tStoreRecordRAsOne
+ *     mCenter, mClient, mCustomerByDepositId, mProcessType, tReceivePlanH, mStockType, mCustomerBySupplierId, tStoreRecordRAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -481,22 +481,6 @@ public abstract class BsTStoreRecordHBhv extends AbstractBehaviorWritable<TStore
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MCustomer'.
-     * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCustomer> pulloutMCustomerByDepositId(List<TStoreRecordH> tStoreRecordHList)
-    { return helpPulloutInternally(tStoreRecordHList, "mCustomerByDepositId"); }
-
-    /**
-     * Pull out the list of foreign table 'TReceivePlanH'.
-     * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TReceivePlanH> pulloutTReceivePlanH(List<TStoreRecordH> tStoreRecordHList)
-    { return helpPulloutInternally(tStoreRecordHList, "tReceivePlanH"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -505,12 +489,20 @@ public abstract class BsTStoreRecordHBhv extends AbstractBehaviorWritable<TStore
     { return helpPulloutInternally(tStoreRecordHList, "mCenter"); }
 
     /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TStoreRecordH> tStoreRecordHList)
+    { return helpPulloutInternally(tStoreRecordHList, "mClient"); }
+
+    /**
      * Pull out the list of foreign table 'MCustomer'.
      * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerBySupplierId(List<TStoreRecordH> tStoreRecordHList)
-    { return helpPulloutInternally(tStoreRecordHList, "mCustomerBySupplierId"); }
+    public List<MCustomer> pulloutMCustomerByDepositId(List<TStoreRecordH> tStoreRecordHList)
+    { return helpPulloutInternally(tStoreRecordHList, "mCustomerByDepositId"); }
 
     /**
      * Pull out the list of foreign table 'MProcessType'.
@@ -521,6 +513,14 @@ public abstract class BsTStoreRecordHBhv extends AbstractBehaviorWritable<TStore
     { return helpPulloutInternally(tStoreRecordHList, "mProcessType"); }
 
     /**
+     * Pull out the list of foreign table 'TReceivePlanH'.
+     * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TReceivePlanH> pulloutTReceivePlanH(List<TStoreRecordH> tStoreRecordHList)
+    { return helpPulloutInternally(tStoreRecordHList, "tReceivePlanH"); }
+
+    /**
      * Pull out the list of foreign table 'MStockType'.
      * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -529,12 +529,12 @@ public abstract class BsTStoreRecordHBhv extends AbstractBehaviorWritable<TStore
     { return helpPulloutInternally(tStoreRecordHList, "mStockType"); }
 
     /**
-     * Pull out the list of foreign table 'MClient'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param tStoreRecordHList The list of tStoreRecordH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MClient> pulloutMClient(List<TStoreRecordH> tStoreRecordHList)
-    { return helpPulloutInternally(tStoreRecordHList, "mClient"); }
+    public List<MCustomer> pulloutMCustomerBySupplierId(List<TStoreRecordH> tStoreRecordHList)
+    { return helpPulloutInternally(tStoreRecordHList, "mCustomerBySupplierId"); }
 
     /**
      * Pull out the list of referrer-as-one table 'TStoreRecordR'.

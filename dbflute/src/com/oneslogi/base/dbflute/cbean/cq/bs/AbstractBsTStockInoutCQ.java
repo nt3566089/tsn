@@ -146,25 +146,6 @@ public abstract class AbstractBsTStockInoutCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select FS_STOCK_INOUT_ID from T_STOCK_INOUT where ...)} <br>
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTStockInoutByFsStockInoutIdSelfList</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     inoutCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TStockInoutByFsStockInoutIdSelfList for 'exists'. (NotNull)
-     */
-    public void existsTStockInoutByFsStockInoutIdSelfList(SubQuery<TStockInoutCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
-        registerExistsReferrer(cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList");
-    }
-    public abstract String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select BF_STOCK_INOUT_ID from T_STOCK_INOUT where ...)} <br>
      * T_STOCK_INOUT by BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelfAsOne'.
      * <pre>
@@ -183,23 +164,23 @@ public abstract class AbstractBsTStockInoutCQ extends AbstractConditionQuery {
     public abstract String keepStockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq);
 
     /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select FS_STOCK_INOUT_ID from T_STOCK_INOUT where ...)} <br>
+     * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select FS_STOCK_INOUT_ID from T_STOCK_INOUT where ...)} <br>
      * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTStockInoutByFsStockInoutIdSelfList</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">existsTStockInoutByFsStockInoutIdSelfList</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     inoutCB.query().set...
      * });
      * </pre>
-     * @param subCBLambda The callback for sub-query of StockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList for 'not exists'. (NotNull)
+     * @param subCBLambda The callback for sub-query of TStockInoutByFsStockInoutIdSelfList for 'exists'. (NotNull)
      */
-    public void notExistsTStockInoutByFsStockInoutIdSelfList(SubQuery<TStockInoutCB> subCBLambda) {
+    public void existsTStockInoutByFsStockInoutIdSelfList(SubQuery<TStockInoutCB> subCBLambda) {
         assertObjectNotNull("subCBLambda", subCBLambda);
         TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
-        registerNotExistsReferrer(cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList");
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
+        registerExistsReferrer(cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList");
     }
-    public abstract String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
+    public abstract String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -220,13 +201,24 @@ public abstract class AbstractBsTStockInoutCQ extends AbstractConditionQuery {
     }
     public abstract String keepStockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq);
 
-    public void xsderiveTStockInoutByFsStockInoutIdSelfList(String fn, SubQuery<TStockInoutCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList", al, op);
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select FS_STOCK_INOUT_ID from T_STOCK_INOUT where ...)} <br>
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTStockInoutByFsStockInoutIdSelfList</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     inoutCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of StockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList for 'not exists'. (NotNull)
+     */
+    public void notExistsTStockInoutByFsStockInoutIdSelfList(SubQuery<TStockInoutCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
+        registerNotExistsReferrer(cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList");
     }
-    public abstract String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
+    public abstract String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
 
     public void xsderiveTStockInoutByBfStockInoutIdSelfList(String fn, SubQuery<TStockInoutCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -236,32 +228,13 @@ public abstract class AbstractBsTStockInoutCQ extends AbstractConditionQuery {
     }
     public abstract String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq);
 
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_STOCK_INOUT where ...)} <br>
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTStockInoutByFsStockInoutIdSelfList()</span>.<span style="color: #CC4747">max</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     inoutCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     inoutCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TStockInoutCB> derivedTStockInoutByFsStockInoutIdSelfList() {
-        return xcreateQDRFunctionTStockInoutByFsStockInoutIdSelfList();
-    }
-    protected HpQDRFunction<TStockInoutCB> xcreateQDRFunctionTStockInoutByFsStockInoutIdSelfList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTStockInoutByFsStockInoutIdSelfList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTStockInoutByFsStockInoutIdSelfList(String fn, SubQuery<TStockInoutCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+    public void xsderiveTStockInoutByFsStockInoutIdSelfList(String fn, SubQuery<TStockInoutCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query()); String prpp = keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", sqpp, "tStockInoutByFsStockInoutIdSelfList", rd, vl, prpp, op);
+        lockCall(() -> sq.query(cb)); String pp = keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", pp, "tStockInoutByFsStockInoutIdSelfList", al, op);
     }
-    public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
-    public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object vl);
+    public abstract String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
@@ -289,6 +262,33 @@ public abstract class AbstractBsTStockInoutCQ extends AbstractConditionQuery {
     }
     public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq);
     public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_STOCK_INOUT where ...)} <br>
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTStockInoutByFsStockInoutIdSelfList()</span>.<span style="color: #CC4747">max</span>(inoutCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     inoutCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     inoutCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TStockInoutCB> derivedTStockInoutByFsStockInoutIdSelfList() {
+        return xcreateQDRFunctionTStockInoutByFsStockInoutIdSelfList();
+    }
+    protected HpQDRFunction<TStockInoutCB> xcreateQDRFunctionTStockInoutByFsStockInoutIdSelfList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTStockInoutByFsStockInoutIdSelfList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTStockInoutByFsStockInoutIdSelfList(String fn, SubQuery<TStockInoutCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TStockInoutCB cb = new TStockInoutCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(cb.query()); String prpp = keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "STOCK_INOUT_ID", "FS_STOCK_INOUT_ID", sqpp, "tStockInoutByFsStockInoutIdSelfList", rd, vl, prpp, op);
+    }
+    public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq);
+    public abstract String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object vl);
 
     /**
      * IsNull {is null}. And OnlyOnceRegistered. <br>

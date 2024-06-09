@@ -71,9 +71,9 @@ public class WHtSerialReceiveInspDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((WHtSerialReceiveInsp)et).getMCenter(), (et, vl) -> ((WHtSerialReceiveInsp)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((WHtSerialReceiveInsp)et).getMClient(), (et, vl) -> ((WHtSerialReceiveInsp)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((WHtSerialReceiveInsp)et).getMCustomer(), (et, vl) -> ((WHtSerialReceiveInsp)et).setMCustomer((MCustomer)vl), "MCustomer");
-        setupEfpg(_efpgMap, et -> ((WHtSerialReceiveInsp)et).getMCenter(), (et, vl) -> ((WHtSerialReceiveInsp)et).setMCenter((MCenter)vl), "MCenter");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -255,12 +255,20 @@ public class WHtSerialReceiveInspDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
+    }
+    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK3", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
+        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
     }
     /**
      * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
@@ -268,15 +276,7 @@ public class WHtSerialReceiveInspDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
+        return cfi("W_HT_SERIAL_RECEIVE_INSP_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtSerialReceiveInspList", false);
     }
 
     // -----------------------------------------------------

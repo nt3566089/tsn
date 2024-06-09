@@ -74,8 +74,8 @@ public class TCenterSymbolDbm extends AbstractDBMeta {
         setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getMCenter(), (et, vl) -> ((TCenterSymbol)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getTCenterSymbolSelf(), (et, vl) -> ((TCenterSymbol)et).setTCenterSymbolSelf((TCenterSymbol)vl), "TCenterSymbolSelf");
         setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getMClient(), (et, vl) -> ((TCenterSymbol)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getTTrsymbol(), (et, vl) -> ((TCenterSymbol)et).setTTrsymbol((TTrsymbol)vl), "TTrsymbol");
         setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getTPallet(), (et, vl) -> ((TCenterSymbol)et).setTPallet((TPallet)vl), "TPallet");
+        setupEfpg(_efpgMap, et -> ((TCenterSymbol)et).getTTrsymbol(), (et, vl) -> ((TCenterSymbol)et).setTTrsymbol((TTrsymbol)vl), "TTrsymbol");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -291,20 +291,20 @@ public class TCenterSymbolDbm extends AbstractDBMeta {
         return cfi("T_CENTER_SYMBOL_FK5", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TCenterSymbolList", false);
     }
     /**
-     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTTrsymbol() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsymbolId(), TTrsymbolDbm.getInstance().columnTrsymbolId());
-        return cfi("T_CENTER_SYMBOL_FK3", "TTrsymbol", this, TTrsymbolDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TCenterSymbolList", false);
-    }
-    /**
      * T_PALLET by my PALLET_ID, named 'TPallet'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTPallet() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPalletId(), TPalletDbm.getInstance().columnPalletId());
-        return cfi("T_CENTER_SYMBOL_FK2", "TPallet", this, TPalletDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TCenterSymbolList", false);
+        return cfi("T_CENTER_SYMBOL_FK2", "TPallet", this, TPalletDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TCenterSymbolList", false);
+    }
+    /**
+     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTTrsymbol() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsymbolId(), TTrsymbolDbm.getInstance().columnTrsymbolId());
+        return cfi("T_CENTER_SYMBOL_FK3", "TTrsymbol", this, TTrsymbolDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TCenterSymbolList", false);
     }
 
     // -----------------------------------------------------

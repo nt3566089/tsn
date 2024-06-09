@@ -20,21 +20,12 @@ public class TReceivePlanHNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TReceivePlanHNss withTReceivePlanHSelf() {
-        _query.xdoNss(() -> _query.queryTReceivePlanHSelf());
-        return new TReceivePlanHNss(_query.queryTReceivePlanHSelf());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCustomerNss withMCustomerByPlanDepositId() {
-        _query.xdoNss(() -> _query.queryMCustomerByPlanDepositId());
-        return new MCustomerNss(_query.queryMCustomerByPlanDepositId());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -47,30 +38,30 @@ public class TReceivePlanHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MStockTypeNss withMStockType() {
-        _query.xdoNss(() -> _query.queryMStockType());
-        return new MStockTypeNss(_query.queryMStockType());
+    public TReceivePlanHNss withTReceivePlanHSelf() {
+        _query.xdoNss(() -> _query.queryTReceivePlanHSelf());
+        return new TReceivePlanHNss(_query.queryTReceivePlanHSelf());
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public TPickingHNss withTPickingH() {
+        _query.xdoNss(() -> _query.queryTPickingH());
+        return new TPickingHNss(_query.queryTPickingH());
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProcessTypeNss withMProcessType() {
-        _query.xdoNss(() -> _query.queryMProcessType());
-        return new MProcessTypeNss(_query.queryMProcessType());
+    public MCustomerNss withMCustomerByPlanDepositId() {
+        _query.xdoNss(() -> _query.queryMCustomerByPlanDepositId());
+        return new MCustomerNss(_query.queryMCustomerByPlanDepositId());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -83,12 +74,21 @@ public class TReceivePlanHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TPickingHNss withTPickingH() {
-        _query.xdoNss(() -> _query.queryTPickingH());
-        return new TPickingHNss(_query.queryTPickingH());
+    public MProcessTypeNss withMProcessType() {
+        _query.xdoNss(() -> _query.queryMProcessType());
+        return new MProcessTypeNss(_query.queryMProcessType());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MStockTypeNss withMStockType() {
+        _query.xdoNss(() -> _query.queryMStockType());
+        return new MStockTypeNss(_query.queryMStockType());
     }
     /**
      * With nested relation columns to select clause. <br>

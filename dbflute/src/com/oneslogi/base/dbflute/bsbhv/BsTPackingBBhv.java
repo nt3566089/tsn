@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_B, T_PACKING_H, T_ALLOC_INST_B, B_CLASS_DTL(ByInspectionFlg)
+ *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_B, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPickingB, tPackingH, tAllocInstB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
+ *     tAllocInstB, tPackingH, tPickingB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
  *
  * [referrer property]
  *     
@@ -395,12 +395,12 @@ public abstract class BsTPackingBBhv extends AbstractBehaviorWritable<TPackingB,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TPickingB'.
+     * Pull out the list of foreign table 'TAllocInstB'.
      * @param tPackingBList The list of tPackingB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TPickingB> pulloutTPickingB(List<TPackingB> tPackingBList)
-    { return helpPulloutInternally(tPackingBList, "tPickingB"); }
+    public List<TAllocInstB> pulloutTAllocInstB(List<TPackingB> tPackingBList)
+    { return helpPulloutInternally(tPackingBList, "tAllocInstB"); }
 
     /**
      * Pull out the list of foreign table 'TPackingH'.
@@ -411,12 +411,12 @@ public abstract class BsTPackingBBhv extends AbstractBehaviorWritable<TPackingB,
     { return helpPulloutInternally(tPackingBList, "tPackingH"); }
 
     /**
-     * Pull out the list of foreign table 'TAllocInstB'.
+     * Pull out the list of foreign table 'TPickingB'.
      * @param tPackingBList The list of tPackingB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TAllocInstB> pulloutTAllocInstB(List<TPackingB> tPackingBList)
-    { return helpPulloutInternally(tPackingBList, "tAllocInstB"); }
+    public List<TPickingB> pulloutTPickingB(List<TPackingB> tPackingBList)
+    { return helpPulloutInternally(tPackingBList, "tPickingB"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

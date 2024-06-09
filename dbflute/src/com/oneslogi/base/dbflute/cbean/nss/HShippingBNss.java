@@ -20,21 +20,21 @@ public class HShippingBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MStockTypeNss withMStockType() {
-        _query.xdoNss(() -> _query.queryMStockType());
-        return new MStockTypeNss(_query.queryMStockType());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * H_SHIPPING_H by my SHIPPING_INST_H_ID, named 'HShippingH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public HShippingHNss withHShippingH() {
         _query.xdoNss(() -> _query.queryHShippingH());
         return new HShippingHNss(_query.queryHShippingH());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MStockTypeNss withMStockType() {
+        _query.xdoNss(() -> _query.queryMStockType());
+        return new MStockTypeNss(_query.queryMStockType());
     }
     /**
      * With nested relation columns to select clause. <br>

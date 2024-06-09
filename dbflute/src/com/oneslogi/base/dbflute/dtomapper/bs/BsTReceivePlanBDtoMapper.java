@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_LOCATION, M_WAREHOUSE, T_RECEIVE_PLAN_H, M_PRODUCT, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
+ *     M_LOCATION, M_WAREHOUSE, M_PRODUCT, T_RECEIVE_PLAN_H, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
  *
  * [referrer-table]
  *     T_STORE_RECORD_B, T_RECEIVE_PLAN_SPARE, T_TRRCVDETAIL
  *
  * [foreign-property]
- *     mLocation, mWarehouse, tReceivePlanH, mProduct, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
+ *     mLocation, mWarehouse, mProduct, tReceivePlanH, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
  *
  * [referrer-property]
  *     tStoreRecordBList
@@ -72,8 +72,8 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressMLocation;
     protected boolean _suppressMWarehouse;
-    protected boolean _suppressTReceivePlanH;
     protected boolean _suppressMProduct;
+    protected boolean _suppressTReceivePlanH;
     protected boolean _suppressBClassDtlByErrorFlg;
     protected boolean _suppressBClassDtlByReceiveStatus;
     protected boolean _suppressTReceivePlanSpareAsOne;
@@ -215,32 +215,6 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressTReceivePlanH && entity.getTReceivePlanH() != null) {
-            TReceivePlanH relationEntity = entity.getTReceivePlanH();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TReceivePlanHDto relationDto = (TReceivePlanHDto)cachedDto;
-                dto.setTReceivePlanH(relationDto);
-                if (reverseReference) {
-                    relationDto.getTReceivePlanBList().add(dto);
-                }
-            } else {
-                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanBList();
-                TReceivePlanHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTReceivePlanH(relationDto);
-                if (reverseReference) {
-                    relationDto.getTReceivePlanBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTReceivePlanH());
-                }
-            }
-        };
         if (!_suppressMProduct && entity.getMProduct() != null) {
             MProduct relationEntity = entity.getMProduct();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -264,6 +238,32 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMProduct());
+                }
+            }
+        };
+        if (!_suppressTReceivePlanH && entity.getTReceivePlanH() != null) {
+            TReceivePlanH relationEntity = entity.getTReceivePlanH();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TReceivePlanHDto relationDto = (TReceivePlanHDto)cachedDto;
+                dto.setTReceivePlanH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTReceivePlanBList().add(dto);
+                }
+            } else {
+                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTReceivePlanBList();
+                TReceivePlanHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTReceivePlanH(relationDto);
+                if (reverseReference) {
+                    relationDto.getTReceivePlanBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTReceivePlanH());
                 }
             }
         };
@@ -556,32 +556,6 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressTReceivePlanH && dto.getTReceivePlanH() != null) {
-            TReceivePlanHDto relationDto = dto.getTReceivePlanH();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TReceivePlanH relationEntity = (TReceivePlanH)cachedEntity;
-                entity.setTReceivePlanH(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTReceivePlanBList().add(entity);
-                }
-            } else {
-                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanBList();
-                TReceivePlanH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTReceivePlanH(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTReceivePlanBList().add(entity);
-                }
-                if (instanceCache && entity.getTReceivePlanH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTReceivePlanH());
-                }
-            }
-        };
         if (!_suppressMProduct && dto.getMProduct() != null) {
             MProductDto relationDto = dto.getMProduct();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -605,6 +579,32 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
                 }
                 if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMProduct());
+                }
+            }
+        };
+        if (!_suppressTReceivePlanH && dto.getTReceivePlanH() != null) {
+            TReceivePlanHDto relationDto = dto.getTReceivePlanH();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TReceivePlanH relationEntity = (TReceivePlanH)cachedEntity;
+                entity.setTReceivePlanH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTReceivePlanBList().add(entity);
+                }
+            } else {
+                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTReceivePlanBList();
+                TReceivePlanH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTReceivePlanH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTReceivePlanBList().add(entity);
+                }
+                if (instanceCache && entity.getTReceivePlanH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTReceivePlanH());
                 }
             }
         };
@@ -844,11 +844,11 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
     public void suppressMWarehouse() {
         _suppressMWarehouse = true;
     }
-    public void suppressTReceivePlanH() {
-        _suppressTReceivePlanH = true;
-    }
     public void suppressMProduct() {
         _suppressMProduct = true;
+    }
+    public void suppressTReceivePlanH() {
+        _suppressTReceivePlanH = true;
     }
     public void suppressBClassDtlByErrorFlg() {
         _suppressBClassDtlByErrorFlg = true;
@@ -868,8 +868,8 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
     protected void doSuppressAll() { // internal
         suppressMLocation();
         suppressMWarehouse();
-        suppressTReceivePlanH();
         suppressMProduct();
+        suppressTReceivePlanH();
         suppressBClassDtlByErrorFlg();
         suppressBClassDtlByReceiveStatus();
         suppressTReceivePlanSpareAsOne();
@@ -879,8 +879,8 @@ public abstract class BsTReceivePlanBDtoMapper implements DtoMapper<TReceivePlan
     protected void doSuppressClear() { // internal
         _suppressMLocation = false;
         _suppressMWarehouse = false;
-        _suppressTReceivePlanH = false;
         _suppressMProduct = false;
+        _suppressTReceivePlanH = false;
         _suppressBClassDtlByErrorFlg = false;
         _suppressBClassDtlByReceiveStatus = false;
         _suppressTReceivePlanSpareAsOne = false;

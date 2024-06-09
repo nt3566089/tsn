@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_H, M_CENTER, M_BOX, T_ALLOC_INST_H, M_CLIENT, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_BOX, M_CENTER, M_CLIENT, T_PICKING_H, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_B, T_PIC_MTHD_RCMD_CART, T_PACKING_R
  *
  * [foreign property]
- *     tPickingH, mCenter, mBox, tAllocInstH, mClient, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
+ *     tAllocInstH, mBox, mCenter, mClient, tPickingH, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
  *
  * [referrer property]
  *     tPackingBList, tPicMthdRcmdCartList
@@ -785,42 +785,23 @@ public abstract class BsTPackingH extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
-    protected TPickingH _tPickingH;
+    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
+    protected TAllocInstH _tAllocInstH;
 
     /**
-     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
-     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
+     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TPickingH getTPickingH() {
-        return _tPickingH;
+    public TAllocInstH getTAllocInstH() {
+        return _tAllocInstH;
     }
 
     /**
-     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
-     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
+     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
      */
-    public void setTPickingH(TPickingH tPickingH) {
-        _tPickingH = tPickingH;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setTAllocInstH(TAllocInstH tAllocInstH) {
+        _tAllocInstH = tAllocInstH;
     }
 
     /** M_BOX by my BOX_ID, named 'MBox'. */
@@ -842,23 +823,23 @@ public abstract class BsTPackingH extends AbstractEntity implements DomainEntity
         _mBox = mBox;
     }
 
-    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
-    protected TAllocInstH _tAllocInstH;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
-     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstH getTAllocInstH() {
-        return _tAllocInstH;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
-     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setTAllocInstH(TAllocInstH tAllocInstH) {
-        _tAllocInstH = tAllocInstH;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -878,6 +859,25 @@ public abstract class BsTPackingH extends AbstractEntity implements DomainEntity
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
+    protected TPickingH _tPickingH;
+
+    /**
+     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
+     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TPickingH getTPickingH() {
+        return _tPickingH;
+    }
+
+    /**
+     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
+     */
+    public void setTPickingH(TPickingH tPickingH) {
+        _tPickingH = tPickingH;
     }
 
     /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
@@ -1085,16 +1085,16 @@ public abstract class BsTPackingH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tPickingH != null)
-        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_mBox != null)
-        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
         if (_tAllocInstH != null)
         { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
+        if (_mBox != null)
+        { sb.append(li).append(xbRDS(_mBox, "mBox")); }
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_tPickingH != null)
+        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
         if (_mProcessType != null)
         { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
         if (_bUserByUpdUser != null)
@@ -1157,16 +1157,16 @@ public abstract class BsTPackingH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tPickingH != null)
-        { sb.append(dm).append("tPickingH"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
-        if (_mBox != null)
-        { sb.append(dm).append("mBox"); }
         if (_tAllocInstH != null)
         { sb.append(dm).append("tAllocInstH"); }
+        if (_mBox != null)
+        { sb.append(dm).append("mBox"); }
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_tPickingH != null)
+        { sb.append(dm).append("tPickingH"); }
         if (_mProcessType != null)
         { sb.append(dm).append("mProcessType"); }
         if (_bUserByUpdUser != null)

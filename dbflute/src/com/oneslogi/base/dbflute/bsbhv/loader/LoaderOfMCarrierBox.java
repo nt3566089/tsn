@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CARRIER, M_BOX
+ *     M_BOX, M_CARRIER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCarrier, mBox
+ *     mBox, mCarrier
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfMCarrierBox {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMCarrier _foreignMCarrierLoader;
-    public LoaderOfMCarrier pulloutMCarrier() {
-        if (_foreignMCarrierLoader == null)
-        { _foreignMCarrierLoader = new LoaderOfMCarrier().ready(myBhv().pulloutMCarrier(_selectedList), _selector); }
-        return _foreignMCarrierLoader;
-    }
-
     protected LoaderOfMBox _foreignMBoxLoader;
     public LoaderOfMBox pulloutMBox() {
         if (_foreignMBoxLoader == null)
         { _foreignMBoxLoader = new LoaderOfMBox().ready(myBhv().pulloutMBox(_selectedList), _selector); }
         return _foreignMBoxLoader;
+    }
+
+    protected LoaderOfMCarrier _foreignMCarrierLoader;
+    public LoaderOfMCarrier pulloutMCarrier() {
+        if (_foreignMCarrierLoader == null)
+        { _foreignMCarrierLoader = new LoaderOfMCarrier().ready(myBhv().pulloutMCarrier(_selectedList), _selector); }
+        return _foreignMCarrierLoader;
     }
 
     // ===================================================================================

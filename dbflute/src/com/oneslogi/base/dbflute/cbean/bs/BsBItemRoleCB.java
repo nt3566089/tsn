@@ -265,35 +265,6 @@ public class BsBItemRoleCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BRoleNss _nssBRole;
-    public BRoleNss xdfgetNssBRole() {
-        if (_nssBRole == null) { _nssBRole = new BRoleNss(null); }
-        return _nssBRole;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * <pre>
-     * <span style="color: #0000C0">bItemRoleBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRole()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bItemRole</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bItemRole</span>.<span style="color: #CC4747">getBRole()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BRoleNss setupSelect_BRole() {
-        assertSetupSelectPurpose("bRole");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnRoleId();
-        }
-        doSetupSelect(() -> query().queryBRole());
-        if (_nssBRole == null || !_nssBRole.hasConditionQuery())
-        { _nssBRole = new BRoleNss(query().queryBRole()); }
-        return _nssBRole;
-    }
-
     protected BItemNss _nssBItem;
     public BItemNss xdfgetNssBItem() {
         if (_nssBItem == null) { _nssBItem = new BItemNss(null); }
@@ -321,6 +292,35 @@ public class BsBItemRoleCB extends AbstractConditionBean {
         if (_nssBItem == null || !_nssBItem.hasConditionQuery())
         { _nssBItem = new BItemNss(query().queryBItem()); }
         return _nssBItem;
+    }
+
+    protected BRoleNss _nssBRole;
+    public BRoleNss xdfgetNssBRole() {
+        if (_nssBRole == null) { _nssBRole = new BRoleNss(null); }
+        return _nssBRole;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * <pre>
+     * <span style="color: #0000C0">bItemRoleBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRole()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bItemRole</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bItemRole</span>.<span style="color: #CC4747">getBRole()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BRoleNss setupSelect_BRole() {
+        assertSetupSelectPurpose("bRole");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnRoleId();
+        }
+        doSetupSelect(() -> query().queryBRole());
+        if (_nssBRole == null || !_nssBRole.hasConditionQuery())
+        { _nssBRole = new BRoleNss(query().queryBRole()); }
+        return _nssBRole;
     }
 
     protected BClassDtlNss _nssBClassDtlByVisible;
@@ -422,8 +422,8 @@ public class BsBItemRoleCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BItemRoleCQ> {
-        protected BRoleCB.HpSpecification _bRole;
         protected BItemCB.HpSpecification _bItem;
+        protected BRoleCB.HpSpecification _bRole;
         protected BClassDtlCB.HpSpecification _bClassDtlByVisible;
         protected BClassDtlCB.HpSpecification _bClassDtlByEditable;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<BItemRoleCQ> qyCall
@@ -505,13 +505,13 @@ public class BsBItemRoleCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnItemRoleId(); // PK
-            if (qyCall().qy().hasConditionQueryBRole()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleCQ) {
-                columnRoleId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBItem()
                     || qyCall().qy().xgetReferrerQuery() instanceof BItemCQ) {
                 columnItemId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBRole()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleCQ) {
+                columnRoleId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByVisible()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -524,26 +524,6 @@ public class BsBItemRoleCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "B_ITEM_ROLE"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_ROLE by my ROLE_ID, named 'BRole'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BRoleCB.HpSpecification specifyBRole() {
-            assertRelation("bRole");
-            if (_bRole == null) {
-                _bRole = new BRoleCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRole()
-                                    , () -> _qyCall.qy().queryBRole())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bRole.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRole()
-                      , () -> xsyncQyCall().qy().queryBRole()));
-                }
-            }
-            return _bRole;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_ITEM by my ITEM_ID, named 'BItem'.
@@ -563,6 +543,26 @@ public class BsBItemRoleCB extends AbstractConditionBean {
                 }
             }
             return _bItem;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_ROLE by my ROLE_ID, named 'BRole'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BRoleCB.HpSpecification specifyBRole() {
+            assertRelation("bRole");
+            if (_bRole == null) {
+                _bRole = new BRoleCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRole()
+                                    , () -> _qyCall.qy().queryBRole())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bRole.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRole()
+                      , () -> xsyncQyCall().qy().queryBRole()));
+                }
+            }
+            return _bRole;
         }
         /**
          * Prepare to specify functions about relation table. <br>

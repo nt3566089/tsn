@@ -556,26 +556,26 @@ public class BsTStoreRecordHCQ extends AbstractBsTStoreRecordHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TStoreRecordHCQ bq = (TStoreRecordHCQ)bqs;
         TStoreRecordHCQ uq = (TStoreRecordHCQ)uqs;
-        if (bq.hasConditionQueryMCustomerByDepositId()) {
-            uq.queryMCustomerByDepositId().reflectRelationOnUnionQuery(bq.queryMCustomerByDepositId(), uq.queryMCustomerByDepositId());
-        }
-        if (bq.hasConditionQueryTReceivePlanH()) {
-            uq.queryTReceivePlanH().reflectRelationOnUnionQuery(bq.queryTReceivePlanH(), uq.queryTReceivePlanH());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
-        if (bq.hasConditionQueryMCustomerBySupplierId()) {
-            uq.queryMCustomerBySupplierId().reflectRelationOnUnionQuery(bq.queryMCustomerBySupplierId(), uq.queryMCustomerBySupplierId());
+        if (bq.hasConditionQueryMClient()) {
+            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryMCustomerByDepositId()) {
+            uq.queryMCustomerByDepositId().reflectRelationOnUnionQuery(bq.queryMCustomerByDepositId(), uq.queryMCustomerByDepositId());
         }
         if (bq.hasConditionQueryMProcessType()) {
             uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
         }
+        if (bq.hasConditionQueryTReceivePlanH()) {
+            uq.queryTReceivePlanH().reflectRelationOnUnionQuery(bq.queryTReceivePlanH(), uq.queryTReceivePlanH());
+        }
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
         }
-        if (bq.hasConditionQueryMClient()) {
-            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        if (bq.hasConditionQueryMCustomerBySupplierId()) {
+            uq.queryMCustomerBySupplierId().reflectRelationOnUnionQuery(bq.queryMCustomerBySupplierId(), uq.queryMCustomerBySupplierId());
         }
         if (bq.hasConditionQueryTStoreRecordRAsOne()) {
             uq.queryTStoreRecordRAsOne().reflectRelationOnUnionQuery(bq.queryTStoreRecordRAsOne(), uq.queryTStoreRecordRAsOne());
@@ -585,46 +585,6 @@ public class BsTStoreRecordHCQ extends AbstractBsTStoreRecordHCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCustomerCQ queryMCustomerByDepositId() {
-        return xdfgetConditionQueryMCustomerByDepositId();
-    }
-    public MCustomerCQ xdfgetConditionQueryMCustomerByDepositId() {
-        String prop = "mCustomerByDepositId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerByDepositId()); xsetupOuterJoinMCustomerByDepositId(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCustomerCQ xcreateQueryMCustomerByDepositId() {
-        String nrp = xresolveNRP("T_STORE_RECORD_H", "mCustomerByDepositId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerByDepositId", nrp);
-    }
-    protected void xsetupOuterJoinMCustomerByDepositId() { xregOutJo("mCustomerByDepositId"); }
-    public boolean hasConditionQueryMCustomerByDepositId() { return xhasQueRlMap("mCustomerByDepositId"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TReceivePlanHCQ queryTReceivePlanH() {
-        return xdfgetConditionQueryTReceivePlanH();
-    }
-    public TReceivePlanHCQ xdfgetConditionQueryTReceivePlanH() {
-        String prop = "tReceivePlanH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanH()); xsetupOuterJoinTReceivePlanH(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TReceivePlanHCQ xcreateQueryTReceivePlanH() {
-        String nrp = xresolveNRP("T_STORE_RECORD_H", "tReceivePlanH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TReceivePlanHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanH", nrp);
-    }
-    protected void xsetupOuterJoinTReceivePlanH() { xregOutJo("tReceivePlanH"); }
-    public boolean hasConditionQueryTReceivePlanH() { return xhasQueRlMap("tReceivePlanH"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -647,23 +607,43 @@ public class BsTStoreRecordHCQ extends AbstractBsTStoreRecordHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCustomerCQ queryMCustomerBySupplierId() {
-        return xdfgetConditionQueryMCustomerBySupplierId();
+    public MClientCQ queryMClient() {
+        return xdfgetConditionQueryMClient();
     }
-    public MCustomerCQ xdfgetConditionQueryMCustomerBySupplierId() {
-        String prop = "mCustomerBySupplierId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerBySupplierId()); xsetupOuterJoinMCustomerBySupplierId(); }
+    public MClientCQ xdfgetConditionQueryMClient() {
+        String prop = "mClient";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
         return xgetQueRlMap(prop);
     }
-    protected MCustomerCQ xcreateQueryMCustomerBySupplierId() {
-        String nrp = xresolveNRP("T_STORE_RECORD_H", "mCustomerBySupplierId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerBySupplierId", nrp);
+    protected MClientCQ xcreateQueryMClient() {
+        String nrp = xresolveNRP("T_STORE_RECORD_H", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
     }
-    protected void xsetupOuterJoinMCustomerBySupplierId() { xregOutJo("mCustomerBySupplierId"); }
-    public boolean hasConditionQueryMCustomerBySupplierId() { return xhasQueRlMap("mCustomerBySupplierId"); }
+    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
+    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCustomerCQ queryMCustomerByDepositId() {
+        return xdfgetConditionQueryMCustomerByDepositId();
+    }
+    public MCustomerCQ xdfgetConditionQueryMCustomerByDepositId() {
+        String prop = "mCustomerByDepositId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerByDepositId()); xsetupOuterJoinMCustomerByDepositId(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCustomerCQ xcreateQueryMCustomerByDepositId() {
+        String nrp = xresolveNRP("T_STORE_RECORD_H", "mCustomerByDepositId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerByDepositId", nrp);
+    }
+    protected void xsetupOuterJoinMCustomerByDepositId() { xregOutJo("mCustomerByDepositId"); }
+    public boolean hasConditionQueryMCustomerByDepositId() { return xhasQueRlMap("mCustomerByDepositId"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -687,6 +667,26 @@ public class BsTStoreRecordHCQ extends AbstractBsTStoreRecordHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TReceivePlanHCQ queryTReceivePlanH() {
+        return xdfgetConditionQueryTReceivePlanH();
+    }
+    public TReceivePlanHCQ xdfgetConditionQueryTReceivePlanH() {
+        String prop = "tReceivePlanH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanH()); xsetupOuterJoinTReceivePlanH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TReceivePlanHCQ xcreateQueryTReceivePlanH() {
+        String nrp = xresolveNRP("T_STORE_RECORD_H", "tReceivePlanH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TReceivePlanHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanH", nrp);
+    }
+    protected void xsetupOuterJoinTReceivePlanH() { xregOutJo("tReceivePlanH"); }
+    public boolean hasConditionQueryTReceivePlanH() { return xhasQueRlMap("tReceivePlanH"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -707,23 +707,23 @@ public class BsTStoreRecordHCQ extends AbstractBsTStoreRecordHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MClientCQ queryMClient() {
-        return xdfgetConditionQueryMClient();
+    public MCustomerCQ queryMCustomerBySupplierId() {
+        return xdfgetConditionQueryMCustomerBySupplierId();
     }
-    public MClientCQ xdfgetConditionQueryMClient() {
-        String prop = "mClient";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
+    public MCustomerCQ xdfgetConditionQueryMCustomerBySupplierId() {
+        String prop = "mCustomerBySupplierId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerBySupplierId()); xsetupOuterJoinMCustomerBySupplierId(); }
         return xgetQueRlMap(prop);
     }
-    protected MClientCQ xcreateQueryMClient() {
-        String nrp = xresolveNRP("T_STORE_RECORD_H", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
+    protected MCustomerCQ xcreateQueryMCustomerBySupplierId() {
+        String nrp = xresolveNRP("T_STORE_RECORD_H", "mCustomerBySupplierId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerBySupplierId", nrp);
     }
-    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
-    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+    protected void xsetupOuterJoinMCustomerBySupplierId() { xregOutJo("mCustomerBySupplierId"); }
+    public boolean hasConditionQueryMCustomerBySupplierId() { return xhasQueRlMap("mCustomerBySupplierId"); }
 
     /**
      * Get the condition-query for relation table. <br>

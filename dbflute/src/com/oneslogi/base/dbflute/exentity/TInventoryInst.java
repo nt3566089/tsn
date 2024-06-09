@@ -287,22 +287,22 @@ public class TInventoryInst extends BsTInventoryInst {
 	private String inoutKbn;
 	
 	/** 累計過不足数_返品 */
-	private BigDecimal retrunTotal;
+	private Long retrunTotal;
 	
 	/** 累計過不足数_国税還付品 */
-	private BigDecimal taxlessTotal;
+	private Long taxlessTotal;
 
 	/** り災品 */
-	private BigDecimal backTotal;
+	private Long backTotal;
 	
 	/** 不適品ラベル作成個装数 */
-	private BigDecimal notObjectTotal;
+	private Long notObjectTotal;
 	
 	/** 一括登録個装数 */
-	private BigDecimal registTotal;
+	private Long registTotal;
 	
 	/** 国税還付品数 */
-	private BigDecimal taxTotal;
+	private Long taxTotal;
 	
 	
 	
@@ -386,51 +386,51 @@ public class TInventoryInst extends BsTInventoryInst {
 		this.inoutKbn = inoutKbn;
 	}
 
-	public BigDecimal getRetrunTotal() {
+	public Long getRetrunTotal() {
 		return retrunTotal;
 	}
 
-	public void setRetrunTotal(BigDecimal retrunTotal) {
+	public void setRetrunTotal(Long retrunTotal) {
 		this.retrunTotal = retrunTotal;
 	}
 
-	public BigDecimal getTaxlessTotal() {
+	public Long getTaxlessTotal() {
 		return taxlessTotal;
 	}
 
-	public void setTaxlessTotal(BigDecimal taxlessTotal) {
+	public void setTaxlessTotal(Long taxlessTotal) {
 		this.taxlessTotal = taxlessTotal;
 	}
 
-	public BigDecimal getBackTotal() {
+	public Long getBackTotal() {
 		return backTotal;
 	}
 
-	public void setBackTotal(BigDecimal backTotal) {
+	public void setBackTotal(Long backTotal) {
 		this.backTotal = backTotal;
 	}
 
-	public BigDecimal getNotObjectTotal() {
+	public Long getNotObjectTotal() {
 		return notObjectTotal;
 	}
 
-	public void setNotObjectTotal(BigDecimal notObjectTotal) {
+	public void setNotObjectTotal(Long notObjectTotal) {
 		this.notObjectTotal = notObjectTotal;
 	}
 
-	public BigDecimal getRegistTotal() {
+	public Long getRegistTotal() {
 		return registTotal;
 	}
 
-	public void setRegistTotal(BigDecimal registTotal) {
+	public void setRegistTotal(Long registTotal) {
 		this.registTotal = registTotal;
 	}
 
-	public BigDecimal getTaxTotal() {
+	public Long getTaxTotal() {
 		return taxTotal;
 	}
 
-	public void setTaxTotal(BigDecimal taxTotal) {
+	public void setTaxTotal(Long taxTotal) {
 		this.taxTotal = taxTotal;
 	}
 	

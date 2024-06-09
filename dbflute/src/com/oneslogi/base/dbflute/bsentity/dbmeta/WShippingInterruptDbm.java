@@ -73,10 +73,10 @@ public class WShippingInterruptDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMClient(), (et, vl) -> ((WShippingInterrupt)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMBox(), (et, vl) -> ((WShippingInterrupt)et).setMBox((MBox)vl), "MBox");
-        setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMProduct(), (et, vl) -> ((WShippingInterrupt)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMCenter(), (et, vl) -> ((WShippingInterrupt)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMClient(), (et, vl) -> ((WShippingInterrupt)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((WShippingInterrupt)et).getMProduct(), (et, vl) -> ((WShippingInterrupt)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -272,28 +272,12 @@ public class WShippingInterruptDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_SHIPPING_INTERRUPT_FK2", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
-    }
-    /**
      * M_BOX by my BOX_ID, named 'MBox'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMBox() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("W_SHIPPING_INTERRUPT_FK4", "MBox", this, MBoxDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
-    }
-    /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_SHIPPING_INTERRUPT_FK3", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
+        return cfi("W_SHIPPING_INTERRUPT_FK4", "MBox", this, MBoxDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
     }
     /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -301,7 +285,23 @@ public class WShippingInterruptDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_SHIPPING_INTERRUPT_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
+        return cfi("W_SHIPPING_INTERRUPT_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
+    }
+    /**
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("W_SHIPPING_INTERRUPT_FK2", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("W_SHIPPING_INTERRUPT_FK3", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WShippingInterruptList", false);
     }
 
     // -----------------------------------------------------

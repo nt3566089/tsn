@@ -103,32 +103,32 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public Map<String, TMoveInstRCQ> xdfgetUserId_ExistsReferrer_TMoveInstRList() { return xgetSQueMap("userId_ExistsReferrer_TMoveInstRList"); }
     public String keepUserId_ExistsReferrer_TMoveInstRList(TMoveInstRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TMoveInstRList", sq); }
 
-    public Map<String, TPackingRCQ> xdfgetUserId_ExistsReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPackingRByTagOutUserIdList"); }
-    public String keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPackingRByTagOutUserIdList", sq); }
-
     public Map<String, TPackingRCQ> xdfgetUserId_ExistsReferrer_TPackingRByInspectionOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPackingRByInspectionOutUserIdList"); }
     public String keepUserId_ExistsReferrer_TPackingRByInspectionOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPackingRByInspectionOutUserIdList", sq); }
 
     public Map<String, TPackingRCQ> xdfgetUserId_ExistsReferrer_TPackingRByStwOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPackingRByStwOutUserIdList"); }
     public String keepUserId_ExistsReferrer_TPackingRByStwOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPackingRByStwOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByPl1OutUserIdList"); }
-    public String keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByPl1OutUserIdList", sq); }
+    public Map<String, TPackingRCQ> xdfgetUserId_ExistsReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPackingRByTagOutUserIdList"); }
+    public String keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPackingRByTagOutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByCaseOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByCaseOutUserIdList"); }
     public String keepUserId_ExistsReferrer_TPickingRByCaseOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByCaseOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList"); }
-    public String keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByPackingOutUserIdList"); }
+    public String keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByPackingOutUserIdList", sq); }
+
+    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByPl1OutUserIdList"); }
+    public String keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByPl1OutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByPl2OutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByPl2OutUserIdList"); }
     public String keepUserId_ExistsReferrer_TPickingRByPl2OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByPl2OutUserIdList", sq); }
 
+    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList"); }
+    public String keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+
     public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRBySlipOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRBySlipOutUserIdList"); }
     public String keepUserId_ExistsReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRBySlipOutUserIdList", sq); }
-
-    public Map<String, TPickingRCQ> xdfgetUserId_ExistsReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_ExistsReferrer_TPickingRByPackingOutUserIdList"); }
-    public String keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TPickingRByPackingOutUserIdList", sq); }
 
     public Map<String, TReceivePlanRCQ> xdfgetUserId_ExistsReferrer_TReceivePlanRList() { return xgetSQueMap("userId_ExistsReferrer_TReceivePlanRList"); }
     public String keepUserId_ExistsReferrer_TReceivePlanRList(TReceivePlanRCQ sq) { return xkeepSQue("userId_ExistsReferrer_TReceivePlanRList", sq); }
@@ -166,32 +166,32 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public Map<String, TMoveInstRCQ> xdfgetUserId_NotExistsReferrer_TMoveInstRList() { return xgetSQueMap("userId_NotExistsReferrer_TMoveInstRList"); }
     public String keepUserId_NotExistsReferrer_TMoveInstRList(TMoveInstRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TMoveInstRList", sq); }
 
-    public Map<String, TPackingRCQ> xdfgetUserId_NotExistsReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPackingRByTagOutUserIdList"); }
-    public String keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPackingRByTagOutUserIdList", sq); }
-
     public Map<String, TPackingRCQ> xdfgetUserId_NotExistsReferrer_TPackingRByInspectionOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPackingRByInspectionOutUserIdList"); }
     public String keepUserId_NotExistsReferrer_TPackingRByInspectionOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPackingRByInspectionOutUserIdList", sq); }
 
     public Map<String, TPackingRCQ> xdfgetUserId_NotExistsReferrer_TPackingRByStwOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPackingRByStwOutUserIdList"); }
     public String keepUserId_NotExistsReferrer_TPackingRByStwOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPackingRByStwOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByPl1OutUserIdList"); }
-    public String keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByPl1OutUserIdList", sq); }
+    public Map<String, TPackingRCQ> xdfgetUserId_NotExistsReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPackingRByTagOutUserIdList"); }
+    public String keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPackingRByTagOutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByCaseOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByCaseOutUserIdList"); }
     public String keepUserId_NotExistsReferrer_TPickingRByCaseOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByCaseOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList"); }
-    public String keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByPackingOutUserIdList"); }
+    public String keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByPackingOutUserIdList", sq); }
+
+    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByPl1OutUserIdList"); }
+    public String keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByPl1OutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByPl2OutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByPl2OutUserIdList"); }
     public String keepUserId_NotExistsReferrer_TPickingRByPl2OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByPl2OutUserIdList", sq); }
 
+    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList"); }
+    public String keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+
     public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRBySlipOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRBySlipOutUserIdList"); }
     public String keepUserId_NotExistsReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRBySlipOutUserIdList", sq); }
-
-    public Map<String, TPickingRCQ> xdfgetUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_NotExistsReferrer_TPickingRByPackingOutUserIdList"); }
-    public String keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TPickingRByPackingOutUserIdList", sq); }
 
     public Map<String, TReceivePlanRCQ> xdfgetUserId_NotExistsReferrer_TReceivePlanRList() { return xgetSQueMap("userId_NotExistsReferrer_TReceivePlanRList"); }
     public String keepUserId_NotExistsReferrer_TReceivePlanRList(TReceivePlanRCQ sq) { return xkeepSQue("userId_NotExistsReferrer_TReceivePlanRList", sq); }
@@ -223,32 +223,32 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public Map<String, TMoveInstRCQ> xdfgetUserId_SpecifyDerivedReferrer_TMoveInstRList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TMoveInstRList"); }
     public String keepUserId_SpecifyDerivedReferrer_TMoveInstRList(TMoveInstRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TMoveInstRList", sq); }
 
-    public Map<String, TPackingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList"); }
-    public String keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList", sq); }
-
     public Map<String, TPackingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPackingRByInspectionOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPackingRByInspectionOutUserIdList"); }
     public String keepUserId_SpecifyDerivedReferrer_TPackingRByInspectionOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPackingRByInspectionOutUserIdList", sq); }
 
     public Map<String, TPackingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPackingRByStwOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPackingRByStwOutUserIdList"); }
     public String keepUserId_SpecifyDerivedReferrer_TPackingRByStwOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPackingRByStwOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList"); }
-    public String keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList", sq); }
+    public Map<String, TPackingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList"); }
+    public String keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByCaseOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByCaseOutUserIdList"); }
     public String keepUserId_SpecifyDerivedReferrer_TPickingRByCaseOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByCaseOutUserIdList", sq); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
-    public String keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList"); }
+    public String keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList", sq); }
+
+    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList"); }
+    public String keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList", sq); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByPl2OutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByPl2OutUserIdList"); }
     public String keepUserId_SpecifyDerivedReferrer_TPickingRByPl2OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByPl2OutUserIdList", sq); }
 
+    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
+    public String keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+
     public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRBySlipOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRBySlipOutUserIdList"); }
     public String keepUserId_SpecifyDerivedReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRBySlipOutUserIdList", sq); }
-
-    public Map<String, TPickingRCQ> xdfgetUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList"); }
-    public String keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList", sq); }
 
     public Map<String, TReceivePlanRCQ> xdfgetUserId_SpecifyDerivedReferrer_TReceivePlanRList() { return xgetSQueMap("userId_SpecifyDerivedReferrer_TReceivePlanRList"); }
     public String keepUserId_SpecifyDerivedReferrer_TReceivePlanRList(TReceivePlanRCQ sq) { return xkeepSQue("userId_SpecifyDerivedReferrer_TReceivePlanRList", sq); }
@@ -292,11 +292,6 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TMoveInstRListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TMoveInstRList"); }
     public String keepUserId_QueryDerivedReferrer_TMoveInstRListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TMoveInstRList", pm); }
 
-    public Map<String, TPackingRCQ> xdfgetUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList", sq); }
-    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList", pm); }
-
     public Map<String, TPackingRCQ> xdfgetUserId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdList", sq); }
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPackingRByInspectionOutUserIdList"); }
@@ -307,35 +302,40 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPackingRByStwOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPackingRByStwOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPackingRByStwOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPackingRByStwOutUserIdList", pm); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList", sq); }
-    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList", pm); }
+    public Map<String, TPackingRCQ> xdfgetUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList", sq); }
+    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPackingRByTagOutUserIdList", pm); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList", sq); }
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByCaseOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRByCaseOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByCaseOutUserIdList", pm); }
 
-    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
-    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList", pm); }
+    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList", sq); }
+    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList", pm); }
+
+    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList", sq); }
+    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList", pm); }
 
     public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList", sq); }
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByPl2OutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRByPl2OutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByPl2OutUserIdList", pm); }
 
+    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList", sq); }
+    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList"); }
+    public String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList", pm); }
+
     public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList", sq); }
     public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList"); }
     public String keepUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList", pm); }
-
-    public Map<String, TPickingRCQ> xdfgetUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList() { return xgetSQueMap("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList", sq); }
-    public Map<String, Object> xdfgetUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter() { return xgetSQuePmMap("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList"); }
-    public String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(Object pm) { return xkeepSQuePm("userId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList", pm); }
 
     public Map<String, TReceivePlanRCQ> xdfgetUserId_QueryDerivedReferrer_TReceivePlanRList() { return xgetSQueMap("userId_QueryDerivedReferrer_TReceivePlanRList"); }
     public String keepUserId_QueryDerivedReferrer_TReceivePlanRList(TReceivePlanRCQ sq) { return xkeepSQue("userId_QueryDerivedReferrer_TReceivePlanRList", sq); }
@@ -698,11 +698,11 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BUserCQ bq = (BUserCQ)bqs;
         BUserCQ uq = (BUserCQ)uqs;
-        if (bq.hasConditionQueryBRoleGrp()) {
-            uq.queryBRoleGrp().reflectRelationOnUnionQuery(bq.queryBRoleGrp(), uq.queryBRoleGrp());
-        }
         if (bq.hasConditionQueryBCulture()) {
             uq.queryBCulture().reflectRelationOnUnionQuery(bq.queryBCulture(), uq.queryBCulture());
+        }
+        if (bq.hasConditionQueryBRoleGrp()) {
+            uq.queryBRoleGrp().reflectRelationOnUnionQuery(bq.queryBRoleGrp(), uq.queryBRoleGrp());
         }
         if (bq.hasConditionQueryBClassDtlByDelFlg()) {
             uq.queryBClassDtlByDelFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelFlg(), uq.queryBClassDtlByDelFlg());
@@ -718,26 +718,6 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BRoleGrpCQ queryBRoleGrp() {
-        return xdfgetConditionQueryBRoleGrp();
-    }
-    public BRoleGrpCQ xdfgetConditionQueryBRoleGrp() {
-        String prop = "bRoleGrp";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRoleGrp()); xsetupOuterJoinBRoleGrp(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BRoleGrpCQ xcreateQueryBRoleGrp() {
-        String nrp = xresolveNRP("B_USER", "bRoleGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BRoleGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRoleGrp", nrp);
-    }
-    protected void xsetupOuterJoinBRoleGrp() { xregOutJo("bRoleGrp"); }
-    public boolean hasConditionQueryBRoleGrp() { return xhasQueRlMap("bRoleGrp"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -757,6 +737,26 @@ public class BsBUserCQ extends AbstractBsBUserCQ {
     }
     protected void xsetupOuterJoinBCulture() { xregOutJo("bCulture"); }
     public boolean hasConditionQueryBCulture() { return xhasQueRlMap("bCulture"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BRoleGrpCQ queryBRoleGrp() {
+        return xdfgetConditionQueryBRoleGrp();
+    }
+    public BRoleGrpCQ xdfgetConditionQueryBRoleGrp() {
+        String prop = "bRoleGrp";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRoleGrp()); xsetupOuterJoinBRoleGrp(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BRoleGrpCQ xcreateQueryBRoleGrp() {
+        String nrp = xresolveNRP("B_USER", "bRoleGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BRoleGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRoleGrp", nrp);
+    }
+    protected void xsetupOuterJoinBRoleGrp() { xregOutJo("bRoleGrp"); }
+    public boolean hasConditionQueryBRoleGrp() { return xhasQueRlMap("bRoleGrp"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_MOVE_INST_H, M_WAREHOUSE, T_LOT, M_LOCATION, M_SHAPE, M_PRODUCT, M_STOCK_TYPE, T_STORE_NO, M_CUSTOMER, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
+ *     M_CUSTOMER, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInoutType), T_MOVE_INST_B_SUB(AsOne)
  *
  * [referrer table]
  *     T_MOVE_RECORD_B, T_MOVE_INST_B_SUB
  *
  * [foreign property]
- *     tMoveInstH, mWarehouse, tLot, mLocation, mShape, mProduct, mStockType, tStoreNo, mCustomerBySupplierId, mCustomerByDepositId, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
+ *     mCustomerByDepositId, mLocation, tLot, tMoveInstH, mProduct, mShape, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInoutType, bClassDtlByMoveInstStatus, tMoveInstBSubAsOne
  *
  * [referrer property]
  *     tMoveRecordBList
@@ -481,28 +481,12 @@ public abstract class BsTMoveInstBBhv extends AbstractBehaviorWritable<TMoveInst
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TMoveInstH'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TMoveInstH> pulloutTMoveInstH(List<TMoveInstB> tMoveInstBList)
-    { return helpPulloutInternally(tMoveInstBList, "tMoveInstH"); }
-
-    /**
-     * Pull out the list of foreign table 'MWarehouse'.
-     * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MWarehouse> pulloutMWarehouse(List<TMoveInstB> tMoveInstBList)
-    { return helpPulloutInternally(tMoveInstBList, "mWarehouse"); }
-
-    /**
-     * Pull out the list of foreign table 'TLot'.
-     * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TLot> pulloutTLot(List<TMoveInstB> tMoveInstBList)
-    { return helpPulloutInternally(tMoveInstBList, "tLot"); }
+    public List<MCustomer> pulloutMCustomerByDepositId(List<TMoveInstB> tMoveInstBList)
+    { return helpPulloutInternally(tMoveInstBList, "mCustomerByDepositId"); }
 
     /**
      * Pull out the list of foreign table 'MLocation'.
@@ -513,12 +497,20 @@ public abstract class BsTMoveInstBBhv extends AbstractBehaviorWritable<TMoveInst
     { return helpPulloutInternally(tMoveInstBList, "mLocation"); }
 
     /**
-     * Pull out the list of foreign table 'MShape'.
+     * Pull out the list of foreign table 'TLot'.
      * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MShape> pulloutMShape(List<TMoveInstB> tMoveInstBList)
-    { return helpPulloutInternally(tMoveInstBList, "mShape"); }
+    public List<TLot> pulloutTLot(List<TMoveInstB> tMoveInstBList)
+    { return helpPulloutInternally(tMoveInstBList, "tLot"); }
+
+    /**
+     * Pull out the list of foreign table 'TMoveInstH'.
+     * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TMoveInstH> pulloutTMoveInstH(List<TMoveInstB> tMoveInstBList)
+    { return helpPulloutInternally(tMoveInstBList, "tMoveInstH"); }
 
     /**
      * Pull out the list of foreign table 'MProduct'.
@@ -527,6 +519,14 @@ public abstract class BsTMoveInstBBhv extends AbstractBehaviorWritable<TMoveInst
      */
     public List<MProduct> pulloutMProduct(List<TMoveInstB> tMoveInstBList)
     { return helpPulloutInternally(tMoveInstBList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'MShape'.
+     * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MShape> pulloutMShape(List<TMoveInstB> tMoveInstBList)
+    { return helpPulloutInternally(tMoveInstBList, "mShape"); }
 
     /**
      * Pull out the list of foreign table 'MStockType'.
@@ -553,12 +553,12 @@ public abstract class BsTMoveInstBBhv extends AbstractBehaviorWritable<TMoveInst
     { return helpPulloutInternally(tMoveInstBList, "mCustomerBySupplierId"); }
 
     /**
-     * Pull out the list of foreign table 'MCustomer'.
+     * Pull out the list of foreign table 'MWarehouse'.
      * @param tMoveInstBList The list of tMoveInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerByDepositId(List<TMoveInstB> tMoveInstBList)
-    { return helpPulloutInternally(tMoveInstBList, "mCustomerByDepositId"); }
+    public List<MWarehouse> pulloutMWarehouse(List<TMoveInstB> tMoveInstBList)
+    { return helpPulloutInternally(tMoveInstBList, "mWarehouse"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

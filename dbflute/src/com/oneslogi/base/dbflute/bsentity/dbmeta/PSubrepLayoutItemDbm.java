@@ -68,8 +68,8 @@ public class PSubrepLayoutItemDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((PSubrepLayoutItem)et).getPSubrepLayout(), (et, vl) -> ((PSubrepLayoutItem)et).setPSubrepLayout((PSubrepLayout)vl), "PSubrepLayout");
         setupEfpg(_efpgMap, et -> ((PSubrepLayoutItem)et).getBDict(), (et, vl) -> ((PSubrepLayoutItem)et).setBDict((BDict)vl), "BDict");
+        setupEfpg(_efpgMap, et -> ((PSubrepLayoutItem)et).getPSubrepLayout(), (et, vl) -> ((PSubrepLayoutItem)et).setPSubrepLayout((PSubrepLayout)vl), "PSubrepLayout");
         setupEfpg(_efpgMap, et -> ((PSubrepLayoutItem)et).getVDict(), (et, vl) -> ((PSubrepLayoutItem)et).setVDict((VDict)vl), "VDict");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -241,20 +241,20 @@ public class PSubrepLayoutItemDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignPSubrepLayout() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSubrepLayoutId(), PSubrepLayoutDbm.getInstance().columnSubrepLayoutId());
-        return cfi("P_SUBREP_LAYOUT_ITEM_FK2", "PSubrepLayout", this, PSubrepLayoutDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PSubrepLayoutItemList", false);
-    }
-    /**
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("P_SUBREP_LAYOUT_ITEM_FK1", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PSubrepLayoutItemList", false);
+        return cfi("P_SUBREP_LAYOUT_ITEM_FK1", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PSubrepLayoutItemList", false);
+    }
+    /**
+     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignPSubrepLayout() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSubrepLayoutId(), PSubrepLayoutDbm.getInstance().columnSubrepLayoutId());
+        return cfi("P_SUBREP_LAYOUT_ITEM_FK2", "PSubrepLayout", this, PSubrepLayoutDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PSubrepLayoutItemList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

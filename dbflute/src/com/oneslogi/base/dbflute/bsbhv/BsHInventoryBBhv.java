@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     H_MOVE_H, H_STOCK, M_SHAPE, H_INVENTORY_H, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
+ *     H_INVENTORY_H, H_MOVE_H, M_SHAPE, H_STOCK, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     hMoveH, hStock, mShape, hInventoryH, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
+ *     hInventoryH, hMoveH, mShape, hStock, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsHInventoryBBhv extends AbstractBehaviorWritable<HInvento
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'HInventoryH'.
+     * @param hInventoryBList The list of hInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<HInventoryH> pulloutHInventoryH(List<HInventoryB> hInventoryBList)
+    { return helpPulloutInternally(hInventoryBList, "hInventoryH"); }
+
+    /**
      * Pull out the list of foreign table 'HMoveH'.
      * @param hInventoryBList The list of hInventoryB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<HMoveH> pulloutHMoveH(List<HInventoryB> hInventoryBList)
     { return helpPulloutInternally(hInventoryBList, "hMoveH"); }
-
-    /**
-     * Pull out the list of foreign table 'HStock'.
-     * @param hInventoryBList The list of hInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<HStock> pulloutHStock(List<HInventoryB> hInventoryBList)
-    { return helpPulloutInternally(hInventoryBList, "hStock"); }
 
     /**
      * Pull out the list of foreign table 'MShape'.
@@ -417,12 +417,12 @@ public abstract class BsHInventoryBBhv extends AbstractBehaviorWritable<HInvento
     { return helpPulloutInternally(hInventoryBList, "mShape"); }
 
     /**
-     * Pull out the list of foreign table 'HInventoryH'.
+     * Pull out the list of foreign table 'HStock'.
      * @param hInventoryBList The list of hInventoryB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<HInventoryH> pulloutHInventoryH(List<HInventoryB> hInventoryBList)
-    { return helpPulloutInternally(hInventoryBList, "hInventoryH"); }
+    public List<HStock> pulloutHStock(List<HInventoryB> hInventoryBList)
+    { return helpPulloutInternally(hInventoryBList, "hStock"); }
 
     /**
      * Pull out the list of foreign table 'MStockType'.

@@ -298,6 +298,35 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
         return _nssMBox;
     }
 
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * <pre>
+     * <span style="color: #0000C0">wSglRowShipInspHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">wSglRowShipInspH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">wSglRowShipInspH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnCenterId();
+        }
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
+    }
+
     protected MClientNss _nssMClient;
     public MClientNss xdfgetNssMClient() {
         if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
@@ -356,35 +385,6 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
         return _nssMProduct;
     }
 
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * <pre>
-     * <span style="color: #0000C0">wSglRowShipInspHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">wSglRowShipInspH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">wSglRowShipInspH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
-        }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
-    }
-
     // [DBFlute-0.7.4]
     // ===================================================================================
     //                                                                             Specify
@@ -427,9 +427,9 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
 
     public static class HpSpecification extends HpAbstractSpecification<WSglRowShipInspHCQ> {
         protected MBoxCB.HpSpecification _mBox;
+        protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
         protected MProductCB.HpSpecification _mProduct;
-        protected MCenterCB.HpSpecification _mCenter;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<WSglRowShipInspHCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -538,6 +538,10 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
                 columnBoxId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
@@ -545,10 +549,6 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryMProduct()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
                 columnProductId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
             }
         }
         @Override
@@ -572,6 +572,26 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
                 }
             }
             return _mBox;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
+                }
+            }
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -612,26 +632,6 @@ public class BsWSglRowShipInspHCB extends AbstractConditionBean {
                 }
             }
             return _mProduct;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
-                }
-            }
-            return _mCenter;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

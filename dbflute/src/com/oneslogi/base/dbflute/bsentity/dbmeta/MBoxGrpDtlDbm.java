@@ -64,8 +64,8 @@ public class MBoxGrpDtlDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MBoxGrpDtl)et).getMBox(), (et, vl) -> ((MBoxGrpDtl)et).setMBox((MBox)vl), "MBox");
         setupEfpg(_efpgMap, et -> ((MBoxGrpDtl)et).getMBoxGrp(), (et, vl) -> ((MBoxGrpDtl)et).setMBoxGrp((MBoxGrp)vl), "MBoxGrp");
+        setupEfpg(_efpgMap, et -> ((MBoxGrpDtl)et).getMBox(), (et, vl) -> ((MBoxGrpDtl)et).setMBox((MBox)vl), "MBox");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -208,20 +208,20 @@ public class MBoxGrpDtlDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMBox() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("M_BOX_GRP_DTL_FK2", "MBox", this, MBoxDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MBoxGrpDtlList", false);
-    }
-    /**
      * M_BOX_GRP by my BOX_GRP_ID, named 'MBoxGrp'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMBoxGrp() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxGrpId(), MBoxGrpDbm.getInstance().columnBoxGrpId());
-        return cfi("M_BOX_GRP_DTL_FK1", "MBoxGrp", this, MBoxGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MBoxGrpDtlList", false);
+        return cfi("M_BOX_GRP_DTL_FK1", "MBoxGrp", this, MBoxGrpDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MBoxGrpDtlList", false);
+    }
+    /**
+     * M_BOX by my BOX_ID, named 'MBox'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMBox() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnBoxId(), MBoxDbm.getInstance().columnBoxId());
+        return cfi("M_BOX_GRP_DTL_FK2", "MBox", this, MBoxDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MBoxGrpDtlList", false);
     }
 
     // -----------------------------------------------------

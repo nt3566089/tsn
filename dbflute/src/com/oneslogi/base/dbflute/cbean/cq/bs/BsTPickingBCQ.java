@@ -518,20 +518,20 @@ public class BsTPickingBCQ extends AbstractBsTPickingBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPickingBCQ bq = (TPickingBCQ)bqs;
         TPickingBCQ uq = (TPickingBCQ)uqs;
-        if (bq.hasConditionQueryTShippingInstB()) {
-            uq.queryTShippingInstB().reflectRelationOnUnionQuery(bq.queryTShippingInstB(), uq.queryTShippingInstB());
+        if (bq.hasConditionQueryTAllocInstB()) {
+            uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
         }
         if (bq.hasConditionQueryTPickingH()) {
             uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
         }
-        if (bq.hasConditionQueryTAllocInstB()) {
-            uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
+        if (bq.hasConditionQueryMShape()) {
+            uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
+        }
+        if (bq.hasConditionQueryTShippingInstB()) {
+            uq.queryTShippingInstB().reflectRelationOnUnionQuery(bq.queryTShippingInstB(), uq.queryTShippingInstB());
         }
         if (bq.hasConditionQueryTStock()) {
             uq.queryTStock().reflectRelationOnUnionQuery(bq.queryTStock(), uq.queryTStock());
-        }
-        if (bq.hasConditionQueryMShape()) {
-            uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
         }
     }
 
@@ -540,23 +540,23 @@ public class BsTPickingBCQ extends AbstractBsTPickingBCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TShippingInstBCQ queryTShippingInstB() {
-        return xdfgetConditionQueryTShippingInstB();
+    public TAllocInstBCQ queryTAllocInstB() {
+        return xdfgetConditionQueryTAllocInstB();
     }
-    public TShippingInstBCQ xdfgetConditionQueryTShippingInstB() {
-        String prop = "tShippingInstB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTShippingInstB()); xsetupOuterJoinTShippingInstB(); }
+    public TAllocInstBCQ xdfgetConditionQueryTAllocInstB() {
+        String prop = "tAllocInstB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstB()); xsetupOuterJoinTAllocInstB(); }
         return xgetQueRlMap(prop);
     }
-    protected TShippingInstBCQ xcreateQueryTShippingInstB() {
-        String nrp = xresolveNRP("T_PICKING_B", "tShippingInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TShippingInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tShippingInstB", nrp);
+    protected TAllocInstBCQ xcreateQueryTAllocInstB() {
+        String nrp = xresolveNRP("T_PICKING_B", "tAllocInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TAllocInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstB", nrp);
     }
-    protected void xsetupOuterJoinTShippingInstB() { xregOutJo("tShippingInstB"); }
-    public boolean hasConditionQueryTShippingInstB() { return xhasQueRlMap("tShippingInstB"); }
+    protected void xsetupOuterJoinTAllocInstB() { xregOutJo("tAllocInstB"); }
+    public boolean hasConditionQueryTAllocInstB() { return xhasQueRlMap("tAllocInstB"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -580,23 +580,43 @@ public class BsTPickingBCQ extends AbstractBsTPickingBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TAllocInstBCQ queryTAllocInstB() {
-        return xdfgetConditionQueryTAllocInstB();
+    public MShapeCQ queryMShape() {
+        return xdfgetConditionQueryMShape();
     }
-    public TAllocInstBCQ xdfgetConditionQueryTAllocInstB() {
-        String prop = "tAllocInstB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstB()); xsetupOuterJoinTAllocInstB(); }
+    public MShapeCQ xdfgetConditionQueryMShape() {
+        String prop = "mShape";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShape()); xsetupOuterJoinMShape(); }
         return xgetQueRlMap(prop);
     }
-    protected TAllocInstBCQ xcreateQueryTAllocInstB() {
-        String nrp = xresolveNRP("T_PICKING_B", "tAllocInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TAllocInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstB", nrp);
+    protected MShapeCQ xcreateQueryMShape() {
+        String nrp = xresolveNRP("T_PICKING_B", "mShape"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MShapeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShape", nrp);
     }
-    protected void xsetupOuterJoinTAllocInstB() { xregOutJo("tAllocInstB"); }
-    public boolean hasConditionQueryTAllocInstB() { return xhasQueRlMap("tAllocInstB"); }
+    protected void xsetupOuterJoinMShape() { xregOutJo("mShape"); }
+    public boolean hasConditionQueryMShape() { return xhasQueRlMap("mShape"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TShippingInstBCQ queryTShippingInstB() {
+        return xdfgetConditionQueryTShippingInstB();
+    }
+    public TShippingInstBCQ xdfgetConditionQueryTShippingInstB() {
+        String prop = "tShippingInstB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTShippingInstB()); xsetupOuterJoinTShippingInstB(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TShippingInstBCQ xcreateQueryTShippingInstB() {
+        String nrp = xresolveNRP("T_PICKING_B", "tShippingInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TShippingInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tShippingInstB", nrp);
+    }
+    protected void xsetupOuterJoinTShippingInstB() { xregOutJo("tShippingInstB"); }
+    public boolean hasConditionQueryTShippingInstB() { return xhasQueRlMap("tShippingInstB"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -617,26 +637,6 @@ public class BsTPickingBCQ extends AbstractBsTPickingBCQ {
     }
     protected void xsetupOuterJoinTStock() { xregOutJo("tStock"); }
     public boolean hasConditionQueryTStock() { return xhasQueRlMap("tStock"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MShapeCQ queryMShape() {
-        return xdfgetConditionQueryMShape();
-    }
-    public MShapeCQ xdfgetConditionQueryMShape() {
-        String prop = "mShape";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShape()); xsetupOuterJoinMShape(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MShapeCQ xcreateQueryMShape() {
-        String nrp = xresolveNRP("T_PICKING_B", "mShape"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MShapeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShape", nrp);
-    }
-    protected void xsetupOuterJoinMShape() { xregOutJo("mShape"); }
-    public boolean hasConditionQueryMShape() { return xhasQueRlMap("mShape"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PROCESS_TYPE, M_CENTER, M_CLIENT, T_ALLOC_INST_H, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
  *
  * [referrer-table]
  *     T_PACKING_H, T_PICKING_B, T_PIC_MTHD_RCMD_DATA, T_RECEIVE_PLAN_H, W_SGL_ROW_SHIP_INSP_B, T_PICKING_R
  *
  * [foreign-property]
- *     mProcessType, mCenter, mClient, tAllocInstH, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
+ *     tAllocInstH, mCenter, mClient, mProcessType, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
  *
  * [referrer-property]
  *     tPackingHList, tPickingBList, tPicMthdRcmdDataList, tReceivePlanHList, wSglRowShipInspBList
@@ -181,14 +181,14 @@ public abstract class BsTPickingHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MProcessTypeDto _mProcessType;
+    protected TAllocInstHDto _tAllocInstH;
 
-    public MProcessTypeDto getMProcessType() {
-        return _mProcessType;
+    public TAllocInstHDto getTAllocInstH() {
+        return _tAllocInstH;
     }
 
-    public void setMProcessType(MProcessTypeDto mProcessType) {
-        this._mProcessType = mProcessType;
+    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
+        this._tAllocInstH = tAllocInstH;
     }
 
     protected MCenterDto _mCenter;
@@ -211,14 +211,14 @@ public abstract class BsTPickingHDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected TAllocInstHDto _tAllocInstH;
+    protected MProcessTypeDto _mProcessType;
 
-    public TAllocInstHDto getTAllocInstH() {
-        return _tAllocInstH;
+    public MProcessTypeDto getMProcessType() {
+        return _mProcessType;
     }
 
-    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
-        this._tAllocInstH = tAllocInstH;
+    public void setMProcessType(MProcessTypeDto mProcessType) {
+        this._mProcessType = mProcessType;
     }
 
     protected BClassDtlDto _bClassDtlByCenterTransitFlg;

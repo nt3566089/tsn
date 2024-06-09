@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_PRINTER_GROUP, P_PRINTER_ATTRIBUTE, P_REPORT_LAYOUT, P_PRINTER, B_CLASS_DTL(BySheetCollate)
+ *     P_PRINTER_ATTRIBUTE, P_PRINTER_GROUP, P_PRINTER, P_REPORT_LAYOUT, B_CLASS_DTL(BySheetCollate)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pPrinterGroup, pPrinterAttribute, pReportLayout, pPrinter, bClassDtlBySheetCollate
+ *     pPrinterAttribute, pPrinterGroup, pPrinter, pReportLayout, bClassDtlBySheetCollate
  *
  * [referrer property]
  *     
@@ -342,25 +342,6 @@ public abstract class BsPLayoutPrintSetting extends AbstractEntity implements Do
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'. */
-    protected PPrinterGroup _pPrinterGroup;
-
-    /**
-     * [get] P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'. <br>
-     * @return The entity of foreign property 'PPrinterGroup'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public PPrinterGroup getPPrinterGroup() {
-        return _pPrinterGroup;
-    }
-
-    /**
-     * [set] P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-     * @param pPrinterGroup The entity of foreign property 'PPrinterGroup'. (NullAllowed)
-     */
-    public void setPPrinterGroup(PPrinterGroup pPrinterGroup) {
-        _pPrinterGroup = pPrinterGroup;
-    }
-
     /** P_PRINTER_ATTRIBUTE by my PRINTER_ATTRIBUTE_ID, named 'PPrinterAttribute'. */
     protected PPrinterAttribute _pPrinterAttribute;
 
@@ -380,23 +361,23 @@ public abstract class BsPLayoutPrintSetting extends AbstractEntity implements Do
         _pPrinterAttribute = pPrinterAttribute;
     }
 
-    /** P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. */
-    protected PReportLayout _pReportLayout;
+    /** P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'. */
+    protected PPrinterGroup _pPrinterGroup;
 
     /**
-     * [get] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. <br>
-     * @return The entity of foreign property 'PReportLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'. <br>
+     * @return The entity of foreign property 'PPrinterGroup'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public PReportLayout getPReportLayout() {
-        return _pReportLayout;
+    public PPrinterGroup getPPrinterGroup() {
+        return _pPrinterGroup;
     }
 
     /**
-     * [set] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @param pReportLayout The entity of foreign property 'PReportLayout'. (NullAllowed)
+     * [set] P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
+     * @param pPrinterGroup The entity of foreign property 'PPrinterGroup'. (NullAllowed)
      */
-    public void setPReportLayout(PReportLayout pReportLayout) {
-        _pReportLayout = pReportLayout;
+    public void setPPrinterGroup(PPrinterGroup pPrinterGroup) {
+        _pPrinterGroup = pPrinterGroup;
     }
 
     /** P_PRINTER by my PRINTER_ID, named 'PPrinter'. */
@@ -416,6 +397,25 @@ public abstract class BsPLayoutPrintSetting extends AbstractEntity implements Do
      */
     public void setPPrinter(PPrinter pPrinter) {
         _pPrinter = pPrinter;
+    }
+
+    /** P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. */
+    protected PReportLayout _pReportLayout;
+
+    /**
+     * [get] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. <br>
+     * @return The entity of foreign property 'PReportLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public PReportLayout getPReportLayout() {
+        return _pReportLayout;
+    }
+
+    /**
+     * [set] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @param pReportLayout The entity of foreign property 'PReportLayout'. (NullAllowed)
+     */
+    public void setPReportLayout(PReportLayout pReportLayout) {
+        _pReportLayout = pReportLayout;
     }
 
     /** B_CLASS_DTL by my SHEET_COLLATE, named 'BClassDtlBySheetCollate'. */
@@ -469,14 +469,14 @@ public abstract class BsPLayoutPrintSetting extends AbstractEntity implements Do
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_pPrinterGroup != null)
-        { sb.append(li).append(xbRDS(_pPrinterGroup, "pPrinterGroup")); }
         if (_pPrinterAttribute != null)
         { sb.append(li).append(xbRDS(_pPrinterAttribute, "pPrinterAttribute")); }
-        if (_pReportLayout != null)
-        { sb.append(li).append(xbRDS(_pReportLayout, "pReportLayout")); }
+        if (_pPrinterGroup != null)
+        { sb.append(li).append(xbRDS(_pPrinterGroup, "pPrinterGroup")); }
         if (_pPrinter != null)
         { sb.append(li).append(xbRDS(_pPrinter, "pPrinter")); }
+        if (_pReportLayout != null)
+        { sb.append(li).append(xbRDS(_pReportLayout, "pReportLayout")); }
         if (_bClassDtlBySheetCollate != null)
         { sb.append(li).append(xbRDS(_bClassDtlBySheetCollate, "bClassDtlBySheetCollate")); }
         return sb.toString();
@@ -511,14 +511,14 @@ public abstract class BsPLayoutPrintSetting extends AbstractEntity implements Do
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_pPrinterGroup != null)
-        { sb.append(dm).append("pPrinterGroup"); }
         if (_pPrinterAttribute != null)
         { sb.append(dm).append("pPrinterAttribute"); }
-        if (_pReportLayout != null)
-        { sb.append(dm).append("pReportLayout"); }
+        if (_pPrinterGroup != null)
+        { sb.append(dm).append("pPrinterGroup"); }
         if (_pPrinter != null)
         { sb.append(dm).append("pPrinter"); }
+        if (_pReportLayout != null)
+        { sb.append(dm).append("pReportLayout"); }
         if (_bClassDtlBySheetCollate != null)
         { sb.append(dm).append("bClassDtlBySheetCollate"); }
         if (sb.length() > dm.length()) {

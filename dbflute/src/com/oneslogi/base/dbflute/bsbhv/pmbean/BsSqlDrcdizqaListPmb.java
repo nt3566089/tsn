@@ -2,7 +2,6 @@ package com.oneslogi.base.dbflute.bsbhv.pmbean;
 
 import java.util.*;
 
-import org.dbflute.outsidesql.paging.SimplePagingBean;
 import org.dbflute.outsidesql.typed.*;
 import org.dbflute.jdbc.*;
 import org.dbflute.outsidesql.PmbCustodial;
@@ -16,7 +15,7 @@ import com.oneslogi.base.dbflute.exentity.customize.*;
  * This is related to "<span style="color: #AD4747">selectSqlDrcdizqaList</span>" on TDrcdizqaBhv.
  * @author DBFlute(AutoGenerator)
  */
-public class BsSqlDrcdizqaListPmb extends SimplePagingBean implements EntityHandlingPmb<TDrcdizqaBhv, SqlDrcdizqaList>, AutoPagingHandlingPmb<TDrcdizqaBhv, SqlDrcdizqaList>, FetchBean {
+public class BsSqlDrcdizqaListPmb implements ListHandlingPmb<TDrcdizqaBhv, SqlDrcdizqaList>, EntityHandlingPmb<TDrcdizqaBhv, SqlDrcdizqaList>, FetchBean {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -36,6 +35,9 @@ public class BsSqlDrcdizqaListPmb extends SimplePagingBean implements EntityHand
     /** The parameter of clientId. */
     protected Long _clientId;
 
+    /** The max size of safety result. */
+    protected int _safetyMaxResultSize;
+
     /** The time-zone for filtering e.g. from-to. (NullAllowed: if null, default zone) */
     protected TimeZone _timeZone;
 
@@ -47,9 +49,6 @@ public class BsSqlDrcdizqaListPmb extends SimplePagingBean implements EntityHand
      * This is related to "<span style="color: #AD4747">selectSqlDrcdizqaList</span>" on TDrcdizqaBhv.
      */
     public BsSqlDrcdizqaListPmb() {
-        if (DBFluteConfig.getInstance().isPagingCountLater()) {
-            enablePagingCountLater();
-        }
     }
 
     // ===================================================================================
@@ -65,6 +64,23 @@ public class BsSqlDrcdizqaListPmb extends SimplePagingBean implements EntityHand
      * @return The type instance of an entity, customize entity. (NotNull)
      */
     public Class<SqlDrcdizqaList> getEntityType() { return SqlDrcdizqaList.class; }
+
+    // ===================================================================================
+    //                                                                       Safety Result
+    //                                                                       =============
+    /**
+     * {@inheritDoc}
+     */
+    public void checkSafetyResult(int safetyMaxResultSize) {
+        _safetyMaxResultSize = safetyMaxResultSize;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public int getSafetyMaxResultSize() {
+        return _safetyMaxResultSize;
+    }
 
     // ===================================================================================
     //                                                                       Assist Helper

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_MOVE_INST_B, T_MOVE_INST_H, M_LOCATION, B_CLASS_DTL(ByAllShippingFlg)
+ *     M_LOCATION, T_MOVE_INST_B, T_MOVE_INST_H, B_CLASS_DTL(ByAllShippingFlg)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     tMoveInstB, tMoveInstH, mLocation, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
+ *     mLocation, tMoveInstB, tMoveInstH, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
  *
  * [referrer-property]
  *     tStockInoutList
@@ -157,6 +157,16 @@ public abstract class BsTMoveRecordBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MLocationDto _mLocation;
+
+    public MLocationDto getMLocation() {
+        return _mLocation;
+    }
+
+    public void setMLocation(MLocationDto mLocation) {
+        this._mLocation = mLocation;
+    }
+
     protected TMoveInstBDto _tMoveInstB;
 
     public TMoveInstBDto getTMoveInstB() {
@@ -175,16 +185,6 @@ public abstract class BsTMoveRecordBDto implements Serializable {
 
     public void setTMoveInstH(TMoveInstHDto tMoveInstH) {
         this._tMoveInstH = tMoveInstH;
-    }
-
-    protected MLocationDto _mLocation;
-
-    public MLocationDto getMLocation() {
-        return _mLocation;
-    }
-
-    public void setMLocation(MLocationDto mLocation) {
-        this._mLocation = mLocation;
     }
 
     protected BClassDtlDto _bClassDtlByAllShippingFlg;

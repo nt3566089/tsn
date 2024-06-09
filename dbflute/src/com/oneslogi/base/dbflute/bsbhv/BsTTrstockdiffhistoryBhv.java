@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     
@@ -407,20 +407,20 @@ public abstract class BsTTrstockdiffhistoryBhv extends AbstractBehaviorWritable<
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tTrstockdiffhistoryList The list of tTrstockdiffhistory. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TTrstockdiffhistory> tTrstockdiffhistoryList)
-    { return helpPulloutInternally(tTrstockdiffhistoryList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tTrstockdiffhistoryList The list of tTrstockdiffhistory. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<TTrstockdiffhistory> tTrstockdiffhistoryList)
     { return helpPulloutInternally(tTrstockdiffhistoryList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tTrstockdiffhistoryList The list of tTrstockdiffhistory. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TTrstockdiffhistory> tTrstockdiffhistoryList)
+    { return helpPulloutInternally(tTrstockdiffhistoryList, "mClient"); }
 
     // ===================================================================================
     //                                                                      Extract Column

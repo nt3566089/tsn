@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     H_MOVE_H, H_STOCK, M_SHAPE, H_INVENTORY_H, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
+ *     H_INVENTORY_H, H_MOVE_H, M_SHAPE, H_STOCK, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     hMoveH, hStock, mShape, hInventoryH, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
+ *     hInventoryH, hMoveH, mShape, hStock, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
  *
  * [referrer-property]
  *     
@@ -257,6 +257,16 @@ public abstract class BsHInventoryBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected HInventoryHDto _hInventoryH;
+
+    public HInventoryHDto getHInventoryH() {
+        return _hInventoryH;
+    }
+
+    public void setHInventoryH(HInventoryHDto hInventoryH) {
+        this._hInventoryH = hInventoryH;
+    }
+
     protected HMoveHDto _hMoveH;
 
     public HMoveHDto getHMoveH() {
@@ -265,16 +275,6 @@ public abstract class BsHInventoryBDto implements Serializable {
 
     public void setHMoveH(HMoveHDto hMoveH) {
         this._hMoveH = hMoveH;
-    }
-
-    protected HStockDto _hStock;
-
-    public HStockDto getHStock() {
-        return _hStock;
-    }
-
-    public void setHStock(HStockDto hStock) {
-        this._hStock = hStock;
     }
 
     protected MShapeDto _mShape;
@@ -287,14 +287,14 @@ public abstract class BsHInventoryBDto implements Serializable {
         this._mShape = mShape;
     }
 
-    protected HInventoryHDto _hInventoryH;
+    protected HStockDto _hStock;
 
-    public HInventoryHDto getHInventoryH() {
-        return _hInventoryH;
+    public HStockDto getHStock() {
+        return _hStock;
     }
 
-    public void setHInventoryH(HInventoryHDto hInventoryH) {
-        this._hInventoryH = hInventoryH;
+    public void setHStock(HStockDto hStock) {
+        this._hStock = hStock;
     }
 
     protected MStockTypeDto _mStockType;

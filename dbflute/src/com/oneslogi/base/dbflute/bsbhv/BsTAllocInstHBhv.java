@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_PROCESS_TYPE, M_CENTER, M_DELIVERY_COURSE, M_CLIENT, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer table]
  *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_H, T_SHIPPING_INST_H
  *
  * [foreign property]
- *     mCustomerBySupplyCustomerId, mProcessType, mCenter, mCustomerByDelivCustomerId, mDeliveryCourse, mClient, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
+ *     mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
  *
  * [referrer property]
  *     tAllocInstBList, tPackingHList, tPickingHList, tShippingInstHList
@@ -745,22 +745,6 @@ public abstract class BsTAllocInstHBhv extends AbstractBehaviorWritable<TAllocIn
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MCustomer'.
-     * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCustomer> pulloutMCustomerBySupplyCustomerId(List<TAllocInstH> tAllocInstHList)
-    { return helpPulloutInternally(tAllocInstHList, "mCustomerBySupplyCustomerId"); }
-
-    /**
-     * Pull out the list of foreign table 'MProcessType'.
-     * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProcessType> pulloutMProcessType(List<TAllocInstH> tAllocInstHList)
-    { return helpPulloutInternally(tAllocInstHList, "mProcessType"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -769,12 +753,12 @@ public abstract class BsTAllocInstHBhv extends AbstractBehaviorWritable<TAllocIn
     { return helpPulloutInternally(tAllocInstHList, "mCenter"); }
 
     /**
-     * Pull out the list of foreign table 'MCustomer'.
+     * Pull out the list of foreign table 'MClient'.
      * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerByDelivCustomerId(List<TAllocInstH> tAllocInstHList)
-    { return helpPulloutInternally(tAllocInstHList, "mCustomerByDelivCustomerId"); }
+    public List<MClient> pulloutMClient(List<TAllocInstH> tAllocInstHList)
+    { return helpPulloutInternally(tAllocInstHList, "mClient"); }
 
     /**
      * Pull out the list of foreign table 'MDeliveryCourse'.
@@ -785,12 +769,28 @@ public abstract class BsTAllocInstHBhv extends AbstractBehaviorWritable<TAllocIn
     { return helpPulloutInternally(tAllocInstHList, "mDeliveryCourse"); }
 
     /**
-     * Pull out the list of foreign table 'MClient'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MClient> pulloutMClient(List<TAllocInstH> tAllocInstHList)
-    { return helpPulloutInternally(tAllocInstHList, "mClient"); }
+    public List<MCustomer> pulloutMCustomerByDelivCustomerId(List<TAllocInstH> tAllocInstHList)
+    { return helpPulloutInternally(tAllocInstHList, "mCustomerByDelivCustomerId"); }
+
+    /**
+     * Pull out the list of foreign table 'MProcessType'.
+     * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProcessType> pulloutMProcessType(List<TAllocInstH> tAllocInstHList)
+    { return helpPulloutInternally(tAllocInstHList, "mProcessType"); }
+
+    /**
+     * Pull out the list of foreign table 'MCustomer'.
+     * @param tAllocInstHList The list of tAllocInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCustomer> pulloutMCustomerBySupplyCustomerId(List<TAllocInstH> tAllocInstHList)
+    { return helpPulloutInternally(tAllocInstHList, "mCustomerBySupplyCustomerId"); }
 
     /**
      * Pull out the list of foreign table 'TPickingH'.

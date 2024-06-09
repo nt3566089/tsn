@@ -66,8 +66,8 @@ public class MImportTypeBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MImportTypeB)et).getMImportType(), (et, vl) -> ((MImportTypeB)et).setMImportType((MImportType)vl), "MImportType");
         setupEfpg(_efpgMap, et -> ((MImportTypeB)et).getMEdiColumn(), (et, vl) -> ((MImportTypeB)et).setMEdiColumn((MEdiColumn)vl), "MEdiColumn");
+        setupEfpg(_efpgMap, et -> ((MImportTypeB)et).getMImportType(), (et, vl) -> ((MImportTypeB)et).setMImportType((MImportType)vl), "MImportType");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -214,20 +214,20 @@ public class MImportTypeBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMImportType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnImportTypeId(), MImportTypeDbm.getInstance().columnImportTypeId());
-        return cfi("M_IMPORT_TYPE_B_FK1", "MImportType", this, MImportTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MImportTypeBList", false);
-    }
-    /**
      * M_EDI_COLUMN by my EDI_COLUMN_ID, named 'MEdiColumn'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMEdiColumn() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnEdiColumnId(), MEdiColumnDbm.getInstance().columnEdiColumnId());
-        return cfi("M_IMPORT_TYPE_B_FK2", "MEdiColumn", this, MEdiColumnDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MImportTypeBList", false);
+        return cfi("M_IMPORT_TYPE_B_FK2", "MEdiColumn", this, MEdiColumnDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MImportTypeBList", false);
+    }
+    /**
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMImportType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnImportTypeId(), MImportTypeDbm.getInstance().columnImportTypeId());
+        return cfi("M_IMPORT_TYPE_B_FK1", "MImportType", this, MImportTypeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MImportTypeBList", false);
     }
 
     // -----------------------------------------------------

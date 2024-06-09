@@ -265,26 +265,6 @@ public class BsBArgCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_FUNC by my FUNC_ID, named 'BFunc'.
-     * <pre>
-     * <span style="color: #0000C0">bArgBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BFunc()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bArg</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bArg</span>.<span style="color: #CC4747">getBFunc()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_BFunc() {
-        assertSetupSelectPurpose("bFunc");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnFuncId();
-        }
-        doSetupSelect(() -> query().queryBFunc());
-    }
-
     protected BDictNss _nssBDict;
     public BDictNss xdfgetNssBDict() {
         if (_nssBDict == null) { _nssBDict = new BDictNss(null); }
@@ -312,6 +292,26 @@ public class BsBArgCB extends AbstractConditionBean {
         if (_nssBDict == null || !_nssBDict.hasConditionQuery())
         { _nssBDict = new BDictNss(query().queryBDict()); }
         return _nssBDict;
+    }
+
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_FUNC by my FUNC_ID, named 'BFunc'.
+     * <pre>
+     * <span style="color: #0000C0">bArgBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BFunc()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bArg</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bArg</span>.<span style="color: #CC4747">getBFunc()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_BFunc() {
+        assertSetupSelectPurpose("bFunc");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnFuncId();
+        }
+        doSetupSelect(() -> query().queryBFunc());
     }
 
     /**
@@ -402,8 +402,8 @@ public class BsBArgCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BArgCQ> {
-        protected BFuncCB.HpSpecification _bFunc;
         protected BDictCB.HpSpecification _bDict;
+        protected BFuncCB.HpSpecification _bFunc;
         protected VHtDictCB.HpSpecification _vHtDict;
         protected BArgValidCB.HpSpecification _bArgValidAsOne;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<BArgCQ> qyCall
@@ -490,13 +490,13 @@ public class BsBArgCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnArgId(); // PK
-            if (qyCall().qy().hasConditionQueryBFunc()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BFuncCQ) {
-                columnFuncId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof BDictCQ) {
                 columnDictId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBFunc()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BFuncCQ) {
+                columnFuncId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVHtDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VHtDictCQ) {
@@ -505,26 +505,6 @@ public class BsBArgCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "B_ARG"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_FUNC by my FUNC_ID, named 'BFunc'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BFuncCB.HpSpecification specifyBFunc() {
-            assertRelation("bFunc");
-            if (_bFunc == null) {
-                _bFunc = new BFuncCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBFunc()
-                                    , () -> _qyCall.qy().queryBFunc())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bFunc.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBFunc()
-                      , () -> xsyncQyCall().qy().queryBFunc()));
-                }
-            }
-            return _bFunc;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_DICT by my DICT_ID, named 'BDict'.
@@ -544,6 +524,26 @@ public class BsBArgCB extends AbstractConditionBean {
                 }
             }
             return _bDict;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_FUNC by my FUNC_ID, named 'BFunc'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BFuncCB.HpSpecification specifyBFunc() {
+            assertRelation("bFunc");
+            if (_bFunc == null) {
+                _bFunc = new BFuncCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBFunc()
+                                    , () -> _qyCall.qy().queryBFunc())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bFunc.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBFunc()
+                      , () -> xsyncQyCall().qy().queryBFunc()));
+                }
+            }
+            return _bFunc;
         }
         /**
          * Prepare to specify functions about relation table. <br>

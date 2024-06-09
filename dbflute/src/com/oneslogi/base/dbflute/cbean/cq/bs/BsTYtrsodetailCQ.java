@@ -714,37 +714,17 @@ public class BsTYtrsodetailCQ extends AbstractBsTYtrsodetailCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TYtrsodetailCQ bq = (TYtrsodetailCQ)bqs;
         TYtrsodetailCQ uq = (TYtrsodetailCQ)uqs;
-        if (bq.hasConditionQueryTYtrso()) {
-            uq.queryTYtrso().reflectRelationOnUnionQuery(bq.queryTYtrso(), uq.queryTYtrso());
-        }
         if (bq.hasConditionQueryMProduct()) {
             uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        }
+        if (bq.hasConditionQueryTYtrso()) {
+            uq.queryTYtrso().reflectRelationOnUnionQuery(bq.queryTYtrso(), uq.queryTYtrso());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TYtrsoCQ queryTYtrso() {
-        return xdfgetConditionQueryTYtrso();
-    }
-    public TYtrsoCQ xdfgetConditionQueryTYtrso() {
-        String prop = "tYtrso";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTYtrso()); xsetupOuterJoinTYtrso(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TYtrsoCQ xcreateQueryTYtrso() {
-        String nrp = xresolveNRP("T_YTRSODETAIL", "tYtrso"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TYtrsoCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tYtrso", nrp);
-    }
-    protected void xsetupOuterJoinTYtrso() { xregOutJo("tYtrso"); }
-    public boolean hasConditionQueryTYtrso() { return xhasQueRlMap("tYtrso"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -764,6 +744,26 @@ public class BsTYtrsodetailCQ extends AbstractBsTYtrsodetailCQ {
     }
     protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
     public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TYtrsoCQ queryTYtrso() {
+        return xdfgetConditionQueryTYtrso();
+    }
+    public TYtrsoCQ xdfgetConditionQueryTYtrso() {
+        String prop = "tYtrso";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTYtrso()); xsetupOuterJoinTYtrso(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TYtrsoCQ xcreateQueryTYtrso() {
+        String nrp = xresolveNRP("T_YTRSODETAIL", "tYtrso"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TYtrsoCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tYtrso", nrp);
+    }
+    protected void xsetupOuterJoinTYtrso() { xregOutJo("tYtrso"); }
+    public boolean hasConditionQueryTYtrso() { return xhasQueRlMap("tYtrso"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

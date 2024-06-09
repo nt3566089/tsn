@@ -298,25 +298,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select SUPPLY_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
-     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTAllocInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TAllocInstHBySupplyCustomerIdList for 'exists'. (NotNull)
-     */
-    public void existsTAllocInstHBySupplyCustomerIdList(SubQuery<TAllocInstHCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
-        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList");
-    }
-    public abstract String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select DELIV_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
      * T_ALLOC_INST_H by DELIV_CUSTOMER_ID, named 'TAllocInstHByDelivCustomerIdAsOne'.
      * <pre>
@@ -333,6 +314,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerExistsReferrer(cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tAllocInstHByDelivCustomerIdList");
     }
     public abstract String keepCustomerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select SUPPLY_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
+     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">existsTAllocInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of TAllocInstHBySupplyCustomerIdList for 'exists'. (NotNull)
+     */
+    public void existsTAllocInstHBySupplyCustomerIdList(SubQuery<TAllocInstHCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
+        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList");
+    }
+    public abstract String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -450,25 +450,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select SUPPLIER_ID from T_MOVE_INST_B where ...)} <br>
-     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTMoveInstBBySupplierIdList</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     bCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TMoveInstBBySupplierIdList for 'exists'. (NotNull)
-     */
-    public void existsTMoveInstBBySupplierIdList(SubQuery<TMoveInstBCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(cb.query());
-        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList");
-    }
-    public abstract String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select DEPOSIT_ID from T_MOVE_INST_B where ...)} <br>
      * T_MOVE_INST_B by DEPOSIT_ID, named 'TMoveInstBByDepositIdAsOne'.
      * <pre>
@@ -485,6 +466,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerExistsReferrer(cb.query(), "CUSTOMER_ID", "DEPOSIT_ID", pp, "tMoveInstBByDepositIdList");
     }
     public abstract String keepCustomerId_ExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select SUPPLIER_ID from T_MOVE_INST_B where ...)} <br>
+     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">existsTMoveInstBBySupplierIdList</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     bCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of TMoveInstBBySupplierIdList for 'exists'. (NotNull)
+     */
+    public void existsTMoveInstBBySupplierIdList(SubQuery<TMoveInstBCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(cb.query());
+        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList");
+    }
+    public abstract String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -545,25 +545,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select SUPPLY_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
-     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTShippingInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TShippingInstHBySupplyCustomerIdList for 'exists'. (NotNull)
-     */
-    public void existsTShippingInstHBySupplyCustomerIdList(SubQuery<TShippingInstHCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
-        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList");
-    }
-    public abstract String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select DELIV_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
      * T_SHIPPING_INST_H by DELIV_CUSTOMER_ID, named 'TShippingInstHByDelivCustomerIdAsOne'.
      * <pre>
@@ -580,6 +561,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerExistsReferrer(cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tShippingInstHByDelivCustomerIdList");
     }
     public abstract String keepCustomerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select SUPPLY_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
+     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">existsTShippingInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of TShippingInstHBySupplyCustomerIdList for 'exists'. (NotNull)
+     */
+    public void existsTShippingInstHBySupplyCustomerIdList(SubQuery<TShippingInstHCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
+        registerExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList");
+    }
+    public abstract String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -906,25 +906,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select SUPPLY_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
-     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTAllocInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList for 'not exists'. (NotNull)
-     */
-    public void notExistsTAllocInstHBySupplyCustomerIdList(SubQuery<TAllocInstHCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList");
-    }
-    public abstract String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
-
-    /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
      * {not exists (select DELIV_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
      * T_ALLOC_INST_H by DELIV_CUSTOMER_ID, named 'TAllocInstHByDelivCustomerIdAsOne'.
      * <pre>
@@ -941,6 +922,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tAllocInstHByDelivCustomerIdList");
     }
     public abstract String keepCustomerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select SUPPLY_CUSTOMER_ID from T_ALLOC_INST_H where ...)} <br>
+     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTAllocInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList for 'not exists'. (NotNull)
+     */
+    public void notExistsTAllocInstHBySupplyCustomerIdList(SubQuery<TAllocInstHCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList");
+    }
+    public abstract String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -1058,25 +1058,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select SUPPLIER_ID from T_MOVE_INST_B where ...)} <br>
-     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTMoveInstBBySupplierIdList</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     bCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList for 'not exists'. (NotNull)
-     */
-    public void notExistsTMoveInstBBySupplierIdList(SubQuery<TMoveInstBCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList");
-    }
-    public abstract String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
-
-    /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
      * {not exists (select DEPOSIT_ID from T_MOVE_INST_B where ...)} <br>
      * T_MOVE_INST_B by DEPOSIT_ID, named 'TMoveInstBByDepositIdAsOne'.
      * <pre>
@@ -1093,6 +1074,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "DEPOSIT_ID", pp, "tMoveInstBByDepositIdList");
     }
     public abstract String keepCustomerId_NotExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select SUPPLIER_ID from T_MOVE_INST_B where ...)} <br>
+     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTMoveInstBBySupplierIdList</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     bCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList for 'not exists'. (NotNull)
+     */
+    public void notExistsTMoveInstBBySupplierIdList(SubQuery<TMoveInstBCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList");
+    }
+    public abstract String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -1153,25 +1153,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select SUPPLY_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
-     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTShippingInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList for 'not exists'. (NotNull)
-     */
-    public void notExistsTShippingInstHBySupplyCustomerIdList(SubQuery<TShippingInstHCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList");
-    }
-    public abstract String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
-
-    /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
      * {not exists (select DELIV_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
      * T_SHIPPING_INST_H by DELIV_CUSTOMER_ID, named 'TShippingInstHByDelivCustomerIdAsOne'.
      * <pre>
@@ -1188,6 +1169,25 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tShippingInstHByDelivCustomerIdList");
     }
     public abstract String keepCustomerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select SUPPLY_CUSTOMER_ID from T_SHIPPING_INST_H where ...)} <br>
+     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTShippingInstHBySupplyCustomerIdList</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of CustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList for 'not exists'. (NotNull)
+     */
+    public void notExistsTShippingInstHBySupplyCustomerIdList(SubQuery<TShippingInstHCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList");
+    }
+    public abstract String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -1416,14 +1416,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TAllocInstBList(TAllocInstBCQ sq);
 
-    public void xsderiveTAllocInstHBySupplyCustomerIdList(String fn, SubQuery<TAllocInstHCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList", al, op);
-    }
-    public abstract String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
-
     public void xsderiveTAllocInstHByDelivCustomerIdList(String fn, SubQuery<TAllocInstHCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForDerivedReferrer(this);
@@ -1431,6 +1423,14 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tAllocInstHByDelivCustomerIdList", al, op);
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq);
+
+    public void xsderiveTAllocInstHBySupplyCustomerIdList(String fn, SubQuery<TAllocInstHCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tAllocInstHBySupplyCustomerIdList", al, op);
+    }
+    public abstract String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
 
     public void xsderiveTAllocLotList(String fn, SubQuery<TAllocLotCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1480,14 +1480,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TLastLotList(TLastLotCQ sq);
 
-    public void xsderiveTMoveInstBBySupplierIdList(String fn, SubQuery<TMoveInstBCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList", al, op);
-    }
-    public abstract String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
-
     public void xsderiveTMoveInstBByDepositIdList(String fn, SubQuery<TMoveInstBCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForDerivedReferrer(this);
@@ -1495,6 +1487,14 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "DEPOSIT_ID", pp, "tMoveInstBByDepositIdList", al, op);
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq);
+
+    public void xsderiveTMoveInstBBySupplierIdList(String fn, SubQuery<TMoveInstBCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", pp, "tMoveInstBBySupplierIdList", al, op);
+    }
+    public abstract String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
 
     public void xsderiveTReceivePlanHByPlanDepositIdList(String fn, SubQuery<TReceivePlanHCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1520,14 +1520,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TShippingInstBList(TShippingInstBCQ sq);
 
-    public void xsderiveTShippingInstHBySupplyCustomerIdList(String fn, SubQuery<TShippingInstHCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList", al, op);
-    }
-    public abstract String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
-
     public void xsderiveTShippingInstHByDelivCustomerIdList(String fn, SubQuery<TShippingInstHCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForDerivedReferrer(this);
@@ -1535,6 +1527,14 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
         registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "DELIV_CUSTOMER_ID", pp, "tShippingInstHByDelivCustomerIdList", al, op);
     }
     public abstract String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq);
+
+    public void xsderiveTShippingInstHBySupplyCustomerIdList(String fn, SubQuery<TShippingInstHCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", pp, "tShippingInstHBySupplyCustomerIdList", al, op);
+    }
+    public abstract String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
 
     public void xsderiveTStockList(String fn, SubQuery<TStockCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1800,33 +1800,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_ALLOC_INST_H where ...)} <br>
-     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTAllocInstHBySupplyCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     hCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TAllocInstHCB> derivedTAllocInstHBySupplyCustomerIdList() {
-        return xcreateQDRFunctionTAllocInstHBySupplyCustomerIdList();
-    }
-    protected HpQDRFunction<TAllocInstHCB> xcreateQDRFunctionTAllocInstHBySupplyCustomerIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTAllocInstHBySupplyCustomerIdList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTAllocInstHBySupplyCustomerIdList(String fn, SubQuery<TAllocInstHCB> sq, String rd, Object vl, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", sqpp, "tAllocInstHBySupplyCustomerIdList", rd, vl, prpp, op);
-    }
-    public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
-    public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object vl);
-
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_ALLOC_INST_H where ...)} <br>
      * T_ALLOC_INST_H by DELIV_CUSTOMER_ID, named 'TAllocInstHByDelivCustomerIdAsOne'.
      * <pre>
      * cb.query().<span style="color: #CC4747">derivedTAllocInstHByDelivCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -1850,6 +1823,33 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq);
     public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_ALLOC_INST_H where ...)} <br>
+     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTAllocInstHBySupplyCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     hCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TAllocInstHCB> derivedTAllocInstHBySupplyCustomerIdList() {
+        return xcreateQDRFunctionTAllocInstHBySupplyCustomerIdList();
+    }
+    protected HpQDRFunction<TAllocInstHCB> xcreateQDRFunctionTAllocInstHBySupplyCustomerIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTAllocInstHBySupplyCustomerIdList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTAllocInstHBySupplyCustomerIdList(String fn, SubQuery<TAllocInstHCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TAllocInstHCB cb = new TAllocInstHCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", sqpp, "tAllocInstHBySupplyCustomerIdList", rd, vl, prpp, op);
+    }
+    public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq);
+    public abstract String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
@@ -2016,33 +2016,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_MOVE_INST_B where ...)} <br>
-     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTMoveInstBBySupplierIdList()</span>.<span style="color: #CC4747">max</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     bCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     bCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TMoveInstBCB> derivedTMoveInstBBySupplierIdList() {
-        return xcreateQDRFunctionTMoveInstBBySupplierIdList();
-    }
-    protected HpQDRFunction<TMoveInstBCB> xcreateQDRFunctionTMoveInstBBySupplierIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTMoveInstBBySupplierIdList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTMoveInstBBySupplierIdList(String fn, SubQuery<TMoveInstBCB> sq, String rd, Object vl, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", sqpp, "tMoveInstBBySupplierIdList", rd, vl, prpp, op);
-    }
-    public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
-    public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object vl);
-
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_MOVE_INST_B where ...)} <br>
      * T_MOVE_INST_B by DEPOSIT_ID, named 'TMoveInstBByDepositIdAsOne'.
      * <pre>
      * cb.query().<span style="color: #CC4747">derivedTMoveInstBByDepositIdList()</span>.<span style="color: #CC4747">max</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -2066,6 +2039,33 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq);
     public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_MOVE_INST_B where ...)} <br>
+     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTMoveInstBBySupplierIdList()</span>.<span style="color: #CC4747">max</span>(bCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     bCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     bCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TMoveInstBCB> derivedTMoveInstBBySupplierIdList() {
+        return xcreateQDRFunctionTMoveInstBBySupplierIdList();
+    }
+    protected HpQDRFunction<TMoveInstBCB> xcreateQDRFunctionTMoveInstBBySupplierIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTMoveInstBBySupplierIdList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTMoveInstBBySupplierIdList(String fn, SubQuery<TMoveInstBCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TMoveInstBCB cb = new TMoveInstBCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLIER_ID", sqpp, "tMoveInstBBySupplierIdList", rd, vl, prpp, op);
+    }
+    public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq);
+    public abstract String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
@@ -2151,33 +2151,6 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_SHIPPING_INST_H where ...)} <br>
-     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTShippingInstHBySupplyCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     hCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     hCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TShippingInstHCB> derivedTShippingInstHBySupplyCustomerIdList() {
-        return xcreateQDRFunctionTShippingInstHBySupplyCustomerIdList();
-    }
-    protected HpQDRFunction<TShippingInstHCB> xcreateQDRFunctionTShippingInstHBySupplyCustomerIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTShippingInstHBySupplyCustomerIdList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTShippingInstHBySupplyCustomerIdList(String fn, SubQuery<TShippingInstHCB> sq, String rd, Object vl, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", sqpp, "tShippingInstHBySupplyCustomerIdList", rd, vl, prpp, op);
-    }
-    public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
-    public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object vl);
-
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_SHIPPING_INST_H where ...)} <br>
      * T_SHIPPING_INST_H by DELIV_CUSTOMER_ID, named 'TShippingInstHByDelivCustomerIdAsOne'.
      * <pre>
      * cb.query().<span style="color: #CC4747">derivedTShippingInstHByDelivCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -2201,6 +2174,33 @@ public abstract class AbstractBsMCustomerCQ extends AbstractConditionQuery {
     }
     public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq);
     public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_SHIPPING_INST_H where ...)} <br>
+     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTShippingInstHBySupplyCustomerIdList()</span>.<span style="color: #CC4747">max</span>(hCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     hCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     hCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TShippingInstHCB> derivedTShippingInstHBySupplyCustomerIdList() {
+        return xcreateQDRFunctionTShippingInstHBySupplyCustomerIdList();
+    }
+    protected HpQDRFunction<TShippingInstHCB> xcreateQDRFunctionTShippingInstHBySupplyCustomerIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTShippingInstHBySupplyCustomerIdList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTShippingInstHBySupplyCustomerIdList(String fn, SubQuery<TShippingInstHCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TShippingInstHCB cb = new TShippingInstHCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(cb.query()); String prpp = keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "CUSTOMER_ID", "SUPPLY_CUSTOMER_ID", sqpp, "tShippingInstHBySupplyCustomerIdList", rd, vl, prpp, op);
+    }
+    public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq);
+    public abstract String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>

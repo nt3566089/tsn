@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_PICKING_H, M_CENTER, M_BOX, T_ALLOC_INST_H, M_CLIENT, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_BOX, M_CENTER, M_CLIENT, T_PICKING_H, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
  *
  * [referrer-table]
  *     T_PACKING_B, T_PIC_MTHD_RCMD_CART, T_PACKING_R
  *
  * [foreign-property]
- *     tPickingH, mCenter, mBox, tAllocInstH, mClient, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
+ *     tAllocInstH, mBox, mCenter, mClient, tPickingH, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
  *
  * [referrer-property]
  *     tPackingBList, tPicMthdRcmdCartList
@@ -197,24 +197,14 @@ public abstract class BsTPackingHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TPickingHDto _tPickingH;
+    protected TAllocInstHDto _tAllocInstH;
 
-    public TPickingHDto getTPickingH() {
-        return _tPickingH;
+    public TAllocInstHDto getTAllocInstH() {
+        return _tAllocInstH;
     }
 
-    public void setTPickingH(TPickingHDto tPickingH) {
-        this._tPickingH = tPickingH;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
+        this._tAllocInstH = tAllocInstH;
     }
 
     protected MBoxDto _mBox;
@@ -227,14 +217,14 @@ public abstract class BsTPackingHDto implements Serializable {
         this._mBox = mBox;
     }
 
-    protected TAllocInstHDto _tAllocInstH;
+    protected MCenterDto _mCenter;
 
-    public TAllocInstHDto getTAllocInstH() {
-        return _tAllocInstH;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
-        this._tAllocInstH = tAllocInstH;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -245,6 +235,16 @@ public abstract class BsTPackingHDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected TPickingHDto _tPickingH;
+
+    public TPickingHDto getTPickingH() {
+        return _tPickingH;
+    }
+
+    public void setTPickingH(TPickingHDto tPickingH) {
+        this._tPickingH = tPickingH;
     }
 
     protected MProcessTypeDto _mProcessType;

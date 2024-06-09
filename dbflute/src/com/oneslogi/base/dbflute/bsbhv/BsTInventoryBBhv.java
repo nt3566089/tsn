@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_LOCATION, M_WAREHOUSE, T_STORE_NO, T_MOVE_INST_H, T_LOT, T_STOCK, M_SHAPE, M_PRODUCT, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
+ *     M_CUSTOMER, T_INVENTORY_H, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, T_STOCK, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_INP_HIST, T_INVENTORY_R
  *
  * [foreign property]
- *     mCustomerByDepositId, tInventoryH, mStockType, mLocation, mWarehouse, tStoreNo, mCustomerBySupplierId, tMoveInstH, tLot, tStock, mShape, mProduct, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
+ *     mCustomerByDepositId, tInventoryH, mLocation, tLot, tMoveInstH, mProduct, mShape, tStock, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
  *
  * [referrer property]
  *     tInventoryInpHistList
@@ -501,14 +501,6 @@ public abstract class BsTInventoryBBhv extends AbstractBehaviorWritable<TInvento
     { return helpPulloutInternally(tInventoryBList, "tInventoryH"); }
 
     /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "mStockType"); }
-
-    /**
      * Pull out the list of foreign table 'MLocation'.
      * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -517,12 +509,52 @@ public abstract class BsTInventoryBBhv extends AbstractBehaviorWritable<TInvento
     { return helpPulloutInternally(tInventoryBList, "mLocation"); }
 
     /**
-     * Pull out the list of foreign table 'MWarehouse'.
+     * Pull out the list of foreign table 'TLot'.
      * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MWarehouse> pulloutMWarehouse(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "mWarehouse"); }
+    public List<TLot> pulloutTLot(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "tLot"); }
+
+    /**
+     * Pull out the list of foreign table 'TMoveInstH'.
+     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TMoveInstH> pulloutTMoveInstH(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "tMoveInstH"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'MShape'.
+     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MShape> pulloutMShape(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "mShape"); }
+
+    /**
+     * Pull out the list of foreign table 'TStock'.
+     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TStock> pulloutTStock(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "tStock"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "mStockType"); }
 
     /**
      * Pull out the list of foreign table 'TStoreNo'.
@@ -541,44 +573,12 @@ public abstract class BsTInventoryBBhv extends AbstractBehaviorWritable<TInvento
     { return helpPulloutInternally(tInventoryBList, "mCustomerBySupplierId"); }
 
     /**
-     * Pull out the list of foreign table 'TMoveInstH'.
+     * Pull out the list of foreign table 'MWarehouse'.
      * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TMoveInstH> pulloutTMoveInstH(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "tMoveInstH"); }
-
-    /**
-     * Pull out the list of foreign table 'TLot'.
-     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TLot> pulloutTLot(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "tLot"); }
-
-    /**
-     * Pull out the list of foreign table 'TStock'.
-     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TStock> pulloutTStock(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "tStock"); }
-
-    /**
-     * Pull out the list of foreign table 'MShape'.
-     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MShape> pulloutMShape(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "mShape"); }
-
-    /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param tInventoryBList The list of tInventoryB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<TInventoryB> tInventoryBList)
-    { return helpPulloutInternally(tInventoryBList, "mProduct"); }
+    public List<MWarehouse> pulloutMWarehouse(List<TInventoryB> tInventoryBList)
+    { return helpPulloutInternally(tInventoryBList, "mWarehouse"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

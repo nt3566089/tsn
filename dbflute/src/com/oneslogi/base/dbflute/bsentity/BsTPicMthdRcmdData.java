@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PIC_MTHD_RCMD, T_PICKING_H
+ *     T_PICKING_H, T_PIC_MTHD_RCMD
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPicMthdRcmd, tPickingH
+ *     tPickingH, tPicMthdRcmd
  *
  * [referrer property]
  *     
@@ -243,25 +243,6 @@ public abstract class BsTPicMthdRcmdData extends AbstractEntity implements Domai
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'. */
-    protected TPicMthdRcmd _tPicMthdRcmd;
-
-    /**
-     * [get] T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'. <br>
-     * @return The entity of foreign property 'TPicMthdRcmd'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TPicMthdRcmd getTPicMthdRcmd() {
-        return _tPicMthdRcmd;
-    }
-
-    /**
-     * [set] T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
-     * @param tPicMthdRcmd The entity of foreign property 'TPicMthdRcmd'. (NullAllowed)
-     */
-    public void setTPicMthdRcmd(TPicMthdRcmd tPicMthdRcmd) {
-        _tPicMthdRcmd = tPicMthdRcmd;
-    }
-
     /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
     protected TPickingH _tPickingH;
 
@@ -279,6 +260,25 @@ public abstract class BsTPicMthdRcmdData extends AbstractEntity implements Domai
      */
     public void setTPickingH(TPickingH tPickingH) {
         _tPickingH = tPickingH;
+    }
+
+    /** T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'. */
+    protected TPicMthdRcmd _tPicMthdRcmd;
+
+    /**
+     * [get] T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'. <br>
+     * @return The entity of foreign property 'TPicMthdRcmd'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TPicMthdRcmd getTPicMthdRcmd() {
+        return _tPicMthdRcmd;
+    }
+
+    /**
+     * [set] T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
+     * @param tPicMthdRcmd The entity of foreign property 'TPicMthdRcmd'. (NullAllowed)
+     */
+    public void setTPicMthdRcmd(TPicMthdRcmd tPicMthdRcmd) {
+        _tPicMthdRcmd = tPicMthdRcmd;
     }
 
     // ===================================================================================
@@ -313,10 +313,10 @@ public abstract class BsTPicMthdRcmdData extends AbstractEntity implements Domai
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tPicMthdRcmd != null)
-        { sb.append(li).append(xbRDS(_tPicMthdRcmd, "tPicMthdRcmd")); }
         if (_tPickingH != null)
         { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
+        if (_tPicMthdRcmd != null)
+        { sb.append(li).append(xbRDS(_tPicMthdRcmd, "tPicMthdRcmd")); }
         return sb.toString();
     }
 
@@ -345,10 +345,10 @@ public abstract class BsTPicMthdRcmdData extends AbstractEntity implements Domai
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tPicMthdRcmd != null)
-        { sb.append(dm).append("tPicMthdRcmd"); }
         if (_tPickingH != null)
         { sb.append(dm).append("tPickingH"); }
+        if (_tPicMthdRcmd != null)
+        { sb.append(dm).append("tPicMthdRcmd"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

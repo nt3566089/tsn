@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_STOCK, M_LOCATION, T_YTRSODETAIL
+ *     M_LOCATION, T_STOCK, T_YTRSODETAIL
  *
  * [referrer table]
  *     T_TR_PICKLIST
  *
  * [foreign property]
- *     tStock, mLocation, tYtrsodetail
+ *     mLocation, tStock, tYtrsodetail
  *
  * [referrer property]
  *     tTrPicklistList
@@ -481,20 +481,20 @@ public abstract class BsTTrpickdetailBhv extends AbstractBehaviorWritable<TTrpic
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TStock'.
-     * @param tTrpickdetailList The list of tTrpickdetail. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TStock> pulloutTStock(List<TTrpickdetail> tTrpickdetailList)
-    { return helpPulloutInternally(tTrpickdetailList, "tStock"); }
-
-    /**
      * Pull out the list of foreign table 'MLocation'.
      * @param tTrpickdetailList The list of tTrpickdetail. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MLocation> pulloutMLocation(List<TTrpickdetail> tTrpickdetailList)
     { return helpPulloutInternally(tTrpickdetailList, "mLocation"); }
+
+    /**
+     * Pull out the list of foreign table 'TStock'.
+     * @param tTrpickdetailList The list of tTrpickdetail. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TStock> pulloutTStock(List<TTrpickdetail> tTrpickdetailList)
+    { return helpPulloutInternally(tTrpickdetailList, "tStock"); }
 
     /**
      * Pull out the list of foreign table 'TYtrsodetail'.

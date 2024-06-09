@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, W_SGL_ROW_SHIP_INSP_H, T_PICKING_H, B_CLASS_DTL(ByInspectionFlg)
+ *     T_PICKING_H, W_SGL_ROW_SHIP_INSP_H, B_USER, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, wSglRowShipInspH, tPickingH, bClassDtlByInspectionFlg
+ *     tPickingH, wSglRowShipInspH, bUser, bClassDtlByInspectionFlg
  *
  * [referrer property]
  *     
@@ -419,12 +419,12 @@ public abstract class BsWSglRowShipInspBBhv extends AbstractBehaviorWritable<WSg
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BUser'.
+     * Pull out the list of foreign table 'TPickingH'.
      * @param wSglRowShipInspBList The list of wSglRowShipInspB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUser(List<WSglRowShipInspB> wSglRowShipInspBList)
-    { return helpPulloutInternally(wSglRowShipInspBList, "bUser"); }
+    public List<TPickingH> pulloutTPickingH(List<WSglRowShipInspB> wSglRowShipInspBList)
+    { return helpPulloutInternally(wSglRowShipInspBList, "tPickingH"); }
 
     /**
      * Pull out the list of foreign table 'WSglRowShipInspH'.
@@ -435,12 +435,12 @@ public abstract class BsWSglRowShipInspBBhv extends AbstractBehaviorWritable<WSg
     { return helpPulloutInternally(wSglRowShipInspBList, "wSglRowShipInspH"); }
 
     /**
-     * Pull out the list of foreign table 'TPickingH'.
+     * Pull out the list of foreign table 'BUser'.
      * @param wSglRowShipInspBList The list of wSglRowShipInspB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TPickingH> pulloutTPickingH(List<WSglRowShipInspB> wSglRowShipInspBList)
-    { return helpPulloutInternally(wSglRowShipInspBList, "tPickingH"); }
+    public List<BUser> pulloutBUser(List<WSglRowShipInspB> wSglRowShipInspBList)
+    { return helpPulloutInternally(wSglRowShipInspBList, "bUser"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

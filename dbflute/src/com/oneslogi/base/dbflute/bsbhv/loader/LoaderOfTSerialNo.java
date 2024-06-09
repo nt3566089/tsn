@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, M_PRODUCT, M_CLIENT
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, mProduct, mClient
+ *     mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -66,18 +66,18 @@ public class LoaderOfTSerialNo {
         return _foreignMCenterLoader;
     }
 
-    protected LoaderOfMProduct _foreignMProductLoader;
-    public LoaderOfMProduct pulloutMProduct() {
-        if (_foreignMProductLoader == null)
-        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
-        return _foreignMProductLoader;
-    }
-
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMProduct _foreignMProductLoader;
+    public LoaderOfMProduct pulloutMProduct() {
+        if (_foreignMProductLoader == null)
+        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
+        return _foreignMProductLoader;
     }
 
     // ===================================================================================

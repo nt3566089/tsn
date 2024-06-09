@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     
@@ -405,20 +405,20 @@ public abstract class BsTCcopamBhv extends AbstractBehaviorWritable<TCcopam, TCc
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tCcopamList The list of tCcopam. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TCcopam> tCcopamList)
-    { return helpPulloutInternally(tCcopamList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tCcopamList The list of tCcopam. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<TCcopam> tCcopamList)
     { return helpPulloutInternally(tCcopamList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tCcopamList The list of tCcopam. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TCcopam> tCcopamList)
+    { return helpPulloutInternally(tCcopamList, "mClient"); }
 
     // ===================================================================================
     //                                                                      Extract Column

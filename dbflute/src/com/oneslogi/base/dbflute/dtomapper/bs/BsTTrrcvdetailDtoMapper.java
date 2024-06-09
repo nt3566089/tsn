@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_TRRCV, T_RECEIVE_PLAN_B
+ *     T_RECEIVE_PLAN_B, T_TRRCV
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tTrrcv, tReceivePlanB
+ *     tReceivePlanB, tTrrcv
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTTrrcv;
     protected boolean _suppressTReceivePlanB;
+    protected boolean _suppressTTrrcv;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -206,32 +206,6 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTTrrcv && entity.getTTrrcv() != null) {
-            TTrrcv relationEntity = entity.getTTrrcv();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TTrrcvDto relationDto = (TTrrcvDto)cachedDto;
-                dto.setTTrrcv(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrrcvdetailList().add(dto);
-                }
-            } else {
-                TTrrcvDtoMapper mapper = new TTrrcvDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrrcvdetailList();
-                TTrrcvDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTTrrcv(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrrcvdetailList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTTrrcv());
-                }
-            }
-        };
         if (!_suppressTReceivePlanB && entity.getTReceivePlanB() != null) {
             TReceivePlanB relationEntity = entity.getTReceivePlanB();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -255,6 +229,32 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTReceivePlanB());
+                }
+            }
+        };
+        if (!_suppressTTrrcv && entity.getTTrrcv() != null) {
+            TTrrcv relationEntity = entity.getTTrrcv();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TTrrcvDto relationDto = (TTrrcvDto)cachedDto;
+                dto.setTTrrcv(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrrcvdetailList().add(dto);
+                }
+            } else {
+                TTrrcvDtoMapper mapper = new TTrrcvDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrrcvdetailList();
+                TTrrcvDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTTrrcv(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrrcvdetailList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTTrrcv());
                 }
             }
         };
@@ -533,32 +533,6 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTTrrcv && dto.getTTrrcv() != null) {
-            TTrrcvDto relationDto = dto.getTTrrcv();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TTrrcv relationEntity = (TTrrcv)cachedEntity;
-                entity.setTTrrcv(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrrcvdetailList().add(entity);
-                }
-            } else {
-                TTrrcvDtoMapper mapper = new TTrrcvDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrrcvdetailList();
-                TTrrcv relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTTrrcv(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrrcvdetailList().add(entity);
-                }
-                if (instanceCache && entity.getTTrrcv().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTTrrcv());
-                }
-            }
-        };
         if (!_suppressTReceivePlanB && dto.getTReceivePlanB() != null) {
             TReceivePlanBDto relationDto = dto.getTReceivePlanB();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -582,6 +556,32 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
                 }
                 if (instanceCache && entity.getTReceivePlanB().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTReceivePlanB());
+                }
+            }
+        };
+        if (!_suppressTTrrcv && dto.getTTrrcv() != null) {
+            TTrrcvDto relationDto = dto.getTTrrcv();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TTrrcv relationEntity = (TTrrcv)cachedEntity;
+                entity.setTTrrcv(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrrcvdetailList().add(entity);
+                }
+            } else {
+                TTrrcvDtoMapper mapper = new TTrrcvDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrrcvdetailList();
+                TTrrcv relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTTrrcv(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrrcvdetailList().add(entity);
+                }
+                if (instanceCache && entity.getTTrrcv().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTTrrcv());
                 }
             }
         };
@@ -703,19 +703,19 @@ public abstract class BsTTrrcvdetailDtoMapper implements DtoMapper<TTrrcvdetail,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTTrrcv() {
-        _suppressTTrrcv = true;
-    }
     public void suppressTReceivePlanB() {
         _suppressTReceivePlanB = true;
     }
+    public void suppressTTrrcv() {
+        _suppressTTrrcv = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressTTrrcv();
         suppressTReceivePlanB();
+        suppressTTrrcv();
     }
     protected void doSuppressClear() { // internal
-        _suppressTTrrcv = false;
         _suppressTReceivePlanB = false;
+        _suppressTTrrcv = false;
     }
 
     // ===================================================================================

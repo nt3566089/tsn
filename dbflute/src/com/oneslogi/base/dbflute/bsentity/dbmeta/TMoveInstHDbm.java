@@ -71,9 +71,9 @@ public class TMoveInstHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getMCenter(), (et, vl) -> ((TMoveInstH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getMClient(), (et, vl) -> ((TMoveInstH)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getMProcessType(), (et, vl) -> ((TMoveInstH)et).setMProcessType((MProcessType)vl), "MProcessType");
-        setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getMCenter(), (et, vl) -> ((TMoveInstH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getBClassDtlByInputType(), (et, vl) -> ((TMoveInstH)et).setBClassDtlByInputType((BClassDtl)vl), "BClassDtlByInputType");
         setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getBClassDtlByMoveInstStatus(), (et, vl) -> ((TMoveInstH)et).setBClassDtlByMoveInstStatus((BClassDtl)vl), "BClassDtlByMoveInstStatus");
         setupEfpg(_efpgMap, et -> ((TMoveInstH)et).getTMoveInstRAsOne(), (et, vl) -> ((TMoveInstH)et).setTMoveInstRAsOne((TMoveInstR)vl), "TMoveInstRAsOne");
@@ -258,12 +258,20 @@ public class TMoveInstHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("T_MOVE_INST_H_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
+    }
+    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_MOVE_INST_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
+        return cfi("T_MOVE_INST_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
     }
     /**
      * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
@@ -271,15 +279,7 @@ public class TMoveInstHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMProcessType() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_MOVE_INST_H_FK1", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_MOVE_INST_H_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
+        return cfi("T_MOVE_INST_H_FK1", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TMoveInstHList", false);
     }
     /**
      * B_CLASS_DTL by my INPUT_TYPE, named 'BClassDtlByInputType'.

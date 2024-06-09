@@ -407,8 +407,8 @@ public class BsMClientScreenCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MClientScreenCQ> {
-        protected BDictCB.HpSpecification _bDict;
         protected MClientCB.HpSpecification _mClient;
+        protected BDictCB.HpSpecification _bDict;
         protected BScreenCB.HpSpecification _bScreen;
         protected VDictCB.HpSpecification _vDict;
         protected VHtDictCB.HpSpecification _vHtDict;

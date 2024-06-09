@@ -252,35 +252,6 @@ public class BsHShippingBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MStockTypeNss _nssMStockType;
-    public MStockTypeNss xdfgetNssMStockType() {
-        if (_nssMStockType == null) { _nssMStockType = new MStockTypeNss(null); }
-        return _nssMStockType;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * <pre>
-     * <span style="color: #0000C0">hShippingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MStockType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">hShippingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">hShippingB</span>.<span style="color: #CC4747">getMStockType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MStockTypeNss setupSelect_MStockType() {
-        assertSetupSelectPurpose("mStockType");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnStockTypeId();
-        }
-        doSetupSelect(() -> query().queryMStockType());
-        if (_nssMStockType == null || !_nssMStockType.hasConditionQuery())
-        { _nssMStockType = new MStockTypeNss(query().queryMStockType()); }
-        return _nssMStockType;
-    }
-
     protected HShippingHNss _nssHShippingH;
     public HShippingHNss xdfgetNssHShippingH() {
         if (_nssHShippingH == null) { _nssHShippingH = new HShippingHNss(null); }
@@ -308,6 +279,35 @@ public class BsHShippingBCB extends AbstractConditionBean {
         if (_nssHShippingH == null || !_nssHShippingH.hasConditionQuery())
         { _nssHShippingH = new HShippingHNss(query().queryHShippingH()); }
         return _nssHShippingH;
+    }
+
+    protected MStockTypeNss _nssMStockType;
+    public MStockTypeNss xdfgetNssMStockType() {
+        if (_nssMStockType == null) { _nssMStockType = new MStockTypeNss(null); }
+        return _nssMStockType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * <pre>
+     * <span style="color: #0000C0">hShippingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MStockType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">hShippingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">hShippingB</span>.<span style="color: #CC4747">getMStockType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MStockTypeNss setupSelect_MStockType() {
+        assertSetupSelectPurpose("mStockType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnStockTypeId();
+        }
+        doSetupSelect(() -> query().queryMStockType());
+        if (_nssMStockType == null || !_nssMStockType.hasConditionQuery())
+        { _nssMStockType = new MStockTypeNss(query().queryMStockType()); }
+        return _nssMStockType;
     }
 
     protected HShippingSpareNss _nssHShippingSpareAsOne;
@@ -377,8 +377,8 @@ public class BsHShippingBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<HShippingBCQ> {
-        protected MStockTypeCB.HpSpecification _mStockType;
         protected HShippingHCB.HpSpecification _hShippingH;
+        protected MStockTypeCB.HpSpecification _mStockType;
         protected HShippingSpareCB.HpSpecification _hShippingSpareAsOne;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<HShippingBCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -584,37 +584,17 @@ public class BsHShippingBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnShippingInstBId(); // PK
-            if (qyCall().qy().hasConditionQueryMStockType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
-                columnStockTypeId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryHShippingH()
                     || qyCall().qy().xgetReferrerQuery() instanceof HShippingHCQ) {
                 columnShippingInstHId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMStockType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
+                columnStockTypeId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "H_SHIPPING_B"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MStockTypeCB.HpSpecification specifyMStockType() {
-            assertRelation("mStockType");
-            if (_mStockType == null) {
-                _mStockType = new MStockTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMStockType()
-                                    , () -> _qyCall.qy().queryMStockType())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mStockType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMStockType()
-                      , () -> xsyncQyCall().qy().queryMStockType()));
-                }
-            }
-            return _mStockType;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * H_SHIPPING_H by my SHIPPING_INST_H_ID, named 'HShippingH'.
@@ -634,6 +614,26 @@ public class BsHShippingBCB extends AbstractConditionBean {
                 }
             }
             return _hShippingH;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MStockTypeCB.HpSpecification specifyMStockType() {
+            assertRelation("mStockType");
+            if (_mStockType == null) {
+                _mStockType = new MStockTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMStockType()
+                                    , () -> _qyCall.qy().queryMStockType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mStockType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMStockType()
+                      , () -> xsyncQyCall().qy().queryMStockType()));
+                }
+            }
+            return _mStockType;
         }
         /**
          * Prepare to specify functions about relation table. <br>

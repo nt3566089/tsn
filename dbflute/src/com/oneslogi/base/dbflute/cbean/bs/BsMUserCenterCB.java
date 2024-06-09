@@ -265,35 +265,6 @@ public class BsMUserCenterCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BUserNss _nssBUser;
-    public BUserNss xdfgetNssBUser() {
-        if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
-        return _nssBUser;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_USER by my USER_ID, named 'BUser'.
-     * <pre>
-     * <span style="color: #0000C0">mUserCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUser()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mUserCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mUserCenter</span>.<span style="color: #CC4747">getBUser()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BUserNss setupSelect_BUser() {
-        assertSetupSelectPurpose("bUser");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnUserId();
-        }
-        doSetupSelect(() -> query().queryBUser());
-        if (_nssBUser == null || !_nssBUser.hasConditionQuery())
-        { _nssBUser = new BUserNss(query().queryBUser()); }
-        return _nssBUser;
-    }
-
     protected MCenterNss _nssMCenter;
     public MCenterNss xdfgetNssMCenter() {
         if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
@@ -321,6 +292,35 @@ public class BsMUserCenterCB extends AbstractConditionBean {
         if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
         { _nssMCenter = new MCenterNss(query().queryMCenter()); }
         return _nssMCenter;
+    }
+
+    protected BUserNss _nssBUser;
+    public BUserNss xdfgetNssBUser() {
+        if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
+        return _nssBUser;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_USER by my USER_ID, named 'BUser'.
+     * <pre>
+     * <span style="color: #0000C0">mUserCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUser()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mUserCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mUserCenter</span>.<span style="color: #CC4747">getBUser()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BUserNss setupSelect_BUser() {
+        assertSetupSelectPurpose("bUser");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnUserId();
+        }
+        doSetupSelect(() -> query().queryBUser());
+        if (_nssBUser == null || !_nssBUser.hasConditionQuery())
+        { _nssBUser = new BUserNss(query().queryBUser()); }
+        return _nssBUser;
     }
 
     // [DBFlute-0.7.4]
@@ -364,8 +364,8 @@ public class BsMUserCenterCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MUserCenterCQ> {
-        protected BUserCB.HpSpecification _bUser;
         protected MCenterCB.HpSpecification _mCenter;
+        protected BUserCB.HpSpecification _bUser;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MUserCenterCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -435,37 +435,17 @@ public class BsMUserCenterCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnUserCenterId(); // PK
-            if (qyCall().qy().hasConditionQueryBUser()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnUserId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryBUser()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
+                columnUserId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "M_USER_CENTER"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_USER by my USER_ID, named 'BUser'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUser() {
-            assertRelation("bUser");
-            if (_bUser == null) {
-                _bUser = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
-                                    , () -> _qyCall.qy().queryBUser())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
-                      , () -> xsyncQyCall().qy().queryBUser()));
-                }
-            }
-            return _bUser;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -485,6 +465,26 @@ public class BsMUserCenterCB extends AbstractConditionBean {
                 }
             }
             return _mCenter;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_USER by my USER_ID, named 'BUser'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUser() {
+            assertRelation("bUser");
+            if (_bUser == null) {
+                _bUser = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
+                                    , () -> _qyCall.qy().queryBUser())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
+                      , () -> xsyncQyCall().qy().queryBUser()));
+                }
+            }
+            return _bUser;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

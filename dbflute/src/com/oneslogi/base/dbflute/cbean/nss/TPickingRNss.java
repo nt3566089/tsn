@@ -20,15 +20,6 @@ public class TPickingRNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BUserNss withBUserByPl1OutUserId() {
-        _query.xdoNss(() -> _query.queryBUserByPl1OutUserId());
-        return new BUserNss(_query.queryBUserByPl1OutUserId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_USER by my CASE_OUT_USER_ID, named 'BUserByCaseOutUserId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -38,12 +29,12 @@ public class TPickingRNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public BUserNss withBUserByShippingRecordOutUserId() {
-        _query.xdoNss(() -> _query.queryBUserByShippingRecordOutUserId());
-        return new BUserNss(_query.queryBUserByShippingRecordOutUserId());
+    public BUserNss withBUserByPackingOutUserId() {
+        _query.xdoNss(() -> _query.queryBUserByPackingOutUserId());
+        return new BUserNss(_query.queryBUserByPackingOutUserId());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -56,6 +47,15 @@ public class TPickingRNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BUserNss withBUserByPl1OutUserId() {
+        _query.xdoNss(() -> _query.queryBUserByPl1OutUserId());
+        return new BUserNss(_query.queryBUserByPl1OutUserId());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * B_USER by my PL2_OUT_USER_ID, named 'BUserByPl2OutUserId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -65,21 +65,21 @@ public class TPickingRNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BUserNss withBUserByShippingRecordOutUserId() {
+        _query.xdoNss(() -> _query.queryBUserByShippingRecordOutUserId());
+        return new BUserNss(_query.queryBUserByShippingRecordOutUserId());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * B_USER by my SLIP_OUT_USER_ID, named 'BUserBySlipOutUserId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BUserNss withBUserBySlipOutUserId() {
         _query.xdoNss(() -> _query.queryBUserBySlipOutUserId());
         return new BUserNss(_query.queryBUserBySlipOutUserId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BUserNss withBUserByPackingOutUserId() {
-        _query.xdoNss(() -> _query.queryBUserByPackingOutUserId());
-        return new BUserNss(_query.queryBUserByPackingOutUserId());
     }
     /**
      * With nested relation columns to select clause. <br>

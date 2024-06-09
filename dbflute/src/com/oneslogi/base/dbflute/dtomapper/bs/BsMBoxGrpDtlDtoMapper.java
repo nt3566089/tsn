@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_BOX, M_BOX_GRP
+ *     M_BOX_GRP, M_BOX
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mBox, mBoxGrp
+ *     mBoxGrp, mBox
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMBox;
     protected boolean _suppressMBoxGrp;
+    protected boolean _suppressMBox;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -142,32 +142,6 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMBox && entity.getMBox() != null) {
-            MBox relationEntity = entity.getMBox();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MBoxDto relationDto = (MBoxDto)cachedDto;
-                dto.setMBox(relationDto);
-                if (reverseReference) {
-                    relationDto.getMBoxGrpDtlList().add(dto);
-                }
-            } else {
-                MBoxDtoMapper mapper = new MBoxDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMBoxGrpDtlList();
-                MBoxDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMBox(relationDto);
-                if (reverseReference) {
-                    relationDto.getMBoxGrpDtlList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMBox());
-                }
-            }
-        };
         if (!_suppressMBoxGrp && entity.getMBoxGrp() != null) {
             MBoxGrp relationEntity = entity.getMBoxGrp();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -191,6 +165,32 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMBoxGrp());
+                }
+            }
+        };
+        if (!_suppressMBox && entity.getMBox() != null) {
+            MBox relationEntity = entity.getMBox();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MBoxDto relationDto = (MBoxDto)cachedDto;
+                dto.setMBox(relationDto);
+                if (reverseReference) {
+                    relationDto.getMBoxGrpDtlList().add(dto);
+                }
+            } else {
+                MBoxDtoMapper mapper = new MBoxDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMBoxGrpDtlList();
+                MBoxDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMBox(relationDto);
+                if (reverseReference) {
+                    relationDto.getMBoxGrpDtlList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMBox());
                 }
             }
         };
@@ -277,32 +277,6 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMBox && dto.getMBox() != null) {
-            MBoxDto relationDto = dto.getMBox();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MBox relationEntity = (MBox)cachedEntity;
-                entity.setMBox(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMBoxGrpDtlList().add(entity);
-                }
-            } else {
-                MBoxDtoMapper mapper = new MBoxDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMBoxGrpDtlList();
-                MBox relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMBox(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMBoxGrpDtlList().add(entity);
-                }
-                if (instanceCache && entity.getMBox().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMBox());
-                }
-            }
-        };
         if (!_suppressMBoxGrp && dto.getMBoxGrp() != null) {
             MBoxGrpDto relationDto = dto.getMBoxGrp();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -326,6 +300,32 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
                 }
                 if (instanceCache && entity.getMBoxGrp().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMBoxGrp());
+                }
+            }
+        };
+        if (!_suppressMBox && dto.getMBox() != null) {
+            MBoxDto relationDto = dto.getMBox();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MBox relationEntity = (MBox)cachedEntity;
+                entity.setMBox(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMBoxGrpDtlList().add(entity);
+                }
+            } else {
+                MBoxDtoMapper mapper = new MBoxDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMBoxGrpDtlList();
+                MBox relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMBox(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMBoxGrpDtlList().add(entity);
+                }
+                if (instanceCache && entity.getMBox().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMBox());
                 }
             }
         };
@@ -447,19 +447,19 @@ public abstract class BsMBoxGrpDtlDtoMapper implements DtoMapper<MBoxGrpDtl, MBo
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMBox() {
-        _suppressMBox = true;
-    }
     public void suppressMBoxGrp() {
         _suppressMBoxGrp = true;
     }
+    public void suppressMBox() {
+        _suppressMBox = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressMBox();
         suppressMBoxGrp();
+        suppressMBox();
     }
     protected void doSuppressClear() { // internal
-        _suppressMBox = false;
         _suppressMBoxGrp = false;
+        _suppressMBox = false;
     }
 
     // ===================================================================================

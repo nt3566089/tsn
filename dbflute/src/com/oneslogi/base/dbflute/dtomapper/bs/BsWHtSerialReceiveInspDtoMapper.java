@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_CUSTOMER, M_CENTER
+ *     M_CENTER, M_CLIENT, M_CUSTOMER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mClient, mCustomer, mCenter
+ *     mCenter, mClient, mCustomer
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressMCenter;
     protected boolean _suppressMClient;
     protected boolean _suppressMCustomer;
-    protected boolean _suppressMCenter;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -150,6 +150,32 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getWHtSerialReceiveInspList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWHtSerialReceiveInspList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getWHtSerialReceiveInspList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -199,32 +225,6 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCustomer());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getWHtSerialReceiveInspList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWHtSerialReceiveInspList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getWHtSerialReceiveInspList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -332,6 +332,32 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWHtSerialReceiveInspList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWHtSerialReceiveInspList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWHtSerialReceiveInspList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -381,32 +407,6 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
                 }
                 if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCustomer());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWHtSerialReceiveInspList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWHtSerialReceiveInspList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWHtSerialReceiveInspList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -528,24 +528,24 @@ public abstract class BsWHtSerialReceiveInspDtoMapper implements DtoMapper<WHtSe
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressMCenter() {
+        _suppressMCenter = true;
+    }
     public void suppressMClient() {
         _suppressMClient = true;
     }
     public void suppressMCustomer() {
         _suppressMCustomer = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
-    }
     protected void doSuppressAll() { // internal
+        suppressMCenter();
         suppressMClient();
         suppressMCustomer();
-        suppressMCenter();
     }
     protected void doSuppressClear() { // internal
+        _suppressMCenter = false;
         _suppressMClient = false;
         _suppressMCustomer = false;
-        _suppressMCenter = false;
     }
 
     // ===================================================================================

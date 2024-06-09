@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_MOVE_INST_B, T_MOVE_INST_H, M_LOCATION, B_CLASS_DTL(ByAllShippingFlg)
+ *     M_LOCATION, T_MOVE_INST_B, T_MOVE_INST_H, B_CLASS_DTL(ByAllShippingFlg)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tMoveInstB, tMoveInstH, mLocation, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
+ *     mLocation, tMoveInstB, tMoveInstH, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -98,6 +98,13 @@ public class LoaderOfTMoveRecordB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfMLocation _foreignMLocationLoader;
+    public LoaderOfMLocation pulloutMLocation() {
+        if (_foreignMLocationLoader == null)
+        { _foreignMLocationLoader = new LoaderOfMLocation().ready(myBhv().pulloutMLocation(_selectedList), _selector); }
+        return _foreignMLocationLoader;
+    }
+
     protected LoaderOfTMoveInstB _foreignTMoveInstBLoader;
     public LoaderOfTMoveInstB pulloutTMoveInstB() {
         if (_foreignTMoveInstBLoader == null)
@@ -110,13 +117,6 @@ public class LoaderOfTMoveRecordB {
         if (_foreignTMoveInstHLoader == null)
         { _foreignTMoveInstHLoader = new LoaderOfTMoveInstH().ready(myBhv().pulloutTMoveInstH(_selectedList), _selector); }
         return _foreignTMoveInstHLoader;
-    }
-
-    protected LoaderOfMLocation _foreignMLocationLoader;
-    public LoaderOfMLocation pulloutMLocation() {
-        if (_foreignMLocationLoader == null)
-        { _foreignMLocationLoader = new LoaderOfMLocation().ready(myBhv().pulloutMLocation(_selectedList), _selector); }
-        return _foreignMLocationLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByAllShippingFlgLoader;

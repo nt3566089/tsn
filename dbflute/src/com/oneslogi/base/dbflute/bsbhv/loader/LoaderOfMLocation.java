@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT_SHAPE, M_PRODUCT, M_ZONE, M_STOCK_TYPE, M_CUSTOMER, M_CENTER, B_CLASS_DTL(ByAllocNgFlg)
+ *     M_CENTER, M_PRODUCT_SHAPE, M_CUSTOMER, M_PRODUCT, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByAllocNgFlg)
  *
  * [referrer table]
  *     T_ALLOC_INST_B, T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_RECEIVE_PLAN_B, T_SHIPPING_INST_B, T_STOCK, T_STORE_RECORD_B, T_TRPICKDETAIL, W_HT_INVENTORY_INPUT_PROD, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SHIPPING_PICKING
  *
  * [foreign property]
- *     mProductShapeByMaxStoreProductShapeId, mProduct, mZone, mProductShapeByReplenishPProductShapeId, mStockType, mCustomer, mCenter, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
+ *     mCenter, mProductShapeByMaxStoreProductShapeId, mCustomer, mProduct, mProductShapeByReplenishPProductShapeId, mStockType, mZone, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
  *
  * [referrer property]
  *     tAllocInstBList, tInventoryBList, tMoveInstBList, tMoveRecordBList, tReceivePlanBList, tShippingInstBList, tStockList, tStoreRecordBList, tTrpickdetailList, wHtInventoryInputProdList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtShippingPickingList
@@ -540,6 +540,13 @@ public class LoaderOfMLocation {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
+    }
+
     protected LoaderOfMProductShape _foreignMProductShapeByMaxStoreProductShapeIdLoader;
     public LoaderOfMProductShape pulloutMProductShapeByMaxStoreProductShapeId() {
         if (_foreignMProductShapeByMaxStoreProductShapeIdLoader == null)
@@ -547,18 +554,18 @@ public class LoaderOfMLocation {
         return _foreignMProductShapeByMaxStoreProductShapeIdLoader;
     }
 
+    protected LoaderOfMCustomer _foreignMCustomerLoader;
+    public LoaderOfMCustomer pulloutMCustomer() {
+        if (_foreignMCustomerLoader == null)
+        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
+        return _foreignMCustomerLoader;
+    }
+
     protected LoaderOfMProduct _foreignMProductLoader;
     public LoaderOfMProduct pulloutMProduct() {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
-    }
-
-    protected LoaderOfMZone _foreignMZoneLoader;
-    public LoaderOfMZone pulloutMZone() {
-        if (_foreignMZoneLoader == null)
-        { _foreignMZoneLoader = new LoaderOfMZone().ready(myBhv().pulloutMZone(_selectedList), _selector); }
-        return _foreignMZoneLoader;
     }
 
     protected LoaderOfMProductShape _foreignMProductShapeByReplenishPProductShapeIdLoader;
@@ -575,18 +582,11 @@ public class LoaderOfMLocation {
         return _foreignMStockTypeLoader;
     }
 
-    protected LoaderOfMCustomer _foreignMCustomerLoader;
-    public LoaderOfMCustomer pulloutMCustomer() {
-        if (_foreignMCustomerLoader == null)
-        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
-        return _foreignMCustomerLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
+    protected LoaderOfMZone _foreignMZoneLoader;
+    public LoaderOfMZone pulloutMZone() {
+        if (_foreignMZoneLoader == null)
+        { _foreignMZoneLoader = new LoaderOfMZone().ready(myBhv().pulloutMZone(_selectedList), _selector); }
+        return _foreignMZoneLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByAllocNgFlgLoader;

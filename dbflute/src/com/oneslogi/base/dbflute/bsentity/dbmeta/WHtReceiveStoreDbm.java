@@ -83,13 +83,13 @@ public class WHtReceiveStoreDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getTLot(), (et, vl) -> ((WHtReceiveStore)et).setTLot((TLot)vl), "TLot");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMLocation(), (et, vl) -> ((WHtReceiveStore)et).setMLocation((MLocation)vl), "MLocation");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMClient(), (et, vl) -> ((WHtReceiveStore)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMWarehouse(), (et, vl) -> ((WHtReceiveStore)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
         setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMCenter(), (et, vl) -> ((WHtReceiveStore)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMClient(), (et, vl) -> ((WHtReceiveStore)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMLocation(), (et, vl) -> ((WHtReceiveStore)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getTLot(), (et, vl) -> ((WHtReceiveStore)et).setTLot((TLot)vl), "TLot");
         setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMProduct(), (et, vl) -> ((WHtReceiveStore)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMStockType(), (et, vl) -> ((WHtReceiveStore)et).setMStockType((MStockType)vl), "MStockType");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveStore)et).getMWarehouse(), (et, vl) -> ((WHtReceiveStore)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -355,20 +355,12 @@ public class WHtReceiveStoreDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_LOT by my LOT_ID, named 'TLot'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTLot() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("W_HT_RECEIVE_STORE_FK2", "TLot", this, TLotDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
-    }
-    /**
-     * M_LOCATION by my LOC_ID, named 'MLocation'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("W_HT_RECEIVE_STORE_FK1", "MLocation", this, MLocationDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("W_HT_RECEIVE_STORE_FK7", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -376,23 +368,23 @@ public class WHtReceiveStoreDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_HT_RECEIVE_STORE_FK3", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+        return cfi("W_HT_RECEIVE_STORE_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
     /**
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * M_LOCATION by my LOC_ID, named 'MLocation'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMWarehouse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("W_HT_RECEIVE_STORE_FK6", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("W_HT_RECEIVE_STORE_FK1", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
     /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * T_LOT by my LOT_ID, named 'TLot'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_HT_RECEIVE_STORE_FK7", "MCenter", this, MCenterDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+    public ForeignInfo foreignTLot() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
+        return cfi("W_HT_RECEIVE_STORE_FK2", "TLot", this, TLotDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
     /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -400,7 +392,7 @@ public class WHtReceiveStoreDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMProduct() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_HT_RECEIVE_STORE_FK5", "MProduct", this, MProductDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+        return cfi("W_HT_RECEIVE_STORE_FK5", "MProduct", this, MProductDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
     /**
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
@@ -408,7 +400,15 @@ public class WHtReceiveStoreDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMStockType() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("W_HT_RECEIVE_STORE_FK4", "MStockType", this, MStockTypeDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+        return cfi("W_HT_RECEIVE_STORE_FK4", "MStockType", this, MStockTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
+    }
+    /**
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMWarehouse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
+        return cfi("W_HT_RECEIVE_STORE_FK6", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "WHtReceiveStoreList", false);
     }
 
     // -----------------------------------------------------

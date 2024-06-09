@@ -20,15 +20,6 @@ public class WHtInventoryInputProdNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MStockTypeNss withMStockType() {
-        _query.xdoNss(() -> _query.queryMStockType());
-        return new MStockTypeNss(_query.queryMStockType());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -56,12 +47,12 @@ public class WHtInventoryInputProdNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * M_LOCATION by my LOC_ID, named 'MLocation'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MWarehouseNss withMWarehouse() {
-        _query.xdoNss(() -> _query.queryMWarehouse());
-        return new MWarehouseNss(_query.queryMWarehouse());
+    public MLocationNss withMLocation() {
+        _query.xdoNss(() -> _query.queryMLocation());
+        return new MLocationNss(_query.queryMLocation());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -74,20 +65,29 @@ public class WHtInventoryInputProdNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_LOCATION by my LOC_ID, named 'MLocation'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MLocationNss withMLocation() {
-        _query.xdoNss(() -> _query.queryMLocation());
-        return new MLocationNss(_query.queryMLocation());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MProductNss withMProduct() {
         _query.xdoNss(() -> _query.queryMProduct());
         return new MProductNss(_query.queryMProduct());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MStockTypeNss withMStockType() {
+        _query.xdoNss(() -> _query.queryMStockType());
+        return new MStockTypeNss(_query.queryMStockType());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MWarehouseNss withMWarehouse() {
+        _query.xdoNss(() -> _query.queryMWarehouse());
+        return new MWarehouseNss(_query.queryMWarehouse());
     }
 }

@@ -535,14 +535,14 @@ public class BsWSglRowShipInspHCQ extends AbstractBsWSglRowShipInspHCQ {
         if (bq.hasConditionQueryMBox()) {
             uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
         }
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
         if (bq.hasConditionQueryMProduct()) {
             uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
     }
 
@@ -568,6 +568,26 @@ public class BsWSglRowShipInspHCQ extends AbstractBsWSglRowShipInspHCQ {
     }
     protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
     public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
+    }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -608,26 +628,6 @@ public class BsWSglRowShipInspHCQ extends AbstractBsWSglRowShipInspHCQ {
     }
     protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
     public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_BOX, M_CLIENT, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     W_SGL_ROW_SHIP_INSP_B
  *
  * [foreign-property]
- *     mBox, mClient, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     wSglRowShipInspBList
@@ -71,9 +71,9 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressMBox;
+    protected boolean _suppressMCenter;
     protected boolean _suppressMClient;
     protected boolean _suppressMProduct;
-    protected boolean _suppressMCenter;
     protected boolean _suppressWSglRowShipInspBList;
 
     // ===================================================================================
@@ -178,6 +178,32 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
                 }
             }
         };
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getWSglRowShipInspHList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWSglRowShipInspHList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getWSglRowShipInspHList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -227,32 +253,6 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMProduct());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getWSglRowShipInspHList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWSglRowShipInspHList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getWSglRowShipInspHList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -400,6 +400,32 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
                 }
             }
         };
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWSglRowShipInspHList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWSglRowShipInspHList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWSglRowShipInspHList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -449,32 +475,6 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
                 }
                 if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMProduct());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWSglRowShipInspHList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWSglRowShipInspHList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWSglRowShipInspHList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -613,30 +613,30 @@ public abstract class BsWSglRowShipInspHDtoMapper implements DtoMapper<WSglRowSh
     public void suppressMBox() {
         _suppressMBox = true;
     }
+    public void suppressMCenter() {
+        _suppressMCenter = true;
+    }
     public void suppressMClient() {
         _suppressMClient = true;
     }
     public void suppressMProduct() {
         _suppressMProduct = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
-    }
     public void suppressWSglRowShipInspBList() {
         _suppressWSglRowShipInspBList = true;
     }
     protected void doSuppressAll() { // internal
         suppressMBox();
+        suppressMCenter();
         suppressMClient();
         suppressMProduct();
-        suppressMCenter();
         suppressWSglRowShipInspBList();
     }
     protected void doSuppressClear() { // internal
         _suppressMBox = false;
+        _suppressMCenter = false;
         _suppressMClient = false;
         _suppressMProduct = false;
-        _suppressMCenter = false;
         _suppressWSglRowShipInspBList = false;
     }
 

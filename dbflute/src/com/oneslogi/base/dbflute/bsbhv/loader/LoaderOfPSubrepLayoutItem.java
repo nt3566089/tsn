@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_SUBREP_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_SUBREP_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pSubrepLayout, bDict, vDict
+ *     bDict, pSubrepLayout, vDict
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfPSubrepLayoutItem {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfPSubrepLayout _foreignPSubrepLayoutLoader;
-    public LoaderOfPSubrepLayout pulloutPSubrepLayout() {
-        if (_foreignPSubrepLayoutLoader == null)
-        { _foreignPSubrepLayoutLoader = new LoaderOfPSubrepLayout().ready(myBhv().pulloutPSubrepLayout(_selectedList), _selector); }
-        return _foreignPSubrepLayoutLoader;
-    }
-
     protected LoaderOfBDict _foreignBDictLoader;
     public LoaderOfBDict pulloutBDict() {
         if (_foreignBDictLoader == null)
         { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
         return _foreignBDictLoader;
+    }
+
+    protected LoaderOfPSubrepLayout _foreignPSubrepLayoutLoader;
+    public LoaderOfPSubrepLayout pulloutPSubrepLayout() {
+        if (_foreignPSubrepLayoutLoader == null)
+        { _foreignPSubrepLayoutLoader = new LoaderOfPSubrepLayout().ready(myBhv().pulloutPSubrepLayout(_selectedList), _selector); }
+        return _foreignPSubrepLayoutLoader;
     }
 
     protected LoaderOfVDict _foreignVDictLoader;

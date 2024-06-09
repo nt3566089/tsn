@@ -20,21 +20,21 @@ public class TEcOrderRNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BUserNss withBUser() {
-        _query.xdoNss(() -> _query.queryBUser());
-        return new BUserNss(_query.queryBUser());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TEcOrderHNss withTEcOrderH() {
         _query.xdoNss(() -> _query.queryTEcOrderH());
         return new TEcOrderHNss(_query.queryTEcOrderH());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BUserNss withBUser() {
+        _query.xdoNss(() -> _query.queryBUser());
+        return new BUserNss(_query.queryBUser());
     }
     /**
      * With nested relation columns to select clause. <br>

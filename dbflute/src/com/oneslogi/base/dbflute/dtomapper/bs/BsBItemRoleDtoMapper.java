@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE, B_ITEM, B_CLASS_DTL(ByVisible)
+ *     B_ITEM, B_ROLE, B_CLASS_DTL(ByVisible)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bRole, bItem, bClassDtlByVisible, bClassDtlByEditable
+ *     bItem, bRole, bClassDtlByVisible, bClassDtlByEditable
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBRole;
     protected boolean _suppressBItem;
+    protected boolean _suppressBRole;
     protected boolean _suppressBClassDtlByVisible;
     protected boolean _suppressBClassDtlByEditable;
 
@@ -146,32 +146,6 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRole && entity.getBRole() != null) {
-            BRole relationEntity = entity.getBRole();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BRoleDto relationDto = (BRoleDto)cachedDto;
-                dto.setBRole(relationDto);
-                if (reverseReference) {
-                    relationDto.getBItemRoleList().add(dto);
-                }
-            } else {
-                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBItemRoleList();
-                BRoleDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBRole(relationDto);
-                if (reverseReference) {
-                    relationDto.getBItemRoleList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBRole());
-                }
-            }
-        };
         if (!_suppressBItem && entity.getBItem() != null) {
             BItem relationEntity = entity.getBItem();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -195,6 +169,32 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBItem());
+                }
+            }
+        };
+        if (!_suppressBRole && entity.getBRole() != null) {
+            BRole relationEntity = entity.getBRole();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BRoleDto relationDto = (BRoleDto)cachedDto;
+                dto.setBRole(relationDto);
+                if (reverseReference) {
+                    relationDto.getBItemRoleList().add(dto);
+                }
+            } else {
+                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBItemRoleList();
+                BRoleDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBRole(relationDto);
+                if (reverseReference) {
+                    relationDto.getBItemRoleList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBRole());
                 }
             }
         };
@@ -333,32 +333,6 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRole && dto.getBRole() != null) {
-            BRoleDto relationDto = dto.getBRole();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BRole relationEntity = (BRole)cachedEntity;
-                entity.setBRole(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBItemRoleList().add(entity);
-                }
-            } else {
-                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBItemRoleList();
-                BRole relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBRole(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBItemRoleList().add(entity);
-                }
-                if (instanceCache && entity.getBRole().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBRole());
-                }
-            }
-        };
         if (!_suppressBItem && dto.getBItem() != null) {
             BItemDto relationDto = dto.getBItem();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -382,6 +356,32 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
                 }
                 if (instanceCache && entity.getBItem().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBItem());
+                }
+            }
+        };
+        if (!_suppressBRole && dto.getBRole() != null) {
+            BRoleDto relationDto = dto.getBRole();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BRole relationEntity = (BRole)cachedEntity;
+                entity.setBRole(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBItemRoleList().add(entity);
+                }
+            } else {
+                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBItemRoleList();
+                BRole relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBRole(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBItemRoleList().add(entity);
+                }
+                if (instanceCache && entity.getBRole().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBRole());
                 }
             }
         };
@@ -549,11 +549,11 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBRole() {
-        _suppressBRole = true;
-    }
     public void suppressBItem() {
         _suppressBItem = true;
+    }
+    public void suppressBRole() {
+        _suppressBRole = true;
     }
     public void suppressBClassDtlByVisible() {
         _suppressBClassDtlByVisible = true;
@@ -562,14 +562,14 @@ public abstract class BsBItemRoleDtoMapper implements DtoMapper<BItemRole, BItem
         _suppressBClassDtlByEditable = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBRole();
         suppressBItem();
+        suppressBRole();
         suppressBClassDtlByVisible();
         suppressBClassDtlByEditable();
     }
     protected void doSuppressClear() { // internal
-        _suppressBRole = false;
         _suppressBItem = false;
+        _suppressBRole = false;
         _suppressBClassDtlByVisible = false;
         _suppressBClassDtlByEditable = false;
     }

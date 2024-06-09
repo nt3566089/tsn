@@ -252,62 +252,33 @@ public class BsTPackingHCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TPickingHNss _nssTPickingH;
-    public TPickingHNss xdfgetNssTPickingH() {
-        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
-        return _nssTPickingH;
+    protected TAllocInstHNss _nssTAllocInstH;
+    public TAllocInstHNss xdfgetNssTAllocInstH() {
+        if (_nssTAllocInstH == null) { _nssTAllocInstH = new TAllocInstHNss(null); }
+        return _nssTAllocInstH;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * <pre>
      * <span style="color: #0000C0">tPackingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPackingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getTAllocInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TPickingHNss setupSelect_TPickingH() {
-        assertSetupSelectPurpose("tPickingH");
+    public TAllocInstHNss setupSelect_TAllocInstH() {
+        assertSetupSelectPurpose("tAllocInstH");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnPickingHId();
+            specify().columnAllocInstHId();
         }
-        doSetupSelect(() -> query().queryTPickingH());
-        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
-        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
-        return _nssTPickingH;
-    }
-
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * <pre>
-     * <span style="color: #0000C0">tPackingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPackingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
-        }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryTAllocInstH());
+        if (_nssTAllocInstH == null || !_nssTAllocInstH.hasConditionQuery())
+        { _nssTAllocInstH = new TAllocInstHNss(query().queryTAllocInstH()); }
+        return _nssTAllocInstH;
     }
 
     protected MBoxNss _nssMBox;
@@ -339,33 +310,33 @@ public class BsTPackingHCB extends AbstractConditionBean {
         return _nssMBox;
     }
 
-    protected TAllocInstHNss _nssTAllocInstH;
-    public TAllocInstHNss xdfgetNssTAllocInstH() {
-        if (_nssTAllocInstH == null) { _nssTAllocInstH = new TAllocInstHNss(null); }
-        return _nssTAllocInstH;
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * <pre>
      * <span style="color: #0000C0">tPackingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPackingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getTAllocInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TAllocInstHNss setupSelect_TAllocInstH() {
-        assertSetupSelectPurpose("tAllocInstH");
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnAllocInstHId();
+            specify().columnCenterId();
         }
-        doSetupSelect(() -> query().queryTAllocInstH());
-        if (_nssTAllocInstH == null || !_nssTAllocInstH.hasConditionQuery())
-        { _nssTAllocInstH = new TAllocInstHNss(query().queryTAllocInstH()); }
-        return _nssTAllocInstH;
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected MClientNss _nssMClient;
@@ -395,6 +366,35 @@ public class BsTPackingHCB extends AbstractConditionBean {
         if (_nssMClient == null || !_nssMClient.hasConditionQuery())
         { _nssMClient = new MClientNss(query().queryMClient()); }
         return _nssMClient;
+    }
+
+    protected TPickingHNss _nssTPickingH;
+    public TPickingHNss xdfgetNssTPickingH() {
+        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
+        return _nssTPickingH;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * <pre>
+     * <span style="color: #0000C0">tPackingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPackingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPackingH</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TPickingHNss setupSelect_TPickingH() {
+        assertSetupSelectPurpose("tPickingH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnPickingHId();
+        }
+        doSetupSelect(() -> query().queryTPickingH());
+        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
+        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
+        return _nssTPickingH;
     }
 
     protected MProcessTypeNss _nssMProcessType;
@@ -638,11 +638,11 @@ public class BsTPackingHCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPackingHCQ> {
-        protected TPickingHCB.HpSpecification _tPickingH;
-        protected MCenterCB.HpSpecification _mCenter;
-        protected MBoxCB.HpSpecification _mBox;
         protected TAllocInstHCB.HpSpecification _tAllocInstH;
+        protected MBoxCB.HpSpecification _mBox;
+        protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
+        protected TPickingHCB.HpSpecification _tPickingH;
         protected MProcessTypeCB.HpSpecification _mProcessType;
         protected BUserCB.HpSpecification _bUserByUpdUser;
         protected BClassDtlCB.HpSpecification _bClassDtlByLoadingFlg;
@@ -799,25 +799,25 @@ public class BsTPackingHCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPackingHId(); // PK
-            if (qyCall().qy().hasConditionQueryTPickingH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
-                columnPickingHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTAllocInstH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstHCQ) {
+                columnAllocInstHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMBox()
                     || qyCall().qy().xgetReferrerQuery() instanceof MBoxCQ) {
                 columnBoxId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTAllocInstH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstHCQ) {
-                columnAllocInstHId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTPickingH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
+                columnPickingHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMProcessType()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
@@ -848,43 +848,23 @@ public class BsTPackingHCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_PACKING_H"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+         * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TPickingHCB.HpSpecification specifyTPickingH() {
-            assertRelation("tPickingH");
-            if (_tPickingH == null) {
-                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
-                                    , () -> _qyCall.qy().queryTPickingH())
+        public TAllocInstHCB.HpSpecification specifyTAllocInstH() {
+            assertRelation("tAllocInstH");
+            if (_tAllocInstH == null) {
+                _tAllocInstH = new TAllocInstHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstH()
+                                    , () -> _qyCall.qy().queryTAllocInstH())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
-                      , () -> xsyncQyCall().qy().queryTPickingH()));
+                    _tAllocInstH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstH()
+                      , () -> xsyncQyCall().qy().queryTAllocInstH()));
                 }
             }
-            return _tPickingH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
-                }
-            }
-            return _mCenter;
+            return _tAllocInstH;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -908,23 +888,23 @@ public class BsTPackingHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TAllocInstHCB.HpSpecification specifyTAllocInstH() {
-            assertRelation("tAllocInstH");
-            if (_tAllocInstH == null) {
-                _tAllocInstH = new TAllocInstHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstH()
-                                    , () -> _qyCall.qy().queryTAllocInstH())
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tAllocInstH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstH()
-                      , () -> xsyncQyCall().qy().queryTAllocInstH()));
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
                 }
             }
-            return _tAllocInstH;
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -945,6 +925,26 @@ public class BsTPackingHCB extends AbstractConditionBean {
                 }
             }
             return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TPickingHCB.HpSpecification specifyTPickingH() {
+            assertRelation("tPickingH");
+            if (_tPickingH == null) {
+                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
+                                    , () -> _qyCall.qy().queryTPickingH())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
+                      , () -> xsyncQyCall().qy().queryTPickingH()));
+                }
+            }
+            return _tPickingH;
         }
         /**
          * Prepare to specify functions about relation table. <br>

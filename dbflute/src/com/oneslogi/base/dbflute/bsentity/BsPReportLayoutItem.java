@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_REPORT_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_REPORT_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pReportLayout, bDict, vDict
+ *     bDict, pReportLayout, vDict
  *
  * [referrer property]
  *     
@@ -276,25 +276,6 @@ public abstract class BsPReportLayoutItem extends AbstractEntity implements Doma
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. */
-    protected PReportLayout _pReportLayout;
-
-    /**
-     * [get] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. <br>
-     * @return The entity of foreign property 'PReportLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public PReportLayout getPReportLayout() {
-        return _pReportLayout;
-    }
-
-    /**
-     * [set] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @param pReportLayout The entity of foreign property 'PReportLayout'. (NullAllowed)
-     */
-    public void setPReportLayout(PReportLayout pReportLayout) {
-        _pReportLayout = pReportLayout;
-    }
-
     /** B_DICT by my DICT_ID, named 'BDict'. */
     protected BDict _bDict;
 
@@ -312,6 +293,25 @@ public abstract class BsPReportLayoutItem extends AbstractEntity implements Doma
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. */
+    protected PReportLayout _pReportLayout;
+
+    /**
+     * [get] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'. <br>
+     * @return The entity of foreign property 'PReportLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public PReportLayout getPReportLayout() {
+        return _pReportLayout;
+    }
+
+    /**
+     * [set] P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @param pReportLayout The entity of foreign property 'PReportLayout'. (NullAllowed)
+     */
+    public void setPReportLayout(PReportLayout pReportLayout) {
+        _pReportLayout = pReportLayout;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -365,10 +365,10 @@ public abstract class BsPReportLayoutItem extends AbstractEntity implements Doma
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_pReportLayout != null)
-        { sb.append(li).append(xbRDS(_pReportLayout, "pReportLayout")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_pReportLayout != null)
+        { sb.append(li).append(xbRDS(_pReportLayout, "pReportLayout")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         return sb.toString();
@@ -403,10 +403,10 @@ public abstract class BsPReportLayoutItem extends AbstractEntity implements Doma
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_pReportLayout != null)
-        { sb.append(dm).append("pReportLayout"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_pReportLayout != null)
+        { sb.append(dm).append("pReportLayout"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (sb.length() > dm.length()) {

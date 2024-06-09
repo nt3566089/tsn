@@ -47,18 +47,18 @@ public class TCenterSymbolNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-     */
-    public void withTTrsymbol() {
-        _query.xdoNss(() -> _query.queryTTrsymbol());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * T_PALLET by my PALLET_ID, named 'TPallet'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TPalletNss withTPallet() {
         _query.xdoNss(() -> _query.queryTPallet());
         return new TPalletNss(_query.queryTPallet());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+     */
+    public void withTTrsymbol() {
+        _query.xdoNss(() -> _query.queryTTrsymbol());
     }
 }

@@ -252,55 +252,6 @@ public class BsTPalletCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MClientNss _nssMClient;
-    public MClientNss xdfgetNssMClient() {
-        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
-        return _nssMClient;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * <pre>
-     * <span style="color: #0000C0">tPalletBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPallet</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPallet</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MClientNss setupSelect_MClient() {
-        assertSetupSelectPurpose("mClient");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnClientId();
-        }
-        doSetupSelect(() -> query().queryMClient());
-        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
-        { _nssMClient = new MClientNss(query().queryMClient()); }
-        return _nssMClient;
-    }
-
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
-     * <pre>
-     * <span style="color: #0000C0">tPalletBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrpallet()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPallet</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPallet</span>.<span style="color: #CC4747">getTTrpallet()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_TTrpallet() {
-        assertSetupSelectPurpose("tTrpallet");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTrpalletId();
-        }
-        doSetupSelect(() -> query().queryTTrpallet());
-    }
-
     protected MCenterNss _nssMCenter;
     public MCenterNss xdfgetNssMCenter() {
         if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
@@ -330,6 +281,35 @@ public class BsTPalletCB extends AbstractConditionBean {
         return _nssMCenter;
     }
 
+    protected MClientNss _nssMClient;
+    public MClientNss xdfgetNssMClient() {
+        if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
+        return _nssMClient;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * <pre>
+     * <span style="color: #0000C0">tPalletBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MClient()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPallet</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPallet</span>.<span style="color: #CC4747">getMClient()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MClientNss setupSelect_MClient() {
+        assertSetupSelectPurpose("mClient");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnClientId();
+        }
+        doSetupSelect(() -> query().queryMClient());
+        if (_nssMClient == null || !_nssMClient.hasConditionQuery())
+        { _nssMClient = new MClientNss(query().queryMClient()); }
+        return _nssMClient;
+    }
+
     protected TStockNss _nssTStock;
     public TStockNss xdfgetNssTStock() {
         if (_nssTStock == null) { _nssTStock = new TStockNss(null); }
@@ -357,6 +337,26 @@ public class BsTPalletCB extends AbstractConditionBean {
         if (_nssTStock == null || !_nssTStock.hasConditionQuery())
         { _nssTStock = new TStockNss(query().queryTStock()); }
         return _nssTStock;
+    }
+
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
+     * <pre>
+     * <span style="color: #0000C0">tPalletBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TTrpallet()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPallet</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPallet</span>.<span style="color: #CC4747">getTTrpallet()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_TTrpallet() {
+        assertSetupSelectPurpose("tTrpallet");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTrpalletId();
+        }
+        doSetupSelect(() -> query().queryTTrpallet());
     }
 
     // [DBFlute-0.7.4]
@@ -400,10 +400,10 @@ public class BsTPalletCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPalletCQ> {
-        protected MClientCB.HpSpecification _mClient;
-        protected TTrpalletCB.HpSpecification _tTrpallet;
         protected MCenterCB.HpSpecification _mCenter;
+        protected MClientCB.HpSpecification _mClient;
         protected TStockCB.HpSpecification _tStock;
+        protected TTrpalletCB.HpSpecification _tTrpallet;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TPalletCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -488,65 +488,25 @@ public class BsTPalletCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPalletId(); // PK
-            if (qyCall().qy().hasConditionQueryMClient()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
-                columnClientId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryTTrpallet()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TTrpalletCQ) {
-                columnTrpalletId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMClient()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
+                columnClientId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTStock()
                     || qyCall().qy().xgetReferrerQuery() instanceof TStockCQ) {
                 columnStockId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryTTrpallet()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TTrpalletCQ) {
+                columnTrpalletId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "T_PALLET"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CLIENT by my CLIENT_ID, named 'MClient'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MClientCB.HpSpecification specifyMClient() {
-            assertRelation("mClient");
-            if (_mClient == null) {
-                _mClient = new MClientCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
-                                    , () -> _qyCall.qy().queryMClient())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
-                      , () -> xsyncQyCall().qy().queryMClient()));
-                }
-            }
-            return _mClient;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TTrpalletCB.HpSpecification specifyTTrpallet() {
-            assertRelation("tTrpallet");
-            if (_tTrpallet == null) {
-                _tTrpallet = new TTrpalletCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrpallet()
-                                    , () -> _qyCall.qy().queryTTrpallet())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tTrpallet.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrpallet()
-                      , () -> xsyncQyCall().qy().queryTTrpallet()));
-                }
-            }
-            return _tTrpallet;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -569,6 +529,26 @@ public class BsTPalletCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * M_CLIENT by my CLIENT_ID, named 'MClient'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MClientCB.HpSpecification specifyMClient() {
+            assertRelation("mClient");
+            if (_mClient == null) {
+                _mClient = new MClientCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMClient()
+                                    , () -> _qyCall.qy().queryMClient())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mClient.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMClient()
+                      , () -> xsyncQyCall().qy().queryMClient()));
+                }
+            }
+            return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * T_STOCK by my STOCK_ID, named 'TStock'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -586,6 +566,26 @@ public class BsTPalletCB extends AbstractConditionBean {
                 }
             }
             return _tStock;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TTrpalletCB.HpSpecification specifyTTrpallet() {
+            assertRelation("tTrpallet");
+            if (_tTrpallet == null) {
+                _tTrpallet = new TTrpalletCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTTrpallet()
+                                    , () -> _qyCall.qy().queryTTrpallet())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tTrpallet.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTTrpallet()
+                      , () -> xsyncQyCall().qy().queryTTrpallet()));
+                }
+            }
+            return _tTrpallet;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

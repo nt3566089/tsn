@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSO, M_PRODUCT
+ *     M_PRODUCT, T_YTRSO
  *
  * [referrer table]
  *     T_TRIMALLOCSCHKRI, T_TRPICKDETAIL
  *
  * [foreign property]
- *     tYtrso, mProduct
+ *     mProduct, tYtrso
  *
  * [referrer property]
  *     tTrimallocschkriList, tTrpickdetailList
@@ -323,25 +323,6 @@ public abstract class BsTYtrsodetail extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_YTRSO by my TRSO_ID, named 'TYtrso'. */
-    protected TYtrso _tYtrso;
-
-    /**
-     * [get] T_YTRSO by my TRSO_ID, named 'TYtrso'. <br>
-     * @return The entity of foreign property 'TYtrso'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TYtrso getTYtrso() {
-        return _tYtrso;
-    }
-
-    /**
-     * [set] T_YTRSO by my TRSO_ID, named 'TYtrso'.
-     * @param tYtrso The entity of foreign property 'TYtrso'. (NullAllowed)
-     */
-    public void setTYtrso(TYtrso tYtrso) {
-        _tYtrso = tYtrso;
-    }
-
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
     protected MProduct _mProduct;
 
@@ -359,6 +340,25 @@ public abstract class BsTYtrsodetail extends AbstractEntity implements DomainEnt
      */
     public void setMProduct(MProduct mProduct) {
         _mProduct = mProduct;
+    }
+
+    /** T_YTRSO by my TRSO_ID, named 'TYtrso'. */
+    protected TYtrso _tYtrso;
+
+    /**
+     * [get] T_YTRSO by my TRSO_ID, named 'TYtrso'. <br>
+     * @return The entity of foreign property 'TYtrso'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TYtrso getTYtrso() {
+        return _tYtrso;
+    }
+
+    /**
+     * [set] T_YTRSO by my TRSO_ID, named 'TYtrso'.
+     * @param tYtrso The entity of foreign property 'TYtrso'. (NullAllowed)
+     */
+    public void setTYtrso(TYtrso tYtrso) {
+        _tYtrso = tYtrso;
     }
 
     // ===================================================================================
@@ -433,10 +433,10 @@ public abstract class BsTYtrsodetail extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tYtrso != null)
-        { sb.append(li).append(xbRDS(_tYtrso, "tYtrso")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_tYtrso != null)
+        { sb.append(li).append(xbRDS(_tYtrso, "tYtrso")); }
         if (_tTrimallocschkriList != null) { for (TTrimallocschkri et : _tTrimallocschkriList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tTrimallocschkriList")); } } }
         if (_tTrpickdetailList != null) { for (TTrpickdetail et : _tTrpickdetailList)
@@ -485,10 +485,10 @@ public abstract class BsTYtrsodetail extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tYtrso != null)
-        { sb.append(dm).append("tYtrso"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
+        if (_tYtrso != null)
+        { sb.append(dm).append("tYtrso"); }
         if (_tTrimallocschkriList != null && !_tTrimallocschkriList.isEmpty())
         { sb.append(dm).append("tTrimallocschkriList"); }
         if (_tTrpickdetailList != null && !_tTrpickdetailList.isEmpty())

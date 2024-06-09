@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_SUBREP_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_SUBREP_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pSubrepLayout, bDict, vDict
+ *     bDict, pSubrepLayout, vDict
  *
  * [referrer property]
  *     
@@ -276,25 +276,6 @@ public abstract class BsPSubrepLayoutItem extends AbstractEntity implements Doma
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'. */
-    protected PSubrepLayout _pSubrepLayout;
-
-    /**
-     * [get] P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'. <br>
-     * @return The entity of foreign property 'PSubrepLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public PSubrepLayout getPSubrepLayout() {
-        return _pSubrepLayout;
-    }
-
-    /**
-     * [set] P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-     * @param pSubrepLayout The entity of foreign property 'PSubrepLayout'. (NullAllowed)
-     */
-    public void setPSubrepLayout(PSubrepLayout pSubrepLayout) {
-        _pSubrepLayout = pSubrepLayout;
-    }
-
     /** B_DICT by my DICT_ID, named 'BDict'. */
     protected BDict _bDict;
 
@@ -312,6 +293,25 @@ public abstract class BsPSubrepLayoutItem extends AbstractEntity implements Doma
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'. */
+    protected PSubrepLayout _pSubrepLayout;
+
+    /**
+     * [get] P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'. <br>
+     * @return The entity of foreign property 'PSubrepLayout'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public PSubrepLayout getPSubrepLayout() {
+        return _pSubrepLayout;
+    }
+
+    /**
+     * [set] P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+     * @param pSubrepLayout The entity of foreign property 'PSubrepLayout'. (NullAllowed)
+     */
+    public void setPSubrepLayout(PSubrepLayout pSubrepLayout) {
+        _pSubrepLayout = pSubrepLayout;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -365,10 +365,10 @@ public abstract class BsPSubrepLayoutItem extends AbstractEntity implements Doma
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_pSubrepLayout != null)
-        { sb.append(li).append(xbRDS(_pSubrepLayout, "pSubrepLayout")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_pSubrepLayout != null)
+        { sb.append(li).append(xbRDS(_pSubrepLayout, "pSubrepLayout")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         return sb.toString();
@@ -403,10 +403,10 @@ public abstract class BsPSubrepLayoutItem extends AbstractEntity implements Doma
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_pSubrepLayout != null)
-        { sb.append(dm).append("pSubrepLayout"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_pSubrepLayout != null)
+        { sb.append(dm).append("pSubrepLayout"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (sb.length() > dm.length()) {

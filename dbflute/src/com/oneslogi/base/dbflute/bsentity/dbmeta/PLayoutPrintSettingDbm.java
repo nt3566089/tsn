@@ -68,10 +68,10 @@ public class PLayoutPrintSettingDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPPrinterGroup(), (et, vl) -> ((PLayoutPrintSetting)et).setPPrinterGroup((PPrinterGroup)vl), "PPrinterGroup");
         setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPPrinterAttribute(), (et, vl) -> ((PLayoutPrintSetting)et).setPPrinterAttribute((PPrinterAttribute)vl), "PPrinterAttribute");
-        setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPReportLayout(), (et, vl) -> ((PLayoutPrintSetting)et).setPReportLayout((PReportLayout)vl), "PReportLayout");
+        setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPPrinterGroup(), (et, vl) -> ((PLayoutPrintSetting)et).setPPrinterGroup((PPrinterGroup)vl), "PPrinterGroup");
         setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPPrinter(), (et, vl) -> ((PLayoutPrintSetting)et).setPPrinter((PPrinter)vl), "PPrinter");
+        setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getPReportLayout(), (et, vl) -> ((PLayoutPrintSetting)et).setPReportLayout((PReportLayout)vl), "PReportLayout");
         setupEfpg(_efpgMap, et -> ((PLayoutPrintSetting)et).getBClassDtlBySheetCollate(), (et, vl) -> ((PLayoutPrintSetting)et).setBClassDtlBySheetCollate((BClassDtl)vl), "BClassDtlBySheetCollate");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -238,28 +238,20 @@ public class PLayoutPrintSettingDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignPPrinterGroup() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPrinterGroupId(), PPrinterGroupDbm.getInstance().columnPrinterGroupId());
-        return cfi("P_LAYOUT_PRINT_SETTING_FK2", "PPrinterGroup", this, PPrinterGroupDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
-    }
-    /**
      * P_PRINTER_ATTRIBUTE by my PRINTER_ATTRIBUTE_ID, named 'PPrinterAttribute'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignPPrinterAttribute() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPrinterAttributeId(), PPrinterAttributeDbm.getInstance().columnPrinterAttributeId());
-        return cfi("P_LAYOUT_PRINT_SETTING_FK1", "PPrinterAttribute", this, PPrinterAttributeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
+        return cfi("P_LAYOUT_PRINT_SETTING_FK1", "PPrinterAttribute", this, PPrinterAttributeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
     }
     /**
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignPReportLayout() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReportLayoutId(), PReportLayoutDbm.getInstance().columnReportLayoutId());
-        return cfi("P_LAYOUT_PRINT_SETTING_FK4", "PReportLayout", this, PReportLayoutDbm.getInstance(), mp, 2, null, true, false, false, false, null, null, false, "PLayoutPrintSettingAsOne", false);
+    public ForeignInfo foreignPPrinterGroup() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPrinterGroupId(), PPrinterGroupDbm.getInstance().columnPrinterGroupId());
+        return cfi("P_LAYOUT_PRINT_SETTING_FK2", "PPrinterGroup", this, PPrinterGroupDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
     }
     /**
      * P_PRINTER by my PRINTER_ID, named 'PPrinter'.
@@ -267,7 +259,15 @@ public class PLayoutPrintSettingDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignPPrinter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPrinterId(), PPrinterDbm.getInstance().columnPrinterId());
-        return cfi("P_LAYOUT_PRINT_SETTING_FK3", "PPrinter", this, PPrinterDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
+        return cfi("P_LAYOUT_PRINT_SETTING_FK3", "PPrinter", this, PPrinterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "PLayoutPrintSettingList", false);
+    }
+    /**
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignPReportLayout() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReportLayoutId(), PReportLayoutDbm.getInstance().columnReportLayoutId());
+        return cfi("P_LAYOUT_PRINT_SETTING_FK4", "PReportLayout", this, PReportLayoutDbm.getInstance(), mp, 3, null, true, false, false, false, null, null, false, "PLayoutPrintSettingAsOne", false);
     }
     /**
      * B_CLASS_DTL by my SHEET_COLLATE, named 'BClassDtlBySheetCollate'.

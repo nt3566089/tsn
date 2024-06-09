@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_BOX, M_CLIENT, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     W_SGL_ROW_SHIP_INSP_B
  *
  * [foreign property]
- *     mBox, mClient, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     wSglRowShipInspBList
@@ -519,6 +519,14 @@ public abstract class BsWSglRowShipInspHBhv extends AbstractBehaviorWritable<WSg
     { return helpPulloutInternally(wSglRowShipInspHList, "mBox"); }
 
     /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param wSglRowShipInspHList The list of wSglRowShipInspH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<WSglRowShipInspH> wSglRowShipInspHList)
+    { return helpPulloutInternally(wSglRowShipInspHList, "mCenter"); }
+
+    /**
      * Pull out the list of foreign table 'MClient'.
      * @param wSglRowShipInspHList The list of wSglRowShipInspH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -533,14 +541,6 @@ public abstract class BsWSglRowShipInspHBhv extends AbstractBehaviorWritable<WSg
      */
     public List<MProduct> pulloutMProduct(List<WSglRowShipInspH> wSglRowShipInspHList)
     { return helpPulloutInternally(wSglRowShipInspHList, "mProduct"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param wSglRowShipInspHList The list of wSglRowShipInspH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<WSglRowShipInspH> wSglRowShipInspHList)
-    { return helpPulloutInternally(wSglRowShipInspHList, "mCenter"); }
 
     // ===================================================================================
     //                                                                      Extract Column

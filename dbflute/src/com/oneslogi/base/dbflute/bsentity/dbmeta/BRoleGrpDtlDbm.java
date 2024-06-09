@@ -65,8 +65,8 @@ public class BRoleGrpDtlDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((BRoleGrpDtl)et).getBRole(), (et, vl) -> ((BRoleGrpDtl)et).setBRole((BRole)vl), "BRole");
         setupEfpg(_efpgMap, et -> ((BRoleGrpDtl)et).getBRoleGrp(), (et, vl) -> ((BRoleGrpDtl)et).setBRoleGrp((BRoleGrp)vl), "BRoleGrp");
+        setupEfpg(_efpgMap, et -> ((BRoleGrpDtl)et).getBRole(), (et, vl) -> ((BRoleGrpDtl)et).setBRole((BRole)vl), "BRole");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -217,20 +217,20 @@ public class BRoleGrpDtlDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBRole() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleId(), BRoleDbm.getInstance().columnRoleId());
-        return cfi("B_ROLE_GRP_DTL_FK1", "BRole", this, BRoleDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BRoleGrpDtlList", false);
-    }
-    /**
      * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBRoleGrp() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleGrpId(), BRoleGrpDbm.getInstance().columnRoleGrpId());
-        return cfi("B_ROLE_GRP_DTL_FK2", "BRoleGrp", this, BRoleGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BRoleGrpDtlList", false);
+        return cfi("B_ROLE_GRP_DTL_FK2", "BRoleGrp", this, BRoleGrpDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BRoleGrpDtlList", false);
+    }
+    /**
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBRole() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleId(), BRoleDbm.getInstance().columnRoleId());
+        return cfi("B_ROLE_GRP_DTL_FK1", "BRole", this, BRoleDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BRoleGrpDtlList", false);
     }
 
     // -----------------------------------------------------

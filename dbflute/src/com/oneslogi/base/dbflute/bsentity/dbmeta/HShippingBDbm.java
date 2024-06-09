@@ -91,8 +91,8 @@ public class HShippingBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((HShippingB)et).getMStockType(), (et, vl) -> ((HShippingB)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((HShippingB)et).getHShippingH(), (et, vl) -> ((HShippingB)et).setHShippingH((HShippingH)vl), "HShippingH");
+        setupEfpg(_efpgMap, et -> ((HShippingB)et).getMStockType(), (et, vl) -> ((HShippingB)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((HShippingB)et).getHShippingSpareAsOne(), (et, vl) -> ((HShippingB)et).setHShippingSpareAsOne((HShippingSpare)vl), "HShippingSpareAsOne");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -415,20 +415,20 @@ public class HShippingBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("H_SHIPPING_B_FK1", "MStockType", this, MStockTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HShippingBList", false);
-    }
-    /**
      * H_SHIPPING_H by my SHIPPING_INST_H_ID, named 'HShippingH'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignHShippingH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstHId(), HShippingHDbm.getInstance().columnShippingInstHId());
-        return cfi("H_SHIPPING_B_FK2", "HShippingH", this, HShippingHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HShippingBList", false);
+        return cfi("H_SHIPPING_B_FK2", "HShippingH", this, HShippingHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "HShippingBList", false);
+    }
+    /**
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("H_SHIPPING_B_FK1", "MStockType", this, MStockTypeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "HShippingBList", false);
     }
     /**
      * H_SHIPPING_SPARE by SHIPPING_INST_B_ID, named 'HShippingSpareAsOne'.

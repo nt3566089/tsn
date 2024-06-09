@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_BOX, M_CLIENT, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     W_SGL_ROW_SHIP_INSP_B
  *
  * [foreign-property]
- *     mBox, mClient, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     wSglRowShipInspBList
@@ -171,6 +171,16 @@ public abstract class BsWSglRowShipInspHDto implements Serializable {
         this._mBox = mBox;
     }
 
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -189,16 +199,6 @@ public abstract class BsWSglRowShipInspHDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
     }
 
     // ===================================================================================

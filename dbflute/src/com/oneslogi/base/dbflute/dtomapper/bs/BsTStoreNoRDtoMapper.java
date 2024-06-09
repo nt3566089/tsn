@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, T_STORE_NO, B_CLASS_DTL(ByTwlOutFlg)
+ *     T_STORE_NO, B_USER, B_CLASS_DTL(ByTwlOutFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, tStoreNo, bClassDtlByTwlOutFlg
+ *     tStoreNo, bUser, bClassDtlByTwlOutFlg
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUser;
     protected boolean _suppressTStoreNo;
+    protected boolean _suppressBUser;
     protected boolean _suppressBClassDtlByTwlOutFlg;
 
     // ===================================================================================
@@ -144,32 +144,6 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && entity.getBUser() != null) {
-            BUser relationEntity = entity.getBUser();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStoreNoRList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStoreNoRList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStoreNoRList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUser());
-                }
-            }
-        };
         if (!_suppressTStoreNo && entity.getTStoreNo() != null) {
             TStoreNo relationEntity = entity.getTStoreNo();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -193,6 +167,32 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTStoreNo());
+                }
+            }
+        };
+        if (!_suppressBUser && entity.getBUser() != null) {
+            BUser relationEntity = entity.getBUser();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStoreNoRList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStoreNoRList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStoreNoRList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUser());
                 }
             }
         };
@@ -305,32 +305,6 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && dto.getBUser() != null) {
-            BUserDto relationDto = dto.getBUser();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStoreNoRList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStoreNoRList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStoreNoRList().add(entity);
-                }
-                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUser());
-                }
-            }
-        };
         if (!_suppressTStoreNo && dto.getTStoreNo() != null) {
             TStoreNoDto relationDto = dto.getTStoreNo();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -354,6 +328,32 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
                 }
                 if (instanceCache && entity.getTStoreNo().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTStoreNo());
+                }
+            }
+        };
+        if (!_suppressBUser && dto.getBUser() != null) {
+            BUserDto relationDto = dto.getBUser();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStoreNoRList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStoreNoRList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStoreNoRList().add(entity);
+                }
+                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUser());
                 }
             }
         };
@@ -498,23 +498,23 @@ public abstract class BsTStoreNoRDtoMapper implements DtoMapper<TStoreNoR, TStor
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUser() {
-        _suppressBUser = true;
-    }
     public void suppressTStoreNo() {
         _suppressTStoreNo = true;
+    }
+    public void suppressBUser() {
+        _suppressBUser = true;
     }
     public void suppressBClassDtlByTwlOutFlg() {
         _suppressBClassDtlByTwlOutFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBUser();
         suppressTStoreNo();
+        suppressBUser();
         suppressBClassDtlByTwlOutFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUser = false;
         _suppressTStoreNo = false;
+        _suppressBUser = false;
         _suppressBClassDtlByTwlOutFlg = false;
     }
 

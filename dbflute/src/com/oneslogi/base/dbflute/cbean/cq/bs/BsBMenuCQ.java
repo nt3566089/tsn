@@ -452,11 +452,11 @@ public class BsBMenuCQ extends AbstractBsBMenuCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BMenuCQ bq = (BMenuCQ)bqs;
         BMenuCQ uq = (BMenuCQ)uqs;
-        if (bq.hasConditionQueryBScreen()) {
-            uq.queryBScreen().reflectRelationOnUnionQuery(bq.queryBScreen(), uq.queryBScreen());
-        }
         if (bq.hasConditionQueryBMenuGrp()) {
             uq.queryBMenuGrp().reflectRelationOnUnionQuery(bq.queryBMenuGrp(), uq.queryBMenuGrp());
+        }
+        if (bq.hasConditionQueryBScreen()) {
+            uq.queryBScreen().reflectRelationOnUnionQuery(bq.queryBScreen(), uq.queryBScreen());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -476,26 +476,6 @@ public class BsBMenuCQ extends AbstractBsBMenuCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BScreenCQ queryBScreen() {
-        return xdfgetConditionQueryBScreen();
-    }
-    public BScreenCQ xdfgetConditionQueryBScreen() {
-        String prop = "bScreen";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBScreen()); xsetupOuterJoinBScreen(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BScreenCQ xcreateQueryBScreen() {
-        String nrp = xresolveNRP("B_MENU", "bScreen"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BScreenCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bScreen", nrp);
-    }
-    protected void xsetupOuterJoinBScreen() { xregOutJo("bScreen"); }
-    public boolean hasConditionQueryBScreen() { return xhasQueRlMap("bScreen"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * B_MENU_GRP by my MENU_GRP_ID, named 'BMenuGrp'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -513,6 +493,26 @@ public class BsBMenuCQ extends AbstractBsBMenuCQ {
     }
     protected void xsetupOuterJoinBMenuGrp() { xregOutJo("bMenuGrp"); }
     public boolean hasConditionQueryBMenuGrp() { return xhasQueRlMap("bMenuGrp"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BScreenCQ queryBScreen() {
+        return xdfgetConditionQueryBScreen();
+    }
+    public BScreenCQ xdfgetConditionQueryBScreen() {
+        String prop = "bScreen";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBScreen()); xsetupOuterJoinBScreen(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BScreenCQ xcreateQueryBScreen() {
+        String nrp = xresolveNRP("B_MENU", "bScreen"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BScreenCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bScreen", nrp);
+    }
+    protected void xsetupOuterJoinBScreen() { xregOutJo("bScreen"); }
+    public boolean hasConditionQueryBScreen() { return xhasQueRlMap("bScreen"); }
 
     /**
      * Get the condition-query for relation table. <br>

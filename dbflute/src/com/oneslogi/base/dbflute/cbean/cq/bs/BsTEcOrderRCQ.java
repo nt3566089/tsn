@@ -426,11 +426,11 @@ public class BsTEcOrderRCQ extends AbstractBsTEcOrderRCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TEcOrderRCQ bq = (TEcOrderRCQ)bqs;
         TEcOrderRCQ uq = (TEcOrderRCQ)uqs;
-        if (bq.hasConditionQueryBUser()) {
-            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
-        }
         if (bq.hasConditionQueryTEcOrderH()) {
             uq.queryTEcOrderH().reflectRelationOnUnionQuery(bq.queryTEcOrderH(), uq.queryTEcOrderH());
+        }
+        if (bq.hasConditionQueryBUser()) {
+            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
         }
         if (bq.hasConditionQueryBClassDtlByInvoiceCreateFlg()) {
             uq.queryBClassDtlByInvoiceCreateFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByInvoiceCreateFlg(), uq.queryBClassDtlByInvoiceCreateFlg());
@@ -443,26 +443,6 @@ public class BsTEcOrderRCQ extends AbstractBsTEcOrderRCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BUserCQ queryBUser() {
-        return xdfgetConditionQueryBUser();
-    }
-    public BUserCQ xdfgetConditionQueryBUser() {
-        String prop = "bUser";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BUserCQ xcreateQueryBUser() {
-        String nrp = xresolveNRP("T_EC_ORDER_R", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
-    }
-    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
-    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
@@ -482,6 +462,26 @@ public class BsTEcOrderRCQ extends AbstractBsTEcOrderRCQ {
     }
     protected void xsetupOuterJoinTEcOrderH() { xregOutJo("tEcOrderH"); }
     public boolean hasConditionQueryTEcOrderH() { return xhasQueRlMap("tEcOrderH"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BUserCQ queryBUser() {
+        return xdfgetConditionQueryBUser();
+    }
+    public BUserCQ xdfgetConditionQueryBUser() {
+        String prop = "bUser";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BUserCQ xcreateQueryBUser() {
+        String nrp = xresolveNRP("T_EC_ORDER_R", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
+    }
+    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
+    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_YTRSODETAIL, T_TRIMALLOC_H
+ *     T_TRIMALLOC_H, T_YTRSODETAIL
  *
  * [referrer-table]
  *     T_TRIMALLOCADJUST
  *
  * [foreign-property]
- *     tYtrsodetail, tTrimallocH
+ *     tTrimallocH, tYtrsodetail
  *
  * [referrer-property]
  *     tTrimallocadjustList
@@ -70,8 +70,8 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTYtrsodetail;
     protected boolean _suppressTTrimallocH;
+    protected boolean _suppressTYtrsodetail;
     protected boolean _suppressTTrimallocadjustList;
 
     // ===================================================================================
@@ -151,32 +151,6 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTYtrsodetail && entity.getTYtrsodetail() != null) {
-            TYtrsodetail relationEntity = entity.getTYtrsodetail();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TYtrsodetailDto relationDto = (TYtrsodetailDto)cachedDto;
-                dto.setTYtrsodetail(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrimallocschkriList().add(dto);
-                }
-            } else {
-                TYtrsodetailDtoMapper mapper = new TYtrsodetailDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrimallocschkriList();
-                TYtrsodetailDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTYtrsodetail(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrimallocschkriList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTYtrsodetail());
-                }
-            }
-        };
         if (!_suppressTTrimallocH && entity.getTTrimallocH() != null) {
             TTrimallocH relationEntity = entity.getTTrimallocH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -200,6 +174,32 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTTrimallocH());
+                }
+            }
+        };
+        if (!_suppressTYtrsodetail && entity.getTYtrsodetail() != null) {
+            TYtrsodetail relationEntity = entity.getTYtrsodetail();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TYtrsodetailDto relationDto = (TYtrsodetailDto)cachedDto;
+                dto.setTYtrsodetail(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrimallocschkriList().add(dto);
+                }
+            } else {
+                TYtrsodetailDtoMapper mapper = new TYtrsodetailDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrimallocschkriList();
+                TYtrsodetailDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTYtrsodetail(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrimallocschkriList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTYtrsodetail());
                 }
             }
         };
@@ -324,32 +324,6 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTYtrsodetail && dto.getTYtrsodetail() != null) {
-            TYtrsodetailDto relationDto = dto.getTYtrsodetail();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TYtrsodetail relationEntity = (TYtrsodetail)cachedEntity;
-                entity.setTYtrsodetail(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrimallocschkriList().add(entity);
-                }
-            } else {
-                TYtrsodetailDtoMapper mapper = new TYtrsodetailDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrimallocschkriList();
-                TYtrsodetail relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTYtrsodetail(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrimallocschkriList().add(entity);
-                }
-                if (instanceCache && entity.getTYtrsodetail().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTYtrsodetail());
-                }
-            }
-        };
         if (!_suppressTTrimallocH && dto.getTTrimallocH() != null) {
             TTrimallocHDto relationDto = dto.getTTrimallocH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -373,6 +347,32 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
                 }
                 if (instanceCache && entity.getTTrimallocH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTTrimallocH());
+                }
+            }
+        };
+        if (!_suppressTYtrsodetail && dto.getTYtrsodetail() != null) {
+            TYtrsodetailDto relationDto = dto.getTYtrsodetail();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TYtrsodetail relationEntity = (TYtrsodetail)cachedEntity;
+                entity.setTYtrsodetail(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrimallocschkriList().add(entity);
+                }
+            } else {
+                TYtrsodetailDtoMapper mapper = new TYtrsodetailDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrimallocschkriList();
+                TYtrsodetail relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTYtrsodetail(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrimallocschkriList().add(entity);
+                }
+                if (instanceCache && entity.getTYtrsodetail().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTYtrsodetail());
                 }
             }
         };
@@ -508,23 +508,23 @@ public abstract class BsTTrimallocschkriDtoMapper implements DtoMapper<TTrimallo
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTYtrsodetail() {
-        _suppressTYtrsodetail = true;
-    }
     public void suppressTTrimallocH() {
         _suppressTTrimallocH = true;
+    }
+    public void suppressTYtrsodetail() {
+        _suppressTYtrsodetail = true;
     }
     public void suppressTTrimallocadjustList() {
         _suppressTTrimallocadjustList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressTYtrsodetail();
         suppressTTrimallocH();
+        suppressTYtrsodetail();
         suppressTTrimallocadjustList();
     }
     protected void doSuppressClear() { // internal
-        _suppressTYtrsodetail = false;
         _suppressTTrimallocH = false;
+        _suppressTYtrsodetail = false;
         _suppressTTrimallocadjustList = false;
     }
 

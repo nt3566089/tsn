@@ -68,9 +68,9 @@ public class MCenterColDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((MCenterCol)et).getMCenter(), (et, vl) -> ((MCenterCol)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MCenterCol)et).getBCol(), (et, vl) -> ((MCenterCol)et).setBCol((BCol)vl), "BCol");
         setupEfpg(_efpgMap, et -> ((MCenterCol)et).getBDict(), (et, vl) -> ((MCenterCol)et).setBDict((BDict)vl), "BDict");
-        setupEfpg(_efpgMap, et -> ((MCenterCol)et).getMCenter(), (et, vl) -> ((MCenterCol)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MCenterCol)et).getVDict(), (et, vl) -> ((MCenterCol)et).setVDict((VDict)vl), "VDict");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -243,12 +243,20 @@ public class MCenterColDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("M_CENTER_COL_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCenterColList", false);
+    }
+    /**
      * B_COL by my COL_ID, named 'BCol'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBCol() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnColId(), BColDbm.getInstance().columnColId());
-        return cfi("M_CENTER_COL_FK1", "BCol", this, BColDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCenterColList", false);
+        return cfi("M_CENTER_COL_FK1", "BCol", this, BColDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterColList", false);
     }
     /**
      * B_DICT by my DICT_ID, named 'BDict'.
@@ -256,15 +264,7 @@ public class MCenterColDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("M_CENTER_COL_FK2", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterColList", false);
-    }
-    /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("M_CENTER_COL_FK3", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MCenterColList", false);
+        return cfi("M_CENTER_COL_FK2", "BDict", this, BDictDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MCenterColList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

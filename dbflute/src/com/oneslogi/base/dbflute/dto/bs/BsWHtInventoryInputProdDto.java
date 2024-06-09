@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_STOCK_TYPE, M_CENTER, M_CLIENT, M_CUSTOMER, M_WAREHOUSE, T_LOT, M_LOCATION, M_PRODUCT
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mStockType, mCenter, mClient, mCustomer, mWarehouse, tLot, mLocation, mProduct
+ *     mCenter, mClient, mCustomer, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer-property]
  *     
@@ -225,16 +225,6 @@ public abstract class BsWHtInventoryInputProdDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MStockTypeDto _mStockType;
-
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
-    }
-
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -265,14 +255,14 @@ public abstract class BsWHtInventoryInputProdDto implements Serializable {
         this._mCustomer = mCustomer;
     }
 
-    protected MWarehouseDto _mWarehouse;
+    protected MLocationDto _mLocation;
 
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
+    public MLocationDto getMLocation() {
+        return _mLocation;
     }
 
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
+    public void setMLocation(MLocationDto mLocation) {
+        this._mLocation = mLocation;
     }
 
     protected TLotDto _tLot;
@@ -285,16 +275,6 @@ public abstract class BsWHtInventoryInputProdDto implements Serializable {
         this._tLot = tLot;
     }
 
-    protected MLocationDto _mLocation;
-
-    public MLocationDto getMLocation() {
-        return _mLocation;
-    }
-
-    public void setMLocation(MLocationDto mLocation) {
-        this._mLocation = mLocation;
-    }
-
     protected MProductDto _mProduct;
 
     public MProductDto getMProduct() {
@@ -303,6 +283,26 @@ public abstract class BsWHtInventoryInputProdDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
+    }
+
+    protected MWarehouseDto _mWarehouse;
+
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     // ===================================================================================

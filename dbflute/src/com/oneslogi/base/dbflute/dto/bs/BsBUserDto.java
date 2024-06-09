@@ -27,16 +27,16 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE_GRP, B_CULTURE, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
+ *     B_CULTURE, B_ROLE_GRP, B_CLASS_DTL(ByDelFlg), B_USER_AUTH(AsOne), M_USER_LOGIN(AsOne)
  *
  * [referrer-table]
  *     M_USER_CENTER, M_USER_CLIENT, M_USER_DEPOSIT, T_EC_ORDER_R, T_INVENTORY_R, T_MOVE_INST_R, T_PACKING_R, T_PICKING_R, T_RECEIVE_PLAN_R, T_STORE_NO_R, T_STORE_RECORD_R, W_SGL_ROW_SHIP_INSP_B, T_PACKING_H, B_USER_AUTH, M_USER_LOGIN
  *
  * [foreign-property]
- *     bRoleGrp, bCulture, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
+ *     bCulture, bRoleGrp, bClassDtlByDelFlg, bUserAuthAsOne, mUserLoginAsOne
  *
  * [referrer-property]
- *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByTagOutUserIdList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRByPl2OutUserIdList, tPickingRBySlipOutUserIdList, tPickingRByPackingOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
+ *     mUserCenterList, mUserClientList, mUserDepositList, tEcOrderRList, tInventoryRList, tMoveInstRList, tPackingRByInspectionOutUserIdList, tPackingRByStwOutUserIdList, tPackingRByTagOutUserIdList, tPickingRByCaseOutUserIdList, tPickingRByPackingOutUserIdList, tPickingRByPl1OutUserIdList, tPickingRByPl2OutUserIdList, tPickingRByShippingRecordOutUserIdList, tPickingRBySlipOutUserIdList, tReceivePlanRList, tStoreNoRList, tStoreRecordRList, wSglRowShipInspBList, tPackingHByUpdUserList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -141,16 +141,6 @@ public abstract class BsBUserDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BRoleGrpDto _bRoleGrp;
-
-    public BRoleGrpDto getBRoleGrp() {
-        return _bRoleGrp;
-    }
-
-    public void setBRoleGrp(BRoleGrpDto bRoleGrp) {
-        this._bRoleGrp = bRoleGrp;
-    }
-
     protected BCultureDto _bCulture;
 
     public BCultureDto getBCulture() {
@@ -159,6 +149,16 @@ public abstract class BsBUserDto implements Serializable {
 
     public void setBCulture(BCultureDto bCulture) {
         this._bCulture = bCulture;
+    }
+
+    protected BRoleGrpDto _bRoleGrp;
+
+    public BRoleGrpDto getBRoleGrp() {
+        return _bRoleGrp;
+    }
+
+    public void setBRoleGrp(BRoleGrpDto bRoleGrp) {
+        this._bRoleGrp = bRoleGrp;
     }
 
     protected BClassDtlDto _bClassDtlByDelFlg;
@@ -260,17 +260,6 @@ public abstract class BsBUserDto implements Serializable {
         this._tMoveInstRList = tMoveInstRList;
     }
 
-    protected List<TPackingRDto> _tPackingRByTagOutUserIdList;
-
-    public List<TPackingRDto> getTPackingRByTagOutUserIdList() {
-        if (_tPackingRByTagOutUserIdList == null) { _tPackingRByTagOutUserIdList = new ArrayList<TPackingRDto>(); }
-        return _tPackingRByTagOutUserIdList;
-    }
-
-    public void setTPackingRByTagOutUserIdList(List<TPackingRDto> tPackingRByTagOutUserIdList) {
-        this._tPackingRByTagOutUserIdList = tPackingRByTagOutUserIdList;
-    }
-
     protected List<TPackingRDto> _tPackingRByInspectionOutUserIdList;
 
     public List<TPackingRDto> getTPackingRByInspectionOutUserIdList() {
@@ -293,15 +282,15 @@ public abstract class BsBUserDto implements Serializable {
         this._tPackingRByStwOutUserIdList = tPackingRByStwOutUserIdList;
     }
 
-    protected List<TPickingRDto> _tPickingRByPl1OutUserIdList;
+    protected List<TPackingRDto> _tPackingRByTagOutUserIdList;
 
-    public List<TPickingRDto> getTPickingRByPl1OutUserIdList() {
-        if (_tPickingRByPl1OutUserIdList == null) { _tPickingRByPl1OutUserIdList = new ArrayList<TPickingRDto>(); }
-        return _tPickingRByPl1OutUserIdList;
+    public List<TPackingRDto> getTPackingRByTagOutUserIdList() {
+        if (_tPackingRByTagOutUserIdList == null) { _tPackingRByTagOutUserIdList = new ArrayList<TPackingRDto>(); }
+        return _tPackingRByTagOutUserIdList;
     }
 
-    public void setTPickingRByPl1OutUserIdList(List<TPickingRDto> tPickingRByPl1OutUserIdList) {
-        this._tPickingRByPl1OutUserIdList = tPickingRByPl1OutUserIdList;
+    public void setTPackingRByTagOutUserIdList(List<TPackingRDto> tPackingRByTagOutUserIdList) {
+        this._tPackingRByTagOutUserIdList = tPackingRByTagOutUserIdList;
     }
 
     protected List<TPickingRDto> _tPickingRByCaseOutUserIdList;
@@ -315,15 +304,26 @@ public abstract class BsBUserDto implements Serializable {
         this._tPickingRByCaseOutUserIdList = tPickingRByCaseOutUserIdList;
     }
 
-    protected List<TPickingRDto> _tPickingRByShippingRecordOutUserIdList;
+    protected List<TPickingRDto> _tPickingRByPackingOutUserIdList;
 
-    public List<TPickingRDto> getTPickingRByShippingRecordOutUserIdList() {
-        if (_tPickingRByShippingRecordOutUserIdList == null) { _tPickingRByShippingRecordOutUserIdList = new ArrayList<TPickingRDto>(); }
-        return _tPickingRByShippingRecordOutUserIdList;
+    public List<TPickingRDto> getTPickingRByPackingOutUserIdList() {
+        if (_tPickingRByPackingOutUserIdList == null) { _tPickingRByPackingOutUserIdList = new ArrayList<TPickingRDto>(); }
+        return _tPickingRByPackingOutUserIdList;
     }
 
-    public void setTPickingRByShippingRecordOutUserIdList(List<TPickingRDto> tPickingRByShippingRecordOutUserIdList) {
-        this._tPickingRByShippingRecordOutUserIdList = tPickingRByShippingRecordOutUserIdList;
+    public void setTPickingRByPackingOutUserIdList(List<TPickingRDto> tPickingRByPackingOutUserIdList) {
+        this._tPickingRByPackingOutUserIdList = tPickingRByPackingOutUserIdList;
+    }
+
+    protected List<TPickingRDto> _tPickingRByPl1OutUserIdList;
+
+    public List<TPickingRDto> getTPickingRByPl1OutUserIdList() {
+        if (_tPickingRByPl1OutUserIdList == null) { _tPickingRByPl1OutUserIdList = new ArrayList<TPickingRDto>(); }
+        return _tPickingRByPl1OutUserIdList;
+    }
+
+    public void setTPickingRByPl1OutUserIdList(List<TPickingRDto> tPickingRByPl1OutUserIdList) {
+        this._tPickingRByPl1OutUserIdList = tPickingRByPl1OutUserIdList;
     }
 
     protected List<TPickingRDto> _tPickingRByPl2OutUserIdList;
@@ -337,6 +337,17 @@ public abstract class BsBUserDto implements Serializable {
         this._tPickingRByPl2OutUserIdList = tPickingRByPl2OutUserIdList;
     }
 
+    protected List<TPickingRDto> _tPickingRByShippingRecordOutUserIdList;
+
+    public List<TPickingRDto> getTPickingRByShippingRecordOutUserIdList() {
+        if (_tPickingRByShippingRecordOutUserIdList == null) { _tPickingRByShippingRecordOutUserIdList = new ArrayList<TPickingRDto>(); }
+        return _tPickingRByShippingRecordOutUserIdList;
+    }
+
+    public void setTPickingRByShippingRecordOutUserIdList(List<TPickingRDto> tPickingRByShippingRecordOutUserIdList) {
+        this._tPickingRByShippingRecordOutUserIdList = tPickingRByShippingRecordOutUserIdList;
+    }
+
     protected List<TPickingRDto> _tPickingRBySlipOutUserIdList;
 
     public List<TPickingRDto> getTPickingRBySlipOutUserIdList() {
@@ -346,17 +357,6 @@ public abstract class BsBUserDto implements Serializable {
 
     public void setTPickingRBySlipOutUserIdList(List<TPickingRDto> tPickingRBySlipOutUserIdList) {
         this._tPickingRBySlipOutUserIdList = tPickingRBySlipOutUserIdList;
-    }
-
-    protected List<TPickingRDto> _tPickingRByPackingOutUserIdList;
-
-    public List<TPickingRDto> getTPickingRByPackingOutUserIdList() {
-        if (_tPickingRByPackingOutUserIdList == null) { _tPickingRByPackingOutUserIdList = new ArrayList<TPickingRDto>(); }
-        return _tPickingRByPackingOutUserIdList;
-    }
-
-    public void setTPickingRByPackingOutUserIdList(List<TPickingRDto> tPickingRByPackingOutUserIdList) {
-        this._tPickingRByPackingOutUserIdList = tPickingRByPackingOutUserIdList;
     }
 
     protected List<TReceivePlanRDto> _tReceivePlanRList;

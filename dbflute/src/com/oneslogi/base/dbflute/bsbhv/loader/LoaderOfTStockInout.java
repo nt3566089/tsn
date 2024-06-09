@@ -27,16 +27,16 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_ALLOC_INST_B, T_STOCK_INOUT, T_STORE_RECORD_B, M_PROCESS_TYPE, T_MOVE_RECORD_B, T_STOCK, B_CLASS_DTL(ByCorrectType)
+ *     T_ALLOC_INST_B, T_STOCK_INOUT, T_MOVE_RECORD_B, M_PROCESS_TYPE, T_STOCK, T_STORE_RECORD_B, B_CLASS_DTL(ByCorrectType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tAllocInstB, tStockInoutByFsStockInoutIdSelf, tStoreRecordB, mProcessType, tMoveRecordB, tStock, tStockInoutByBfStockInoutIdSelf, bClassDtlByCorrectType, bClassDtlByInoutType
+ *     tAllocInstB, tStockInoutByBfStockInoutIdSelf, tStockInoutByFsStockInoutIdSelf, tMoveRecordB, mProcessType, tStock, tStoreRecordB, bClassDtlByCorrectType, bClassDtlByInoutType
  *
  * [referrer property]
- *     tStockInoutByFsStockInoutIdSelfList, tStockInoutByBfStockInoutIdSelfList
+ *     tStockInoutByBfStockInoutIdSelfList, tStockInoutByFsStockInoutIdSelfList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -61,40 +61,6 @@ public class LoaderOfTStockInout {
     // ===================================================================================
     //                                                                       Load Referrer
     //                                                                       =============
-    protected List<TStockInout> _referrerTStockInoutByFsStockInoutIdSelfList;
-
-    /**
-     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * <pre>
-     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">tStockInoutList</span>, <span style="color: #553000">inoutLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">inoutLoader</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">inoutCB</span>.setupSelect...
-     *         <span style="color: #553000">inoutCB</span>.query().set...
-     *         <span style="color: #553000">inoutCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">inoutLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    inoutLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (TStockInout tStockInout : <span style="color: #553000">tStockInoutList</span>) {
-     *     ... = tStockInout.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setFsStockInoutId_InScope(pkList);
-     * cb.query().addOrderBy_FsStockInoutId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTStockInout> loadTStockInoutByFsStockInoutIdSelfList(ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
-        myBhv().loadTStockInoutByFsStockInoutIdSelfList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTStockInoutByFsStockInoutIdSelfList = refLs);
-        return hd -> hd.handle(new LoaderOfTStockInout().ready(_referrerTStockInoutByFsStockInoutIdSelfList, _selector));
-    }
-
     protected List<TStockInout> _referrerTStockInoutByBfStockInoutIdSelfList;
 
     /**
@@ -129,6 +95,40 @@ public class LoaderOfTStockInout {
         return hd -> hd.handle(new LoaderOfTStockInout().ready(_referrerTStockInoutByBfStockInoutIdSelfList, _selector));
     }
 
+    protected List<TStockInout> _referrerTStockInoutByFsStockInoutIdSelfList;
+
+    /**
+     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * <pre>
+     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">tStockInoutList</span>, <span style="color: #553000">inoutLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">inoutLoader</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">inoutCB</span>.setupSelect...
+     *         <span style="color: #553000">inoutCB</span>.query().set...
+     *         <span style="color: #553000">inoutCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">inoutLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    inoutLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (TStockInout tStockInout : <span style="color: #553000">tStockInoutList</span>) {
+     *     ... = tStockInout.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setFsStockInoutId_InScope(pkList);
+     * cb.query().addOrderBy_FsStockInoutId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTStockInout> loadTStockInoutByFsStockInoutIdSelfList(ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
+        myBhv().loadTStockInoutByFsStockInoutIdSelfList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTStockInoutByFsStockInoutIdSelfList = refLs);
+        return hd -> hd.handle(new LoaderOfTStockInout().ready(_referrerTStockInoutByFsStockInoutIdSelfList, _selector));
+    }
+
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
@@ -139,25 +139,18 @@ public class LoaderOfTStockInout {
         return _foreignTAllocInstBLoader;
     }
 
+    protected LoaderOfTStockInout _foreignTStockInoutByBfStockInoutIdSelfLoader;
+    public LoaderOfTStockInout pulloutTStockInoutByBfStockInoutIdSelf() {
+        if (_foreignTStockInoutByBfStockInoutIdSelfLoader == null)
+        { _foreignTStockInoutByBfStockInoutIdSelfLoader = new LoaderOfTStockInout().ready(myBhv().pulloutTStockInoutByBfStockInoutIdSelf(_selectedList), _selector); }
+        return _foreignTStockInoutByBfStockInoutIdSelfLoader;
+    }
+
     protected LoaderOfTStockInout _foreignTStockInoutByFsStockInoutIdSelfLoader;
     public LoaderOfTStockInout pulloutTStockInoutByFsStockInoutIdSelf() {
         if (_foreignTStockInoutByFsStockInoutIdSelfLoader == null)
         { _foreignTStockInoutByFsStockInoutIdSelfLoader = new LoaderOfTStockInout().ready(myBhv().pulloutTStockInoutByFsStockInoutIdSelf(_selectedList), _selector); }
         return _foreignTStockInoutByFsStockInoutIdSelfLoader;
-    }
-
-    protected LoaderOfTStoreRecordB _foreignTStoreRecordBLoader;
-    public LoaderOfTStoreRecordB pulloutTStoreRecordB() {
-        if (_foreignTStoreRecordBLoader == null)
-        { _foreignTStoreRecordBLoader = new LoaderOfTStoreRecordB().ready(myBhv().pulloutTStoreRecordB(_selectedList), _selector); }
-        return _foreignTStoreRecordBLoader;
-    }
-
-    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
-    public LoaderOfMProcessType pulloutMProcessType() {
-        if (_foreignMProcessTypeLoader == null)
-        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
-        return _foreignMProcessTypeLoader;
     }
 
     protected LoaderOfTMoveRecordB _foreignTMoveRecordBLoader;
@@ -167,6 +160,13 @@ public class LoaderOfTStockInout {
         return _foreignTMoveRecordBLoader;
     }
 
+    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
+    public LoaderOfMProcessType pulloutMProcessType() {
+        if (_foreignMProcessTypeLoader == null)
+        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
+        return _foreignMProcessTypeLoader;
+    }
+
     protected LoaderOfTStock _foreignTStockLoader;
     public LoaderOfTStock pulloutTStock() {
         if (_foreignTStockLoader == null)
@@ -174,11 +174,11 @@ public class LoaderOfTStockInout {
         return _foreignTStockLoader;
     }
 
-    protected LoaderOfTStockInout _foreignTStockInoutByBfStockInoutIdSelfLoader;
-    public LoaderOfTStockInout pulloutTStockInoutByBfStockInoutIdSelf() {
-        if (_foreignTStockInoutByBfStockInoutIdSelfLoader == null)
-        { _foreignTStockInoutByBfStockInoutIdSelfLoader = new LoaderOfTStockInout().ready(myBhv().pulloutTStockInoutByBfStockInoutIdSelf(_selectedList), _selector); }
-        return _foreignTStockInoutByBfStockInoutIdSelfLoader;
+    protected LoaderOfTStoreRecordB _foreignTStoreRecordBLoader;
+    public LoaderOfTStoreRecordB pulloutTStoreRecordB() {
+        if (_foreignTStoreRecordBLoader == null)
+        { _foreignTStoreRecordBLoader = new LoaderOfTStoreRecordB().ready(myBhv().pulloutTStoreRecordB(_selectedList), _selector); }
+        return _foreignTStoreRecordBLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByCorrectTypeLoader;

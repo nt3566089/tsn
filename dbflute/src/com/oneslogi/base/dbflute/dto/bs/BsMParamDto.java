@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_DELIVERY_COURSE, M_BOX_GRP, M_BOX, M_ZONE, M_CLIENT_CENTER, B_CLASS_DTL(ByAfterTagOutFlg)
+ *     M_CLIENT_CENTER, M_BOX, M_DELIVERY_COURSE, M_ZONE, M_BOX_GRP, B_CLASS_DTL(ByAfterTagOutFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mDeliveryCourse, mBoxGrp, mBox, mZone, mClientCenter, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
+ *     mClientCenter, mBox, mDeliveryCourse, mZone, mBoxGrp, bClassDtlByAfterTagOutFlg, bClassDtlByAfterDelivSlipOutFlg, bClassDtlByAfterDelivSlipOutTgt, bClassDtlBySglRowInspAfterOutCls, bClassDtlByBoxSelectSkip, bClassDtlByCasePicFlg, bClassDtlByDelFlg, bClassDtlByHtCharReadFlg, bClassDtlByMergeCls, bClassDtlByMultiPicCls, bClassDtlByOverStoreNumFlg, bClassDtlByPackingCalCls, bClassDtlByPackingProcessCls, bClassDtlByPastStoreDtFlg, bClassDtlByProductLabelJanBarcode, bClassDtlByProductLabelOutUnit, bClassDtlByProductLabelProdBarcode, bClassDtlByProductPartPacking, bClassDtlByDecimalProductPacking, bClassDtlByEmReplenishAllocCls, bClassDtlByRgReplenishUnitCls, bClassDtlByEmReplenishUnitCls, bClassDtlByResultAfterProductLabel, bClassDtlByResultAfterProductTarget, bClassDtlByStoreDtFlg, bClassDtlByStoreNoFlg, bClassDtlByTagDeliveryOutFlg, bClassDtlByUseHtShipFlg, bClassDtlByInspectionLabelOutFlg, bClassDtlBySglRowPicFlg, bClassDtlByTotalPicFlg, bClassDtlByPicMthdRcmdFlg, bClassDtlByPicMthdRcmdBreakKey, bClassDtlByAutoShipInstFlg, bClassDtlByStockOutAutoInstFlg, bClassDtlByAutoEmgSetFlg, bClassDtlByAutoEmgSetTgt, bClassDtlByStockOutAllocCls, bClassDtlByStockOutInstCxlFlg, bClassDtlByStockOutInstSplitFlg, bClassDtlByPicMthdRcmdMltPlOut, bClassDtlByPicMthdRcmdSplSlOut, bClassDtlByErrorSoundPlayFlg, bClassDtlByWarnSoundPlayFlg, bClassDtlByInspSoundPlayFlg, bClassDtlByInspCompSoundPlayFlg, bClassDtlByCesIntegrationFlg, bClassDtlByPackingSlipAutoOutputFlg
  *
  * [referrer-property]
  *     
@@ -393,24 +393,14 @@ public abstract class BsMParamDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MDeliveryCourseDto _mDeliveryCourse;
+    protected MClientCenterDto _mClientCenter;
 
-    public MDeliveryCourseDto getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public MClientCenterDto getMClientCenter() {
+        return _mClientCenter;
     }
 
-    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
-        this._mDeliveryCourse = mDeliveryCourse;
-    }
-
-    protected MBoxGrpDto _mBoxGrp;
-
-    public MBoxGrpDto getMBoxGrp() {
-        return _mBoxGrp;
-    }
-
-    public void setMBoxGrp(MBoxGrpDto mBoxGrp) {
-        this._mBoxGrp = mBoxGrp;
+    public void setMClientCenter(MClientCenterDto mClientCenter) {
+        this._mClientCenter = mClientCenter;
     }
 
     protected MBoxDto _mBox;
@@ -423,6 +413,16 @@ public abstract class BsMParamDto implements Serializable {
         this._mBox = mBox;
     }
 
+    protected MDeliveryCourseDto _mDeliveryCourse;
+
+    public MDeliveryCourseDto getMDeliveryCourse() {
+        return _mDeliveryCourse;
+    }
+
+    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
+        this._mDeliveryCourse = mDeliveryCourse;
+    }
+
     protected MZoneDto _mZone;
 
     public MZoneDto getMZone() {
@@ -433,14 +433,14 @@ public abstract class BsMParamDto implements Serializable {
         this._mZone = mZone;
     }
 
-    protected MClientCenterDto _mClientCenter;
+    protected MBoxGrpDto _mBoxGrp;
 
-    public MClientCenterDto getMClientCenter() {
-        return _mClientCenter;
+    public MBoxGrpDto getMBoxGrp() {
+        return _mBoxGrp;
     }
 
-    public void setMClientCenter(MClientCenterDto mClientCenter) {
-        this._mClientCenter = mClientCenter;
+    public void setMBoxGrp(MBoxGrpDto mBoxGrp) {
+        this._mBoxGrp = mBoxGrp;
     }
 
     protected BClassDtlDto _bClassDtlByAfterTagOutFlg;

@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     P_SUBREP_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_SUBREP_LAYOUT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     pSubrepLayout, bDict, vDict
+ *     bDict, pSubrepLayout, vDict
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressPSubrepLayout;
     protected boolean _suppressBDict;
+    protected boolean _suppressPSubrepLayout;
     protected boolean _suppressVDict;
 
     // ===================================================================================
@@ -147,32 +147,6 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPSubrepLayout && entity.getPSubrepLayout() != null) {
-            PSubrepLayout relationEntity = entity.getPSubrepLayout();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                PSubrepLayoutDto relationDto = (PSubrepLayoutDto)cachedDto;
-                dto.setPSubrepLayout(relationDto);
-                if (reverseReference) {
-                    relationDto.getPSubrepLayoutItemList().add(dto);
-                }
-            } else {
-                PSubrepLayoutDtoMapper mapper = new PSubrepLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPSubrepLayoutItemList();
-                PSubrepLayoutDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setPSubrepLayout(relationDto);
-                if (reverseReference) {
-                    relationDto.getPSubrepLayoutItemList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getPSubrepLayout());
-                }
-            }
-        };
         if (!_suppressBDict && entity.getBDict() != null) {
             BDict relationEntity = entity.getBDict();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -196,6 +170,32 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
+                }
+            }
+        };
+        if (!_suppressPSubrepLayout && entity.getPSubrepLayout() != null) {
+            PSubrepLayout relationEntity = entity.getPSubrepLayout();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                PSubrepLayoutDto relationDto = (PSubrepLayoutDto)cachedDto;
+                dto.setPSubrepLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.getPSubrepLayoutItemList().add(dto);
+                }
+            } else {
+                PSubrepLayoutDtoMapper mapper = new PSubrepLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPSubrepLayoutItemList();
+                PSubrepLayoutDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setPSubrepLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.getPSubrepLayoutItemList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getPSubrepLayout());
                 }
             }
         };
@@ -317,32 +317,6 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPSubrepLayout && dto.getPSubrepLayout() != null) {
-            PSubrepLayoutDto relationDto = dto.getPSubrepLayout();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                PSubrepLayout relationEntity = (PSubrepLayout)cachedEntity;
-                entity.setPSubrepLayout(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPSubrepLayoutItemList().add(entity);
-                }
-            } else {
-                PSubrepLayoutDtoMapper mapper = new PSubrepLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPSubrepLayoutItemList();
-                PSubrepLayout relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setPSubrepLayout(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPSubrepLayoutItemList().add(entity);
-                }
-                if (instanceCache && entity.getPSubrepLayout().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getPSubrepLayout());
-                }
-            }
-        };
         if (!_suppressBDict && dto.getBDict() != null) {
             BDictDto relationDto = dto.getBDict();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -366,6 +340,32 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
+                }
+            }
+        };
+        if (!_suppressPSubrepLayout && dto.getPSubrepLayout() != null) {
+            PSubrepLayoutDto relationDto = dto.getPSubrepLayout();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                PSubrepLayout relationEntity = (PSubrepLayout)cachedEntity;
+                entity.setPSubrepLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getPSubrepLayoutItemList().add(entity);
+                }
+            } else {
+                PSubrepLayoutDtoMapper mapper = new PSubrepLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPSubrepLayoutItemList();
+                PSubrepLayout relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setPSubrepLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getPSubrepLayoutItemList().add(entity);
+                }
+                if (instanceCache && entity.getPSubrepLayout().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getPSubrepLayout());
                 }
             }
         };
@@ -510,23 +510,23 @@ public abstract class BsPSubrepLayoutItemDtoMapper implements DtoMapper<PSubrepL
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressPSubrepLayout() {
-        _suppressPSubrepLayout = true;
-    }
     public void suppressBDict() {
         _suppressBDict = true;
+    }
+    public void suppressPSubrepLayout() {
+        _suppressPSubrepLayout = true;
     }
     public void suppressVDict() {
         _suppressVDict = true;
     }
     protected void doSuppressAll() { // internal
-        suppressPSubrepLayout();
         suppressBDict();
+        suppressPSubrepLayout();
         suppressVDict();
     }
     protected void doSuppressClear() { // internal
-        _suppressPSubrepLayout = false;
         _suppressBDict = false;
+        _suppressPSubrepLayout = false;
         _suppressVDict = false;
     }
 

@@ -47,7 +47,7 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     
  *
  * [foreign-property]
- *     bUserByPl1OutUserId, bUserByCaseOutUserId, bUserByShippingRecordOutUserId, tPickingH, bUserByPl2OutUserId, bUserBySlipOutUserId, bUserByPackingOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
+ *     bUserByCaseOutUserId, bUserByPackingOutUserId, tPickingH, bUserByPl1OutUserId, bUserByPl2OutUserId, bUserByShippingRecordOutUserId, bUserBySlipOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
  *
  * [referrer-property]
  *     
@@ -70,13 +70,13 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUserByPl1OutUserId;
     protected boolean _suppressBUserByCaseOutUserId;
-    protected boolean _suppressBUserByShippingRecordOutUserId;
-    protected boolean _suppressTPickingH;
-    protected boolean _suppressBUserByPl2OutUserId;
-    protected boolean _suppressBUserBySlipOutUserId;
     protected boolean _suppressBUserByPackingOutUserId;
+    protected boolean _suppressTPickingH;
+    protected boolean _suppressBUserByPl1OutUserId;
+    protected boolean _suppressBUserByPl2OutUserId;
+    protected boolean _suppressBUserByShippingRecordOutUserId;
+    protected boolean _suppressBUserBySlipOutUserId;
     protected boolean _suppressBClassDtlByInvoiceCreateFlg;
     protected boolean _suppressBClassDtlByOplOutFlg;
     protected boolean _suppressBClassDtlByTplOutFlg;
@@ -189,32 +189,6 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUserByPl1OutUserId && entity.getBUserByPl1OutUserId() != null) {
-            BUser relationEntity = entity.getBUserByPl1OutUserId();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUserByPl1OutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingRByPl1OutUserIdList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByPl1OutUserIdList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUserByPl1OutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingRByPl1OutUserIdList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUserByPl1OutUserId());
-                }
-            }
-        };
         if (!_suppressBUserByCaseOutUserId && entity.getBUserByCaseOutUserId() != null) {
             BUser relationEntity = entity.getBUserByCaseOutUserId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -241,29 +215,29 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
-        if (!_suppressBUserByShippingRecordOutUserId && entity.getBUserByShippingRecordOutUserId() != null) {
-            BUser relationEntity = entity.getBUserByShippingRecordOutUserId();
+        if (!_suppressBUserByPackingOutUserId && entity.getBUserByPackingOutUserId() != null) {
+            BUser relationEntity = entity.getBUserByPackingOutUserId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
                 BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUserByShippingRecordOutUserId(relationDto);
+                dto.setBUserByPackingOutUserId(relationDto);
                 if (reverseReference) {
-                    relationDto.getTPickingRByShippingRecordOutUserIdList().add(dto);
+                    relationDto.getTPickingRByPackingOutUserIdList().add(dto);
                 }
             } else {
                 BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByShippingRecordOutUserIdList();
+                mapper.suppressTPickingRByPackingOutUserIdList();
                 BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUserByShippingRecordOutUserId(relationDto);
+                dto.setBUserByPackingOutUserId(relationDto);
                 if (reverseReference) {
-                    relationDto.getTPickingRByShippingRecordOutUserIdList().add(dto);
+                    relationDto.getTPickingRByPackingOutUserIdList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUserByShippingRecordOutUserId());
+                    _relationDtoMap.put(relationKey, dto.getBUserByPackingOutUserId());
                 }
             }
         };
@@ -293,6 +267,32 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
+        if (!_suppressBUserByPl1OutUserId && entity.getBUserByPl1OutUserId() != null) {
+            BUser relationEntity = entity.getBUserByPl1OutUserId();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUserByPl1OutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingRByPl1OutUserIdList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingRByPl1OutUserIdList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUserByPl1OutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingRByPl1OutUserIdList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUserByPl1OutUserId());
+                }
+            }
+        };
         if (!_suppressBUserByPl2OutUserId && entity.getBUserByPl2OutUserId() != null) {
             BUser relationEntity = entity.getBUserByPl2OutUserId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -319,6 +319,32 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
+        if (!_suppressBUserByShippingRecordOutUserId && entity.getBUserByShippingRecordOutUserId() != null) {
+            BUser relationEntity = entity.getBUserByShippingRecordOutUserId();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUserByShippingRecordOutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingRByShippingRecordOutUserIdList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingRByShippingRecordOutUserIdList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUserByShippingRecordOutUserId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPickingRByShippingRecordOutUserIdList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUserByShippingRecordOutUserId());
+                }
+            }
+        };
         if (!_suppressBUserBySlipOutUserId && entity.getBUserBySlipOutUserId() != null) {
             BUser relationEntity = entity.getBUserBySlipOutUserId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -342,32 +368,6 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBUserBySlipOutUserId());
-                }
-            }
-        };
-        if (!_suppressBUserByPackingOutUserId && entity.getBUserByPackingOutUserId() != null) {
-            BUser relationEntity = entity.getBUserByPackingOutUserId();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUserByPackingOutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingRByPackingOutUserIdList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByPackingOutUserIdList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUserByPackingOutUserId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPickingRByPackingOutUserIdList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUserByPackingOutUserId());
                 }
             }
         };
@@ -860,32 +860,6 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUserByPl1OutUserId && dto.getBUserByPl1OutUserId() != null) {
-            BUserDto relationDto = dto.getBUserByPl1OutUserId();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUserByPl1OutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingRByPl1OutUserIdList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByPl1OutUserIdList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUserByPl1OutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingRByPl1OutUserIdList().add(entity);
-                }
-                if (instanceCache && entity.getBUserByPl1OutUserId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUserByPl1OutUserId());
-                }
-            }
-        };
         if (!_suppressBUserByCaseOutUserId && dto.getBUserByCaseOutUserId() != null) {
             BUserDto relationDto = dto.getBUserByCaseOutUserId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -912,29 +886,29 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
-        if (!_suppressBUserByShippingRecordOutUserId && dto.getBUserByShippingRecordOutUserId() != null) {
-            BUserDto relationDto = dto.getBUserByShippingRecordOutUserId();
+        if (!_suppressBUserByPackingOutUserId && dto.getBUserByPackingOutUserId() != null) {
+            BUserDto relationDto = dto.getBUserByPackingOutUserId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
                 BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUserByShippingRecordOutUserId(relationEntity);
+                entity.setBUserByPackingOutUserId(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTPickingRByShippingRecordOutUserIdList().add(entity);
+                    relationEntity.getTPickingRByPackingOutUserIdList().add(entity);
                 }
             } else {
                 BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByShippingRecordOutUserIdList();
+                mapper.suppressTPickingRByPackingOutUserIdList();
                 BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUserByShippingRecordOutUserId(relationEntity);
+                entity.setBUserByPackingOutUserId(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTPickingRByShippingRecordOutUserIdList().add(entity);
+                    relationEntity.getTPickingRByPackingOutUserIdList().add(entity);
                 }
-                if (instanceCache && entity.getBUserByShippingRecordOutUserId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUserByShippingRecordOutUserId());
+                if (instanceCache && entity.getBUserByPackingOutUserId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUserByPackingOutUserId());
                 }
             }
         };
@@ -964,6 +938,32 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
+        if (!_suppressBUserByPl1OutUserId && dto.getBUserByPl1OutUserId() != null) {
+            BUserDto relationDto = dto.getBUserByPl1OutUserId();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUserByPl1OutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingRByPl1OutUserIdList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingRByPl1OutUserIdList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUserByPl1OutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingRByPl1OutUserIdList().add(entity);
+                }
+                if (instanceCache && entity.getBUserByPl1OutUserId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUserByPl1OutUserId());
+                }
+            }
+        };
         if (!_suppressBUserByPl2OutUserId && dto.getBUserByPl2OutUserId() != null) {
             BUserDto relationDto = dto.getBUserByPl2OutUserId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -990,6 +990,32 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
             }
         };
+        if (!_suppressBUserByShippingRecordOutUserId && dto.getBUserByShippingRecordOutUserId() != null) {
+            BUserDto relationDto = dto.getBUserByShippingRecordOutUserId();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUserByShippingRecordOutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingRByShippingRecordOutUserIdList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPickingRByShippingRecordOutUserIdList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUserByShippingRecordOutUserId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPickingRByShippingRecordOutUserIdList().add(entity);
+                }
+                if (instanceCache && entity.getBUserByShippingRecordOutUserId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUserByShippingRecordOutUserId());
+                }
+            }
+        };
         if (!_suppressBUserBySlipOutUserId && dto.getBUserBySlipOutUserId() != null) {
             BUserDto relationDto = dto.getBUserBySlipOutUserId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -1013,32 +1039,6 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
                 }
                 if (instanceCache && entity.getBUserBySlipOutUserId().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBUserBySlipOutUserId());
-                }
-            }
-        };
-        if (!_suppressBUserByPackingOutUserId && dto.getBUserByPackingOutUserId() != null) {
-            BUserDto relationDto = dto.getBUserByPackingOutUserId();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUserByPackingOutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingRByPackingOutUserIdList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPickingRByPackingOutUserIdList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUserByPackingOutUserId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPickingRByPackingOutUserIdList().add(entity);
-                }
-                if (instanceCache && entity.getBUserByPackingOutUserId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUserByPackingOutUserId());
                 }
             }
         };
@@ -1482,26 +1482,26 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUserByPl1OutUserId() {
-        _suppressBUserByPl1OutUserId = true;
-    }
     public void suppressBUserByCaseOutUserId() {
         _suppressBUserByCaseOutUserId = true;
     }
-    public void suppressBUserByShippingRecordOutUserId() {
-        _suppressBUserByShippingRecordOutUserId = true;
+    public void suppressBUserByPackingOutUserId() {
+        _suppressBUserByPackingOutUserId = true;
     }
     public void suppressTPickingH() {
         _suppressTPickingH = true;
     }
+    public void suppressBUserByPl1OutUserId() {
+        _suppressBUserByPl1OutUserId = true;
+    }
     public void suppressBUserByPl2OutUserId() {
         _suppressBUserByPl2OutUserId = true;
     }
+    public void suppressBUserByShippingRecordOutUserId() {
+        _suppressBUserByShippingRecordOutUserId = true;
+    }
     public void suppressBUserBySlipOutUserId() {
         _suppressBUserBySlipOutUserId = true;
-    }
-    public void suppressBUserByPackingOutUserId() {
-        _suppressBUserByPackingOutUserId = true;
     }
     public void suppressBClassDtlByInvoiceCreateFlg() {
         _suppressBClassDtlByInvoiceCreateFlg = true;
@@ -1546,13 +1546,13 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
         _suppressBClassDtlByBolOutFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBUserByPl1OutUserId();
         suppressBUserByCaseOutUserId();
-        suppressBUserByShippingRecordOutUserId();
-        suppressTPickingH();
-        suppressBUserByPl2OutUserId();
-        suppressBUserBySlipOutUserId();
         suppressBUserByPackingOutUserId();
+        suppressTPickingH();
+        suppressBUserByPl1OutUserId();
+        suppressBUserByPl2OutUserId();
+        suppressBUserByShippingRecordOutUserId();
+        suppressBUserBySlipOutUserId();
         suppressBClassDtlByInvoiceCreateFlg();
         suppressBClassDtlByOplOutFlg();
         suppressBClassDtlByTplOutFlg();
@@ -1569,13 +1569,13 @@ public abstract class BsTPickingRDtoMapper implements DtoMapper<TPickingR, TPick
         suppressBClassDtlByBolOutFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUserByPl1OutUserId = false;
         _suppressBUserByCaseOutUserId = false;
-        _suppressBUserByShippingRecordOutUserId = false;
-        _suppressTPickingH = false;
-        _suppressBUserByPl2OutUserId = false;
-        _suppressBUserBySlipOutUserId = false;
         _suppressBUserByPackingOutUserId = false;
+        _suppressTPickingH = false;
+        _suppressBUserByPl1OutUserId = false;
+        _suppressBUserByPl2OutUserId = false;
+        _suppressBUserByShippingRecordOutUserId = false;
+        _suppressBUserBySlipOutUserId = false;
         _suppressBClassDtlByInvoiceCreateFlg = false;
         _suppressBClassDtlByOplOutFlg = false;
         _suppressBClassDtlByTplOutFlg = false;

@@ -69,9 +69,9 @@ public class TPackingBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPackingB)et).getTPickingB(), (et, vl) -> ((TPackingB)et).setTPickingB((TPickingB)vl), "TPickingB");
-        setupEfpg(_efpgMap, et -> ((TPackingB)et).getTPackingH(), (et, vl) -> ((TPackingB)et).setTPackingH((TPackingH)vl), "TPackingH");
         setupEfpg(_efpgMap, et -> ((TPackingB)et).getTAllocInstB(), (et, vl) -> ((TPackingB)et).setTAllocInstB((TAllocInstB)vl), "TAllocInstB");
+        setupEfpg(_efpgMap, et -> ((TPackingB)et).getTPackingH(), (et, vl) -> ((TPackingB)et).setTPackingH((TPackingH)vl), "TPackingH");
+        setupEfpg(_efpgMap, et -> ((TPackingB)et).getTPickingB(), (et, vl) -> ((TPackingB)et).setTPickingB((TPickingB)vl), "TPickingB");
         setupEfpg(_efpgMap, et -> ((TPackingB)et).getBClassDtlByInspectionFlg(), (et, vl) -> ((TPackingB)et).setBClassDtlByInspectionFlg((BClassDtl)vl), "BClassDtlByInspectionFlg");
         setupEfpg(_efpgMap, et -> ((TPackingB)et).getBClassDtlByPickingFlg(), (et, vl) -> ((TPackingB)et).setBClassDtlByPickingFlg((BClassDtl)vl), "BClassDtlByPickingFlg");
     }
@@ -241,12 +241,12 @@ public class TPackingBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTPickingB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingBId(), TPickingBDbm.getInstance().columnPickingBId());
-        return cfi("T_PACKING_B_FK2", "TPickingB", this, TPickingBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingBList", false);
+    public ForeignInfo foreignTAllocInstB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
+        return cfi("T_PACKING_B_FK1", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingBList", false);
     }
     /**
      * T_PACKING_H by my PACKING_H_ID, named 'TPackingH'.
@@ -257,12 +257,12 @@ public class TPackingBDbm extends AbstractDBMeta {
         return cfi("T_PACKING_B_FK3", "TPackingH", this, TPackingHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPackingBList", false);
     }
     /**
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTAllocInstB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
-        return cfi("T_PACKING_B_FK1", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPackingBList", false);
+    public ForeignInfo foreignTPickingB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingBId(), TPickingBDbm.getInstance().columnPickingBId());
+        return cfi("T_PACKING_B_FK2", "TPickingB", this, TPickingBDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPackingBList", false);
     }
     /**
      * B_CLASS_DTL by my INSPECTION_FLG, named 'BClassDtlByInspectionFlg'.

@@ -694,8 +694,8 @@ public class BsTPickingHCQ extends AbstractBsTPickingHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPickingHCQ bq = (TPickingHCQ)bqs;
         TPickingHCQ uq = (TPickingHCQ)uqs;
-        if (bq.hasConditionQueryMProcessType()) {
-            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
+        if (bq.hasConditionQueryTAllocInstH()) {
+            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
         }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
@@ -703,8 +703,8 @@ public class BsTPickingHCQ extends AbstractBsTPickingHCQ {
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
-        if (bq.hasConditionQueryTAllocInstH()) {
-            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
+        if (bq.hasConditionQueryMProcessType()) {
+            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
         }
         if (bq.hasConditionQueryBClassDtlByCenterTransitFlg()) {
             uq.queryBClassDtlByCenterTransitFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByCenterTransitFlg(), uq.queryBClassDtlByCenterTransitFlg());
@@ -731,23 +731,23 @@ public class BsTPickingHCQ extends AbstractBsTPickingHCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MProcessTypeCQ queryMProcessType() {
-        return xdfgetConditionQueryMProcessType();
+    public TAllocInstHCQ queryTAllocInstH() {
+        return xdfgetConditionQueryTAllocInstH();
     }
-    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
-        String prop = "mProcessType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
+    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
+        String prop = "tAllocInstH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
         return xgetQueRlMap(prop);
     }
-    protected MProcessTypeCQ xcreateQueryMProcessType() {
-        String nrp = xresolveNRP("T_PICKING_H", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
+    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
+        String nrp = xresolveNRP("T_PICKING_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
     }
-    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
-    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
+    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
+    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -791,23 +791,23 @@ public class BsTPickingHCQ extends AbstractBsTPickingHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TAllocInstHCQ queryTAllocInstH() {
-        return xdfgetConditionQueryTAllocInstH();
+    public MProcessTypeCQ queryMProcessType() {
+        return xdfgetConditionQueryMProcessType();
     }
-    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
-        String prop = "tAllocInstH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
+    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
+        String prop = "mProcessType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
         return xgetQueRlMap(prop);
     }
-    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
-        String nrp = xresolveNRP("T_PICKING_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
+    protected MProcessTypeCQ xcreateQueryMProcessType() {
+        String nrp = xresolveNRP("T_PICKING_H", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
     }
-    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
-    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
+    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
+    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
 
     /**
      * Get the condition-query for relation table. <br>

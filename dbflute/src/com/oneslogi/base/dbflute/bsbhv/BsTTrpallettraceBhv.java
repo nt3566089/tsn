@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mCenter
+ *     mCenter, mClient
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTTrpallettraceBhv extends AbstractBehaviorWritable<TTrpa
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tTrpallettraceList The list of tTrpallettrace. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TTrpallettrace> tTrpallettraceList)
-    { return helpPulloutInternally(tTrpallettraceList, "mClient"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tTrpallettraceList The list of tTrpallettrace. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MCenter> pulloutMCenter(List<TTrpallettrace> tTrpallettraceList)
     { return helpPulloutInternally(tTrpallettraceList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tTrpallettraceList The list of tTrpallettrace. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TTrpallettrace> tTrpallettraceList)
+    { return helpPulloutInternally(tTrpallettraceList, "mClient"); }
 
     // ===================================================================================
     //                                                                      Extract Column

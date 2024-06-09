@@ -252,33 +252,33 @@ public class BsTPickingBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TShippingInstBNss _nssTShippingInstB;
-    public TShippingInstBNss xdfgetNssTShippingInstB() {
-        if (_nssTShippingInstB == null) { _nssTShippingInstB = new TShippingInstBNss(null); }
-        return _nssTShippingInstB;
+    protected TAllocInstBNss _nssTAllocInstB;
+    public TAllocInstBNss xdfgetNssTAllocInstB() {
+        if (_nssTAllocInstB == null) { _nssTAllocInstB = new TAllocInstBNss(null); }
+        return _nssTAllocInstB;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * <pre>
      * <span style="color: #0000C0">tPickingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TShippingInstB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPickingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getTShippingInstB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getTAllocInstB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TShippingInstBNss setupSelect_TShippingInstB() {
-        assertSetupSelectPurpose("tShippingInstB");
+    public TAllocInstBNss setupSelect_TAllocInstB() {
+        assertSetupSelectPurpose("tAllocInstB");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnShippingInstBId();
+            specify().columnAllocInstBId();
         }
-        doSetupSelect(() -> query().queryTShippingInstB());
-        if (_nssTShippingInstB == null || !_nssTShippingInstB.hasConditionQuery())
-        { _nssTShippingInstB = new TShippingInstBNss(query().queryTShippingInstB()); }
-        return _nssTShippingInstB;
+        doSetupSelect(() -> query().queryTAllocInstB());
+        if (_nssTAllocInstB == null || !_nssTAllocInstB.hasConditionQuery())
+        { _nssTAllocInstB = new TAllocInstBNss(query().queryTAllocInstB()); }
+        return _nssTAllocInstB;
     }
 
     protected TPickingHNss _nssTPickingH;
@@ -310,33 +310,62 @@ public class BsTPickingBCB extends AbstractConditionBean {
         return _nssTPickingH;
     }
 
-    protected TAllocInstBNss _nssTAllocInstB;
-    public TAllocInstBNss xdfgetNssTAllocInstB() {
-        if (_nssTAllocInstB == null) { _nssTAllocInstB = new TAllocInstBNss(null); }
-        return _nssTAllocInstB;
+    protected MShapeNss _nssMShape;
+    public MShapeNss xdfgetNssMShape() {
+        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
+        return _nssMShape;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * <pre>
      * <span style="color: #0000C0">tPickingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPickingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getTAllocInstB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TAllocInstBNss setupSelect_TAllocInstB() {
-        assertSetupSelectPurpose("tAllocInstB");
+    public MShapeNss setupSelect_MShape() {
+        assertSetupSelectPurpose("mShape");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnAllocInstBId();
+            specify().columnShapeId();
         }
-        doSetupSelect(() -> query().queryTAllocInstB());
-        if (_nssTAllocInstB == null || !_nssTAllocInstB.hasConditionQuery())
-        { _nssTAllocInstB = new TAllocInstBNss(query().queryTAllocInstB()); }
-        return _nssTAllocInstB;
+        doSetupSelect(() -> query().queryMShape());
+        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
+        { _nssMShape = new MShapeNss(query().queryMShape()); }
+        return _nssMShape;
+    }
+
+    protected TShippingInstBNss _nssTShippingInstB;
+    public TShippingInstBNss xdfgetNssTShippingInstB() {
+        if (_nssTShippingInstB == null) { _nssTShippingInstB = new TShippingInstBNss(null); }
+        return _nssTShippingInstB;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * <pre>
+     * <span style="color: #0000C0">tPickingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TShippingInstB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPickingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getTShippingInstB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TShippingInstBNss setupSelect_TShippingInstB() {
+        assertSetupSelectPurpose("tShippingInstB");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShippingInstBId();
+        }
+        doSetupSelect(() -> query().queryTShippingInstB());
+        if (_nssTShippingInstB == null || !_nssTShippingInstB.hasConditionQuery())
+        { _nssTShippingInstB = new TShippingInstBNss(query().queryTShippingInstB()); }
+        return _nssTShippingInstB;
     }
 
     protected TStockNss _nssTStock;
@@ -366,35 +395,6 @@ public class BsTPickingBCB extends AbstractConditionBean {
         if (_nssTStock == null || !_nssTStock.hasConditionQuery())
         { _nssTStock = new TStockNss(query().queryTStock()); }
         return _nssTStock;
-    }
-
-    protected MShapeNss _nssMShape;
-    public MShapeNss xdfgetNssMShape() {
-        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
-        return _nssMShape;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * <pre>
-     * <span style="color: #0000C0">tPickingBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPickingB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingB</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MShapeNss setupSelect_MShape() {
-        assertSetupSelectPurpose("mShape");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnShapeId();
-        }
-        doSetupSelect(() -> query().queryMShape());
-        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
-        { _nssMShape = new MShapeNss(query().queryMShape()); }
-        return _nssMShape;
     }
 
     // [DBFlute-0.7.4]
@@ -438,11 +438,11 @@ public class BsTPickingBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPickingBCQ> {
-        protected TShippingInstBCB.HpSpecification _tShippingInstB;
-        protected TPickingHCB.HpSpecification _tPickingH;
         protected TAllocInstBCB.HpSpecification _tAllocInstB;
-        protected TStockCB.HpSpecification _tStock;
+        protected TPickingHCB.HpSpecification _tPickingH;
         protected MShapeCB.HpSpecification _mShape;
+        protected TShippingInstBCB.HpSpecification _tShippingInstB;
+        protected TStockCB.HpSpecification _tStock;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TPickingBCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -542,48 +542,48 @@ public class BsTPickingBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPickingBId(); // PK
-            if (qyCall().qy().hasConditionQueryTShippingInstB()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TShippingInstBCQ) {
-                columnShippingInstBId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTAllocInstB()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstBCQ) {
+                columnAllocInstBId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTPickingH()
                     || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
                 columnPickingHId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTAllocInstB()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstBCQ) {
-                columnAllocInstBId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMShape()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
+                columnShapeId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTShippingInstB()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TShippingInstBCQ) {
+                columnShippingInstBId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTStock()
                     || qyCall().qy().xgetReferrerQuery() instanceof TStockCQ) {
                 columnStockId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMShape()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
-                columnShapeId(); // FK or one-to-one referrer
             }
         }
         @Override
         protected String getTableDbName() { return "T_PICKING_B"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+         * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TShippingInstBCB.HpSpecification specifyTShippingInstB() {
-            assertRelation("tShippingInstB");
-            if (_tShippingInstB == null) {
-                _tShippingInstB = new TShippingInstBCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTShippingInstB()
-                                    , () -> _qyCall.qy().queryTShippingInstB())
+        public TAllocInstBCB.HpSpecification specifyTAllocInstB() {
+            assertRelation("tAllocInstB");
+            if (_tAllocInstB == null) {
+                _tAllocInstB = new TAllocInstBCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstB()
+                                    , () -> _qyCall.qy().queryTAllocInstB())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tShippingInstB.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTShippingInstB()
-                      , () -> xsyncQyCall().qy().queryTShippingInstB()));
+                    _tAllocInstB.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstB()
+                      , () -> xsyncQyCall().qy().queryTAllocInstB()));
                 }
             }
-            return _tShippingInstB;
+            return _tAllocInstB;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -607,23 +607,43 @@ public class BsTPickingBCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+         * M_SHAPE by my SHAPE_ID, named 'MShape'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TAllocInstBCB.HpSpecification specifyTAllocInstB() {
-            assertRelation("tAllocInstB");
-            if (_tAllocInstB == null) {
-                _tAllocInstB = new TAllocInstBCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstB()
-                                    , () -> _qyCall.qy().queryTAllocInstB())
+        public MShapeCB.HpSpecification specifyMShape() {
+            assertRelation("mShape");
+            if (_mShape == null) {
+                _mShape = new MShapeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
+                                    , () -> _qyCall.qy().queryMShape())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tAllocInstB.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstB()
-                      , () -> xsyncQyCall().qy().queryTAllocInstB()));
+                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
+                      , () -> xsyncQyCall().qy().queryMShape()));
                 }
             }
-            return _tAllocInstB;
+            return _mShape;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TShippingInstBCB.HpSpecification specifyTShippingInstB() {
+            assertRelation("tShippingInstB");
+            if (_tShippingInstB == null) {
+                _tShippingInstB = new TShippingInstBCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTShippingInstB()
+                                    , () -> _qyCall.qy().queryTShippingInstB())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tShippingInstB.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTShippingInstB()
+                      , () -> xsyncQyCall().qy().queryTShippingInstB()));
+                }
+            }
+            return _tShippingInstB;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -644,26 +664,6 @@ public class BsTPickingBCB extends AbstractConditionBean {
                 }
             }
             return _tStock;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_SHAPE by my SHAPE_ID, named 'MShape'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MShapeCB.HpSpecification specifyMShape() {
-            assertRelation("mShape");
-            if (_mShape == null) {
-                _mShape = new MShapeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
-                                    , () -> _qyCall.qy().queryMShape())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
-                      , () -> xsyncQyCall().qy().queryMShape()));
-                }
-            }
-            return _mShape;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

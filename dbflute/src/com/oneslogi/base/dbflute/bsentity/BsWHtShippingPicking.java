@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, M_CLIENT, M_PRODUCT, T_LOT, M_LOCATION
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, mClient, mProduct, tLot, mLocation
+ *     mCenter, mClient, mLocation, tLot, mProduct
  *
  * [referrer property]
  *     
@@ -381,23 +381,23 @@ public abstract class BsWHtShippingPicking extends AbstractEntity implements Dom
         _mClient = mClient;
     }
 
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
+    /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
+    protected MLocation _mLocation;
 
     /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_LOCATION by my LOCATION_ID, named 'MLocation'. <br>
+     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MProduct getMProduct() {
-        return _mProduct;
+    public MLocation getMLocation() {
+        return _mLocation;
     }
 
     /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     * [set] M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
      */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
+    public void setMLocation(MLocation mLocation) {
+        _mLocation = mLocation;
     }
 
     /** T_LOT by my LOT_ID, named 'TLot'. */
@@ -419,23 +419,23 @@ public abstract class BsWHtShippingPicking extends AbstractEntity implements Dom
         _tLot = tLot;
     }
 
-    /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
-    protected MLocation _mLocation;
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
 
     /**
-     * [get] M_LOCATION by my LOCATION_ID, named 'MLocation'. <br>
-     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MLocation getMLocation() {
-        return _mLocation;
+    public MProduct getMProduct() {
+        return _mProduct;
     }
 
     /**
-     * [set] M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
      */
-    public void setMLocation(MLocation mLocation) {
-        _mLocation = mLocation;
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -474,12 +474,12 @@ public abstract class BsWHtShippingPicking extends AbstractEntity implements Dom
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -532,12 +532,12 @@ public abstract class BsWHtShippingPicking extends AbstractEntity implements Dom
         { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

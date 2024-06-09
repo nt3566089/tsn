@@ -41,16 +41,16 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_ALLOC_INST_B, T_STOCK_INOUT, T_STORE_RECORD_B, M_PROCESS_TYPE, T_MOVE_RECORD_B, T_STOCK, B_CLASS_DTL(ByCorrectType)
+ *     T_ALLOC_INST_B, T_STOCK_INOUT, T_MOVE_RECORD_B, M_PROCESS_TYPE, T_STOCK, T_STORE_RECORD_B, B_CLASS_DTL(ByCorrectType)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     tAllocInstB, tStockInoutByFsStockInoutIdSelf, tStoreRecordB, mProcessType, tMoveRecordB, tStock, tStockInoutByBfStockInoutIdSelf, bClassDtlByCorrectType, bClassDtlByInoutType
+ *     tAllocInstB, tStockInoutByBfStockInoutIdSelf, tStockInoutByFsStockInoutIdSelf, tMoveRecordB, mProcessType, tStock, tStoreRecordB, bClassDtlByCorrectType, bClassDtlByInoutType
  *
  * [referrer-property]
- *     tStockInoutByFsStockInoutIdSelfList, tStockInoutByBfStockInoutIdSelfList
+ *     tStockInoutByBfStockInoutIdSelfList, tStockInoutByFsStockInoutIdSelfList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -71,16 +71,16 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
     protected boolean _suppressTAllocInstB;
-    protected boolean _suppressTStockInoutByFsStockInoutIdSelf;
-    protected boolean _suppressTStoreRecordB;
-    protected boolean _suppressMProcessType;
-    protected boolean _suppressTMoveRecordB;
-    protected boolean _suppressTStock;
     protected boolean _suppressTStockInoutByBfStockInoutIdSelf;
+    protected boolean _suppressTStockInoutByFsStockInoutIdSelf;
+    protected boolean _suppressTMoveRecordB;
+    protected boolean _suppressMProcessType;
+    protected boolean _suppressTStock;
+    protected boolean _suppressTStoreRecordB;
     protected boolean _suppressBClassDtlByCorrectType;
     protected boolean _suppressBClassDtlByInoutType;
-    protected boolean _suppressTStockInoutByFsStockInoutIdSelfList;
     protected boolean _suppressTStockInoutByBfStockInoutIdSelfList;
+    protected boolean _suppressTStockInoutByFsStockInoutIdSelfList;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -187,6 +187,32 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
+        if (!_suppressTStockInoutByBfStockInoutIdSelf && entity.getTStockInoutByBfStockInoutIdSelf() != null) {
+            TStockInout relationEntity = entity.getTStockInoutByBfStockInoutIdSelf();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TStockInoutDto relationDto = (TStockInoutDto)cachedDto;
+                dto.setTStockInoutByBfStockInoutIdSelf(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStockInoutByBfStockInoutIdSelfList().add(dto);
+                }
+            } else {
+                TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStockInoutByBfStockInoutIdSelfList();
+                TStockInoutDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTStockInoutByBfStockInoutIdSelf(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStockInoutByBfStockInoutIdSelfList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTStockInoutByBfStockInoutIdSelf());
+                }
+            }
+        };
         if (!_suppressTStockInoutByFsStockInoutIdSelf && entity.getTStockInoutByFsStockInoutIdSelf() != null) {
             TStockInout relationEntity = entity.getTStockInoutByFsStockInoutIdSelf();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -210,58 +236,6 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTStockInoutByFsStockInoutIdSelf());
-                }
-            }
-        };
-        if (!_suppressTStoreRecordB && entity.getTStoreRecordB() != null) {
-            TStoreRecordB relationEntity = entity.getTStoreRecordB();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TStoreRecordBDto relationDto = (TStoreRecordBDto)cachedDto;
-                dto.setTStoreRecordB(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStockInoutList().add(dto);
-                }
-            } else {
-                TStoreRecordBDtoMapper mapper = new TStoreRecordBDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutList();
-                TStoreRecordBDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTStoreRecordB(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStockInoutList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTStoreRecordB());
-                }
-            }
-        };
-        if (!_suppressMProcessType && entity.getMProcessType() != null) {
-            MProcessType relationEntity = entity.getMProcessType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
-                dto.setMProcessType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStockInoutList().add(dto);
-                }
-            } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutList();
-                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProcessType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTStockInoutList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProcessType());
                 }
             }
         };
@@ -291,6 +265,32 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
+        if (!_suppressMProcessType && entity.getMProcessType() != null) {
+            MProcessType relationEntity = entity.getMProcessType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
+                dto.setMProcessType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStockInoutList().add(dto);
+                }
+            } else {
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStockInoutList();
+                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProcessType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTStockInoutList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMProcessType());
+                }
+            }
+        };
         if (!_suppressTStock && entity.getTStock() != null) {
             TStock relationEntity = entity.getTStock();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -317,29 +317,29 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
-        if (!_suppressTStockInoutByBfStockInoutIdSelf && entity.getTStockInoutByBfStockInoutIdSelf() != null) {
-            TStockInout relationEntity = entity.getTStockInoutByBfStockInoutIdSelf();
+        if (!_suppressTStoreRecordB && entity.getTStoreRecordB() != null) {
+            TStoreRecordB relationEntity = entity.getTStoreRecordB();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TStockInoutDto relationDto = (TStockInoutDto)cachedDto;
-                dto.setTStockInoutByBfStockInoutIdSelf(relationDto);
+                TStoreRecordBDto relationDto = (TStoreRecordBDto)cachedDto;
+                dto.setTStoreRecordB(relationDto);
                 if (reverseReference) {
-                    relationDto.getTStockInoutByBfStockInoutIdSelfList().add(dto);
+                    relationDto.getTStockInoutList().add(dto);
                 }
             } else {
-                TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                TStoreRecordBDtoMapper mapper = new TStoreRecordBDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutByBfStockInoutIdSelfList();
-                TStockInoutDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTStockInoutByBfStockInoutIdSelf(relationDto);
+                mapper.suppressTStockInoutList();
+                TStoreRecordBDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTStoreRecordB(relationDto);
                 if (reverseReference) {
-                    relationDto.getTStockInoutByBfStockInoutIdSelfList().add(dto);
+                    relationDto.getTStockInoutList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTStockInoutByBfStockInoutIdSelf());
+                    _relationDtoMap.put(relationKey, dto.getTStoreRecordB());
                 }
             }
         };
@@ -389,20 +389,6 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
-        if (!_suppressTStockInoutByFsStockInoutIdSelfList && !entity.getTStockInoutByFsStockInoutIdSelfList().isEmpty()) {
-            TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressTStockInoutByFsStockInoutIdSelf();
-            List<TStockInoutDto> relationDtoList = mapper.mappingToDtoList(entity.getTStockInoutByFsStockInoutIdSelfList());
-            dto.setTStockInoutByFsStockInoutIdSelfList(relationDtoList);
-            if (reverseReference) {
-                for (TStockInoutDto relationDto : relationDtoList) {
-                    relationDto.setTStockInoutByFsStockInoutIdSelf(dto);
-                }
-            }
-        };
         if (!_suppressTStockInoutByBfStockInoutIdSelfList && !entity.getTStockInoutByBfStockInoutIdSelfList().isEmpty()) {
             TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -414,6 +400,20 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
             if (reverseReference) {
                 for (TStockInoutDto relationDto : relationDtoList) {
                     relationDto.setTStockInoutByBfStockInoutIdSelf(dto);
+                }
+            }
+        };
+        if (!_suppressTStockInoutByFsStockInoutIdSelfList && !entity.getTStockInoutByFsStockInoutIdSelfList().isEmpty()) {
+            TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressTStockInoutByFsStockInoutIdSelf();
+            List<TStockInoutDto> relationDtoList = mapper.mappingToDtoList(entity.getTStockInoutByFsStockInoutIdSelfList());
+            dto.setTStockInoutByFsStockInoutIdSelfList(relationDtoList);
+            if (reverseReference) {
+                for (TStockInoutDto relationDto : relationDtoList) {
+                    relationDto.setTStockInoutByFsStockInoutIdSelf(dto);
                 }
             }
         };
@@ -556,6 +556,32 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
+        if (!_suppressTStockInoutByBfStockInoutIdSelf && dto.getTStockInoutByBfStockInoutIdSelf() != null) {
+            TStockInoutDto relationDto = dto.getTStockInoutByBfStockInoutIdSelf();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TStockInout relationEntity = (TStockInout)cachedEntity;
+                entity.setTStockInoutByBfStockInoutIdSelf(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStockInoutByBfStockInoutIdSelfList().add(entity);
+                }
+            } else {
+                TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStockInoutByBfStockInoutIdSelfList();
+                TStockInout relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTStockInoutByBfStockInoutIdSelf(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStockInoutByBfStockInoutIdSelfList().add(entity);
+                }
+                if (instanceCache && entity.getTStockInoutByBfStockInoutIdSelf().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTStockInoutByBfStockInoutIdSelf());
+                }
+            }
+        };
         if (!_suppressTStockInoutByFsStockInoutIdSelf && dto.getTStockInoutByFsStockInoutIdSelf() != null) {
             TStockInoutDto relationDto = dto.getTStockInoutByFsStockInoutIdSelf();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -579,58 +605,6 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
                 if (instanceCache && entity.getTStockInoutByFsStockInoutIdSelf().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTStockInoutByFsStockInoutIdSelf());
-                }
-            }
-        };
-        if (!_suppressTStoreRecordB && dto.getTStoreRecordB() != null) {
-            TStoreRecordBDto relationDto = dto.getTStoreRecordB();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TStoreRecordB relationEntity = (TStoreRecordB)cachedEntity;
-                entity.setTStoreRecordB(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStockInoutList().add(entity);
-                }
-            } else {
-                TStoreRecordBDtoMapper mapper = new TStoreRecordBDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutList();
-                TStoreRecordB relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTStoreRecordB(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStockInoutList().add(entity);
-                }
-                if (instanceCache && entity.getTStoreRecordB().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTStoreRecordB());
-                }
-            }
-        };
-        if (!_suppressMProcessType && dto.getMProcessType() != null) {
-            MProcessTypeDto relationDto = dto.getMProcessType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MProcessType relationEntity = (MProcessType)cachedEntity;
-                entity.setMProcessType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStockInoutList().add(entity);
-                }
-            } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutList();
-                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProcessType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTStockInoutList().add(entity);
-                }
-                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProcessType());
                 }
             }
         };
@@ -660,6 +634,32 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
+        if (!_suppressMProcessType && dto.getMProcessType() != null) {
+            MProcessTypeDto relationDto = dto.getMProcessType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MProcessType relationEntity = (MProcessType)cachedEntity;
+                entity.setMProcessType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStockInoutList().add(entity);
+                }
+            } else {
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTStockInoutList();
+                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProcessType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTStockInoutList().add(entity);
+                }
+                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProcessType());
+                }
+            }
+        };
         if (!_suppressTStock && dto.getTStock() != null) {
             TStockDto relationDto = dto.getTStock();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -686,29 +686,29 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
-        if (!_suppressTStockInoutByBfStockInoutIdSelf && dto.getTStockInoutByBfStockInoutIdSelf() != null) {
-            TStockInoutDto relationDto = dto.getTStockInoutByBfStockInoutIdSelf();
+        if (!_suppressTStoreRecordB && dto.getTStoreRecordB() != null) {
+            TStoreRecordBDto relationDto = dto.getTStoreRecordB();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TStockInout relationEntity = (TStockInout)cachedEntity;
-                entity.setTStockInoutByBfStockInoutIdSelf(relationEntity);
+                TStoreRecordB relationEntity = (TStoreRecordB)cachedEntity;
+                entity.setTStoreRecordB(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTStockInoutByBfStockInoutIdSelfList().add(entity);
+                    relationEntity.getTStockInoutList().add(entity);
                 }
             } else {
-                TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                TStoreRecordBDtoMapper mapper = new TStoreRecordBDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTStockInoutByBfStockInoutIdSelfList();
-                TStockInout relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTStockInoutByBfStockInoutIdSelf(relationEntity);
+                mapper.suppressTStockInoutList();
+                TStoreRecordB relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTStoreRecordB(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTStockInoutByBfStockInoutIdSelfList().add(entity);
+                    relationEntity.getTStockInoutList().add(entity);
                 }
-                if (instanceCache && entity.getTStockInoutByBfStockInoutIdSelf().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTStockInoutByBfStockInoutIdSelf());
+                if (instanceCache && entity.getTStoreRecordB().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTStoreRecordB());
                 }
             }
         };
@@ -758,20 +758,6 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
                 }
             }
         };
-        if (!_suppressTStockInoutByFsStockInoutIdSelfList && !dto.getTStockInoutByFsStockInoutIdSelfList().isEmpty()) {
-            TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
-            mapper.setExceptCommonColumn(exceptCommonColumn);
-            mapper.setReverseReference(reverseReference);
-            if (!instanceCache) { mapper.disableInstanceCache(); }
-            mapper.suppressTStockInoutByFsStockInoutIdSelf();
-            List<TStockInout> relationEntityList = mapper.mappingToEntityList(dto.getTStockInoutByFsStockInoutIdSelfList());
-            entity.setTStockInoutByFsStockInoutIdSelfList(relationEntityList);
-            if (reverseReference) {
-                for (TStockInout relationEntity : relationEntityList) {
-                    relationEntity.setTStockInoutByFsStockInoutIdSelf(entity);
-                }
-            }
-        };
         if (!_suppressTStockInoutByBfStockInoutIdSelfList && !dto.getTStockInoutByBfStockInoutIdSelfList().isEmpty()) {
             TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
             mapper.setExceptCommonColumn(exceptCommonColumn);
@@ -783,6 +769,20 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
             if (reverseReference) {
                 for (TStockInout relationEntity : relationEntityList) {
                     relationEntity.setTStockInoutByBfStockInoutIdSelf(entity);
+                }
+            }
+        };
+        if (!_suppressTStockInoutByFsStockInoutIdSelfList && !dto.getTStockInoutByFsStockInoutIdSelfList().isEmpty()) {
+            TStockInoutDtoMapper mapper = new TStockInoutDtoMapper(_relationDtoMap, _relationEntityMap);
+            mapper.setExceptCommonColumn(exceptCommonColumn);
+            mapper.setReverseReference(reverseReference);
+            if (!instanceCache) { mapper.disableInstanceCache(); }
+            mapper.suppressTStockInoutByFsStockInoutIdSelf();
+            List<TStockInout> relationEntityList = mapper.mappingToEntityList(dto.getTStockInoutByFsStockInoutIdSelfList());
+            entity.setTStockInoutByFsStockInoutIdSelfList(relationEntityList);
+            if (reverseReference) {
+                for (TStockInout relationEntity : relationEntityList) {
+                    relationEntity.setTStockInoutByFsStockInoutIdSelf(entity);
                 }
             }
         };
@@ -907,23 +907,23 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
     public void suppressTAllocInstB() {
         _suppressTAllocInstB = true;
     }
+    public void suppressTStockInoutByBfStockInoutIdSelf() {
+        _suppressTStockInoutByBfStockInoutIdSelf = true;
+    }
     public void suppressTStockInoutByFsStockInoutIdSelf() {
         _suppressTStockInoutByFsStockInoutIdSelf = true;
-    }
-    public void suppressTStoreRecordB() {
-        _suppressTStoreRecordB = true;
-    }
-    public void suppressMProcessType() {
-        _suppressMProcessType = true;
     }
     public void suppressTMoveRecordB() {
         _suppressTMoveRecordB = true;
     }
+    public void suppressMProcessType() {
+        _suppressMProcessType = true;
+    }
     public void suppressTStock() {
         _suppressTStock = true;
     }
-    public void suppressTStockInoutByBfStockInoutIdSelf() {
-        _suppressTStockInoutByBfStockInoutIdSelf = true;
+    public void suppressTStoreRecordB() {
+        _suppressTStoreRecordB = true;
     }
     public void suppressBClassDtlByCorrectType() {
         _suppressBClassDtlByCorrectType = true;
@@ -931,37 +931,37 @@ public abstract class BsTStockInoutDtoMapper implements DtoMapper<TStockInout, T
     public void suppressBClassDtlByInoutType() {
         _suppressBClassDtlByInoutType = true;
     }
-    public void suppressTStockInoutByFsStockInoutIdSelfList() {
-        _suppressTStockInoutByFsStockInoutIdSelfList = true;
-    }
     public void suppressTStockInoutByBfStockInoutIdSelfList() {
         _suppressTStockInoutByBfStockInoutIdSelfList = true;
     }
+    public void suppressTStockInoutByFsStockInoutIdSelfList() {
+        _suppressTStockInoutByFsStockInoutIdSelfList = true;
+    }
     protected void doSuppressAll() { // internal
         suppressTAllocInstB();
-        suppressTStockInoutByFsStockInoutIdSelf();
-        suppressTStoreRecordB();
-        suppressMProcessType();
-        suppressTMoveRecordB();
-        suppressTStock();
         suppressTStockInoutByBfStockInoutIdSelf();
+        suppressTStockInoutByFsStockInoutIdSelf();
+        suppressTMoveRecordB();
+        suppressMProcessType();
+        suppressTStock();
+        suppressTStoreRecordB();
         suppressBClassDtlByCorrectType();
         suppressBClassDtlByInoutType();
-        suppressTStockInoutByFsStockInoutIdSelfList();
         suppressTStockInoutByBfStockInoutIdSelfList();
+        suppressTStockInoutByFsStockInoutIdSelfList();
     }
     protected void doSuppressClear() { // internal
         _suppressTAllocInstB = false;
-        _suppressTStockInoutByFsStockInoutIdSelf = false;
-        _suppressTStoreRecordB = false;
-        _suppressMProcessType = false;
-        _suppressTMoveRecordB = false;
-        _suppressTStock = false;
         _suppressTStockInoutByBfStockInoutIdSelf = false;
+        _suppressTStockInoutByFsStockInoutIdSelf = false;
+        _suppressTMoveRecordB = false;
+        _suppressMProcessType = false;
+        _suppressTStock = false;
+        _suppressTStoreRecordB = false;
         _suppressBClassDtlByCorrectType = false;
         _suppressBClassDtlByInoutType = false;
-        _suppressTStockInoutByFsStockInoutIdSelfList = false;
         _suppressTStockInoutByBfStockInoutIdSelfList = false;
+        _suppressTStockInoutByFsStockInoutIdSelfList = false;
     }
 
     // ===================================================================================

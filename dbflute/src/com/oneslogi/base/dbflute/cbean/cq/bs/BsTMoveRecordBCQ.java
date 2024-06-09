@@ -506,14 +506,14 @@ public class BsTMoveRecordBCQ extends AbstractBsTMoveRecordBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TMoveRecordBCQ bq = (TMoveRecordBCQ)bqs;
         TMoveRecordBCQ uq = (TMoveRecordBCQ)uqs;
+        if (bq.hasConditionQueryMLocation()) {
+            uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
+        }
         if (bq.hasConditionQueryTMoveInstB()) {
             uq.queryTMoveInstB().reflectRelationOnUnionQuery(bq.queryTMoveInstB(), uq.queryTMoveInstB());
         }
         if (bq.hasConditionQueryTMoveInstH()) {
             uq.queryTMoveInstH().reflectRelationOnUnionQuery(bq.queryTMoveInstH(), uq.queryTMoveInstH());
-        }
-        if (bq.hasConditionQueryMLocation()) {
-            uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
         }
         if (bq.hasConditionQueryBClassDtlByAllShippingFlg()) {
             uq.queryBClassDtlByAllShippingFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByAllShippingFlg(), uq.queryBClassDtlByAllShippingFlg());
@@ -526,6 +526,26 @@ public class BsTMoveRecordBCQ extends AbstractBsTMoveRecordBCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MLocationCQ queryMLocation() {
+        return xdfgetConditionQueryMLocation();
+    }
+    public MLocationCQ xdfgetConditionQueryMLocation() {
+        String prop = "mLocation";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMLocation()); xsetupOuterJoinMLocation(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MLocationCQ xcreateQueryMLocation() {
+        String nrp = xresolveNRP("T_MOVE_RECORD_B", "mLocation"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MLocationCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mLocation", nrp);
+    }
+    protected void xsetupOuterJoinMLocation() { xregOutJo("mLocation"); }
+    public boolean hasConditionQueryMLocation() { return xhasQueRlMap("mLocation"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * T_MOVE_INST_B by my MOVE_INST_B_ID, named 'TMoveInstB'.
@@ -565,26 +585,6 @@ public class BsTMoveRecordBCQ extends AbstractBsTMoveRecordBCQ {
     }
     protected void xsetupOuterJoinTMoveInstH() { xregOutJo("tMoveInstH"); }
     public boolean hasConditionQueryTMoveInstH() { return xhasQueRlMap("tMoveInstH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MLocationCQ queryMLocation() {
-        return xdfgetConditionQueryMLocation();
-    }
-    public MLocationCQ xdfgetConditionQueryMLocation() {
-        String prop = "mLocation";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMLocation()); xsetupOuterJoinMLocation(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MLocationCQ xcreateQueryMLocation() {
-        String nrp = xresolveNRP("T_MOVE_RECORD_B", "mLocation"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MLocationCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mLocation", nrp);
-    }
-    protected void xsetupOuterJoinMLocation() { xregOutJo("mLocation"); }
-    public boolean hasConditionQueryMLocation() { return xhasQueRlMap("mLocation"); }
 
     /**
      * Get the condition-query for relation table. <br>

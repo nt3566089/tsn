@@ -76,10 +76,10 @@ public class TPickingHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPickingH)et).getMProcessType(), (et, vl) -> ((TPickingH)et).setMProcessType((MProcessType)vl), "MProcessType");
+        setupEfpg(_efpgMap, et -> ((TPickingH)et).getTAllocInstH(), (et, vl) -> ((TPickingH)et).setTAllocInstH((TAllocInstH)vl), "TAllocInstH");
         setupEfpg(_efpgMap, et -> ((TPickingH)et).getMCenter(), (et, vl) -> ((TPickingH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TPickingH)et).getMClient(), (et, vl) -> ((TPickingH)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((TPickingH)et).getTAllocInstH(), (et, vl) -> ((TPickingH)et).setTAllocInstH((TAllocInstH)vl), "TAllocInstH");
+        setupEfpg(_efpgMap, et -> ((TPickingH)et).getMProcessType(), (et, vl) -> ((TPickingH)et).setMProcessType((MProcessType)vl), "MProcessType");
         setupEfpg(_efpgMap, et -> ((TPickingH)et).getBClassDtlByCenterTransitFlg(), (et, vl) -> ((TPickingH)et).setBClassDtlByCenterTransitFlg((BClassDtl)vl), "BClassDtlByCenterTransitFlg");
         setupEfpg(_efpgMap, et -> ((TPickingH)et).getBClassDtlByForceFixedFlg(), (et, vl) -> ((TPickingH)et).setBClassDtlByForceFixedFlg((BClassDtl)vl), "BClassDtlByForceFixedFlg");
         setupEfpg(_efpgMap, et -> ((TPickingH)et).getBClassDtlByPackingCalCls(), (et, vl) -> ((TPickingH)et).setBClassDtlByPackingCalCls((BClassDtl)vl), "BClassDtlByPackingCalCls");
@@ -302,12 +302,12 @@ public class TPickingHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMProcessType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
-        return cfi("T_PICKING_H_FK3", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingHList", false);
+    public ForeignInfo foreignTAllocInstH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
+        return cfi("T_PICKING_H_FK2", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingHList", false);
     }
     /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -326,12 +326,12 @@ public class TPickingHDbm extends AbstractDBMeta {
         return cfi("T_PICKING_H_FK4", "MClient", this, MClientDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPickingHList", false);
     }
     /**
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTAllocInstH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
-        return cfi("T_PICKING_H_FK2", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPickingHList", false);
+    public ForeignInfo foreignMProcessType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProcessTypeId(), MProcessTypeDbm.getInstance().columnProcessTypeId());
+        return cfi("T_PICKING_H_FK3", "MProcessType", this, MProcessTypeDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPickingHList", false);
     }
     /**
      * B_CLASS_DTL by my CENTER_TRANSIT_FLG, named 'BClassDtlByCenterTransitFlg'.

@@ -956,26 +956,26 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPickingRCQ bq = (TPickingRCQ)bqs;
         TPickingRCQ uq = (TPickingRCQ)uqs;
-        if (bq.hasConditionQueryBUserByPl1OutUserId()) {
-            uq.queryBUserByPl1OutUserId().reflectRelationOnUnionQuery(bq.queryBUserByPl1OutUserId(), uq.queryBUserByPl1OutUserId());
-        }
         if (bq.hasConditionQueryBUserByCaseOutUserId()) {
             uq.queryBUserByCaseOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByCaseOutUserId(), uq.queryBUserByCaseOutUserId());
         }
-        if (bq.hasConditionQueryBUserByShippingRecordOutUserId()) {
-            uq.queryBUserByShippingRecordOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByShippingRecordOutUserId(), uq.queryBUserByShippingRecordOutUserId());
+        if (bq.hasConditionQueryBUserByPackingOutUserId()) {
+            uq.queryBUserByPackingOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByPackingOutUserId(), uq.queryBUserByPackingOutUserId());
         }
         if (bq.hasConditionQueryTPickingH()) {
             uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
         }
+        if (bq.hasConditionQueryBUserByPl1OutUserId()) {
+            uq.queryBUserByPl1OutUserId().reflectRelationOnUnionQuery(bq.queryBUserByPl1OutUserId(), uq.queryBUserByPl1OutUserId());
+        }
         if (bq.hasConditionQueryBUserByPl2OutUserId()) {
             uq.queryBUserByPl2OutUserId().reflectRelationOnUnionQuery(bq.queryBUserByPl2OutUserId(), uq.queryBUserByPl2OutUserId());
         }
+        if (bq.hasConditionQueryBUserByShippingRecordOutUserId()) {
+            uq.queryBUserByShippingRecordOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByShippingRecordOutUserId(), uq.queryBUserByShippingRecordOutUserId());
+        }
         if (bq.hasConditionQueryBUserBySlipOutUserId()) {
             uq.queryBUserBySlipOutUserId().reflectRelationOnUnionQuery(bq.queryBUserBySlipOutUserId(), uq.queryBUserBySlipOutUserId());
-        }
-        if (bq.hasConditionQueryBUserByPackingOutUserId()) {
-            uq.queryBUserByPackingOutUserId().reflectRelationOnUnionQuery(bq.queryBUserByPackingOutUserId(), uq.queryBUserByPackingOutUserId());
         }
         if (bq.hasConditionQueryBClassDtlByInvoiceCreateFlg()) {
             uq.queryBClassDtlByInvoiceCreateFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByInvoiceCreateFlg(), uq.queryBClassDtlByInvoiceCreateFlg());
@@ -1026,26 +1026,6 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BUserCQ queryBUserByPl1OutUserId() {
-        return xdfgetConditionQueryBUserByPl1OutUserId();
-    }
-    public BUserCQ xdfgetConditionQueryBUserByPl1OutUserId() {
-        String prop = "bUserByPl1OutUserId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByPl1OutUserId()); xsetupOuterJoinBUserByPl1OutUserId(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BUserCQ xcreateQueryBUserByPl1OutUserId() {
-        String nrp = xresolveNRP("T_PICKING_R", "bUserByPl1OutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByPl1OutUserId", nrp);
-    }
-    protected void xsetupOuterJoinBUserByPl1OutUserId() { xregOutJo("bUserByPl1OutUserId"); }
-    public boolean hasConditionQueryBUserByPl1OutUserId() { return xhasQueRlMap("bUserByPl1OutUserId"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * B_USER by my CASE_OUT_USER_ID, named 'BUserByCaseOutUserId'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1066,23 +1046,23 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
      * @return The instance of condition-query. (NotNull)
      */
-    public BUserCQ queryBUserByShippingRecordOutUserId() {
-        return xdfgetConditionQueryBUserByShippingRecordOutUserId();
+    public BUserCQ queryBUserByPackingOutUserId() {
+        return xdfgetConditionQueryBUserByPackingOutUserId();
     }
-    public BUserCQ xdfgetConditionQueryBUserByShippingRecordOutUserId() {
-        String prop = "bUserByShippingRecordOutUserId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByShippingRecordOutUserId()); xsetupOuterJoinBUserByShippingRecordOutUserId(); }
+    public BUserCQ xdfgetConditionQueryBUserByPackingOutUserId() {
+        String prop = "bUserByPackingOutUserId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByPackingOutUserId()); xsetupOuterJoinBUserByPackingOutUserId(); }
         return xgetQueRlMap(prop);
     }
-    protected BUserCQ xcreateQueryBUserByShippingRecordOutUserId() {
-        String nrp = xresolveNRP("T_PICKING_R", "bUserByShippingRecordOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByShippingRecordOutUserId", nrp);
+    protected BUserCQ xcreateQueryBUserByPackingOutUserId() {
+        String nrp = xresolveNRP("T_PICKING_R", "bUserByPackingOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByPackingOutUserId", nrp);
     }
-    protected void xsetupOuterJoinBUserByShippingRecordOutUserId() { xregOutJo("bUserByShippingRecordOutUserId"); }
-    public boolean hasConditionQueryBUserByShippingRecordOutUserId() { return xhasQueRlMap("bUserByShippingRecordOutUserId"); }
+    protected void xsetupOuterJoinBUserByPackingOutUserId() { xregOutJo("bUserByPackingOutUserId"); }
+    public boolean hasConditionQueryBUserByPackingOutUserId() { return xhasQueRlMap("bUserByPackingOutUserId"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1106,6 +1086,26 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BUserCQ queryBUserByPl1OutUserId() {
+        return xdfgetConditionQueryBUserByPl1OutUserId();
+    }
+    public BUserCQ xdfgetConditionQueryBUserByPl1OutUserId() {
+        String prop = "bUserByPl1OutUserId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByPl1OutUserId()); xsetupOuterJoinBUserByPl1OutUserId(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BUserCQ xcreateQueryBUserByPl1OutUserId() {
+        String nrp = xresolveNRP("T_PICKING_R", "bUserByPl1OutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByPl1OutUserId", nrp);
+    }
+    protected void xsetupOuterJoinBUserByPl1OutUserId() { xregOutJo("bUserByPl1OutUserId"); }
+    public boolean hasConditionQueryBUserByPl1OutUserId() { return xhasQueRlMap("bUserByPl1OutUserId"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * B_USER by my PL2_OUT_USER_ID, named 'BUserByPl2OutUserId'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1126,6 +1126,26 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BUserCQ queryBUserByShippingRecordOutUserId() {
+        return xdfgetConditionQueryBUserByShippingRecordOutUserId();
+    }
+    public BUserCQ xdfgetConditionQueryBUserByShippingRecordOutUserId() {
+        String prop = "bUserByShippingRecordOutUserId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByShippingRecordOutUserId()); xsetupOuterJoinBUserByShippingRecordOutUserId(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BUserCQ xcreateQueryBUserByShippingRecordOutUserId() {
+        String nrp = xresolveNRP("T_PICKING_R", "bUserByShippingRecordOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByShippingRecordOutUserId", nrp);
+    }
+    protected void xsetupOuterJoinBUserByShippingRecordOutUserId() { xregOutJo("bUserByShippingRecordOutUserId"); }
+    public boolean hasConditionQueryBUserByShippingRecordOutUserId() { return xhasQueRlMap("bUserByShippingRecordOutUserId"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * B_USER by my SLIP_OUT_USER_ID, named 'BUserBySlipOutUserId'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1143,26 +1163,6 @@ public class BsTPickingRCQ extends AbstractBsTPickingRCQ {
     }
     protected void xsetupOuterJoinBUserBySlipOutUserId() { xregOutJo("bUserBySlipOutUserId"); }
     public boolean hasConditionQueryBUserBySlipOutUserId() { return xhasQueRlMap("bUserBySlipOutUserId"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BUserCQ queryBUserByPackingOutUserId() {
-        return xdfgetConditionQueryBUserByPackingOutUserId();
-    }
-    public BUserCQ xdfgetConditionQueryBUserByPackingOutUserId() {
-        String prop = "bUserByPackingOutUserId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUserByPackingOutUserId()); xsetupOuterJoinBUserByPackingOutUserId(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BUserCQ xcreateQueryBUserByPackingOutUserId() {
-        String nrp = xresolveNRP("T_PICKING_R", "bUserByPackingOutUserId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUserByPackingOutUserId", nrp);
-    }
-    protected void xsetupOuterJoinBUserByPackingOutUserId() { xregOutJo("bUserByPackingOutUserId"); }
-    public boolean hasConditionQueryBUserByPackingOutUserId() { return xhasQueRlMap("bUserByPackingOutUserId"); }
 
     /**
      * Get the condition-query for relation table. <br>

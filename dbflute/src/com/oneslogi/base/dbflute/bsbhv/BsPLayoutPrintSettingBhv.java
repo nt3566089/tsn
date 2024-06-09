@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_PRINTER_GROUP, P_PRINTER_ATTRIBUTE, P_REPORT_LAYOUT, P_PRINTER, B_CLASS_DTL(BySheetCollate)
+ *     P_PRINTER_ATTRIBUTE, P_PRINTER_GROUP, P_PRINTER, P_REPORT_LAYOUT, B_CLASS_DTL(BySheetCollate)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pPrinterGroup, pPrinterAttribute, pReportLayout, pPrinter, bClassDtlBySheetCollate
+ *     pPrinterAttribute, pPrinterGroup, pPrinter, pReportLayout, bClassDtlBySheetCollate
  *
  * [referrer property]
  *     
@@ -418,14 +418,6 @@ public abstract class BsPLayoutPrintSettingBhv extends AbstractBehaviorWritable<
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'PPrinterGroup'.
-     * @param pLayoutPrintSettingList The list of pLayoutPrintSetting. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<PPrinterGroup> pulloutPPrinterGroup(List<PLayoutPrintSetting> pLayoutPrintSettingList)
-    { return helpPulloutInternally(pLayoutPrintSettingList, "pPrinterGroup"); }
-
-    /**
      * Pull out the list of foreign table 'PPrinterAttribute'.
      * @param pLayoutPrintSettingList The list of pLayoutPrintSetting. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -434,12 +426,12 @@ public abstract class BsPLayoutPrintSettingBhv extends AbstractBehaviorWritable<
     { return helpPulloutInternally(pLayoutPrintSettingList, "pPrinterAttribute"); }
 
     /**
-     * Pull out the list of foreign table 'PReportLayout'.
+     * Pull out the list of foreign table 'PPrinterGroup'.
      * @param pLayoutPrintSettingList The list of pLayoutPrintSetting. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<PReportLayout> pulloutPReportLayout(List<PLayoutPrintSetting> pLayoutPrintSettingList)
-    { return helpPulloutInternally(pLayoutPrintSettingList, "pReportLayout"); }
+    public List<PPrinterGroup> pulloutPPrinterGroup(List<PLayoutPrintSetting> pLayoutPrintSettingList)
+    { return helpPulloutInternally(pLayoutPrintSettingList, "pPrinterGroup"); }
 
     /**
      * Pull out the list of foreign table 'PPrinter'.
@@ -448,6 +440,14 @@ public abstract class BsPLayoutPrintSettingBhv extends AbstractBehaviorWritable<
      */
     public List<PPrinter> pulloutPPrinter(List<PLayoutPrintSetting> pLayoutPrintSettingList)
     { return helpPulloutInternally(pLayoutPrintSettingList, "pPrinter"); }
+
+    /**
+     * Pull out the list of foreign table 'PReportLayout'.
+     * @param pLayoutPrintSettingList The list of pLayoutPrintSetting. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<PReportLayout> pulloutPReportLayout(List<PLayoutPrintSetting> pLayoutPrintSettingList)
+    { return helpPulloutInternally(pLayoutPrintSettingList, "pReportLayout"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

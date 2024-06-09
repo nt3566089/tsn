@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     P_PRINTER_GROUP, P_PRINTER_ATTRIBUTE, P_REPORT_LAYOUT, P_PRINTER, B_CLASS_DTL(BySheetCollate)
+ *     P_PRINTER_ATTRIBUTE, P_PRINTER_GROUP, P_PRINTER, P_REPORT_LAYOUT, B_CLASS_DTL(BySheetCollate)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     pPrinterGroup, pPrinterAttribute, pReportLayout, pPrinter, bClassDtlBySheetCollate
+ *     pPrinterAttribute, pPrinterGroup, pPrinter, pReportLayout, bClassDtlBySheetCollate
  *
  * [referrer-property]
  *     
@@ -70,10 +70,10 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressPPrinterGroup;
     protected boolean _suppressPPrinterAttribute;
-    protected boolean _suppressPReportLayout;
+    protected boolean _suppressPPrinterGroup;
     protected boolean _suppressPPrinter;
+    protected boolean _suppressPReportLayout;
     protected boolean _suppressBClassDtlBySheetCollate;
 
     // ===================================================================================
@@ -149,32 +149,6 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPPrinterGroup && entity.getPPrinterGroup() != null) {
-            PPrinterGroup relationEntity = entity.getPPrinterGroup();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                PPrinterGroupDto relationDto = (PPrinterGroupDto)cachedDto;
-                dto.setPPrinterGroup(relationDto);
-                if (reverseReference) {
-                    relationDto.getPLayoutPrintSettingList().add(dto);
-                }
-            } else {
-                PPrinterGroupDtoMapper mapper = new PPrinterGroupDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPLayoutPrintSettingList();
-                PPrinterGroupDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setPPrinterGroup(relationDto);
-                if (reverseReference) {
-                    relationDto.getPLayoutPrintSettingList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getPPrinterGroup());
-                }
-            }
-        };
         if (!_suppressPPrinterAttribute && entity.getPPrinterAttribute() != null) {
             PPrinterAttribute relationEntity = entity.getPPrinterAttribute();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -201,29 +175,29 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
                 }
             }
         };
-        if (!_suppressPReportLayout && entity.getPReportLayout() != null) {
-            PReportLayout relationEntity = entity.getPReportLayout();
+        if (!_suppressPPrinterGroup && entity.getPPrinterGroup() != null) {
+            PPrinterGroup relationEntity = entity.getPPrinterGroup();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                PReportLayoutDto relationDto = (PReportLayoutDto)cachedDto;
-                dto.setPReportLayout(relationDto);
+                PPrinterGroupDto relationDto = (PPrinterGroupDto)cachedDto;
+                dto.setPPrinterGroup(relationDto);
                 if (reverseReference) {
-                    relationDto.setPLayoutPrintSettingAsOne(dto);
+                    relationDto.getPLayoutPrintSettingList().add(dto);
                 }
             } else {
-                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                PPrinterGroupDtoMapper mapper = new PPrinterGroupDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPLayoutPrintSettingAsOne();
-                PReportLayoutDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setPReportLayout(relationDto);
+                mapper.suppressPLayoutPrintSettingList();
+                PPrinterGroupDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setPPrinterGroup(relationDto);
                 if (reverseReference) {
-                    relationDto.setPLayoutPrintSettingAsOne(dto);
+                    relationDto.getPLayoutPrintSettingList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getPReportLayout());
+                    _relationDtoMap.put(relationKey, dto.getPPrinterGroup());
                 }
             }
         };
@@ -250,6 +224,32 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getPPrinter());
+                }
+            }
+        };
+        if (!_suppressPReportLayout && entity.getPReportLayout() != null) {
+            PReportLayout relationEntity = entity.getPReportLayout();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                PReportLayoutDto relationDto = (PReportLayoutDto)cachedDto;
+                dto.setPReportLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.setPLayoutPrintSettingAsOne(dto);
+                }
+            } else {
+                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPLayoutPrintSettingAsOne();
+                PReportLayoutDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setPReportLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.setPLayoutPrintSettingAsOne(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getPReportLayout());
                 }
             }
         };
@@ -371,32 +371,6 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPPrinterGroup && dto.getPPrinterGroup() != null) {
-            PPrinterGroupDto relationDto = dto.getPPrinterGroup();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                PPrinterGroup relationEntity = (PPrinterGroup)cachedEntity;
-                entity.setPPrinterGroup(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPLayoutPrintSettingList().add(entity);
-                }
-            } else {
-                PPrinterGroupDtoMapper mapper = new PPrinterGroupDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPLayoutPrintSettingList();
-                PPrinterGroup relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setPPrinterGroup(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPLayoutPrintSettingList().add(entity);
-                }
-                if (instanceCache && entity.getPPrinterGroup().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getPPrinterGroup());
-                }
-            }
-        };
         if (!_suppressPPrinterAttribute && dto.getPPrinterAttribute() != null) {
             PPrinterAttributeDto relationDto = dto.getPPrinterAttribute();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -423,29 +397,29 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
                 }
             }
         };
-        if (!_suppressPReportLayout && dto.getPReportLayout() != null) {
-            PReportLayoutDto relationDto = dto.getPReportLayout();
+        if (!_suppressPPrinterGroup && dto.getPPrinterGroup() != null) {
+            PPrinterGroupDto relationDto = dto.getPPrinterGroup();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                PReportLayout relationEntity = (PReportLayout)cachedEntity;
-                entity.setPReportLayout(relationEntity);
+                PPrinterGroup relationEntity = (PPrinterGroup)cachedEntity;
+                entity.setPPrinterGroup(relationEntity);
                 if (reverseReference) {
-                    relationEntity.setPLayoutPrintSettingAsOne(entity);
+                    relationEntity.getPLayoutPrintSettingList().add(entity);
                 }
             } else {
-                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                PPrinterGroupDtoMapper mapper = new PPrinterGroupDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPLayoutPrintSettingAsOne();
-                PReportLayout relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setPReportLayout(relationEntity);
+                mapper.suppressPLayoutPrintSettingList();
+                PPrinterGroup relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setPPrinterGroup(relationEntity);
                 if (reverseReference) {
-                    relationEntity.setPLayoutPrintSettingAsOne(entity);
+                    relationEntity.getPLayoutPrintSettingList().add(entity);
                 }
-                if (instanceCache && entity.getPReportLayout().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getPReportLayout());
+                if (instanceCache && entity.getPPrinterGroup().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getPPrinterGroup());
                 }
             }
         };
@@ -472,6 +446,32 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
                 }
                 if (instanceCache && entity.getPPrinter().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getPPrinter());
+                }
+            }
+        };
+        if (!_suppressPReportLayout && dto.getPReportLayout() != null) {
+            PReportLayoutDto relationDto = dto.getPReportLayout();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                PReportLayout relationEntity = (PReportLayout)cachedEntity;
+                entity.setPReportLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.setPLayoutPrintSettingAsOne(entity);
+                }
+            } else {
+                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPLayoutPrintSettingAsOne();
+                PReportLayout relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setPReportLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.setPLayoutPrintSettingAsOne(entity);
+                }
+                if (instanceCache && entity.getPReportLayout().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getPReportLayout());
                 }
             }
         };
@@ -616,33 +616,33 @@ public abstract class BsPLayoutPrintSettingDtoMapper implements DtoMapper<PLayou
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressPPrinterGroup() {
-        _suppressPPrinterGroup = true;
-    }
     public void suppressPPrinterAttribute() {
         _suppressPPrinterAttribute = true;
     }
-    public void suppressPReportLayout() {
-        _suppressPReportLayout = true;
+    public void suppressPPrinterGroup() {
+        _suppressPPrinterGroup = true;
     }
     public void suppressPPrinter() {
         _suppressPPrinter = true;
+    }
+    public void suppressPReportLayout() {
+        _suppressPReportLayout = true;
     }
     public void suppressBClassDtlBySheetCollate() {
         _suppressBClassDtlBySheetCollate = true;
     }
     protected void doSuppressAll() { // internal
-        suppressPPrinterGroup();
         suppressPPrinterAttribute();
-        suppressPReportLayout();
+        suppressPPrinterGroup();
         suppressPPrinter();
+        suppressPReportLayout();
         suppressBClassDtlBySheetCollate();
     }
     protected void doSuppressClear() { // internal
-        _suppressPPrinterGroup = false;
         _suppressPPrinterAttribute = false;
-        _suppressPReportLayout = false;
+        _suppressPPrinterGroup = false;
         _suppressPPrinter = false;
+        _suppressPReportLayout = false;
         _suppressBClassDtlBySheetCollate = false;
     }
 

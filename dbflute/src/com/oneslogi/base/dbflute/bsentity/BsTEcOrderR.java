@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_EC_ORDER_H, B_CLASS_DTL(ByInvoiceCreateFlg)
+ *     T_EC_ORDER_H, B_USER, B_CLASS_DTL(ByInvoiceCreateFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tEcOrderH, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
+ *     tEcOrderH, bUser, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
  *
  * [referrer property]
  *     
@@ -394,25 +394,6 @@ public abstract class BsTEcOrderR extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'. */
-    protected BUser _bUser;
-
-    /**
-     * [get] B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'. <br>
-     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUser() {
-        return _bUser;
-    }
-
-    /**
-     * [set] B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
-     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
-     */
-    public void setBUser(BUser bUser) {
-        _bUser = bUser;
-    }
-
     /** T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'. */
     protected TEcOrderH _tEcOrderH;
 
@@ -430,6 +411,25 @@ public abstract class BsTEcOrderR extends AbstractEntity implements DomainEntity
      */
     public void setTEcOrderH(TEcOrderH tEcOrderH) {
         _tEcOrderH = tEcOrderH;
+    }
+
+    /** B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'. */
+    protected BUser _bUser;
+
+    /**
+     * [get] B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'. <br>
+     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUser() {
+        return _bUser;
+    }
+
+    /**
+     * [set] B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
+     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
+     */
+    public void setBUser(BUser bUser) {
+        _bUser = bUser;
     }
 
     /** B_CLASS_DTL by my INVOICE_CREATE_FLG, named 'BClassDtlByInvoiceCreateFlg'. */
@@ -502,10 +502,10 @@ public abstract class BsTEcOrderR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_tEcOrderH != null)
         { sb.append(li).append(xbRDS(_tEcOrderH, "tEcOrderH")); }
+        if (_bUser != null)
+        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_bClassDtlByInvoiceCreateFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInvoiceCreateFlg, "bClassDtlByInvoiceCreateFlg")); }
         if (_bClassDtlByStatementOutFlg != null)
@@ -541,10 +541,10 @@ public abstract class BsTEcOrderR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(dm).append("bUser"); }
         if (_tEcOrderH != null)
         { sb.append(dm).append("tEcOrderH"); }
+        if (_bUser != null)
+        { sb.append(dm).append("bUser"); }
         if (_bClassDtlByInvoiceCreateFlg != null)
         { sb.append(dm).append("bClassDtlByInvoiceCreateFlg"); }
         if (_bClassDtlByStatementOutFlg != null)

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_CULTURE, M_HT_DICT_CULTURE(AsOne)
+ *     B_CULTURE, B_DICT, M_HT_DICT_CULTURE(AsOne)
  *
  * [referrer table]
  *     M_HT_DICT_CULTURE
  *
  * [foreign property]
- *     bDict, bCulture, mHtDictCultureAsOne
+ *     bCulture, bDict, mHtDictCultureAsOne
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsBDictCultureBhv extends AbstractBehaviorWritable<BDictCu
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BDict'.
-     * @param bDictCultureList The list of bDictCulture. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BDict> pulloutBDict(List<BDictCulture> bDictCultureList)
-    { return helpPulloutInternally(bDictCultureList, "bDict"); }
-
-    /**
      * Pull out the list of foreign table 'BCulture'.
      * @param bDictCultureList The list of bDictCulture. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BCulture> pulloutBCulture(List<BDictCulture> bDictCultureList)
     { return helpPulloutInternally(bDictCultureList, "bCulture"); }
+
+    /**
+     * Pull out the list of foreign table 'BDict'.
+     * @param bDictCultureList The list of bDictCulture. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BDict> pulloutBDict(List<BDictCulture> bDictCultureList)
+    { return helpPulloutInternally(bDictCultureList, "bDict"); }
 
     /**
      * Pull out the list of referrer-as-one table 'MHtDictCulture'.

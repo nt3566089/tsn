@@ -75,8 +75,8 @@ public class TTrmanufacturedatehistoryDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TTrmanufacturedatehistory)et).getMClient(), (et, vl) -> ((TTrmanufacturedatehistory)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((TTrmanufacturedatehistory)et).getMCenter(), (et, vl) -> ((TTrmanufacturedatehistory)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((TTrmanufacturedatehistory)et).getMClient(), (et, vl) -> ((TTrmanufacturedatehistory)et).setMClient((MClient)vl), "MClient");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -286,20 +286,20 @@ public class TTrmanufacturedatehistoryDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_TRMANUFACTUREDATEHISTORY_FK1", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrmanufacturedatehistoryList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_TRMANUFACTUREDATEHISTORY_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrmanufacturedatehistoryList", false);
+        return cfi("T_TRMANUFACTUREDATEHISTORY_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrmanufacturedatehistoryList", false);
+    }
+    /**
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("T_TRMANUFACTUREDATEHISTORY_FK1", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrmanufacturedatehistoryList", false);
     }
 
     // -----------------------------------------------------

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_SCREEN, B_MENU_GRP, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
+ *     B_DICT, B_MENU_GRP, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, bScreen, bMenuGrp, vDict, vHtDict, bClassDtlByTargetWindow
+ *     bDict, bMenuGrp, bScreen, vDict, vHtDict, bClassDtlByTargetWindow
  *
  * [referrer property]
  *     
@@ -369,25 +369,6 @@ public abstract class BsBMenu extends AbstractEntity implements DomainEntity, En
         _bDict = bDict;
     }
 
-    /** B_SCREEN by my SCREEN_ID, named 'BScreen'. */
-    protected BScreen _bScreen;
-
-    /**
-     * [get] B_SCREEN by my SCREEN_ID, named 'BScreen'. <br>
-     * @return The entity of foreign property 'BScreen'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BScreen getBScreen() {
-        return _bScreen;
-    }
-
-    /**
-     * [set] B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @param bScreen The entity of foreign property 'BScreen'. (NullAllowed)
-     */
-    public void setBScreen(BScreen bScreen) {
-        _bScreen = bScreen;
-    }
-
     /** B_MENU_GRP by my MENU_GRP_ID, named 'BMenuGrp'. */
     protected BMenuGrp _bMenuGrp;
 
@@ -405,6 +386,25 @@ public abstract class BsBMenu extends AbstractEntity implements DomainEntity, En
      */
     public void setBMenuGrp(BMenuGrp bMenuGrp) {
         _bMenuGrp = bMenuGrp;
+    }
+
+    /** B_SCREEN by my SCREEN_ID, named 'BScreen'. */
+    protected BScreen _bScreen;
+
+    /**
+     * [get] B_SCREEN by my SCREEN_ID, named 'BScreen'. <br>
+     * @return The entity of foreign property 'BScreen'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BScreen getBScreen() {
+        return _bScreen;
+    }
+
+    /**
+     * [set] B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @param bScreen The entity of foreign property 'BScreen'. (NullAllowed)
+     */
+    public void setBScreen(BScreen bScreen) {
+        _bScreen = bScreen;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -498,10 +498,10 @@ public abstract class BsBMenu extends AbstractEntity implements DomainEntity, En
         StringBuilder sb = new StringBuilder();
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
-        if (_bScreen != null)
-        { sb.append(li).append(xbRDS(_bScreen, "bScreen")); }
         if (_bMenuGrp != null)
         { sb.append(li).append(xbRDS(_bMenuGrp, "bMenuGrp")); }
+        if (_bScreen != null)
+        { sb.append(li).append(xbRDS(_bScreen, "bScreen")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         if (_vHtDict != null)
@@ -542,10 +542,10 @@ public abstract class BsBMenu extends AbstractEntity implements DomainEntity, En
         StringBuilder sb = new StringBuilder();
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
-        if (_bScreen != null)
-        { sb.append(dm).append("bScreen"); }
         if (_bMenuGrp != null)
         { sb.append(dm).append("bMenuGrp"); }
+        if (_bScreen != null)
+        { sb.append(dm).append("bScreen"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (_vHtDict != null)

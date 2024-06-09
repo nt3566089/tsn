@@ -69,9 +69,9 @@ public class WHtLoadingDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WHtLoading)et).getMDeliveryCourse(), (et, vl) -> ((WHtLoading)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
-        setupEfpg(_efpgMap, et -> ((WHtLoading)et).getMClient(), (et, vl) -> ((WHtLoading)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((WHtLoading)et).getMCenter(), (et, vl) -> ((WHtLoading)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((WHtLoading)et).getMClient(), (et, vl) -> ((WHtLoading)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((WHtLoading)et).getMDeliveryCourse(), (et, vl) -> ((WHtLoading)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -239,12 +239,12 @@ public class WHtLoadingDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMDeliveryCourse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
-        return cfi("W_HT_LOADING_FK2", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtLoadingList", false);
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("W_HT_LOADING_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtLoadingList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -255,12 +255,12 @@ public class WHtLoadingDbm extends AbstractDBMeta {
         return cfi("W_HT_LOADING_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtLoadingList", false);
     }
     /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_HT_LOADING_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtLoadingList", false);
+    public ForeignInfo foreignMDeliveryCourse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
+        return cfi("W_HT_LOADING_FK2", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtLoadingList", false);
     }
 
     // -----------------------------------------------------

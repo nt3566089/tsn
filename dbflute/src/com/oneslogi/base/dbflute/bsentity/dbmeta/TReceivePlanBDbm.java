@@ -80,8 +80,8 @@ public class TReceivePlanBDbm extends AbstractDBMeta {
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getMLocation(), (et, vl) -> ((TReceivePlanB)et).setMLocation((MLocation)vl), "MLocation");
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getMWarehouse(), (et, vl) -> ((TReceivePlanB)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
-        setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getTReceivePlanH(), (et, vl) -> ((TReceivePlanB)et).setTReceivePlanH((TReceivePlanH)vl), "TReceivePlanH");
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getMProduct(), (et, vl) -> ((TReceivePlanB)et).setMProduct((MProduct)vl), "MProduct");
+        setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getTReceivePlanH(), (et, vl) -> ((TReceivePlanB)et).setTReceivePlanH((TReceivePlanH)vl), "TReceivePlanH");
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getBClassDtlByErrorFlg(), (et, vl) -> ((TReceivePlanB)et).setBClassDtlByErrorFlg((BClassDtl)vl), "BClassDtlByErrorFlg");
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getBClassDtlByReceiveStatus(), (et, vl) -> ((TReceivePlanB)et).setBClassDtlByReceiveStatus((BClassDtl)vl), "BClassDtlByReceiveStatus");
         setupEfpg(_efpgMap, et -> ((TReceivePlanB)et).getTReceivePlanSpareAsOne(), (et, vl) -> ((TReceivePlanB)et).setTReceivePlanSpareAsOne((TReceivePlanSpare)vl), "TReceivePlanSpareAsOne");
@@ -332,20 +332,20 @@ public class TReceivePlanBDbm extends AbstractDBMeta {
         return cfi("T_RECEIVE_PLAN_B_FK2", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TReceivePlanBList", false);
     }
     /**
-     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTReceivePlanH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
-        return cfi("T_RECEIVE_PLAN_B_FK3", "TReceivePlanH", this, TReceivePlanHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TReceivePlanBList", false);
-    }
-    /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMProduct() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("T_RECEIVE_PLAN_B_FK4", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TReceivePlanBList", false);
+        return cfi("T_RECEIVE_PLAN_B_FK4", "MProduct", this, MProductDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TReceivePlanBList", false);
+    }
+    /**
+     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTReceivePlanH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanHId(), TReceivePlanHDbm.getInstance().columnReceivePlanHId());
+        return cfi("T_RECEIVE_PLAN_B_FK3", "TReceivePlanH", this, TReceivePlanHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TReceivePlanBList", false);
     }
     /**
      * B_CLASS_DTL by my ERROR_FLG, named 'BClassDtlByErrorFlg'.

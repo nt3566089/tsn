@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_DELIVERY_COURSE, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mDeliveryCourse, mClient, mCenter
+ *     mCenter, mClient, mDeliveryCourse
  *
  * [referrer-property]
  *     
@@ -153,14 +153,14 @@ public abstract class BsWHtLoadingDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MDeliveryCourseDto _mDeliveryCourse;
+    protected MCenterDto _mCenter;
 
-    public MDeliveryCourseDto getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
-        this._mDeliveryCourse = mDeliveryCourse;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -173,14 +173,14 @@ public abstract class BsWHtLoadingDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MCenterDto _mCenter;
+    protected MDeliveryCourseDto _mDeliveryCourse;
 
-    public MCenterDto getMCenter() {
-        return _mCenter;
+    public MDeliveryCourseDto getMDeliveryCourse() {
+        return _mDeliveryCourse;
     }
 
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setMDeliveryCourse(MDeliveryCourseDto mDeliveryCourse) {
+        this._mDeliveryCourse = mDeliveryCourse;
     }
 
     // ===================================================================================

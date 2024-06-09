@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_SCREEN, B_DICT, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
+ *     B_DICT, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
  *
  * [referrer-table]
  *     B_COL, B_COL_EXT_BASE, B_COL_EXT_USER, B_ITEM_ROLE, M_CENTER_ITEM, M_CLIENT_ITEM, B_ITEM_VALID
  *
  * [foreign-property]
- *     bScreen, bDict, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
+ *     bDict, bScreen, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
  *
  * [referrer-property]
  *     bColList, bColExtBaseList, bColExtUserList, bItemRoleList, mCenterItemList, mClientItemList
@@ -161,16 +161,6 @@ public abstract class BsBItemDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BScreenDto _bScreen;
-
-    public BScreenDto getBScreen() {
-        return _bScreen;
-    }
-
-    public void setBScreen(BScreenDto bScreen) {
-        this._bScreen = bScreen;
-    }
-
     protected BDictDto _bDict;
 
     public BDictDto getBDict() {
@@ -179,6 +169,16 @@ public abstract class BsBItemDto implements Serializable {
 
     public void setBDict(BDictDto bDict) {
         this._bDict = bDict;
+    }
+
+    protected BScreenDto _bScreen;
+
+    public BScreenDto getBScreen() {
+        return _bScreen;
+    }
+
+    public void setBScreen(BScreenDto bScreen) {
+        this._bScreen = bScreen;
     }
 
     protected VDictDto _vDict;

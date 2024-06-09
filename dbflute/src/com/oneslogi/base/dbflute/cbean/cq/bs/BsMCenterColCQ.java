@@ -452,11 +452,11 @@ public class BsMCenterColCQ extends AbstractBsMCenterColCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MCenterColCQ bq = (MCenterColCQ)bqs;
         MCenterColCQ uq = (MCenterColCQ)uqs;
-        if (bq.hasConditionQueryBCol()) {
-            uq.queryBCol().reflectRelationOnUnionQuery(bq.queryBCol(), uq.queryBCol());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
+        if (bq.hasConditionQueryBCol()) {
+            uq.queryBCol().reflectRelationOnUnionQuery(bq.queryBCol(), uq.queryBCol());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -467,26 +467,6 @@ public class BsMCenterColCQ extends AbstractBsMCenterColCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_COL by my COL_ID, named 'BCol'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BColCQ queryBCol() {
-        return xdfgetConditionQueryBCol();
-    }
-    public BColCQ xdfgetConditionQueryBCol() {
-        String prop = "bCol";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBCol()); xsetupOuterJoinBCol(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BColCQ xcreateQueryBCol() {
-        String nrp = xresolveNRP("M_CENTER_COL", "bCol"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BColCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bCol", nrp);
-    }
-    protected void xsetupOuterJoinBCol() { xregOutJo("bCol"); }
-    public boolean hasConditionQueryBCol() { return xhasQueRlMap("bCol"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -506,6 +486,26 @@ public class BsMCenterColCQ extends AbstractBsMCenterColCQ {
     }
     protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
     public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_COL by my COL_ID, named 'BCol'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BColCQ queryBCol() {
+        return xdfgetConditionQueryBCol();
+    }
+    public BColCQ xdfgetConditionQueryBCol() {
+        String prop = "bCol";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBCol()); xsetupOuterJoinBCol(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BColCQ xcreateQueryBCol() {
+        String nrp = xresolveNRP("M_CENTER_COL", "bCol"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BColCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bCol", nrp);
+    }
+    protected void xsetupOuterJoinBCol() { xregOutJo("bCol"); }
+    public boolean hasConditionQueryBCol() { return xhasQueRlMap("bCol"); }
 
     /**
      * Get the condition-query for relation table. <br>

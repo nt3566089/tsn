@@ -92,13 +92,13 @@ public class TPickingRDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByPl1OutUserId(), (et, vl) -> ((TPickingR)et).setBUserByPl1OutUserId((BUser)vl), "BUserByPl1OutUserId");
         setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByCaseOutUserId(), (et, vl) -> ((TPickingR)et).setBUserByCaseOutUserId((BUser)vl), "BUserByCaseOutUserId");
-        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByShippingRecordOutUserId(), (et, vl) -> ((TPickingR)et).setBUserByShippingRecordOutUserId((BUser)vl), "BUserByShippingRecordOutUserId");
-        setupEfpg(_efpgMap, et -> ((TPickingR)et).getTPickingH(), (et, vl) -> ((TPickingR)et).setTPickingH((TPickingH)vl), "TPickingH");
-        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByPl2OutUserId(), (et, vl) -> ((TPickingR)et).setBUserByPl2OutUserId((BUser)vl), "BUserByPl2OutUserId");
-        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserBySlipOutUserId(), (et, vl) -> ((TPickingR)et).setBUserBySlipOutUserId((BUser)vl), "BUserBySlipOutUserId");
         setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByPackingOutUserId(), (et, vl) -> ((TPickingR)et).setBUserByPackingOutUserId((BUser)vl), "BUserByPackingOutUserId");
+        setupEfpg(_efpgMap, et -> ((TPickingR)et).getTPickingH(), (et, vl) -> ((TPickingR)et).setTPickingH((TPickingH)vl), "TPickingH");
+        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByPl1OutUserId(), (et, vl) -> ((TPickingR)et).setBUserByPl1OutUserId((BUser)vl), "BUserByPl1OutUserId");
+        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByPl2OutUserId(), (et, vl) -> ((TPickingR)et).setBUserByPl2OutUserId((BUser)vl), "BUserByPl2OutUserId");
+        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserByShippingRecordOutUserId(), (et, vl) -> ((TPickingR)et).setBUserByShippingRecordOutUserId((BUser)vl), "BUserByShippingRecordOutUserId");
+        setupEfpg(_efpgMap, et -> ((TPickingR)et).getBUserBySlipOutUserId(), (et, vl) -> ((TPickingR)et).setBUserBySlipOutUserId((BUser)vl), "BUserBySlipOutUserId");
         setupEfpg(_efpgMap, et -> ((TPickingR)et).getBClassDtlByInvoiceCreateFlg(), (et, vl) -> ((TPickingR)et).setBClassDtlByInvoiceCreateFlg((BClassDtl)vl), "BClassDtlByInvoiceCreateFlg");
         setupEfpg(_efpgMap, et -> ((TPickingR)et).getBClassDtlByOplOutFlg(), (et, vl) -> ((TPickingR)et).setBClassDtlByOplOutFlg((BClassDtl)vl), "BClassDtlByOplOutFlg");
         setupEfpg(_efpgMap, et -> ((TPickingR)et).getBClassDtlByTplOutFlg(), (et, vl) -> ((TPickingR)et).setBClassDtlByTplOutFlg((BClassDtl)vl), "BClassDtlByTplOutFlg");
@@ -441,28 +441,20 @@ public class TPickingRDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUserByPl1OutUserId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPl1OutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PICKING_R_FK3", "BUserByPl1OutUserId", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingRByPl1OutUserIdList", false);
-    }
-    /**
      * B_USER by my CASE_OUT_USER_ID, named 'BUserByCaseOutUserId'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBUserByCaseOutUserId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCaseOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PICKING_R_FK5", "BUserByCaseOutUserId", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPickingRByCaseOutUserIdList", false);
+        return cfi("T_PICKING_R_FK5", "BUserByCaseOutUserId", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingRByCaseOutUserIdList", false);
     }
     /**
-     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignBUserByShippingRecordOutUserId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingRecordOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PICKING_R_FK4", "BUserByShippingRecordOutUserId", this, BUserDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPickingRByShippingRecordOutUserIdList", false);
+    public ForeignInfo foreignBUserByPackingOutUserId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingOutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_PICKING_R_FK7", "BUserByPackingOutUserId", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPickingRByPackingOutUserIdList", false);
     }
     /**
      * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
@@ -470,7 +462,15 @@ public class TPickingRDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTPickingH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
-        return cfi("T_PICKING_R_FK1", "TPickingH", this, TPickingHDbm.getInstance(), mp, 3, null, true, false, false, false, null, null, false, "TPickingRAsOne", false);
+        return cfi("T_PICKING_R_FK1", "TPickingH", this, TPickingHDbm.getInstance(), mp, 2, null, true, false, false, false, null, null, false, "TPickingRAsOne", false);
+    }
+    /**
+     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUserByPl1OutUserId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPl1OutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_PICKING_R_FK3", "BUserByPl1OutUserId", this, BUserDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPickingRByPl1OutUserIdList", false);
     }
     /**
      * B_USER by my PL2_OUT_USER_ID, named 'BUserByPl2OutUserId'.
@@ -481,20 +481,20 @@ public class TPickingRDbm extends AbstractDBMeta {
         return cfi("T_PICKING_R_FK2", "BUserByPl2OutUserId", this, BUserDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TPickingRByPl2OutUserIdList", false);
     }
     /**
+     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUserByShippingRecordOutUserId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingRecordOutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_PICKING_R_FK4", "BUserByShippingRecordOutUserId", this, BUserDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TPickingRByShippingRecordOutUserIdList", false);
+    }
+    /**
      * B_USER by my SLIP_OUT_USER_ID, named 'BUserBySlipOutUserId'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBUserBySlipOutUserId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnSlipOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PICKING_R_FK6", "BUserBySlipOutUserId", this, BUserDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TPickingRBySlipOutUserIdList", false);
-    }
-    /**
-     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUserByPackingOutUserId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PICKING_R_FK7", "BUserByPackingOutUserId", this, BUserDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TPickingRByPackingOutUserIdList", false);
+        return cfi("T_PICKING_R_FK6", "BUserBySlipOutUserId", this, BUserDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TPickingRBySlipOutUserIdList", false);
     }
     /**
      * B_CLASS_DTL by my INVOICE_CREATE_FLG, named 'BClassDtlByInvoiceCreateFlg'.

@@ -252,6 +252,64 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected MCustomerNss _nssMCustomer;
+    public MCustomerNss xdfgetNssMCustomer() {
+        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
+        return _nssMCustomer;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * <pre>
+     * <span style="color: #0000C0">tInventoryInstBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tInventoryInst</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tInventoryInst</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCustomerNss setupSelect_MCustomer() {
+        assertSetupSelectPurpose("mCustomer");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnDepositId();
+        }
+        doSetupSelect(() -> query().queryMCustomer());
+        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
+        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
+        return _nssMCustomer;
+    }
+
+    protected TInventoryHNss _nssTInventoryH;
+    public TInventoryHNss xdfgetNssTInventoryH() {
+        if (_nssTInventoryH == null) { _nssTInventoryH = new TInventoryHNss(null); }
+        return _nssTInventoryH;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
+     * <pre>
+     * <span style="color: #0000C0">tInventoryInstBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TInventoryH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tInventoryInst</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tInventoryInst</span>.<span style="color: #CC4747">getTInventoryH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TInventoryHNss setupSelect_TInventoryH() {
+        assertSetupSelectPurpose("tInventoryH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnInventoryHId();
+        }
+        doSetupSelect(() -> query().queryTInventoryH());
+        if (_nssTInventoryH == null || !_nssTInventoryH.hasConditionQuery())
+        { _nssTInventoryH = new TInventoryHNss(query().queryTInventoryH()); }
+        return _nssTInventoryH;
+    }
+
     protected MStockTypeNss _nssMStockType;
     public MStockTypeNss xdfgetNssMStockType() {
         if (_nssMStockType == null) { _nssMStockType = new MStockTypeNss(null); }
@@ -308,64 +366,6 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
         if (_nssMZone == null || !_nssMZone.hasConditionQuery())
         { _nssMZone = new MZoneNss(query().queryMZone()); }
         return _nssMZone;
-    }
-
-    protected TInventoryHNss _nssTInventoryH;
-    public TInventoryHNss xdfgetNssTInventoryH() {
-        if (_nssTInventoryH == null) { _nssTInventoryH = new TInventoryHNss(null); }
-        return _nssTInventoryH;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
-     * <pre>
-     * <span style="color: #0000C0">tInventoryInstBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TInventoryH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tInventoryInst</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tInventoryInst</span>.<span style="color: #CC4747">getTInventoryH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TInventoryHNss setupSelect_TInventoryH() {
-        assertSetupSelectPurpose("tInventoryH");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnInventoryHId();
-        }
-        doSetupSelect(() -> query().queryTInventoryH());
-        if (_nssTInventoryH == null || !_nssTInventoryH.hasConditionQuery())
-        { _nssTInventoryH = new TInventoryHNss(query().queryTInventoryH()); }
-        return _nssTInventoryH;
-    }
-
-    protected MCustomerNss _nssMCustomer;
-    public MCustomerNss xdfgetNssMCustomer() {
-        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
-        return _nssMCustomer;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-     * <pre>
-     * <span style="color: #0000C0">tInventoryInstBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tInventoryInst</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tInventoryInst</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCustomerNss setupSelect_MCustomer() {
-        assertSetupSelectPurpose("mCustomer");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnDepositId();
-        }
-        doSetupSelect(() -> query().queryMCustomer());
-        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
-        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
-        return _nssMCustomer;
     }
 
     protected BClassDtlNss _nssBClassDtlByStockExistOnlyFlg;
@@ -438,10 +438,10 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TInventoryInstCQ> {
+        protected MCustomerCB.HpSpecification _mCustomer;
+        protected TInventoryHCB.HpSpecification _tInventoryH;
         protected MStockTypeCB.HpSpecification _mStockType;
         protected MZoneCB.HpSpecification _mZone;
-        protected TInventoryHCB.HpSpecification _tInventoryH;
-        protected MCustomerCB.HpSpecification _mCustomer;
         protected BClassDtlCB.HpSpecification _bClassDtlByStockExistOnlyFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TInventoryInstCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -592,6 +592,14 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnInventoryInstId(); // PK
+            if (qyCall().qy().hasConditionQueryMCustomer()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnDepositId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTInventoryH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TInventoryHCQ) {
+                columnInventoryHId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMStockType()
                     || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
                 columnStockTypeId(); // FK or one-to-one referrer
@@ -600,14 +608,6 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MZoneCQ) {
                 columnZoneId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTInventoryH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TInventoryHCQ) {
-                columnInventoryHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCustomer()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnDepositId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBClassDtlByStockExistOnlyFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
                 columnStockExistOnlyFlg(); // FK or one-to-one referrer
@@ -615,6 +615,46 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_INVENTORY_INST"; }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCustomerCB.HpSpecification specifyMCustomer() {
+            assertRelation("mCustomer");
+            if (_mCustomer == null) {
+                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
+                                    , () -> _qyCall.qy().queryMCustomer())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
+                      , () -> xsyncQyCall().qy().queryMCustomer()));
+                }
+            }
+            return _mCustomer;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TInventoryHCB.HpSpecification specifyTInventoryH() {
+            assertRelation("tInventoryH");
+            if (_tInventoryH == null) {
+                _tInventoryH = new TInventoryHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTInventoryH()
+                                    , () -> _qyCall.qy().queryTInventoryH())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tInventoryH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTInventoryH()
+                      , () -> xsyncQyCall().qy().queryTInventoryH()));
+                }
+            }
+            return _tInventoryH;
+        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
@@ -654,46 +694,6 @@ public class BsTInventoryInstCB extends AbstractConditionBean {
                 }
             }
             return _mZone;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TInventoryHCB.HpSpecification specifyTInventoryH() {
-            assertRelation("tInventoryH");
-            if (_tInventoryH == null) {
-                _tInventoryH = new TInventoryHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTInventoryH()
-                                    , () -> _qyCall.qy().queryTInventoryH())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tInventoryH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTInventoryH()
-                      , () -> xsyncQyCall().qy().queryTInventoryH()));
-                }
-            }
-            return _tInventoryH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCustomerCB.HpSpecification specifyMCustomer() {
-            assertRelation("mCustomer");
-            if (_mCustomer == null) {
-                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
-                                    , () -> _qyCall.qy().queryMCustomer())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
-                      , () -> xsyncQyCall().qy().queryMCustomer()));
-                }
-            }
-            return _mCustomer;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, M_PRODUCT, T_LOT
+ *     M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCustomer, mProduct, tLot
+ *     mCustomer, tLot, mProduct
  *
  * [referrer-property]
  *     
@@ -147,16 +147,6 @@ public abstract class BsTKeepingLotDto implements Serializable {
         this._mCustomer = mCustomer;
     }
 
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
-    }
-
     protected TLotDto _tLot;
 
     public TLotDto getTLot() {
@@ -165,6 +155,16 @@ public abstract class BsTKeepingLotDto implements Serializable {
 
     public void setTLot(TLotDto tLot) {
         this._tLot = tLot;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

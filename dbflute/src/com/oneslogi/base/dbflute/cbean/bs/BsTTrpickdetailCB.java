@@ -252,35 +252,6 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TStockNss _nssTStock;
-    public TStockNss xdfgetNssTStock() {
-        if (_nssTStock == null) { _nssTStock = new TStockNss(null); }
-        return _nssTStock;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_STOCK by my STOCK_ID, named 'TStock'.
-     * <pre>
-     * <span style="color: #0000C0">tTrpickdetailBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tTrpickdetail</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tTrpickdetail</span>.<span style="color: #CC4747">getTStock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TStockNss setupSelect_TStock() {
-        assertSetupSelectPurpose("tStock");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnStockId();
-        }
-        doSetupSelect(() -> query().queryTStock());
-        if (_nssTStock == null || !_nssTStock.hasConditionQuery())
-        { _nssTStock = new TStockNss(query().queryTStock()); }
-        return _nssTStock;
-    }
-
     protected MLocationNss _nssMLocation;
     public MLocationNss xdfgetNssMLocation() {
         if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
@@ -308,6 +279,35 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
         if (_nssMLocation == null || !_nssMLocation.hasConditionQuery())
         { _nssMLocation = new MLocationNss(query().queryMLocation()); }
         return _nssMLocation;
+    }
+
+    protected TStockNss _nssTStock;
+    public TStockNss xdfgetNssTStock() {
+        if (_nssTStock == null) { _nssTStock = new TStockNss(null); }
+        return _nssTStock;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_STOCK by my STOCK_ID, named 'TStock'.
+     * <pre>
+     * <span style="color: #0000C0">tTrpickdetailBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tTrpickdetail</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tTrpickdetail</span>.<span style="color: #CC4747">getTStock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TStockNss setupSelect_TStock() {
+        assertSetupSelectPurpose("tStock");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnStockId();
+        }
+        doSetupSelect(() -> query().queryTStock());
+        if (_nssTStock == null || !_nssTStock.hasConditionQuery())
+        { _nssTStock = new TStockNss(query().queryTStock()); }
+        return _nssTStock;
     }
 
     protected TYtrsodetailNss _nssTYtrsodetail;
@@ -380,8 +380,8 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TTrpickdetailCQ> {
-        protected TStockCB.HpSpecification _tStock;
         protected MLocationCB.HpSpecification _mLocation;
+        protected TStockCB.HpSpecification _tStock;
         protected TYtrsodetailCB.HpSpecification _tYtrsodetail;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TTrpickdetailCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -552,13 +552,13 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnTrpickdetailId(); // PK
-            if (qyCall().qy().hasConditionQueryTStock()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TStockCQ) {
-                columnStockId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMLocation()
                     || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
                 columnLocationId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTStock()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TStockCQ) {
+                columnStockId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryTYtrsodetail()
                     || qyCall().qy().xgetReferrerQuery() instanceof TYtrsodetailCQ) {
@@ -567,26 +567,6 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_TRPICKDETAIL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_STOCK by my STOCK_ID, named 'TStock'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TStockCB.HpSpecification specifyTStock() {
-            assertRelation("tStock");
-            if (_tStock == null) {
-                _tStock = new TStockCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStock()
-                                    , () -> _qyCall.qy().queryTStock())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tStock.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStock()
-                      , () -> xsyncQyCall().qy().queryTStock()));
-                }
-            }
-            return _tStock;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_LOCATION by my LOCATION_ID, named 'MLocation'.
@@ -606,6 +586,26 @@ public class BsTTrpickdetailCB extends AbstractConditionBean {
                 }
             }
             return _mLocation;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_STOCK by my STOCK_ID, named 'TStock'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TStockCB.HpSpecification specifyTStock() {
+            assertRelation("tStock");
+            if (_tStock == null) {
+                _tStock = new TStockCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTStock()
+                                    , () -> _qyCall.qy().queryTStock())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tStock.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTStock()
+                      , () -> xsyncQyCall().qy().queryTStock()));
+                }
+            }
+            return _tStock;
         }
         /**
          * Prepare to specify functions about relation table. <br>

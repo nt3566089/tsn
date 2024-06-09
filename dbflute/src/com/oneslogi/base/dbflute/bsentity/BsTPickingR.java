@@ -37,7 +37,7 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     
  *
  * [foreign property]
- *     bUserByPl1OutUserId, bUserByCaseOutUserId, bUserByShippingRecordOutUserId, tPickingH, bUserByPl2OutUserId, bUserBySlipOutUserId, bUserByPackingOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
+ *     bUserByCaseOutUserId, bUserByPackingOutUserId, tPickingH, bUserByPl1OutUserId, bUserByPl2OutUserId, bUserByShippingRecordOutUserId, bUserBySlipOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
  *
  * [referrer property]
  *     
@@ -1335,25 +1335,6 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'. */
-    protected BUser _bUserByPl1OutUserId;
-
-    /**
-     * [get] B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'. <br>
-     * @return The entity of foreign property 'BUserByPl1OutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUserByPl1OutUserId() {
-        return _bUserByPl1OutUserId;
-    }
-
-    /**
-     * [set] B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-     * @param bUserByPl1OutUserId The entity of foreign property 'BUserByPl1OutUserId'. (NullAllowed)
-     */
-    public void setBUserByPl1OutUserId(BUser bUserByPl1OutUserId) {
-        _bUserByPl1OutUserId = bUserByPl1OutUserId;
-    }
-
     /** B_USER by my CASE_OUT_USER_ID, named 'BUserByCaseOutUserId'. */
     protected BUser _bUserByCaseOutUserId;
 
@@ -1373,23 +1354,23 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
         _bUserByCaseOutUserId = bUserByCaseOutUserId;
     }
 
-    /** B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'. */
-    protected BUser _bUserByShippingRecordOutUserId;
+    /** B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'. */
+    protected BUser _bUserByPackingOutUserId;
 
     /**
-     * [get] B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'. <br>
-     * @return The entity of foreign property 'BUserByShippingRecordOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'. <br>
+     * @return The entity of foreign property 'BUserByPackingOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public BUser getBUserByShippingRecordOutUserId() {
-        return _bUserByShippingRecordOutUserId;
+    public BUser getBUserByPackingOutUserId() {
+        return _bUserByPackingOutUserId;
     }
 
     /**
-     * [set] B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
-     * @param bUserByShippingRecordOutUserId The entity of foreign property 'BUserByShippingRecordOutUserId'. (NullAllowed)
+     * [set] B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
+     * @param bUserByPackingOutUserId The entity of foreign property 'BUserByPackingOutUserId'. (NullAllowed)
      */
-    public void setBUserByShippingRecordOutUserId(BUser bUserByShippingRecordOutUserId) {
-        _bUserByShippingRecordOutUserId = bUserByShippingRecordOutUserId;
+    public void setBUserByPackingOutUserId(BUser bUserByPackingOutUserId) {
+        _bUserByPackingOutUserId = bUserByPackingOutUserId;
     }
 
     /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
@@ -1411,6 +1392,25 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
         _tPickingH = tPickingH;
     }
 
+    /** B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'. */
+    protected BUser _bUserByPl1OutUserId;
+
+    /**
+     * [get] B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'. <br>
+     * @return The entity of foreign property 'BUserByPl1OutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUserByPl1OutUserId() {
+        return _bUserByPl1OutUserId;
+    }
+
+    /**
+     * [set] B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+     * @param bUserByPl1OutUserId The entity of foreign property 'BUserByPl1OutUserId'. (NullAllowed)
+     */
+    public void setBUserByPl1OutUserId(BUser bUserByPl1OutUserId) {
+        _bUserByPl1OutUserId = bUserByPl1OutUserId;
+    }
+
     /** B_USER by my PL2_OUT_USER_ID, named 'BUserByPl2OutUserId'. */
     protected BUser _bUserByPl2OutUserId;
 
@@ -1430,6 +1430,25 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
         _bUserByPl2OutUserId = bUserByPl2OutUserId;
     }
 
+    /** B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'. */
+    protected BUser _bUserByShippingRecordOutUserId;
+
+    /**
+     * [get] B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'. <br>
+     * @return The entity of foreign property 'BUserByShippingRecordOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUserByShippingRecordOutUserId() {
+        return _bUserByShippingRecordOutUserId;
+    }
+
+    /**
+     * [set] B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * @param bUserByShippingRecordOutUserId The entity of foreign property 'BUserByShippingRecordOutUserId'. (NullAllowed)
+     */
+    public void setBUserByShippingRecordOutUserId(BUser bUserByShippingRecordOutUserId) {
+        _bUserByShippingRecordOutUserId = bUserByShippingRecordOutUserId;
+    }
+
     /** B_USER by my SLIP_OUT_USER_ID, named 'BUserBySlipOutUserId'. */
     protected BUser _bUserBySlipOutUserId;
 
@@ -1447,25 +1466,6 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
      */
     public void setBUserBySlipOutUserId(BUser bUserBySlipOutUserId) {
         _bUserBySlipOutUserId = bUserBySlipOutUserId;
-    }
-
-    /** B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'. */
-    protected BUser _bUserByPackingOutUserId;
-
-    /**
-     * [get] B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'. <br>
-     * @return The entity of foreign property 'BUserByPackingOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUserByPackingOutUserId() {
-        return _bUserByPackingOutUserId;
-    }
-
-    /**
-     * [set] B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-     * @param bUserByPackingOutUserId The entity of foreign property 'BUserByPackingOutUserId'. (NullAllowed)
-     */
-    public void setBUserByPackingOutUserId(BUser bUserByPackingOutUserId) {
-        _bUserByPackingOutUserId = bUserByPackingOutUserId;
     }
 
     /** B_CLASS_DTL by my INVOICE_CREATE_FLG, named 'BClassDtlByInvoiceCreateFlg'. */
@@ -1766,20 +1766,20 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUserByPl1OutUserId != null)
-        { sb.append(li).append(xbRDS(_bUserByPl1OutUserId, "bUserByPl1OutUserId")); }
         if (_bUserByCaseOutUserId != null)
         { sb.append(li).append(xbRDS(_bUserByCaseOutUserId, "bUserByCaseOutUserId")); }
-        if (_bUserByShippingRecordOutUserId != null)
-        { sb.append(li).append(xbRDS(_bUserByShippingRecordOutUserId, "bUserByShippingRecordOutUserId")); }
-        if (_tPickingH != null)
-        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
-        if (_bUserByPl2OutUserId != null)
-        { sb.append(li).append(xbRDS(_bUserByPl2OutUserId, "bUserByPl2OutUserId")); }
-        if (_bUserBySlipOutUserId != null)
-        { sb.append(li).append(xbRDS(_bUserBySlipOutUserId, "bUserBySlipOutUserId")); }
         if (_bUserByPackingOutUserId != null)
         { sb.append(li).append(xbRDS(_bUserByPackingOutUserId, "bUserByPackingOutUserId")); }
+        if (_tPickingH != null)
+        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
+        if (_bUserByPl1OutUserId != null)
+        { sb.append(li).append(xbRDS(_bUserByPl1OutUserId, "bUserByPl1OutUserId")); }
+        if (_bUserByPl2OutUserId != null)
+        { sb.append(li).append(xbRDS(_bUserByPl2OutUserId, "bUserByPl2OutUserId")); }
+        if (_bUserByShippingRecordOutUserId != null)
+        { sb.append(li).append(xbRDS(_bUserByShippingRecordOutUserId, "bUserByShippingRecordOutUserId")); }
+        if (_bUserBySlipOutUserId != null)
+        { sb.append(li).append(xbRDS(_bUserBySlipOutUserId, "bUserBySlipOutUserId")); }
         if (_bClassDtlByInvoiceCreateFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInvoiceCreateFlg, "bClassDtlByInvoiceCreateFlg")); }
         if (_bClassDtlByOplOutFlg != null)
@@ -1864,20 +1864,20 @@ public abstract class BsTPickingR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUserByPl1OutUserId != null)
-        { sb.append(dm).append("bUserByPl1OutUserId"); }
         if (_bUserByCaseOutUserId != null)
         { sb.append(dm).append("bUserByCaseOutUserId"); }
-        if (_bUserByShippingRecordOutUserId != null)
-        { sb.append(dm).append("bUserByShippingRecordOutUserId"); }
-        if (_tPickingH != null)
-        { sb.append(dm).append("tPickingH"); }
-        if (_bUserByPl2OutUserId != null)
-        { sb.append(dm).append("bUserByPl2OutUserId"); }
-        if (_bUserBySlipOutUserId != null)
-        { sb.append(dm).append("bUserBySlipOutUserId"); }
         if (_bUserByPackingOutUserId != null)
         { sb.append(dm).append("bUserByPackingOutUserId"); }
+        if (_tPickingH != null)
+        { sb.append(dm).append("tPickingH"); }
+        if (_bUserByPl1OutUserId != null)
+        { sb.append(dm).append("bUserByPl1OutUserId"); }
+        if (_bUserByPl2OutUserId != null)
+        { sb.append(dm).append("bUserByPl2OutUserId"); }
+        if (_bUserByShippingRecordOutUserId != null)
+        { sb.append(dm).append("bUserByShippingRecordOutUserId"); }
+        if (_bUserBySlipOutUserId != null)
+        { sb.append(dm).append("bUserBySlipOutUserId"); }
         if (_bClassDtlByInvoiceCreateFlg != null)
         { sb.append(dm).append("bClassDtlByInvoiceCreateFlg"); }
         if (_bClassDtlByOplOutFlg != null)

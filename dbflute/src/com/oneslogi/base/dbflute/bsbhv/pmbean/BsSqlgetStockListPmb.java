@@ -2,7 +2,6 @@ package com.oneslogi.base.dbflute.bsbhv.pmbean;
 
 import java.util.*;
 
-import org.dbflute.outsidesql.paging.SimplePagingBean;
 import org.dbflute.outsidesql.typed.*;
 import org.dbflute.jdbc.*;
 import org.dbflute.cbean.coption.LikeSearchOption;
@@ -17,7 +16,7 @@ import com.oneslogi.base.dbflute.exentity.customize.*;
  * This is related to "<span style="color: #AD4747">selectSqlgetStockList</span>" on TStockBhv.
  * @author DBFlute(AutoGenerator)
  */
-public class BsSqlgetStockListPmb extends SimplePagingBean implements EntityHandlingPmb<TStockBhv, SqlgetStockList>, AutoPagingHandlingPmb<TStockBhv, SqlgetStockList>, FetchBean {
+public class BsSqlgetStockListPmb implements ListHandlingPmb<TStockBhv, SqlgetStockList>, EntityHandlingPmb<TStockBhv, SqlgetStockList>, FetchBean {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -46,6 +45,9 @@ public class BsSqlgetStockListPmb extends SimplePagingBean implements EntityHand
     /** The parameter of clientId. */
     protected Long _clientId;
 
+    /** The max size of safety result. */
+    protected int _safetyMaxResultSize;
+
     /** The time-zone for filtering e.g. from-to. (NullAllowed: if null, default zone) */
     protected TimeZone _timeZone;
 
@@ -57,9 +59,6 @@ public class BsSqlgetStockListPmb extends SimplePagingBean implements EntityHand
      * This is related to "<span style="color: #AD4747">selectSqlgetStockList</span>" on TStockBhv.
      */
     public BsSqlgetStockListPmb() {
-        if (DBFluteConfig.getInstance().isPagingCountLater()) {
-            enablePagingCountLater();
-        }
     }
 
     // ===================================================================================
@@ -75,6 +74,23 @@ public class BsSqlgetStockListPmb extends SimplePagingBean implements EntityHand
      * @return The type instance of an entity, customize entity. (NotNull)
      */
     public Class<SqlgetStockList> getEntityType() { return SqlgetStockList.class; }
+
+    // ===================================================================================
+    //                                                                       Safety Result
+    //                                                                       =============
+    /**
+     * {@inheritDoc}
+     */
+    public void checkSafetyResult(int safetyMaxResultSize) {
+        _safetyMaxResultSize = safetyMaxResultSize;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public int getSafetyMaxResultSize() {
+        return _safetyMaxResultSize;
+    }
 
     // ===================================================================================
     //                                                                       Assist Helper

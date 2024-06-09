@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_TRRCV, T_RECEIVE_PLAN_B
+ *     T_RECEIVE_PLAN_B, T_TRRCV
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tTrrcv, tReceivePlanB
+ *     tReceivePlanB, tTrrcv
  *
  * [referrer-property]
  *     
@@ -389,16 +389,6 @@ public abstract class BsTTrrcvdetailDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TTrrcvDto _tTrrcv;
-
-    public TTrrcvDto getTTrrcv() {
-        return _tTrrcv;
-    }
-
-    public void setTTrrcv(TTrrcvDto tTrrcv) {
-        this._tTrrcv = tTrrcv;
-    }
-
     protected TReceivePlanBDto _tReceivePlanB;
 
     public TReceivePlanBDto getTReceivePlanB() {
@@ -407,6 +397,16 @@ public abstract class BsTTrrcvdetailDto implements Serializable {
 
     public void setTReceivePlanB(TReceivePlanBDto tReceivePlanB) {
         this._tReceivePlanB = tReceivePlanB;
+    }
+
+    protected TTrrcvDto _tTrrcv;
+
+    public TTrrcvDto getTTrrcv() {
+        return _tTrrcv;
+    }
+
+    public void setTTrrcv(TTrrcvDto tTrrcv) {
+        this._tTrrcv = tTrrcv;
     }
 
     // ===================================================================================

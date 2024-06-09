@@ -67,10 +67,10 @@ public class TPalletDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPallet)et).getMClient(), (et, vl) -> ((TPallet)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((TPallet)et).getTTrpallet(), (et, vl) -> ((TPallet)et).setTTrpallet((TTrpallet)vl), "TTrpallet");
         setupEfpg(_efpgMap, et -> ((TPallet)et).getMCenter(), (et, vl) -> ((TPallet)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((TPallet)et).getMClient(), (et, vl) -> ((TPallet)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((TPallet)et).getTStock(), (et, vl) -> ((TPallet)et).setTStock((TStock)vl), "TStock");
+        setupEfpg(_efpgMap, et -> ((TPallet)et).getTTrpallet(), (et, vl) -> ((TPallet)et).setTTrpallet((TTrpallet)vl), "TTrpallet");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -224,28 +224,20 @@ public class TPalletDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_PALLET_FK4", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPalletList", false);
-    }
-    /**
-     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTTrpallet() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrpalletId(), TTrpalletDbm.getInstance().columnTrpalletId());
-        return cfi("T_PALLET_FK1", "TTrpallet", this, TTrpalletDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPalletList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_PALLET_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPalletList", false);
+        return cfi("T_PALLET_FK2", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPalletList", false);
+    }
+    /**
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("T_PALLET_FK4", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPalletList", false);
     }
     /**
      * T_STOCK by my STOCK_ID, named 'TStock'.
@@ -253,7 +245,15 @@ public class TPalletDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTStock() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), TStockDbm.getInstance().columnStockId());
-        return cfi("T_PALLET_FK3", "TStock", this, TStockDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPalletList", false);
+        return cfi("T_PALLET_FK3", "TStock", this, TStockDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPalletList", false);
+    }
+    /**
+     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTTrpallet() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrpalletId(), TTrpalletDbm.getInstance().columnTrpalletId());
+        return cfi("T_PALLET_FK1", "TTrpallet", this, TTrpalletDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPalletList", false);
     }
 
     // -----------------------------------------------------

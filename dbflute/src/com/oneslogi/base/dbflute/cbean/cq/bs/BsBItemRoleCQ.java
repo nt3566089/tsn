@@ -406,11 +406,11 @@ public class BsBItemRoleCQ extends AbstractBsBItemRoleCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BItemRoleCQ bq = (BItemRoleCQ)bqs;
         BItemRoleCQ uq = (BItemRoleCQ)uqs;
-        if (bq.hasConditionQueryBRole()) {
-            uq.queryBRole().reflectRelationOnUnionQuery(bq.queryBRole(), uq.queryBRole());
-        }
         if (bq.hasConditionQueryBItem()) {
             uq.queryBItem().reflectRelationOnUnionQuery(bq.queryBItem(), uq.queryBItem());
+        }
+        if (bq.hasConditionQueryBRole()) {
+            uq.queryBRole().reflectRelationOnUnionQuery(bq.queryBRole(), uq.queryBRole());
         }
         if (bq.hasConditionQueryBClassDtlByVisible()) {
             uq.queryBClassDtlByVisible().reflectRelationOnUnionQuery(bq.queryBClassDtlByVisible(), uq.queryBClassDtlByVisible());
@@ -423,26 +423,6 @@ public class BsBItemRoleCQ extends AbstractBsBItemRoleCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BRoleCQ queryBRole() {
-        return xdfgetConditionQueryBRole();
-    }
-    public BRoleCQ xdfgetConditionQueryBRole() {
-        String prop = "bRole";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRole()); xsetupOuterJoinBRole(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BRoleCQ xcreateQueryBRole() {
-        String nrp = xresolveNRP("B_ITEM_ROLE", "bRole"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BRoleCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRole", nrp);
-    }
-    protected void xsetupOuterJoinBRole() { xregOutJo("bRole"); }
-    public boolean hasConditionQueryBRole() { return xhasQueRlMap("bRole"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_ITEM by my ITEM_ID, named 'BItem'.
@@ -462,6 +442,26 @@ public class BsBItemRoleCQ extends AbstractBsBItemRoleCQ {
     }
     protected void xsetupOuterJoinBItem() { xregOutJo("bItem"); }
     public boolean hasConditionQueryBItem() { return xhasQueRlMap("bItem"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BRoleCQ queryBRole() {
+        return xdfgetConditionQueryBRole();
+    }
+    public BRoleCQ xdfgetConditionQueryBRole() {
+        String prop = "bRole";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRole()); xsetupOuterJoinBRole(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BRoleCQ xcreateQueryBRole() {
+        String nrp = xresolveNRP("B_ITEM_ROLE", "bRole"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BRoleCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRole", nrp);
+    }
+    protected void xsetupOuterJoinBRole() { xregOutJo("bRole"); }
+    public boolean hasConditionQueryBRole() { return xhasQueRlMap("bRole"); }
 
     /**
      * Get the condition-query for relation table. <br>

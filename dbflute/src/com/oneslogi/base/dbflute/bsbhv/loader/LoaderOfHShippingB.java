@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, H_SHIPPING_H, H_SHIPPING_SPARE(AsOne)
+ *     H_SHIPPING_H, M_STOCK_TYPE, H_SHIPPING_SPARE(AsOne)
  *
  * [referrer table]
  *     H_PACKING_B, H_SHIPPING_SPARE
  *
  * [foreign property]
- *     mStockType, hShippingH, hShippingSpareAsOne
+ *     hShippingH, mStockType, hShippingSpareAsOne
  *
  * [referrer property]
  *     hPackingBList
@@ -98,18 +98,18 @@ public class LoaderOfHShippingB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMStockType _foreignMStockTypeLoader;
-    public LoaderOfMStockType pulloutMStockType() {
-        if (_foreignMStockTypeLoader == null)
-        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
-        return _foreignMStockTypeLoader;
-    }
-
     protected LoaderOfHShippingH _foreignHShippingHLoader;
     public LoaderOfHShippingH pulloutHShippingH() {
         if (_foreignHShippingHLoader == null)
         { _foreignHShippingHLoader = new LoaderOfHShippingH().ready(myBhv().pulloutHShippingH(_selectedList), _selector); }
         return _foreignHShippingHLoader;
+    }
+
+    protected LoaderOfMStockType _foreignMStockTypeLoader;
+    public LoaderOfMStockType pulloutMStockType() {
+        if (_foreignMStockTypeLoader == null)
+        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
+        return _foreignMStockTypeLoader;
     }
 
     protected LoaderOfHShippingSpare _foreignHShippingSpareAsOneLoader;

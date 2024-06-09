@@ -20,12 +20,12 @@ public class MMfwhxitemNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,11 +38,11 @@ public class MMfwhxitemNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
 }

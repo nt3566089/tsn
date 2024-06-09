@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PROCESS_TYPE, M_CENTER, M_CLIENT, T_ALLOC_INST_H, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_H, T_PICKING_B, T_PIC_MTHD_RCMD_DATA, T_RECEIVE_PLAN_H, W_SGL_ROW_SHIP_INSP_B, T_PICKING_R
  *
  * [foreign property]
- *     mProcessType, mCenter, mClient, tAllocInstH, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
+ *     tAllocInstH, mCenter, mClient, mProcessType, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
  *
  * [referrer property]
  *     tPackingHList, tPickingBList, tPicMthdRcmdDataList, tReceivePlanHList, wSglRowShipInspBList
@@ -853,12 +853,12 @@ public abstract class BsTPickingHBhv extends AbstractBehaviorWritable<TPickingH,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MProcessType'.
+     * Pull out the list of foreign table 'TAllocInstH'.
      * @param tPickingHList The list of tPickingH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MProcessType> pulloutMProcessType(List<TPickingH> tPickingHList)
-    { return helpPulloutInternally(tPickingHList, "mProcessType"); }
+    public List<TAllocInstH> pulloutTAllocInstH(List<TPickingH> tPickingHList)
+    { return helpPulloutInternally(tPickingHList, "tAllocInstH"); }
 
     /**
      * Pull out the list of foreign table 'MCenter'.
@@ -877,12 +877,12 @@ public abstract class BsTPickingHBhv extends AbstractBehaviorWritable<TPickingH,
     { return helpPulloutInternally(tPickingHList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'TAllocInstH'.
+     * Pull out the list of foreign table 'MProcessType'.
      * @param tPickingHList The list of tPickingH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TAllocInstH> pulloutTAllocInstH(List<TPickingH> tPickingHList)
-    { return helpPulloutInternally(tPickingHList, "tAllocInstH"); }
+    public List<MProcessType> pulloutMProcessType(List<TPickingH> tPickingHList)
+    { return helpPulloutInternally(tPickingHList, "mProcessType"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

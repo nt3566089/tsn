@@ -120,6 +120,10 @@ public class InventoryCreateResource extends AbstractWmsResource {
 		 * 仕分場在庫調査(終了)の指示が作成されていないため、在庫調査指示が作成できません
 		 */
 		protected static final int SORTING_INVENTORY_INCOMPLETE = 14;
+		/**
+		 * 登録エラー
+		 */
+		protected static final int REGISTER_ERROR = 16;
 
 	}
 	
@@ -323,7 +327,7 @@ public class InventoryCreateResource extends AbstractWmsResource {
 				break;
 			default:
 		}
-		inventoryCreateLogic.registerInventory(entity,clientCenter,center,client,null);
+		inventoryCreateLogic.registerInventory(entity,clientCenter,center,client,new ErrorStatus(StatusCode.REGISTER_ERROR));
 		// 結果判定
 		if (getErrorManager().size() > 0) {
 			return null;

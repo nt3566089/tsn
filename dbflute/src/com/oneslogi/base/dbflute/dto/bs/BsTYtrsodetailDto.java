@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_YTRSO, M_PRODUCT
+ *     M_PRODUCT, T_YTRSO
  *
  * [referrer-table]
  *     T_TRIMALLOCSCHKRI, T_TRPICKDETAIL
  *
  * [foreign-property]
- *     tYtrso, mProduct
+ *     mProduct, tYtrso
  *
  * [referrer-property]
  *     tTrimallocschkriList, tTrpickdetailList
@@ -197,16 +197,6 @@ public abstract class BsTYtrsodetailDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TYtrsoDto _tYtrso;
-
-    public TYtrsoDto getTYtrso() {
-        return _tYtrso;
-    }
-
-    public void setTYtrso(TYtrsoDto tYtrso) {
-        this._tYtrso = tYtrso;
-    }
-
     protected MProductDto _mProduct;
 
     public MProductDto getMProduct() {
@@ -215,6 +205,16 @@ public abstract class BsTYtrsodetailDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
+    }
+
+    protected TYtrsoDto _tYtrso;
+
+    public TYtrsoDto getTYtrso() {
+        return _tYtrso;
+    }
+
+    public void setTYtrso(TYtrsoDto tYtrso) {
+        this._tYtrso = tYtrso;
     }
 
     // ===================================================================================

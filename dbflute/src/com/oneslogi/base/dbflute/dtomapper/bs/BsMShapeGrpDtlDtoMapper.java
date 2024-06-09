@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_SHAPE, M_SHAPE_GRP, B_CLASS_DTL(ByCasePickFlg)
+ *     M_SHAPE_GRP, M_SHAPE, B_CLASS_DTL(ByCasePickFlg)
  *
  * [referrer-table]
  *     M_PRODUCT_SHAPE
  *
  * [foreign-property]
- *     mShape, mShapeGrp, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
+ *     mShapeGrp, mShape, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
  *
  * [referrer-property]
  *     mProductShapeList
@@ -70,8 +70,8 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMShape;
     protected boolean _suppressMShapeGrp;
+    protected boolean _suppressMShape;
     protected boolean _suppressBClassDtlByCasePickFlg;
     protected boolean _suppressBClassDtlByEmReplenishShapeFlg;
     protected boolean _suppressBClassDtlByDelFlg;
@@ -150,32 +150,6 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMShape && entity.getMShape() != null) {
-            MShape relationEntity = entity.getMShape();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MShapeDto relationDto = (MShapeDto)cachedDto;
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getMShapeGrpDtlList().add(dto);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMShapeGrpDtlList();
-                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMShape(relationDto);
-                if (reverseReference) {
-                    relationDto.getMShapeGrpDtlList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMShape());
-                }
-            }
-        };
         if (!_suppressMShapeGrp && entity.getMShapeGrp() != null) {
             MShapeGrp relationEntity = entity.getMShapeGrp();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -199,6 +173,32 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMShapeGrp());
+                }
+            }
+        };
+        if (!_suppressMShape && entity.getMShape() != null) {
+            MShape relationEntity = entity.getMShape();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MShapeDto relationDto = (MShapeDto)cachedDto;
+                dto.setMShape(relationDto);
+                if (reverseReference) {
+                    relationDto.getMShapeGrpDtlList().add(dto);
+                }
+            } else {
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMShapeGrpDtlList();
+                MShapeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMShape(relationDto);
+                if (reverseReference) {
+                    relationDto.getMShapeGrpDtlList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMShape());
                 }
             }
         };
@@ -380,32 +380,6 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMShape && dto.getMShape() != null) {
-            MShapeDto relationDto = dto.getMShape();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MShape relationEntity = (MShape)cachedEntity;
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMShapeGrpDtlList().add(entity);
-                }
-            } else {
-                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMShapeGrpDtlList();
-                MShape relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMShape(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMShapeGrpDtlList().add(entity);
-                }
-                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMShape());
-                }
-            }
-        };
         if (!_suppressMShapeGrp && dto.getMShapeGrp() != null) {
             MShapeGrpDto relationDto = dto.getMShapeGrp();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -429,6 +403,32 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
                 }
                 if (instanceCache && entity.getMShapeGrp().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMShapeGrp());
+                }
+            }
+        };
+        if (!_suppressMShape && dto.getMShape() != null) {
+            MShapeDto relationDto = dto.getMShape();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MShape relationEntity = (MShape)cachedEntity;
+                entity.setMShape(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMShapeGrpDtlList().add(entity);
+                }
+            } else {
+                MShapeDtoMapper mapper = new MShapeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMShapeGrpDtlList();
+                MShape relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMShape(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMShapeGrpDtlList().add(entity);
+                }
+                if (instanceCache && entity.getMShape().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMShape());
                 }
             }
         };
@@ -633,11 +633,11 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMShape() {
-        _suppressMShape = true;
-    }
     public void suppressMShapeGrp() {
         _suppressMShapeGrp = true;
+    }
+    public void suppressMShape() {
+        _suppressMShape = true;
     }
     public void suppressBClassDtlByCasePickFlg() {
         _suppressBClassDtlByCasePickFlg = true;
@@ -652,16 +652,16 @@ public abstract class BsMShapeGrpDtlDtoMapper implements DtoMapper<MShapeGrpDtl,
         _suppressMProductShapeList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMShape();
         suppressMShapeGrp();
+        suppressMShape();
         suppressBClassDtlByCasePickFlg();
         suppressBClassDtlByEmReplenishShapeFlg();
         suppressBClassDtlByDelFlg();
         suppressMProductShapeList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMShape = false;
         _suppressMShapeGrp = false;
+        _suppressMShape = false;
         _suppressBClassDtlByCasePickFlg = false;
         _suppressBClassDtlByEmReplenishShapeFlg = false;
         _suppressBClassDtlByDelFlg = false;

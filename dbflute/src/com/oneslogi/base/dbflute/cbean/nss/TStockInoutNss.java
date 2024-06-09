@@ -29,30 +29,21 @@ public class TStockInoutNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TStockInoutNss withTStockInoutByBfStockInoutIdSelf() {
+        _query.xdoNss(() -> _query.queryTStockInoutByBfStockInoutIdSelf());
+        return new TStockInoutNss(_query.queryTStockInoutByBfStockInoutIdSelf());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * T_STOCK_INOUT by my FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelf'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TStockInoutNss withTStockInoutByFsStockInoutIdSelf() {
         _query.xdoNss(() -> _query.queryTStockInoutByFsStockInoutIdSelf());
         return new TStockInoutNss(_query.queryTStockInoutByFsStockInoutIdSelf());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TStoreRecordBNss withTStoreRecordB() {
-        _query.xdoNss(() -> _query.queryTStoreRecordB());
-        return new TStoreRecordBNss(_query.queryTStoreRecordB());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MProcessTypeNss withMProcessType() {
-        _query.xdoNss(() -> _query.queryMProcessType());
-        return new MProcessTypeNss(_query.queryMProcessType());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -65,6 +56,15 @@ public class TStockInoutNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MProcessTypeNss withMProcessType() {
+        _query.xdoNss(() -> _query.queryMProcessType());
+        return new MProcessTypeNss(_query.queryMProcessType());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * T_STOCK by my STOCK_ID, named 'TStock'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -74,12 +74,12 @@ public class TStockInoutNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TStockInoutNss withTStockInoutByBfStockInoutIdSelf() {
-        _query.xdoNss(() -> _query.queryTStockInoutByBfStockInoutIdSelf());
-        return new TStockInoutNss(_query.queryTStockInoutByBfStockInoutIdSelf());
+    public TStoreRecordBNss withTStoreRecordB() {
+        _query.xdoNss(() -> _query.queryTStoreRecordB());
+        return new TStoreRecordBNss(_query.queryTStoreRecordB());
     }
     /**
      * With nested relation columns to select clause. <br>

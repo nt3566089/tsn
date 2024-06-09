@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_LOT, M_WAREHOUSE, M_CUSTOMER, M_LOCATION, M_PRODUCT, M_SHAPE, T_STORE_NO, M_STOCK_TYPE, T_ALLOC_INST_H, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
+ *     T_ALLOC_INST_H, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
  *
  * [referrer-table]
  *     T_PACKING_B, T_PICKING_B, T_SHIPPING_INST_B, T_STOCK_INOUT, T_ALLOC_LOT
  *
  * [foreign-property]
- *     tLot, mWarehouse, mCustomer, mLocation, mProduct, mShape, tStoreNo, mStockType, tAllocInstH, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
+ *     tAllocInstH, mCustomer, mLocation, tLot, mProduct, mShape, mStockType, tStoreNo, mWarehouse, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
  *
  * [referrer-property]
  *     tPackingBList, tPickingBList, tShippingInstBList, tStockInoutList
@@ -213,24 +213,14 @@ public abstract class BsTAllocInstBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TLotDto _tLot;
+    protected TAllocInstHDto _tAllocInstH;
 
-    public TLotDto getTLot() {
-        return _tLot;
+    public TAllocInstHDto getTAllocInstH() {
+        return _tAllocInstH;
     }
 
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
-    protected MWarehouseDto _mWarehouse;
-
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
+    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
+        this._tAllocInstH = tAllocInstH;
     }
 
     protected MCustomerDto _mCustomer;
@@ -253,6 +243,16 @@ public abstract class BsTAllocInstBDto implements Serializable {
         this._mLocation = mLocation;
     }
 
+    protected TLotDto _tLot;
+
+    public TLotDto getTLot() {
+        return _tLot;
+    }
+
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
+    }
+
     protected MProductDto _mProduct;
 
     public MProductDto getMProduct() {
@@ -273,16 +273,6 @@ public abstract class BsTAllocInstBDto implements Serializable {
         this._mShape = mShape;
     }
 
-    protected TStoreNoDto _tStoreNo;
-
-    public TStoreNoDto getTStoreNo() {
-        return _tStoreNo;
-    }
-
-    public void setTStoreNo(TStoreNoDto tStoreNo) {
-        this._tStoreNo = tStoreNo;
-    }
-
     protected MStockTypeDto _mStockType;
 
     public MStockTypeDto getMStockType() {
@@ -293,14 +283,24 @@ public abstract class BsTAllocInstBDto implements Serializable {
         this._mStockType = mStockType;
     }
 
-    protected TAllocInstHDto _tAllocInstH;
+    protected TStoreNoDto _tStoreNo;
 
-    public TAllocInstHDto getTAllocInstH() {
-        return _tAllocInstH;
+    public TStoreNoDto getTStoreNo() {
+        return _tStoreNo;
     }
 
-    public void setTAllocInstH(TAllocInstHDto tAllocInstH) {
-        this._tAllocInstH = tAllocInstH;
+    public void setTStoreNo(TStoreNoDto tStoreNo) {
+        this._tStoreNo = tStoreNo;
+    }
+
+    protected MWarehouseDto _mWarehouse;
+
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     protected BClassDtlDto _bClassDtlByLimitDtManagFlg;

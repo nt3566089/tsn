@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_FUNC, B_DICT, V_HT_DICT, B_ARG_VALID(AsOne)
+ *     B_DICT, B_FUNC, V_HT_DICT, B_ARG_VALID(AsOne)
  *
  * [referrer table]
  *     B_ARG_VALID
  *
  * [foreign property]
- *     bFunc, bDict, vHtDict, bArgValidAsOne
+ *     bDict, bFunc, vHtDict, bArgValidAsOne
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsBArgBhv extends AbstractBehaviorWritable<BArg, BArgCB> {
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BFunc'.
-     * @param bArgList The list of bArg. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BFunc> pulloutBFunc(List<BArg> bArgList)
-    { return helpPulloutInternally(bArgList, "bFunc"); }
-
-    /**
      * Pull out the list of foreign table 'BDict'.
      * @param bArgList The list of bArg. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BDict> pulloutBDict(List<BArg> bArgList)
     { return helpPulloutInternally(bArgList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'BFunc'.
+     * @param bArgList The list of bArg. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BFunc> pulloutBFunc(List<BArg> bArgList)
+    { return helpPulloutInternally(bArgList, "bFunc"); }
 
     /**
      * Pull out the list of foreign table 'VHtDict'.

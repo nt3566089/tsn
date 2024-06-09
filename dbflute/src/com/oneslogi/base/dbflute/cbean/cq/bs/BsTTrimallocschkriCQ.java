@@ -540,37 +540,17 @@ public class BsTTrimallocschkriCQ extends AbstractBsTTrimallocschkriCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TTrimallocschkriCQ bq = (TTrimallocschkriCQ)bqs;
         TTrimallocschkriCQ uq = (TTrimallocschkriCQ)uqs;
-        if (bq.hasConditionQueryTYtrsodetail()) {
-            uq.queryTYtrsodetail().reflectRelationOnUnionQuery(bq.queryTYtrsodetail(), uq.queryTYtrsodetail());
-        }
         if (bq.hasConditionQueryTTrimallocH()) {
             uq.queryTTrimallocH().reflectRelationOnUnionQuery(bq.queryTTrimallocH(), uq.queryTTrimallocH());
+        }
+        if (bq.hasConditionQueryTYtrsodetail()) {
+            uq.queryTYtrsodetail().reflectRelationOnUnionQuery(bq.queryTYtrsodetail(), uq.queryTYtrsodetail());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TYtrsodetailCQ queryTYtrsodetail() {
-        return xdfgetConditionQueryTYtrsodetail();
-    }
-    public TYtrsodetailCQ xdfgetConditionQueryTYtrsodetail() {
-        String prop = "tYtrsodetail";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTYtrsodetail()); xsetupOuterJoinTYtrsodetail(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TYtrsodetailCQ xcreateQueryTYtrsodetail() {
-        String nrp = xresolveNRP("T_TRIMALLOCSCHKRI", "tYtrsodetail"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TYtrsodetailCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tYtrsodetail", nrp);
-    }
-    protected void xsetupOuterJoinTYtrsodetail() { xregOutJo("tYtrsodetail"); }
-    public boolean hasConditionQueryTYtrsodetail() { return xhasQueRlMap("tYtrsodetail"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
@@ -590,6 +570,26 @@ public class BsTTrimallocschkriCQ extends AbstractBsTTrimallocschkriCQ {
     }
     protected void xsetupOuterJoinTTrimallocH() { xregOutJo("tTrimallocH"); }
     public boolean hasConditionQueryTTrimallocH() { return xhasQueRlMap("tTrimallocH"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TYtrsodetailCQ queryTYtrsodetail() {
+        return xdfgetConditionQueryTYtrsodetail();
+    }
+    public TYtrsodetailCQ xdfgetConditionQueryTYtrsodetail() {
+        String prop = "tYtrsodetail";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTYtrsodetail()); xsetupOuterJoinTYtrsodetail(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TYtrsodetailCQ xcreateQueryTYtrsodetail() {
+        String nrp = xresolveNRP("T_TRIMALLOCSCHKRI", "tYtrsodetail"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TYtrsodetailCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tYtrsodetail", nrp);
+    }
+    protected void xsetupOuterJoinTYtrsodetail() { xregOutJo("tYtrsodetail"); }
+    public boolean hasConditionQueryTYtrsodetail() { return xhasQueRlMap("tYtrsodetail"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

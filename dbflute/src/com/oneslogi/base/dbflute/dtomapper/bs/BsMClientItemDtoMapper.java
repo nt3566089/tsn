@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ITEM, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_DICT, B_ITEM, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bItem, mClient, bDict, vDict
+ *     mClient, bDict, bItem, vDict
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBItem;
     protected boolean _suppressMClient;
     protected boolean _suppressBDict;
+    protected boolean _suppressBItem;
     protected boolean _suppressVDict;
 
     // ===================================================================================
@@ -148,32 +148,6 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBItem && entity.getBItem() != null) {
-            BItem relationEntity = entity.getBItem();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BItemDto relationDto = (BItemDto)cachedDto;
-                dto.setBItem(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientItemList().add(dto);
-                }
-            } else {
-                BItemDtoMapper mapper = new BItemDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientItemList();
-                BItemDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBItem(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientItemList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBItem());
-                }
-            }
-        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -223,6 +197,32 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
+                }
+            }
+        };
+        if (!_suppressBItem && entity.getBItem() != null) {
+            BItem relationEntity = entity.getBItem();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BItemDto relationDto = (BItemDto)cachedDto;
+                dto.setBItem(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientItemList().add(dto);
+                }
+            } else {
+                BItemDtoMapper mapper = new BItemDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientItemList();
+                BItemDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBItem(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientItemList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBItem());
                 }
             }
         };
@@ -344,32 +344,6 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBItem && dto.getBItem() != null) {
-            BItemDto relationDto = dto.getBItem();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BItem relationEntity = (BItem)cachedEntity;
-                entity.setBItem(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientItemList().add(entity);
-                }
-            } else {
-                BItemDtoMapper mapper = new BItemDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientItemList();
-                BItem relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBItem(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientItemList().add(entity);
-                }
-                if (instanceCache && entity.getBItem().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBItem());
-                }
-            }
-        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -419,6 +393,32 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
+                }
+            }
+        };
+        if (!_suppressBItem && dto.getBItem() != null) {
+            BItemDto relationDto = dto.getBItem();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BItem relationEntity = (BItem)cachedEntity;
+                entity.setBItem(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientItemList().add(entity);
+                }
+            } else {
+                BItemDtoMapper mapper = new BItemDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientItemList();
+                BItem relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBItem(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientItemList().add(entity);
+                }
+                if (instanceCache && entity.getBItem().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBItem());
                 }
             }
         };
@@ -563,28 +563,28 @@ public abstract class BsMClientItemDtoMapper implements DtoMapper<MClientItem, M
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBItem() {
-        _suppressBItem = true;
-    }
     public void suppressMClient() {
         _suppressMClient = true;
     }
     public void suppressBDict() {
         _suppressBDict = true;
     }
+    public void suppressBItem() {
+        _suppressBItem = true;
+    }
     public void suppressVDict() {
         _suppressVDict = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBItem();
         suppressMClient();
         suppressBDict();
+        suppressBItem();
         suppressVDict();
     }
     protected void doSuppressClear() { // internal
-        _suppressBItem = false;
         _suppressMClient = false;
         _suppressBDict = false;
+        _suppressBItem = false;
         _suppressVDict = false;
     }
 

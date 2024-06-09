@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_PIC_MTHD_RCMD, T_PACKING_H
+ *     T_PACKING_H, T_PIC_MTHD_RCMD
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tPicMthdRcmd, tPackingH
+ *     tPackingH, tPicMthdRcmd
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTPicMthdRcmd;
     protected boolean _suppressTPackingH;
+    protected boolean _suppressTPicMthdRcmd;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -143,32 +143,6 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTPicMthdRcmd && entity.getTPicMthdRcmd() != null) {
-            TPicMthdRcmd relationEntity = entity.getTPicMthdRcmd();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TPicMthdRcmdDto relationDto = (TPicMthdRcmdDto)cachedDto;
-                dto.setTPicMthdRcmd(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPicMthdRcmdCartList().add(dto);
-                }
-            } else {
-                TPicMthdRcmdDtoMapper mapper = new TPicMthdRcmdDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPicMthdRcmdCartList();
-                TPicMthdRcmdDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTPicMthdRcmd(relationDto);
-                if (reverseReference) {
-                    relationDto.getTPicMthdRcmdCartList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTPicMthdRcmd());
-                }
-            }
-        };
         if (!_suppressTPackingH && entity.getTPackingH() != null) {
             TPackingH relationEntity = entity.getTPackingH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -192,6 +166,32 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTPackingH());
+                }
+            }
+        };
+        if (!_suppressTPicMthdRcmd && entity.getTPicMthdRcmd() != null) {
+            TPicMthdRcmd relationEntity = entity.getTPicMthdRcmd();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TPicMthdRcmdDto relationDto = (TPicMthdRcmdDto)cachedDto;
+                dto.setTPicMthdRcmd(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPicMthdRcmdCartList().add(dto);
+                }
+            } else {
+                TPicMthdRcmdDtoMapper mapper = new TPicMthdRcmdDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPicMthdRcmdCartList();
+                TPicMthdRcmdDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTPicMthdRcmd(relationDto);
+                if (reverseReference) {
+                    relationDto.getTPicMthdRcmdCartList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTPicMthdRcmd());
                 }
             }
         };
@@ -281,32 +281,6 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTPicMthdRcmd && dto.getTPicMthdRcmd() != null) {
-            TPicMthdRcmdDto relationDto = dto.getTPicMthdRcmd();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TPicMthdRcmd relationEntity = (TPicMthdRcmd)cachedEntity;
-                entity.setTPicMthdRcmd(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPicMthdRcmdCartList().add(entity);
-                }
-            } else {
-                TPicMthdRcmdDtoMapper mapper = new TPicMthdRcmdDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTPicMthdRcmdCartList();
-                TPicMthdRcmd relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTPicMthdRcmd(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTPicMthdRcmdCartList().add(entity);
-                }
-                if (instanceCache && entity.getTPicMthdRcmd().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTPicMthdRcmd());
-                }
-            }
-        };
         if (!_suppressTPackingH && dto.getTPackingH() != null) {
             TPackingHDto relationDto = dto.getTPackingH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -330,6 +304,32 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
                 }
                 if (instanceCache && entity.getTPackingH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTPackingH());
+                }
+            }
+        };
+        if (!_suppressTPicMthdRcmd && dto.getTPicMthdRcmd() != null) {
+            TPicMthdRcmdDto relationDto = dto.getTPicMthdRcmd();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TPicMthdRcmd relationEntity = (TPicMthdRcmd)cachedEntity;
+                entity.setTPicMthdRcmd(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPicMthdRcmdCartList().add(entity);
+                }
+            } else {
+                TPicMthdRcmdDtoMapper mapper = new TPicMthdRcmdDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTPicMthdRcmdCartList();
+                TPicMthdRcmd relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTPicMthdRcmd(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTPicMthdRcmdCartList().add(entity);
+                }
+                if (instanceCache && entity.getTPicMthdRcmd().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTPicMthdRcmd());
                 }
             }
         };
@@ -451,19 +451,19 @@ public abstract class BsTPicMthdRcmdCartDtoMapper implements DtoMapper<TPicMthdR
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTPicMthdRcmd() {
-        _suppressTPicMthdRcmd = true;
-    }
     public void suppressTPackingH() {
         _suppressTPackingH = true;
     }
+    public void suppressTPicMthdRcmd() {
+        _suppressTPicMthdRcmd = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressTPicMthdRcmd();
         suppressTPackingH();
+        suppressTPicMthdRcmd();
     }
     protected void doSuppressClear() { // internal
-        _suppressTPicMthdRcmd = false;
         _suppressTPackingH = false;
+        _suppressTPicMthdRcmd = false;
     }
 
     // ===================================================================================

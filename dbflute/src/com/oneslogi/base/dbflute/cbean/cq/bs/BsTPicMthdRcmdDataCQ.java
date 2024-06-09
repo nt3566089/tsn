@@ -366,37 +366,17 @@ public class BsTPicMthdRcmdDataCQ extends AbstractBsTPicMthdRcmdDataCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPicMthdRcmdDataCQ bq = (TPicMthdRcmdDataCQ)bqs;
         TPicMthdRcmdDataCQ uq = (TPicMthdRcmdDataCQ)uqs;
-        if (bq.hasConditionQueryTPicMthdRcmd()) {
-            uq.queryTPicMthdRcmd().reflectRelationOnUnionQuery(bq.queryTPicMthdRcmd(), uq.queryTPicMthdRcmd());
-        }
         if (bq.hasConditionQueryTPickingH()) {
             uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
+        }
+        if (bq.hasConditionQueryTPicMthdRcmd()) {
+            uq.queryTPicMthdRcmd().reflectRelationOnUnionQuery(bq.queryTPicMthdRcmd(), uq.queryTPicMthdRcmd());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TPicMthdRcmdCQ queryTPicMthdRcmd() {
-        return xdfgetConditionQueryTPicMthdRcmd();
-    }
-    public TPicMthdRcmdCQ xdfgetConditionQueryTPicMthdRcmd() {
-        String prop = "tPicMthdRcmd";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPicMthdRcmd()); xsetupOuterJoinTPicMthdRcmd(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TPicMthdRcmdCQ xcreateQueryTPicMthdRcmd() {
-        String nrp = xresolveNRP("T_PIC_MTHD_RCMD_DATA", "tPicMthdRcmd"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TPicMthdRcmdCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPicMthdRcmd", nrp);
-    }
-    protected void xsetupOuterJoinTPicMthdRcmd() { xregOutJo("tPicMthdRcmd"); }
-    public boolean hasConditionQueryTPicMthdRcmd() { return xhasQueRlMap("tPicMthdRcmd"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
@@ -416,6 +396,26 @@ public class BsTPicMthdRcmdDataCQ extends AbstractBsTPicMthdRcmdDataCQ {
     }
     protected void xsetupOuterJoinTPickingH() { xregOutJo("tPickingH"); }
     public boolean hasConditionQueryTPickingH() { return xhasQueRlMap("tPickingH"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TPicMthdRcmdCQ queryTPicMthdRcmd() {
+        return xdfgetConditionQueryTPicMthdRcmd();
+    }
+    public TPicMthdRcmdCQ xdfgetConditionQueryTPicMthdRcmd() {
+        String prop = "tPicMthdRcmd";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPicMthdRcmd()); xsetupOuterJoinTPicMthdRcmd(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TPicMthdRcmdCQ xcreateQueryTPicMthdRcmd() {
+        String nrp = xresolveNRP("T_PIC_MTHD_RCMD_DATA", "tPicMthdRcmd"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TPicMthdRcmdCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPicMthdRcmd", nrp);
+    }
+    protected void xsetupOuterJoinTPicMthdRcmd() { xregOutJo("tPicMthdRcmd"); }
+    public boolean hasConditionQueryTPicMthdRcmd() { return xhasQueRlMap("tPicMthdRcmd"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

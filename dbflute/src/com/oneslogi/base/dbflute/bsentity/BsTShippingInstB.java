@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_WAREHOUSE, T_LOT, T_ALLOC_INST_B, T_STORE_NO, M_STOCK_TYPE, M_LOCATION, T_SHIPPING_INST_H, M_PRODUCT, M_CUSTOMER, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
+ *     T_ALLOC_INST_B, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, T_SHIPPING_INST_H, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
  *
  * [referrer table]
  *     T_PICKING_B, T_SHIPPING_INST_SPARE
  *
  * [foreign property]
- *     mShape, mWarehouse, tLot, tAllocInstB, tStoreNo, mStockType, mLocation, tShippingInstH, mProduct, mCustomer, bClassDtlByErrorFlg, tShippingInstSpareAsOne
+ *     tAllocInstB, mCustomer, mLocation, tLot, mProduct, mShape, tShippingInstH, mStockType, tStoreNo, mWarehouse, bClassDtlByErrorFlg, tShippingInstSpareAsOne
  *
  * [referrer property]
  *     tPickingBList
@@ -446,63 +446,6 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
-    protected MShape _mShape;
-
-    /**
-     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
-     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MShape getMShape() {
-        return _mShape;
-    }
-
-    /**
-     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
-     */
-    public void setMShape(MShape mShape) {
-        _mShape = mShape;
-    }
-
-    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
-    protected MWarehouse _mWarehouse;
-
-    /**
-     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
-     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MWarehouse getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    /**
-     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
-     */
-    public void setMWarehouse(MWarehouse mWarehouse) {
-        _mWarehouse = mWarehouse;
-    }
-
-    /** T_LOT by my LOT_ID, named 'TLot'. */
-    protected TLot _tLot;
-
-    /**
-     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
-     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TLot getTLot() {
-        return _tLot;
-    }
-
-    /**
-     * [set] T_LOT by my LOT_ID, named 'TLot'.
-     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
-     */
-    public void setTLot(TLot tLot) {
-        _tLot = tLot;
-    }
-
     /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
     protected TAllocInstB _tAllocInstB;
 
@@ -522,42 +465,23 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
         _tAllocInstB = tAllocInstB;
     }
 
-    /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
-    protected TStoreNo _tStoreNo;
+    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. */
+    protected MCustomer _mCustomer;
 
     /**
-     * [get] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. <br>
-     * @return The entity of foreign property 'TStoreNo'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. <br>
+     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TStoreNo getTStoreNo() {
-        return _tStoreNo;
+    public MCustomer getMCustomer() {
+        return _mCustomer;
     }
 
     /**
-     * [set] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * @param tStoreNo The entity of foreign property 'TStoreNo'. (NullAllowed)
+     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
      */
-    public void setTStoreNo(TStoreNo tStoreNo) {
-        _tStoreNo = tStoreNo;
-    }
-
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
-
-    /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MStockType getMStockType() {
-        return _mStockType;
-    }
-
-    /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
-     */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
+    public void setMCustomer(MCustomer mCustomer) {
+        _mCustomer = mCustomer;
     }
 
     /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
@@ -579,23 +503,23 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
         _mLocation = mLocation;
     }
 
-    /** T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. */
-    protected TShippingInstH _tShippingInstH;
+    /** T_LOT by my LOT_ID, named 'TLot'. */
+    protected TLot _tLot;
 
     /**
-     * [get] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. <br>
-     * @return The entity of foreign property 'TShippingInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
+     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TShippingInstH getTShippingInstH() {
-        return _tShippingInstH;
+    public TLot getTLot() {
+        return _tLot;
     }
 
     /**
-     * [set] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @param tShippingInstH The entity of foreign property 'TShippingInstH'. (NullAllowed)
+     * [set] T_LOT by my LOT_ID, named 'TLot'.
+     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
      */
-    public void setTShippingInstH(TShippingInstH tShippingInstH) {
-        _tShippingInstH = tShippingInstH;
+    public void setTLot(TLot tLot) {
+        _tLot = tLot;
     }
 
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
@@ -617,23 +541,99 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
         _mProduct = mProduct;
     }
 
-    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. */
-    protected MCustomer _mCustomer;
+    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
+    protected MShape _mShape;
 
     /**
-     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. <br>
-     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
+     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCustomer getMCustomer() {
-        return _mCustomer;
+    public MShape getMShape() {
+        return _mShape;
     }
 
     /**
-     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
+     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
      */
-    public void setMCustomer(MCustomer mCustomer) {
-        _mCustomer = mCustomer;
+    public void setMShape(MShape mShape) {
+        _mShape = mShape;
+    }
+
+    /** T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. */
+    protected TShippingInstH _tShippingInstH;
+
+    /**
+     * [get] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. <br>
+     * @return The entity of foreign property 'TShippingInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TShippingInstH getTShippingInstH() {
+        return _tShippingInstH;
+    }
+
+    /**
+     * [set] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @param tShippingInstH The entity of foreign property 'TShippingInstH'. (NullAllowed)
+     */
+    public void setTShippingInstH(TShippingInstH tShippingInstH) {
+        _tShippingInstH = tShippingInstH;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
+    }
+
+    /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
+    protected TStoreNo _tStoreNo;
+
+    /**
+     * [get] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. <br>
+     * @return The entity of foreign property 'TStoreNo'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TStoreNo getTStoreNo() {
+        return _tStoreNo;
+    }
+
+    /**
+     * [set] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
+     * @param tStoreNo The entity of foreign property 'TStoreNo'. (NullAllowed)
+     */
+    public void setTStoreNo(TStoreNo tStoreNo) {
+        _tStoreNo = tStoreNo;
+    }
+
+    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
+    protected MWarehouse _mWarehouse;
+
+    /**
+     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
+     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MWarehouse getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    /**
+     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     */
+    public void setMWarehouse(MWarehouse mWarehouse) {
+        _mWarehouse = mWarehouse;
     }
 
     /** B_CLASS_DTL by my ERROR_FLG, named 'BClassDtlByErrorFlg'. */
@@ -726,26 +726,26 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mShape != null)
-        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
-        if (_mWarehouse != null)
-        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_tAllocInstB != null)
         { sb.append(li).append(xbRDS(_tAllocInstB, "tAllocInstB")); }
-        if (_tStoreNo != null)
-        { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
-        if (_mLocation != null)
-        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
-        if (_tShippingInstH != null)
-        { sb.append(li).append(xbRDS(_tShippingInstH, "tShippingInstH")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
+        if (_mLocation != null)
+        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_mShape != null)
+        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
+        if (_tShippingInstH != null)
+        { sb.append(li).append(xbRDS(_tShippingInstH, "tShippingInstH")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
+        if (_tStoreNo != null)
+        { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
+        if (_mWarehouse != null)
+        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         if (_bClassDtlByErrorFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByErrorFlg, "bClassDtlByErrorFlg")); }
         if (_tShippingInstSpareAsOne != null)
@@ -807,26 +807,26 @@ public abstract class BsTShippingInstB extends AbstractEntity implements DomainE
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mShape != null)
-        { sb.append(dm).append("mShape"); }
-        if (_mWarehouse != null)
-        { sb.append(dm).append("mWarehouse"); }
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
         if (_tAllocInstB != null)
         { sb.append(dm).append("tAllocInstB"); }
-        if (_tStoreNo != null)
-        { sb.append(dm).append("tStoreNo"); }
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
-        if (_mLocation != null)
-        { sb.append(dm).append("mLocation"); }
-        if (_tShippingInstH != null)
-        { sb.append(dm).append("tShippingInstH"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
+        if (_mLocation != null)
+        { sb.append(dm).append("mLocation"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
+        if (_mShape != null)
+        { sb.append(dm).append("mShape"); }
+        if (_tShippingInstH != null)
+        { sb.append(dm).append("tShippingInstH"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
+        if (_tStoreNo != null)
+        { sb.append(dm).append("tStoreNo"); }
+        if (_mWarehouse != null)
+        { sb.append(dm).append("mWarehouse"); }
         if (_bClassDtlByErrorFlg != null)
         { sb.append(dm).append("bClassDtlByErrorFlg"); }
         if (_tShippingInstSpareAsOne != null)

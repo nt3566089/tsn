@@ -252,35 +252,6 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MShapeNss _nssMShape;
-    public MShapeNss xdfgetNssMShape() {
-        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
-        return _nssMShape;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * <pre>
-     * <span style="color: #0000C0">mShapeGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mShapeGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mShapeGrpDtl</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MShapeNss setupSelect_MShape() {
-        assertSetupSelectPurpose("mShape");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnShapeId();
-        }
-        doSetupSelect(() -> query().queryMShape());
-        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
-        { _nssMShape = new MShapeNss(query().queryMShape()); }
-        return _nssMShape;
-    }
-
     protected MShapeGrpNss _nssMShapeGrp;
     public MShapeGrpNss xdfgetNssMShapeGrp() {
         if (_nssMShapeGrp == null) { _nssMShapeGrp = new MShapeGrpNss(null); }
@@ -308,6 +279,35 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
         if (_nssMShapeGrp == null || !_nssMShapeGrp.hasConditionQuery())
         { _nssMShapeGrp = new MShapeGrpNss(query().queryMShapeGrp()); }
         return _nssMShapeGrp;
+    }
+
+    protected MShapeNss _nssMShape;
+    public MShapeNss xdfgetNssMShape() {
+        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
+        return _nssMShape;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * <pre>
+     * <span style="color: #0000C0">mShapeGrpDtlBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mShapeGrpDtl</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mShapeGrpDtl</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MShapeNss setupSelect_MShape() {
+        assertSetupSelectPurpose("mShape");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShapeId();
+        }
+        doSetupSelect(() -> query().queryMShape());
+        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
+        { _nssMShape = new MShapeNss(query().queryMShape()); }
+        return _nssMShape;
     }
 
     protected BClassDtlNss _nssBClassDtlByCasePickFlg;
@@ -438,8 +438,8 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MShapeGrpDtlCQ> {
-        protected MShapeCB.HpSpecification _mShape;
         protected MShapeGrpCB.HpSpecification _mShapeGrp;
+        protected MShapeCB.HpSpecification _mShape;
         protected BClassDtlCB.HpSpecification _bClassDtlByCasePickFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByEmReplenishShapeFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
@@ -532,13 +532,13 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnShapeGrpDtlId(); // PK
-            if (qyCall().qy().hasConditionQueryMShape()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
-                columnShapeId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMShapeGrp()
                     || qyCall().qy().xgetReferrerQuery() instanceof MShapeGrpCQ) {
                 columnShapeGrpId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMShape()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
+                columnShapeId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByCasePickFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -555,26 +555,6 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_SHAPE_GRP_DTL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_SHAPE by my SHAPE_ID, named 'MShape'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MShapeCB.HpSpecification specifyMShape() {
-            assertRelation("mShape");
-            if (_mShape == null) {
-                _mShape = new MShapeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
-                                    , () -> _qyCall.qy().queryMShape())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
-                      , () -> xsyncQyCall().qy().queryMShape()));
-                }
-            }
-            return _mShape;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
@@ -594,6 +574,26 @@ public class BsMShapeGrpDtlCB extends AbstractConditionBean {
                 }
             }
             return _mShapeGrp;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_SHAPE by my SHAPE_ID, named 'MShape'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MShapeCB.HpSpecification specifyMShape() {
+            assertRelation("mShape");
+            if (_mShape == null) {
+                _mShape = new MShapeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
+                                    , () -> _qyCall.qy().queryMShape())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
+                      , () -> xsyncQyCall().qy().queryMShape()));
+                }
+            }
+            return _mShape;
         }
         /**
          * Prepare to specify functions about relation table. <br>

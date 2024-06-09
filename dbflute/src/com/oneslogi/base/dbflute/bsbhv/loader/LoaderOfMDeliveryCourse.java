@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CARRIER_SLIP_YUPK, M_CENTER, M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
+ *     M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, M_CARRIER_SLIP_YUPK, M_CENTER, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
  *
  * [referrer table]
  *     M_CENTER_CUSTOMER, M_PARAM, T_ALLOC_INST_H, T_SHIPPING_INST_H, W_HT_LOADING
  *
  * [foreign property]
- *     mCarrierSlipYupk, mCenter, mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
+ *     mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, mCarrierSlipYupk, mCenter, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
  *
  * [referrer property]
  *     mCenterCustomerList, mParamList, tAllocInstHList, tShippingInstHList, wHtLoadingList
@@ -234,20 +234,6 @@ public class LoaderOfMDeliveryCourse {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMCarrierSlipYupk _foreignMCarrierSlipYupkLoader;
-    public LoaderOfMCarrierSlipYupk pulloutMCarrierSlipYupk() {
-        if (_foreignMCarrierSlipYupkLoader == null)
-        { _foreignMCarrierSlipYupkLoader = new LoaderOfMCarrierSlipYupk().ready(myBhv().pulloutMCarrierSlipYupk(_selectedList), _selector); }
-        return _foreignMCarrierSlipYupkLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
-    }
-
     protected LoaderOfMCarrier _foreignMCarrierLoader;
     public LoaderOfMCarrier pulloutMCarrier() {
         if (_foreignMCarrierLoader == null)
@@ -267,6 +253,20 @@ public class LoaderOfMDeliveryCourse {
         if (_foreignMCarrierSlipYmtLoader == null)
         { _foreignMCarrierSlipYmtLoader = new LoaderOfMCarrierSlipYmt().ready(myBhv().pulloutMCarrierSlipYmt(_selectedList), _selector); }
         return _foreignMCarrierSlipYmtLoader;
+    }
+
+    protected LoaderOfMCarrierSlipYupk _foreignMCarrierSlipYupkLoader;
+    public LoaderOfMCarrierSlipYupk pulloutMCarrierSlipYupk() {
+        if (_foreignMCarrierSlipYupkLoader == null)
+        { _foreignMCarrierSlipYupkLoader = new LoaderOfMCarrierSlipYupk().ready(myBhv().pulloutMCarrierSlipYupk(_selectedList), _selector); }
+        return _foreignMCarrierSlipYupkLoader;
+    }
+
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByDelFlgLoader;

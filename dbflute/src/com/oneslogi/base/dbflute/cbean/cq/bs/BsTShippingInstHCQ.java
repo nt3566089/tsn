@@ -1130,26 +1130,26 @@ public class BsTShippingInstHCQ extends AbstractBsTShippingInstHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TShippingInstHCQ bq = (TShippingInstHCQ)bqs;
         TShippingInstHCQ uq = (TShippingInstHCQ)uqs;
-        if (bq.hasConditionQueryMDeliveryCourse()) {
-            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
-        }
-        if (bq.hasConditionQueryMCustomerBySupplyCustomerId()) {
-            uq.queryMCustomerBySupplyCustomerId().reflectRelationOnUnionQuery(bq.queryMCustomerBySupplyCustomerId(), uq.queryMCustomerBySupplyCustomerId());
-        }
-        if (bq.hasConditionQueryMProcessType()) {
-            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
-        }
-        if (bq.hasConditionQueryMClient()) {
-            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        if (bq.hasConditionQueryTAllocInstH()) {
+            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
         }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
+        if (bq.hasConditionQueryMClient()) {
+            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryMDeliveryCourse()) {
+            uq.queryMDeliveryCourse().reflectRelationOnUnionQuery(bq.queryMDeliveryCourse(), uq.queryMDeliveryCourse());
+        }
         if (bq.hasConditionQueryMCustomerByDelivCustomerId()) {
             uq.queryMCustomerByDelivCustomerId().reflectRelationOnUnionQuery(bq.queryMCustomerByDelivCustomerId(), uq.queryMCustomerByDelivCustomerId());
         }
-        if (bq.hasConditionQueryTAllocInstH()) {
-            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
+        if (bq.hasConditionQueryMProcessType()) {
+            uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
+        }
+        if (bq.hasConditionQueryMCustomerBySupplyCustomerId()) {
+            uq.queryMCustomerBySupplyCustomerId().reflectRelationOnUnionQuery(bq.queryMCustomerBySupplyCustomerId(), uq.queryMCustomerBySupplyCustomerId());
         }
         if (bq.hasConditionQueryMZipForDeliv()) {
             uq.queryMZipForDeliv().reflectRelationOnUnionQuery(bq.queryMZipForDeliv(), uq.queryMZipForDeliv());
@@ -1179,83 +1179,23 @@ public class BsTShippingInstHCQ extends AbstractBsTShippingInstHCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MDeliveryCourseCQ queryMDeliveryCourse() {
-        return xdfgetConditionQueryMDeliveryCourse();
+    public TAllocInstHCQ queryTAllocInstH() {
+        return xdfgetConditionQueryTAllocInstH();
     }
-    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
-        String prop = "mDeliveryCourse";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
+    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
+        String prop = "tAllocInstH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
         return xgetQueRlMap(prop);
     }
-    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
-        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
+    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
+        String nrp = xresolveNRP("T_SHIPPING_INST_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
     }
-    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
-    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCustomerCQ queryMCustomerBySupplyCustomerId() {
-        return xdfgetConditionQueryMCustomerBySupplyCustomerId();
-    }
-    public MCustomerCQ xdfgetConditionQueryMCustomerBySupplyCustomerId() {
-        String prop = "mCustomerBySupplyCustomerId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerBySupplyCustomerId()); xsetupOuterJoinMCustomerBySupplyCustomerId(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCustomerCQ xcreateQueryMCustomerBySupplyCustomerId() {
-        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mCustomerBySupplyCustomerId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerBySupplyCustomerId", nrp);
-    }
-    protected void xsetupOuterJoinMCustomerBySupplyCustomerId() { xregOutJo("mCustomerBySupplyCustomerId"); }
-    public boolean hasConditionQueryMCustomerBySupplyCustomerId() { return xhasQueRlMap("mCustomerBySupplyCustomerId"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProcessTypeCQ queryMProcessType() {
-        return xdfgetConditionQueryMProcessType();
-    }
-    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
-        String prop = "mProcessType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProcessTypeCQ xcreateQueryMProcessType() {
-        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
-    }
-    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
-    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MClientCQ queryMClient() {
-        return xdfgetConditionQueryMClient();
-    }
-    public MClientCQ xdfgetConditionQueryMClient() {
-        String prop = "mClient";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MClientCQ xcreateQueryMClient() {
-        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
-    }
-    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
-    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
+    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1279,6 +1219,46 @@ public class BsTShippingInstHCQ extends AbstractBsTShippingInstHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MClientCQ queryMClient() {
+        return xdfgetConditionQueryMClient();
+    }
+    public MClientCQ xdfgetConditionQueryMClient() {
+        String prop = "mClient";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MClientCQ xcreateQueryMClient() {
+        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
+    }
+    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
+    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MDeliveryCourseCQ queryMDeliveryCourse() {
+        return xdfgetConditionQueryMDeliveryCourse();
+    }
+    public MDeliveryCourseCQ xdfgetConditionQueryMDeliveryCourse() {
+        String prop = "mDeliveryCourse";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMDeliveryCourse()); xsetupOuterJoinMDeliveryCourse(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MDeliveryCourseCQ xcreateQueryMDeliveryCourse() {
+        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mDeliveryCourse"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MDeliveryCourseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mDeliveryCourse", nrp);
+    }
+    protected void xsetupOuterJoinMDeliveryCourse() { xregOutJo("mDeliveryCourse"); }
+    public boolean hasConditionQueryMDeliveryCourse() { return xhasQueRlMap("mDeliveryCourse"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1299,23 +1279,43 @@ public class BsTShippingInstHCQ extends AbstractBsTShippingInstHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TAllocInstHCQ queryTAllocInstH() {
-        return xdfgetConditionQueryTAllocInstH();
+    public MProcessTypeCQ queryMProcessType() {
+        return xdfgetConditionQueryMProcessType();
     }
-    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
-        String prop = "tAllocInstH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
+    public MProcessTypeCQ xdfgetConditionQueryMProcessType() {
+        String prop = "mProcessType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProcessType()); xsetupOuterJoinMProcessType(); }
         return xgetQueRlMap(prop);
     }
-    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
-        String nrp = xresolveNRP("T_SHIPPING_INST_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
+    protected MProcessTypeCQ xcreateQueryMProcessType() {
+        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mProcessType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProcessTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProcessType", nrp);
     }
-    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
-    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
+    protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
+    public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCustomerCQ queryMCustomerBySupplyCustomerId() {
+        return xdfgetConditionQueryMCustomerBySupplyCustomerId();
+    }
+    public MCustomerCQ xdfgetConditionQueryMCustomerBySupplyCustomerId() {
+        String prop = "mCustomerBySupplyCustomerId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerBySupplyCustomerId()); xsetupOuterJoinMCustomerBySupplyCustomerId(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCustomerCQ xcreateQueryMCustomerBySupplyCustomerId() {
+        String nrp = xresolveNRP("T_SHIPPING_INST_H", "mCustomerBySupplyCustomerId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerBySupplyCustomerId", nrp);
+    }
+    protected void xsetupOuterJoinMCustomerBySupplyCustomerId() { xregOutJo("mCustomerBySupplyCustomerId"); }
+    public boolean hasConditionQueryMCustomerBySupplyCustomerId() { return xhasQueRlMap("mCustomerBySupplyCustomerId"); }
 
     /**
      * Get the condition-query for relation table. <br>

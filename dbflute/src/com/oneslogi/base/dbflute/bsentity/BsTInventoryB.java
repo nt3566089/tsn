@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_LOCATION, M_WAREHOUSE, T_STORE_NO, T_MOVE_INST_H, T_LOT, T_STOCK, M_SHAPE, M_PRODUCT, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
+ *     M_CUSTOMER, T_INVENTORY_H, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, T_STOCK, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_INP_HIST, T_INVENTORY_R
  *
  * [foreign property]
- *     mCustomerByDepositId, tInventoryH, mStockType, mLocation, mWarehouse, tStoreNo, mCustomerBySupplierId, tMoveInstH, tLot, tStock, mShape, mProduct, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
+ *     mCustomerByDepositId, tInventoryH, mLocation, tLot, tMoveInstH, mProduct, mShape, tStock, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
  *
  * [referrer property]
  *     tInventoryInpHistList
@@ -625,25 +625,6 @@ public abstract class BsTInventoryB extends AbstractEntity implements DomainEnti
         _tInventoryH = tInventoryH;
     }
 
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
-
-    /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MStockType getMStockType() {
-        return _mStockType;
-    }
-
-    /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
-     */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
-    }
-
     /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
     protected MLocation _mLocation;
 
@@ -663,23 +644,118 @@ public abstract class BsTInventoryB extends AbstractEntity implements DomainEnti
         _mLocation = mLocation;
     }
 
-    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
-    protected MWarehouse _mWarehouse;
+    /** T_LOT by my LOT_ID, named 'TLot'. */
+    protected TLot _tLot;
 
     /**
-     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
-     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
+     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MWarehouse getMWarehouse() {
-        return _mWarehouse;
+    public TLot getTLot() {
+        return _tLot;
     }
 
     /**
-     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     * [set] T_LOT by my LOT_ID, named 'TLot'.
+     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
      */
-    public void setMWarehouse(MWarehouse mWarehouse) {
-        _mWarehouse = mWarehouse;
+    public void setTLot(TLot tLot) {
+        _tLot = tLot;
+    }
+
+    /** T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'. */
+    protected TMoveInstH _tMoveInstH;
+
+    /**
+     * [get] T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'. <br>
+     * @return The entity of foreign property 'TMoveInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TMoveInstH getTMoveInstH() {
+        return _tMoveInstH;
+    }
+
+    /**
+     * [set] T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * @param tMoveInstH The entity of foreign property 'TMoveInstH'. (NullAllowed)
+     */
+    public void setTMoveInstH(TMoveInstH tMoveInstH) {
+        _tMoveInstH = tMoveInstH;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
+    }
+
+    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
+    protected MShape _mShape;
+
+    /**
+     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
+     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MShape getMShape() {
+        return _mShape;
+    }
+
+    /**
+     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
+     */
+    public void setMShape(MShape mShape) {
+        _mShape = mShape;
+    }
+
+    /** T_STOCK by my STOCK_ID, named 'TStock'. */
+    protected TStock _tStock;
+
+    /**
+     * [get] T_STOCK by my STOCK_ID, named 'TStock'. <br>
+     * @return The entity of foreign property 'TStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TStock getTStock() {
+        return _tStock;
+    }
+
+    /**
+     * [set] T_STOCK by my STOCK_ID, named 'TStock'.
+     * @param tStock The entity of foreign property 'TStock'. (NullAllowed)
+     */
+    public void setTStock(TStock tStock) {
+        _tStock = tStock;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
     }
 
     /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
@@ -720,99 +796,23 @@ public abstract class BsTInventoryB extends AbstractEntity implements DomainEnti
         _mCustomerBySupplierId = mCustomerBySupplierId;
     }
 
-    /** T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'. */
-    protected TMoveInstH _tMoveInstH;
+    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
+    protected MWarehouse _mWarehouse;
 
     /**
-     * [get] T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'. <br>
-     * @return The entity of foreign property 'TMoveInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
+     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TMoveInstH getTMoveInstH() {
-        return _tMoveInstH;
+    public MWarehouse getMWarehouse() {
+        return _mWarehouse;
     }
 
     /**
-     * [set] T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
-     * @param tMoveInstH The entity of foreign property 'TMoveInstH'. (NullAllowed)
+     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
      */
-    public void setTMoveInstH(TMoveInstH tMoveInstH) {
-        _tMoveInstH = tMoveInstH;
-    }
-
-    /** T_LOT by my LOT_ID, named 'TLot'. */
-    protected TLot _tLot;
-
-    /**
-     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
-     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TLot getTLot() {
-        return _tLot;
-    }
-
-    /**
-     * [set] T_LOT by my LOT_ID, named 'TLot'.
-     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
-     */
-    public void setTLot(TLot tLot) {
-        _tLot = tLot;
-    }
-
-    /** T_STOCK by my STOCK_ID, named 'TStock'. */
-    protected TStock _tStock;
-
-    /**
-     * [get] T_STOCK by my STOCK_ID, named 'TStock'. <br>
-     * @return The entity of foreign property 'TStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TStock getTStock() {
-        return _tStock;
-    }
-
-    /**
-     * [set] T_STOCK by my STOCK_ID, named 'TStock'.
-     * @param tStock The entity of foreign property 'TStock'. (NullAllowed)
-     */
-    public void setTStock(TStock tStock) {
-        _tStock = tStock;
-    }
-
-    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
-    protected MShape _mShape;
-
-    /**
-     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
-     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MShape getMShape() {
-        return _mShape;
-    }
-
-    /**
-     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
-     */
-    public void setMShape(MShape mShape) {
-        _mShape = mShape;
-    }
-
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
-
-    /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProduct getMProduct() {
-        return _mProduct;
-    }
-
-    /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
-     */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
+    public void setMWarehouse(MWarehouse mWarehouse) {
+        _mWarehouse = mWarehouse;
     }
 
     /** B_CLASS_DTL by my INPUT_TYPE, named 'BClassDtlByInputType'. */
@@ -928,26 +928,26 @@ public abstract class BsTInventoryB extends AbstractEntity implements DomainEnti
         { sb.append(li).append(xbRDS(_mCustomerByDepositId, "mCustomerByDepositId")); }
         if (_tInventoryH != null)
         { sb.append(li).append(xbRDS(_tInventoryH, "tInventoryH")); }
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
-        if (_mWarehouse != null)
-        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
+        if (_tMoveInstH != null)
+        { sb.append(li).append(xbRDS(_tMoveInstH, "tMoveInstH")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_mShape != null)
+        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
+        if (_tStock != null)
+        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_tStoreNo != null)
         { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
         if (_mCustomerBySupplierId != null)
         { sb.append(li).append(xbRDS(_mCustomerBySupplierId, "mCustomerBySupplierId")); }
-        if (_tMoveInstH != null)
-        { sb.append(li).append(xbRDS(_tMoveInstH, "tMoveInstH")); }
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
-        if (_tStock != null)
-        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
-        if (_mShape != null)
-        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
+        if (_mWarehouse != null)
+        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         if (_bClassDtlByInputType != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInputType, "bClassDtlByInputType")); }
         if (_bClassDtlByStockAdjustFlg != null)
@@ -1022,26 +1022,26 @@ public abstract class BsTInventoryB extends AbstractEntity implements DomainEnti
         { sb.append(dm).append("mCustomerByDepositId"); }
         if (_tInventoryH != null)
         { sb.append(dm).append("tInventoryH"); }
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
-        if (_mWarehouse != null)
-        { sb.append(dm).append("mWarehouse"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
+        if (_tMoveInstH != null)
+        { sb.append(dm).append("tMoveInstH"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
+        if (_mShape != null)
+        { sb.append(dm).append("mShape"); }
+        if (_tStock != null)
+        { sb.append(dm).append("tStock"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
         if (_tStoreNo != null)
         { sb.append(dm).append("tStoreNo"); }
         if (_mCustomerBySupplierId != null)
         { sb.append(dm).append("mCustomerBySupplierId"); }
-        if (_tMoveInstH != null)
-        { sb.append(dm).append("tMoveInstH"); }
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
-        if (_tStock != null)
-        { sb.append(dm).append("tStock"); }
-        if (_mShape != null)
-        { sb.append(dm).append("mShape"); }
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
+        if (_mWarehouse != null)
+        { sb.append(dm).append("mWarehouse"); }
         if (_bClassDtlByInputType != null)
         { sb.append(dm).append("bClassDtlByInputType"); }
         if (_bClassDtlByStockAdjustFlg != null)

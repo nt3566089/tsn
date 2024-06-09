@@ -45,7 +45,7 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     
  *
  * [foreign property]
- *     bUserByPl1OutUserId, bUserByCaseOutUserId, bUserByShippingRecordOutUserId, tPickingH, bUserByPl2OutUserId, bUserBySlipOutUserId, bUserByPackingOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
+ *     bUserByCaseOutUserId, bUserByPackingOutUserId, tPickingH, bUserByPl1OutUserId, bUserByPl2OutUserId, bUserByShippingRecordOutUserId, bUserBySlipOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
  *
  * [referrer property]
  *     
@@ -397,14 +397,6 @@ public abstract class BsTPickingRBhv extends AbstractBehaviorWritable<TPickingR,
      * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUserByPl1OutUserId(List<TPickingR> tPickingRList)
-    { return helpPulloutInternally(tPickingRList, "bUserByPl1OutUserId"); }
-
-    /**
-     * Pull out the list of foreign table 'BUser'.
-     * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
     public List<BUser> pulloutBUserByCaseOutUserId(List<TPickingR> tPickingRList)
     { return helpPulloutInternally(tPickingRList, "bUserByCaseOutUserId"); }
 
@@ -413,8 +405,8 @@ public abstract class BsTPickingRBhv extends AbstractBehaviorWritable<TPickingR,
      * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUserByShippingRecordOutUserId(List<TPickingR> tPickingRList)
-    { return helpPulloutInternally(tPickingRList, "bUserByShippingRecordOutUserId"); }
+    public List<BUser> pulloutBUserByPackingOutUserId(List<TPickingR> tPickingRList)
+    { return helpPulloutInternally(tPickingRList, "bUserByPackingOutUserId"); }
 
     /**
      * Pull out the list of foreign table 'TPickingH'.
@@ -429,6 +421,14 @@ public abstract class BsTPickingRBhv extends AbstractBehaviorWritable<TPickingR,
      * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
+    public List<BUser> pulloutBUserByPl1OutUserId(List<TPickingR> tPickingRList)
+    { return helpPulloutInternally(tPickingRList, "bUserByPl1OutUserId"); }
+
+    /**
+     * Pull out the list of foreign table 'BUser'.
+     * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
     public List<BUser> pulloutBUserByPl2OutUserId(List<TPickingR> tPickingRList)
     { return helpPulloutInternally(tPickingRList, "bUserByPl2OutUserId"); }
 
@@ -437,16 +437,16 @@ public abstract class BsTPickingRBhv extends AbstractBehaviorWritable<TPickingR,
      * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUserBySlipOutUserId(List<TPickingR> tPickingRList)
-    { return helpPulloutInternally(tPickingRList, "bUserBySlipOutUserId"); }
+    public List<BUser> pulloutBUserByShippingRecordOutUserId(List<TPickingR> tPickingRList)
+    { return helpPulloutInternally(tPickingRList, "bUserByShippingRecordOutUserId"); }
 
     /**
      * Pull out the list of foreign table 'BUser'.
      * @param tPickingRList The list of tPickingR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<BUser> pulloutBUserByPackingOutUserId(List<TPickingR> tPickingRList)
-    { return helpPulloutInternally(tPickingRList, "bUserByPackingOutUserId"); }
+    public List<BUser> pulloutBUserBySlipOutUserId(List<TPickingR> tPickingRList)
+    { return helpPulloutInternally(tPickingRList, "bUserBySlipOutUserId"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

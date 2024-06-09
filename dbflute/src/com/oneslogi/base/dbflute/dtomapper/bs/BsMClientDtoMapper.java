@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_SHAPE_GRP, M_CUSTOMER, B_CLASS_DTL(ByDelFlg)
+ *     M_CUSTOMER, M_SHAPE_GRP, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer-table]
  *     M_CBRCTG, M_CDRCATT, M_CLIENT_CENTER, M_CLIENT_COL, M_CLIENT_ITEM, M_CLIENT_SCREEN, M_CUSTOMER, M_IMPORT_TYPE, M_MFINVOPERATION, M_MFMONTHCHG, M_MFPICKCTL, M_MFRCVDESIGN, M_MFRCVITEM, M_MFWHxITEM, M_PRODUCT, M_SHAPE_GRP, M_USER_CLIENT, M_USER_LOGIN, M_WEB_HT_INFO, T_ALLOC_INST_H, T_CCOPAM, T_CENTER_SYMBOL, T_CORDHDR, T_EC_ORDER_H, T_INVENTORY_H, T_MFLASTSHIPLOT, T_MOVE_INST_H, T_PACKING_H, T_PALLET, T_PICKING_H, T_PIC_MTHD_RCMD, T_RECEIVE_PLAN_H, T_SERIAL_NO, T_SHIPPING_INST_H, T_SPLINFO, T_STOCK, T_STORE_RECORD_H, T_TRALLINV, T_TRALLINVHISTORY, T_TRCASEINVENTORY, T_TRCASENUM, T_TRCASESTOCK, T_TRHANBAIINV, T_TRINVCHECKINFO, T_TRINVCORRECT, T_TRINVREANSWER, T_TRINVREQUEST, T_TRITEMCONVRESULT, T_TRJUKYUINV, T_TRMANUFACTUREDATE, T_TRMANUFACTUREDATEDETAIL, T_TRMANUFACTUREDATEHISTORY, T_TRPALLETTRACE, T_TRREVERSESTOCK, T_TRSTOCKDIFFHISTORY, T_TRSYMBOLTRACE, T_TRSYMBOLTRACEEXTEND, T_TRTRACE, T_YTRSO, W_HT_INVENTORY_INPUT_PROD, W_HT_LOADING, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SERIAL_RECEIVE_INSP, W_HT_SERIAL_SHIPPING_INSP, W_HT_SHIPPING, W_HT_SHIPPING_PICKING, W_SGL_ROW_SHIP_INSP_H, W_SHIPPING_INTERRUPT
  *
  * [foreign-property]
- *     mShapeGrp, mCustomer, bClassDtlByDelFlg
+ *     mCustomer, mShapeGrp, bClassDtlByDelFlg
  *
  * [referrer-property]
  *     mCbrctgList, mCdrcattList, mClientCenterList, mClientColList, mClientItemList, mClientScreenList, mCustomerList, mImportTypeList, mMfinvoperationList, mMfmonthchgList, mMfpickctlList, mMfrcvdesignList, mMfrcvitemList, mMfwhxitemList, mProductList, mShapeGrpList, mUserClientList, mUserLoginList, mWebHtInfoList, tAllocInstHList, tCcopamList, tCenterSymbolList, tCordhdrList, tEcOrderHList, tInventoryHList, tMflastshiplotList, tMoveInstHList, tPackingHList, tPalletList, tPickingHList, tPicMthdRcmdList, tReceivePlanHList, tSerialNoList, tShippingInstHList, tSplinfoList, tStockList, tStoreRecordHList, tTrallinvList, tTrallinvhistoryList, tTrcaseinventoryList, tTrcasenumList, tTrcasestockList, tTrhanbaiinvList, tTrinvcheckinfoList, tTrinvcorrectList, tTrinvreanswerList, tTrinvrequestList, tTritemconvresultList, tTrjukyuinvList, tTrmanufacturedateList, tTrmanufacturedatedetailList, tTrmanufacturedatehistoryList, tTrpallettraceList, tTrreversestockList, tTrstockdiffhistoryList, tTrsymboltraceList, tTrsymboltraceextendList, tTrtraceList, tYtrsoList, wHtInventoryInputProdList, wHtLoadingList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtSerialReceiveInspList, wHtSerialShippingInspList, wHtShippingList, wHtShippingPickingList, wSglRowShipInspHList, wShippingInterruptList
@@ -70,8 +70,8 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMShapeGrp;
     protected boolean _suppressMCustomer;
+    protected boolean _suppressMShapeGrp;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressMCbrctgList;
     protected boolean _suppressMCdrcattList;
@@ -216,32 +216,6 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMShapeGrp && entity.getMShapeGrp() != null) {
-            MShapeGrp relationEntity = entity.getMShapeGrp();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MShapeGrpDto relationDto = (MShapeGrpDto)cachedDto;
-                dto.setMShapeGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientList().add(dto);
-                }
-            } else {
-                MShapeGrpDtoMapper mapper = new MShapeGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientList();
-                MShapeGrpDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMShapeGrp(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMShapeGrp());
-                }
-            }
-        };
         if (!_suppressMCustomer && entity.getMCustomer() != null) {
             MCustomer relationEntity = entity.getMCustomer();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -265,6 +239,32 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCustomer());
+                }
+            }
+        };
+        if (!_suppressMShapeGrp && entity.getMShapeGrp() != null) {
+            MShapeGrp relationEntity = entity.getMShapeGrp();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MShapeGrpDto relationDto = (MShapeGrpDto)cachedDto;
+                dto.setMShapeGrp(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientList().add(dto);
+                }
+            } else {
+                MShapeGrpDtoMapper mapper = new MShapeGrpDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientList();
+                MShapeGrpDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMShapeGrp(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMShapeGrp());
                 }
             }
         };
@@ -1363,32 +1363,6 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMShapeGrp && dto.getMShapeGrp() != null) {
-            MShapeGrpDto relationDto = dto.getMShapeGrp();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MShapeGrp relationEntity = (MShapeGrp)cachedEntity;
-                entity.setMShapeGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientList().add(entity);
-                }
-            } else {
-                MShapeGrpDtoMapper mapper = new MShapeGrpDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientList();
-                MShapeGrp relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMShapeGrp(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientList().add(entity);
-                }
-                if (instanceCache && entity.getMShapeGrp().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMShapeGrp());
-                }
-            }
-        };
         if (!_suppressMCustomer && dto.getMCustomer() != null) {
             MCustomerDto relationDto = dto.getMCustomer();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -1412,6 +1386,32 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
                 }
                 if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCustomer());
+                }
+            }
+        };
+        if (!_suppressMShapeGrp && dto.getMShapeGrp() != null) {
+            MShapeGrpDto relationDto = dto.getMShapeGrp();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MShapeGrp relationEntity = (MShapeGrp)cachedEntity;
+                entity.setMShapeGrp(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientList().add(entity);
+                }
+            } else {
+                MShapeGrpDtoMapper mapper = new MShapeGrpDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientList();
+                MShapeGrp relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMShapeGrp(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientList().add(entity);
+                }
+                if (instanceCache && entity.getMShapeGrp().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMShapeGrp());
                 }
             }
         };
@@ -2536,11 +2536,11 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMShapeGrp() {
-        _suppressMShapeGrp = true;
-    }
     public void suppressMCustomer() {
         _suppressMCustomer = true;
+    }
+    public void suppressMShapeGrp() {
+        _suppressMShapeGrp = true;
     }
     public void suppressBClassDtlByDelFlg() {
         _suppressBClassDtlByDelFlg = true;
@@ -2756,8 +2756,8 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
         _suppressWShippingInterruptList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMShapeGrp();
         suppressMCustomer();
+        suppressMShapeGrp();
         suppressBClassDtlByDelFlg();
         suppressMCbrctgList();
         suppressMCdrcattList();
@@ -2831,8 +2831,8 @@ public abstract class BsMClientDtoMapper implements DtoMapper<MClient, MClientDt
         suppressWShippingInterruptList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMShapeGrp = false;
         _suppressMCustomer = false;
+        _suppressMShapeGrp = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressMCbrctgList = false;
         _suppressMCdrcattList = false;

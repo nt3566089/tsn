@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, T_TRPALLET, M_CENTER, T_STOCK
+ *     M_CENTER, M_CLIENT, T_STOCK, T_TRPALLET
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mClient, tTrpallet, mCenter, tStock
+ *     mCenter, mClient, tStock, tTrpallet
  *
  * [referrer property]
  *     tCenterSymbolList
@@ -258,44 +258,6 @@ public abstract class BsTPallet extends AbstractEntity implements DomainEntity, 
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
-    protected MClient _mClient;
-
-    /**
-     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
-     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MClient getMClient() {
-        return _mClient;
-    }
-
-    /**
-     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
-     */
-    public void setMClient(MClient mClient) {
-        _mClient = mClient;
-    }
-
-    /** T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'. */
-    protected TTrpallet _tTrpallet;
-
-    /**
-     * [get] T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'. <br>
-     * @return The entity of foreign property 'TTrpallet'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TTrpallet getTTrpallet() {
-        return _tTrpallet;
-    }
-
-    /**
-     * [set] T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
-     * @param tTrpallet The entity of foreign property 'TTrpallet'. (NullAllowed)
-     */
-    public void setTTrpallet(TTrpallet tTrpallet) {
-        _tTrpallet = tTrpallet;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -315,6 +277,25 @@ public abstract class BsTPallet extends AbstractEntity implements DomainEntity, 
         _mCenter = mCenter;
     }
 
+    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
+    protected MClient _mClient;
+
+    /**
+     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
+     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MClient getMClient() {
+        return _mClient;
+    }
+
+    /**
+     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
+     */
+    public void setMClient(MClient mClient) {
+        _mClient = mClient;
+    }
+
     /** T_STOCK by my STOCK_ID, named 'TStock'. */
     protected TStock _tStock;
 
@@ -332,6 +313,25 @@ public abstract class BsTPallet extends AbstractEntity implements DomainEntity, 
      */
     public void setTStock(TStock tStock) {
         _tStock = tStock;
+    }
+
+    /** T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'. */
+    protected TTrpallet _tTrpallet;
+
+    /**
+     * [get] T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'. <br>
+     * @return The entity of foreign property 'TTrpallet'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TTrpallet getTTrpallet() {
+        return _tTrpallet;
+    }
+
+    /**
+     * [set] T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
+     * @param tTrpallet The entity of foreign property 'TTrpallet'. (NullAllowed)
+     */
+    public void setTTrpallet(TTrpallet tTrpallet) {
+        _tTrpallet = tTrpallet;
     }
 
     // ===================================================================================
@@ -386,14 +386,14 @@ public abstract class BsTPallet extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_tTrpallet != null)
-        { sb.append(li).append(xbRDS(_tTrpallet, "tTrpallet")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_tStock != null)
         { sb.append(li).append(xbRDS(_tStock, "tStock")); }
+        if (_tTrpallet != null)
+        { sb.append(li).append(xbRDS(_tTrpallet, "tTrpallet")); }
         if (_tCenterSymbolList != null) { for (TCenterSymbol et : _tCenterSymbolList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tCenterSymbolList")); } } }
         return sb.toString();
@@ -427,14 +427,14 @@ public abstract class BsTPallet extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
-        if (_tTrpallet != null)
-        { sb.append(dm).append("tTrpallet"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
         if (_tStock != null)
         { sb.append(dm).append("tStock"); }
+        if (_tTrpallet != null)
+        { sb.append(dm).append("tTrpallet"); }
         if (_tCenterSymbolList != null && !_tCenterSymbolList.isEmpty())
         { sb.append(dm).append("tCenterSymbolList"); }
         if (sb.length() > dm.length()) {

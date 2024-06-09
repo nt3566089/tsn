@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_B, T_PACKING_H, T_ALLOC_INST_B, B_CLASS_DTL(ByInspectionFlg)
+ *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_B, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPickingB, tPackingH, tAllocInstB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
+ *     tAllocInstB, tPackingH, tPickingB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
  *
  * [referrer property]
  *     
@@ -442,23 +442,23 @@ public abstract class BsTPackingB extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_PICKING_B by my PICKING_B_ID, named 'TPickingB'. */
-    protected TPickingB _tPickingB;
+    /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
+    protected TAllocInstB _tAllocInstB;
 
     /**
-     * [get] T_PICKING_B by my PICKING_B_ID, named 'TPickingB'. <br>
-     * @return The entity of foreign property 'TPickingB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. <br>
+     * @return The entity of foreign property 'TAllocInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TPickingB getTPickingB() {
-        return _tPickingB;
+    public TAllocInstB getTAllocInstB() {
+        return _tAllocInstB;
     }
 
     /**
-     * [set] T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
-     * @param tPickingB The entity of foreign property 'TPickingB'. (NullAllowed)
+     * [set] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * @param tAllocInstB The entity of foreign property 'TAllocInstB'. (NullAllowed)
      */
-    public void setTPickingB(TPickingB tPickingB) {
-        _tPickingB = tPickingB;
+    public void setTAllocInstB(TAllocInstB tAllocInstB) {
+        _tAllocInstB = tAllocInstB;
     }
 
     /** T_PACKING_H by my PACKING_H_ID, named 'TPackingH'. */
@@ -480,23 +480,23 @@ public abstract class BsTPackingB extends AbstractEntity implements DomainEntity
         _tPackingH = tPackingH;
     }
 
-    /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
-    protected TAllocInstB _tAllocInstB;
+    /** T_PICKING_B by my PICKING_B_ID, named 'TPickingB'. */
+    protected TPickingB _tPickingB;
 
     /**
-     * [get] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. <br>
-     * @return The entity of foreign property 'TAllocInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_PICKING_B by my PICKING_B_ID, named 'TPickingB'. <br>
+     * @return The entity of foreign property 'TPickingB'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstB getTAllocInstB() {
-        return _tAllocInstB;
+    public TPickingB getTPickingB() {
+        return _tPickingB;
     }
 
     /**
-     * [set] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
-     * @param tAllocInstB The entity of foreign property 'TAllocInstB'. (NullAllowed)
+     * [set] T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
+     * @param tPickingB The entity of foreign property 'TPickingB'. (NullAllowed)
      */
-    public void setTAllocInstB(TAllocInstB tAllocInstB) {
-        _tAllocInstB = tAllocInstB;
+    public void setTPickingB(TPickingB tPickingB) {
+        _tPickingB = tPickingB;
     }
 
     /** B_CLASS_DTL by my INSPECTION_FLG, named 'BClassDtlByInspectionFlg'. */
@@ -569,12 +569,12 @@ public abstract class BsTPackingB extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tPickingB != null)
-        { sb.append(li).append(xbRDS(_tPickingB, "tPickingB")); }
-        if (_tPackingH != null)
-        { sb.append(li).append(xbRDS(_tPackingH, "tPackingH")); }
         if (_tAllocInstB != null)
         { sb.append(li).append(xbRDS(_tAllocInstB, "tAllocInstB")); }
+        if (_tPackingH != null)
+        { sb.append(li).append(xbRDS(_tPackingH, "tPackingH")); }
+        if (_tPickingB != null)
+        { sb.append(li).append(xbRDS(_tPickingB, "tPickingB")); }
         if (_bClassDtlByInspectionFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInspectionFlg, "bClassDtlByInspectionFlg")); }
         if (_bClassDtlByPickingFlg != null)
@@ -612,12 +612,12 @@ public abstract class BsTPackingB extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tPickingB != null)
-        { sb.append(dm).append("tPickingB"); }
-        if (_tPackingH != null)
-        { sb.append(dm).append("tPackingH"); }
         if (_tAllocInstB != null)
         { sb.append(dm).append("tAllocInstB"); }
+        if (_tPackingH != null)
+        { sb.append(dm).append("tPackingH"); }
+        if (_tPickingB != null)
+        { sb.append(dm).append("tPickingB"); }
         if (_bClassDtlByInspectionFlg != null)
         { sb.append(dm).append("bClassDtlByInspectionFlg"); }
         if (_bClassDtlByPickingFlg != null)

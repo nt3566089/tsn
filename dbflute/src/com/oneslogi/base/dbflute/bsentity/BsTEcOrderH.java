@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, T_SHIPPING_INST_H, M_CENTER, M_CLIENT, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_IMPORT_TYPE, T_SHIPPING_INST_H, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
  *
  * [referrer table]
  *     T_EC_ORDER_B, T_EC_ORDER_R
  *
  * [foreign property]
- *     mImportType, tShippingInstH, mCenter, mClient, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
+ *     mCenter, mClient, mImportType, tShippingInstH, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
  *
  * [referrer property]
  *     tEcOrderBList
@@ -938,44 +938,6 @@ public abstract class BsTEcOrderH extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. */
-    protected MImportType _mImportType;
-
-    /**
-     * [get] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. <br>
-     * @return The entity of foreign property 'MImportType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MImportType getMImportType() {
-        return _mImportType;
-    }
-
-    /**
-     * [set] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @param mImportType The entity of foreign property 'MImportType'. (NullAllowed)
-     */
-    public void setMImportType(MImportType mImportType) {
-        _mImportType = mImportType;
-    }
-
-    /** T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. */
-    protected TShippingInstH _tShippingInstH;
-
-    /**
-     * [get] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. <br>
-     * @return The entity of foreign property 'TShippingInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TShippingInstH getTShippingInstH() {
-        return _tShippingInstH;
-    }
-
-    /**
-     * [set] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @param tShippingInstH The entity of foreign property 'TShippingInstH'. (NullAllowed)
-     */
-    public void setTShippingInstH(TShippingInstH tShippingInstH) {
-        _tShippingInstH = tShippingInstH;
-    }
-
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
     protected MCenter _mCenter;
 
@@ -1012,6 +974,44 @@ public abstract class BsTEcOrderH extends AbstractEntity implements DomainEntity
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. */
+    protected MImportType _mImportType;
+
+    /**
+     * [get] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'. <br>
+     * @return The entity of foreign property 'MImportType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MImportType getMImportType() {
+        return _mImportType;
+    }
+
+    /**
+     * [set] M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @param mImportType The entity of foreign property 'MImportType'. (NullAllowed)
+     */
+    public void setMImportType(MImportType mImportType) {
+        _mImportType = mImportType;
+    }
+
+    /** T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. */
+    protected TShippingInstH _tShippingInstH;
+
+    /**
+     * [get] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'. <br>
+     * @return The entity of foreign property 'TShippingInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TShippingInstH getTShippingInstH() {
+        return _tShippingInstH;
+    }
+
+    /**
+     * [set] T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @param tShippingInstH The entity of foreign property 'TShippingInstH'. (NullAllowed)
+     */
+    public void setTShippingInstH(TShippingInstH tShippingInstH) {
+        _tShippingInstH = tShippingInstH;
     }
 
     /** B_CLASS_DTL by my DELIV_MATCH_FLG, named 'BClassDtlByDelivMatchFlg'. */
@@ -1180,14 +1180,14 @@ public abstract class BsTEcOrderH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mImportType != null)
-        { sb.append(li).append(xbRDS(_mImportType, "mImportType")); }
-        if (_tShippingInstH != null)
-        { sb.append(li).append(xbRDS(_tShippingInstH, "tShippingInstH")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mImportType != null)
+        { sb.append(li).append(xbRDS(_mImportType, "mImportType")); }
+        if (_tShippingInstH != null)
+        { sb.append(li).append(xbRDS(_tShippingInstH, "tShippingInstH")); }
         if (_bClassDtlByDelivMatchFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByDelivMatchFlg, "bClassDtlByDelivMatchFlg")); }
         if (_bClassDtlByErrorFlg != null)
@@ -1301,14 +1301,14 @@ public abstract class BsTEcOrderH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mImportType != null)
-        { sb.append(dm).append("mImportType"); }
-        if (_tShippingInstH != null)
-        { sb.append(dm).append("tShippingInstH"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_mImportType != null)
+        { sb.append(dm).append("mImportType"); }
+        if (_tShippingInstH != null)
+        { sb.append(dm).append("tShippingInstH"); }
         if (_bClassDtlByDelivMatchFlg != null)
         { sb.append(dm).append("bClassDtlByDelivMatchFlg"); }
         if (_bClassDtlByErrorFlg != null)

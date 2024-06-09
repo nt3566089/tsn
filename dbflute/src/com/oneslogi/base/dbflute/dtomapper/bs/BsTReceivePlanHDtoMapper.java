@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_RECEIVE_PLAN_H, M_CUSTOMER, M_CLIENT, M_STOCK_TYPE, M_CENTER, M_PROCESS_TYPE, T_PICKING_H, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
+ *     M_CENTER, M_CLIENT, T_RECEIVE_PLAN_H, T_PICKING_H, M_CUSTOMER, M_PROCESS_TYPE, M_STOCK_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
  *
  * [referrer-table]
  *     T_RECEIVE_PLAN_B, T_RECEIVE_PLAN_H, T_STORE_RECORD_H, T_RECEIVE_PLAN_R, T_TRRCV
  *
  * [foreign-property]
- *     tReceivePlanHSelf, mCustomerByPlanDepositId, mClient, mStockType, mCenter, mProcessType, mCustomerByPlanSupplierId, tPickingH, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
+ *     mCenter, mClient, tReceivePlanHSelf, tPickingH, mCustomerByPlanDepositId, mCustomerByPlanSupplierId, mProcessType, mStockType, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
  *
  * [referrer-property]
  *     tReceivePlanBList, tReceivePlanHSelfList, tStoreRecordHList
@@ -70,14 +70,14 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTReceivePlanHSelf;
-    protected boolean _suppressMCustomerByPlanDepositId;
-    protected boolean _suppressMClient;
-    protected boolean _suppressMStockType;
     protected boolean _suppressMCenter;
-    protected boolean _suppressMProcessType;
-    protected boolean _suppressMCustomerByPlanSupplierId;
+    protected boolean _suppressMClient;
+    protected boolean _suppressTReceivePlanHSelf;
     protected boolean _suppressTPickingH;
+    protected boolean _suppressMCustomerByPlanDepositId;
+    protected boolean _suppressMCustomerByPlanSupplierId;
+    protected boolean _suppressMProcessType;
+    protected boolean _suppressMStockType;
     protected boolean _suppressBClassDtlByCenterTransitFlg;
     protected boolean _suppressBClassDtlByErrorFlg;
     protected boolean _suppressBClassDtlByInputType;
@@ -175,55 +175,29 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTReceivePlanHSelf && entity.getTReceivePlanHSelf() != null) {
-            TReceivePlanH relationEntity = entity.getTReceivePlanHSelf();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TReceivePlanHDto relationDto = (TReceivePlanHDto)cachedDto;
-                dto.setTReceivePlanHSelf(relationDto);
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHSelfList().add(dto);
+                    relationDto.getTReceivePlanHList().add(dto);
                 }
             } else {
-                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHSelfList();
-                TReceivePlanHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTReceivePlanHSelf(relationDto);
+                mapper.suppressTReceivePlanHList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHSelfList().add(dto);
+                    relationDto.getTReceivePlanHList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTReceivePlanHSelf());
-                }
-            }
-        };
-        if (!_suppressMCustomerByPlanDepositId && entity.getMCustomerByPlanDepositId() != null) {
-            MCustomer relationEntity = entity.getMCustomerByPlanDepositId();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCustomerDto relationDto = (MCustomerDto)cachedDto;
-                dto.setMCustomerByPlanDepositId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTReceivePlanHByPlanDepositIdList().add(dto);
-                }
-            } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHByPlanDepositIdList();
-                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCustomerByPlanDepositId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTReceivePlanHByPlanDepositIdList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCustomerByPlanDepositId());
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -253,81 +227,81 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressMStockType && entity.getMStockType() != null) {
-            MStockType relationEntity = entity.getMStockType();
+        if (!_suppressTReceivePlanHSelf && entity.getTReceivePlanHSelf() != null) {
+            TReceivePlanH relationEntity = entity.getTReceivePlanHSelf();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
-                dto.setMStockType(relationDto);
+                TReceivePlanHDto relationDto = (TReceivePlanHDto)cachedDto;
+                dto.setTReceivePlanHSelf(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHList().add(dto);
+                    relationDto.getTReceivePlanHSelfList().add(dto);
                 }
             } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHList();
-                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMStockType(relationDto);
+                mapper.suppressTReceivePlanHSelfList();
+                TReceivePlanHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTReceivePlanHSelf(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHList().add(dto);
+                    relationDto.getTReceivePlanHSelfList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMStockType());
+                    _relationDtoMap.put(relationKey, dto.getTReceivePlanHSelf());
                 }
             }
         };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
+        if (!_suppressTPickingH && entity.getTPickingH() != null) {
+            TPickingH relationEntity = entity.getTPickingH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
+                TPickingHDto relationDto = (TPickingHDto)cachedDto;
+                dto.setTPickingH(relationDto);
                 if (reverseReference) {
                     relationDto.getTReceivePlanHList().add(dto);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTReceivePlanHList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
+                TPickingHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTPickingH(relationDto);
                 if (reverseReference) {
                     relationDto.getTReceivePlanHList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                    _relationDtoMap.put(relationKey, dto.getTPickingH());
                 }
             }
         };
-        if (!_suppressMProcessType && entity.getMProcessType() != null) {
-            MProcessType relationEntity = entity.getMProcessType();
+        if (!_suppressMCustomerByPlanDepositId && entity.getMCustomerByPlanDepositId() != null) {
+            MCustomer relationEntity = entity.getMCustomerByPlanDepositId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
-                dto.setMProcessType(relationDto);
+                MCustomerDto relationDto = (MCustomerDto)cachedDto;
+                dto.setMCustomerByPlanDepositId(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHList().add(dto);
+                    relationDto.getTReceivePlanHByPlanDepositIdList().add(dto);
                 }
             } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHList();
-                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProcessType(relationDto);
+                mapper.suppressTReceivePlanHByPlanDepositIdList();
+                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCustomerByPlanDepositId(relationDto);
                 if (reverseReference) {
-                    relationDto.getTReceivePlanHList().add(dto);
+                    relationDto.getTReceivePlanHByPlanDepositIdList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProcessType());
+                    _relationDtoMap.put(relationKey, dto.getMCustomerByPlanDepositId());
                 }
             }
         };
@@ -357,29 +331,55 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressTPickingH && entity.getTPickingH() != null) {
-            TPickingH relationEntity = entity.getTPickingH();
+        if (!_suppressMProcessType && entity.getMProcessType() != null) {
+            MProcessType relationEntity = entity.getMProcessType();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TPickingHDto relationDto = (TPickingHDto)cachedDto;
-                dto.setTPickingH(relationDto);
+                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
+                dto.setMProcessType(relationDto);
                 if (reverseReference) {
                     relationDto.getTReceivePlanHList().add(dto);
                 }
             } else {
-                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTReceivePlanHList();
-                TPickingHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTPickingH(relationDto);
+                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProcessType(relationDto);
                 if (reverseReference) {
                     relationDto.getTReceivePlanHList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTPickingH());
+                    _relationDtoMap.put(relationKey, dto.getMProcessType());
+                }
+            }
+        };
+        if (!_suppressMStockType && entity.getMStockType() != null) {
+            MStockType relationEntity = entity.getMStockType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTReceivePlanHList().add(dto);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTReceivePlanHList();
+                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getTReceivePlanHList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMStockType());
                 }
             }
         };
@@ -726,55 +726,29 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTReceivePlanHSelf && dto.getTReceivePlanHSelf() != null) {
-            TReceivePlanHDto relationDto = dto.getTReceivePlanHSelf();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TReceivePlanH relationEntity = (TReceivePlanH)cachedEntity;
-                entity.setTReceivePlanHSelf(relationEntity);
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHSelfList().add(entity);
+                    relationEntity.getTReceivePlanHList().add(entity);
                 }
             } else {
-                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHSelfList();
-                TReceivePlanH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTReceivePlanHSelf(relationEntity);
+                mapper.suppressTReceivePlanHList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHSelfList().add(entity);
+                    relationEntity.getTReceivePlanHList().add(entity);
                 }
-                if (instanceCache && entity.getTReceivePlanHSelf().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTReceivePlanHSelf());
-                }
-            }
-        };
-        if (!_suppressMCustomerByPlanDepositId && dto.getMCustomerByPlanDepositId() != null) {
-            MCustomerDto relationDto = dto.getMCustomerByPlanDepositId();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCustomer relationEntity = (MCustomer)cachedEntity;
-                entity.setMCustomerByPlanDepositId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTReceivePlanHByPlanDepositIdList().add(entity);
-                }
-            } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHByPlanDepositIdList();
-                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCustomerByPlanDepositId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTReceivePlanHByPlanDepositIdList().add(entity);
-                }
-                if (instanceCache && entity.getMCustomerByPlanDepositId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCustomerByPlanDepositId());
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -804,81 +778,81 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressMStockType && dto.getMStockType() != null) {
-            MStockTypeDto relationDto = dto.getMStockType();
+        if (!_suppressTReceivePlanHSelf && dto.getTReceivePlanHSelf() != null) {
+            TReceivePlanHDto relationDto = dto.getTReceivePlanHSelf();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MStockType relationEntity = (MStockType)cachedEntity;
-                entity.setMStockType(relationEntity);
+                TReceivePlanH relationEntity = (TReceivePlanH)cachedEntity;
+                entity.setTReceivePlanHSelf(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHList().add(entity);
+                    relationEntity.getTReceivePlanHSelfList().add(entity);
                 }
             } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                TReceivePlanHDtoMapper mapper = new TReceivePlanHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHList();
-                MStockType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMStockType(relationEntity);
+                mapper.suppressTReceivePlanHSelfList();
+                TReceivePlanH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTReceivePlanHSelf(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHList().add(entity);
+                    relationEntity.getTReceivePlanHSelfList().add(entity);
                 }
-                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMStockType());
+                if (instanceCache && entity.getTReceivePlanHSelf().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTReceivePlanHSelf());
                 }
             }
         };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
+        if (!_suppressTPickingH && dto.getTPickingH() != null) {
+            TPickingHDto relationDto = dto.getTPickingH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
+                TPickingH relationEntity = (TPickingH)cachedEntity;
+                entity.setTPickingH(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTReceivePlanHList().add(entity);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTReceivePlanHList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
+                TPickingH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTPickingH(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTReceivePlanHList().add(entity);
                 }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                if (instanceCache && entity.getTPickingH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTPickingH());
                 }
             }
         };
-        if (!_suppressMProcessType && dto.getMProcessType() != null) {
-            MProcessTypeDto relationDto = dto.getMProcessType();
+        if (!_suppressMCustomerByPlanDepositId && dto.getMCustomerByPlanDepositId() != null) {
+            MCustomerDto relationDto = dto.getMCustomerByPlanDepositId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MProcessType relationEntity = (MProcessType)cachedEntity;
-                entity.setMProcessType(relationEntity);
+                MCustomer relationEntity = (MCustomer)cachedEntity;
+                entity.setMCustomerByPlanDepositId(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHList().add(entity);
+                    relationEntity.getTReceivePlanHByPlanDepositIdList().add(entity);
                 }
             } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTReceivePlanHList();
-                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProcessType(relationEntity);
+                mapper.suppressTReceivePlanHByPlanDepositIdList();
+                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCustomerByPlanDepositId(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTReceivePlanHList().add(entity);
+                    relationEntity.getTReceivePlanHByPlanDepositIdList().add(entity);
                 }
-                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProcessType());
+                if (instanceCache && entity.getMCustomerByPlanDepositId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCustomerByPlanDepositId());
                 }
             }
         };
@@ -908,29 +882,55 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
                 }
             }
         };
-        if (!_suppressTPickingH && dto.getTPickingH() != null) {
-            TPickingHDto relationDto = dto.getTPickingH();
+        if (!_suppressMProcessType && dto.getMProcessType() != null) {
+            MProcessTypeDto relationDto = dto.getMProcessType();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TPickingH relationEntity = (TPickingH)cachedEntity;
-                entity.setTPickingH(relationEntity);
+                MProcessType relationEntity = (MProcessType)cachedEntity;
+                entity.setMProcessType(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTReceivePlanHList().add(entity);
                 }
             } else {
-                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTReceivePlanHList();
-                TPickingH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTPickingH(relationEntity);
+                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProcessType(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTReceivePlanHList().add(entity);
                 }
-                if (instanceCache && entity.getTPickingH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTPickingH());
+                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProcessType());
+                }
+            }
+        };
+        if (!_suppressMStockType && dto.getMStockType() != null) {
+            MStockTypeDto relationDto = dto.getMStockType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MStockType relationEntity = (MStockType)cachedEntity;
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTReceivePlanHList().add(entity);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTReceivePlanHList();
+                MStockType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTReceivePlanHList().add(entity);
+                }
+                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMStockType());
                 }
             }
         };
@@ -1261,29 +1261,29 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTReceivePlanHSelf() {
-        _suppressTReceivePlanHSelf = true;
-    }
-    public void suppressMCustomerByPlanDepositId() {
-        _suppressMCustomerByPlanDepositId = true;
+    public void suppressMCenter() {
+        _suppressMCenter = true;
     }
     public void suppressMClient() {
         _suppressMClient = true;
     }
-    public void suppressMStockType() {
-        _suppressMStockType = true;
+    public void suppressTReceivePlanHSelf() {
+        _suppressTReceivePlanHSelf = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
+    public void suppressTPickingH() {
+        _suppressTPickingH = true;
     }
-    public void suppressMProcessType() {
-        _suppressMProcessType = true;
+    public void suppressMCustomerByPlanDepositId() {
+        _suppressMCustomerByPlanDepositId = true;
     }
     public void suppressMCustomerByPlanSupplierId() {
         _suppressMCustomerByPlanSupplierId = true;
     }
-    public void suppressTPickingH() {
-        _suppressTPickingH = true;
+    public void suppressMProcessType() {
+        _suppressMProcessType = true;
+    }
+    public void suppressMStockType() {
+        _suppressMStockType = true;
     }
     public void suppressBClassDtlByCenterTransitFlg() {
         _suppressBClassDtlByCenterTransitFlg = true;
@@ -1316,14 +1316,14 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
         _suppressTTrrcvAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressTReceivePlanHSelf();
-        suppressMCustomerByPlanDepositId();
-        suppressMClient();
-        suppressMStockType();
         suppressMCenter();
-        suppressMProcessType();
-        suppressMCustomerByPlanSupplierId();
+        suppressMClient();
+        suppressTReceivePlanHSelf();
         suppressTPickingH();
+        suppressMCustomerByPlanDepositId();
+        suppressMCustomerByPlanSupplierId();
+        suppressMProcessType();
+        suppressMStockType();
         suppressBClassDtlByCenterTransitFlg();
         suppressBClassDtlByErrorFlg();
         suppressBClassDtlByInputType();
@@ -1336,14 +1336,14 @@ public abstract class BsTReceivePlanHDtoMapper implements DtoMapper<TReceivePlan
         suppressTTrrcvAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressTReceivePlanHSelf = false;
-        _suppressMCustomerByPlanDepositId = false;
-        _suppressMClient = false;
-        _suppressMStockType = false;
         _suppressMCenter = false;
-        _suppressMProcessType = false;
-        _suppressMCustomerByPlanSupplierId = false;
+        _suppressMClient = false;
+        _suppressTReceivePlanHSelf = false;
         _suppressTPickingH = false;
+        _suppressMCustomerByPlanDepositId = false;
+        _suppressMCustomerByPlanSupplierId = false;
+        _suppressMProcessType = false;
+        _suppressMStockType = false;
         _suppressBClassDtlByCenterTransitFlg = false;
         _suppressBClassDtlByErrorFlg = false;
         _suppressBClassDtlByInputType = false;

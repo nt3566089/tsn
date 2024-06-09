@@ -36,7 +36,7 @@ import com.oneslogi.base.dbflute.dto.*;
  *     mClient, mCustomerSelf, mClientCenterByClientId, bClassDtlByDelFlg, bClassDtlByDeliveryFlg, bClassDtlByDepositFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotReverseFlg, bClassDtlByOnetimeFlg, bClassDtlByShippingStopFlg, bClassDtlByVendorFlg, mCarrierSlipCesAsOne
  *
  * [referrer-property]
- *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHBySupplyCustomerIdList, tAllocInstHByDelivCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBBySupplierIdList, tMoveInstBByDepositIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHBySupplyCustomerIdList, tShippingInstHByDelivCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
+ *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHByDelivCustomerIdList, tAllocInstHBySupplyCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBByDepositIdList, tMoveInstBBySupplierIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHByDelivCustomerIdList, tShippingInstHBySupplyCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -445,17 +445,6 @@ public abstract class BsMCustomerDto implements Serializable {
         this._tAllocInstBList = tAllocInstBList;
     }
 
-    protected List<TAllocInstHDto> _tAllocInstHBySupplyCustomerIdList;
-
-    public List<TAllocInstHDto> getTAllocInstHBySupplyCustomerIdList() {
-        if (_tAllocInstHBySupplyCustomerIdList == null) { _tAllocInstHBySupplyCustomerIdList = new ArrayList<TAllocInstHDto>(); }
-        return _tAllocInstHBySupplyCustomerIdList;
-    }
-
-    public void setTAllocInstHBySupplyCustomerIdList(List<TAllocInstHDto> tAllocInstHBySupplyCustomerIdList) {
-        this._tAllocInstHBySupplyCustomerIdList = tAllocInstHBySupplyCustomerIdList;
-    }
-
     protected List<TAllocInstHDto> _tAllocInstHByDelivCustomerIdList;
 
     public List<TAllocInstHDto> getTAllocInstHByDelivCustomerIdList() {
@@ -465,6 +454,17 @@ public abstract class BsMCustomerDto implements Serializable {
 
     public void setTAllocInstHByDelivCustomerIdList(List<TAllocInstHDto> tAllocInstHByDelivCustomerIdList) {
         this._tAllocInstHByDelivCustomerIdList = tAllocInstHByDelivCustomerIdList;
+    }
+
+    protected List<TAllocInstHDto> _tAllocInstHBySupplyCustomerIdList;
+
+    public List<TAllocInstHDto> getTAllocInstHBySupplyCustomerIdList() {
+        if (_tAllocInstHBySupplyCustomerIdList == null) { _tAllocInstHBySupplyCustomerIdList = new ArrayList<TAllocInstHDto>(); }
+        return _tAllocInstHBySupplyCustomerIdList;
+    }
+
+    public void setTAllocInstHBySupplyCustomerIdList(List<TAllocInstHDto> tAllocInstHBySupplyCustomerIdList) {
+        this._tAllocInstHBySupplyCustomerIdList = tAllocInstHBySupplyCustomerIdList;
     }
 
     protected List<TAllocLotDto> _tAllocLotList;
@@ -533,17 +533,6 @@ public abstract class BsMCustomerDto implements Serializable {
         this._tLastLotList = tLastLotList;
     }
 
-    protected List<TMoveInstBDto> _tMoveInstBBySupplierIdList;
-
-    public List<TMoveInstBDto> getTMoveInstBBySupplierIdList() {
-        if (_tMoveInstBBySupplierIdList == null) { _tMoveInstBBySupplierIdList = new ArrayList<TMoveInstBDto>(); }
-        return _tMoveInstBBySupplierIdList;
-    }
-
-    public void setTMoveInstBBySupplierIdList(List<TMoveInstBDto> tMoveInstBBySupplierIdList) {
-        this._tMoveInstBBySupplierIdList = tMoveInstBBySupplierIdList;
-    }
-
     protected List<TMoveInstBDto> _tMoveInstBByDepositIdList;
 
     public List<TMoveInstBDto> getTMoveInstBByDepositIdList() {
@@ -553,6 +542,17 @@ public abstract class BsMCustomerDto implements Serializable {
 
     public void setTMoveInstBByDepositIdList(List<TMoveInstBDto> tMoveInstBByDepositIdList) {
         this._tMoveInstBByDepositIdList = tMoveInstBByDepositIdList;
+    }
+
+    protected List<TMoveInstBDto> _tMoveInstBBySupplierIdList;
+
+    public List<TMoveInstBDto> getTMoveInstBBySupplierIdList() {
+        if (_tMoveInstBBySupplierIdList == null) { _tMoveInstBBySupplierIdList = new ArrayList<TMoveInstBDto>(); }
+        return _tMoveInstBBySupplierIdList;
+    }
+
+    public void setTMoveInstBBySupplierIdList(List<TMoveInstBDto> tMoveInstBBySupplierIdList) {
+        this._tMoveInstBBySupplierIdList = tMoveInstBBySupplierIdList;
     }
 
     protected List<TReceivePlanHDto> _tReceivePlanHByPlanDepositIdList;
@@ -588,17 +588,6 @@ public abstract class BsMCustomerDto implements Serializable {
         this._tShippingInstBList = tShippingInstBList;
     }
 
-    protected List<TShippingInstHDto> _tShippingInstHBySupplyCustomerIdList;
-
-    public List<TShippingInstHDto> getTShippingInstHBySupplyCustomerIdList() {
-        if (_tShippingInstHBySupplyCustomerIdList == null) { _tShippingInstHBySupplyCustomerIdList = new ArrayList<TShippingInstHDto>(); }
-        return _tShippingInstHBySupplyCustomerIdList;
-    }
-
-    public void setTShippingInstHBySupplyCustomerIdList(List<TShippingInstHDto> tShippingInstHBySupplyCustomerIdList) {
-        this._tShippingInstHBySupplyCustomerIdList = tShippingInstHBySupplyCustomerIdList;
-    }
-
     protected List<TShippingInstHDto> _tShippingInstHByDelivCustomerIdList;
 
     public List<TShippingInstHDto> getTShippingInstHByDelivCustomerIdList() {
@@ -608,6 +597,17 @@ public abstract class BsMCustomerDto implements Serializable {
 
     public void setTShippingInstHByDelivCustomerIdList(List<TShippingInstHDto> tShippingInstHByDelivCustomerIdList) {
         this._tShippingInstHByDelivCustomerIdList = tShippingInstHByDelivCustomerIdList;
+    }
+
+    protected List<TShippingInstHDto> _tShippingInstHBySupplyCustomerIdList;
+
+    public List<TShippingInstHDto> getTShippingInstHBySupplyCustomerIdList() {
+        if (_tShippingInstHBySupplyCustomerIdList == null) { _tShippingInstHBySupplyCustomerIdList = new ArrayList<TShippingInstHDto>(); }
+        return _tShippingInstHBySupplyCustomerIdList;
+    }
+
+    public void setTShippingInstHBySupplyCustomerIdList(List<TShippingInstHDto> tShippingInstHBySupplyCustomerIdList) {
+        this._tShippingInstHBySupplyCustomerIdList = tShippingInstHBySupplyCustomerIdList;
     }
 
     protected List<TStockDto> _tStockList;

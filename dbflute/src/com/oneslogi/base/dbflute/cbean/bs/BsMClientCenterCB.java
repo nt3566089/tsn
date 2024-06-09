@@ -265,33 +265,33 @@ public class BsMClientCenterCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MCustomerNss _nssMCustomer;
-    public MCustomerNss xdfgetNssMCustomer() {
-        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
-        return _nssMCustomer;
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * <pre>
      * <span style="color: #0000C0">mClientCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">mClientCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mClientCenter</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">mClientCenter</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCustomerNss setupSelect_MCustomer() {
-        assertSetupSelectPurpose("mCustomer");
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnCustomerId();
+            specify().columnCenterId();
         }
-        doSetupSelect(() -> query().queryMCustomer());
-        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
-        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
-        return _nssMCustomer;
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected MClientNss _nssMClient;
@@ -323,33 +323,33 @@ public class BsMClientCenterCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
+    protected MCustomerNss _nssMCustomer;
+    public MCustomerNss xdfgetNssMCustomer() {
+        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
+        return _nssMCustomer;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
      * <pre>
      * <span style="color: #0000C0">mClientCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">mClientCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mClientCenter</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">mClientCenter</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
+    public MCustomerNss setupSelect_MCustomer() {
+        assertSetupSelectPurpose("mCustomer");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
+            specify().columnCustomerId();
         }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryMCustomer());
+        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
+        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
+        return _nssMCustomer;
     }
 
     protected BClassDtlNss _nssBClassDtlByBatchProgressFlg;
@@ -477,9 +477,9 @@ public class BsMClientCenterCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MClientCenterCQ> {
-        protected MCustomerCB.HpSpecification _mCustomer;
-        protected MClientCB.HpSpecification _mClient;
         protected MCenterCB.HpSpecification _mCenter;
+        protected MClientCB.HpSpecification _mClient;
+        protected MCustomerCB.HpSpecification _mCustomer;
         protected BClassDtlCB.HpSpecification _bClassDtlByBatchProgressFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         protected MParamCB.HpSpecification _mParamAsOne;
@@ -576,17 +576,17 @@ public class BsMClientCenterCB extends AbstractConditionBean {
                 columnCustomerId(); // non PK but referred column (and referrer also non PK)
                 columnClientId(); // non PK but referred column (and referrer also non PK)
             }
-            if (qyCall().qy().hasConditionQueryMCustomer()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnCustomerId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCustomer()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnCustomerId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByBatchProgressFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -601,23 +601,23 @@ public class BsMClientCenterCB extends AbstractConditionBean {
         protected String getTableDbName() { return "M_CLIENT_CENTER"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCustomerCB.HpSpecification specifyMCustomer() {
-            assertRelation("mCustomer");
-            if (_mCustomer == null) {
-                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
-                                    , () -> _qyCall.qy().queryMCustomer())
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
-                      , () -> xsyncQyCall().qy().queryMCustomer()));
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
                 }
             }
-            return _mCustomer;
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -641,23 +641,23 @@ public class BsMClientCenterCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
+        public MCustomerCB.HpSpecification specifyMCustomer() {
+            assertRelation("mCustomer");
+            if (_mCustomer == null) {
+                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
+                                    , () -> _qyCall.qy().queryMCustomer())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
+                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
+                      , () -> xsyncQyCall().qy().queryMCustomer()));
                 }
             }
-            return _mCenter;
+            return _mCustomer;
         }
         /**
          * Prepare to specify functions about relation table. <br>

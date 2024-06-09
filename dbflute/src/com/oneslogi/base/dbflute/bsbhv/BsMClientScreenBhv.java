@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, M_CLIENT, B_SCREEN, V_DICT, V_HT_DICT
+ *     M_CLIENT, B_DICT, B_SCREEN, V_DICT, V_HT_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, mClient, bScreen, vDict, vHtDict
+ *     mClient, bDict, bScreen, vDict, vHtDict
  *
  * [referrer property]
  *     
@@ -420,20 +420,20 @@ public abstract class BsMClientScreenBhv extends AbstractBehaviorWritable<MClien
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BDict'.
-     * @param mClientScreenList The list of mClientScreen. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BDict> pulloutBDict(List<MClientScreen> mClientScreenList)
-    { return helpPulloutInternally(mClientScreenList, "bDict"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param mClientScreenList The list of mClientScreen. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MClient> pulloutMClient(List<MClientScreen> mClientScreenList)
     { return helpPulloutInternally(mClientScreenList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'BDict'.
+     * @param mClientScreenList The list of mClientScreen. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BDict> pulloutBDict(List<MClientScreen> mClientScreenList)
+    { return helpPulloutInternally(mClientScreenList, "bDict"); }
 
     /**
      * Pull out the list of foreign table 'BScreen'.

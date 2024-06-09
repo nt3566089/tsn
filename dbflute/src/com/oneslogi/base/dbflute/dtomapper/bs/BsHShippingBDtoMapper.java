@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_STOCK_TYPE, H_SHIPPING_H, H_SHIPPING_SPARE(AsOne)
+ *     H_SHIPPING_H, M_STOCK_TYPE, H_SHIPPING_SPARE(AsOne)
  *
  * [referrer-table]
  *     H_PACKING_B, H_SHIPPING_SPARE
  *
  * [foreign-property]
- *     mStockType, hShippingH, hShippingSpareAsOne
+ *     hShippingH, mStockType, hShippingSpareAsOne
  *
  * [referrer-property]
  *     hPackingBList
@@ -70,8 +70,8 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMStockType;
     protected boolean _suppressHShippingH;
+    protected boolean _suppressMStockType;
     protected boolean _suppressHPackingBList;
     protected boolean _suppressHShippingSpareAsOne;
 
@@ -171,32 +171,6 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMStockType && entity.getMStockType() != null) {
-            MStockType relationEntity = entity.getMStockType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
-                dto.setMStockType(relationDto);
-                if (reverseReference) {
-                    relationDto.getHShippingBList().add(dto);
-                }
-            } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressHShippingBList();
-                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMStockType(relationDto);
-                if (reverseReference) {
-                    relationDto.getHShippingBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMStockType());
-                }
-            }
-        };
         if (!_suppressHShippingH && entity.getHShippingH() != null) {
             HShippingH relationEntity = entity.getHShippingH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -220,6 +194,32 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getHShippingH());
+                }
+            }
+        };
+        if (!_suppressMStockType && entity.getMStockType() != null) {
+            MStockType relationEntity = entity.getMStockType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MStockTypeDto relationDto = (MStockTypeDto)cachedDto;
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getHShippingBList().add(dto);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressHShippingBList();
+                MStockTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMStockType(relationDto);
+                if (reverseReference) {
+                    relationDto.getHShippingBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMStockType());
                 }
             }
         };
@@ -427,32 +427,6 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMStockType && dto.getMStockType() != null) {
-            MStockTypeDto relationDto = dto.getMStockType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MStockType relationEntity = (MStockType)cachedEntity;
-                entity.setMStockType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getHShippingBList().add(entity);
-                }
-            } else {
-                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressHShippingBList();
-                MStockType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMStockType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getHShippingBList().add(entity);
-                }
-                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMStockType());
-                }
-            }
-        };
         if (!_suppressHShippingH && dto.getHShippingH() != null) {
             HShippingHDto relationDto = dto.getHShippingH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -476,6 +450,32 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
                 }
                 if (instanceCache && entity.getHShippingH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getHShippingH());
+                }
+            }
+        };
+        if (!_suppressMStockType && dto.getMStockType() != null) {
+            MStockTypeDto relationDto = dto.getMStockType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MStockType relationEntity = (MStockType)cachedEntity;
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getHShippingBList().add(entity);
+                }
+            } else {
+                MStockTypeDtoMapper mapper = new MStockTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressHShippingBList();
+                MStockType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMStockType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getHShippingBList().add(entity);
+                }
+                if (instanceCache && entity.getMStockType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMStockType());
                 }
             }
         };
@@ -637,11 +637,11 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMStockType() {
-        _suppressMStockType = true;
-    }
     public void suppressHShippingH() {
         _suppressHShippingH = true;
+    }
+    public void suppressMStockType() {
+        _suppressMStockType = true;
     }
     public void suppressHPackingBList() {
         _suppressHPackingBList = true;
@@ -650,14 +650,14 @@ public abstract class BsHShippingBDtoMapper implements DtoMapper<HShippingB, HSh
         _suppressHShippingSpareAsOne = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMStockType();
         suppressHShippingH();
+        suppressMStockType();
         suppressHPackingBList();
         suppressHShippingSpareAsOne();
     }
     protected void doSuppressClear() { // internal
-        _suppressMStockType = false;
         _suppressHShippingH = false;
+        _suppressMStockType = false;
         _suppressHPackingBList = false;
         _suppressHShippingSpareAsOne = false;
     }

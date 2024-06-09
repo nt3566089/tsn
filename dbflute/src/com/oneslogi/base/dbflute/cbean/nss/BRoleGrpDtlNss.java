@@ -20,20 +20,20 @@ public class BRoleGrpDtlNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BRoleNss withBRole() {
-        _query.xdoNss(() -> _query.queryBRole());
-        return new BRoleNss(_query.queryBRole());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BRoleGrpNss withBRoleGrp() {
         _query.xdoNss(() -> _query.queryBRoleGrp());
         return new BRoleGrpNss(_query.queryBRoleGrp());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BRoleNss withBRole() {
+        _query.xdoNss(() -> _query.queryBRole());
+        return new BRoleNss(_query.queryBRole());
     }
 }

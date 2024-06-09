@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PIC_MTHD_RCMD, T_PICKING_H
+ *     T_PICKING_H, T_PIC_MTHD_RCMD
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPicMthdRcmd, tPickingH
+ *     tPickingH, tPicMthdRcmd
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfTPicMthdRcmdData {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTPicMthdRcmd _foreignTPicMthdRcmdLoader;
-    public LoaderOfTPicMthdRcmd pulloutTPicMthdRcmd() {
-        if (_foreignTPicMthdRcmdLoader == null)
-        { _foreignTPicMthdRcmdLoader = new LoaderOfTPicMthdRcmd().ready(myBhv().pulloutTPicMthdRcmd(_selectedList), _selector); }
-        return _foreignTPicMthdRcmdLoader;
-    }
-
     protected LoaderOfTPickingH _foreignTPickingHLoader;
     public LoaderOfTPickingH pulloutTPickingH() {
         if (_foreignTPickingHLoader == null)
         { _foreignTPickingHLoader = new LoaderOfTPickingH().ready(myBhv().pulloutTPickingH(_selectedList), _selector); }
         return _foreignTPickingHLoader;
+    }
+
+    protected LoaderOfTPicMthdRcmd _foreignTPicMthdRcmdLoader;
+    public LoaderOfTPicMthdRcmd pulloutTPicMthdRcmd() {
+        if (_foreignTPicMthdRcmdLoader == null)
+        { _foreignTPicMthdRcmdLoader = new LoaderOfTPicMthdRcmd().ready(myBhv().pulloutTPicMthdRcmd(_selectedList), _selector); }
+        return _foreignTPicMthdRcmdLoader;
     }
 
     // ===================================================================================

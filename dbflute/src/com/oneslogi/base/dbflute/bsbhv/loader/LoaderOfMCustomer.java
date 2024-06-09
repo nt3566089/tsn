@@ -36,7 +36,7 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     mClient, mCustomerSelf, mClientCenterByClientId, bClassDtlByDelFlg, bClassDtlByDeliveryFlg, bClassDtlByDepositFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotReverseFlg, bClassDtlByOnetimeFlg, bClassDtlByShippingStopFlg, bClassDtlByVendorFlg, mCarrierSlipCesAsOne
  *
  * [referrer property]
- *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHBySupplyCustomerIdList, tAllocInstHByDelivCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBBySupplierIdList, tMoveInstBByDepositIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHBySupplyCustomerIdList, tShippingInstHByDelivCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
+ *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHByDelivCustomerIdList, tAllocInstHBySupplyCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBByDepositIdList, tMoveInstBBySupplierIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHByDelivCustomerIdList, tShippingInstHBySupplyCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -299,40 +299,6 @@ public class LoaderOfMCustomer {
         return hd -> hd.handle(new LoaderOfTAllocInstB().ready(_referrerTAllocInstBList, _selector));
     }
 
-    protected List<TAllocInstH> _referrerTAllocInstHBySupplyCustomerIdList;
-
-    /**
-     * Load referrer of TAllocInstHBySupplyCustomerIdList by the set-upper of referrer. <br>
-     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
-     * <pre>
-     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTAllocInstHBySupplyCustomerIdList</span>(<span style="color: #553000">hCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">hCB</span>.setupSelect...
-     *         <span style="color: #553000">hCB</span>.query().set...
-     *         <span style="color: #553000">hCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">hLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    hLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
-     *     ... = mCustomer.<span style="color: #CC4747">getTAllocInstHBySupplyCustomerIdList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setSupplyCustomerId_InScope(pkList);
-     * cb.query().addOrderBy_SupplyCustomerId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTAllocInstH> loadTAllocInstHBySupplyCustomerIdList(ConditionBeanSetupper<TAllocInstHCB> refCBLambda) {
-        myBhv().loadTAllocInstHBySupplyCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTAllocInstHBySupplyCustomerIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTAllocInstH().ready(_referrerTAllocInstHBySupplyCustomerIdList, _selector));
-    }
-
     protected List<TAllocInstH> _referrerTAllocInstHByDelivCustomerIdList;
 
     /**
@@ -365,6 +331,40 @@ public class LoaderOfMCustomer {
     public NestedReferrerLoaderGateway<LoaderOfTAllocInstH> loadTAllocInstHByDelivCustomerIdList(ConditionBeanSetupper<TAllocInstHCB> refCBLambda) {
         myBhv().loadTAllocInstHByDelivCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTAllocInstHByDelivCustomerIdList = refLs);
         return hd -> hd.handle(new LoaderOfTAllocInstH().ready(_referrerTAllocInstHByDelivCustomerIdList, _selector));
+    }
+
+    protected List<TAllocInstH> _referrerTAllocInstHBySupplyCustomerIdList;
+
+    /**
+     * Load referrer of TAllocInstHBySupplyCustomerIdList by the set-upper of referrer. <br>
+     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
+     * <pre>
+     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTAllocInstHBySupplyCustomerIdList</span>(<span style="color: #553000">hCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">hCB</span>.setupSelect...
+     *         <span style="color: #553000">hCB</span>.query().set...
+     *         <span style="color: #553000">hCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">hLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    hLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
+     *     ... = mCustomer.<span style="color: #CC4747">getTAllocInstHBySupplyCustomerIdList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setSupplyCustomerId_InScope(pkList);
+     * cb.query().addOrderBy_SupplyCustomerId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTAllocInstH> loadTAllocInstHBySupplyCustomerIdList(ConditionBeanSetupper<TAllocInstHCB> refCBLambda) {
+        myBhv().loadTAllocInstHBySupplyCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTAllocInstHBySupplyCustomerIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTAllocInstH().ready(_referrerTAllocInstHBySupplyCustomerIdList, _selector));
     }
 
     protected List<TAllocLot> _referrerTAllocLotList;
@@ -571,40 +571,6 @@ public class LoaderOfMCustomer {
         return hd -> hd.handle(new LoaderOfTLastLot().ready(_referrerTLastLotList, _selector));
     }
 
-    protected List<TMoveInstB> _referrerTMoveInstBBySupplierIdList;
-
-    /**
-     * Load referrer of TMoveInstBBySupplierIdList by the set-upper of referrer. <br>
-     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
-     * <pre>
-     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTMoveInstBBySupplierIdList</span>(<span style="color: #553000">bCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">bCB</span>.setupSelect...
-     *         <span style="color: #553000">bCB</span>.query().set...
-     *         <span style="color: #553000">bCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">bLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    bLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
-     *     ... = mCustomer.<span style="color: #CC4747">getTMoveInstBBySupplierIdList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setSupplierId_InScope(pkList);
-     * cb.query().addOrderBy_SupplierId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTMoveInstB> loadTMoveInstBBySupplierIdList(ConditionBeanSetupper<TMoveInstBCB> refCBLambda) {
-        myBhv().loadTMoveInstBBySupplierIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTMoveInstBBySupplierIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTMoveInstB().ready(_referrerTMoveInstBBySupplierIdList, _selector));
-    }
-
     protected List<TMoveInstB> _referrerTMoveInstBByDepositIdList;
 
     /**
@@ -637,6 +603,40 @@ public class LoaderOfMCustomer {
     public NestedReferrerLoaderGateway<LoaderOfTMoveInstB> loadTMoveInstBByDepositIdList(ConditionBeanSetupper<TMoveInstBCB> refCBLambda) {
         myBhv().loadTMoveInstBByDepositIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTMoveInstBByDepositIdList = refLs);
         return hd -> hd.handle(new LoaderOfTMoveInstB().ready(_referrerTMoveInstBByDepositIdList, _selector));
+    }
+
+    protected List<TMoveInstB> _referrerTMoveInstBBySupplierIdList;
+
+    /**
+     * Load referrer of TMoveInstBBySupplierIdList by the set-upper of referrer. <br>
+     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
+     * <pre>
+     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTMoveInstBBySupplierIdList</span>(<span style="color: #553000">bCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">bCB</span>.setupSelect...
+     *         <span style="color: #553000">bCB</span>.query().set...
+     *         <span style="color: #553000">bCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">bLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    bLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
+     *     ... = mCustomer.<span style="color: #CC4747">getTMoveInstBBySupplierIdList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setSupplierId_InScope(pkList);
+     * cb.query().addOrderBy_SupplierId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTMoveInstB> loadTMoveInstBBySupplierIdList(ConditionBeanSetupper<TMoveInstBCB> refCBLambda) {
+        myBhv().loadTMoveInstBBySupplierIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTMoveInstBBySupplierIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTMoveInstB().ready(_referrerTMoveInstBBySupplierIdList, _selector));
     }
 
     protected List<TReceivePlanH> _referrerTReceivePlanHByPlanDepositIdList;
@@ -741,40 +741,6 @@ public class LoaderOfMCustomer {
         return hd -> hd.handle(new LoaderOfTShippingInstB().ready(_referrerTShippingInstBList, _selector));
     }
 
-    protected List<TShippingInstH> _referrerTShippingInstHBySupplyCustomerIdList;
-
-    /**
-     * Load referrer of TShippingInstHBySupplyCustomerIdList by the set-upper of referrer. <br>
-     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
-     * <pre>
-     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTShippingInstHBySupplyCustomerIdList</span>(<span style="color: #553000">hCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *         <span style="color: #553000">hCB</span>.setupSelect...
-     *         <span style="color: #553000">hCB</span>.query().set...
-     *         <span style="color: #553000">hCB</span>.query().addOrderBy...
-     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">hLoader</span> -&gt; {</span>
-     *     <span style="color: #3F7E5E">//    hLoader.load...</span>
-     *     <span style="color: #3F7E5E">//});</span>
-     * });
-     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
-     *     ... = mCustomer.<span style="color: #CC4747">getTShippingInstHBySupplyCustomerIdList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setSupplyCustomerId_InScope(pkList);
-     * cb.query().addOrderBy_SupplyCustomerId_Asc();
-     * </pre>
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerLoaderGateway<LoaderOfTShippingInstH> loadTShippingInstHBySupplyCustomerIdList(ConditionBeanSetupper<TShippingInstHCB> refCBLambda) {
-        myBhv().loadTShippingInstHBySupplyCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTShippingInstHBySupplyCustomerIdList = refLs);
-        return hd -> hd.handle(new LoaderOfTShippingInstH().ready(_referrerTShippingInstHBySupplyCustomerIdList, _selector));
-    }
-
     protected List<TShippingInstH> _referrerTShippingInstHByDelivCustomerIdList;
 
     /**
@@ -807,6 +773,40 @@ public class LoaderOfMCustomer {
     public NestedReferrerLoaderGateway<LoaderOfTShippingInstH> loadTShippingInstHByDelivCustomerIdList(ConditionBeanSetupper<TShippingInstHCB> refCBLambda) {
         myBhv().loadTShippingInstHByDelivCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTShippingInstHByDelivCustomerIdList = refLs);
         return hd -> hd.handle(new LoaderOfTShippingInstH().ready(_referrerTShippingInstHByDelivCustomerIdList, _selector));
+    }
+
+    protected List<TShippingInstH> _referrerTShippingInstHBySupplyCustomerIdList;
+
+    /**
+     * Load referrer of TShippingInstHBySupplyCustomerIdList by the set-upper of referrer. <br>
+     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
+     * <pre>
+     * <span style="color: #0000C0">mCustomerBhv</span>.<span style="color: #994747">load</span>(<span style="color: #553000">mCustomerList</span>, <span style="color: #553000">customerLoader</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">customerLoader</span>.<span style="color: #CC4747">loadTShippingInstHBySupplyCustomerIdList</span>(<span style="color: #553000">hCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *         <span style="color: #553000">hCB</span>.setupSelect...
+     *         <span style="color: #553000">hCB</span>.query().set...
+     *         <span style="color: #553000">hCB</span>.query().addOrderBy...
+     *     }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     *     <span style="color: #3F7E5E">//}).withNestedReferrer(<span style="color: #553000">hLoader</span> -&gt; {</span>
+     *     <span style="color: #3F7E5E">//    hLoader.load...</span>
+     *     <span style="color: #3F7E5E">//});</span>
+     * });
+     * for (MCustomer mCustomer : <span style="color: #553000">mCustomerList</span>) {
+     *     ... = mCustomer.<span style="color: #CC4747">getTShippingInstHBySupplyCustomerIdList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setSupplyCustomerId_InScope(pkList);
+     * cb.query().addOrderBy_SupplyCustomerId_Asc();
+     * </pre>
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerLoaderGateway<LoaderOfTShippingInstH> loadTShippingInstHBySupplyCustomerIdList(ConditionBeanSetupper<TShippingInstHCB> refCBLambda) {
+        myBhv().loadTShippingInstHBySupplyCustomerIdList(_selectedList, refCBLambda).withNestedReferrer(refLs -> _referrerTShippingInstHBySupplyCustomerIdList = refLs);
+        return hd -> hd.handle(new LoaderOfTShippingInstH().ready(_referrerTShippingInstHBySupplyCustomerIdList, _selector));
     }
 
     protected List<TStock> _referrerTStockList;

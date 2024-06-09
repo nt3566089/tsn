@@ -37,7 +37,7 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     
  *
  * [foreign property]
- *     bUserByTagOutUserId, bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
+ *     bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bUserByTagOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
  *
  * [referrer property]
  *     
@@ -487,25 +487,6 @@ public abstract class BsTPackingR extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'. */
-    protected BUser _bUserByTagOutUserId;
-
-    /**
-     * [get] B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'. <br>
-     * @return The entity of foreign property 'BUserByTagOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUserByTagOutUserId() {
-        return _bUserByTagOutUserId;
-    }
-
-    /**
-     * [set] B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-     * @param bUserByTagOutUserId The entity of foreign property 'BUserByTagOutUserId'. (NullAllowed)
-     */
-    public void setBUserByTagOutUserId(BUser bUserByTagOutUserId) {
-        _bUserByTagOutUserId = bUserByTagOutUserId;
-    }
-
     /** B_USER by my INSPECTION_OUT_USER_ID, named 'BUserByInspectionOutUserId'. */
     protected BUser _bUserByInspectionOutUserId;
 
@@ -561,6 +542,25 @@ public abstract class BsTPackingR extends AbstractEntity implements DomainEntity
      */
     public void setBUserByStwOutUserId(BUser bUserByStwOutUserId) {
         _bUserByStwOutUserId = bUserByStwOutUserId;
+    }
+
+    /** B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'. */
+    protected BUser _bUserByTagOutUserId;
+
+    /**
+     * [get] B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'. <br>
+     * @return The entity of foreign property 'BUserByTagOutUserId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUserByTagOutUserId() {
+        return _bUserByTagOutUserId;
+    }
+
+    /**
+     * [set] B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+     * @param bUserByTagOutUserId The entity of foreign property 'BUserByTagOutUserId'. (NullAllowed)
+     */
+    public void setBUserByTagOutUserId(BUser bUserByTagOutUserId) {
+        _bUserByTagOutUserId = bUserByTagOutUserId;
     }
 
     /** B_CLASS_DTL by my STW_OUT_FLG, named 'BClassDtlByStwOutFlg'. */
@@ -652,14 +652,14 @@ public abstract class BsTPackingR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUserByTagOutUserId != null)
-        { sb.append(li).append(xbRDS(_bUserByTagOutUserId, "bUserByTagOutUserId")); }
         if (_bUserByInspectionOutUserId != null)
         { sb.append(li).append(xbRDS(_bUserByInspectionOutUserId, "bUserByInspectionOutUserId")); }
         if (_tPackingH != null)
         { sb.append(li).append(xbRDS(_tPackingH, "tPackingH")); }
         if (_bUserByStwOutUserId != null)
         { sb.append(li).append(xbRDS(_bUserByStwOutUserId, "bUserByStwOutUserId")); }
+        if (_bUserByTagOutUserId != null)
+        { sb.append(li).append(xbRDS(_bUserByTagOutUserId, "bUserByTagOutUserId")); }
         if (_bClassDtlByStwOutFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByStwOutFlg, "bClassDtlByStwOutFlg")); }
         if (_bClassDtlByTagOutFlg != null)
@@ -702,14 +702,14 @@ public abstract class BsTPackingR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUserByTagOutUserId != null)
-        { sb.append(dm).append("bUserByTagOutUserId"); }
         if (_bUserByInspectionOutUserId != null)
         { sb.append(dm).append("bUserByInspectionOutUserId"); }
         if (_tPackingH != null)
         { sb.append(dm).append("tPackingH"); }
         if (_bUserByStwOutUserId != null)
         { sb.append(dm).append("bUserByStwOutUserId"); }
+        if (_bUserByTagOutUserId != null)
+        { sb.append(dm).append("bUserByTagOutUserId"); }
         if (_bClassDtlByStwOutFlg != null)
         { sb.append(dm).append("bClassDtlByStwOutFlg"); }
         if (_bClassDtlByTagOutFlg != null)

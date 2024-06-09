@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_EC_ORDER_H, B_CLASS_DTL(ByInvoiceCreateFlg)
+ *     T_EC_ORDER_H, B_USER, B_CLASS_DTL(ByInvoiceCreateFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tEcOrderH, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
+ *     tEcOrderH, bUser, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfTEcOrderR {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBUser _foreignBUserLoader;
-    public LoaderOfBUser pulloutBUser() {
-        if (_foreignBUserLoader == null)
-        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
-        return _foreignBUserLoader;
-    }
-
     protected LoaderOfTEcOrderH _foreignTEcOrderHLoader;
     public LoaderOfTEcOrderH pulloutTEcOrderH() {
         if (_foreignTEcOrderHLoader == null)
         { _foreignTEcOrderHLoader = new LoaderOfTEcOrderH().ready(myBhv().pulloutTEcOrderH(_selectedList), _selector); }
         return _foreignTEcOrderHLoader;
+    }
+
+    protected LoaderOfBUser _foreignBUserLoader;
+    public LoaderOfBUser pulloutBUser() {
+        if (_foreignBUserLoader == null)
+        { _foreignBUserLoader = new LoaderOfBUser().ready(myBhv().pulloutBUser(_selectedList), _selector); }
+        return _foreignBUserLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInvoiceCreateFlgLoader;

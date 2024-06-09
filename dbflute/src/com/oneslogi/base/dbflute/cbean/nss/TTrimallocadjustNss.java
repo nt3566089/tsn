@@ -20,20 +20,20 @@ public class TTrimallocadjustNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TTrimallocstockNss withTTrimallocstock() {
-        _query.xdoNss(() -> _query.queryTTrimallocstock());
-        return new TTrimallocstockNss(_query.queryTTrimallocstock());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * T_TRIMALLOCSCHKRI by my TRIMALLOCSCH_ID, named 'TTrimallocschkri'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TTrimallocschkriNss withTTrimallocschkri() {
         _query.xdoNss(() -> _query.queryTTrimallocschkri());
         return new TTrimallocschkriNss(_query.queryTTrimallocschkri());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TTrimallocstockNss withTTrimallocstock() {
+        _query.xdoNss(() -> _query.queryTTrimallocstock());
+        return new TTrimallocstockNss(_query.queryTTrimallocstock());
     }
 }

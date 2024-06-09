@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, H_SHIPPING_H, H_SHIPPING_SPARE(AsOne)
+ *     H_SHIPPING_H, M_STOCK_TYPE, H_SHIPPING_SPARE(AsOne)
  *
  * [referrer table]
  *     H_PACKING_B, H_SHIPPING_SPARE
  *
  * [foreign property]
- *     mStockType, hShippingH, hShippingSpareAsOne
+ *     hShippingH, mStockType, hShippingSpareAsOne
  *
  * [referrer property]
  *     hPackingBList
@@ -481,20 +481,20 @@ public abstract class BsHShippingBBhv extends AbstractBehaviorWritable<HShipping
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param hShippingBList The list of hShippingB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<HShippingB> hShippingBList)
-    { return helpPulloutInternally(hShippingBList, "mStockType"); }
-
-    /**
      * Pull out the list of foreign table 'HShippingH'.
      * @param hShippingBList The list of hShippingB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<HShippingH> pulloutHShippingH(List<HShippingB> hShippingBList)
     { return helpPulloutInternally(hShippingBList, "hShippingH"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param hShippingBList The list of hShippingB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<HShippingB> hShippingBList)
+    { return helpPulloutInternally(hShippingBList, "mStockType"); }
 
     /**
      * Pull out the list of referrer-as-one table 'HShippingSpare'.

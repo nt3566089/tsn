@@ -93,13 +93,13 @@ public class MLocationDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((MLocation)et).getMCenter(), (et, vl) -> ((MLocation)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getMProductShapeByMaxStoreProductShapeId(), (et, vl) -> ((MLocation)et).setMProductShapeByMaxStoreProductShapeId((MProductShape)vl), "MProductShapeByMaxStoreProductShapeId");
+        setupEfpg(_efpgMap, et -> ((MLocation)et).getMCustomer(), (et, vl) -> ((MLocation)et).setMCustomer((MCustomer)vl), "MCustomer");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getMProduct(), (et, vl) -> ((MLocation)et).setMProduct((MProduct)vl), "MProduct");
-        setupEfpg(_efpgMap, et -> ((MLocation)et).getMZone(), (et, vl) -> ((MLocation)et).setMZone((MZone)vl), "MZone");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getMProductShapeByReplenishPProductShapeId(), (et, vl) -> ((MLocation)et).setMProductShapeByReplenishPProductShapeId((MProductShape)vl), "MProductShapeByReplenishPProductShapeId");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getMStockType(), (et, vl) -> ((MLocation)et).setMStockType((MStockType)vl), "MStockType");
-        setupEfpg(_efpgMap, et -> ((MLocation)et).getMCustomer(), (et, vl) -> ((MLocation)et).setMCustomer((MCustomer)vl), "MCustomer");
-        setupEfpg(_efpgMap, et -> ((MLocation)et).getMCenter(), (et, vl) -> ((MLocation)et).setMCenter((MCenter)vl), "MCenter");
+        setupEfpg(_efpgMap, et -> ((MLocation)et).getMZone(), (et, vl) -> ((MLocation)et).setMZone((MZone)vl), "MZone");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getBClassDtlByAllocNgFlg(), (et, vl) -> ((MLocation)et).setBClassDtlByAllocNgFlg((BClassDtl)vl), "BClassDtlByAllocNgFlg");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getBClassDtlByDelFlg(), (et, vl) -> ((MLocation)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
         setupEfpg(_efpgMap, et -> ((MLocation)et).getBClassDtlByLocationType(), (et, vl) -> ((MLocation)et).setBClassDtlByLocationType((BClassDtl)vl), "BClassDtlByLocationType");
@@ -449,44 +449,20 @@ public class MLocationDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
+        return cfi("M_LOCATION_FK7", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MLocationList", false);
+    }
+    /**
      * M_PRODUCT_SHAPE by my MAX_STORE_PRODUCT_SHAPE_ID, named 'MProductShapeByMaxStoreProductShapeId'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMProductShapeByMaxStoreProductShapeId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMaxStoreProductShapeId(), MProductShapeDbm.getInstance().columnProductShapeId());
-        return cfi("M_LOCATION_FK5", "MProductShapeByMaxStoreProductShapeId", this, MProductShapeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MLocationByMaxStoreProductShapeIdList", false);
-    }
-    /**
-     * M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("M_LOCATION_FK2", "MProduct", this, MProductDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MLocationList", false);
-    }
-    /**
-     * M_ZONE by my ZONE_ID, named 'MZone'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMZone() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnZoneId(), MZoneDbm.getInstance().columnZoneId());
-        return cfi("M_LOCATION_FK1", "MZone", this, MZoneDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MLocationList", false);
-    }
-    /**
-     * M_PRODUCT_SHAPE by my REPLENISH_P_PRODUCT_SHAPE_ID, named 'MProductShapeByReplenishPProductShapeId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProductShapeByReplenishPProductShapeId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishPProductShapeId(), MProductShapeDbm.getInstance().columnProductShapeId());
-        return cfi("M_LOCATION_FK6", "MProductShapeByReplenishPProductShapeId", this, MProductShapeDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "MLocationByReplenishPProductShapeIdList", false);
-    }
-    /**
-     * M_STOCK_TYPE by my REPLENISH_STOCK_TYPE_ID, named 'MStockType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("M_LOCATION_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "MLocationList", false);
+        return cfi("M_LOCATION_FK5", "MProductShapeByMaxStoreProductShapeId", this, MProductShapeDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MLocationByMaxStoreProductShapeIdList", false);
     }
     /**
      * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
@@ -494,15 +470,39 @@ public class MLocationDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("M_LOCATION_FK4", "MCustomer", this, MCustomerDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "MLocationList", false);
+        return cfi("M_LOCATION_FK4", "MCustomer", this, MCustomerDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MLocationList", false);
     }
     /**
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("M_LOCATION_FK7", "MCenter", this, MCenterDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "MLocationList", false);
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("M_LOCATION_FK2", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "MLocationList", false);
+    }
+    /**
+     * M_PRODUCT_SHAPE by my REPLENISH_P_PRODUCT_SHAPE_ID, named 'MProductShapeByReplenishPProductShapeId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProductShapeByReplenishPProductShapeId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishPProductShapeId(), MProductShapeDbm.getInstance().columnProductShapeId());
+        return cfi("M_LOCATION_FK6", "MProductShapeByReplenishPProductShapeId", this, MProductShapeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "MLocationByReplenishPProductShapeIdList", false);
+    }
+    /**
+     * M_STOCK_TYPE by my REPLENISH_STOCK_TYPE_ID, named 'MStockType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReplenishStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("M_LOCATION_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "MLocationList", false);
+    }
+    /**
+     * M_ZONE by my ZONE_ID, named 'MZone'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMZone() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnZoneId(), MZoneDbm.getInstance().columnZoneId());
+        return cfi("M_LOCATION_FK1", "MZone", this, MZoneDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "MLocationList", false);
     }
     /**
      * B_CLASS_DTL by my ALLOC_NG_FLG, named 'BClassDtlByAllocNgFlg'.

@@ -67,9 +67,9 @@ public class WSglRowShipInspBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getBUser(), (et, vl) -> ((WSglRowShipInspB)et).setBUser((BUser)vl), "BUser");
-        setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getWSglRowShipInspH(), (et, vl) -> ((WSglRowShipInspB)et).setWSglRowShipInspH((WSglRowShipInspH)vl), "WSglRowShipInspH");
         setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getTPickingH(), (et, vl) -> ((WSglRowShipInspB)et).setTPickingH((TPickingH)vl), "TPickingH");
+        setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getWSglRowShipInspH(), (et, vl) -> ((WSglRowShipInspB)et).setWSglRowShipInspH((WSglRowShipInspH)vl), "WSglRowShipInspH");
+        setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getBUser(), (et, vl) -> ((WSglRowShipInspB)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((WSglRowShipInspB)et).getBClassDtlByInspectionFlg(), (et, vl) -> ((WSglRowShipInspB)et).setBClassDtlByInspectionFlg((BClassDtl)vl), "BClassDtlByInspectionFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -234,12 +234,12 @@ public class WSglRowShipInspBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my USER_ID, named 'BUser'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignBUser() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("W_SGL_ROW_SHIP_INSP_B_FK2", "BUser", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WSglRowShipInspBList", false);
+    public ForeignInfo foreignTPickingH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
+        return cfi("W_SGL_ROW_SHIP_INSP_B_FK1", "TPickingH", this, TPickingHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WSglRowShipInspBList", false);
     }
     /**
      * W_SGL_ROW_SHIP_INSP_H by my SGL_ROW_SHIP_INSP_H_ID, named 'WSglRowShipInspH'.
@@ -250,12 +250,12 @@ public class WSglRowShipInspBDbm extends AbstractDBMeta {
         return cfi("W_SGL_ROW_SHIP_INSP_B_FK3", "WSglRowShipInspH", this, WSglRowShipInspHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WSglRowShipInspBList", false);
     }
     /**
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * B_USER by my USER_ID, named 'BUser'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTPickingH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPickingHId(), TPickingHDbm.getInstance().columnPickingHId());
-        return cfi("W_SGL_ROW_SHIP_INSP_B_FK1", "TPickingH", this, TPickingHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WSglRowShipInspBList", false);
+    public ForeignInfo foreignBUser() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("W_SGL_ROW_SHIP_INSP_B_FK2", "BUser", this, BUserDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WSglRowShipInspBList", false);
     }
     /**
      * B_CLASS_DTL by my INSPECTION_FLG, named 'BClassDtlByInspectionFlg'.

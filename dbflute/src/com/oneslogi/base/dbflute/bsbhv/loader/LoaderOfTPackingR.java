@@ -31,7 +31,7 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     
  *
  * [foreign property]
- *     bUserByTagOutUserId, bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
+ *     bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bUserByTagOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
  *
  * [referrer property]
  *     
@@ -59,13 +59,6 @@ public class LoaderOfTPackingR {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBUser _foreignBUserByTagOutUserIdLoader;
-    public LoaderOfBUser pulloutBUserByTagOutUserId() {
-        if (_foreignBUserByTagOutUserIdLoader == null)
-        { _foreignBUserByTagOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByTagOutUserId(_selectedList), _selector); }
-        return _foreignBUserByTagOutUserIdLoader;
-    }
-
     protected LoaderOfBUser _foreignBUserByInspectionOutUserIdLoader;
     public LoaderOfBUser pulloutBUserByInspectionOutUserId() {
         if (_foreignBUserByInspectionOutUserIdLoader == null)
@@ -85,6 +78,13 @@ public class LoaderOfTPackingR {
         if (_foreignBUserByStwOutUserIdLoader == null)
         { _foreignBUserByStwOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByStwOutUserId(_selectedList), _selector); }
         return _foreignBUserByStwOutUserIdLoader;
+    }
+
+    protected LoaderOfBUser _foreignBUserByTagOutUserIdLoader;
+    public LoaderOfBUser pulloutBUserByTagOutUserId() {
+        if (_foreignBUserByTagOutUserIdLoader == null)
+        { _foreignBUserByTagOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByTagOutUserId(_selectedList), _selector); }
+        return _foreignBUserByTagOutUserIdLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByStwOutFlgLoader;

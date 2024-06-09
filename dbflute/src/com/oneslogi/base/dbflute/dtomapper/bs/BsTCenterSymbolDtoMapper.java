@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_TRSYMBOL, T_PALLET
+ *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_PALLET, T_TRSYMBOL
  *
  * [referrer-table]
  *     T_CENTER_SYMBOL
  *
  * [foreign-property]
- *     mCenter, tCenterSymbolSelf, mClient, tTrsymbol, tPallet
+ *     mCenter, tCenterSymbolSelf, mClient, tPallet, tTrsymbol
  *
  * [referrer-property]
  *     tCenterSymbolSelfList
@@ -73,8 +73,8 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
     protected boolean _suppressMCenter;
     protected boolean _suppressTCenterSymbolSelf;
     protected boolean _suppressMClient;
-    protected boolean _suppressTTrsymbol;
     protected boolean _suppressTPallet;
+    protected boolean _suppressTTrsymbol;
     protected boolean _suppressTCenterSymbolSelfList;
 
     // ===================================================================================
@@ -231,32 +231,6 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
                 }
             }
         };
-        if (!_suppressTTrsymbol && entity.getTTrsymbol() != null) {
-            TTrsymbol relationEntity = entity.getTTrsymbol();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TTrsymbolDto relationDto = (TTrsymbolDto)cachedDto;
-                dto.setTTrsymbol(relationDto);
-                if (reverseReference) {
-                    relationDto.getTCenterSymbolList().add(dto);
-                }
-            } else {
-                TTrsymbolDtoMapper mapper = new TTrsymbolDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTCenterSymbolList();
-                TTrsymbolDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTTrsymbol(relationDto);
-                if (reverseReference) {
-                    relationDto.getTCenterSymbolList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTTrsymbol());
-                }
-            }
-        };
         if (!_suppressTPallet && entity.getTPallet() != null) {
             TPallet relationEntity = entity.getTPallet();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -280,6 +254,32 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTPallet());
+                }
+            }
+        };
+        if (!_suppressTTrsymbol && entity.getTTrsymbol() != null) {
+            TTrsymbol relationEntity = entity.getTTrsymbol();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TTrsymbolDto relationDto = (TTrsymbolDto)cachedDto;
+                dto.setTTrsymbol(relationDto);
+                if (reverseReference) {
+                    relationDto.getTCenterSymbolList().add(dto);
+                }
+            } else {
+                TTrsymbolDtoMapper mapper = new TTrsymbolDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTCenterSymbolList();
+                TTrsymbolDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTTrsymbol(relationDto);
+                if (reverseReference) {
+                    relationDto.getTCenterSymbolList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTTrsymbol());
                 }
             }
         };
@@ -479,32 +479,6 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
                 }
             }
         };
-        if (!_suppressTTrsymbol && dto.getTTrsymbol() != null) {
-            TTrsymbolDto relationDto = dto.getTTrsymbol();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TTrsymbol relationEntity = (TTrsymbol)cachedEntity;
-                entity.setTTrsymbol(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTCenterSymbolList().add(entity);
-                }
-            } else {
-                TTrsymbolDtoMapper mapper = new TTrsymbolDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTCenterSymbolList();
-                TTrsymbol relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTTrsymbol(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTCenterSymbolList().add(entity);
-                }
-                if (instanceCache && entity.getTTrsymbol().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTTrsymbol());
-                }
-            }
-        };
         if (!_suppressTPallet && dto.getTPallet() != null) {
             TPalletDto relationDto = dto.getTPallet();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -528,6 +502,32 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
                 }
                 if (instanceCache && entity.getTPallet().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTPallet());
+                }
+            }
+        };
+        if (!_suppressTTrsymbol && dto.getTTrsymbol() != null) {
+            TTrsymbolDto relationDto = dto.getTTrsymbol();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TTrsymbol relationEntity = (TTrsymbol)cachedEntity;
+                entity.setTTrsymbol(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTCenterSymbolList().add(entity);
+                }
+            } else {
+                TTrsymbolDtoMapper mapper = new TTrsymbolDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTCenterSymbolList();
+                TTrsymbol relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTTrsymbol(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTCenterSymbolList().add(entity);
+                }
+                if (instanceCache && entity.getTTrsymbol().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTTrsymbol());
                 }
             }
         };
@@ -672,11 +672,11 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
     public void suppressMClient() {
         _suppressMClient = true;
     }
-    public void suppressTTrsymbol() {
-        _suppressTTrsymbol = true;
-    }
     public void suppressTPallet() {
         _suppressTPallet = true;
+    }
+    public void suppressTTrsymbol() {
+        _suppressTTrsymbol = true;
     }
     public void suppressTCenterSymbolSelfList() {
         _suppressTCenterSymbolSelfList = true;
@@ -685,16 +685,16 @@ public abstract class BsTCenterSymbolDtoMapper implements DtoMapper<TCenterSymbo
         suppressMCenter();
         suppressTCenterSymbolSelf();
         suppressMClient();
-        suppressTTrsymbol();
         suppressTPallet();
+        suppressTTrsymbol();
         suppressTCenterSymbolSelfList();
     }
     protected void doSuppressClear() { // internal
         _suppressMCenter = false;
         _suppressTCenterSymbolSelf = false;
         _suppressMClient = false;
-        _suppressTTrsymbol = false;
         _suppressTPallet = false;
+        _suppressTTrsymbol = false;
         _suppressTCenterSymbolSelfList = false;
     }
 

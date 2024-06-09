@@ -387,8 +387,8 @@ public class BsMCenterItemCB extends AbstractConditionBean {
 
     public static class HpSpecification extends HpAbstractSpecification<MCenterItemCQ> {
         protected MCenterCB.HpSpecification _mCenter;
-        protected BItemCB.HpSpecification _bItem;
         protected BDictCB.HpSpecification _bDict;
+        protected BItemCB.HpSpecification _bItem;
         protected VDictCB.HpSpecification _vDict;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MCenterItemCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider

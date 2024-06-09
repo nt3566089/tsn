@@ -266,35 +266,6 @@ public class BsMClientItemCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BItemNss _nssBItem;
-    public BItemNss xdfgetNssBItem() {
-        if (_nssBItem == null) { _nssBItem = new BItemNss(null); }
-        return _nssBItem;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_ITEM by my ITEM_ID, named 'BItem'.
-     * <pre>
-     * <span style="color: #0000C0">mClientItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BItem()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mClientItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mClientItem</span>.<span style="color: #CC4747">getBItem()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BItemNss setupSelect_BItem() {
-        assertSetupSelectPurpose("bItem");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnItemId();
-        }
-        doSetupSelect(() -> query().queryBItem());
-        if (_nssBItem == null || !_nssBItem.hasConditionQuery())
-        { _nssBItem = new BItemNss(query().queryBItem()); }
-        return _nssBItem;
-    }
-
     protected MClientNss _nssMClient;
     public MClientNss xdfgetNssMClient() {
         if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
@@ -322,6 +293,35 @@ public class BsMClientItemCB extends AbstractConditionBean {
         if (_nssMClient == null || !_nssMClient.hasConditionQuery())
         { _nssMClient = new MClientNss(query().queryMClient()); }
         return _nssMClient;
+    }
+
+    protected BItemNss _nssBItem;
+    public BItemNss xdfgetNssBItem() {
+        if (_nssBItem == null) { _nssBItem = new BItemNss(null); }
+        return _nssBItem;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_ITEM by my ITEM_ID, named 'BItem'.
+     * <pre>
+     * <span style="color: #0000C0">mClientItemBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BItem()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mClientItem</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mClientItem</span>.<span style="color: #CC4747">getBItem()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BItemNss setupSelect_BItem() {
+        assertSetupSelectPurpose("bItem");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnItemId();
+        }
+        doSetupSelect(() -> query().queryBItem());
+        if (_nssBItem == null || !_nssBItem.hasConditionQuery())
+        { _nssBItem = new BItemNss(query().queryBItem()); }
+        return _nssBItem;
     }
 
     /**
@@ -386,9 +386,9 @@ public class BsMClientItemCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MClientItemCQ> {
-        protected BItemCB.HpSpecification _bItem;
         protected MClientCB.HpSpecification _mClient;
         protected BDictCB.HpSpecification _bDict;
+        protected BItemCB.HpSpecification _bItem;
         protected VDictCB.HpSpecification _vDict;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MClientItemCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -479,13 +479,13 @@ public class BsMClientItemCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnClientItemId(); // PK
-            if (qyCall().qy().hasConditionQueryBItem()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BItemCQ) {
-                columnItemId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBItem()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BItemCQ) {
+                columnItemId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VDictCQ) {
@@ -494,26 +494,6 @@ public class BsMClientItemCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_CLIENT_ITEM"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_ITEM by my ITEM_ID, named 'BItem'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BItemCB.HpSpecification specifyBItem() {
-            assertRelation("bItem");
-            if (_bItem == null) {
-                _bItem = new BItemCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBItem()
-                                    , () -> _qyCall.qy().queryBItem())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bItem.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBItem()
-                      , () -> xsyncQyCall().qy().queryBItem()));
-                }
-            }
-            return _bItem;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -533,6 +513,26 @@ public class BsMClientItemCB extends AbstractConditionBean {
                 }
             }
             return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_ITEM by my ITEM_ID, named 'BItem'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BItemCB.HpSpecification specifyBItem() {
+            assertRelation("bItem");
+            if (_bItem == null) {
+                _bItem = new BItemCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBItem()
+                                    , () -> _qyCall.qy().queryBItem())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bItem.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBItem()
+                      , () -> xsyncQyCall().qy().queryBItem()));
+                }
+            }
+            return _bItem;
         }
         /**
          * Prepare to specify functions about relation table. <br>

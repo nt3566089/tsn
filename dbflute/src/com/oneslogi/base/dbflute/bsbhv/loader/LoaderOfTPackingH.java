@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_H, M_CENTER, M_BOX, T_ALLOC_INST_H, M_CLIENT, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_BOX, M_CENTER, M_CLIENT, T_PICKING_H, M_PROCESS_TYPE, B_USER(ByUpdUser), B_CLASS_DTL(ByLoadingFlg), T_PACKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_B, T_PIC_MTHD_RCMD_CART, T_PACKING_R
  *
  * [foreign property]
- *     tPickingH, mCenter, mBox, tAllocInstH, mClient, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
+ *     tAllocInstH, mBox, mCenter, mClient, tPickingH, mProcessType, bUserByUpdUser, bClassDtlByLoadingFlg, bClassDtlByMixedFlg, bClassDtlByMultiPicFlg, bClassDtlByPackingStatus, tPackingRAsOne
  *
  * [referrer property]
  *     tPackingBList, tPicMthdRcmdCartList
@@ -132,18 +132,11 @@ public class LoaderOfTPackingH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTPickingH _foreignTPickingHLoader;
-    public LoaderOfTPickingH pulloutTPickingH() {
-        if (_foreignTPickingHLoader == null)
-        { _foreignTPickingHLoader = new LoaderOfTPickingH().ready(myBhv().pulloutTPickingH(_selectedList), _selector); }
-        return _foreignTPickingHLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
+    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
+    public LoaderOfTAllocInstH pulloutTAllocInstH() {
+        if (_foreignTAllocInstHLoader == null)
+        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
+        return _foreignTAllocInstHLoader;
     }
 
     protected LoaderOfMBox _foreignMBoxLoader;
@@ -153,11 +146,11 @@ public class LoaderOfTPackingH {
         return _foreignMBoxLoader;
     }
 
-    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
-    public LoaderOfTAllocInstH pulloutTAllocInstH() {
-        if (_foreignTAllocInstHLoader == null)
-        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
-        return _foreignTAllocInstHLoader;
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
     }
 
     protected LoaderOfMClient _foreignMClientLoader;
@@ -165,6 +158,13 @@ public class LoaderOfTPackingH {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfTPickingH _foreignTPickingHLoader;
+    public LoaderOfTPickingH pulloutTPickingH() {
+        if (_foreignTPickingHLoader == null)
+        { _foreignTPickingHLoader = new LoaderOfTPickingH().ready(myBhv().pulloutTPickingH(_selectedList), _selector); }
+        return _foreignTPickingHLoader;
     }
 
     protected LoaderOfMProcessType _foreignMProcessTypeLoader;

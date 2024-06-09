@@ -84,15 +84,15 @@ public class TAllocInstBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTLot(), (et, vl) -> ((TAllocInstB)et).setTLot((TLot)vl), "TLot");
-        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMWarehouse(), (et, vl) -> ((TAllocInstB)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
+        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTAllocInstH(), (et, vl) -> ((TAllocInstB)et).setTAllocInstH((TAllocInstH)vl), "TAllocInstH");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMCustomer(), (et, vl) -> ((TAllocInstB)et).setMCustomer((MCustomer)vl), "MCustomer");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMLocation(), (et, vl) -> ((TAllocInstB)et).setMLocation((MLocation)vl), "MLocation");
+        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTLot(), (et, vl) -> ((TAllocInstB)et).setTLot((TLot)vl), "TLot");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMProduct(), (et, vl) -> ((TAllocInstB)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMShape(), (et, vl) -> ((TAllocInstB)et).setMShape((MShape)vl), "MShape");
-        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTStoreNo(), (et, vl) -> ((TAllocInstB)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMStockType(), (et, vl) -> ((TAllocInstB)et).setMStockType((MStockType)vl), "MStockType");
-        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTAllocInstH(), (et, vl) -> ((TAllocInstB)et).setTAllocInstH((TAllocInstH)vl), "TAllocInstH");
+        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getTStoreNo(), (et, vl) -> ((TAllocInstB)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
+        setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getMWarehouse(), (et, vl) -> ((TAllocInstB)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getBClassDtlByLimitDtManagFlg(), (et, vl) -> ((TAllocInstB)et).setBClassDtlByLimitDtManagFlg((BClassDtl)vl), "BClassDtlByLimitDtManagFlg");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getBClassDtlByLimitDtReverseFlg(), (et, vl) -> ((TAllocInstB)et).setBClassDtlByLimitDtReverseFlg((BClassDtl)vl), "BClassDtlByLimitDtReverseFlg");
         setupEfpg(_efpgMap, et -> ((TAllocInstB)et).getBClassDtlByLotManagFlg(), (et, vl) -> ((TAllocInstB)et).setBClassDtlByLotManagFlg((BClassDtl)vl), "BClassDtlByLotManagFlg");
@@ -369,20 +369,12 @@ public class TAllocInstBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_LOT by my LOT_ID, named 'TLot'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTLot() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("T_ALLOC_INST_B_FK8", "TLot", this, TLotDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
-    }
-    /**
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMWarehouse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("T_ALLOC_INST_B_FK9", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+    public ForeignInfo foreignTAllocInstH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
+        return cfi("T_ALLOC_INST_B_FK1", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
      * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
@@ -390,7 +382,7 @@ public class TAllocInstBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_ALLOC_INST_B_FK4", "MCustomer", this, MCustomerDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+        return cfi("T_ALLOC_INST_B_FK4", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
      * M_LOCATION by my LOCATION_ID, named 'MLocation'.
@@ -398,7 +390,15 @@ public class TAllocInstBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMLocation() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_ALLOC_INST_B_FK5", "MLocation", this, MLocationDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+        return cfi("T_ALLOC_INST_B_FK5", "MLocation", this, MLocationDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+    }
+    /**
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTLot() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
+        return cfi("T_ALLOC_INST_B_FK8", "TLot", this, TLotDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
@@ -417,28 +417,28 @@ public class TAllocInstBDbm extends AbstractDBMeta {
         return cfi("T_ALLOC_INST_B_FK6", "MShape", this, MShapeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
-     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTStoreNo() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreNoId(), TStoreNoDbm.getInstance().columnStoreNoId());
-        return cfi("T_ALLOC_INST_B_FK7", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
-    }
-    /**
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMStockType() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("T_ALLOC_INST_B_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+        return cfi("T_ALLOC_INST_B_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTAllocInstH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstHId(), TAllocInstHDbm.getInstance().columnAllocInstHId());
-        return cfi("T_ALLOC_INST_B_FK1", "TAllocInstH", this, TAllocInstHDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+    public ForeignInfo foreignTStoreNo() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreNoId(), TStoreNoDbm.getInstance().columnStoreNoId());
+        return cfi("T_ALLOC_INST_B_FK7", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 7, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
+    }
+    /**
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMWarehouse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
+        return cfi("T_ALLOC_INST_B_FK9", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 8, null, false, false, false, false, null, null, false, "TAllocInstBList", false);
     }
     /**
      * B_CLASS_DTL by my LIMIT_DT_MANAG_FLG, named 'BClassDtlByLimitDtManagFlg'.

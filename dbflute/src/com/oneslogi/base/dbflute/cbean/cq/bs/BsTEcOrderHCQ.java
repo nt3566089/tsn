@@ -1818,17 +1818,17 @@ public class BsTEcOrderHCQ extends AbstractBsTEcOrderHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TEcOrderHCQ bq = (TEcOrderHCQ)bqs;
         TEcOrderHCQ uq = (TEcOrderHCQ)uqs;
-        if (bq.hasConditionQueryMImportType()) {
-            uq.queryMImportType().reflectRelationOnUnionQuery(bq.queryMImportType(), uq.queryMImportType());
-        }
-        if (bq.hasConditionQueryTShippingInstH()) {
-            uq.queryTShippingInstH().reflectRelationOnUnionQuery(bq.queryTShippingInstH(), uq.queryTShippingInstH());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryMImportType()) {
+            uq.queryMImportType().reflectRelationOnUnionQuery(bq.queryMImportType(), uq.queryMImportType());
+        }
+        if (bq.hasConditionQueryTShippingInstH()) {
+            uq.queryTShippingInstH().reflectRelationOnUnionQuery(bq.queryTShippingInstH(), uq.queryTShippingInstH());
         }
         if (bq.hasConditionQueryBClassDtlByDelivMatchFlg()) {
             uq.queryBClassDtlByDelivMatchFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelivMatchFlg(), uq.queryBClassDtlByDelivMatchFlg());
@@ -1853,46 +1853,6 @@ public class BsTEcOrderHCQ extends AbstractBsTEcOrderHCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MImportTypeCQ queryMImportType() {
-        return xdfgetConditionQueryMImportType();
-    }
-    public MImportTypeCQ xdfgetConditionQueryMImportType() {
-        String prop = "mImportType";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMImportType()); xsetupOuterJoinMImportType(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MImportTypeCQ xcreateQueryMImportType() {
-        String nrp = xresolveNRP("T_EC_ORDER_H", "mImportType"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MImportTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mImportType", nrp);
-    }
-    protected void xsetupOuterJoinMImportType() { xregOutJo("mImportType"); }
-    public boolean hasConditionQueryMImportType() { return xhasQueRlMap("mImportType"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TShippingInstHCQ queryTShippingInstH() {
-        return xdfgetConditionQueryTShippingInstH();
-    }
-    public TShippingInstHCQ xdfgetConditionQueryTShippingInstH() {
-        String prop = "tShippingInstH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTShippingInstH()); xsetupOuterJoinTShippingInstH(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TShippingInstHCQ xcreateQueryTShippingInstH() {
-        String nrp = xresolveNRP("T_EC_ORDER_H", "tShippingInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TShippingInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tShippingInstH", nrp);
-    }
-    protected void xsetupOuterJoinTShippingInstH() { xregOutJo("tShippingInstH"); }
-    public boolean hasConditionQueryTShippingInstH() { return xhasQueRlMap("tShippingInstH"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -1932,6 +1892,46 @@ public class BsTEcOrderHCQ extends AbstractBsTEcOrderHCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MImportTypeCQ queryMImportType() {
+        return xdfgetConditionQueryMImportType();
+    }
+    public MImportTypeCQ xdfgetConditionQueryMImportType() {
+        String prop = "mImportType";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMImportType()); xsetupOuterJoinMImportType(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MImportTypeCQ xcreateQueryMImportType() {
+        String nrp = xresolveNRP("T_EC_ORDER_H", "mImportType"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MImportTypeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mImportType", nrp);
+    }
+    protected void xsetupOuterJoinMImportType() { xregOutJo("mImportType"); }
+    public boolean hasConditionQueryMImportType() { return xhasQueRlMap("mImportType"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TShippingInstHCQ queryTShippingInstH() {
+        return xdfgetConditionQueryTShippingInstH();
+    }
+    public TShippingInstHCQ xdfgetConditionQueryTShippingInstH() {
+        String prop = "tShippingInstH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTShippingInstH()); xsetupOuterJoinTShippingInstH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TShippingInstHCQ xcreateQueryTShippingInstH() {
+        String nrp = xresolveNRP("T_EC_ORDER_H", "tShippingInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TShippingInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tShippingInstH", nrp);
+    }
+    protected void xsetupOuterJoinTShippingInstH() { xregOutJo("tShippingInstH"); }
+    public boolean hasConditionQueryTShippingInstH() { return xhasQueRlMap("tShippingInstH"); }
 
     /**
      * Get the condition-query for relation table. <br>

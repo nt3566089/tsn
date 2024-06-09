@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_MOVE_INST_B, T_MOVE_INST_H, M_LOCATION, B_CLASS_DTL(ByAllShippingFlg)
+ *     M_LOCATION, T_MOVE_INST_B, T_MOVE_INST_H, B_CLASS_DTL(ByAllShippingFlg)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     tMoveInstB, tMoveInstH, mLocation, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
+ *     mLocation, tMoveInstB, tMoveInstH, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
  *
  * [referrer-property]
  *     tStockInoutList
@@ -70,9 +70,9 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressMLocation;
     protected boolean _suppressTMoveInstB;
     protected boolean _suppressTMoveInstH;
-    protected boolean _suppressMLocation;
     protected boolean _suppressBClassDtlByAllShippingFlg;
     protected boolean _suppressBClassDtlByStoreNoMergeFlg;
     protected boolean _suppressTStockInoutList;
@@ -152,6 +152,32 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMLocation && entity.getMLocation() != null) {
+            MLocation relationEntity = entity.getMLocation();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MLocationDto relationDto = (MLocationDto)cachedDto;
+                dto.setMLocation(relationDto);
+                if (reverseReference) {
+                    relationDto.getTMoveRecordBList().add(dto);
+                }
+            } else {
+                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTMoveRecordBList();
+                MLocationDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMLocation(relationDto);
+                if (reverseReference) {
+                    relationDto.getTMoveRecordBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMLocation());
+                }
+            }
+        };
         if (!_suppressTMoveInstB && entity.getTMoveInstB() != null) {
             TMoveInstB relationEntity = entity.getTMoveInstB();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -201,32 +227,6 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTMoveInstH());
-                }
-            }
-        };
-        if (!_suppressMLocation && entity.getMLocation() != null) {
-            MLocation relationEntity = entity.getMLocation();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MLocationDto relationDto = (MLocationDto)cachedDto;
-                dto.setMLocation(relationDto);
-                if (reverseReference) {
-                    relationDto.getTMoveRecordBList().add(dto);
-                }
-            } else {
-                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTMoveRecordBList();
-                MLocationDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMLocation(relationDto);
-                if (reverseReference) {
-                    relationDto.getTMoveRecordBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMLocation());
                 }
             }
         };
@@ -391,6 +391,32 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMLocation && dto.getMLocation() != null) {
+            MLocationDto relationDto = dto.getMLocation();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MLocation relationEntity = (MLocation)cachedEntity;
+                entity.setMLocation(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTMoveRecordBList().add(entity);
+                }
+            } else {
+                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTMoveRecordBList();
+                MLocation relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMLocation(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTMoveRecordBList().add(entity);
+                }
+                if (instanceCache && entity.getMLocation().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMLocation());
+                }
+            }
+        };
         if (!_suppressTMoveInstB && dto.getTMoveInstB() != null) {
             TMoveInstBDto relationDto = dto.getTMoveInstB();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -440,32 +466,6 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
                 }
                 if (instanceCache && entity.getTMoveInstH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTMoveInstH());
-                }
-            }
-        };
-        if (!_suppressMLocation && dto.getMLocation() != null) {
-            MLocationDto relationDto = dto.getMLocation();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MLocation relationEntity = (MLocation)cachedEntity;
-                entity.setMLocation(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTMoveRecordBList().add(entity);
-                }
-            } else {
-                MLocationDtoMapper mapper = new MLocationDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTMoveRecordBList();
-                MLocation relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMLocation(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTMoveRecordBList().add(entity);
-                }
-                if (instanceCache && entity.getMLocation().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMLocation());
                 }
             }
         };
@@ -647,14 +647,14 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressMLocation() {
+        _suppressMLocation = true;
+    }
     public void suppressTMoveInstB() {
         _suppressTMoveInstB = true;
     }
     public void suppressTMoveInstH() {
         _suppressTMoveInstH = true;
-    }
-    public void suppressMLocation() {
-        _suppressMLocation = true;
     }
     public void suppressBClassDtlByAllShippingFlg() {
         _suppressBClassDtlByAllShippingFlg = true;
@@ -666,17 +666,17 @@ public abstract class BsTMoveRecordBDtoMapper implements DtoMapper<TMoveRecordB,
         _suppressTStockInoutList = true;
     }
     protected void doSuppressAll() { // internal
+        suppressMLocation();
         suppressTMoveInstB();
         suppressTMoveInstH();
-        suppressMLocation();
         suppressBClassDtlByAllShippingFlg();
         suppressBClassDtlByStoreNoMergeFlg();
         suppressTStockInoutList();
     }
     protected void doSuppressClear() { // internal
+        _suppressMLocation = false;
         _suppressTMoveInstB = false;
         _suppressTMoveInstH = false;
-        _suppressMLocation = false;
         _suppressBClassDtlByAllShippingFlg = false;
         _suppressBClassDtlByStoreNoMergeFlg = false;
         _suppressTStockInoutList = false;

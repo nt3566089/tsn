@@ -38,21 +38,21 @@ public class TReceivePlanBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TReceivePlanHNss withTReceivePlanH() {
-        _query.xdoNss(() -> _query.queryTReceivePlanH());
-        return new TReceivePlanHNss(_query.queryTReceivePlanH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MProductNss withMProduct() {
         _query.xdoNss(() -> _query.queryMProduct());
         return new MProductNss(_query.queryMProduct());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TReceivePlanHNss withTReceivePlanH() {
+        _query.xdoNss(() -> _query.queryTReceivePlanH());
+        return new TReceivePlanHNss(_query.queryTReceivePlanH());
     }
     /**
      * With nested relation columns to select clause. <br>

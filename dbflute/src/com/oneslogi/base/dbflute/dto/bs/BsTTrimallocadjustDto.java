@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_TRIMALLOCSTOCK, T_TRIMALLOCSCHKRI
+ *     T_TRIMALLOCSCHKRI, T_TRIMALLOCSTOCK
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tTrimallocstock, tTrimallocschkri
+ *     tTrimallocschkri, tTrimallocstock
  *
  * [referrer-property]
  *     
@@ -149,16 +149,6 @@ public abstract class BsTTrimallocadjustDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TTrimallocstockDto _tTrimallocstock;
-
-    public TTrimallocstockDto getTTrimallocstock() {
-        return _tTrimallocstock;
-    }
-
-    public void setTTrimallocstock(TTrimallocstockDto tTrimallocstock) {
-        this._tTrimallocstock = tTrimallocstock;
-    }
-
     protected TTrimallocschkriDto _tTrimallocschkri;
 
     public TTrimallocschkriDto getTTrimallocschkri() {
@@ -167,6 +157,16 @@ public abstract class BsTTrimallocadjustDto implements Serializable {
 
     public void setTTrimallocschkri(TTrimallocschkriDto tTrimallocschkri) {
         this._tTrimallocschkri = tTrimallocschkri;
+    }
+
+    protected TTrimallocstockDto _tTrimallocstock;
+
+    public TTrimallocstockDto getTTrimallocstock() {
+        return _tTrimallocstock;
+    }
+
+    public void setTTrimallocstock(TTrimallocstockDto tTrimallocstock) {
+        this._tTrimallocstock = tTrimallocstock;
     }
 
     // ===================================================================================

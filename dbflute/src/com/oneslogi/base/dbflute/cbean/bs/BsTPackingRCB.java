@@ -252,35 +252,6 @@ public class BsTPackingRCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BUserNss _nssBUserByTagOutUserId;
-    public BUserNss xdfgetNssBUserByTagOutUserId() {
-        if (_nssBUserByTagOutUserId == null) { _nssBUserByTagOutUserId = new BUserNss(null); }
-        return _nssBUserByTagOutUserId;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-     * <pre>
-     * <span style="color: #0000C0">tPackingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByTagOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPackingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPackingR</span>.<span style="color: #CC4747">getBUserByTagOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BUserNss setupSelect_BUserByTagOutUserId() {
-        assertSetupSelectPurpose("bUserByTagOutUserId");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTagOutUserId();
-        }
-        doSetupSelect(() -> query().queryBUserByTagOutUserId());
-        if (_nssBUserByTagOutUserId == null || !_nssBUserByTagOutUserId.hasConditionQuery())
-        { _nssBUserByTagOutUserId = new BUserNss(query().queryBUserByTagOutUserId()); }
-        return _nssBUserByTagOutUserId;
-    }
-
     protected BUserNss _nssBUserByInspectionOutUserId;
     public BUserNss xdfgetNssBUserByInspectionOutUserId() {
         if (_nssBUserByInspectionOutUserId == null) { _nssBUserByInspectionOutUserId = new BUserNss(null); }
@@ -363,6 +334,35 @@ public class BsTPackingRCB extends AbstractConditionBean {
         if (_nssBUserByStwOutUserId == null || !_nssBUserByStwOutUserId.hasConditionQuery())
         { _nssBUserByStwOutUserId = new BUserNss(query().queryBUserByStwOutUserId()); }
         return _nssBUserByStwOutUserId;
+    }
+
+    protected BUserNss _nssBUserByTagOutUserId;
+    public BUserNss xdfgetNssBUserByTagOutUserId() {
+        if (_nssBUserByTagOutUserId == null) { _nssBUserByTagOutUserId = new BUserNss(null); }
+        return _nssBUserByTagOutUserId;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+     * <pre>
+     * <span style="color: #0000C0">tPackingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByTagOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPackingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPackingR</span>.<span style="color: #CC4747">getBUserByTagOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BUserNss setupSelect_BUserByTagOutUserId() {
+        assertSetupSelectPurpose("bUserByTagOutUserId");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTagOutUserId();
+        }
+        doSetupSelect(() -> query().queryBUserByTagOutUserId());
+        if (_nssBUserByTagOutUserId == null || !_nssBUserByTagOutUserId.hasConditionQuery())
+        { _nssBUserByTagOutUserId = new BUserNss(query().queryBUserByTagOutUserId()); }
+        return _nssBUserByTagOutUserId;
     }
 
     protected BClassDtlNss _nssBClassDtlByStwOutFlg;
@@ -493,10 +493,10 @@ public class BsTPackingRCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPackingRCQ> {
-        protected BUserCB.HpSpecification _bUserByTagOutUserId;
         protected BUserCB.HpSpecification _bUserByInspectionOutUserId;
         protected TPackingHCB.HpSpecification _tPackingH;
         protected BUserCB.HpSpecification _bUserByStwOutUserId;
+        protected BUserCB.HpSpecification _bUserByTagOutUserId;
         protected BClassDtlCB.HpSpecification _bClassDtlByStwOutFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByTagOutFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByInspectionOutFlg;
@@ -609,10 +609,6 @@ public class BsTPackingRCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPackingHId(); // PK
-            if (qyCall().qy().hasConditionQueryBUserByTagOutUserId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnTagOutUserId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBUserByInspectionOutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
                 columnInspectionOutUserId(); // FK or one-to-one referrer
@@ -620,6 +616,10 @@ public class BsTPackingRCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryBUserByStwOutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
                 columnStwOutUserId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBUserByTagOutUserId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
+                columnTagOutUserId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByStwOutFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -636,26 +636,6 @@ public class BsTPackingRCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_PACKING_R"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUserByTagOutUserId() {
-            assertRelation("bUserByTagOutUserId");
-            if (_bUserByTagOutUserId == null) {
-                _bUserByTagOutUserId = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByTagOutUserId()
-                                    , () -> _qyCall.qy().queryBUserByTagOutUserId())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUserByTagOutUserId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByTagOutUserId()
-                      , () -> xsyncQyCall().qy().queryBUserByTagOutUserId()));
-                }
-            }
-            return _bUserByTagOutUserId;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_USER by my INSPECTION_OUT_USER_ID, named 'BUserByInspectionOutUserId'.
@@ -715,6 +695,26 @@ public class BsTPackingRCB extends AbstractConditionBean {
                 }
             }
             return _bUserByStwOutUserId;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUserByTagOutUserId() {
+            assertRelation("bUserByTagOutUserId");
+            if (_bUserByTagOutUserId == null) {
+                _bUserByTagOutUserId = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByTagOutUserId()
+                                    , () -> _qyCall.qy().queryBUserByTagOutUserId())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUserByTagOutUserId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByTagOutUserId()
+                      , () -> xsyncQyCall().qy().queryBUserByTagOutUserId()));
+                }
+            }
+            return _bUserByTagOutUserId;
         }
         /**
          * Prepare to specify functions about relation table. <br>

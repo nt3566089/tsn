@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_CENTER, M_CLIENT, M_CUSTOMER, M_WAREHOUSE, T_LOT, M_LOCATION, M_PRODUCT
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mCenter, mClient, mCustomer, mWarehouse, tLot, mLocation, mProduct
+ *     mCenter, mClient, mCustomer, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -59,13 +59,6 @@ public class LoaderOfWHtInventoryInputProd {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMStockType _foreignMStockTypeLoader;
-    public LoaderOfMStockType pulloutMStockType() {
-        if (_foreignMStockTypeLoader == null)
-        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
-        return _foreignMStockTypeLoader;
-    }
-
     protected LoaderOfMCenter _foreignMCenterLoader;
     public LoaderOfMCenter pulloutMCenter() {
         if (_foreignMCenterLoader == null)
@@ -87,11 +80,11 @@ public class LoaderOfWHtInventoryInputProd {
         return _foreignMCustomerLoader;
     }
 
-    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
-    public LoaderOfMWarehouse pulloutMWarehouse() {
-        if (_foreignMWarehouseLoader == null)
-        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
-        return _foreignMWarehouseLoader;
+    protected LoaderOfMLocation _foreignMLocationLoader;
+    public LoaderOfMLocation pulloutMLocation() {
+        if (_foreignMLocationLoader == null)
+        { _foreignMLocationLoader = new LoaderOfMLocation().ready(myBhv().pulloutMLocation(_selectedList), _selector); }
+        return _foreignMLocationLoader;
     }
 
     protected LoaderOfTLot _foreignTLotLoader;
@@ -101,18 +94,25 @@ public class LoaderOfWHtInventoryInputProd {
         return _foreignTLotLoader;
     }
 
-    protected LoaderOfMLocation _foreignMLocationLoader;
-    public LoaderOfMLocation pulloutMLocation() {
-        if (_foreignMLocationLoader == null)
-        { _foreignMLocationLoader = new LoaderOfMLocation().ready(myBhv().pulloutMLocation(_selectedList), _selector); }
-        return _foreignMLocationLoader;
-    }
-
     protected LoaderOfMProduct _foreignMProductLoader;
     public LoaderOfMProduct pulloutMProduct() {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
+    }
+
+    protected LoaderOfMStockType _foreignMStockTypeLoader;
+    public LoaderOfMStockType pulloutMStockType() {
+        if (_foreignMStockTypeLoader == null)
+        { _foreignMStockTypeLoader = new LoaderOfMStockType().ready(myBhv().pulloutMStockType(_selectedList), _selector); }
+        return _foreignMStockTypeLoader;
+    }
+
+    protected LoaderOfMWarehouse _foreignMWarehouseLoader;
+    public LoaderOfMWarehouse pulloutMWarehouse() {
+        if (_foreignMWarehouseLoader == null)
+        { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
+        return _foreignMWarehouseLoader;
     }
 
     // ===================================================================================

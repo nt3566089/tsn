@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, B_USER, M_CLIENT
+ *     M_CENTER, M_CLIENT, B_USER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCenter, bUser, mClient
+ *     mCenter, mClient, bUser
  *
  * [referrer-property]
  *     
@@ -143,16 +143,6 @@ public abstract class BsMUserLoginDto implements Serializable {
         this._mCenter = mCenter;
     }
 
-    protected BUserDto _bUser;
-
-    public BUserDto getBUser() {
-        return _bUser;
-    }
-
-    public void setBUser(BUserDto bUser) {
-        this._bUser = bUser;
-    }
-
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -161,6 +151,16 @@ public abstract class BsMUserLoginDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected BUserDto _bUser;
+
+    public BUserDto getBUser() {
+        return _bUser;
+    }
+
+    public void setBUser(BUserDto bUser) {
+        this._bUser = bUser;
     }
 
     // ===================================================================================

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_STORE_NO, B_CLASS_DTL(ByTwlOutFlg)
+ *     T_STORE_NO, B_USER, B_CLASS_DTL(ByTwlOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tStoreNo, bClassDtlByTwlOutFlg
+ *     tStoreNo, bUser, bClassDtlByTwlOutFlg
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTStoreNoRBhv extends AbstractBehaviorWritable<TStoreNoR,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BUser'.
-     * @param tStoreNoRList The list of tStoreNoR. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BUser> pulloutBUser(List<TStoreNoR> tStoreNoRList)
-    { return helpPulloutInternally(tStoreNoRList, "bUser"); }
-
-    /**
      * Pull out the list of foreign table 'TStoreNo'.
      * @param tStoreNoRList The list of tStoreNoR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TStoreNo> pulloutTStoreNo(List<TStoreNoR> tStoreNoRList)
     { return helpPulloutInternally(tStoreNoRList, "tStoreNo"); }
+
+    /**
+     * Pull out the list of foreign table 'BUser'.
+     * @param tStoreNoRList The list of tStoreNoR. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BUser> pulloutBUser(List<TStoreNoR> tStoreNoRList)
+    { return helpPulloutInternally(tStoreNoRList, "bUser"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

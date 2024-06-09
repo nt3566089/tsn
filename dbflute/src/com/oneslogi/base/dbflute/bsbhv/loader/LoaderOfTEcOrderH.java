@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, T_SHIPPING_INST_H, M_CENTER, M_CLIENT, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_IMPORT_TYPE, T_SHIPPING_INST_H, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
  *
  * [referrer table]
  *     T_EC_ORDER_B, T_EC_ORDER_R
  *
  * [foreign property]
- *     mImportType, tShippingInstH, mCenter, mClient, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
+ *     mCenter, mClient, mImportType, tShippingInstH, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
  *
  * [referrer property]
  *     tEcOrderBList
@@ -98,20 +98,6 @@ public class LoaderOfTEcOrderH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMImportType _foreignMImportTypeLoader;
-    public LoaderOfMImportType pulloutMImportType() {
-        if (_foreignMImportTypeLoader == null)
-        { _foreignMImportTypeLoader = new LoaderOfMImportType().ready(myBhv().pulloutMImportType(_selectedList), _selector); }
-        return _foreignMImportTypeLoader;
-    }
-
-    protected LoaderOfTShippingInstH _foreignTShippingInstHLoader;
-    public LoaderOfTShippingInstH pulloutTShippingInstH() {
-        if (_foreignTShippingInstHLoader == null)
-        { _foreignTShippingInstHLoader = new LoaderOfTShippingInstH().ready(myBhv().pulloutTShippingInstH(_selectedList), _selector); }
-        return _foreignTShippingInstHLoader;
-    }
-
     protected LoaderOfMCenter _foreignMCenterLoader;
     public LoaderOfMCenter pulloutMCenter() {
         if (_foreignMCenterLoader == null)
@@ -124,6 +110,20 @@ public class LoaderOfTEcOrderH {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMImportType _foreignMImportTypeLoader;
+    public LoaderOfMImportType pulloutMImportType() {
+        if (_foreignMImportTypeLoader == null)
+        { _foreignMImportTypeLoader = new LoaderOfMImportType().ready(myBhv().pulloutMImportType(_selectedList), _selector); }
+        return _foreignMImportTypeLoader;
+    }
+
+    protected LoaderOfTShippingInstH _foreignTShippingInstHLoader;
+    public LoaderOfTShippingInstH pulloutTShippingInstH() {
+        if (_foreignTShippingInstHLoader == null)
+        { _foreignTShippingInstHLoader = new LoaderOfTShippingInstH().ready(myBhv().pulloutTShippingInstH(_selectedList), _selector); }
+        return _foreignTShippingInstHLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByDelivMatchFlgLoader;

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_RECEIVE_PLAN_H, M_CUSTOMER, M_CLIENT, M_STOCK_TYPE, M_CENTER, M_PROCESS_TYPE, T_PICKING_H, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
+ *     M_CENTER, M_CLIENT, T_RECEIVE_PLAN_H, T_PICKING_H, M_CUSTOMER, M_PROCESS_TYPE, M_STOCK_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
  *
  * [referrer table]
  *     T_RECEIVE_PLAN_B, T_RECEIVE_PLAN_H, T_STORE_RECORD_H, T_RECEIVE_PLAN_R, T_TRRCV
  *
  * [foreign property]
- *     tReceivePlanHSelf, mCustomerByPlanDepositId, mClient, mStockType, mCenter, mProcessType, mCustomerByPlanSupplierId, tPickingH, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
+ *     mCenter, mClient, tReceivePlanHSelf, tPickingH, mCustomerByPlanDepositId, mCustomerByPlanSupplierId, mProcessType, mStockType, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
  *
  * [referrer property]
  *     tReceivePlanBList, tReceivePlanHSelfList, tStoreRecordHList
@@ -801,42 +801,23 @@ public abstract class BsTReceivePlanH extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'. */
-    protected TReceivePlanH _tReceivePlanHSelf;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'. <br>
-     * @return The entity of foreign property 'TReceivePlanHSelf'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TReceivePlanH getTReceivePlanHSelf() {
-        return _tReceivePlanHSelf;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
-     * @param tReceivePlanHSelf The entity of foreign property 'TReceivePlanHSelf'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setTReceivePlanHSelf(TReceivePlanH tReceivePlanHSelf) {
-        _tReceivePlanHSelf = tReceivePlanHSelf;
-    }
-
-    /** M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'. */
-    protected MCustomer _mCustomerByPlanDepositId;
-
-    /**
-     * [get] M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'. <br>
-     * @return The entity of foreign property 'MCustomerByPlanDepositId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCustomer getMCustomerByPlanDepositId() {
-        return _mCustomerByPlanDepositId;
-    }
-
-    /**
-     * [set] M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
-     * @param mCustomerByPlanDepositId The entity of foreign property 'MCustomerByPlanDepositId'. (NullAllowed)
-     */
-    public void setMCustomerByPlanDepositId(MCustomer mCustomerByPlanDepositId) {
-        _mCustomerByPlanDepositId = mCustomerByPlanDepositId;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -858,61 +839,61 @@ public abstract class BsTReceivePlanH extends AbstractEntity implements DomainEn
         _mClient = mClient;
     }
 
-    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
-    protected MStockType _mStockType;
+    /** T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'. */
+    protected TReceivePlanH _tReceivePlanHSelf;
 
     /**
-     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
-     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'. <br>
+     * @return The entity of foreign property 'TReceivePlanHSelf'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MStockType getMStockType() {
-        return _mStockType;
+    public TReceivePlanH getTReceivePlanHSelf() {
+        return _tReceivePlanHSelf;
     }
 
     /**
-     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
-     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     * [set] T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
+     * @param tReceivePlanHSelf The entity of foreign property 'TReceivePlanHSelf'. (NullAllowed)
      */
-    public void setMStockType(MStockType mStockType) {
-        _mStockType = mStockType;
+    public void setTReceivePlanHSelf(TReceivePlanH tReceivePlanHSelf) {
+        _tReceivePlanHSelf = tReceivePlanHSelf;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
+    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
+    protected TPickingH _tPickingH;
 
     /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
+     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
-    }
-
-    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
-    protected MProcessType _mProcessType;
-
-    /**
-     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
-     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProcessType getMProcessType() {
-        return _mProcessType;
+    public TPickingH getTPickingH() {
+        return _tPickingH;
     }
 
     /**
-     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
+     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
      */
-    public void setMProcessType(MProcessType mProcessType) {
-        _mProcessType = mProcessType;
+    public void setTPickingH(TPickingH tPickingH) {
+        _tPickingH = tPickingH;
+    }
+
+    /** M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'. */
+    protected MCustomer _mCustomerByPlanDepositId;
+
+    /**
+     * [get] M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'. <br>
+     * @return The entity of foreign property 'MCustomerByPlanDepositId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCustomer getMCustomerByPlanDepositId() {
+        return _mCustomerByPlanDepositId;
+    }
+
+    /**
+     * [set] M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
+     * @param mCustomerByPlanDepositId The entity of foreign property 'MCustomerByPlanDepositId'. (NullAllowed)
+     */
+    public void setMCustomerByPlanDepositId(MCustomer mCustomerByPlanDepositId) {
+        _mCustomerByPlanDepositId = mCustomerByPlanDepositId;
     }
 
     /** M_CUSTOMER by my PLAN_SUPPLIER_ID, named 'MCustomerByPlanSupplierId'. */
@@ -934,23 +915,42 @@ public abstract class BsTReceivePlanH extends AbstractEntity implements DomainEn
         _mCustomerByPlanSupplierId = mCustomerByPlanSupplierId;
     }
 
-    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
-    protected TPickingH _tPickingH;
+    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
+    protected MProcessType _mProcessType;
 
     /**
-     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
-     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
+     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TPickingH getTPickingH() {
-        return _tPickingH;
+    public MProcessType getMProcessType() {
+        return _mProcessType;
     }
 
     /**
-     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
-     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
+     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
      */
-    public void setTPickingH(TPickingH tPickingH) {
-        _tPickingH = tPickingH;
+    public void setMProcessType(MProcessType mProcessType) {
+        _mProcessType = mProcessType;
+    }
+
+    /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
+    protected MStockType _mStockType;
+
+    /**
+     * [get] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. <br>
+     * @return The entity of foreign property 'MStockType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MStockType getMStockType() {
+        return _mStockType;
+    }
+
+    /**
+     * [set] M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * @param mStockType The entity of foreign property 'MStockType'. (NullAllowed)
+     */
+    public void setMStockType(MStockType mStockType) {
+        _mStockType = mStockType;
     }
 
     /** B_CLASS_DTL by my CENTER_TRANSIT_FLG, named 'BClassDtlByCenterTransitFlg'. */
@@ -1178,22 +1178,22 @@ public abstract class BsTReceivePlanH extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tReceivePlanHSelf != null)
-        { sb.append(li).append(xbRDS(_tReceivePlanHSelf, "tReceivePlanHSelf")); }
-        if (_mCustomerByPlanDepositId != null)
-        { sb.append(li).append(xbRDS(_mCustomerByPlanDepositId, "mCustomerByPlanDepositId")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_mStockType != null)
-        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_mProcessType != null)
-        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
-        if (_mCustomerByPlanSupplierId != null)
-        { sb.append(li).append(xbRDS(_mCustomerByPlanSupplierId, "mCustomerByPlanSupplierId")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_tReceivePlanHSelf != null)
+        { sb.append(li).append(xbRDS(_tReceivePlanHSelf, "tReceivePlanHSelf")); }
         if (_tPickingH != null)
         { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
+        if (_mCustomerByPlanDepositId != null)
+        { sb.append(li).append(xbRDS(_mCustomerByPlanDepositId, "mCustomerByPlanDepositId")); }
+        if (_mCustomerByPlanSupplierId != null)
+        { sb.append(li).append(xbRDS(_mCustomerByPlanSupplierId, "mCustomerByPlanSupplierId")); }
+        if (_mProcessType != null)
+        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
+        if (_mStockType != null)
+        { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_bClassDtlByCenterTransitFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByCenterTransitFlg, "bClassDtlByCenterTransitFlg")); }
         if (_bClassDtlByErrorFlg != null)
@@ -1259,22 +1259,22 @@ public abstract class BsTReceivePlanH extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tReceivePlanHSelf != null)
-        { sb.append(dm).append("tReceivePlanHSelf"); }
-        if (_mCustomerByPlanDepositId != null)
-        { sb.append(dm).append("mCustomerByPlanDepositId"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
-        if (_mStockType != null)
-        { sb.append(dm).append("mStockType"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
-        if (_mProcessType != null)
-        { sb.append(dm).append("mProcessType"); }
-        if (_mCustomerByPlanSupplierId != null)
-        { sb.append(dm).append("mCustomerByPlanSupplierId"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_tReceivePlanHSelf != null)
+        { sb.append(dm).append("tReceivePlanHSelf"); }
         if (_tPickingH != null)
         { sb.append(dm).append("tPickingH"); }
+        if (_mCustomerByPlanDepositId != null)
+        { sb.append(dm).append("mCustomerByPlanDepositId"); }
+        if (_mCustomerByPlanSupplierId != null)
+        { sb.append(dm).append("mCustomerByPlanSupplierId"); }
+        if (_mProcessType != null)
+        { sb.append(dm).append("mProcessType"); }
+        if (_mStockType != null)
+        { sb.append(dm).append("mStockType"); }
         if (_bClassDtlByCenterTransitFlg != null)
         { sb.append(dm).append("bClassDtlByCenterTransitFlg"); }
         if (_bClassDtlByErrorFlg != null)

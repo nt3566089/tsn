@@ -68,8 +68,8 @@ public class MClientColDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MClientCol)et).getBCol(), (et, vl) -> ((MClientCol)et).setBCol((BCol)vl), "BCol");
         setupEfpg(_efpgMap, et -> ((MClientCol)et).getMClient(), (et, vl) -> ((MClientCol)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((MClientCol)et).getBCol(), (et, vl) -> ((MClientCol)et).setBCol((BCol)vl), "BCol");
         setupEfpg(_efpgMap, et -> ((MClientCol)et).getBDict(), (et, vl) -> ((MClientCol)et).setBDict((BDict)vl), "BDict");
         setupEfpg(_efpgMap, et -> ((MClientCol)et).getVDict(), (et, vl) -> ((MClientCol)et).setVDict((VDict)vl), "VDict");
     }
@@ -243,20 +243,20 @@ public class MClientColDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_COL by my COL_ID, named 'BCol'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBCol() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnColId(), BColDbm.getInstance().columnColId());
-        return cfi("M_CLIENT_COL_FK1", "BCol", this, BColDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientColList", false);
-    }
-    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("M_CLIENT_COL_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientColList", false);
+        return cfi("M_CLIENT_COL_FK3", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientColList", false);
+    }
+    /**
+     * B_COL by my COL_ID, named 'BCol'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBCol() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnColId(), BColDbm.getInstance().columnColId());
+        return cfi("M_CLIENT_COL_FK1", "BCol", this, BColDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientColList", false);
     }
     /**
      * B_DICT by my DICT_ID, named 'BDict'.

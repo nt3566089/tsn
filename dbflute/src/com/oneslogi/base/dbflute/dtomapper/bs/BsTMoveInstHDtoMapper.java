@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_PROCESS_TYPE, M_CENTER, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
  *
  * [referrer-table]
  *     T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_MOVE_INST_R
  *
  * [foreign-property]
- *     mClient, mProcessType, mCenter, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
+ *     mCenter, mClient, mProcessType, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
  *
  * [referrer-property]
  *     tInventoryBList, tMoveInstBList, tMoveRecordBList
@@ -70,9 +70,9 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressMCenter;
     protected boolean _suppressMClient;
     protected boolean _suppressMProcessType;
-    protected boolean _suppressMCenter;
     protected boolean _suppressBClassDtlByInputType;
     protected boolean _suppressBClassDtlByMoveInstStatus;
     protected boolean _suppressTInventoryBList;
@@ -156,6 +156,32 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getTMoveInstHList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTMoveInstHList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getTMoveInstHList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -205,32 +231,6 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMProcessType());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getTMoveInstHList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTMoveInstHList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getTMoveInstHList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -452,6 +452,32 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTMoveInstHList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTMoveInstHList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTMoveInstHList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -501,32 +527,6 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
                 }
                 if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMProcessType());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTMoveInstHList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTMoveInstHList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTMoveInstHList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -762,14 +762,14 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressMCenter() {
+        _suppressMCenter = true;
+    }
     public void suppressMClient() {
         _suppressMClient = true;
     }
     public void suppressMProcessType() {
         _suppressMProcessType = true;
-    }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
     }
     public void suppressBClassDtlByInputType() {
         _suppressBClassDtlByInputType = true;
@@ -790,9 +790,9 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
         _suppressTMoveRecordBList = true;
     }
     protected void doSuppressAll() { // internal
+        suppressMCenter();
         suppressMClient();
         suppressMProcessType();
-        suppressMCenter();
         suppressBClassDtlByInputType();
         suppressBClassDtlByMoveInstStatus();
         suppressTInventoryBList();
@@ -801,9 +801,9 @@ public abstract class BsTMoveInstHDtoMapper implements DtoMapper<TMoveInstH, TMo
         suppressTMoveRecordBList();
     }
     protected void doSuppressClear() { // internal
+        _suppressMCenter = false;
         _suppressMClient = false;
         _suppressMProcessType = false;
-        _suppressMCenter = false;
         _suppressBClassDtlByInputType = false;
         _suppressBClassDtlByMoveInstStatus = false;
         _suppressTInventoryBList = false;

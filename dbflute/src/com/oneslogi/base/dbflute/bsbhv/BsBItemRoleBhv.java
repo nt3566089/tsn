@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE, B_ITEM, B_CLASS_DTL(ByVisible)
+ *     B_ITEM, B_ROLE, B_CLASS_DTL(ByVisible)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bRole, bItem, bClassDtlByVisible, bClassDtlByEditable
+ *     bItem, bRole, bClassDtlByVisible, bClassDtlByEditable
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsBItemRoleBhv extends AbstractBehaviorWritable<BItemRole,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BRole'.
-     * @param bItemRoleList The list of bItemRole. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BRole> pulloutBRole(List<BItemRole> bItemRoleList)
-    { return helpPulloutInternally(bItemRoleList, "bRole"); }
-
-    /**
      * Pull out the list of foreign table 'BItem'.
      * @param bItemRoleList The list of bItemRole. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BItem> pulloutBItem(List<BItemRole> bItemRoleList)
     { return helpPulloutInternally(bItemRoleList, "bItem"); }
+
+    /**
+     * Pull out the list of foreign table 'BRole'.
+     * @param bItemRoleList The list of bItemRole. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BRole> pulloutBRole(List<BItemRole> bItemRoleList)
+    { return helpPulloutInternally(bItemRoleList, "bRole"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

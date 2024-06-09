@@ -38,12 +38,12 @@ public class WHtShippingPickingNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
+    public MLocationNss withMLocation() {
+        _query.xdoNss(() -> _query.queryMLocation());
+        return new MLocationNss(_query.queryMLocation());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -56,11 +56,11 @@ public class WHtShippingPickingNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MLocationNss withMLocation() {
-        _query.xdoNss(() -> _query.queryMLocation());
-        return new MLocationNss(_query.queryMLocation());
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
 }

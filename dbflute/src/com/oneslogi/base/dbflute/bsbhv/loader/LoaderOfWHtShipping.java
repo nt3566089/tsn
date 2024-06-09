@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_CENTER, M_BOX, M_CLIENT
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mCenter, mBox, mClient
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfWHtShipping {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMProduct _foreignMProductLoader;
-    public LoaderOfMProduct pulloutMProduct() {
-        if (_foreignMProductLoader == null)
-        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
-        return _foreignMProductLoader;
+    protected LoaderOfMBox _foreignMBoxLoader;
+    public LoaderOfMBox pulloutMBox() {
+        if (_foreignMBoxLoader == null)
+        { _foreignMBoxLoader = new LoaderOfMBox().ready(myBhv().pulloutMBox(_selectedList), _selector); }
+        return _foreignMBoxLoader;
     }
 
     protected LoaderOfMCenter _foreignMCenterLoader;
@@ -73,18 +73,18 @@ public class LoaderOfWHtShipping {
         return _foreignMCenterLoader;
     }
 
-    protected LoaderOfMBox _foreignMBoxLoader;
-    public LoaderOfMBox pulloutMBox() {
-        if (_foreignMBoxLoader == null)
-        { _foreignMBoxLoader = new LoaderOfMBox().ready(myBhv().pulloutMBox(_selectedList), _selector); }
-        return _foreignMBoxLoader;
-    }
-
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMProduct _foreignMProductLoader;
+    public LoaderOfMProduct pulloutMProduct() {
+        if (_foreignMProductLoader == null)
+        { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
+        return _foreignMProductLoader;
     }
 
     // ===================================================================================

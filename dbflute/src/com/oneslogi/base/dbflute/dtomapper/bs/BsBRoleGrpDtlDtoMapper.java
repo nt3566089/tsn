@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE, B_ROLE_GRP
+ *     B_ROLE_GRP, B_ROLE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bRole, bRoleGrp
+ *     bRoleGrp, bRole
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBRole;
     protected boolean _suppressBRoleGrp;
+    protected boolean _suppressBRole;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -143,32 +143,6 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRole && entity.getBRole() != null) {
-            BRole relationEntity = entity.getBRole();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BRoleDto relationDto = (BRoleDto)cachedDto;
-                dto.setBRole(relationDto);
-                if (reverseReference) {
-                    relationDto.getBRoleGrpDtlList().add(dto);
-                }
-            } else {
-                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBRoleGrpDtlList();
-                BRoleDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBRole(relationDto);
-                if (reverseReference) {
-                    relationDto.getBRoleGrpDtlList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBRole());
-                }
-            }
-        };
         if (!_suppressBRoleGrp && entity.getBRoleGrp() != null) {
             BRoleGrp relationEntity = entity.getBRoleGrp();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -192,6 +166,32 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBRoleGrp());
+                }
+            }
+        };
+        if (!_suppressBRole && entity.getBRole() != null) {
+            BRole relationEntity = entity.getBRole();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BRoleDto relationDto = (BRoleDto)cachedDto;
+                dto.setBRole(relationDto);
+                if (reverseReference) {
+                    relationDto.getBRoleGrpDtlList().add(dto);
+                }
+            } else {
+                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBRoleGrpDtlList();
+                BRoleDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBRole(relationDto);
+                if (reverseReference) {
+                    relationDto.getBRoleGrpDtlList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBRole());
                 }
             }
         };
@@ -281,32 +281,6 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBRole && dto.getBRole() != null) {
-            BRoleDto relationDto = dto.getBRole();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BRole relationEntity = (BRole)cachedEntity;
-                entity.setBRole(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBRoleGrpDtlList().add(entity);
-                }
-            } else {
-                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBRoleGrpDtlList();
-                BRole relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBRole(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBRoleGrpDtlList().add(entity);
-                }
-                if (instanceCache && entity.getBRole().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBRole());
-                }
-            }
-        };
         if (!_suppressBRoleGrp && dto.getBRoleGrp() != null) {
             BRoleGrpDto relationDto = dto.getBRoleGrp();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -330,6 +304,32 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
                 }
                 if (instanceCache && entity.getBRoleGrp().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBRoleGrp());
+                }
+            }
+        };
+        if (!_suppressBRole && dto.getBRole() != null) {
+            BRoleDto relationDto = dto.getBRole();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BRole relationEntity = (BRole)cachedEntity;
+                entity.setBRole(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBRoleGrpDtlList().add(entity);
+                }
+            } else {
+                BRoleDtoMapper mapper = new BRoleDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBRoleGrpDtlList();
+                BRole relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBRole(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBRoleGrpDtlList().add(entity);
+                }
+                if (instanceCache && entity.getBRole().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBRole());
                 }
             }
         };
@@ -451,19 +451,19 @@ public abstract class BsBRoleGrpDtlDtoMapper implements DtoMapper<BRoleGrpDtl, B
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBRole() {
-        _suppressBRole = true;
-    }
     public void suppressBRoleGrp() {
         _suppressBRoleGrp = true;
     }
+    public void suppressBRole() {
+        _suppressBRole = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressBRole();
         suppressBRoleGrp();
+        suppressBRole();
     }
     protected void doSuppressClear() { // internal
-        _suppressBRole = false;
         _suppressBRoleGrp = false;
+        _suppressBRole = false;
     }
 
     // ===================================================================================

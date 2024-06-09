@@ -20,21 +20,21 @@ public class PSubrepLayoutItemNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public PSubrepLayoutNss withPSubrepLayout() {
-        _query.xdoNss(() -> _query.queryPSubrepLayout());
-        return new PSubrepLayoutNss(_query.queryPSubrepLayout());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BDictNss withBDict() {
         _query.xdoNss(() -> _query.queryBDict());
         return new BDictNss(_query.queryBDict());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public PSubrepLayoutNss withPSubrepLayout() {
+        _query.xdoNss(() -> _query.queryPSubrepLayout());
+        return new PSubrepLayoutNss(_query.queryPSubrepLayout());
     }
     /**
      * With nested relation columns to select clause. <br>

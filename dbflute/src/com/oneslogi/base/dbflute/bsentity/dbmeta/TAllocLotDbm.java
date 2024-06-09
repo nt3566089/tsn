@@ -65,10 +65,10 @@ public class TAllocLotDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TAllocLot)et).getTLot(), (et, vl) -> ((TAllocLot)et).setTLot((TLot)vl), "TLot");
-        setupEfpg(_efpgMap, et -> ((TAllocLot)et).getMProduct(), (et, vl) -> ((TAllocLot)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((TAllocLot)et).getTAllocInstB(), (et, vl) -> ((TAllocLot)et).setTAllocInstB((TAllocInstB)vl), "TAllocInstB");
         setupEfpg(_efpgMap, et -> ((TAllocLot)et).getMCustomer(), (et, vl) -> ((TAllocLot)et).setMCustomer((MCustomer)vl), "MCustomer");
+        setupEfpg(_efpgMap, et -> ((TAllocLot)et).getTLot(), (et, vl) -> ((TAllocLot)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((TAllocLot)et).getMProduct(), (et, vl) -> ((TAllocLot)et).setMProduct((MProduct)vl), "MProduct");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -208,28 +208,12 @@ public class TAllocLotDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTLot() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("T_ALLOC_LOT_FK1", "TLot", this, TLotDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TAllocLotList", false);
-    }
-    /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("T_ALLOC_LOT_FK4", "MProduct", this, MProductDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocLotList", false);
-    }
-    /**
      * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTAllocInstB() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
-        return cfi("T_ALLOC_LOT_FK3", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 2, null, true, false, false, false, null, null, false, "TAllocLotAsOne", false);
+        return cfi("T_ALLOC_LOT_FK3", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 0, null, true, false, false, false, null, null, false, "TAllocLotAsOne", false);
     }
     /**
      * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
@@ -237,7 +221,23 @@ public class TAllocLotDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMCustomer() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_ALLOC_LOT_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TAllocLotList", false);
+        return cfi("T_ALLOC_LOT_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TAllocLotList", false);
+    }
+    /**
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTLot() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
+        return cfi("T_ALLOC_LOT_FK1", "TLot", this, TLotDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TAllocLotList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("T_ALLOC_LOT_FK4", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TAllocLotList", false);
     }
 
     // -----------------------------------------------------

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_CULTURE, M_HT_DICT_CULTURE(AsOne)
+ *     B_CULTURE, B_DICT, M_HT_DICT_CULTURE(AsOne)
  *
  * [referrer table]
  *     M_HT_DICT_CULTURE
  *
  * [foreign property]
- *     bDict, bCulture, mHtDictCultureAsOne
+ *     bCulture, bDict, mHtDictCultureAsOne
  *
  * [referrer property]
  *     
@@ -261,25 +261,6 @@ public abstract class BsBDictCulture extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_DICT by my DICT_ID, named 'BDict'. */
-    protected BDict _bDict;
-
-    /**
-     * [get] B_DICT by my DICT_ID, named 'BDict'. <br>
-     * @return The entity of foreign property 'BDict'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BDict getBDict() {
-        return _bDict;
-    }
-
-    /**
-     * [set] B_DICT by my DICT_ID, named 'BDict'.
-     * @param bDict The entity of foreign property 'BDict'. (NullAllowed)
-     */
-    public void setBDict(BDict bDict) {
-        _bDict = bDict;
-    }
-
     /** B_CULTURE by my CULTURE_ID, named 'BCulture'. */
     protected BCulture _bCulture;
 
@@ -297,6 +278,25 @@ public abstract class BsBDictCulture extends AbstractEntity implements DomainEnt
      */
     public void setBCulture(BCulture bCulture) {
         _bCulture = bCulture;
+    }
+
+    /** B_DICT by my DICT_ID, named 'BDict'. */
+    protected BDict _bDict;
+
+    /**
+     * [get] B_DICT by my DICT_ID, named 'BDict'. <br>
+     * @return The entity of foreign property 'BDict'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BDict getBDict() {
+        return _bDict;
+    }
+
+    /**
+     * [set] B_DICT by my DICT_ID, named 'BDict'.
+     * @param bDict The entity of foreign property 'BDict'. (NullAllowed)
+     */
+    public void setBDict(BDict bDict) {
+        _bDict = bDict;
     }
 
     /** M_HT_DICT_CULTURE by DICT_CULTURE_ID, named 'MHtDictCultureAsOne'. */
@@ -350,10 +350,10 @@ public abstract class BsBDictCulture extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bDict != null)
-        { sb.append(li).append(xbRDS(_bDict, "bDict")); }
         if (_bCulture != null)
         { sb.append(li).append(xbRDS(_bCulture, "bCulture")); }
+        if (_bDict != null)
+        { sb.append(li).append(xbRDS(_bDict, "bDict")); }
         if (_mHtDictCultureAsOne != null)
         { sb.append(li).append(xbRDS(_mHtDictCultureAsOne, "mHtDictCultureAsOne")); }
         return sb.toString();
@@ -385,10 +385,10 @@ public abstract class BsBDictCulture extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bDict != null)
-        { sb.append(dm).append("bDict"); }
         if (_bCulture != null)
         { sb.append(dm).append("bCulture"); }
+        if (_bDict != null)
+        { sb.append(dm).append("bDict"); }
         if (_mHtDictCultureAsOne != null)
         { sb.append(dm).append("mHtDictCultureAsOne"); }
         if (sb.length() > dm.length()) {

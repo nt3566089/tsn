@@ -252,33 +252,33 @@ public class BsTPickingHCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MProcessTypeNss _nssMProcessType;
-    public MProcessTypeNss xdfgetNssMProcessType() {
-        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
-        return _nssMProcessType;
+    protected TAllocInstHNss _nssTAllocInstH;
+    public TAllocInstHNss xdfgetNssTAllocInstH() {
+        if (_nssTAllocInstH == null) { _nssTAllocInstH = new TAllocInstHNss(null); }
+        return _nssTAllocInstH;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * <pre>
      * <span style="color: #0000C0">tPickingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPickingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPickingH</span>.<span style="color: #CC4747">getTAllocInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MProcessTypeNss setupSelect_MProcessType() {
-        assertSetupSelectPurpose("mProcessType");
+    public TAllocInstHNss setupSelect_TAllocInstH() {
+        assertSetupSelectPurpose("tAllocInstH");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnProcessTypeId();
+            specify().columnAllocInstHId();
         }
-        doSetupSelect(() -> query().queryMProcessType());
-        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
-        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
-        return _nssMProcessType;
+        doSetupSelect(() -> query().queryTAllocInstH());
+        if (_nssTAllocInstH == null || !_nssTAllocInstH.hasConditionQuery())
+        { _nssTAllocInstH = new TAllocInstHNss(query().queryTAllocInstH()); }
+        return _nssTAllocInstH;
     }
 
     protected MCenterNss _nssMCenter;
@@ -339,33 +339,33 @@ public class BsTPickingHCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected TAllocInstHNss _nssTAllocInstH;
-    public TAllocInstHNss xdfgetNssTAllocInstH() {
-        if (_nssTAllocInstH == null) { _nssTAllocInstH = new TAllocInstHNss(null); }
-        return _nssTAllocInstH;
+    protected MProcessTypeNss _nssMProcessType;
+    public MProcessTypeNss xdfgetNssMProcessType() {
+        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
+        return _nssMProcessType;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * <pre>
      * <span style="color: #0000C0">tPickingHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TAllocInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPickingH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingH</span>.<span style="color: #CC4747">getTAllocInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPickingH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TAllocInstHNss setupSelect_TAllocInstH() {
-        assertSetupSelectPurpose("tAllocInstH");
+    public MProcessTypeNss setupSelect_MProcessType() {
+        assertSetupSelectPurpose("mProcessType");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnAllocInstHId();
+            specify().columnProcessTypeId();
         }
-        doSetupSelect(() -> query().queryTAllocInstH());
-        if (_nssTAllocInstH == null || !_nssTAllocInstH.hasConditionQuery())
-        { _nssTAllocInstH = new TAllocInstHNss(query().queryTAllocInstH()); }
-        return _nssTAllocInstH;
+        doSetupSelect(() -> query().queryMProcessType());
+        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
+        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
+        return _nssMProcessType;
     }
 
     protected BClassDtlNss _nssBClassDtlByCenterTransitFlg;
@@ -580,10 +580,10 @@ public class BsTPickingHCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPickingHCQ> {
-        protected MProcessTypeCB.HpSpecification _mProcessType;
+        protected TAllocInstHCB.HpSpecification _tAllocInstH;
         protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
-        protected TAllocInstHCB.HpSpecification _tAllocInstH;
+        protected MProcessTypeCB.HpSpecification _mProcessType;
         protected BClassDtlCB.HpSpecification _bClassDtlByCenterTransitFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByForceFixedFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByPackingCalCls;
@@ -719,9 +719,9 @@ public class BsTPickingHCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPickingHId(); // PK
-            if (qyCall().qy().hasConditionQueryMProcessType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
-                columnProcessTypeId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTAllocInstH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstHCQ) {
+                columnAllocInstHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
@@ -731,9 +731,9 @@ public class BsTPickingHCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTAllocInstH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TAllocInstHCQ) {
-                columnAllocInstHId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMProcessType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
+                columnProcessTypeId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByCenterTransitFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -760,23 +760,23 @@ public class BsTPickingHCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_PICKING_H"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+         * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MProcessTypeCB.HpSpecification specifyMProcessType() {
-            assertRelation("mProcessType");
-            if (_mProcessType == null) {
-                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
-                                    , () -> _qyCall.qy().queryMProcessType())
+        public TAllocInstHCB.HpSpecification specifyTAllocInstH() {
+            assertRelation("tAllocInstH");
+            if (_tAllocInstH == null) {
+                _tAllocInstH = new TAllocInstHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstH()
+                                    , () -> _qyCall.qy().queryTAllocInstH())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
-                      , () -> xsyncQyCall().qy().queryMProcessType()));
+                    _tAllocInstH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstH()
+                      , () -> xsyncQyCall().qy().queryTAllocInstH()));
                 }
             }
-            return _mProcessType;
+            return _tAllocInstH;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -820,23 +820,23 @@ public class BsTPickingHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TAllocInstHCB.HpSpecification specifyTAllocInstH() {
-            assertRelation("tAllocInstH");
-            if (_tAllocInstH == null) {
-                _tAllocInstH = new TAllocInstHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTAllocInstH()
-                                    , () -> _qyCall.qy().queryTAllocInstH())
+        public MProcessTypeCB.HpSpecification specifyMProcessType() {
+            assertRelation("mProcessType");
+            if (_mProcessType == null) {
+                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
+                                    , () -> _qyCall.qy().queryMProcessType())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tAllocInstH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTAllocInstH()
-                      , () -> xsyncQyCall().qy().queryTAllocInstH()));
+                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
+                      , () -> xsyncQyCall().qy().queryMProcessType()));
                 }
             }
-            return _tAllocInstH;
+            return _mProcessType;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -62,25 +62,25 @@ public class TStockInoutCIQ extends AbstractBsTStockInoutCQ {
     //                                                                Override about Query
     //                                                                ====================
     protected ConditionValue xgetCValueStockInoutId() { return _myCQ.xdfgetStockInoutId(); }
-    public String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
-    { throwIICBOE("ExistsReferrer"); return null; }
     public String keepStockInoutId_ExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
-    { throwIICBOE("NotExistsReferrer"); return null; }
+    public String keepStockInoutId_ExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
+    { throwIICBOE("ExistsReferrer"); return null; }
     public String keepStockInoutId_NotExistsReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
-    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
+    public String keepStockInoutId_NotExistsReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
+    { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object vl)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepStockInoutId_SpecifyDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
+    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfList(TStockInoutCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByBfStockInoutIdSelfListParameter(Object vl)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfList(TStockInoutCQ sq)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepStockInoutId_QueryDerivedReferrer_TStockInoutByFsStockInoutIdSelfListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     protected ConditionValue xgetCValueFsStockInoutId() { return _myCQ.xdfgetFsStockInoutId(); }
     public String keepFsStockInoutId_InScopeRelation_TStockInoutByFsStockInoutIdSelf(TStockInoutCQ sq)

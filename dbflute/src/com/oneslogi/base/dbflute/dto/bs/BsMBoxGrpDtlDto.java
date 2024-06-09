@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_BOX, M_BOX_GRP
+ *     M_BOX_GRP, M_BOX
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mBox, mBoxGrp
+ *     mBoxGrp, mBox
  *
  * [referrer-property]
  *     
@@ -133,16 +133,6 @@ public abstract class BsMBoxGrpDtlDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MBoxDto _mBox;
-
-    public MBoxDto getMBox() {
-        return _mBox;
-    }
-
-    public void setMBox(MBoxDto mBox) {
-        this._mBox = mBox;
-    }
-
     protected MBoxGrpDto _mBoxGrp;
 
     public MBoxGrpDto getMBoxGrp() {
@@ -151,6 +141,16 @@ public abstract class BsMBoxGrpDtlDto implements Serializable {
 
     public void setMBoxGrp(MBoxGrpDto mBoxGrp) {
         this._mBoxGrp = mBoxGrp;
+    }
+
+    protected MBoxDto _mBox;
+
+    public MBoxDto getMBox() {
+        return _mBox;
+    }
+
+    public void setMBox(MBoxDto mBox) {
+        this._mBox = mBox;
     }
 
     // ===================================================================================

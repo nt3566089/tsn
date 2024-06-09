@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_TRSYMBOL, T_PALLET
+ *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_PALLET, T_TRSYMBOL
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mCenter, tCenterSymbolSelf, mClient, tTrsymbol, tPallet
+ *     mCenter, tCenterSymbolSelf, mClient, tPallet, tTrsymbol
  *
  * [referrer property]
  *     tCenterSymbolSelfList
@@ -119,18 +119,18 @@ public class LoaderOfTCenterSymbol {
         return _foreignMClientLoader;
     }
 
-    protected LoaderOfTTrsymbol _foreignTTrsymbolLoader;
-    public LoaderOfTTrsymbol pulloutTTrsymbol() {
-        if (_foreignTTrsymbolLoader == null)
-        { _foreignTTrsymbolLoader = new LoaderOfTTrsymbol().ready(myBhv().pulloutTTrsymbol(_selectedList), _selector); }
-        return _foreignTTrsymbolLoader;
-    }
-
     protected LoaderOfTPallet _foreignTPalletLoader;
     public LoaderOfTPallet pulloutTPallet() {
         if (_foreignTPalletLoader == null)
         { _foreignTPalletLoader = new LoaderOfTPallet().ready(myBhv().pulloutTPallet(_selectedList), _selector); }
         return _foreignTPalletLoader;
+    }
+
+    protected LoaderOfTTrsymbol _foreignTTrsymbolLoader;
+    public LoaderOfTTrsymbol pulloutTTrsymbol() {
+        if (_foreignTTrsymbolLoader == null)
+        { _foreignTTrsymbolLoader = new LoaderOfTTrsymbol().ready(myBhv().pulloutTTrsymbol(_selectedList), _selector); }
+        return _foreignTTrsymbolLoader;
     }
 
     // ===================================================================================

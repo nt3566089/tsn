@@ -560,14 +560,14 @@ public class BsTMoveInstHCQ extends AbstractBsTMoveInstHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TMoveInstHCQ bq = (TMoveInstHCQ)bqs;
         TMoveInstHCQ uq = (TMoveInstHCQ)uqs;
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
         if (bq.hasConditionQueryMProcessType()) {
             uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryBClassDtlByInputType()) {
             uq.queryBClassDtlByInputType().reflectRelationOnUnionQuery(bq.queryBClassDtlByInputType(), uq.queryBClassDtlByInputType());
@@ -583,6 +583,26 @@ public class BsTMoveInstHCQ extends AbstractBsTMoveInstHCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
+    }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("T_MOVE_INST_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -622,26 +642,6 @@ public class BsTMoveInstHCQ extends AbstractBsTMoveInstHCQ {
     }
     protected void xsetupOuterJoinMProcessType() { xregOutJo("mProcessType"); }
     public boolean hasConditionQueryMProcessType() { return xhasQueRlMap("mProcessType"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("T_MOVE_INST_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>

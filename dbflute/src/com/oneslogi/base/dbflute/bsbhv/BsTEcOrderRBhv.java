@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_EC_ORDER_H, B_CLASS_DTL(ByInvoiceCreateFlg)
+ *     T_EC_ORDER_H, B_USER, B_CLASS_DTL(ByInvoiceCreateFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tEcOrderH, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
+ *     tEcOrderH, bUser, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTEcOrderRBhv extends AbstractBehaviorWritable<TEcOrderR,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BUser'.
-     * @param tEcOrderRList The list of tEcOrderR. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BUser> pulloutBUser(List<TEcOrderR> tEcOrderRList)
-    { return helpPulloutInternally(tEcOrderRList, "bUser"); }
-
-    /**
      * Pull out the list of foreign table 'TEcOrderH'.
      * @param tEcOrderRList The list of tEcOrderR. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TEcOrderH> pulloutTEcOrderH(List<TEcOrderR> tEcOrderRList)
     { return helpPulloutInternally(tEcOrderRList, "tEcOrderH"); }
+
+    /**
+     * Pull out the list of foreign table 'BUser'.
+     * @param tEcOrderRList The list of tEcOrderR. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BUser> pulloutBUser(List<TEcOrderR> tEcOrderRList)
+    { return helpPulloutInternally(tEcOrderRList, "bUser"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

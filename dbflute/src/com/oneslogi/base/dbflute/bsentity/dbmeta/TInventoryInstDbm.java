@@ -80,10 +80,10 @@ public class TInventoryInstDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getMCustomer(), (et, vl) -> ((TInventoryInst)et).setMCustomer((MCustomer)vl), "MCustomer");
+        setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getTInventoryH(), (et, vl) -> ((TInventoryInst)et).setTInventoryH((TInventoryH)vl), "TInventoryH");
         setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getMStockType(), (et, vl) -> ((TInventoryInst)et).setMStockType((MStockType)vl), "MStockType");
         setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getMZone(), (et, vl) -> ((TInventoryInst)et).setMZone((MZone)vl), "MZone");
-        setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getTInventoryH(), (et, vl) -> ((TInventoryInst)et).setTInventoryH((TInventoryH)vl), "TInventoryH");
-        setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getMCustomer(), (et, vl) -> ((TInventoryInst)et).setMCustomer((MCustomer)vl), "MCustomer");
         setupEfpg(_efpgMap, et -> ((TInventoryInst)et).getBClassDtlByStockExistOnlyFlg(), (et, vl) -> ((TInventoryInst)et).setBClassDtlByStockExistOnlyFlg((BClassDtl)vl), "BClassDtlByStockExistOnlyFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -329,20 +329,12 @@ public class TInventoryInstDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMStockType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("T_INVENTORY_INST_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
-    }
-    /**
-     * M_ZONE by my ZONE_ID, named 'MZone'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMZone() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnZoneId(), MZoneDbm.getInstance().columnZoneId());
-        return cfi("T_INVENTORY_INST_FK1", "MZone", this, MZoneDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
+    public ForeignInfo foreignMCustomer() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
+        return cfi("T_INVENTORY_INST_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
     }
     /**
      * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
@@ -350,15 +342,23 @@ public class TInventoryInstDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTInventoryH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnInventoryHId(), TInventoryHDbm.getInstance().columnInventoryHId());
-        return cfi("T_INVENTORY_INST_FK4", "TInventoryH", this, TInventoryHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
+        return cfi("T_INVENTORY_INST_FK4", "TInventoryH", this, TInventoryHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
     }
     /**
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMCustomer() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDepositId(), MCustomerDbm.getInstance().columnCustomerId());
-        return cfi("T_INVENTORY_INST_FK2", "MCustomer", this, MCustomerDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
+    public ForeignInfo foreignMStockType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
+        return cfi("T_INVENTORY_INST_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
+    }
+    /**
+     * M_ZONE by my ZONE_ID, named 'MZone'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMZone() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnZoneId(), MZoneDbm.getInstance().columnZoneId());
+        return cfi("T_INVENTORY_INST_FK1", "MZone", this, MZoneDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TInventoryInstList", false);
     }
     /**
      * B_CLASS_DTL by my STOCK_EXIST_ONLY_FLG, named 'BClassDtlByStockExistOnlyFlg'.

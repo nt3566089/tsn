@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_SCREEN, B_DICT, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
+ *     B_DICT, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
  *
  * [referrer-table]
  *     B_COL, B_COL_EXT_BASE, B_COL_EXT_USER, B_ITEM_ROLE, M_CENTER_ITEM, M_CLIENT_ITEM, B_ITEM_VALID
  *
  * [foreign-property]
- *     bScreen, bDict, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
+ *     bDict, bScreen, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
  *
  * [referrer-property]
  *     bColList, bColExtBaseList, bColExtUserList, bItemRoleList, mCenterItemList, mClientItemList
@@ -70,8 +70,8 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBScreen;
     protected boolean _suppressBDict;
+    protected boolean _suppressBScreen;
     protected boolean _suppressVDict;
     protected boolean _suppressVHtDict;
     protected boolean _suppressBClassDtlByItemType;
@@ -164,32 +164,6 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBScreen && entity.getBScreen() != null) {
-            BScreen relationEntity = entity.getBScreen();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BScreenDto relationDto = (BScreenDto)cachedDto;
-                dto.setBScreen(relationDto);
-                if (reverseReference) {
-                    relationDto.getBItemList().add(dto);
-                }
-            } else {
-                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBItemList();
-                BScreenDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBScreen(relationDto);
-                if (reverseReference) {
-                    relationDto.getBItemList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBScreen());
-                }
-            }
-        };
         if (!_suppressBDict && entity.getBDict() != null) {
             BDict relationEntity = entity.getBDict();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -213,6 +187,32 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
+                }
+            }
+        };
+        if (!_suppressBScreen && entity.getBScreen() != null) {
+            BScreen relationEntity = entity.getBScreen();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BScreenDto relationDto = (BScreenDto)cachedDto;
+                dto.setBScreen(relationDto);
+                if (reverseReference) {
+                    relationDto.getBItemList().add(dto);
+                }
+            } else {
+                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBItemList();
+                BScreenDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBScreen(relationDto);
+                if (reverseReference) {
+                    relationDto.getBItemList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBScreen());
                 }
             }
         };
@@ -614,32 +614,6 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBScreen && dto.getBScreen() != null) {
-            BScreenDto relationDto = dto.getBScreen();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BScreen relationEntity = (BScreen)cachedEntity;
-                entity.setBScreen(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBItemList().add(entity);
-                }
-            } else {
-                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressBItemList();
-                BScreen relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBScreen(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getBItemList().add(entity);
-                }
-                if (instanceCache && entity.getBScreen().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBScreen());
-                }
-            }
-        };
         if (!_suppressBDict && dto.getBDict() != null) {
             BDictDto relationDto = dto.getBDict();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -663,6 +637,32 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
+                }
+            }
+        };
+        if (!_suppressBScreen && dto.getBScreen() != null) {
+            BScreenDto relationDto = dto.getBScreen();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BScreen relationEntity = (BScreen)cachedEntity;
+                entity.setBScreen(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBItemList().add(entity);
+                }
+            } else {
+                BScreenDtoMapper mapper = new BScreenDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressBItemList();
+                BScreen relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBScreen(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getBItemList().add(entity);
+                }
+                if (instanceCache && entity.getBScreen().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBScreen());
                 }
             }
         };
@@ -1078,11 +1078,11 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBScreen() {
-        _suppressBScreen = true;
-    }
     public void suppressBDict() {
         _suppressBDict = true;
+    }
+    public void suppressBScreen() {
+        _suppressBScreen = true;
     }
     public void suppressVDict() {
         _suppressVDict = true;
@@ -1130,8 +1130,8 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
         _suppressMClientItemList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBScreen();
         suppressBDict();
+        suppressBScreen();
         suppressVDict();
         suppressVHtDict();
         suppressBClassDtlByItemType();
@@ -1149,8 +1149,8 @@ public abstract class BsBItemDtoMapper implements DtoMapper<BItem, BItemDto>, Se
         suppressMClientItemList();
     }
     protected void doSuppressClear() { // internal
-        _suppressBScreen = false;
         _suppressBDict = false;
+        _suppressBScreen = false;
         _suppressVDict = false;
         _suppressVHtDict = false;
         _suppressBClassDtlByItemType = false;

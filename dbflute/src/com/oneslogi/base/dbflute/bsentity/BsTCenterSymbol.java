@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_TRSYMBOL, T_PALLET
+ *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_PALLET, T_TRSYMBOL
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mCenter, tCenterSymbolSelf, mClient, tTrsymbol, tPallet
+ *     mCenter, tCenterSymbolSelf, mClient, tPallet, tTrsymbol
  *
  * [referrer property]
  *     tCenterSymbolSelfList
@@ -348,25 +348,6 @@ public abstract class BsTCenterSymbol extends AbstractEntity implements DomainEn
         _mClient = mClient;
     }
 
-    /** T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'. */
-    protected TTrsymbol _tTrsymbol;
-
-    /**
-     * [get] T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'. <br>
-     * @return The entity of foreign property 'TTrsymbol'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TTrsymbol getTTrsymbol() {
-        return _tTrsymbol;
-    }
-
-    /**
-     * [set] T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-     * @param tTrsymbol The entity of foreign property 'TTrsymbol'. (NullAllowed)
-     */
-    public void setTTrsymbol(TTrsymbol tTrsymbol) {
-        _tTrsymbol = tTrsymbol;
-    }
-
     /** T_PALLET by my PALLET_ID, named 'TPallet'. */
     protected TPallet _tPallet;
 
@@ -384,6 +365,25 @@ public abstract class BsTCenterSymbol extends AbstractEntity implements DomainEn
      */
     public void setTPallet(TPallet tPallet) {
         _tPallet = tPallet;
+    }
+
+    /** T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'. */
+    protected TTrsymbol _tTrsymbol;
+
+    /**
+     * [get] T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'. <br>
+     * @return The entity of foreign property 'TTrsymbol'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TTrsymbol getTTrsymbol() {
+        return _tTrsymbol;
+    }
+
+    /**
+     * [set] T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+     * @param tTrsymbol The entity of foreign property 'TTrsymbol'. (NullAllowed)
+     */
+    public void setTTrsymbol(TTrsymbol tTrsymbol) {
+        _tTrsymbol = tTrsymbol;
     }
 
     // ===================================================================================
@@ -444,10 +444,10 @@ public abstract class BsTCenterSymbol extends AbstractEntity implements DomainEn
         { sb.append(li).append(xbRDS(_tCenterSymbolSelf, "tCenterSymbolSelf")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_tTrsymbol != null)
-        { sb.append(li).append(xbRDS(_tTrsymbol, "tTrsymbol")); }
         if (_tPallet != null)
         { sb.append(li).append(xbRDS(_tPallet, "tPallet")); }
+        if (_tTrsymbol != null)
+        { sb.append(li).append(xbRDS(_tTrsymbol, "tTrsymbol")); }
         if (_tCenterSymbolSelfList != null) { for (TCenterSymbol et : _tCenterSymbolSelfList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tCenterSymbolSelfList")); } } }
         return sb.toString();
@@ -491,10 +491,10 @@ public abstract class BsTCenterSymbol extends AbstractEntity implements DomainEn
         { sb.append(dm).append("tCenterSymbolSelf"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
-        if (_tTrsymbol != null)
-        { sb.append(dm).append("tTrsymbol"); }
         if (_tPallet != null)
         { sb.append(dm).append("tPallet"); }
+        if (_tTrsymbol != null)
+        { sb.append(dm).append("tTrsymbol"); }
         if (_tCenterSymbolSelfList != null && !_tCenterSymbolSelfList.isEmpty())
         { sb.append(dm).append("tCenterSymbolSelfList"); }
         if (sb.length() > dm.length()) {

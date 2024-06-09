@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, M_CLIENT, B_SCREEN, V_DICT, V_HT_DICT
+ *     M_CLIENT, B_DICT, B_SCREEN, V_DICT, V_HT_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, mClient, bScreen, vDict, vHtDict
+ *     mClient, bDict, bScreen, vDict, vHtDict
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfMClientScreen {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBDict _foreignBDictLoader;
-    public LoaderOfBDict pulloutBDict() {
-        if (_foreignBDictLoader == null)
-        { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
-        return _foreignBDictLoader;
-    }
-
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfBDict _foreignBDictLoader;
+    public LoaderOfBDict pulloutBDict() {
+        if (_foreignBDictLoader == null)
+        { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
+        return _foreignBDictLoader;
     }
 
     protected LoaderOfBScreen _foreignBScreenLoader;

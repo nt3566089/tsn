@@ -20,20 +20,20 @@ public class TYtrsodetailNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TYtrsoNss withTYtrso() {
-        _query.xdoNss(() -> _query.queryTYtrso());
-        return new TYtrsoNss(_query.queryTYtrso());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MProductNss withMProduct() {
         _query.xdoNss(() -> _query.queryMProduct());
         return new MProductNss(_query.queryMProduct());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TYtrsoNss withTYtrso() {
+        _query.xdoNss(() -> _query.queryTYtrso());
+        return new TYtrsoNss(_query.queryTYtrso());
     }
 }

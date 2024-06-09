@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_BOX, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mClient, mBox, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     
@@ -70,10 +70,10 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMClient;
     protected boolean _suppressMBox;
-    protected boolean _suppressMProduct;
     protected boolean _suppressMCenter;
+    protected boolean _suppressMClient;
+    protected boolean _suppressMProduct;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -153,32 +153,6 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMClient && entity.getMClient() != null) {
-            MClient relationEntity = entity.getMClient();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MClientDto relationDto = (MClientDto)cachedDto;
-                dto.setMClient(relationDto);
-                if (reverseReference) {
-                    relationDto.getWShippingInterruptList().add(dto);
-                }
-            } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWShippingInterruptList();
-                MClientDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMClient(relationDto);
-                if (reverseReference) {
-                    relationDto.getWShippingInterruptList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMClient());
-                }
-            }
-        };
         if (!_suppressMBox && entity.getMBox() != null) {
             MBox relationEntity = entity.getMBox();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -205,32 +179,6 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
                 }
             }
         };
-        if (!_suppressMProduct && entity.getMProduct() != null) {
-            MProduct relationEntity = entity.getMProduct();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MProductDto relationDto = (MProductDto)cachedDto;
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getWShippingInterruptList().add(dto);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWShippingInterruptList();
-                MProductDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProduct(relationDto);
-                if (reverseReference) {
-                    relationDto.getWShippingInterruptList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProduct());
-                }
-            }
-        };
         if (!_suppressMCenter && entity.getMCenter() != null) {
             MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -254,6 +202,58 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
+        if (!_suppressMClient && entity.getMClient() != null) {
+            MClient relationEntity = entity.getMClient();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MClientDto relationDto = (MClientDto)cachedDto;
+                dto.setMClient(relationDto);
+                if (reverseReference) {
+                    relationDto.getWShippingInterruptList().add(dto);
+                }
+            } else {
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWShippingInterruptList();
+                MClientDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMClient(relationDto);
+                if (reverseReference) {
+                    relationDto.getWShippingInterruptList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
+        if (!_suppressMProduct && entity.getMProduct() != null) {
+            MProduct relationEntity = entity.getMProduct();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MProductDto relationDto = (MProductDto)cachedDto;
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getWShippingInterruptList().add(dto);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWShippingInterruptList();
+                MProductDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProduct(relationDto);
+                if (reverseReference) {
+                    relationDto.getWShippingInterruptList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMProduct());
                 }
             }
         };
@@ -367,32 +367,6 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMClient && dto.getMClient() != null) {
-            MClientDto relationDto = dto.getMClient();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MClient relationEntity = (MClient)cachedEntity;
-                entity.setMClient(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWShippingInterruptList().add(entity);
-                }
-            } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWShippingInterruptList();
-                MClient relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMClient(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWShippingInterruptList().add(entity);
-                }
-                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMClient());
-                }
-            }
-        };
         if (!_suppressMBox && dto.getMBox() != null) {
             MBoxDto relationDto = dto.getMBox();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -419,32 +393,6 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
                 }
             }
         };
-        if (!_suppressMProduct && dto.getMProduct() != null) {
-            MProductDto relationDto = dto.getMProduct();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MProduct relationEntity = (MProduct)cachedEntity;
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWShippingInterruptList().add(entity);
-                }
-            } else {
-                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressWShippingInterruptList();
-                MProduct relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProduct(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getWShippingInterruptList().add(entity);
-                }
-                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProduct());
-                }
-            }
-        };
         if (!_suppressMCenter && dto.getMCenter() != null) {
             MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -468,6 +416,58 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
                 }
                 if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
+        if (!_suppressMClient && dto.getMClient() != null) {
+            MClientDto relationDto = dto.getMClient();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MClient relationEntity = (MClient)cachedEntity;
+                entity.setMClient(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWShippingInterruptList().add(entity);
+                }
+            } else {
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWShippingInterruptList();
+                MClient relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMClient(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWShippingInterruptList().add(entity);
+                }
+                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
+        if (!_suppressMProduct && dto.getMProduct() != null) {
+            MProductDto relationDto = dto.getMProduct();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MProduct relationEntity = (MProduct)cachedEntity;
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWShippingInterruptList().add(entity);
+                }
+            } else {
+                MProductDtoMapper mapper = new MProductDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressWShippingInterruptList();
+                MProduct relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProduct(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getWShippingInterruptList().add(entity);
+                }
+                if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProduct());
                 }
             }
         };
@@ -589,29 +589,29 @@ public abstract class BsWShippingInterruptDtoMapper implements DtoMapper<WShippi
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMClient() {
-        _suppressMClient = true;
-    }
     public void suppressMBox() {
         _suppressMBox = true;
-    }
-    public void suppressMProduct() {
-        _suppressMProduct = true;
     }
     public void suppressMCenter() {
         _suppressMCenter = true;
     }
+    public void suppressMClient() {
+        _suppressMClient = true;
+    }
+    public void suppressMProduct() {
+        _suppressMProduct = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressMClient();
         suppressMBox();
-        suppressMProduct();
         suppressMCenter();
+        suppressMClient();
+        suppressMProduct();
     }
     protected void doSuppressClear() { // internal
-        _suppressMClient = false;
         _suppressMBox = false;
-        _suppressMProduct = false;
         _suppressMCenter = false;
+        _suppressMClient = false;
+        _suppressMProduct = false;
     }
 
     // ===================================================================================

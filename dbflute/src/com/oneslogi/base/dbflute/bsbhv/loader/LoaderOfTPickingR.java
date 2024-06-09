@@ -31,7 +31,7 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     
  *
  * [foreign property]
- *     bUserByPl1OutUserId, bUserByCaseOutUserId, bUserByShippingRecordOutUserId, tPickingH, bUserByPl2OutUserId, bUserBySlipOutUserId, bUserByPackingOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
+ *     bUserByCaseOutUserId, bUserByPackingOutUserId, tPickingH, bUserByPl1OutUserId, bUserByPl2OutUserId, bUserByShippingRecordOutUserId, bUserBySlipOutUserId, bClassDtlByInvoiceCreateFlg, bClassDtlByOplOutFlg, bClassDtlByTplOutFlg, bClassDtlByCaseOutFlg, bClassDtlByMltOutFlg, bClassDtlBySplOutFlg, bClassDtlByPlOutFlg, bClassDtlBySlOutFlg, bClassDtlByPl1OutFlg, bClassDtlByPl2OutFlg, bClassDtlByPackingOutFlg, bClassDtlBySlipOutFlg, bClassDtlByShippingRecordOutFlg, bClassDtlByBolOutFlg
  *
  * [referrer property]
  *     
@@ -59,13 +59,6 @@ public class LoaderOfTPickingR {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBUser _foreignBUserByPl1OutUserIdLoader;
-    public LoaderOfBUser pulloutBUserByPl1OutUserId() {
-        if (_foreignBUserByPl1OutUserIdLoader == null)
-        { _foreignBUserByPl1OutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByPl1OutUserId(_selectedList), _selector); }
-        return _foreignBUserByPl1OutUserIdLoader;
-    }
-
     protected LoaderOfBUser _foreignBUserByCaseOutUserIdLoader;
     public LoaderOfBUser pulloutBUserByCaseOutUserId() {
         if (_foreignBUserByCaseOutUserIdLoader == null)
@@ -73,11 +66,11 @@ public class LoaderOfTPickingR {
         return _foreignBUserByCaseOutUserIdLoader;
     }
 
-    protected LoaderOfBUser _foreignBUserByShippingRecordOutUserIdLoader;
-    public LoaderOfBUser pulloutBUserByShippingRecordOutUserId() {
-        if (_foreignBUserByShippingRecordOutUserIdLoader == null)
-        { _foreignBUserByShippingRecordOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByShippingRecordOutUserId(_selectedList), _selector); }
-        return _foreignBUserByShippingRecordOutUserIdLoader;
+    protected LoaderOfBUser _foreignBUserByPackingOutUserIdLoader;
+    public LoaderOfBUser pulloutBUserByPackingOutUserId() {
+        if (_foreignBUserByPackingOutUserIdLoader == null)
+        { _foreignBUserByPackingOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByPackingOutUserId(_selectedList), _selector); }
+        return _foreignBUserByPackingOutUserIdLoader;
     }
 
     protected LoaderOfTPickingH _foreignTPickingHLoader;
@@ -87,6 +80,13 @@ public class LoaderOfTPickingR {
         return _foreignTPickingHLoader;
     }
 
+    protected LoaderOfBUser _foreignBUserByPl1OutUserIdLoader;
+    public LoaderOfBUser pulloutBUserByPl1OutUserId() {
+        if (_foreignBUserByPl1OutUserIdLoader == null)
+        { _foreignBUserByPl1OutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByPl1OutUserId(_selectedList), _selector); }
+        return _foreignBUserByPl1OutUserIdLoader;
+    }
+
     protected LoaderOfBUser _foreignBUserByPl2OutUserIdLoader;
     public LoaderOfBUser pulloutBUserByPl2OutUserId() {
         if (_foreignBUserByPl2OutUserIdLoader == null)
@@ -94,18 +94,18 @@ public class LoaderOfTPickingR {
         return _foreignBUserByPl2OutUserIdLoader;
     }
 
+    protected LoaderOfBUser _foreignBUserByShippingRecordOutUserIdLoader;
+    public LoaderOfBUser pulloutBUserByShippingRecordOutUserId() {
+        if (_foreignBUserByShippingRecordOutUserIdLoader == null)
+        { _foreignBUserByShippingRecordOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByShippingRecordOutUserId(_selectedList), _selector); }
+        return _foreignBUserByShippingRecordOutUserIdLoader;
+    }
+
     protected LoaderOfBUser _foreignBUserBySlipOutUserIdLoader;
     public LoaderOfBUser pulloutBUserBySlipOutUserId() {
         if (_foreignBUserBySlipOutUserIdLoader == null)
         { _foreignBUserBySlipOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserBySlipOutUserId(_selectedList), _selector); }
         return _foreignBUserBySlipOutUserIdLoader;
-    }
-
-    protected LoaderOfBUser _foreignBUserByPackingOutUserIdLoader;
-    public LoaderOfBUser pulloutBUserByPackingOutUserId() {
-        if (_foreignBUserByPackingOutUserIdLoader == null)
-        { _foreignBUserByPackingOutUserIdLoader = new LoaderOfBUser().ready(myBhv().pulloutBUserByPackingOutUserId(_selectedList), _selector); }
-        return _foreignBUserByPackingOutUserIdLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInvoiceCreateFlgLoader;

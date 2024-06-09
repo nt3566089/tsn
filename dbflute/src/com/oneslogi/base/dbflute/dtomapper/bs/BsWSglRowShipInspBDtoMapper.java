@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, W_SGL_ROW_SHIP_INSP_H, T_PICKING_H, B_CLASS_DTL(ByInspectionFlg)
+ *     T_PICKING_H, W_SGL_ROW_SHIP_INSP_H, B_USER, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, wSglRowShipInspH, tPickingH, bClassDtlByInspectionFlg
+ *     tPickingH, wSglRowShipInspH, bUser, bClassDtlByInspectionFlg
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUser;
-    protected boolean _suppressWSglRowShipInspH;
     protected boolean _suppressTPickingH;
+    protected boolean _suppressWSglRowShipInspH;
+    protected boolean _suppressBUser;
     protected boolean _suppressBClassDtlByInspectionFlg;
 
     // ===================================================================================
@@ -147,29 +147,29 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && entity.getBUser() != null) {
-            BUser relationEntity = entity.getBUser();
+        if (!_suppressTPickingH && entity.getTPickingH() != null) {
+            TPickingH relationEntity = entity.getTPickingH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUser(relationDto);
+                TPickingHDto relationDto = (TPickingHDto)cachedDto;
+                dto.setTPickingH(relationDto);
                 if (reverseReference) {
                     relationDto.getWSglRowShipInspBList().add(dto);
                 }
             } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWSglRowShipInspBList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUser(relationDto);
+                TPickingHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTPickingH(relationDto);
                 if (reverseReference) {
                     relationDto.getWSglRowShipInspBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUser());
+                    _relationDtoMap.put(relationKey, dto.getTPickingH());
                 }
             }
         };
@@ -199,29 +199,29 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
                 }
             }
         };
-        if (!_suppressTPickingH && entity.getTPickingH() != null) {
-            TPickingH relationEntity = entity.getTPickingH();
+        if (!_suppressBUser && entity.getBUser() != null) {
+            BUser relationEntity = entity.getBUser();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                TPickingHDto relationDto = (TPickingHDto)cachedDto;
-                dto.setTPickingH(relationDto);
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUser(relationDto);
                 if (reverseReference) {
                     relationDto.getWSglRowShipInspBList().add(dto);
                 }
             } else {
-                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWSglRowShipInspBList();
-                TPickingHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTPickingH(relationDto);
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUser(relationDto);
                 if (reverseReference) {
                     relationDto.getWSglRowShipInspBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTPickingH());
+                    _relationDtoMap.put(relationKey, dto.getBUser());
                 }
             }
         };
@@ -340,29 +340,29 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && dto.getBUser() != null) {
-            BUserDto relationDto = dto.getBUser();
+        if (!_suppressTPickingH && dto.getTPickingH() != null) {
+            TPickingHDto relationDto = dto.getTPickingH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUser(relationEntity);
+                TPickingH relationEntity = (TPickingH)cachedEntity;
+                entity.setTPickingH(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWSglRowShipInspBList().add(entity);
                 }
             } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWSglRowShipInspBList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUser(relationEntity);
+                TPickingH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTPickingH(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWSglRowShipInspBList().add(entity);
                 }
-                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUser());
+                if (instanceCache && entity.getTPickingH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTPickingH());
                 }
             }
         };
@@ -392,29 +392,29 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
                 }
             }
         };
-        if (!_suppressTPickingH && dto.getTPickingH() != null) {
-            TPickingHDto relationDto = dto.getTPickingH();
+        if (!_suppressBUser && dto.getBUser() != null) {
+            BUserDto relationDto = dto.getBUser();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                TPickingH relationEntity = (TPickingH)cachedEntity;
-                entity.setTPickingH(relationEntity);
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUser(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWSglRowShipInspBList().add(entity);
                 }
             } else {
-                TPickingHDtoMapper mapper = new TPickingHDtoMapper(_relationDtoMap, _relationEntityMap);
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWSglRowShipInspBList();
-                TPickingH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTPickingH(relationEntity);
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUser(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWSglRowShipInspBList().add(entity);
                 }
-                if (instanceCache && entity.getTPickingH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTPickingH());
+                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUser());
                 }
             }
         };
@@ -559,28 +559,28 @@ public abstract class BsWSglRowShipInspBDtoMapper implements DtoMapper<WSglRowSh
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUser() {
-        _suppressBUser = true;
+    public void suppressTPickingH() {
+        _suppressTPickingH = true;
     }
     public void suppressWSglRowShipInspH() {
         _suppressWSglRowShipInspH = true;
     }
-    public void suppressTPickingH() {
-        _suppressTPickingH = true;
+    public void suppressBUser() {
+        _suppressBUser = true;
     }
     public void suppressBClassDtlByInspectionFlg() {
         _suppressBClassDtlByInspectionFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBUser();
-        suppressWSglRowShipInspH();
         suppressTPickingH();
+        suppressWSglRowShipInspH();
+        suppressBUser();
         suppressBClassDtlByInspectionFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUser = false;
-        _suppressWSglRowShipInspH = false;
         _suppressTPickingH = false;
+        _suppressWSglRowShipInspH = false;
+        _suppressBUser = false;
         _suppressBClassDtlByInspectionFlg = false;
     }
 

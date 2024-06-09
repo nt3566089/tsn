@@ -264,26 +264,6 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    /**
-     * Set up relation columns to select clause. <br>
-     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-     * <pre>
-     * <span style="color: #0000C0">pLayoutPrintSettingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PPrinterGroup()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">pLayoutPrintSetting</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">pLayoutPrintSetting</span>.<span style="color: #CC4747">getPPrinterGroup()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_PPrinterGroup() {
-        assertSetupSelectPurpose("pPrinterGroup");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPrinterGroupId();
-        }
-        doSetupSelect(() -> query().queryPPrinterGroup());
-    }
-
     protected PPrinterAttributeNss _nssPPrinterAttribute;
     public PPrinterAttributeNss xdfgetNssPPrinterAttribute() {
         if (_nssPPrinterAttribute == null) { _nssPPrinterAttribute = new PPrinterAttributeNss(null); }
@@ -313,33 +293,24 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
         return _nssPPrinterAttribute;
     }
 
-    protected PReportLayoutNss _nssPReportLayout;
-    public PReportLayoutNss xdfgetNssPReportLayout() {
-        if (_nssPReportLayout == null) { _nssPReportLayout = new PReportLayoutNss(null); }
-        return _nssPReportLayout;
-    }
     /**
      * Set up relation columns to select clause. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
      * <pre>
      * <span style="color: #0000C0">pLayoutPrintSettingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PReportLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PPrinterGroup()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">pLayoutPrintSetting</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">pLayoutPrintSetting</span>.<span style="color: #CC4747">getPReportLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">pLayoutPrintSetting</span>.<span style="color: #CC4747">getPPrinterGroup()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public PReportLayoutNss setupSelect_PReportLayout() {
-        assertSetupSelectPurpose("pReportLayout");
+    public void setupSelect_PPrinterGroup() {
+        assertSetupSelectPurpose("pPrinterGroup");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnReportLayoutId();
+            specify().columnPrinterGroupId();
         }
-        doSetupSelect(() -> query().queryPReportLayout());
-        if (_nssPReportLayout == null || !_nssPReportLayout.hasConditionQuery())
-        { _nssPReportLayout = new PReportLayoutNss(query().queryPReportLayout()); }
-        return _nssPReportLayout;
+        doSetupSelect(() -> query().queryPPrinterGroup());
     }
 
     protected PPrinterNss _nssPPrinter;
@@ -369,6 +340,35 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
         if (_nssPPrinter == null || !_nssPPrinter.hasConditionQuery())
         { _nssPPrinter = new PPrinterNss(query().queryPPrinter()); }
         return _nssPPrinter;
+    }
+
+    protected PReportLayoutNss _nssPReportLayout;
+    public PReportLayoutNss xdfgetNssPReportLayout() {
+        if (_nssPReportLayout == null) { _nssPReportLayout = new PReportLayoutNss(null); }
+        return _nssPReportLayout;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * <pre>
+     * <span style="color: #0000C0">pLayoutPrintSettingBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_PReportLayout()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">pLayoutPrintSetting</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">pLayoutPrintSetting</span>.<span style="color: #CC4747">getPReportLayout()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public PReportLayoutNss setupSelect_PReportLayout() {
+        assertSetupSelectPurpose("pReportLayout");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnReportLayoutId();
+        }
+        doSetupSelect(() -> query().queryPReportLayout());
+        if (_nssPReportLayout == null || !_nssPReportLayout.hasConditionQuery())
+        { _nssPReportLayout = new PReportLayoutNss(query().queryPReportLayout()); }
+        return _nssPReportLayout;
     }
 
     protected BClassDtlNss _nssBClassDtlBySheetCollate;
@@ -441,10 +441,10 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<PLayoutPrintSettingCQ> {
-        protected PPrinterGroupCB.HpSpecification _pPrinterGroup;
         protected PPrinterAttributeCB.HpSpecification _pPrinterAttribute;
-        protected PReportLayoutCB.HpSpecification _pReportLayout;
+        protected PPrinterGroupCB.HpSpecification _pPrinterGroup;
         protected PPrinterCB.HpSpecification _pPrinter;
+        protected PReportLayoutCB.HpSpecification _pReportLayout;
         protected BClassDtlCB.HpSpecification _bClassDtlBySheetCollate;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<PLayoutPrintSettingCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -535,21 +535,21 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnLayoutPrintSettingId(); // PK
-            if (qyCall().qy().hasConditionQueryPPrinterGroup()
-                    || qyCall().qy().xgetReferrerQuery() instanceof PPrinterGroupCQ) {
-                columnPrinterGroupId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryPPrinterAttribute()
                     || qyCall().qy().xgetReferrerQuery() instanceof PPrinterAttributeCQ) {
                 columnPrinterAttributeId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryPReportLayout()
-                    || qyCall().qy().xgetReferrerQuery() instanceof PReportLayoutCQ) {
-                columnReportLayoutId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryPPrinterGroup()
+                    || qyCall().qy().xgetReferrerQuery() instanceof PPrinterGroupCQ) {
+                columnPrinterGroupId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryPPrinter()
                     || qyCall().qy().xgetReferrerQuery() instanceof PPrinterCQ) {
                 columnPrinterId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryPReportLayout()
+                    || qyCall().qy().xgetReferrerQuery() instanceof PReportLayoutCQ) {
+                columnReportLayoutId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlBySheetCollate()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -558,26 +558,6 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "P_LAYOUT_PRINT_SETTING"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public PPrinterGroupCB.HpSpecification specifyPPrinterGroup() {
-            assertRelation("pPrinterGroup");
-            if (_pPrinterGroup == null) {
-                _pPrinterGroup = new PPrinterGroupCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPPrinterGroup()
-                                    , () -> _qyCall.qy().queryPPrinterGroup())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _pPrinterGroup.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPPrinterGroup()
-                      , () -> xsyncQyCall().qy().queryPPrinterGroup()));
-                }
-            }
-            return _pPrinterGroup;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * P_PRINTER_ATTRIBUTE by my PRINTER_ATTRIBUTE_ID, named 'PPrinterAttribute'.
@@ -600,23 +580,23 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+         * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public PReportLayoutCB.HpSpecification specifyPReportLayout() {
-            assertRelation("pReportLayout");
-            if (_pReportLayout == null) {
-                _pReportLayout = new PReportLayoutCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPReportLayout()
-                                    , () -> _qyCall.qy().queryPReportLayout())
+        public PPrinterGroupCB.HpSpecification specifyPPrinterGroup() {
+            assertRelation("pPrinterGroup");
+            if (_pPrinterGroup == null) {
+                _pPrinterGroup = new PPrinterGroupCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPPrinterGroup()
+                                    , () -> _qyCall.qy().queryPPrinterGroup())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _pReportLayout.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPReportLayout()
-                      , () -> xsyncQyCall().qy().queryPReportLayout()));
+                    _pPrinterGroup.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPPrinterGroup()
+                      , () -> xsyncQyCall().qy().queryPPrinterGroup()));
                 }
             }
-            return _pReportLayout;
+            return _pPrinterGroup;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -637,6 +617,26 @@ public class BsPLayoutPrintSettingCB extends AbstractConditionBean {
                 }
             }
             return _pPrinter;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public PReportLayoutCB.HpSpecification specifyPReportLayout() {
+            assertRelation("pReportLayout");
+            if (_pReportLayout == null) {
+                _pReportLayout = new PReportLayoutCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryPReportLayout()
+                                    , () -> _qyCall.qy().queryPReportLayout())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _pReportLayout.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryPReportLayout()
+                      , () -> xsyncQyCall().qy().queryPReportLayout()));
+                }
+            }
+            return _pReportLayout;
         }
         /**
          * Prepare to specify functions about relation table. <br>

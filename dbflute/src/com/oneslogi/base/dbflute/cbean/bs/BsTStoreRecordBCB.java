@@ -252,6 +252,35 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected TReceivePlanBNss _nssTReceivePlanB;
+    public TReceivePlanBNss xdfgetNssTReceivePlanB() {
+        if (_nssTReceivePlanB == null) { _nssTReceivePlanB = new TReceivePlanBNss(null); }
+        return _nssTReceivePlanB;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+     * <pre>
+     * <span style="color: #0000C0">tStoreRecordBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TReceivePlanB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tStoreRecordB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tStoreRecordB</span>.<span style="color: #CC4747">getTReceivePlanB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TReceivePlanBNss setupSelect_TReceivePlanB() {
+        assertSetupSelectPurpose("tReceivePlanB");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnReceivePlanBId();
+        }
+        doSetupSelect(() -> query().queryTReceivePlanB());
+        if (_nssTReceivePlanB == null || !_nssTReceivePlanB.hasConditionQuery())
+        { _nssTReceivePlanB = new TReceivePlanBNss(query().queryTReceivePlanB()); }
+        return _nssTReceivePlanB;
+    }
+
     protected MLocationNss _nssMLocation;
     public MLocationNss xdfgetNssMLocation() {
         if (_nssMLocation == null) { _nssMLocation = new MLocationNss(null); }
@@ -308,35 +337,6 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
         if (_nssTStoreRecordH == null || !_nssTStoreRecordH.hasConditionQuery())
         { _nssTStoreRecordH = new TStoreRecordHNss(query().queryTStoreRecordH()); }
         return _nssTStoreRecordH;
-    }
-
-    protected TReceivePlanBNss _nssTReceivePlanB;
-    public TReceivePlanBNss xdfgetNssTReceivePlanB() {
-        if (_nssTReceivePlanB == null) { _nssTReceivePlanB = new TReceivePlanBNss(null); }
-        return _nssTReceivePlanB;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-     * <pre>
-     * <span style="color: #0000C0">tStoreRecordBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TReceivePlanB()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tStoreRecordB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tStoreRecordB</span>.<span style="color: #CC4747">getTReceivePlanB()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TReceivePlanBNss setupSelect_TReceivePlanB() {
-        assertSetupSelectPurpose("tReceivePlanB");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnReceivePlanBId();
-        }
-        doSetupSelect(() -> query().queryTReceivePlanB());
-        if (_nssTReceivePlanB == null || !_nssTReceivePlanB.hasConditionQuery())
-        { _nssTReceivePlanB = new TReceivePlanBNss(query().queryTReceivePlanB()); }
-        return _nssTReceivePlanB;
     }
 
     protected BClassDtlNss _nssBClassDtlByInputType;
@@ -438,9 +438,9 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TStoreRecordBCQ> {
+        protected TReceivePlanBCB.HpSpecification _tReceivePlanB;
         protected MLocationCB.HpSpecification _mLocation;
         protected TStoreRecordHCB.HpSpecification _tStoreRecordH;
-        protected TReceivePlanBCB.HpSpecification _tReceivePlanB;
         protected BClassDtlCB.HpSpecification _bClassDtlByInputType;
         protected BClassDtlCB.HpSpecification _bClassDtlByStoreFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TStoreRecordBCQ> qyCall
@@ -572,6 +572,10 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnStoreRecordBId(); // PK
+            if (qyCall().qy().hasConditionQueryTReceivePlanB()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TReceivePlanBCQ) {
+                columnReceivePlanBId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMLocation()
                     || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
                 columnStoreLocationId(); // FK or one-to-one referrer
@@ -579,10 +583,6 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryTStoreRecordH()
                     || qyCall().qy().xgetReferrerQuery() instanceof TStoreRecordHCQ) {
                 columnStoreRecordHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryTReceivePlanB()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TReceivePlanBCQ) {
-                columnReceivePlanBId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByInputType()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -595,6 +595,26 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_STORE_RECORD_B"; }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TReceivePlanBCB.HpSpecification specifyTReceivePlanB() {
+            assertRelation("tReceivePlanB");
+            if (_tReceivePlanB == null) {
+                _tReceivePlanB = new TReceivePlanBCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTReceivePlanB()
+                                    , () -> _qyCall.qy().queryTReceivePlanB())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tReceivePlanB.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTReceivePlanB()
+                      , () -> xsyncQyCall().qy().queryTReceivePlanB()));
+                }
+            }
+            return _tReceivePlanB;
+        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_LOCATION by my STORE_LOCATION_ID, named 'MLocation'.
@@ -634,26 +654,6 @@ public class BsTStoreRecordBCB extends AbstractConditionBean {
                 }
             }
             return _tStoreRecordH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TReceivePlanBCB.HpSpecification specifyTReceivePlanB() {
-            assertRelation("tReceivePlanB");
-            if (_tReceivePlanB == null) {
-                _tReceivePlanB = new TReceivePlanBCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTReceivePlanB()
-                                    , () -> _qyCall.qy().queryTReceivePlanB())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tReceivePlanB.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTReceivePlanB()
-                      , () -> xsyncQyCall().qy().queryTReceivePlanB()));
-                }
-            }
-            return _tReceivePlanB;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_ROLE, B_ROLE_GRP
+ *     B_ROLE_GRP, B_ROLE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bRole, bRoleGrp
+ *     bRoleGrp, bRole
  *
  * [referrer-property]
  *     
@@ -137,16 +137,6 @@ public abstract class BsBRoleGrpDtlDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BRoleDto _bRole;
-
-    public BRoleDto getBRole() {
-        return _bRole;
-    }
-
-    public void setBRole(BRoleDto bRole) {
-        this._bRole = bRole;
-    }
-
     protected BRoleGrpDto _bRoleGrp;
 
     public BRoleGrpDto getBRoleGrp() {
@@ -155,6 +145,16 @@ public abstract class BsBRoleGrpDtlDto implements Serializable {
 
     public void setBRoleGrp(BRoleGrpDto bRoleGrp) {
         this._bRoleGrp = bRoleGrp;
+    }
+
+    protected BRoleDto _bRole;
+
+    public BRoleDto getBRole() {
+        return _bRole;
+    }
+
+    public void setBRole(BRoleDto bRole) {
+        this._bRole = bRole;
     }
 
     // ===================================================================================

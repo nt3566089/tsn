@@ -20,13 +20,6 @@ public class PLayoutPrintSettingNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-     */
-    public void withPPrinterGroup() {
-        _query.xdoNss(() -> _query.queryPPrinterGroup());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * P_PRINTER_ATTRIBUTE by my PRINTER_ATTRIBUTE_ID, named 'PPrinterAttribute'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -36,12 +29,10 @@ public class PLayoutPrintSettingNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
      */
-    public PReportLayoutNss withPReportLayout() {
-        _query.xdoNss(() -> _query.queryPReportLayout());
-        return new PReportLayoutNss(_query.queryPReportLayout());
+    public void withPPrinterGroup() {
+        _query.xdoNss(() -> _query.queryPPrinterGroup());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -51,6 +42,15 @@ public class PLayoutPrintSettingNss {
     public PPrinterNss withPPrinter() {
         _query.xdoNss(() -> _query.queryPPrinter());
         return new PPrinterNss(_query.queryPPrinter());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public PReportLayoutNss withPReportLayout() {
+        _query.xdoNss(() -> _query.queryPReportLayout());
+        return new PReportLayoutNss(_query.queryPReportLayout());
     }
     /**
      * With nested relation columns to select clause. <br>

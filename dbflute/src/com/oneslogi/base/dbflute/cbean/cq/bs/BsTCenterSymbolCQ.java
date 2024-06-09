@@ -547,11 +547,11 @@ public class BsTCenterSymbolCQ extends AbstractBsTCenterSymbolCQ {
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
-        if (bq.hasConditionQueryTTrsymbol()) {
-            uq.queryTTrsymbol().reflectRelationOnUnionQuery(bq.queryTTrsymbol(), uq.queryTTrsymbol());
-        }
         if (bq.hasConditionQueryTPallet()) {
             uq.queryTPallet().reflectRelationOnUnionQuery(bq.queryTPallet(), uq.queryTPallet());
+        }
+        if (bq.hasConditionQueryTTrsymbol()) {
+            uq.queryTTrsymbol().reflectRelationOnUnionQuery(bq.queryTTrsymbol(), uq.queryTTrsymbol());
         }
     }
 
@@ -620,26 +620,6 @@ public class BsTCenterSymbolCQ extends AbstractBsTCenterSymbolCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TTrsymbolCQ queryTTrsymbol() {
-        return xdfgetConditionQueryTTrsymbol();
-    }
-    public TTrsymbolCQ xdfgetConditionQueryTTrsymbol() {
-        String prop = "tTrsymbol";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrsymbol()); xsetupOuterJoinTTrsymbol(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TTrsymbolCQ xcreateQueryTTrsymbol() {
-        String nrp = xresolveNRP("T_CENTER_SYMBOL", "tTrsymbol"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TTrsymbolCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrsymbol", nrp);
-    }
-    protected void xsetupOuterJoinTTrsymbol() { xregOutJo("tTrsymbol"); }
-    public boolean hasConditionQueryTTrsymbol() { return xhasQueRlMap("tTrsymbol"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * T_PALLET by my PALLET_ID, named 'TPallet'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -657,6 +637,26 @@ public class BsTCenterSymbolCQ extends AbstractBsTCenterSymbolCQ {
     }
     protected void xsetupOuterJoinTPallet() { xregOutJo("tPallet"); }
     public boolean hasConditionQueryTPallet() { return xhasQueRlMap("tPallet"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_TRSYMBOL by my TRSYMBOL_ID, named 'TTrsymbol'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TTrsymbolCQ queryTTrsymbol() {
+        return xdfgetConditionQueryTTrsymbol();
+    }
+    public TTrsymbolCQ xdfgetConditionQueryTTrsymbol() {
+        String prop = "tTrsymbol";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrsymbol()); xsetupOuterJoinTTrsymbol(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TTrsymbolCQ xcreateQueryTTrsymbol() {
+        String nrp = xresolveNRP("T_CENTER_SYMBOL", "tTrsymbol"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TTrsymbolCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrsymbol", nrp);
+    }
+    protected void xsetupOuterJoinTTrsymbol() { xregOutJo("tTrsymbol"); }
+    public boolean hasConditionQueryTTrsymbol() { return xhasQueRlMap("tTrsymbol"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

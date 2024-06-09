@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CARRIER, M_BOX
+ *     M_BOX, M_CARRIER
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCarrier, mBox
+ *     mBox, mCarrier
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMCarrier;
     protected boolean _suppressMBox;
+    protected boolean _suppressMCarrier;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -143,32 +143,6 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCarrier && entity.getMCarrier() != null) {
-            MCarrier relationEntity = entity.getMCarrier();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCarrierDto relationDto = (MCarrierDto)cachedDto;
-                dto.setMCarrier(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCarrierBoxList().add(dto);
-                }
-            } else {
-                MCarrierDtoMapper mapper = new MCarrierDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCarrierBoxList();
-                MCarrierDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCarrier(relationDto);
-                if (reverseReference) {
-                    relationDto.getMCarrierBoxList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCarrier());
-                }
-            }
-        };
         if (!_suppressMBox && entity.getMBox() != null) {
             MBox relationEntity = entity.getMBox();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -192,6 +166,32 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMBox());
+                }
+            }
+        };
+        if (!_suppressMCarrier && entity.getMCarrier() != null) {
+            MCarrier relationEntity = entity.getMCarrier();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCarrierDto relationDto = (MCarrierDto)cachedDto;
+                dto.setMCarrier(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCarrierBoxList().add(dto);
+                }
+            } else {
+                MCarrierDtoMapper mapper = new MCarrierDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCarrierBoxList();
+                MCarrierDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCarrier(relationDto);
+                if (reverseReference) {
+                    relationDto.getMCarrierBoxList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCarrier());
                 }
             }
         };
@@ -281,32 +281,6 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCarrier && dto.getMCarrier() != null) {
-            MCarrierDto relationDto = dto.getMCarrier();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCarrier relationEntity = (MCarrier)cachedEntity;
-                entity.setMCarrier(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCarrierBoxList().add(entity);
-                }
-            } else {
-                MCarrierDtoMapper mapper = new MCarrierDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMCarrierBoxList();
-                MCarrier relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCarrier(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMCarrierBoxList().add(entity);
-                }
-                if (instanceCache && entity.getMCarrier().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCarrier());
-                }
-            }
-        };
         if (!_suppressMBox && dto.getMBox() != null) {
             MBoxDto relationDto = dto.getMBox();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -330,6 +304,32 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
                 }
                 if (instanceCache && entity.getMBox().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMBox());
+                }
+            }
+        };
+        if (!_suppressMCarrier && dto.getMCarrier() != null) {
+            MCarrierDto relationDto = dto.getMCarrier();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCarrier relationEntity = (MCarrier)cachedEntity;
+                entity.setMCarrier(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCarrierBoxList().add(entity);
+                }
+            } else {
+                MCarrierDtoMapper mapper = new MCarrierDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMCarrierBoxList();
+                MCarrier relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCarrier(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMCarrierBoxList().add(entity);
+                }
+                if (instanceCache && entity.getMCarrier().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCarrier());
                 }
             }
         };
@@ -451,19 +451,19 @@ public abstract class BsMCarrierBoxDtoMapper implements DtoMapper<MCarrierBox, M
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMCarrier() {
-        _suppressMCarrier = true;
-    }
     public void suppressMBox() {
         _suppressMBox = true;
     }
+    public void suppressMCarrier() {
+        _suppressMCarrier = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressMCarrier();
         suppressMBox();
+        suppressMCarrier();
     }
     protected void doSuppressClear() { // internal
-        _suppressMCarrier = false;
         _suppressMBox = false;
+        _suppressMCarrier = false;
     }
 
     // ===================================================================================

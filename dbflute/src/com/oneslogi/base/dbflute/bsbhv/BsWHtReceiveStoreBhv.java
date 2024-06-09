@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_LOCATION, M_CLIENT, M_WAREHOUSE, M_CENTER, M_PRODUCT, M_STOCK_TYPE
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tLot, mLocation, mClient, mWarehouse, mCenter, mProduct, mStockType
+ *     mCenter, mClient, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -393,20 +393,12 @@ public abstract class BsWHtReceiveStoreBhv extends AbstractBehaviorWritable<WHtR
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TLot'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param wHtReceiveStoreList The list of wHtReceiveStore. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TLot> pulloutTLot(List<WHtReceiveStore> wHtReceiveStoreList)
-    { return helpPulloutInternally(wHtReceiveStoreList, "tLot"); }
-
-    /**
-     * Pull out the list of foreign table 'MLocation'.
-     * @param wHtReceiveStoreList The list of wHtReceiveStore. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MLocation> pulloutMLocation(List<WHtReceiveStore> wHtReceiveStoreList)
-    { return helpPulloutInternally(wHtReceiveStoreList, "mLocation"); }
+    public List<MCenter> pulloutMCenter(List<WHtReceiveStore> wHtReceiveStoreList)
+    { return helpPulloutInternally(wHtReceiveStoreList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MClient'.
@@ -417,20 +409,20 @@ public abstract class BsWHtReceiveStoreBhv extends AbstractBehaviorWritable<WHtR
     { return helpPulloutInternally(wHtReceiveStoreList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'MWarehouse'.
+     * Pull out the list of foreign table 'MLocation'.
      * @param wHtReceiveStoreList The list of wHtReceiveStore. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MWarehouse> pulloutMWarehouse(List<WHtReceiveStore> wHtReceiveStoreList)
-    { return helpPulloutInternally(wHtReceiveStoreList, "mWarehouse"); }
+    public List<MLocation> pulloutMLocation(List<WHtReceiveStore> wHtReceiveStoreList)
+    { return helpPulloutInternally(wHtReceiveStoreList, "mLocation"); }
 
     /**
-     * Pull out the list of foreign table 'MCenter'.
+     * Pull out the list of foreign table 'TLot'.
      * @param wHtReceiveStoreList The list of wHtReceiveStore. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCenter> pulloutMCenter(List<WHtReceiveStore> wHtReceiveStoreList)
-    { return helpPulloutInternally(wHtReceiveStoreList, "mCenter"); }
+    public List<TLot> pulloutTLot(List<WHtReceiveStore> wHtReceiveStoreList)
+    { return helpPulloutInternally(wHtReceiveStoreList, "tLot"); }
 
     /**
      * Pull out the list of foreign table 'MProduct'.
@@ -447,6 +439,14 @@ public abstract class BsWHtReceiveStoreBhv extends AbstractBehaviorWritable<WHtR
      */
     public List<MStockType> pulloutMStockType(List<WHtReceiveStore> wHtReceiveStoreList)
     { return helpPulloutInternally(wHtReceiveStoreList, "mStockType"); }
+
+    /**
+     * Pull out the list of foreign table 'MWarehouse'.
+     * @param wHtReceiveStoreList The list of wHtReceiveStore. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MWarehouse> pulloutMWarehouse(List<WHtReceiveStore> wHtReceiveStoreList)
+    { return helpPulloutInternally(wHtReceiveStoreList, "mWarehouse"); }
 
     // ===================================================================================
     //                                                                      Extract Column

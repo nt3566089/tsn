@@ -264,35 +264,6 @@ public class BsBUserCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BRoleGrpNss _nssBRoleGrp;
-    public BRoleGrpNss xdfgetNssBRoleGrp() {
-        if (_nssBRoleGrp == null) { _nssBRoleGrp = new BRoleGrpNss(null); }
-        return _nssBRoleGrp;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
-     * <pre>
-     * <span style="color: #0000C0">bUserBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRoleGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">bUser</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">bUser</span>.<span style="color: #CC4747">getBRoleGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BRoleGrpNss setupSelect_BRoleGrp() {
-        assertSetupSelectPurpose("bRoleGrp");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnRoleGrpId();
-        }
-        doSetupSelect(() -> query().queryBRoleGrp());
-        if (_nssBRoleGrp == null || !_nssBRoleGrp.hasConditionQuery())
-        { _nssBRoleGrp = new BRoleGrpNss(query().queryBRoleGrp()); }
-        return _nssBRoleGrp;
-    }
-
     protected BCultureNss _nssBCulture;
     public BCultureNss xdfgetNssBCulture() {
         if (_nssBCulture == null) { _nssBCulture = new BCultureNss(null); }
@@ -320,6 +291,35 @@ public class BsBUserCB extends AbstractConditionBean {
         if (_nssBCulture == null || !_nssBCulture.hasConditionQuery())
         { _nssBCulture = new BCultureNss(query().queryBCulture()); }
         return _nssBCulture;
+    }
+
+    protected BRoleGrpNss _nssBRoleGrp;
+    public BRoleGrpNss xdfgetNssBRoleGrp() {
+        if (_nssBRoleGrp == null) { _nssBRoleGrp = new BRoleGrpNss(null); }
+        return _nssBRoleGrp;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
+     * <pre>
+     * <span style="color: #0000C0">bUserBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BRoleGrp()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">bUser</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">bUser</span>.<span style="color: #CC4747">getBRoleGrp()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BRoleGrpNss setupSelect_BRoleGrp() {
+        assertSetupSelectPurpose("bRoleGrp");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnRoleGrpId();
+        }
+        doSetupSelect(() -> query().queryBRoleGrp());
+        if (_nssBRoleGrp == null || !_nssBRoleGrp.hasConditionQuery())
+        { _nssBRoleGrp = new BRoleGrpNss(query().queryBRoleGrp()); }
+        return _nssBRoleGrp;
     }
 
     protected BClassDtlNss _nssBClassDtlByDelFlg;
@@ -444,8 +444,8 @@ public class BsBUserCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<BUserCQ> {
-        protected BRoleGrpCB.HpSpecification _bRoleGrp;
         protected BCultureCB.HpSpecification _bCulture;
+        protected BRoleGrpCB.HpSpecification _bRoleGrp;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         protected BUserAuthCB.HpSpecification _bUserAuthAsOne;
         protected MUserLoginCB.HpSpecification _mUserLoginAsOne;
@@ -531,13 +531,13 @@ public class BsBUserCB extends AbstractConditionBean {
             if (qyCall().qy().xgetReferrerQuery() instanceof TPackingHCQ) {
                 columnUserCd(); // non PK but referred column (and referrer also non PK)
             }
-            if (qyCall().qy().hasConditionQueryBRoleGrp()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleGrpCQ) {
-                columnRoleGrpId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBCulture()
                     || qyCall().qy().xgetReferrerQuery() instanceof BCultureCQ) {
                 columnCultureId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBRoleGrp()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BRoleGrpCQ) {
+                columnRoleGrpId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByDelFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -546,26 +546,6 @@ public class BsBUserCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "B_USER"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BRoleGrpCB.HpSpecification specifyBRoleGrp() {
-            assertRelation("bRoleGrp");
-            if (_bRoleGrp == null) {
-                _bRoleGrp = new BRoleGrpCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRoleGrp()
-                                    , () -> _qyCall.qy().queryBRoleGrp())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bRoleGrp.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRoleGrp()
-                      , () -> xsyncQyCall().qy().queryBRoleGrp()));
-                }
-            }
-            return _bRoleGrp;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -585,6 +565,26 @@ public class BsBUserCB extends AbstractConditionBean {
                 }
             }
             return _bCulture;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BRoleGrpCB.HpSpecification specifyBRoleGrp() {
+            assertRelation("bRoleGrp");
+            if (_bRoleGrp == null) {
+                _bRoleGrp = new BRoleGrpCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBRoleGrp()
+                                    , () -> _qyCall.qy().queryBRoleGrp())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bRoleGrp.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBRoleGrp()
+                      , () -> xsyncQyCall().qy().queryBRoleGrp()));
+                }
+            }
+            return _bRoleGrp;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -751,23 +751,6 @@ public class BsBUserCB extends AbstractConditionBean {
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
          * {select max(FOO) from T_PACKING_R where ...) as FOO_MAX} <br>
-         * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
-         * <pre>
-         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-         *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
-         *     rCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
-         * }, TPackingR.<span style="color: #CC4747">ALIAS_foo...</span>);
-         * </pre>
-         * @return The object to set up a function for referrer table. (NotNull)
-         */
-        public HpSDRFunction<TPackingRCB, BUserCQ> derivedTPackingRByTagOutUserIdList() {
-            assertDerived("tPackingRByTagOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPackingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
-                    -> cq.xsderiveTPackingRByTagOutUserIdList(fn, sq, al, op), _dbmetaProvider);
-        }
-        /**
-         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from T_PACKING_R where ...) as FOO_MAX} <br>
          * T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -801,20 +784,20 @@ public class BsBUserCB extends AbstractConditionBean {
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
-         * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+         * {select max(FOO) from T_PACKING_R where ...) as FOO_MAX} <br>
+         * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
          *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
          *     rCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
-         * }, TPickingR.<span style="color: #CC4747">ALIAS_foo...</span>);
+         * }, TPackingR.<span style="color: #CC4747">ALIAS_foo...</span>);
          * </pre>
          * @return The object to set up a function for referrer table. (NotNull)
          */
-        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByPl1OutUserIdList() {
-            assertDerived("tPickingRByPl1OutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
-                    -> cq.xsderiveTPickingRByPl1OutUserIdList(fn, sq, al, op), _dbmetaProvider);
+        public HpSDRFunction<TPackingRCB, BUserCQ> derivedTPackingRByTagOutUserIdList() {
+            assertDerived("tPackingRByTagOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPackingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveTPackingRByTagOutUserIdList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
@@ -836,7 +819,7 @@ public class BsBUserCB extends AbstractConditionBean {
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
          * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
-         * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+         * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
          *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
@@ -845,10 +828,27 @@ public class BsBUserCB extends AbstractConditionBean {
          * </pre>
          * @return The object to set up a function for referrer table. (NotNull)
          */
-        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByShippingRecordOutUserIdList() {
-            assertDerived("tPickingRByShippingRecordOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByPackingOutUserIdList() {
+            assertDerived("tPickingRByPackingOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
-                    -> cq.xsderiveTPickingRByShippingRecordOutUserIdList(fn, sq, al, op), _dbmetaProvider);
+                    -> cq.xsderiveTPickingRByPackingOutUserIdList(fn, sq, al, op), _dbmetaProvider);
+        }
+        /**
+         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
+         * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
+         * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+         * <pre>
+         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+         *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
+         *     rCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
+         * }, TPickingR.<span style="color: #CC4747">ALIAS_foo...</span>);
+         * </pre>
+         * @return The object to set up a function for referrer table. (NotNull)
+         */
+        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByPl1OutUserIdList() {
+            assertDerived("tPickingRByPl1OutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveTPickingRByPl1OutUserIdList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
@@ -870,6 +870,23 @@ public class BsBUserCB extends AbstractConditionBean {
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
          * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
+         * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+         * <pre>
+         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+         *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
+         *     rCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
+         * }, TPickingR.<span style="color: #CC4747">ALIAS_foo...</span>);
+         * </pre>
+         * @return The object to set up a function for referrer table. (NotNull)
+         */
+        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByShippingRecordOutUserIdList() {
+            assertDerived("tPickingRByShippingRecordOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
+            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
+                    -> cq.xsderiveTPickingRByShippingRecordOutUserIdList(fn, sq, al, op), _dbmetaProvider);
+        }
+        /**
+         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
+         * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
          * T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdList'.
          * <pre>
          * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -883,23 +900,6 @@ public class BsBUserCB extends AbstractConditionBean {
             assertDerived("tPickingRBySlipOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
             return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
                     -> cq.xsderiveTPickingRBySlipOutUserIdList(fn, sq, al, op), _dbmetaProvider);
-        }
-        /**
-         * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>
-         * {select max(FOO) from T_PICKING_R where ...) as FOO_MAX} <br>
-         * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
-         * <pre>
-         * cb.specify().<span style="color: #CC4747">derived${relationMethodIdentityName}()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-         *     rCB.specify().<span style="color: #CC4747">column...</span> <span style="color: #3F7E5E">// derived column by function</span>
-         *     rCB.query().set... <span style="color: #3F7E5E">// referrer condition</span>
-         * }, TPickingR.<span style="color: #CC4747">ALIAS_foo...</span>);
-         * </pre>
-         * @return The object to set up a function for referrer table. (NotNull)
-         */
-        public HpSDRFunction<TPickingRCB, BUserCQ> derivedTPickingRByPackingOutUserIdList() {
-            assertDerived("tPickingRByPackingOutUserIdList"); if (xhasSyncQyCall()) { xsyncQyCall().qy(); } // for sync (for example, this in ColumnQuery)
-            return cHSDRF(_baseCB, _qyCall.qy(), (String fn, SubQuery<TPickingRCB> sq, BUserCQ cq, String al, DerivedReferrerOption op)
-                    -> cq.xsderiveTPickingRByPackingOutUserIdList(fn, sq, al, op), _dbmetaProvider);
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

@@ -458,17 +458,17 @@ public class BsPLayoutPrintSettingCQ extends AbstractBsPLayoutPrintSettingCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         PLayoutPrintSettingCQ bq = (PLayoutPrintSettingCQ)bqs;
         PLayoutPrintSettingCQ uq = (PLayoutPrintSettingCQ)uqs;
-        if (bq.hasConditionQueryPPrinterGroup()) {
-            uq.queryPPrinterGroup().reflectRelationOnUnionQuery(bq.queryPPrinterGroup(), uq.queryPPrinterGroup());
-        }
         if (bq.hasConditionQueryPPrinterAttribute()) {
             uq.queryPPrinterAttribute().reflectRelationOnUnionQuery(bq.queryPPrinterAttribute(), uq.queryPPrinterAttribute());
         }
-        if (bq.hasConditionQueryPReportLayout()) {
-            uq.queryPReportLayout().reflectRelationOnUnionQuery(bq.queryPReportLayout(), uq.queryPReportLayout());
+        if (bq.hasConditionQueryPPrinterGroup()) {
+            uq.queryPPrinterGroup().reflectRelationOnUnionQuery(bq.queryPPrinterGroup(), uq.queryPPrinterGroup());
         }
         if (bq.hasConditionQueryPPrinter()) {
             uq.queryPPrinter().reflectRelationOnUnionQuery(bq.queryPPrinter(), uq.queryPPrinter());
+        }
+        if (bq.hasConditionQueryPReportLayout()) {
+            uq.queryPReportLayout().reflectRelationOnUnionQuery(bq.queryPReportLayout(), uq.queryPReportLayout());
         }
         if (bq.hasConditionQueryBClassDtlBySheetCollate()) {
             uq.queryBClassDtlBySheetCollate().reflectRelationOnUnionQuery(bq.queryBClassDtlBySheetCollate(), uq.queryBClassDtlBySheetCollate());
@@ -478,26 +478,6 @@ public class BsPLayoutPrintSettingCQ extends AbstractBsPLayoutPrintSettingCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public PPrinterGroupCQ queryPPrinterGroup() {
-        return xdfgetConditionQueryPPrinterGroup();
-    }
-    public PPrinterGroupCQ xdfgetConditionQueryPPrinterGroup() {
-        String prop = "pPrinterGroup";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPPrinterGroup()); xsetupOuterJoinPPrinterGroup(); }
-        return xgetQueRlMap(prop);
-    }
-    protected PPrinterGroupCQ xcreateQueryPPrinterGroup() {
-        String nrp = xresolveNRP("P_LAYOUT_PRINT_SETTING", "pPrinterGroup"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new PPrinterGroupCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pPrinterGroup", nrp);
-    }
-    protected void xsetupOuterJoinPPrinterGroup() { xregOutJo("pPrinterGroup"); }
-    public boolean hasConditionQueryPPrinterGroup() { return xhasQueRlMap("pPrinterGroup"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * P_PRINTER_ATTRIBUTE by my PRINTER_ATTRIBUTE_ID, named 'PPrinterAttribute'.
@@ -520,23 +500,23 @@ public class BsPLayoutPrintSettingCQ extends AbstractBsPLayoutPrintSettingCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * P_PRINTER_GROUP by my PRINTER_GROUP_ID, named 'PPrinterGroup'.
      * @return The instance of condition-query. (NotNull)
      */
-    public PReportLayoutCQ queryPReportLayout() {
-        return xdfgetConditionQueryPReportLayout();
+    public PPrinterGroupCQ queryPPrinterGroup() {
+        return xdfgetConditionQueryPPrinterGroup();
     }
-    public PReportLayoutCQ xdfgetConditionQueryPReportLayout() {
-        String prop = "pReportLayout";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPReportLayout()); xsetupOuterJoinPReportLayout(); }
+    public PPrinterGroupCQ xdfgetConditionQueryPPrinterGroup() {
+        String prop = "pPrinterGroup";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPPrinterGroup()); xsetupOuterJoinPPrinterGroup(); }
         return xgetQueRlMap(prop);
     }
-    protected PReportLayoutCQ xcreateQueryPReportLayout() {
-        String nrp = xresolveNRP("P_LAYOUT_PRINT_SETTING", "pReportLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new PReportLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pReportLayout", nrp);
+    protected PPrinterGroupCQ xcreateQueryPPrinterGroup() {
+        String nrp = xresolveNRP("P_LAYOUT_PRINT_SETTING", "pPrinterGroup"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new PPrinterGroupCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pPrinterGroup", nrp);
     }
-    protected void xsetupOuterJoinPReportLayout() { xregOutJo("pReportLayout"); }
-    public boolean hasConditionQueryPReportLayout() { return xhasQueRlMap("pReportLayout"); }
+    protected void xsetupOuterJoinPPrinterGroup() { xregOutJo("pPrinterGroup"); }
+    public boolean hasConditionQueryPPrinterGroup() { return xhasQueRlMap("pPrinterGroup"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -557,6 +537,26 @@ public class BsPLayoutPrintSettingCQ extends AbstractBsPLayoutPrintSettingCQ {
     }
     protected void xsetupOuterJoinPPrinter() { xregOutJo("pPrinter"); }
     public boolean hasConditionQueryPPrinter() { return xhasQueRlMap("pPrinter"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public PReportLayoutCQ queryPReportLayout() {
+        return xdfgetConditionQueryPReportLayout();
+    }
+    public PReportLayoutCQ xdfgetConditionQueryPReportLayout() {
+        String prop = "pReportLayout";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPReportLayout()); xsetupOuterJoinPReportLayout(); }
+        return xgetQueRlMap(prop);
+    }
+    protected PReportLayoutCQ xcreateQueryPReportLayout() {
+        String nrp = xresolveNRP("P_LAYOUT_PRINT_SETTING", "pReportLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new PReportLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pReportLayout", nrp);
+    }
+    protected void xsetupOuterJoinPReportLayout() { xregOutJo("pReportLayout"); }
+    public boolean hasConditionQueryPReportLayout() { return xhasQueRlMap("pReportLayout"); }
 
     /**
      * Get the condition-query for relation table. <br>

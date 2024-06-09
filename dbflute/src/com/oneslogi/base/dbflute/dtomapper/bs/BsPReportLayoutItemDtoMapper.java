@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     P_REPORT_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_REPORT_LAYOUT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     pReportLayout, bDict, vDict
+ *     bDict, pReportLayout, vDict
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressPReportLayout;
     protected boolean _suppressBDict;
+    protected boolean _suppressPReportLayout;
     protected boolean _suppressVDict;
 
     // ===================================================================================
@@ -147,32 +147,6 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPReportLayout && entity.getPReportLayout() != null) {
-            PReportLayout relationEntity = entity.getPReportLayout();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                PReportLayoutDto relationDto = (PReportLayoutDto)cachedDto;
-                dto.setPReportLayout(relationDto);
-                if (reverseReference) {
-                    relationDto.getPReportLayoutItemList().add(dto);
-                }
-            } else {
-                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPReportLayoutItemList();
-                PReportLayoutDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setPReportLayout(relationDto);
-                if (reverseReference) {
-                    relationDto.getPReportLayoutItemList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getPReportLayout());
-                }
-            }
-        };
         if (!_suppressBDict && entity.getBDict() != null) {
             BDict relationEntity = entity.getBDict();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -196,6 +170,32 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getBDict());
+                }
+            }
+        };
+        if (!_suppressPReportLayout && entity.getPReportLayout() != null) {
+            PReportLayout relationEntity = entity.getPReportLayout();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                PReportLayoutDto relationDto = (PReportLayoutDto)cachedDto;
+                dto.setPReportLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.getPReportLayoutItemList().add(dto);
+                }
+            } else {
+                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPReportLayoutItemList();
+                PReportLayoutDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setPReportLayout(relationDto);
+                if (reverseReference) {
+                    relationDto.getPReportLayoutItemList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getPReportLayout());
                 }
             }
         };
@@ -317,32 +317,6 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressPReportLayout && dto.getPReportLayout() != null) {
-            PReportLayoutDto relationDto = dto.getPReportLayout();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                PReportLayout relationEntity = (PReportLayout)cachedEntity;
-                entity.setPReportLayout(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPReportLayoutItemList().add(entity);
-                }
-            } else {
-                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressPReportLayoutItemList();
-                PReportLayout relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setPReportLayout(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getPReportLayoutItemList().add(entity);
-                }
-                if (instanceCache && entity.getPReportLayout().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getPReportLayout());
-                }
-            }
-        };
         if (!_suppressBDict && dto.getBDict() != null) {
             BDictDto relationDto = dto.getBDict();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -366,6 +340,32 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
                 }
                 if (instanceCache && entity.getBDict().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getBDict());
+                }
+            }
+        };
+        if (!_suppressPReportLayout && dto.getPReportLayout() != null) {
+            PReportLayoutDto relationDto = dto.getPReportLayout();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                PReportLayout relationEntity = (PReportLayout)cachedEntity;
+                entity.setPReportLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getPReportLayoutItemList().add(entity);
+                }
+            } else {
+                PReportLayoutDtoMapper mapper = new PReportLayoutDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressPReportLayoutItemList();
+                PReportLayout relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setPReportLayout(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getPReportLayoutItemList().add(entity);
+                }
+                if (instanceCache && entity.getPReportLayout().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getPReportLayout());
                 }
             }
         };
@@ -510,23 +510,23 @@ public abstract class BsPReportLayoutItemDtoMapper implements DtoMapper<PReportL
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressPReportLayout() {
-        _suppressPReportLayout = true;
-    }
     public void suppressBDict() {
         _suppressBDict = true;
+    }
+    public void suppressPReportLayout() {
+        _suppressPReportLayout = true;
     }
     public void suppressVDict() {
         _suppressVDict = true;
     }
     protected void doSuppressAll() { // internal
-        suppressPReportLayout();
         suppressBDict();
+        suppressPReportLayout();
         suppressVDict();
     }
     protected void doSuppressClear() { // internal
-        _suppressPReportLayout = false;
         _suppressBDict = false;
+        _suppressPReportLayout = false;
         _suppressVDict = false;
     }
 

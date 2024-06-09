@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_SHAPE, M_SHAPE_GRP, B_CLASS_DTL(ByCasePickFlg)
+ *     M_SHAPE_GRP, M_SHAPE, B_CLASS_DTL(ByCasePickFlg)
  *
  * [referrer-table]
  *     M_PRODUCT_SHAPE
  *
  * [foreign-property]
- *     mShape, mShapeGrp, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
+ *     mShapeGrp, mShape, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
  *
  * [referrer-property]
  *     mProductShapeList
@@ -149,16 +149,6 @@ public abstract class BsMShapeGrpDtlDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MShapeDto _mShape;
-
-    public MShapeDto getMShape() {
-        return _mShape;
-    }
-
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
-    }
-
     protected MShapeGrpDto _mShapeGrp;
 
     public MShapeGrpDto getMShapeGrp() {
@@ -167,6 +157,16 @@ public abstract class BsMShapeGrpDtlDto implements Serializable {
 
     public void setMShapeGrp(MShapeGrpDto mShapeGrp) {
         this._mShapeGrp = mShapeGrp;
+    }
+
+    protected MShapeDto _mShape;
+
+    public MShapeDto getMShape() {
+        return _mShape;
+    }
+
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
     }
 
     protected BClassDtlDto _bClassDtlByCasePickFlg;

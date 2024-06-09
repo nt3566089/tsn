@@ -68,8 +68,8 @@ public class PReportLayoutItemDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((PReportLayoutItem)et).getPReportLayout(), (et, vl) -> ((PReportLayoutItem)et).setPReportLayout((PReportLayout)vl), "PReportLayout");
         setupEfpg(_efpgMap, et -> ((PReportLayoutItem)et).getBDict(), (et, vl) -> ((PReportLayoutItem)et).setBDict((BDict)vl), "BDict");
+        setupEfpg(_efpgMap, et -> ((PReportLayoutItem)et).getPReportLayout(), (et, vl) -> ((PReportLayoutItem)et).setPReportLayout((PReportLayout)vl), "PReportLayout");
         setupEfpg(_efpgMap, et -> ((PReportLayoutItem)et).getVDict(), (et, vl) -> ((PReportLayoutItem)et).setVDict((VDict)vl), "VDict");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -241,20 +241,20 @@ public class PReportLayoutItemDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignPReportLayout() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReportLayoutId(), PReportLayoutDbm.getInstance().columnReportLayoutId());
-        return cfi("P_REPORT_LAYOUT_ITEM_FK2", "PReportLayout", this, PReportLayoutDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PReportLayoutItemList", false);
-    }
-    /**
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("P_REPORT_LAYOUT_ITEM_FK1", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PReportLayoutItemList", false);
+        return cfi("P_REPORT_LAYOUT_ITEM_FK1", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "PReportLayoutItemList", false);
+    }
+    /**
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignPReportLayout() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReportLayoutId(), PReportLayoutDbm.getInstance().columnReportLayoutId());
+        return cfi("P_REPORT_LAYOUT_ITEM_FK2", "PReportLayout", this, PReportLayoutDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "PReportLayoutItemList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

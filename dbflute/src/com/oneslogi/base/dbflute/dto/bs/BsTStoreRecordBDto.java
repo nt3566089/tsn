@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_LOCATION, T_STORE_RECORD_H, T_RECEIVE_PLAN_B, B_CLASS_DTL(ByInputType)
+ *     T_RECEIVE_PLAN_B, M_LOCATION, T_STORE_RECORD_H, B_CLASS_DTL(ByInputType)
  *
  * [referrer-table]
  *     T_STOCK_INOUT
  *
  * [foreign-property]
- *     mLocation, tStoreRecordH, tReceivePlanB, bClassDtlByInputType, bClassDtlByStoreFlg
+ *     tReceivePlanB, mLocation, tStoreRecordH, bClassDtlByInputType, bClassDtlByStoreFlg
  *
  * [referrer-property]
  *     tStockInoutList
@@ -181,6 +181,16 @@ public abstract class BsTStoreRecordBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected TReceivePlanBDto _tReceivePlanB;
+
+    public TReceivePlanBDto getTReceivePlanB() {
+        return _tReceivePlanB;
+    }
+
+    public void setTReceivePlanB(TReceivePlanBDto tReceivePlanB) {
+        this._tReceivePlanB = tReceivePlanB;
+    }
+
     protected MLocationDto _mLocation;
 
     public MLocationDto getMLocation() {
@@ -199,16 +209,6 @@ public abstract class BsTStoreRecordBDto implements Serializable {
 
     public void setTStoreRecordH(TStoreRecordHDto tStoreRecordH) {
         this._tStoreRecordH = tStoreRecordH;
-    }
-
-    protected TReceivePlanBDto _tReceivePlanB;
-
-    public TReceivePlanBDto getTReceivePlanB() {
-        return _tReceivePlanB;
-    }
-
-    public void setTReceivePlanB(TReceivePlanBDto tReceivePlanB) {
-        this._tReceivePlanB = tReceivePlanB;
     }
 
     protected BClassDtlDto _bClassDtlByInputType;

@@ -20,21 +20,21 @@ public class BDictCultureNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_DICT by my DICT_ID, named 'BDict'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BDictNss withBDict() {
-        _query.xdoNss(() -> _query.queryBDict());
-        return new BDictNss(_query.queryBDict());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BCultureNss withBCulture() {
         _query.xdoNss(() -> _query.queryBCulture());
         return new BCultureNss(_query.queryBCulture());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_DICT by my DICT_ID, named 'BDict'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BDictNss withBDict() {
+        _query.xdoNss(() -> _query.queryBDict());
+        return new BDictNss(_query.queryBDict());
     }
     /**
      * With nested relation columns to select clause. <br>

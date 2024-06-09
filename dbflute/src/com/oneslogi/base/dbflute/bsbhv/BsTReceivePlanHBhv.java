@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_RECEIVE_PLAN_H, M_CUSTOMER, M_CLIENT, M_STOCK_TYPE, M_CENTER, M_PROCESS_TYPE, T_PICKING_H, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
+ *     M_CENTER, M_CLIENT, T_RECEIVE_PLAN_H, T_PICKING_H, M_CUSTOMER, M_PROCESS_TYPE, M_STOCK_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_RECEIVE_PLAN_R(AsOne), T_TRRCV(AsOne)
  *
  * [referrer table]
  *     T_RECEIVE_PLAN_B, T_RECEIVE_PLAN_H, T_STORE_RECORD_H, T_RECEIVE_PLAN_R, T_TRRCV
  *
  * [foreign property]
- *     tReceivePlanHSelf, mCustomerByPlanDepositId, mClient, mStockType, mCenter, mProcessType, mCustomerByPlanSupplierId, tPickingH, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
+ *     mCenter, mClient, tReceivePlanHSelf, tPickingH, mCustomerByPlanDepositId, mCustomerByPlanSupplierId, mProcessType, mStockType, bClassDtlByCenterTransitFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByReceiveDeliveryStatus, bClassDtlByReceiveStatus, tReceivePlanRAsOne, tTrrcvAsOne
  *
  * [referrer property]
  *     tReceivePlanBList, tReceivePlanHSelfList, tStoreRecordHList
@@ -659,20 +659,12 @@ public abstract class BsTReceivePlanHBhv extends AbstractBehaviorWritable<TRecei
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TReceivePlanH'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TReceivePlanH> pulloutTReceivePlanHSelf(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "tReceivePlanHSelf"); }
-
-    /**
-     * Pull out the list of foreign table 'MCustomer'.
-     * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCustomer> pulloutMCustomerByPlanDepositId(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "mCustomerByPlanDepositId"); }
+    public List<MCenter> pulloutMCenter(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MClient'.
@@ -683,28 +675,28 @@ public abstract class BsTReceivePlanHBhv extends AbstractBehaviorWritable<TRecei
     { return helpPulloutInternally(tReceivePlanHList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'MStockType'.
+     * Pull out the list of foreign table 'TReceivePlanH'.
      * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MStockType> pulloutMStockType(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "mStockType"); }
+    public List<TReceivePlanH> pulloutTReceivePlanHSelf(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "tReceivePlanHSelf"); }
 
     /**
-     * Pull out the list of foreign table 'MCenter'.
+     * Pull out the list of foreign table 'TPickingH'.
      * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCenter> pulloutMCenter(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "mCenter"); }
+    public List<TPickingH> pulloutTPickingH(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "tPickingH"); }
 
     /**
-     * Pull out the list of foreign table 'MProcessType'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MProcessType> pulloutMProcessType(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "mProcessType"); }
+    public List<MCustomer> pulloutMCustomerByPlanDepositId(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "mCustomerByPlanDepositId"); }
 
     /**
      * Pull out the list of foreign table 'MCustomer'.
@@ -715,12 +707,20 @@ public abstract class BsTReceivePlanHBhv extends AbstractBehaviorWritable<TRecei
     { return helpPulloutInternally(tReceivePlanHList, "mCustomerByPlanSupplierId"); }
 
     /**
-     * Pull out the list of foreign table 'TPickingH'.
+     * Pull out the list of foreign table 'MProcessType'.
      * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TPickingH> pulloutTPickingH(List<TReceivePlanH> tReceivePlanHList)
-    { return helpPulloutInternally(tReceivePlanHList, "tPickingH"); }
+    public List<MProcessType> pulloutMProcessType(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "mProcessType"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param tReceivePlanHList The list of tReceivePlanH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<TReceivePlanH> tReceivePlanHList)
+    { return helpPulloutInternally(tReceivePlanHList, "mStockType"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

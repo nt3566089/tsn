@@ -72,10 +72,10 @@ public class TPackingRDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPackingR)et).getBUserByTagOutUserId(), (et, vl) -> ((TPackingR)et).setBUserByTagOutUserId((BUser)vl), "BUserByTagOutUserId");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getBUserByInspectionOutUserId(), (et, vl) -> ((TPackingR)et).setBUserByInspectionOutUserId((BUser)vl), "BUserByInspectionOutUserId");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getTPackingH(), (et, vl) -> ((TPackingR)et).setTPackingH((TPackingH)vl), "TPackingH");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getBUserByStwOutUserId(), (et, vl) -> ((TPackingR)et).setBUserByStwOutUserId((BUser)vl), "BUserByStwOutUserId");
+        setupEfpg(_efpgMap, et -> ((TPackingR)et).getBUserByTagOutUserId(), (et, vl) -> ((TPackingR)et).setBUserByTagOutUserId((BUser)vl), "BUserByTagOutUserId");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getBClassDtlByStwOutFlg(), (et, vl) -> ((TPackingR)et).setBClassDtlByStwOutFlg((BClassDtl)vl), "BClassDtlByStwOutFlg");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getBClassDtlByTagOutFlg(), (et, vl) -> ((TPackingR)et).setBClassDtlByTagOutFlg((BClassDtl)vl), "BClassDtlByTagOutFlg");
         setupEfpg(_efpgMap, et -> ((TPackingR)et).getBClassDtlByInspectionOutFlg(), (et, vl) -> ((TPackingR)et).setBClassDtlByInspectionOutFlg((BClassDtl)vl), "BClassDtlByInspectionOutFlg");
@@ -267,20 +267,12 @@ public class TPackingRDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUserByTagOutUserId() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTagOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PACKING_R_FK2", "BUserByTagOutUserId", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingRByTagOutUserIdList", false);
-    }
-    /**
      * B_USER by my INSPECTION_OUT_USER_ID, named 'BUserByInspectionOutUserId'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBUserByInspectionOutUserId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnInspectionOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PACKING_R_FK1", "BUserByInspectionOutUserId", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPackingRByInspectionOutUserIdList", false);
+        return cfi("T_PACKING_R_FK1", "BUserByInspectionOutUserId", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPackingRByInspectionOutUserIdList", false);
     }
     /**
      * T_PACKING_H by my PACKING_H_ID, named 'TPackingH'.
@@ -288,7 +280,7 @@ public class TPackingRDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTPackingH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingHId(), TPackingHDbm.getInstance().columnPackingHId());
-        return cfi("T_PACKING_R_FK4", "TPackingH", this, TPackingHDbm.getInstance(), mp, 2, null, true, false, false, false, null, null, false, "TPackingRAsOne", false);
+        return cfi("T_PACKING_R_FK4", "TPackingH", this, TPackingHDbm.getInstance(), mp, 1, null, true, false, false, false, null, null, false, "TPackingRAsOne", false);
     }
     /**
      * B_USER by my STW_OUT_USER_ID, named 'BUserByStwOutUserId'.
@@ -296,7 +288,15 @@ public class TPackingRDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignBUserByStwOutUserId() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStwOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_PACKING_R_FK3", "BUserByStwOutUserId", this, BUserDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPackingRByStwOutUserIdList", false);
+        return cfi("T_PACKING_R_FK3", "BUserByStwOutUserId", this, BUserDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPackingRByStwOutUserIdList", false);
+    }
+    /**
+     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUserByTagOutUserId() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTagOutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_PACKING_R_FK2", "BUserByTagOutUserId", this, BUserDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPackingRByTagOutUserIdList", false);
     }
     /**
      * B_CLASS_DTL by my STW_OUT_FLG, named 'BClassDtlByStwOutFlg'.

@@ -626,14 +626,14 @@ public class BsTStoreRecordBCQ extends AbstractBsTStoreRecordBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TStoreRecordBCQ bq = (TStoreRecordBCQ)bqs;
         TStoreRecordBCQ uq = (TStoreRecordBCQ)uqs;
+        if (bq.hasConditionQueryTReceivePlanB()) {
+            uq.queryTReceivePlanB().reflectRelationOnUnionQuery(bq.queryTReceivePlanB(), uq.queryTReceivePlanB());
+        }
         if (bq.hasConditionQueryMLocation()) {
             uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
         }
         if (bq.hasConditionQueryTStoreRecordH()) {
             uq.queryTStoreRecordH().reflectRelationOnUnionQuery(bq.queryTStoreRecordH(), uq.queryTStoreRecordH());
-        }
-        if (bq.hasConditionQueryTReceivePlanB()) {
-            uq.queryTReceivePlanB().reflectRelationOnUnionQuery(bq.queryTReceivePlanB(), uq.queryTReceivePlanB());
         }
         if (bq.hasConditionQueryBClassDtlByInputType()) {
             uq.queryBClassDtlByInputType().reflectRelationOnUnionQuery(bq.queryBClassDtlByInputType(), uq.queryBClassDtlByInputType());
@@ -646,6 +646,26 @@ public class BsTStoreRecordBCQ extends AbstractBsTStoreRecordBCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TReceivePlanBCQ queryTReceivePlanB() {
+        return xdfgetConditionQueryTReceivePlanB();
+    }
+    public TReceivePlanBCQ xdfgetConditionQueryTReceivePlanB() {
+        String prop = "tReceivePlanB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanB()); xsetupOuterJoinTReceivePlanB(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TReceivePlanBCQ xcreateQueryTReceivePlanB() {
+        String nrp = xresolveNRP("T_STORE_RECORD_B", "tReceivePlanB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TReceivePlanBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanB", nrp);
+    }
+    protected void xsetupOuterJoinTReceivePlanB() { xregOutJo("tReceivePlanB"); }
+    public boolean hasConditionQueryTReceivePlanB() { return xhasQueRlMap("tReceivePlanB"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * M_LOCATION by my STORE_LOCATION_ID, named 'MLocation'.
@@ -685,26 +705,6 @@ public class BsTStoreRecordBCQ extends AbstractBsTStoreRecordBCQ {
     }
     protected void xsetupOuterJoinTStoreRecordH() { xregOutJo("tStoreRecordH"); }
     public boolean hasConditionQueryTStoreRecordH() { return xhasQueRlMap("tStoreRecordH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TReceivePlanBCQ queryTReceivePlanB() {
-        return xdfgetConditionQueryTReceivePlanB();
-    }
-    public TReceivePlanBCQ xdfgetConditionQueryTReceivePlanB() {
-        String prop = "tReceivePlanB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanB()); xsetupOuterJoinTReceivePlanB(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TReceivePlanBCQ xcreateQueryTReceivePlanB() {
-        String nrp = xresolveNRP("T_STORE_RECORD_B", "tReceivePlanB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TReceivePlanBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanB", nrp);
-    }
-    protected void xsetupOuterJoinTReceivePlanB() { xregOutJo("tReceivePlanB"); }
-    public boolean hasConditionQueryTReceivePlanB() { return xhasQueRlMap("tReceivePlanB"); }
 
     /**
      * Get the condition-query for relation table. <br>

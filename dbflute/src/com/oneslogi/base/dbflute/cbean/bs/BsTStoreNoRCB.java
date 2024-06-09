@@ -252,6 +252,32 @@ public class BsTStoreNoRCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected TStoreNoNss _nssTStoreNo;
+    public TStoreNoNss xdfgetNssTStoreNo() {
+        if (_nssTStoreNo == null) { _nssTStoreNo = new TStoreNoNss(null); }
+        return _nssTStoreNo;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
+     * <pre>
+     * <span style="color: #0000C0">tStoreNoRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStoreNo()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tStoreNoR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tStoreNoR</span>.<span style="color: #CC4747">getTStoreNo()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TStoreNoNss setupSelect_TStoreNo() {
+        assertSetupSelectPurpose("tStoreNo");
+        doSetupSelect(() -> query().queryTStoreNo());
+        if (_nssTStoreNo == null || !_nssTStoreNo.hasConditionQuery())
+        { _nssTStoreNo = new TStoreNoNss(query().queryTStoreNo()); }
+        return _nssTStoreNo;
+    }
+
     protected BUserNss _nssBUser;
     public BUserNss xdfgetNssBUser() {
         if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
@@ -279,32 +305,6 @@ public class BsTStoreNoRCB extends AbstractConditionBean {
         if (_nssBUser == null || !_nssBUser.hasConditionQuery())
         { _nssBUser = new BUserNss(query().queryBUser()); }
         return _nssBUser;
-    }
-
-    protected TStoreNoNss _nssTStoreNo;
-    public TStoreNoNss xdfgetNssTStoreNo() {
-        if (_nssTStoreNo == null) { _nssTStoreNo = new TStoreNoNss(null); }
-        return _nssTStoreNo;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * <pre>
-     * <span style="color: #0000C0">tStoreNoRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TStoreNo()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tStoreNoR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tStoreNoR</span>.<span style="color: #CC4747">getTStoreNo()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TStoreNoNss setupSelect_TStoreNo() {
-        assertSetupSelectPurpose("tStoreNo");
-        doSetupSelect(() -> query().queryTStoreNo());
-        if (_nssTStoreNo == null || !_nssTStoreNo.hasConditionQuery())
-        { _nssTStoreNo = new TStoreNoNss(query().queryTStoreNo()); }
-        return _nssTStoreNo;
     }
 
     protected BClassDtlNss _nssBClassDtlByTwlOutFlg;
@@ -377,8 +377,8 @@ public class BsTStoreNoRCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TStoreNoRCQ> {
-        protected BUserCB.HpSpecification _bUser;
         protected TStoreNoCB.HpSpecification _tStoreNo;
+        protected BUserCB.HpSpecification _bUser;
         protected BClassDtlCB.HpSpecification _bClassDtlByTwlOutFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TStoreNoRCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -467,26 +467,6 @@ public class BsTStoreNoRCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_STORE_NO_R"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUser() {
-            assertRelation("bUser");
-            if (_bUser == null) {
-                _bUser = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
-                                    , () -> _qyCall.qy().queryBUser())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
-                      , () -> xsyncQyCall().qy().queryBUser()));
-                }
-            }
-            return _bUser;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -504,6 +484,26 @@ public class BsTStoreNoRCB extends AbstractConditionBean {
                 }
             }
             return _tStoreNo;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUser() {
+            assertRelation("bUser");
+            if (_bUser == null) {
+                _bUser = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
+                                    , () -> _qyCall.qy().queryBUser())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
+                      , () -> xsyncQyCall().qy().queryBUser()));
+                }
+            }
+            return _bUser;
         }
         /**
          * Prepare to specify functions about relation table. <br>

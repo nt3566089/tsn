@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_PROCESS_TYPE, T_LOT, M_LOCATION, M_STOCK_TYPE, M_CUSTOMER, M_CLIENT, M_CENTER, M_WAREHOUSE
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, T_LOT, M_PROCESS_TYPE, M_PRODUCT, M_LOCATION, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mProcessType, tLot, mLocation, mStockType, mCustomerByDepositId, mClient, mCustomerBySupplierId, mCenter, mWarehouse
+ *     mCenter, mClient, mCustomerByDepositId, tLot, mProcessType, mProduct, mLocation, mStockType, mCustomerBySupplierId, mWarehouse
  *
  * [referrer property]
  *     
@@ -393,12 +393,36 @@ public abstract class BsWHtReceiveNoPlanInspBhv extends AbstractBehaviorWritable
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MProduct'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MProduct> pulloutMProduct(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
-    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mProduct"); }
+    public List<MCenter> pulloutMCenter(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
+    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
+    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'MCustomer'.
+     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCustomer> pulloutMCustomerByDepositId(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
+    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mCustomerByDepositId"); }
+
+    /**
+     * Pull out the list of foreign table 'TLot'.
+     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TLot> pulloutTLot(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
+    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "tLot"); }
 
     /**
      * Pull out the list of foreign table 'MProcessType'.
@@ -409,12 +433,12 @@ public abstract class BsWHtReceiveNoPlanInspBhv extends AbstractBehaviorWritable
     { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mProcessType"); }
 
     /**
-     * Pull out the list of foreign table 'TLot'.
+     * Pull out the list of foreign table 'MProduct'.
      * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TLot> pulloutTLot(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
-    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "tLot"); }
+    public List<MProduct> pulloutMProduct(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
+    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mProduct"); }
 
     /**
      * Pull out the list of foreign table 'MLocation'.
@@ -437,32 +461,8 @@ public abstract class BsWHtReceiveNoPlanInspBhv extends AbstractBehaviorWritable
      * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerByDepositId(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
-    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mCustomerByDepositId"); }
-
-    /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
-    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mClient"); }
-
-    /**
-     * Pull out the list of foreign table 'MCustomer'.
-     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
     public List<MCustomer> pulloutMCustomerBySupplierId(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
     { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mCustomerBySupplierId"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param wHtReceiveNoPlanInspList The list of wHtReceiveNoPlanInsp. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<WHtReceiveNoPlanInsp> wHtReceiveNoPlanInspList)
-    { return helpPulloutInternally(wHtReceiveNoPlanInspList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MWarehouse'.

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_SHAPE, T_LOT, M_STOCK_TYPE, M_CLIENT, M_PRODUCT, M_WAREHOUSE, M_CUSTOMER, T_STORE_NO, M_LOCATION, T_STOCK_REPORT(AsOne)
+ *     M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, T_STOCK_REPORT(AsOne)
  *
  * [referrer-table]
  *     T_INVENTORY_B, T_PALLET, T_PICKING_B, T_STOCK_INOUT, T_TRIMALLOCSTOCK, T_TRPICKDETAIL, T_STOCK_REPORT
  *
  * [foreign-property]
- *     mShape, tLot, mStockType, mClient, mProduct, mWarehouse, mCustomer, tStoreNo, mLocation, tStockReportAsOne
+ *     mClient, mCustomer, mLocation, tLot, mProduct, mShape, mStockType, tStoreNo, mWarehouse, tStockReportAsOne
  *
  * [referrer-property]
  *     tInventoryBList, tPalletList, tPickingBList, tStockInoutList, tTrimallocstockList, tTrpickdetailList
@@ -213,36 +213,6 @@ public abstract class BsTStockDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MShapeDto _mShape;
-
-    public MShapeDto getMShape() {
-        return _mShape;
-    }
-
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
-    }
-
-    protected TLotDto _tLot;
-
-    public TLotDto getTLot() {
-        return _tLot;
-    }
-
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
-    protected MStockTypeDto _mStockType;
-
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
-    }
-
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
-    }
-
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -251,26 +221,6 @@ public abstract class BsTStockDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
-    }
-
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
-    }
-
-    protected MWarehouseDto _mWarehouse;
-
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
     }
 
     protected MCustomerDto _mCustomer;
@@ -283,6 +233,56 @@ public abstract class BsTStockDto implements Serializable {
         this._mCustomer = mCustomer;
     }
 
+    protected MLocationDto _mLocation;
+
+    public MLocationDto getMLocation() {
+        return _mLocation;
+    }
+
+    public void setMLocation(MLocationDto mLocation) {
+        this._mLocation = mLocation;
+    }
+
+    protected TLotDto _tLot;
+
+    public TLotDto getTLot() {
+        return _tLot;
+    }
+
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
+    }
+
+    protected MShapeDto _mShape;
+
+    public MShapeDto getMShape() {
+        return _mShape;
+    }
+
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
+    }
+
     protected TStoreNoDto _tStoreNo;
 
     public TStoreNoDto getTStoreNo() {
@@ -293,14 +293,14 @@ public abstract class BsTStockDto implements Serializable {
         this._tStoreNo = tStoreNo;
     }
 
-    protected MLocationDto _mLocation;
+    protected MWarehouseDto _mWarehouse;
 
-    public MLocationDto getMLocation() {
-        return _mLocation;
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
     }
 
-    public void setMLocation(MLocationDto mLocation) {
-        this._mLocation = mLocation;
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     protected TStockReportDto _tStockReportAsOne;

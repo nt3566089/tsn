@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_REPORT_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_REPORT_LAYOUT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pReportLayout, bDict, vDict
+ *     bDict, pReportLayout, vDict
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsPReportLayoutItemBhv extends AbstractBehaviorWritable<PR
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'PReportLayout'.
-     * @param pReportLayoutItemList The list of pReportLayoutItem. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<PReportLayout> pulloutPReportLayout(List<PReportLayoutItem> pReportLayoutItemList)
-    { return helpPulloutInternally(pReportLayoutItemList, "pReportLayout"); }
-
-    /**
      * Pull out the list of foreign table 'BDict'.
      * @param pReportLayoutItemList The list of pReportLayoutItem. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BDict> pulloutBDict(List<PReportLayoutItem> pReportLayoutItemList)
     { return helpPulloutInternally(pReportLayoutItemList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'PReportLayout'.
+     * @param pReportLayoutItemList The list of pReportLayoutItem. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<PReportLayout> pulloutPReportLayout(List<PReportLayoutItem> pReportLayoutItemList)
+    { return helpPulloutInternally(pReportLayoutItemList, "pReportLayout"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

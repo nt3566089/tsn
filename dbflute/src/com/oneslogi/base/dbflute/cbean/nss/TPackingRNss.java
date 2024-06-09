@@ -20,15 +20,6 @@ public class TPackingRNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BUserNss withBUserByTagOutUserId() {
-        _query.xdoNss(() -> _query.queryBUserByTagOutUserId());
-        return new BUserNss(_query.queryBUserByTagOutUserId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_USER by my INSPECTION_OUT_USER_ID, named 'BUserByInspectionOutUserId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -53,6 +44,15 @@ public class TPackingRNss {
     public BUserNss withBUserByStwOutUserId() {
         _query.xdoNss(() -> _query.queryBUserByStwOutUserId());
         return new BUserNss(_query.queryBUserByStwOutUserId());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_USER by my TAG_OUT_USER_ID, named 'BUserByTagOutUserId'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BUserNss withBUserByTagOutUserId() {
+        _query.xdoNss(() -> _query.queryBUserByTagOutUserId());
+        return new BUserNss(_query.queryBUserByTagOutUserId());
     }
     /**
      * With nested relation columns to select clause. <br>

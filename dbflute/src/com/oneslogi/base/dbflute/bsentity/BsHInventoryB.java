@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     H_MOVE_H, H_STOCK, M_SHAPE, H_INVENTORY_H, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
+ *     H_INVENTORY_H, H_MOVE_H, M_SHAPE, H_STOCK, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     hMoveH, hStock, mShape, hInventoryH, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
+ *     hInventoryH, hMoveH, mShape, hStock, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
  *
  * [referrer property]
  *     
@@ -572,6 +572,25 @@ public abstract class BsHInventoryB extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'. */
+    protected HInventoryH _hInventoryH;
+
+    /**
+     * [get] H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'. <br>
+     * @return The entity of foreign property 'HInventoryH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public HInventoryH getHInventoryH() {
+        return _hInventoryH;
+    }
+
+    /**
+     * [set] H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * @param hInventoryH The entity of foreign property 'HInventoryH'. (NullAllowed)
+     */
+    public void setHInventoryH(HInventoryH hInventoryH) {
+        _hInventoryH = hInventoryH;
+    }
+
     /** H_MOVE_H by my MOVE_INST_H_ID, named 'HMoveH'. */
     protected HMoveH _hMoveH;
 
@@ -589,25 +608,6 @@ public abstract class BsHInventoryB extends AbstractEntity implements DomainEnti
      */
     public void setHMoveH(HMoveH hMoveH) {
         _hMoveH = hMoveH;
-    }
-
-    /** H_STOCK by my STOCK_ID, named 'HStock'. */
-    protected HStock _hStock;
-
-    /**
-     * [get] H_STOCK by my STOCK_ID, named 'HStock'. <br>
-     * @return The entity of foreign property 'HStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public HStock getHStock() {
-        return _hStock;
-    }
-
-    /**
-     * [set] H_STOCK by my STOCK_ID, named 'HStock'.
-     * @param hStock The entity of foreign property 'HStock'. (NullAllowed)
-     */
-    public void setHStock(HStock hStock) {
-        _hStock = hStock;
     }
 
     /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
@@ -629,23 +629,23 @@ public abstract class BsHInventoryB extends AbstractEntity implements DomainEnti
         _mShape = mShape;
     }
 
-    /** H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'. */
-    protected HInventoryH _hInventoryH;
+    /** H_STOCK by my STOCK_ID, named 'HStock'. */
+    protected HStock _hStock;
 
     /**
-     * [get] H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'. <br>
-     * @return The entity of foreign property 'HInventoryH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] H_STOCK by my STOCK_ID, named 'HStock'. <br>
+     * @return The entity of foreign property 'HStock'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public HInventoryH getHInventoryH() {
-        return _hInventoryH;
+    public HStock getHStock() {
+        return _hStock;
     }
 
     /**
-     * [set] H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
-     * @param hInventoryH The entity of foreign property 'HInventoryH'. (NullAllowed)
+     * [set] H_STOCK by my STOCK_ID, named 'HStock'.
+     * @param hStock The entity of foreign property 'HStock'. (NullAllowed)
      */
-    public void setHInventoryH(HInventoryH hInventoryH) {
-        _hInventoryH = hInventoryH;
+    public void setHStock(HStock hStock) {
+        _hStock = hStock;
     }
 
     /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
@@ -737,14 +737,14 @@ public abstract class BsHInventoryB extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_hMoveH != null)
-        { sb.append(li).append(xbRDS(_hMoveH, "hMoveH")); }
-        if (_hStock != null)
-        { sb.append(li).append(xbRDS(_hStock, "hStock")); }
-        if (_mShape != null)
-        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
         if (_hInventoryH != null)
         { sb.append(li).append(xbRDS(_hInventoryH, "hInventoryH")); }
+        if (_hMoveH != null)
+        { sb.append(li).append(xbRDS(_hMoveH, "hMoveH")); }
+        if (_mShape != null)
+        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
+        if (_hStock != null)
+        { sb.append(li).append(xbRDS(_hStock, "hStock")); }
         if (_mStockType != null)
         { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_bClassDtlByInputType != null)
@@ -810,14 +810,14 @@ public abstract class BsHInventoryB extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_hMoveH != null)
-        { sb.append(dm).append("hMoveH"); }
-        if (_hStock != null)
-        { sb.append(dm).append("hStock"); }
-        if (_mShape != null)
-        { sb.append(dm).append("mShape"); }
         if (_hInventoryH != null)
         { sb.append(dm).append("hInventoryH"); }
+        if (_hMoveH != null)
+        { sb.append(dm).append("hMoveH"); }
+        if (_mShape != null)
+        { sb.append(dm).append("mShape"); }
+        if (_hStock != null)
+        { sb.append(dm).append("hStock"); }
         if (_mStockType != null)
         { sb.append(dm).append("mStockType"); }
         if (_bClassDtlByInputType != null)

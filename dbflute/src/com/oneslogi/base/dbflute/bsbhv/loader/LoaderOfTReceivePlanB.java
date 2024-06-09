@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, M_WAREHOUSE, T_RECEIVE_PLAN_H, M_PRODUCT, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
+ *     M_LOCATION, M_WAREHOUSE, M_PRODUCT, T_RECEIVE_PLAN_H, B_CLASS_DTL(ByErrorFlg), T_RECEIVE_PLAN_SPARE(AsOne), T_TRRCVDETAIL(AsOne)
  *
  * [referrer table]
  *     T_STORE_RECORD_B, T_RECEIVE_PLAN_SPARE, T_TRRCVDETAIL
  *
  * [foreign property]
- *     mLocation, mWarehouse, tReceivePlanH, mProduct, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
+ *     mLocation, mWarehouse, mProduct, tReceivePlanH, bClassDtlByErrorFlg, bClassDtlByReceiveStatus, tReceivePlanSpareAsOne, tTrrcvdetailAsOne
  *
  * [referrer property]
  *     tStoreRecordBList
@@ -112,18 +112,18 @@ public class LoaderOfTReceivePlanB {
         return _foreignMWarehouseLoader;
     }
 
-    protected LoaderOfTReceivePlanH _foreignTReceivePlanHLoader;
-    public LoaderOfTReceivePlanH pulloutTReceivePlanH() {
-        if (_foreignTReceivePlanHLoader == null)
-        { _foreignTReceivePlanHLoader = new LoaderOfTReceivePlanH().ready(myBhv().pulloutTReceivePlanH(_selectedList), _selector); }
-        return _foreignTReceivePlanHLoader;
-    }
-
     protected LoaderOfMProduct _foreignMProductLoader;
     public LoaderOfMProduct pulloutMProduct() {
         if (_foreignMProductLoader == null)
         { _foreignMProductLoader = new LoaderOfMProduct().ready(myBhv().pulloutMProduct(_selectedList), _selector); }
         return _foreignMProductLoader;
+    }
+
+    protected LoaderOfTReceivePlanH _foreignTReceivePlanHLoader;
+    public LoaderOfTReceivePlanH pulloutTReceivePlanH() {
+        if (_foreignTReceivePlanHLoader == null)
+        { _foreignTReceivePlanHLoader = new LoaderOfTReceivePlanH().ready(myBhv().pulloutTReceivePlanH(_selectedList), _selector); }
+        return _foreignTReceivePlanHLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByErrorFlgLoader;

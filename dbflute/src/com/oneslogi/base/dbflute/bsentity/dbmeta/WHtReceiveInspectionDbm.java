@@ -85,13 +85,13 @@ public class WHtReceiveInspectionDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMClient(), (et, vl) -> ((WHtReceiveInspection)et).setMClient((MClient)vl), "MClient");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMProduct(), (et, vl) -> ((WHtReceiveInspection)et).setMProduct((MProduct)vl), "MProduct");
         setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMCenter(), (et, vl) -> ((WHtReceiveInspection)et).setMCenter((MCenter)vl), "MCenter");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMLocation(), (et, vl) -> ((WHtReceiveInspection)et).setMLocation((MLocation)vl), "MLocation");
-        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMWarehouse(), (et, vl) -> ((WHtReceiveInspection)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMClient(), (et, vl) -> ((WHtReceiveInspection)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getTLot(), (et, vl) -> ((WHtReceiveInspection)et).setTLot((TLot)vl), "TLot");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMProduct(), (et, vl) -> ((WHtReceiveInspection)et).setMProduct((MProduct)vl), "MProduct");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMLocation(), (et, vl) -> ((WHtReceiveInspection)et).setMLocation((MLocation)vl), "MLocation");
         setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMStockType(), (et, vl) -> ((WHtReceiveInspection)et).setMStockType((MStockType)vl), "MStockType");
+        setupEfpg(_efpgMap, et -> ((WHtReceiveInspection)et).getMWarehouse(), (et, vl) -> ((WHtReceiveInspection)et).setMWarehouse((MWarehouse)vl), "MWarehouse");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -371,44 +371,20 @@ public class WHtReceiveInspectionDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMClient() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK7", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
-    }
-    /**
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMProduct() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK5", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+        return cfi("W_HT_RECEIVE_INSPECTION_FK5", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
     }
     /**
-     * M_LOCATION by my RCV_LOC_ID, named 'MLocation'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMLocation() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRcvLocId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK6", "MLocation", this, MLocationDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
-    }
-    /**
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMWarehouse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK2", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+    public ForeignInfo foreignMClient() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
+        return cfi("W_HT_RECEIVE_INSPECTION_FK7", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
     }
     /**
      * T_LOT by my LOT_ID, named 'TLot'.
@@ -416,7 +392,23 @@ public class WHtReceiveInspectionDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTLot() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnLotId(), TLotDbm.getInstance().columnLotId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK4", "TLot", this, TLotDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+        return cfi("W_HT_RECEIVE_INSPECTION_FK4", "TLot", this, TLotDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+    }
+    /**
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMProduct() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
+        return cfi("W_HT_RECEIVE_INSPECTION_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+    }
+    /**
+     * M_LOCATION by my RCV_LOC_ID, named 'MLocation'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMLocation() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRcvLocId(), MLocationDbm.getInstance().columnLocationId());
+        return cfi("W_HT_RECEIVE_INSPECTION_FK6", "MLocation", this, MLocationDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
     }
     /**
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
@@ -424,7 +416,15 @@ public class WHtReceiveInspectionDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMStockType() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockTypeId(), MStockTypeDbm.getInstance().columnStockTypeId());
-        return cfi("W_HT_RECEIVE_INSPECTION_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+        return cfi("W_HT_RECEIVE_INSPECTION_FK3", "MStockType", this, MStockTypeDbm.getInstance(), mp, 5, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
+    }
+    /**
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMWarehouse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnWarehouseId(), MWarehouseDbm.getInstance().columnWarehouseId());
+        return cfi("W_HT_RECEIVE_INSPECTION_FK2", "MWarehouse", this, MWarehouseDbm.getInstance(), mp, 6, null, false, false, false, false, null, null, false, "WHtReceiveInspectionList", false);
     }
 
     // -----------------------------------------------------

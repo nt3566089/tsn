@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_CLIENT, M_CENTER, T_ALLOC_INST_H, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer table]
  *     T_EC_ORDER_H, T_SHIPPING_INST_B
  *
  * [foreign property]
- *     mDeliveryCourse, mCustomerBySupplyCustomerId, mProcessType, mClient, mCenter, mCustomerByDelivCustomerId, tAllocInstH, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
+ *     tAllocInstH, mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
  *
  * [referrer property]
  *     tEcOrderHList, tShippingInstBList
@@ -1206,80 +1206,23 @@ public abstract class BsTShippingInstH extends AbstractEntity implements DomainE
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
-    protected MDeliveryCourse _mDeliveryCourse;
+    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
+    protected TAllocInstH _tAllocInstH;
 
     /**
-     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
-     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
+     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MDeliveryCourse getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public TAllocInstH getTAllocInstH() {
+        return _tAllocInstH;
     }
 
     /**
-     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
-     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
+     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
      */
-    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
-        _mDeliveryCourse = mDeliveryCourse;
-    }
-
-    /** M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'. */
-    protected MCustomer _mCustomerBySupplyCustomerId;
-
-    /**
-     * [get] M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'. <br>
-     * @return The entity of foreign property 'MCustomerBySupplyCustomerId'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCustomer getMCustomerBySupplyCustomerId() {
-        return _mCustomerBySupplyCustomerId;
-    }
-
-    /**
-     * [set] M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-     * @param mCustomerBySupplyCustomerId The entity of foreign property 'MCustomerBySupplyCustomerId'. (NullAllowed)
-     */
-    public void setMCustomerBySupplyCustomerId(MCustomer mCustomerBySupplyCustomerId) {
-        _mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
-    }
-
-    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
-    protected MProcessType _mProcessType;
-
-    /**
-     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
-     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProcessType getMProcessType() {
-        return _mProcessType;
-    }
-
-    /**
-     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
-     */
-    public void setMProcessType(MProcessType mProcessType) {
-        _mProcessType = mProcessType;
-    }
-
-    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
-    protected MClient _mClient;
-
-    /**
-     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
-     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MClient getMClient() {
-        return _mClient;
-    }
-
-    /**
-     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
-     */
-    public void setMClient(MClient mClient) {
-        _mClient = mClient;
+    public void setTAllocInstH(TAllocInstH tAllocInstH) {
+        _tAllocInstH = tAllocInstH;
     }
 
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
@@ -1301,6 +1244,44 @@ public abstract class BsTShippingInstH extends AbstractEntity implements DomainE
         _mCenter = mCenter;
     }
 
+    /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
+    protected MClient _mClient;
+
+    /**
+     * [get] M_CLIENT by my CLIENT_ID, named 'MClient'. <br>
+     * @return The entity of foreign property 'MClient'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MClient getMClient() {
+        return _mClient;
+    }
+
+    /**
+     * [set] M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @param mClient The entity of foreign property 'MClient'. (NullAllowed)
+     */
+    public void setMClient(MClient mClient) {
+        _mClient = mClient;
+    }
+
+    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
+    protected MDeliveryCourse _mDeliveryCourse;
+
+    /**
+     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
+     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MDeliveryCourse getMDeliveryCourse() {
+        return _mDeliveryCourse;
+    }
+
+    /**
+     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
+     */
+    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
+        _mDeliveryCourse = mDeliveryCourse;
+    }
+
     /** M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'. */
     protected MCustomer _mCustomerByDelivCustomerId;
 
@@ -1320,23 +1301,42 @@ public abstract class BsTShippingInstH extends AbstractEntity implements DomainE
         _mCustomerByDelivCustomerId = mCustomerByDelivCustomerId;
     }
 
-    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
-    protected TAllocInstH _tAllocInstH;
+    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
+    protected MProcessType _mProcessType;
 
     /**
-     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
-     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
+     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstH getTAllocInstH() {
-        return _tAllocInstH;
+    public MProcessType getMProcessType() {
+        return _mProcessType;
     }
 
     /**
-     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
-     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
+     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
      */
-    public void setTAllocInstH(TAllocInstH tAllocInstH) {
-        _tAllocInstH = tAllocInstH;
+    public void setMProcessType(MProcessType mProcessType) {
+        _mProcessType = mProcessType;
+    }
+
+    /** M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'. */
+    protected MCustomer _mCustomerBySupplyCustomerId;
+
+    /**
+     * [get] M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'. <br>
+     * @return The entity of foreign property 'MCustomerBySupplyCustomerId'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCustomer getMCustomerBySupplyCustomerId() {
+        return _mCustomerBySupplyCustomerId;
+    }
+
+    /**
+     * [set] M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
+     * @param mCustomerBySupplyCustomerId The entity of foreign property 'MCustomerBySupplyCustomerId'. (NullAllowed)
+     */
+    public void setMCustomerBySupplyCustomerId(MCustomer mCustomerBySupplyCustomerId) {
+        _mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
     }
 
     /** M_ZIP by my DELIV_ZIP_CD, named 'MZipForDeliv'. */
@@ -1544,20 +1544,20 @@ public abstract class BsTShippingInstH extends AbstractEntity implements DomainE
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
-        if (_mCustomerBySupplyCustomerId != null)
-        { sb.append(li).append(xbRDS(_mCustomerBySupplyCustomerId, "mCustomerBySupplyCustomerId")); }
-        if (_mProcessType != null)
-        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
-        if (_mCustomerByDelivCustomerId != null)
-        { sb.append(li).append(xbRDS(_mCustomerByDelivCustomerId, "mCustomerByDelivCustomerId")); }
         if (_tAllocInstH != null)
         { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mDeliveryCourse != null)
+        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
+        if (_mCustomerByDelivCustomerId != null)
+        { sb.append(li).append(xbRDS(_mCustomerByDelivCustomerId, "mCustomerByDelivCustomerId")); }
+        if (_mProcessType != null)
+        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
+        if (_mCustomerBySupplyCustomerId != null)
+        { sb.append(li).append(xbRDS(_mCustomerBySupplyCustomerId, "mCustomerBySupplyCustomerId")); }
         if (_mZipForDeliv != null)
         { sb.append(li).append(xbRDS(_mZipForDeliv, "mZipForDeliv")); }
         if (_bClassDtlByDelivTz != null)
@@ -1639,20 +1639,20 @@ public abstract class BsTShippingInstH extends AbstractEntity implements DomainE
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(dm).append("mDeliveryCourse"); }
-        if (_mCustomerBySupplyCustomerId != null)
-        { sb.append(dm).append("mCustomerBySupplyCustomerId"); }
-        if (_mProcessType != null)
-        { sb.append(dm).append("mProcessType"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
-        if (_mCustomerByDelivCustomerId != null)
-        { sb.append(dm).append("mCustomerByDelivCustomerId"); }
         if (_tAllocInstH != null)
         { sb.append(dm).append("tAllocInstH"); }
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mDeliveryCourse != null)
+        { sb.append(dm).append("mDeliveryCourse"); }
+        if (_mCustomerByDelivCustomerId != null)
+        { sb.append(dm).append("mCustomerByDelivCustomerId"); }
+        if (_mProcessType != null)
+        { sb.append(dm).append("mProcessType"); }
+        if (_mCustomerBySupplyCustomerId != null)
+        { sb.append(dm).append("mCustomerBySupplyCustomerId"); }
         if (_mZipForDeliv != null)
         { sb.append(dm).append("mZipForDeliv"); }
         if (_bClassDtlByDelivTz != null)

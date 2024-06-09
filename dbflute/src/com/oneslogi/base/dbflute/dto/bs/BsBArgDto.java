@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_FUNC, B_DICT, V_HT_DICT, B_ARG_VALID(AsOne)
+ *     B_DICT, B_FUNC, V_HT_DICT, B_ARG_VALID(AsOne)
  *
  * [referrer-table]
  *     B_ARG_VALID
  *
  * [foreign-property]
- *     bFunc, bDict, vHtDict, bArgValidAsOne
+ *     bDict, bFunc, vHtDict, bArgValidAsOne
  *
  * [referrer-property]
  *     
@@ -145,16 +145,6 @@ public abstract class BsBArgDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BFuncDto _bFunc;
-
-    public BFuncDto getBFunc() {
-        return _bFunc;
-    }
-
-    public void setBFunc(BFuncDto bFunc) {
-        this._bFunc = bFunc;
-    }
-
     protected BDictDto _bDict;
 
     public BDictDto getBDict() {
@@ -163,6 +153,16 @@ public abstract class BsBArgDto implements Serializable {
 
     public void setBDict(BDictDto bDict) {
         this._bDict = bDict;
+    }
+
+    protected BFuncDto _bFunc;
+
+    public BFuncDto getBFunc() {
+        return _bFunc;
+    }
+
+    public void setBFunc(BFuncDto bFunc) {
+        this._bFunc = bFunc;
     }
 
     protected VHtDictDto _vHtDict;

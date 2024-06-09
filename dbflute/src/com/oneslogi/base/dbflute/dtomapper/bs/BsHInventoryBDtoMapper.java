@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     H_MOVE_H, H_STOCK, M_SHAPE, H_INVENTORY_H, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
+ *     H_INVENTORY_H, H_MOVE_H, M_SHAPE, H_STOCK, M_STOCK_TYPE, B_CLASS_DTL(ByInputType)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     hMoveH, hStock, mShape, hInventoryH, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
+ *     hInventoryH, hMoveH, mShape, hStock, mStockType, bClassDtlByInputType, bClassDtlByStockAdjustFlg
  *
  * [referrer-property]
  *     
@@ -70,10 +70,10 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressHMoveH;
-    protected boolean _suppressHStock;
-    protected boolean _suppressMShape;
     protected boolean _suppressHInventoryH;
+    protected boolean _suppressHMoveH;
+    protected boolean _suppressMShape;
+    protected boolean _suppressHStock;
     protected boolean _suppressMStockType;
     protected boolean _suppressBClassDtlByInputType;
     protected boolean _suppressBClassDtlByStockAdjustFlg;
@@ -178,6 +178,32 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressHInventoryH && entity.getHInventoryH() != null) {
+            HInventoryH relationEntity = entity.getHInventoryH();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                HInventoryHDto relationDto = (HInventoryHDto)cachedDto;
+                dto.setHInventoryH(relationDto);
+                if (reverseReference) {
+                    relationDto.getHInventoryBList().add(dto);
+                }
+            } else {
+                HInventoryHDtoMapper mapper = new HInventoryHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressHInventoryBList();
+                HInventoryHDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setHInventoryH(relationDto);
+                if (reverseReference) {
+                    relationDto.getHInventoryBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getHInventoryH());
+                }
+            }
+        };
         if (!_suppressHMoveH && entity.getHMoveH() != null) {
             HMoveH relationEntity = entity.getHMoveH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -201,32 +227,6 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getHMoveH());
-                }
-            }
-        };
-        if (!_suppressHStock && entity.getHStock() != null) {
-            HStock relationEntity = entity.getHStock();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                HStockDto relationDto = (HStockDto)cachedDto;
-                dto.setHStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getHInventoryBList().add(dto);
-                }
-            } else {
-                HStockDtoMapper mapper = new HStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressHInventoryBList();
-                HStockDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setHStock(relationDto);
-                if (reverseReference) {
-                    relationDto.getHInventoryBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getHStock());
                 }
             }
         };
@@ -256,29 +256,29 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
                 }
             }
         };
-        if (!_suppressHInventoryH && entity.getHInventoryH() != null) {
-            HInventoryH relationEntity = entity.getHInventoryH();
+        if (!_suppressHStock && entity.getHStock() != null) {
+            HStock relationEntity = entity.getHStock();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                HInventoryHDto relationDto = (HInventoryHDto)cachedDto;
-                dto.setHInventoryH(relationDto);
+                HStockDto relationDto = (HStockDto)cachedDto;
+                dto.setHStock(relationDto);
                 if (reverseReference) {
                     relationDto.getHInventoryBList().add(dto);
                 }
             } else {
-                HInventoryHDtoMapper mapper = new HInventoryHDtoMapper(_relationDtoMap, _relationEntityMap);
+                HStockDtoMapper mapper = new HStockDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressHInventoryBList();
-                HInventoryHDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setHInventoryH(relationDto);
+                HStockDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setHStock(relationDto);
                 if (reverseReference) {
                     relationDto.getHInventoryBList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getHInventoryH());
+                    _relationDtoMap.put(relationKey, dto.getHStock());
                 }
             }
         };
@@ -530,6 +530,32 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressHInventoryH && dto.getHInventoryH() != null) {
+            HInventoryHDto relationDto = dto.getHInventoryH();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                HInventoryH relationEntity = (HInventoryH)cachedEntity;
+                entity.setHInventoryH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getHInventoryBList().add(entity);
+                }
+            } else {
+                HInventoryHDtoMapper mapper = new HInventoryHDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressHInventoryBList();
+                HInventoryH relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setHInventoryH(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getHInventoryBList().add(entity);
+                }
+                if (instanceCache && entity.getHInventoryH().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getHInventoryH());
+                }
+            }
+        };
         if (!_suppressHMoveH && dto.getHMoveH() != null) {
             HMoveHDto relationDto = dto.getHMoveH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -553,32 +579,6 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
                 }
                 if (instanceCache && entity.getHMoveH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getHMoveH());
-                }
-            }
-        };
-        if (!_suppressHStock && dto.getHStock() != null) {
-            HStockDto relationDto = dto.getHStock();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                HStock relationEntity = (HStock)cachedEntity;
-                entity.setHStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getHInventoryBList().add(entity);
-                }
-            } else {
-                HStockDtoMapper mapper = new HStockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressHInventoryBList();
-                HStock relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setHStock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getHInventoryBList().add(entity);
-                }
-                if (instanceCache && entity.getHStock().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getHStock());
                 }
             }
         };
@@ -608,29 +608,29 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
                 }
             }
         };
-        if (!_suppressHInventoryH && dto.getHInventoryH() != null) {
-            HInventoryHDto relationDto = dto.getHInventoryH();
+        if (!_suppressHStock && dto.getHStock() != null) {
+            HStockDto relationDto = dto.getHStock();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                HInventoryH relationEntity = (HInventoryH)cachedEntity;
-                entity.setHInventoryH(relationEntity);
+                HStock relationEntity = (HStock)cachedEntity;
+                entity.setHStock(relationEntity);
                 if (reverseReference) {
                     relationEntity.getHInventoryBList().add(entity);
                 }
             } else {
-                HInventoryHDtoMapper mapper = new HInventoryHDtoMapper(_relationDtoMap, _relationEntityMap);
+                HStockDtoMapper mapper = new HStockDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressHInventoryBList();
-                HInventoryH relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setHInventoryH(relationEntity);
+                HStock relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setHStock(relationEntity);
                 if (reverseReference) {
                     relationEntity.getHInventoryBList().add(entity);
                 }
-                if (instanceCache && entity.getHInventoryH().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getHInventoryH());
+                if (instanceCache && entity.getHStock().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getHStock());
                 }
             }
         };
@@ -824,17 +824,17 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressHInventoryH() {
+        _suppressHInventoryH = true;
+    }
     public void suppressHMoveH() {
         _suppressHMoveH = true;
-    }
-    public void suppressHStock() {
-        _suppressHStock = true;
     }
     public void suppressMShape() {
         _suppressMShape = true;
     }
-    public void suppressHInventoryH() {
-        _suppressHInventoryH = true;
+    public void suppressHStock() {
+        _suppressHStock = true;
     }
     public void suppressMStockType() {
         _suppressMStockType = true;
@@ -846,19 +846,19 @@ public abstract class BsHInventoryBDtoMapper implements DtoMapper<HInventoryB, H
         _suppressBClassDtlByStockAdjustFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressHMoveH();
-        suppressHStock();
-        suppressMShape();
         suppressHInventoryH();
+        suppressHMoveH();
+        suppressMShape();
+        suppressHStock();
         suppressMStockType();
         suppressBClassDtlByInputType();
         suppressBClassDtlByStockAdjustFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressHMoveH = false;
-        _suppressHStock = false;
-        _suppressMShape = false;
         _suppressHInventoryH = false;
+        _suppressHMoveH = false;
+        _suppressMShape = false;
+        _suppressHStock = false;
         _suppressMStockType = false;
         _suppressBClassDtlByInputType = false;
         _suppressBClassDtlByStockAdjustFlg = false;

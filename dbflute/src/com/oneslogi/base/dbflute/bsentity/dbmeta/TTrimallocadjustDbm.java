@@ -68,8 +68,8 @@ public class TTrimallocadjustDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TTrimallocadjust)et).getTTrimallocstock(), (et, vl) -> ((TTrimallocadjust)et).setTTrimallocstock((TTrimallocstock)vl), "TTrimallocstock");
         setupEfpg(_efpgMap, et -> ((TTrimallocadjust)et).getTTrimallocschkri(), (et, vl) -> ((TTrimallocadjust)et).setTTrimallocschkri((TTrimallocschkri)vl), "TTrimallocschkri");
+        setupEfpg(_efpgMap, et -> ((TTrimallocadjust)et).getTTrimallocstock(), (et, vl) -> ((TTrimallocadjust)et).setTTrimallocstock((TTrimallocstock)vl), "TTrimallocstock");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -230,20 +230,20 @@ public class TTrimallocadjustDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTTrimallocstock() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrimallocstockId(), TTrimallocstockDbm.getInstance().columnTrimallocstockId());
-        return cfi("T_TRIMALLOCADJUST_FK1", "TTrimallocstock", this, TTrimallocstockDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrimallocadjustList", false);
-    }
-    /**
      * T_TRIMALLOCSCHKRI by my TRIMALLOCSCH_ID, named 'TTrimallocschkri'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTTrimallocschkri() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrimallocschId(), TTrimallocschkriDbm.getInstance().columnTrimallocschId());
-        return cfi("T_TRIMALLOCADJUST_FK2", "TTrimallocschkri", this, TTrimallocschkriDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrimallocadjustList", false);
+        return cfi("T_TRIMALLOCADJUST_FK2", "TTrimallocschkri", this, TTrimallocschkriDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrimallocadjustList", false);
+    }
+    /**
+     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTTrimallocstock() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrimallocstockId(), TTrimallocstockDbm.getInstance().columnTrimallocstockId());
+        return cfi("T_TRIMALLOCADJUST_FK1", "TTrimallocstock", this, TTrimallocstockDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrimallocadjustList", false);
     }
 
     // -----------------------------------------------------

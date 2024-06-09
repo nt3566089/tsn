@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, M_PRODUCT, M_CLIENT
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCenter, mProduct, mClient
+ *     mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -429,20 +429,20 @@ public abstract class BsTSerialNoBhv extends AbstractBehaviorWritable<TSerialNo,
     { return helpPulloutInternally(tSerialNoList, "mCenter"); }
 
     /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param tSerialNoList The list of tSerialNo. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<TSerialNo> tSerialNoList)
-    { return helpPulloutInternally(tSerialNoList, "mProduct"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param tSerialNoList The list of tSerialNo. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MClient> pulloutMClient(List<TSerialNo> tSerialNoList)
     { return helpPulloutInternally(tSerialNoList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param tSerialNoList The list of tSerialNo. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<TSerialNo> tSerialNoList)
+    { return helpPulloutInternally(tSerialNoList, "mProduct"); }
 
     // ===================================================================================
     //                                                                      Extract Column

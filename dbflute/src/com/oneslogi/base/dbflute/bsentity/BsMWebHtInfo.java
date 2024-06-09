@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_WAREHOUSE, M_CENTER, B_CLASS_DTL(ByDelFlg)
+ *     M_CENTER, M_CLIENT, M_WAREHOUSE, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mWarehouse, mCenter, bClassDtlByDelFlg
+ *     mCenter, mClient, mWarehouse, bClassDtlByDelFlg
  *
  * [referrer property]
  *     
@@ -269,6 +269,25 @@ public abstract class BsMWebHtInfo extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -305,25 +324,6 @@ public abstract class BsMWebHtInfo extends AbstractEntity implements DomainEntit
      */
     public void setMWarehouse(MWarehouse mWarehouse) {
         _mWarehouse = mWarehouse;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
     }
 
     /** B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'. */
@@ -377,12 +377,12 @@ public abstract class BsMWebHtInfo extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mWarehouse != null)
         { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByDelFlg, "bClassDtlByDelFlg")); }
         return sb.toString();
@@ -416,12 +416,12 @@ public abstract class BsMWebHtInfo extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_mWarehouse != null)
         { sb.append(dm).append("mWarehouse"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(dm).append("bClassDtlByDelFlg"); }
         if (sb.length() > dm.length()) {

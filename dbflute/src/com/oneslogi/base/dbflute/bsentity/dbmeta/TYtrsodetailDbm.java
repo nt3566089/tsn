@@ -80,8 +80,8 @@ public class TYtrsodetailDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TYtrsodetail)et).getTYtrso(), (et, vl) -> ((TYtrsodetail)et).setTYtrso((TYtrso)vl), "TYtrso");
         setupEfpg(_efpgMap, et -> ((TYtrsodetail)et).getMProduct(), (et, vl) -> ((TYtrsodetail)et).setMProduct((MProduct)vl), "MProduct");
+        setupEfpg(_efpgMap, et -> ((TYtrsodetail)et).getTYtrso(), (et, vl) -> ((TYtrsodetail)et).setTYtrso((TYtrso)vl), "TYtrso");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -326,20 +326,20 @@ public class TYtrsodetailDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTYtrso() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsoId(), TYtrsoDbm.getInstance().columnTrsrId());
-        return cfi("T_YTRSODETAIL_FK2", "TYtrso", this, TYtrsoDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TYtrsodetailList", false);
-    }
-    /**
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMProduct() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnProductId(), MProductDbm.getInstance().columnProductId());
-        return cfi("T_YTRSODETAIL_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TYtrsodetailList", false);
+        return cfi("T_YTRSODETAIL_FK1", "MProduct", this, MProductDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TYtrsodetailList", false);
+    }
+    /**
+     * T_YTRSO by my TRSO_ID, named 'TYtrso'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTYtrso() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsoId(), TYtrsoDbm.getInstance().columnTrsrId());
+        return cfi("T_YTRSODETAIL_FK2", "TYtrso", this, TYtrsoDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TYtrsodetailList", false);
     }
 
     // -----------------------------------------------------

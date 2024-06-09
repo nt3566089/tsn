@@ -20,6 +20,15 @@ public class MWebHtInfoNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -35,15 +44,6 @@ public class MWebHtInfoNss {
     public MWarehouseNss withMWarehouse() {
         _query.xdoNss(() -> _query.queryMWarehouse());
         return new MWarehouseNss(_query.queryMWarehouse());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>

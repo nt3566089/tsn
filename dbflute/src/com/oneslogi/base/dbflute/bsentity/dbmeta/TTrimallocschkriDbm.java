@@ -72,8 +72,8 @@ public class TTrimallocschkriDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TTrimallocschkri)et).getTYtrsodetail(), (et, vl) -> ((TTrimallocschkri)et).setTYtrsodetail((TYtrsodetail)vl), "TYtrsodetail");
         setupEfpg(_efpgMap, et -> ((TTrimallocschkri)et).getTTrimallocH(), (et, vl) -> ((TTrimallocschkri)et).setTTrimallocH((TTrimallocH)vl), "TTrimallocH");
+        setupEfpg(_efpgMap, et -> ((TTrimallocschkri)et).getTYtrsodetail(), (et, vl) -> ((TTrimallocschkri)et).setTYtrsodetail((TYtrsodetail)vl), "TYtrsodetail");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -262,20 +262,20 @@ public class TTrimallocschkriDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTYtrsodetail() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsodetailId(), TYtrsodetailDbm.getInstance().columnTrsodetailId());
-        return cfi("T_TRIMALLOCSCHKRI_FK2", "TYtrsodetail", this, TYtrsodetailDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrimallocschkriList", false);
-    }
-    /**
      * T_TRIMALLOC_H by my TRIMALLOC_H_ID, named 'TTrimallocH'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTTrimallocH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrimallocHId(), TTrimallocHDbm.getInstance().columnTrimallocHId());
-        return cfi("T_TRIMALLOCSCHKRI_FK1", "TTrimallocH", this, TTrimallocHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrimallocschkriList", false);
+        return cfi("T_TRIMALLOCSCHKRI_FK1", "TTrimallocH", this, TTrimallocHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TTrimallocschkriList", false);
+    }
+    /**
+     * T_YTRSODETAIL by my TRSODETAIL_ID, named 'TYtrsodetail'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTYtrsodetail() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTrsodetailId(), TYtrsodetailDbm.getInstance().columnTrsodetailId());
+        return cfi("T_TRIMALLOCSCHKRI_FK2", "TYtrsodetail", this, TYtrsodetailDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TTrimallocschkriList", false);
     }
 
     // -----------------------------------------------------

@@ -65,8 +65,8 @@ public class TStoreNoRDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TStoreNoR)et).getBUser(), (et, vl) -> ((TStoreNoR)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((TStoreNoR)et).getTStoreNo(), (et, vl) -> ((TStoreNoR)et).setTStoreNo((TStoreNo)vl), "TStoreNo");
+        setupEfpg(_efpgMap, et -> ((TStoreNoR)et).getBUser(), (et, vl) -> ((TStoreNoR)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((TStoreNoR)et).getBClassDtlByTwlOutFlg(), (et, vl) -> ((TStoreNoR)et).setBClassDtlByTwlOutFlg((BClassDtl)vl), "BClassDtlByTwlOutFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -207,20 +207,20 @@ public class TStoreNoRDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUser() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTwlOutUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("T_STORE_NO_R_FK2", "BUser", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStoreNoRList", false);
-    }
-    /**
      * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTStoreNo() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreNoId(), TStoreNoDbm.getInstance().columnStoreNoId());
-        return cfi("T_STORE_NO_R_FK1", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 1, null, true, false, false, false, null, null, false, "TStoreNoRAsOne", false);
+        return cfi("T_STORE_NO_R_FK1", "TStoreNo", this, TStoreNoDbm.getInstance(), mp, 0, null, true, false, false, false, null, null, false, "TStoreNoRAsOne", false);
+    }
+    /**
+     * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUser() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTwlOutUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("T_STORE_NO_R_FK2", "BUser", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStoreNoRList", false);
     }
     /**
      * B_CLASS_DTL by my TWL_OUT_FLG, named 'BClassDtlByTwlOutFlg'.

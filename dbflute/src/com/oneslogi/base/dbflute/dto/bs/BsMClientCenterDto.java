@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, M_CLIENT, M_CENTER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
  *
  * [referrer-table]
  *     M_PARAM
  *
  * [foreign-property]
- *     mCustomer, mClient, mCenter, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
+ *     mCenter, mClient, mCustomer, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
  *
  * [referrer-property]
  *     
@@ -149,14 +149,14 @@ public abstract class BsMClientCenterDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MCustomerDto _mCustomer;
+    protected MCenterDto _mCenter;
 
-    public MCustomerDto getMCustomer() {
-        return _mCustomer;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setMCustomer(MCustomerDto mCustomer) {
-        this._mCustomer = mCustomer;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -169,14 +169,14 @@ public abstract class BsMClientCenterDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MCenterDto _mCenter;
+    protected MCustomerDto _mCustomer;
 
-    public MCenterDto getMCenter() {
-        return _mCenter;
+    public MCustomerDto getMCustomer() {
+        return _mCustomer;
     }
 
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setMCustomer(MCustomerDto mCustomer) {
+        this._mCustomer = mCustomer;
     }
 
     protected BClassDtlDto _bClassDtlByBatchProgressFlg;

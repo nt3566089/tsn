@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PRODUCT_SHAPE, M_PRODUCT, M_ZONE, M_STOCK_TYPE, M_CUSTOMER, M_CENTER, B_CLASS_DTL(ByAllocNgFlg)
+ *     M_CENTER, M_PRODUCT_SHAPE, M_CUSTOMER, M_PRODUCT, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByAllocNgFlg)
  *
  * [referrer-table]
  *     T_ALLOC_INST_B, T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_RECEIVE_PLAN_B, T_SHIPPING_INST_B, T_STOCK, T_STORE_RECORD_B, T_TRPICKDETAIL, W_HT_INVENTORY_INPUT_PROD, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SHIPPING_PICKING
  *
  * [foreign-property]
- *     mProductShapeByMaxStoreProductShapeId, mProduct, mZone, mProductShapeByReplenishPProductShapeId, mStockType, mCustomer, mCenter, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
+ *     mCenter, mProductShapeByMaxStoreProductShapeId, mCustomer, mProduct, mProductShapeByReplenishPProductShapeId, mStockType, mZone, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
  *
  * [referrer-property]
  *     tAllocInstBList, tInventoryBList, tMoveInstBList, tMoveRecordBList, tReceivePlanBList, tShippingInstBList, tStockList, tStoreRecordBList, tTrpickdetailList, wHtInventoryInputProdList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtShippingPickingList
@@ -70,13 +70,13 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
+    protected boolean _suppressMCenter;
     protected boolean _suppressMProductShapeByMaxStoreProductShapeId;
+    protected boolean _suppressMCustomer;
     protected boolean _suppressMProduct;
-    protected boolean _suppressMZone;
     protected boolean _suppressMProductShapeByReplenishPProductShapeId;
     protected boolean _suppressMStockType;
-    protected boolean _suppressMCustomer;
-    protected boolean _suppressMCenter;
+    protected boolean _suppressMZone;
     protected boolean _suppressBClassDtlByAllocNgFlg;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressBClassDtlByLocationType;
@@ -194,6 +194,32 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMLocationList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMLocationList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMLocationList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                }
+            }
+        };
         if (!_suppressMProductShapeByMaxStoreProductShapeId && entity.getMProductShapeByMaxStoreProductShapeId() != null) {
             MProductShape relationEntity = entity.getMProductShapeByMaxStoreProductShapeId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -220,6 +246,32 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
             }
         };
+        if (!_suppressMCustomer && entity.getMCustomer() != null) {
+            MCustomer relationEntity = entity.getMCustomer();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCustomerDto relationDto = (MCustomerDto)cachedDto;
+                dto.setMCustomer(relationDto);
+                if (reverseReference) {
+                    relationDto.getMLocationList().add(dto);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMLocationList();
+                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCustomer(relationDto);
+                if (reverseReference) {
+                    relationDto.getMLocationList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCustomer());
+                }
+            }
+        };
         if (!_suppressMProduct && entity.getMProduct() != null) {
             MProduct relationEntity = entity.getMProduct();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -243,32 +295,6 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMProduct());
-                }
-            }
-        };
-        if (!_suppressMZone && entity.getMZone() != null) {
-            MZone relationEntity = entity.getMZone();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MZoneDto relationDto = (MZoneDto)cachedDto;
-                dto.setMZone(relationDto);
-                if (reverseReference) {
-                    relationDto.getMLocationList().add(dto);
-                }
-            } else {
-                MZoneDtoMapper mapper = new MZoneDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMLocationList();
-                MZoneDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMZone(relationDto);
-                if (reverseReference) {
-                    relationDto.getMLocationList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMZone());
                 }
             }
         };
@@ -324,55 +350,29 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
             }
         };
-        if (!_suppressMCustomer && entity.getMCustomer() != null) {
-            MCustomer relationEntity = entity.getMCustomer();
+        if (!_suppressMZone && entity.getMZone() != null) {
+            MZone relationEntity = entity.getMZone();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCustomerDto relationDto = (MCustomerDto)cachedDto;
-                dto.setMCustomer(relationDto);
+                MZoneDto relationDto = (MZoneDto)cachedDto;
+                dto.setMZone(relationDto);
                 if (reverseReference) {
                     relationDto.getMLocationList().add(dto);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MZoneDtoMapper mapper = new MZoneDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMLocationList();
-                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCustomer(relationDto);
+                MZoneDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMZone(relationDto);
                 if (reverseReference) {
                     relationDto.getMLocationList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCustomer());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMLocationList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMLocationList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMLocationList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                    _relationDtoMap.put(relationKey, dto.getMZone());
                 }
             }
         };
@@ -834,6 +834,32 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMLocationList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMLocationList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMLocationList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                }
+            }
+        };
         if (!_suppressMProductShapeByMaxStoreProductShapeId && dto.getMProductShapeByMaxStoreProductShapeId() != null) {
             MProductShapeDto relationDto = dto.getMProductShapeByMaxStoreProductShapeId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -860,6 +886,32 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
             }
         };
+        if (!_suppressMCustomer && dto.getMCustomer() != null) {
+            MCustomerDto relationDto = dto.getMCustomer();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCustomer relationEntity = (MCustomer)cachedEntity;
+                entity.setMCustomer(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMLocationList().add(entity);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMLocationList();
+                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCustomer(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMLocationList().add(entity);
+                }
+                if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCustomer());
+                }
+            }
+        };
         if (!_suppressMProduct && dto.getMProduct() != null) {
             MProductDto relationDto = dto.getMProduct();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -883,32 +935,6 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
                 if (instanceCache && entity.getMProduct().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMProduct());
-                }
-            }
-        };
-        if (!_suppressMZone && dto.getMZone() != null) {
-            MZoneDto relationDto = dto.getMZone();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MZone relationEntity = (MZone)cachedEntity;
-                entity.setMZone(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMLocationList().add(entity);
-                }
-            } else {
-                MZoneDtoMapper mapper = new MZoneDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMLocationList();
-                MZone relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMZone(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMLocationList().add(entity);
-                }
-                if (instanceCache && entity.getMZone().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMZone());
                 }
             }
         };
@@ -964,55 +990,29 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
                 }
             }
         };
-        if (!_suppressMCustomer && dto.getMCustomer() != null) {
-            MCustomerDto relationDto = dto.getMCustomer();
+        if (!_suppressMZone && dto.getMZone() != null) {
+            MZoneDto relationDto = dto.getMZone();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCustomer relationEntity = (MCustomer)cachedEntity;
-                entity.setMCustomer(relationEntity);
+                MZone relationEntity = (MZone)cachedEntity;
+                entity.setMZone(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMLocationList().add(entity);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MZoneDtoMapper mapper = new MZoneDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressMLocationList();
-                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCustomer(relationEntity);
+                MZone relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMZone(relationEntity);
                 if (reverseReference) {
                     relationEntity.getMLocationList().add(entity);
                 }
-                if (instanceCache && entity.getMCustomer().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCustomer());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMLocationList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMLocationList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMLocationList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                if (instanceCache && entity.getMZone().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMZone());
                 }
             }
         };
@@ -1422,14 +1422,17 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
+    public void suppressMCenter() {
+        _suppressMCenter = true;
+    }
     public void suppressMProductShapeByMaxStoreProductShapeId() {
         _suppressMProductShapeByMaxStoreProductShapeId = true;
     }
+    public void suppressMCustomer() {
+        _suppressMCustomer = true;
+    }
     public void suppressMProduct() {
         _suppressMProduct = true;
-    }
-    public void suppressMZone() {
-        _suppressMZone = true;
     }
     public void suppressMProductShapeByReplenishPProductShapeId() {
         _suppressMProductShapeByReplenishPProductShapeId = true;
@@ -1437,11 +1440,8 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
     public void suppressMStockType() {
         _suppressMStockType = true;
     }
-    public void suppressMCustomer() {
-        _suppressMCustomer = true;
-    }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
+    public void suppressMZone() {
+        _suppressMZone = true;
     }
     public void suppressBClassDtlByAllocNgFlg() {
         _suppressBClassDtlByAllocNgFlg = true;
@@ -1498,13 +1498,13 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
         _suppressWHtShippingPickingList = true;
     }
     protected void doSuppressAll() { // internal
+        suppressMCenter();
         suppressMProductShapeByMaxStoreProductShapeId();
+        suppressMCustomer();
         suppressMProduct();
-        suppressMZone();
         suppressMProductShapeByReplenishPProductShapeId();
         suppressMStockType();
-        suppressMCustomer();
-        suppressMCenter();
+        suppressMZone();
         suppressBClassDtlByAllocNgFlg();
         suppressBClassDtlByDelFlg();
         suppressBClassDtlByLocationType();
@@ -1525,13 +1525,13 @@ public abstract class BsMLocationDtoMapper implements DtoMapper<MLocation, MLoca
         suppressWHtShippingPickingList();
     }
     protected void doSuppressClear() { // internal
+        _suppressMCenter = false;
         _suppressMProductShapeByMaxStoreProductShapeId = false;
+        _suppressMCustomer = false;
         _suppressMProduct = false;
-        _suppressMZone = false;
         _suppressMProductShapeByReplenishPProductShapeId = false;
         _suppressMStockType = false;
-        _suppressMCustomer = false;
-        _suppressMCenter = false;
+        _suppressMZone = false;
         _suppressBClassDtlByAllocNgFlg = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressBClassDtlByLocationType = false;

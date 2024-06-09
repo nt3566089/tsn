@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, T_STORE_NO, B_CLASS_DTL(ByTwlOutFlg)
+ *     T_STORE_NO, B_USER, B_CLASS_DTL(ByTwlOutFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, tStoreNo, bClassDtlByTwlOutFlg
+ *     tStoreNo, bUser, bClassDtlByTwlOutFlg
  *
  * [referrer-property]
  *     
@@ -137,16 +137,6 @@ public abstract class BsTStoreNoRDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BUserDto _bUser;
-
-    public BUserDto getBUser() {
-        return _bUser;
-    }
-
-    public void setBUser(BUserDto bUser) {
-        this._bUser = bUser;
-    }
-
     protected TStoreNoDto _tStoreNo;
 
     public TStoreNoDto getTStoreNo() {
@@ -155,6 +145,16 @@ public abstract class BsTStoreNoRDto implements Serializable {
 
     public void setTStoreNo(TStoreNoDto tStoreNo) {
         this._tStoreNo = tStoreNo;
+    }
+
+    protected BUserDto _bUser;
+
+    public BUserDto getBUser() {
+        return _bUser;
+    }
+
+    public void setBUser(BUserDto bUser) {
+        this._bUser = bUser;
     }
 
     protected BClassDtlDto _bClassDtlByTwlOutFlg;

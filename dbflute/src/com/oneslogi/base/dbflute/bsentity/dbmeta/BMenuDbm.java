@@ -69,8 +69,8 @@ public class BMenuDbm extends AbstractDBMeta {
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
         setupEfpg(_efpgMap, et -> ((BMenu)et).getBDict(), (et, vl) -> ((BMenu)et).setBDict((BDict)vl), "BDict");
-        setupEfpg(_efpgMap, et -> ((BMenu)et).getBScreen(), (et, vl) -> ((BMenu)et).setBScreen((BScreen)vl), "BScreen");
         setupEfpg(_efpgMap, et -> ((BMenu)et).getBMenuGrp(), (et, vl) -> ((BMenu)et).setBMenuGrp((BMenuGrp)vl), "BMenuGrp");
+        setupEfpg(_efpgMap, et -> ((BMenu)et).getBScreen(), (et, vl) -> ((BMenu)et).setBScreen((BScreen)vl), "BScreen");
         setupEfpg(_efpgMap, et -> ((BMenu)et).getVDict(), (et, vl) -> ((BMenu)et).setVDict((VDict)vl), "VDict");
         setupEfpg(_efpgMap, et -> ((BMenu)et).getVHtDict(), (et, vl) -> ((BMenu)et).setVHtDict((VHtDict)vl), "VHtDict");
         setupEfpg(_efpgMap, et -> ((BMenu)et).getBClassDtlByTargetWindow(), (et, vl) -> ((BMenu)et).setBClassDtlByTargetWindow((BClassDtl)vl), "BClassDtlByTargetWindow");
@@ -242,20 +242,20 @@ public class BMenuDbm extends AbstractDBMeta {
         return cfi("B_MENU_FK1", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BMenuList", false);
     }
     /**
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBScreen() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnScreenId(), BScreenDbm.getInstance().columnScreenId());
-        return cfi("B_MENU_FK3", "BScreen", this, BScreenDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BMenuList", false);
-    }
-    /**
      * B_MENU_GRP by my MENU_GRP_ID, named 'BMenuGrp'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBMenuGrp() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnMenuGrpId(), BMenuGrpDbm.getInstance().columnMenuGrpId());
-        return cfi("B_MENU_FK2", "BMenuGrp", this, BMenuGrpDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "BMenuList", false);
+        return cfi("B_MENU_FK2", "BMenuGrp", this, BMenuGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BMenuList", false);
+    }
+    /**
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBScreen() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnScreenId(), BScreenDbm.getInstance().columnScreenId());
+        return cfi("B_MENU_FK3", "BScreen", this, BScreenDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "BMenuList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

@@ -392,11 +392,11 @@ public class BsBDictCultureCQ extends AbstractBsBDictCultureCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BDictCultureCQ bq = (BDictCultureCQ)bqs;
         BDictCultureCQ uq = (BDictCultureCQ)uqs;
-        if (bq.hasConditionQueryBDict()) {
-            uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
-        }
         if (bq.hasConditionQueryBCulture()) {
             uq.queryBCulture().reflectRelationOnUnionQuery(bq.queryBCulture(), uq.queryBCulture());
+        }
+        if (bq.hasConditionQueryBDict()) {
+            uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
         }
         if (bq.hasConditionQueryMHtDictCultureAsOne()) {
             uq.queryMHtDictCultureAsOne().reflectRelationOnUnionQuery(bq.queryMHtDictCultureAsOne(), uq.queryMHtDictCultureAsOne());
@@ -406,26 +406,6 @@ public class BsBDictCultureCQ extends AbstractBsBDictCultureCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_DICT by my DICT_ID, named 'BDict'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BDictCQ queryBDict() {
-        return xdfgetConditionQueryBDict();
-    }
-    public BDictCQ xdfgetConditionQueryBDict() {
-        String prop = "bDict";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBDict()); xsetupOuterJoinBDict(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BDictCQ xcreateQueryBDict() {
-        String nrp = xresolveNRP("B_DICT_CULTURE", "bDict"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BDictCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bDict", nrp);
-    }
-    protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
-    public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -445,6 +425,26 @@ public class BsBDictCultureCQ extends AbstractBsBDictCultureCQ {
     }
     protected void xsetupOuterJoinBCulture() { xregOutJo("bCulture"); }
     public boolean hasConditionQueryBCulture() { return xhasQueRlMap("bCulture"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_DICT by my DICT_ID, named 'BDict'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BDictCQ queryBDict() {
+        return xdfgetConditionQueryBDict();
+    }
+    public BDictCQ xdfgetConditionQueryBDict() {
+        String prop = "bDict";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBDict()); xsetupOuterJoinBDict(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BDictCQ xcreateQueryBDict() {
+        String nrp = xresolveNRP("B_DICT_CULTURE", "bDict"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BDictCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bDict", nrp);
+    }
+    protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
+    public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
 
     /**
      * Get the condition-query for relation table. <br>

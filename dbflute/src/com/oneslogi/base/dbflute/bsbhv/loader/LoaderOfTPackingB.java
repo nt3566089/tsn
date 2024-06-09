@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_PICKING_B, T_PACKING_H, T_ALLOC_INST_B, B_CLASS_DTL(ByInspectionFlg)
+ *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_B, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tPickingB, tPackingH, tAllocInstB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
+ *     tAllocInstB, tPackingH, tPickingB, bClassDtlByInspectionFlg, bClassDtlByPickingFlg
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfTPackingB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTPickingB _foreignTPickingBLoader;
-    public LoaderOfTPickingB pulloutTPickingB() {
-        if (_foreignTPickingBLoader == null)
-        { _foreignTPickingBLoader = new LoaderOfTPickingB().ready(myBhv().pulloutTPickingB(_selectedList), _selector); }
-        return _foreignTPickingBLoader;
+    protected LoaderOfTAllocInstB _foreignTAllocInstBLoader;
+    public LoaderOfTAllocInstB pulloutTAllocInstB() {
+        if (_foreignTAllocInstBLoader == null)
+        { _foreignTAllocInstBLoader = new LoaderOfTAllocInstB().ready(myBhv().pulloutTAllocInstB(_selectedList), _selector); }
+        return _foreignTAllocInstBLoader;
     }
 
     protected LoaderOfTPackingH _foreignTPackingHLoader;
@@ -73,11 +73,11 @@ public class LoaderOfTPackingB {
         return _foreignTPackingHLoader;
     }
 
-    protected LoaderOfTAllocInstB _foreignTAllocInstBLoader;
-    public LoaderOfTAllocInstB pulloutTAllocInstB() {
-        if (_foreignTAllocInstBLoader == null)
-        { _foreignTAllocInstBLoader = new LoaderOfTAllocInstB().ready(myBhv().pulloutTAllocInstB(_selectedList), _selector); }
-        return _foreignTAllocInstBLoader;
+    protected LoaderOfTPickingB _foreignTPickingBLoader;
+    public LoaderOfTPickingB pulloutTPickingB() {
+        if (_foreignTPickingBLoader == null)
+        { _foreignTPickingBLoader = new LoaderOfTPickingB().ready(myBhv().pulloutTPickingB(_selectedList), _selector); }
+        return _foreignTPickingBLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByInspectionFlgLoader;

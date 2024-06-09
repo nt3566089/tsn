@@ -720,37 +720,17 @@ public class BsTYtrsoCQ extends AbstractBsTYtrsoCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TYtrsoCQ bq = (TYtrsoCQ)bqs;
         TYtrsoCQ uq = (TYtrsoCQ)uqs;
-        if (bq.hasConditionQueryMClient()) {
-            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
+        if (bq.hasConditionQueryMClient()) {
+            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MClientCQ queryMClient() {
-        return xdfgetConditionQueryMClient();
-    }
-    public MClientCQ xdfgetConditionQueryMClient() {
-        String prop = "mClient";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MClientCQ xcreateQueryMClient() {
-        String nrp = xresolveNRP("T_YTRSO", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
-    }
-    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
-    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -770,6 +750,26 @@ public class BsTYtrsoCQ extends AbstractBsTYtrsoCQ {
     }
     protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
     public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MClientCQ queryMClient() {
+        return xdfgetConditionQueryMClient();
+    }
+    public MClientCQ xdfgetConditionQueryMClient() {
+        String prop = "mClient";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MClientCQ xcreateQueryMClient() {
+        String nrp = xresolveNRP("T_YTRSO", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
+    }
+    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
+    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

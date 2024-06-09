@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, M_PROCESS_TYPE, M_CENTER, M_DELIVERY_COURSE, M_CLIENT, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer-table]
  *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_H, T_SHIPPING_INST_H
  *
  * [foreign-property]
- *     mCustomerBySupplyCustomerId, mProcessType, mCenter, mCustomerByDelivCustomerId, mDeliveryCourse, mClient, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
+ *     mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
  *
  * [referrer-property]
  *     tAllocInstBList, tPackingHList, tPickingHList, tShippingInstHList
@@ -209,26 +209,6 @@ public abstract class BsTAllocInstHDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MCustomerDto _mCustomerBySupplyCustomerId;
-
-    public MCustomerDto getMCustomerBySupplyCustomerId() {
-        return _mCustomerBySupplyCustomerId;
-    }
-
-    public void setMCustomerBySupplyCustomerId(MCustomerDto mCustomerBySupplyCustomerId) {
-        this._mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
-    }
-
-    protected MProcessTypeDto _mProcessType;
-
-    public MProcessTypeDto getMProcessType() {
-        return _mProcessType;
-    }
-
-    public void setMProcessType(MProcessTypeDto mProcessType) {
-        this._mProcessType = mProcessType;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -239,14 +219,14 @@ public abstract class BsTAllocInstHDto implements Serializable {
         this._mCenter = mCenter;
     }
 
-    protected MCustomerDto _mCustomerByDelivCustomerId;
+    protected MClientDto _mClient;
 
-    public MCustomerDto getMCustomerByDelivCustomerId() {
-        return _mCustomerByDelivCustomerId;
+    public MClientDto getMClient() {
+        return _mClient;
     }
 
-    public void setMCustomerByDelivCustomerId(MCustomerDto mCustomerByDelivCustomerId) {
-        this._mCustomerByDelivCustomerId = mCustomerByDelivCustomerId;
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
     }
 
     protected MDeliveryCourseDto _mDeliveryCourse;
@@ -259,14 +239,34 @@ public abstract class BsTAllocInstHDto implements Serializable {
         this._mDeliveryCourse = mDeliveryCourse;
     }
 
-    protected MClientDto _mClient;
+    protected MCustomerDto _mCustomerByDelivCustomerId;
 
-    public MClientDto getMClient() {
-        return _mClient;
+    public MCustomerDto getMCustomerByDelivCustomerId() {
+        return _mCustomerByDelivCustomerId;
     }
 
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
+    public void setMCustomerByDelivCustomerId(MCustomerDto mCustomerByDelivCustomerId) {
+        this._mCustomerByDelivCustomerId = mCustomerByDelivCustomerId;
+    }
+
+    protected MProcessTypeDto _mProcessType;
+
+    public MProcessTypeDto getMProcessType() {
+        return _mProcessType;
+    }
+
+    public void setMProcessType(MProcessTypeDto mProcessType) {
+        this._mProcessType = mProcessType;
+    }
+
+    protected MCustomerDto _mCustomerBySupplyCustomerId;
+
+    public MCustomerDto getMCustomerBySupplyCustomerId() {
+        return _mCustomerBySupplyCustomerId;
+    }
+
+    public void setMCustomerBySupplyCustomerId(MCustomerDto mCustomerBySupplyCustomerId) {
+        this._mCustomerBySupplyCustomerId = mCustomerBySupplyCustomerId;
     }
 
     protected TPickingHDto _tPickingH;

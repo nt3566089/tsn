@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_COL, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_COL, B_DICT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bCol, mClient, bDict, vDict
+ *     mClient, bCol, bDict, vDict
  *
  * [referrer property]
  *     
@@ -420,20 +420,20 @@ public abstract class BsMClientColBhv extends AbstractBehaviorWritable<MClientCo
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BCol'.
-     * @param mClientColList The list of mClientCol. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BCol> pulloutBCol(List<MClientCol> mClientColList)
-    { return helpPulloutInternally(mClientColList, "bCol"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param mClientColList The list of mClientCol. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MClient> pulloutMClient(List<MClientCol> mClientColList)
     { return helpPulloutInternally(mClientColList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'BCol'.
+     * @param mClientColList The list of mClientCol. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BCol> pulloutBCol(List<MClientCol> mClientColList)
+    { return helpPulloutInternally(mClientColList, "bCol"); }
 
     /**
      * Pull out the list of foreign table 'BDict'.

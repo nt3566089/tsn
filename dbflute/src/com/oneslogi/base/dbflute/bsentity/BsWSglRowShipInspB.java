@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, W_SGL_ROW_SHIP_INSP_H, T_PICKING_H, B_CLASS_DTL(ByInspectionFlg)
+ *     T_PICKING_H, W_SGL_ROW_SHIP_INSP_H, B_USER, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, wSglRowShipInspH, tPickingH, bClassDtlByInspectionFlg
+ *     tPickingH, wSglRowShipInspH, bUser, bClassDtlByInspectionFlg
  *
  * [referrer property]
  *     
@@ -358,23 +358,23 @@ public abstract class BsWSglRowShipInspB extends AbstractEntity implements Domai
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my USER_ID, named 'BUser'. */
-    protected BUser _bUser;
+    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
+    protected TPickingH _tPickingH;
 
     /**
-     * [get] B_USER by my USER_ID, named 'BUser'. <br>
-     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
+     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public BUser getBUser() {
-        return _bUser;
+    public TPickingH getTPickingH() {
+        return _tPickingH;
     }
 
     /**
-     * [set] B_USER by my USER_ID, named 'BUser'.
-     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
+     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
      */
-    public void setBUser(BUser bUser) {
-        _bUser = bUser;
+    public void setTPickingH(TPickingH tPickingH) {
+        _tPickingH = tPickingH;
     }
 
     /** W_SGL_ROW_SHIP_INSP_H by my SGL_ROW_SHIP_INSP_H_ID, named 'WSglRowShipInspH'. */
@@ -396,23 +396,23 @@ public abstract class BsWSglRowShipInspB extends AbstractEntity implements Domai
         _wSglRowShipInspH = wSglRowShipInspH;
     }
 
-    /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
-    protected TPickingH _tPickingH;
+    /** B_USER by my USER_ID, named 'BUser'. */
+    protected BUser _bUser;
 
     /**
-     * [get] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. <br>
-     * @return The entity of foreign property 'TPickingH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] B_USER by my USER_ID, named 'BUser'. <br>
+     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TPickingH getTPickingH() {
-        return _tPickingH;
+    public BUser getBUser() {
+        return _bUser;
     }
 
     /**
-     * [set] T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
-     * @param tPickingH The entity of foreign property 'TPickingH'. (NullAllowed)
+     * [set] B_USER by my USER_ID, named 'BUser'.
+     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
      */
-    public void setTPickingH(TPickingH tPickingH) {
-        _tPickingH = tPickingH;
+    public void setBUser(BUser bUser) {
+        _bUser = bUser;
     }
 
     /** B_CLASS_DTL by my INSPECTION_FLG, named 'BClassDtlByInspectionFlg'. */
@@ -466,12 +466,12 @@ public abstract class BsWSglRowShipInspB extends AbstractEntity implements Domai
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
-        if (_wSglRowShipInspH != null)
-        { sb.append(li).append(xbRDS(_wSglRowShipInspH, "wSglRowShipInspH")); }
         if (_tPickingH != null)
         { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
+        if (_wSglRowShipInspH != null)
+        { sb.append(li).append(xbRDS(_wSglRowShipInspH, "wSglRowShipInspH")); }
+        if (_bUser != null)
+        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_bClassDtlByInspectionFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInspectionFlg, "bClassDtlByInspectionFlg")); }
         return sb.toString();
@@ -505,12 +505,12 @@ public abstract class BsWSglRowShipInspB extends AbstractEntity implements Domai
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(dm).append("bUser"); }
-        if (_wSglRowShipInspH != null)
-        { sb.append(dm).append("wSglRowShipInspH"); }
         if (_tPickingH != null)
         { sb.append(dm).append("tPickingH"); }
+        if (_wSglRowShipInspH != null)
+        { sb.append(dm).append("wSglRowShipInspH"); }
+        if (_bUser != null)
+        { sb.append(dm).append("bUser"); }
         if (_bClassDtlByInspectionFlg != null)
         { sb.append(dm).append("bClassDtlByInspectionFlg"); }
         if (sb.length() > dm.length()) {

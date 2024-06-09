@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_MOVE_INST_B, T_MOVE_INST_H, M_LOCATION, B_CLASS_DTL(ByAllShippingFlg)
+ *     M_LOCATION, T_MOVE_INST_B, T_MOVE_INST_H, B_CLASS_DTL(ByAllShippingFlg)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tMoveInstB, tMoveInstH, mLocation, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
+ *     mLocation, tMoveInstB, tMoveInstH, bClassDtlByAllShippingFlg, bClassDtlByStoreNoMergeFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -409,6 +409,25 @@ public abstract class BsTMoveRecordB extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
+    protected MLocation _mLocation;
+
+    /**
+     * [get] M_LOCATION by my LOCATION_ID, named 'MLocation'. <br>
+     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MLocation getMLocation() {
+        return _mLocation;
+    }
+
+    /**
+     * [set] M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
+     */
+    public void setMLocation(MLocation mLocation) {
+        _mLocation = mLocation;
+    }
+
     /** T_MOVE_INST_B by my MOVE_INST_B_ID, named 'TMoveInstB'. */
     protected TMoveInstB _tMoveInstB;
 
@@ -445,25 +464,6 @@ public abstract class BsTMoveRecordB extends AbstractEntity implements DomainEnt
      */
     public void setTMoveInstH(TMoveInstH tMoveInstH) {
         _tMoveInstH = tMoveInstH;
-    }
-
-    /** M_LOCATION by my LOCATION_ID, named 'MLocation'. */
-    protected MLocation _mLocation;
-
-    /**
-     * [get] M_LOCATION by my LOCATION_ID, named 'MLocation'. <br>
-     * @return The entity of foreign property 'MLocation'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MLocation getMLocation() {
-        return _mLocation;
-    }
-
-    /**
-     * [set] M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @param mLocation The entity of foreign property 'MLocation'. (NullAllowed)
-     */
-    public void setMLocation(MLocation mLocation) {
-        _mLocation = mLocation;
     }
 
     /** B_CLASS_DTL by my ALL_SHIPPING_FLG, named 'BClassDtlByAllShippingFlg'. */
@@ -556,12 +556,12 @@ public abstract class BsTMoveRecordB extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mLocation != null)
+        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
         if (_tMoveInstB != null)
         { sb.append(li).append(xbRDS(_tMoveInstB, "tMoveInstB")); }
         if (_tMoveInstH != null)
         { sb.append(li).append(xbRDS(_tMoveInstH, "tMoveInstH")); }
-        if (_mLocation != null)
-        { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
         if (_bClassDtlByAllShippingFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByAllShippingFlg, "bClassDtlByAllShippingFlg")); }
         if (_bClassDtlByStoreNoMergeFlg != null)
@@ -602,12 +602,12 @@ public abstract class BsTMoveRecordB extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mLocation != null)
+        { sb.append(dm).append("mLocation"); }
         if (_tMoveInstB != null)
         { sb.append(dm).append("tMoveInstB"); }
         if (_tMoveInstH != null)
         { sb.append(dm).append("tMoveInstH"); }
-        if (_mLocation != null)
-        { sb.append(dm).append("mLocation"); }
         if (_bClassDtlByAllShippingFlg != null)
         { sb.append(dm).append("bClassDtlByAllShippingFlg"); }
         if (_bClassDtlByStoreNoMergeFlg != null)

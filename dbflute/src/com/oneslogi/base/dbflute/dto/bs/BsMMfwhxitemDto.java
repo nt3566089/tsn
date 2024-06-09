@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PRODUCT, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mProduct, mClient, mCenter
+ *     mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     
@@ -257,14 +257,14 @@ public abstract class BsMMfwhxitemDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MProductDto _mProduct;
+    protected MCenterDto _mCenter;
 
-    public MProductDto getMProduct() {
-        return _mProduct;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -277,14 +277,14 @@ public abstract class BsMMfwhxitemDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MCenterDto _mCenter;
+    protected MProductDto _mProduct;
 
-    public MCenterDto getMCenter() {
-        return _mCenter;
+    public MProductDto getMProduct() {
+        return _mProduct;
     }
 
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

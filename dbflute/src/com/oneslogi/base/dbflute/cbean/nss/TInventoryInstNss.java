@@ -20,6 +20,24 @@ public class TInventoryInstNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCustomerNss withMCustomer() {
+        _query.xdoNss(() -> _query.queryMCustomer());
+        return new MCustomerNss(_query.queryMCustomer());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TInventoryHNss withTInventoryH() {
+        _query.xdoNss(() -> _query.queryTInventoryH());
+        return new TInventoryHNss(_query.queryTInventoryH());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -35,24 +53,6 @@ public class TInventoryInstNss {
     public MZoneNss withMZone() {
         _query.xdoNss(() -> _query.queryMZone());
         return new MZoneNss(_query.queryMZone());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TInventoryHNss withTInventoryH() {
-        _query.xdoNss(() -> _query.queryTInventoryH());
-        return new TInventoryHNss(_query.queryTInventoryH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCustomerNss withMCustomer() {
-        _query.xdoNss(() -> _query.queryMCustomer());
-        return new MCustomerNss(_query.queryMCustomer());
     }
     /**
      * With nested relation columns to select clause. <br>

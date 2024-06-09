@@ -66,8 +66,8 @@ public class BUserDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((BUser)et).getBRoleGrp(), (et, vl) -> ((BUser)et).setBRoleGrp((BRoleGrp)vl), "BRoleGrp");
         setupEfpg(_efpgMap, et -> ((BUser)et).getBCulture(), (et, vl) -> ((BUser)et).setBCulture((BCulture)vl), "BCulture");
+        setupEfpg(_efpgMap, et -> ((BUser)et).getBRoleGrp(), (et, vl) -> ((BUser)et).setBRoleGrp((BRoleGrp)vl), "BRoleGrp");
         setupEfpg(_efpgMap, et -> ((BUser)et).getBClassDtlByDelFlg(), (et, vl) -> ((BUser)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
         setupEfpg(_efpgMap, et -> ((BUser)et).getBUserAuthAsOne(), (et, vl) -> ((BUser)et).setBUserAuthAsOne((BUserAuth)vl), "BUserAuthAsOne");
         setupEfpg(_efpgMap, et -> ((BUser)et).getMUserLoginAsOne(), (et, vl) -> ((BUser)et).setMUserLoginAsOne((MUserLogin)vl), "MUserLoginAsOne");
@@ -91,7 +91,7 @@ public class BUserDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnUserId = cci("USER_ID", "USER_ID", null, null, Long.class, "userId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, null, "MUserCenterList,MUserClientList,MUserDepositList,TEcOrderRList,TInventoryRList,TMoveInstRList,TPackingRByTagOutUserIdList,TPackingRByInspectionOutUserIdList,TPackingRByStwOutUserIdList,TPickingRByPl1OutUserIdList,TPickingRByCaseOutUserIdList,TPickingRByShippingRecordOutUserIdList,TPickingRByPl2OutUserIdList,TPickingRBySlipOutUserIdList,TPickingRByPackingOutUserIdList,TReceivePlanRList,TStoreNoRList,TStoreRecordRList,WSglRowShipInspBList", null, false);
+    protected final ColumnInfo _columnUserId = cci("USER_ID", "USER_ID", null, null, Long.class, "userId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, null, "MUserCenterList,MUserClientList,MUserDepositList,TEcOrderRList,TInventoryRList,TMoveInstRList,TPackingRByInspectionOutUserIdList,TPackingRByStwOutUserIdList,TPackingRByTagOutUserIdList,TPickingRByCaseOutUserIdList,TPickingRByPackingOutUserIdList,TPickingRByPl1OutUserIdList,TPickingRByPl2OutUserIdList,TPickingRByShippingRecordOutUserIdList,TPickingRBySlipOutUserIdList,TReceivePlanRList,TStoreNoRList,TStoreRecordRList,WSglRowShipInspBList", null, false);
     protected final ColumnInfo _columnUserCd = cci("USER_CD", "USER_CD", null, null, String.class, "userCd", null, false, false, true, "varchar", 30, 0, null, null, false, null, null, null, "TPackingHByUpdUserList", null, false);
     protected final ColumnInfo _columnUserNm = cci("USER_NM", "USER_NM", null, null, String.class, "userNm", null, false, false, true, "varchar", 60, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnCultureId = cci("CULTURE_ID", "CULTURE_ID", null, null, Long.class, "cultureId", null, false, false, true, "bigint", 19, 0, null, null, false, null, null, "BCulture", null, null, false);
@@ -222,20 +222,20 @@ public class BUserDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBRoleGrp() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleGrpId(), BRoleGrpDbm.getInstance().columnRoleGrpId());
-        return cfi("B_USER_FK1", "BRoleGrp", this, BRoleGrpDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BUserList", false);
-    }
-    /**
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBCulture() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCultureId(), BCultureDbm.getInstance().columnCultureId());
-        return cfi("B_USER_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BUserList", false);
+        return cfi("B_USER_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "BUserList", false);
+    }
+    /**
+     * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBRoleGrp() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnRoleGrpId(), BRoleGrpDbm.getInstance().columnRoleGrpId());
+        return cfi("B_USER_FK1", "BRoleGrp", this, BRoleGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "BUserList", false);
     }
     /**
      * B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'.
@@ -314,14 +314,6 @@ public class BUserDbm extends AbstractDBMeta {
         return cri("T_MOVE_INST_R_FK2", "TMoveInstRList", this, TMoveInstRDbm.getInstance(), mp, false, "BUser");
     }
     /**
-     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTPackingRByTagOutUserIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPackingRDbm.getInstance().columnTagOutUserId());
-        return cri("T_PACKING_R_FK2", "TPackingRByTagOutUserIdList", this, TPackingRDbm.getInstance(), mp, false, "BUserByTagOutUserId");
-    }
-    /**
      * T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdList'.
      * @return The information object of referrer property. (NotNull)
      */
@@ -338,12 +330,12 @@ public class BUserDbm extends AbstractDBMeta {
         return cri("T_PACKING_R_FK3", "TPackingRByStwOutUserIdList", this, TPackingRDbm.getInstance(), mp, false, "BUserByStwOutUserId");
     }
     /**
-     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdList'.
      * @return The information object of referrer property. (NotNull)
      */
-    public ReferrerInfo referrerTPickingRByPl1OutUserIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnPl1OutUserId());
-        return cri("T_PICKING_R_FK3", "TPickingRByPl1OutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByPl1OutUserId");
+    public ReferrerInfo referrerTPackingRByTagOutUserIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPackingRDbm.getInstance().columnTagOutUserId());
+        return cri("T_PACKING_R_FK2", "TPackingRByTagOutUserIdList", this, TPackingRDbm.getInstance(), mp, false, "BUserByTagOutUserId");
     }
     /**
      * T_PICKING_R by CASE_OUT_USER_ID, named 'TPickingRByCaseOutUserIdList'.
@@ -354,12 +346,20 @@ public class BUserDbm extends AbstractDBMeta {
         return cri("T_PICKING_R_FK5", "TPickingRByCaseOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByCaseOutUserId");
     }
     /**
-     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
      * @return The information object of referrer property. (NotNull)
      */
-    public ReferrerInfo referrerTPickingRByShippingRecordOutUserIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnShippingRecordOutUserId());
-        return cri("T_PICKING_R_FK4", "TPickingRByShippingRecordOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByShippingRecordOutUserId");
+    public ReferrerInfo referrerTPickingRByPackingOutUserIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnPackingOutUserId());
+        return cri("T_PICKING_R_FK7", "TPickingRByPackingOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByPackingOutUserId");
+    }
+    /**
+     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTPickingRByPl1OutUserIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnPl1OutUserId());
+        return cri("T_PICKING_R_FK3", "TPickingRByPl1OutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByPl1OutUserId");
     }
     /**
      * T_PICKING_R by PL2_OUT_USER_ID, named 'TPickingRByPl2OutUserIdList'.
@@ -370,20 +370,20 @@ public class BUserDbm extends AbstractDBMeta {
         return cri("T_PICKING_R_FK2", "TPickingRByPl2OutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByPl2OutUserId");
     }
     /**
+     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTPickingRByShippingRecordOutUserIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnShippingRecordOutUserId());
+        return cri("T_PICKING_R_FK4", "TPickingRByShippingRecordOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByShippingRecordOutUserId");
+    }
+    /**
      * T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdList'.
      * @return The information object of referrer property. (NotNull)
      */
     public ReferrerInfo referrerTPickingRBySlipOutUserIdList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnSlipOutUserId());
         return cri("T_PICKING_R_FK6", "TPickingRBySlipOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserBySlipOutUserId");
-    }
-    /**
-     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTPickingRByPackingOutUserIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), TPickingRDbm.getInstance().columnPackingOutUserId());
-        return cri("T_PICKING_R_FK7", "TPickingRByPackingOutUserIdList", this, TPickingRDbm.getInstance(), mp, false, "BUserByPackingOutUserId");
     }
     /**
      * T_RECEIVE_PLAN_R by RPL_OUT_USER_ID, named 'TReceivePlanRList'.

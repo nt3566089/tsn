@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_LOCATION, M_WAREHOUSE, T_STORE_NO, T_MOVE_INST_H, T_LOT, T_STOCK, M_SHAPE, M_PRODUCT, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
+ *     M_CUSTOMER, T_INVENTORY_H, M_LOCATION, T_LOT, T_MOVE_INST_H, M_PRODUCT, M_SHAPE, T_STOCK, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByInputType), T_INVENTORY_R(AsOne)
  *
  * [referrer-table]
  *     T_INVENTORY_INP_HIST, T_INVENTORY_R
  *
  * [foreign-property]
- *     mCustomerByDepositId, tInventoryH, mStockType, mLocation, mWarehouse, tStoreNo, mCustomerBySupplierId, tMoveInstH, tLot, tStock, mShape, mProduct, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
+ *     mCustomerByDepositId, tInventoryH, mLocation, tLot, tMoveInstH, mProduct, mShape, tStock, mStockType, tStoreNo, mCustomerBySupplierId, mWarehouse, bClassDtlByInputType, bClassDtlByStockAdjustFlg, tInventoryRAsOne
  *
  * [referrer-property]
  *     tInventoryInpHistList
@@ -289,16 +289,6 @@ public abstract class BsTInventoryBDto implements Serializable {
         this._tInventoryH = tInventoryH;
     }
 
-    protected MStockTypeDto _mStockType;
-
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
-    }
-
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
-    }
-
     protected MLocationDto _mLocation;
 
     public MLocationDto getMLocation() {
@@ -309,14 +299,64 @@ public abstract class BsTInventoryBDto implements Serializable {
         this._mLocation = mLocation;
     }
 
-    protected MWarehouseDto _mWarehouse;
+    protected TLotDto _tLot;
 
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
+    public TLotDto getTLot() {
+        return _tLot;
     }
 
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
+    }
+
+    protected TMoveInstHDto _tMoveInstH;
+
+    public TMoveInstHDto getTMoveInstH() {
+        return _tMoveInstH;
+    }
+
+    public void setTMoveInstH(TMoveInstHDto tMoveInstH) {
+        this._tMoveInstH = tMoveInstH;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
+    }
+
+    protected MShapeDto _mShape;
+
+    public MShapeDto getMShape() {
+        return _mShape;
+    }
+
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
+    }
+
+    protected TStockDto _tStock;
+
+    public TStockDto getTStock() {
+        return _tStock;
+    }
+
+    public void setTStock(TStockDto tStock) {
+        this._tStock = tStock;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
     }
 
     protected TStoreNoDto _tStoreNo;
@@ -339,54 +379,14 @@ public abstract class BsTInventoryBDto implements Serializable {
         this._mCustomerBySupplierId = mCustomerBySupplierId;
     }
 
-    protected TMoveInstHDto _tMoveInstH;
+    protected MWarehouseDto _mWarehouse;
 
-    public TMoveInstHDto getTMoveInstH() {
-        return _tMoveInstH;
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
     }
 
-    public void setTMoveInstH(TMoveInstHDto tMoveInstH) {
-        this._tMoveInstH = tMoveInstH;
-    }
-
-    protected TLotDto _tLot;
-
-    public TLotDto getTLot() {
-        return _tLot;
-    }
-
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
-    protected TStockDto _tStock;
-
-    public TStockDto getTStock() {
-        return _tStock;
-    }
-
-    public void setTStock(TStockDto tStock) {
-        this._tStock = tStock;
-    }
-
-    protected MShapeDto _mShape;
-
-    public MShapeDto getMShape() {
-        return _mShape;
-    }
-
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
-    }
-
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     protected BClassDtlDto _bClassDtlByInputType;

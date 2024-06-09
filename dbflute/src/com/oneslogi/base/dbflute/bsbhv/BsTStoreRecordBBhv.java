@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, T_STORE_RECORD_H, T_RECEIVE_PLAN_B, B_CLASS_DTL(ByInputType)
+ *     T_RECEIVE_PLAN_B, M_LOCATION, T_STORE_RECORD_H, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     mLocation, tStoreRecordH, tReceivePlanB, bClassDtlByInputType, bClassDtlByStoreFlg
+ *     tReceivePlanB, mLocation, tStoreRecordH, bClassDtlByInputType, bClassDtlByStoreFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -481,6 +481,14 @@ public abstract class BsTStoreRecordBBhv extends AbstractBehaviorWritable<TStore
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'TReceivePlanB'.
+     * @param tStoreRecordBList The list of tStoreRecordB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TReceivePlanB> pulloutTReceivePlanB(List<TStoreRecordB> tStoreRecordBList)
+    { return helpPulloutInternally(tStoreRecordBList, "tReceivePlanB"); }
+
+    /**
      * Pull out the list of foreign table 'MLocation'.
      * @param tStoreRecordBList The list of tStoreRecordB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -495,14 +503,6 @@ public abstract class BsTStoreRecordBBhv extends AbstractBehaviorWritable<TStore
      */
     public List<TStoreRecordH> pulloutTStoreRecordH(List<TStoreRecordB> tStoreRecordBList)
     { return helpPulloutInternally(tStoreRecordBList, "tStoreRecordH"); }
-
-    /**
-     * Pull out the list of foreign table 'TReceivePlanB'.
-     * @param tStoreRecordBList The list of tStoreRecordB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TReceivePlanB> pulloutTReceivePlanB(List<TStoreRecordB> tStoreRecordBList)
-    { return helpPulloutInternally(tStoreRecordBList, "tReceivePlanB"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

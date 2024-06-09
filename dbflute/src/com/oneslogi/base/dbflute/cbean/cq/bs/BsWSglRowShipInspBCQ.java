@@ -432,14 +432,14 @@ public class BsWSglRowShipInspBCQ extends AbstractBsWSglRowShipInspBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         WSglRowShipInspBCQ bq = (WSglRowShipInspBCQ)bqs;
         WSglRowShipInspBCQ uq = (WSglRowShipInspBCQ)uqs;
-        if (bq.hasConditionQueryBUser()) {
-            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
+        if (bq.hasConditionQueryTPickingH()) {
+            uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
         }
         if (bq.hasConditionQueryWSglRowShipInspH()) {
             uq.queryWSglRowShipInspH().reflectRelationOnUnionQuery(bq.queryWSglRowShipInspH(), uq.queryWSglRowShipInspH());
         }
-        if (bq.hasConditionQueryTPickingH()) {
-            uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
+        if (bq.hasConditionQueryBUser()) {
+            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
         }
         if (bq.hasConditionQueryBClassDtlByInspectionFlg()) {
             uq.queryBClassDtlByInspectionFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByInspectionFlg(), uq.queryBClassDtlByInspectionFlg());
@@ -451,23 +451,23 @@ public class BsWSglRowShipInspBCQ extends AbstractBsWSglRowShipInspBCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * B_USER by my USER_ID, named 'BUser'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * @return The instance of condition-query. (NotNull)
      */
-    public BUserCQ queryBUser() {
-        return xdfgetConditionQueryBUser();
+    public TPickingHCQ queryTPickingH() {
+        return xdfgetConditionQueryTPickingH();
     }
-    public BUserCQ xdfgetConditionQueryBUser() {
-        String prop = "bUser";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
+    public TPickingHCQ xdfgetConditionQueryTPickingH() {
+        String prop = "tPickingH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingH()); xsetupOuterJoinTPickingH(); }
         return xgetQueRlMap(prop);
     }
-    protected BUserCQ xcreateQueryBUser() {
-        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_B", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
+    protected TPickingHCQ xcreateQueryTPickingH() {
+        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_B", "tPickingH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TPickingHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingH", nrp);
     }
-    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
-    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
+    protected void xsetupOuterJoinTPickingH() { xregOutJo("tPickingH"); }
+    public boolean hasConditionQueryTPickingH() { return xhasQueRlMap("tPickingH"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -491,23 +491,23 @@ public class BsWSglRowShipInspBCQ extends AbstractBsWSglRowShipInspBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * B_USER by my USER_ID, named 'BUser'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TPickingHCQ queryTPickingH() {
-        return xdfgetConditionQueryTPickingH();
+    public BUserCQ queryBUser() {
+        return xdfgetConditionQueryBUser();
     }
-    public TPickingHCQ xdfgetConditionQueryTPickingH() {
-        String prop = "tPickingH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingH()); xsetupOuterJoinTPickingH(); }
+    public BUserCQ xdfgetConditionQueryBUser() {
+        String prop = "bUser";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
         return xgetQueRlMap(prop);
     }
-    protected TPickingHCQ xcreateQueryTPickingH() {
-        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_B", "tPickingH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TPickingHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingH", nrp);
+    protected BUserCQ xcreateQueryBUser() {
+        String nrp = xresolveNRP("W_SGL_ROW_SHIP_INSP_B", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
     }
-    protected void xsetupOuterJoinTPickingH() { xregOutJo("tPickingH"); }
-    public boolean hasConditionQueryTPickingH() { return xhasQueRlMap("tPickingH"); }
+    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
+    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
 
     /**
      * Get the condition-query for relation table. <br>

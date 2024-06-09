@@ -252,6 +252,26 @@ public class BsHInventoryBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    /**
+     * Set up relation columns to select clause. <br>
+     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * <pre>
+     * <span style="color: #0000C0">hInventoryBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_HInventoryH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">hInventoryB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">hInventoryB</span>.<span style="color: #CC4747">getHInventoryH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_HInventoryH() {
+        assertSetupSelectPurpose("hInventoryH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnInventoryHId();
+        }
+        doSetupSelect(() -> query().queryHInventoryH());
+    }
+
     protected HMoveHNss _nssHMoveH;
     public HMoveHNss xdfgetNssHMoveH() {
         if (_nssHMoveH == null) { _nssHMoveH = new HMoveHNss(null); }
@@ -279,35 +299,6 @@ public class BsHInventoryBCB extends AbstractConditionBean {
         if (_nssHMoveH == null || !_nssHMoveH.hasConditionQuery())
         { _nssHMoveH = new HMoveHNss(query().queryHMoveH()); }
         return _nssHMoveH;
-    }
-
-    protected HStockNss _nssHStock;
-    public HStockNss xdfgetNssHStock() {
-        if (_nssHStock == null) { _nssHStock = new HStockNss(null); }
-        return _nssHStock;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * H_STOCK by my STOCK_ID, named 'HStock'.
-     * <pre>
-     * <span style="color: #0000C0">hInventoryBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_HStock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">hInventoryB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">hInventoryB</span>.<span style="color: #CC4747">getHStock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public HStockNss setupSelect_HStock() {
-        assertSetupSelectPurpose("hStock");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnStockId();
-        }
-        doSetupSelect(() -> query().queryHStock());
-        if (_nssHStock == null || !_nssHStock.hasConditionQuery())
-        { _nssHStock = new HStockNss(query().queryHStock()); }
-        return _nssHStock;
     }
 
     protected MShapeNss _nssMShape;
@@ -339,24 +330,33 @@ public class BsHInventoryBCB extends AbstractConditionBean {
         return _nssMShape;
     }
 
+    protected HStockNss _nssHStock;
+    public HStockNss xdfgetNssHStock() {
+        if (_nssHStock == null) { _nssHStock = new HStockNss(null); }
+        return _nssHStock;
+    }
     /**
      * Set up relation columns to select clause. <br>
-     * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+     * H_STOCK by my STOCK_ID, named 'HStock'.
      * <pre>
      * <span style="color: #0000C0">hInventoryBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_HInventoryH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_HStock()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">hInventoryB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">hInventoryB</span>.<span style="color: #CC4747">getHInventoryH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">hInventoryB</span>.<span style="color: #CC4747">getHStock()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public void setupSelect_HInventoryH() {
-        assertSetupSelectPurpose("hInventoryH");
+    public HStockNss setupSelect_HStock() {
+        assertSetupSelectPurpose("hStock");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnInventoryHId();
+            specify().columnStockId();
         }
-        doSetupSelect(() -> query().queryHInventoryH());
+        doSetupSelect(() -> query().queryHStock());
+        if (_nssHStock == null || !_nssHStock.hasConditionQuery())
+        { _nssHStock = new HStockNss(query().queryHStock()); }
+        return _nssHStock;
     }
 
     protected MStockTypeNss _nssMStockType;
@@ -487,10 +487,10 @@ public class BsHInventoryBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<HInventoryBCQ> {
-        protected HMoveHCB.HpSpecification _hMoveH;
-        protected HStockCB.HpSpecification _hStock;
-        protected MShapeCB.HpSpecification _mShape;
         protected HInventoryHCB.HpSpecification _hInventoryH;
+        protected HMoveHCB.HpSpecification _hMoveH;
+        protected MShapeCB.HpSpecification _mShape;
+        protected HStockCB.HpSpecification _hStock;
         protected MStockTypeCB.HpSpecification _mStockType;
         protected BClassDtlCB.HpSpecification _bClassDtlByInputType;
         protected BClassDtlCB.HpSpecification _bClassDtlByStockAdjustFlg;
@@ -718,21 +718,21 @@ public class BsHInventoryBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnInventoryBId(); // PK
+            if (qyCall().qy().hasConditionQueryHInventoryH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof HInventoryHCQ) {
+                columnInventoryHId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryHMoveH()
                     || qyCall().qy().xgetReferrerQuery() instanceof HMoveHCQ) {
                 columnMoveInstHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryHStock()
-                    || qyCall().qy().xgetReferrerQuery() instanceof HStockCQ) {
-                columnStockId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMShape()
                     || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
                 columnShapeId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryHInventoryH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof HInventoryHCQ) {
-                columnInventoryHId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryHStock()
+                    || qyCall().qy().xgetReferrerQuery() instanceof HStockCQ) {
+                columnStockId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMStockType()
                     || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
@@ -749,6 +749,26 @@ public class BsHInventoryBCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "H_INVENTORY_B"; }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public HInventoryHCB.HpSpecification specifyHInventoryH() {
+            assertRelation("hInventoryH");
+            if (_hInventoryH == null) {
+                _hInventoryH = new HInventoryHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryHInventoryH()
+                                    , () -> _qyCall.qy().queryHInventoryH())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _hInventoryH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryHInventoryH()
+                      , () -> xsyncQyCall().qy().queryHInventoryH()));
+                }
+            }
+            return _hInventoryH;
+        }
         /**
          * Prepare to specify functions about relation table. <br>
          * H_MOVE_H by my MOVE_INST_H_ID, named 'HMoveH'.
@@ -768,26 +788,6 @@ public class BsHInventoryBCB extends AbstractConditionBean {
                 }
             }
             return _hMoveH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * H_STOCK by my STOCK_ID, named 'HStock'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public HStockCB.HpSpecification specifyHStock() {
-            assertRelation("hStock");
-            if (_hStock == null) {
-                _hStock = new HStockCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryHStock()
-                                    , () -> _qyCall.qy().queryHStock())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _hStock.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryHStock()
-                      , () -> xsyncQyCall().qy().queryHStock()));
-                }
-            }
-            return _hStock;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -811,23 +811,23 @@ public class BsHInventoryBCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * H_INVENTORY_H by my INVENTORY_H_ID, named 'HInventoryH'.
+         * H_STOCK by my STOCK_ID, named 'HStock'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public HInventoryHCB.HpSpecification specifyHInventoryH() {
-            assertRelation("hInventoryH");
-            if (_hInventoryH == null) {
-                _hInventoryH = new HInventoryHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryHInventoryH()
-                                    , () -> _qyCall.qy().queryHInventoryH())
+        public HStockCB.HpSpecification specifyHStock() {
+            assertRelation("hStock");
+            if (_hStock == null) {
+                _hStock = new HStockCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryHStock()
+                                    , () -> _qyCall.qy().queryHStock())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _hInventoryH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryHInventoryH()
-                      , () -> xsyncQyCall().qy().queryHInventoryH()));
+                    _hStock.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryHStock()
+                      , () -> xsyncQyCall().qy().queryHStock()));
                 }
             }
-            return _hInventoryH;
+            return _hStock;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -266,35 +266,6 @@ public class BsMClientColCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BColNss _nssBCol;
-    public BColNss xdfgetNssBCol() {
-        if (_nssBCol == null) { _nssBCol = new BColNss(null); }
-        return _nssBCol;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_COL by my COL_ID, named 'BCol'.
-     * <pre>
-     * <span style="color: #0000C0">mClientColBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BCol()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mClientCol</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mClientCol</span>.<span style="color: #CC4747">getBCol()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BColNss setupSelect_BCol() {
-        assertSetupSelectPurpose("bCol");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnColId();
-        }
-        doSetupSelect(() -> query().queryBCol());
-        if (_nssBCol == null || !_nssBCol.hasConditionQuery())
-        { _nssBCol = new BColNss(query().queryBCol()); }
-        return _nssBCol;
-    }
-
     protected MClientNss _nssMClient;
     public MClientNss xdfgetNssMClient() {
         if (_nssMClient == null) { _nssMClient = new MClientNss(null); }
@@ -322,6 +293,35 @@ public class BsMClientColCB extends AbstractConditionBean {
         if (_nssMClient == null || !_nssMClient.hasConditionQuery())
         { _nssMClient = new MClientNss(query().queryMClient()); }
         return _nssMClient;
+    }
+
+    protected BColNss _nssBCol;
+    public BColNss xdfgetNssBCol() {
+        if (_nssBCol == null) { _nssBCol = new BColNss(null); }
+        return _nssBCol;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_COL by my COL_ID, named 'BCol'.
+     * <pre>
+     * <span style="color: #0000C0">mClientColBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BCol()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mClientCol</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mClientCol</span>.<span style="color: #CC4747">getBCol()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BColNss setupSelect_BCol() {
+        assertSetupSelectPurpose("bCol");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnColId();
+        }
+        doSetupSelect(() -> query().queryBCol());
+        if (_nssBCol == null || !_nssBCol.hasConditionQuery())
+        { _nssBCol = new BColNss(query().queryBCol()); }
+        return _nssBCol;
     }
 
     /**
@@ -386,8 +386,8 @@ public class BsMClientColCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MClientColCQ> {
-        protected BColCB.HpSpecification _bCol;
         protected MClientCB.HpSpecification _mClient;
+        protected BColCB.HpSpecification _bCol;
         protected BDictCB.HpSpecification _bDict;
         protected VDictCB.HpSpecification _vDict;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MClientColCQ> qyCall
@@ -479,13 +479,13 @@ public class BsMClientColCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnClientColId(); // PK
-            if (qyCall().qy().hasConditionQueryBCol()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BColCQ) {
-                columnColId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBCol()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BColCQ) {
+                columnColId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryVDict()
                     || qyCall().qy().xgetReferrerQuery() instanceof VDictCQ) {
@@ -494,26 +494,6 @@ public class BsMClientColCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_CLIENT_COL"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_COL by my COL_ID, named 'BCol'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BColCB.HpSpecification specifyBCol() {
-            assertRelation("bCol");
-            if (_bCol == null) {
-                _bCol = new BColCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBCol()
-                                    , () -> _qyCall.qy().queryBCol())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bCol.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBCol()
-                      , () -> xsyncQyCall().qy().queryBCol()));
-                }
-            }
-            return _bCol;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -533,6 +513,26 @@ public class BsMClientColCB extends AbstractConditionBean {
                 }
             }
             return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_COL by my COL_ID, named 'BCol'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BColCB.HpSpecification specifyBCol() {
+            assertRelation("bCol");
+            if (_bCol == null) {
+                _bCol = new BColCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBCol()
+                                    , () -> _qyCall.qy().queryBCol())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bCol.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBCol()
+                      , () -> xsyncQyCall().qy().queryBCol()));
+                }
+            }
+            return _bCol;
         }
         /**
          * Prepare to specify functions about relation table. <br>

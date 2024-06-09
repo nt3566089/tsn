@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     P_SUBREP_LAYOUT, B_DICT, V_DICT
+ *     B_DICT, P_SUBREP_LAYOUT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     pSubrepLayout, bDict, vDict
+ *     bDict, pSubrepLayout, vDict
  *
  * [referrer-property]
  *     
@@ -149,16 +149,6 @@ public abstract class BsPSubrepLayoutItemDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected PSubrepLayoutDto _pSubrepLayout;
-
-    public PSubrepLayoutDto getPSubrepLayout() {
-        return _pSubrepLayout;
-    }
-
-    public void setPSubrepLayout(PSubrepLayoutDto pSubrepLayout) {
-        this._pSubrepLayout = pSubrepLayout;
-    }
-
     protected BDictDto _bDict;
 
     public BDictDto getBDict() {
@@ -167,6 +157,16 @@ public abstract class BsPSubrepLayoutItemDto implements Serializable {
 
     public void setBDict(BDictDto bDict) {
         this._bDict = bDict;
+    }
+
+    protected PSubrepLayoutDto _pSubrepLayout;
+
+    public PSubrepLayoutDto getPSubrepLayout() {
+        return _pSubrepLayout;
+    }
+
+    public void setPSubrepLayout(PSubrepLayoutDto pSubrepLayout) {
+        this._pSubrepLayout = pSubrepLayout;
     }
 
     protected VDictDto _vDict;

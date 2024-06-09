@@ -264,26 +264,6 @@ public class BsMCenterCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
-     * <pre>
-     * <span style="color: #0000C0">mCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BTimeZone()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mCenter</span>.<span style="color: #CC4747">getBTimeZone()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     */
-    public void setupSelect_BTimeZone() {
-        assertSetupSelectPurpose("bTimeZone");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnTimeZoneId();
-        }
-        doSetupSelect(() -> query().queryBTimeZone());
-    }
-
     protected BCultureNss _nssBCulture;
     public BCultureNss xdfgetNssBCulture() {
         if (_nssBCulture == null) { _nssBCulture = new BCultureNss(null); }
@@ -311,6 +291,26 @@ public class BsMCenterCB extends AbstractConditionBean {
         if (_nssBCulture == null || !_nssBCulture.hasConditionQuery())
         { _nssBCulture = new BCultureNss(query().queryBCulture()); }
         return _nssBCulture;
+    }
+
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
+     * <pre>
+     * <span style="color: #0000C0">mCenterBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BTimeZone()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mCenter</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mCenter</span>.<span style="color: #CC4747">getBTimeZone()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     */
+    public void setupSelect_BTimeZone() {
+        assertSetupSelectPurpose("bTimeZone");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnTimeZoneId();
+        }
+        doSetupSelect(() -> query().queryBTimeZone());
     }
 
     protected BClassDtlNss _nssBClassDtlByDelFlg;
@@ -383,8 +383,8 @@ public class BsMCenterCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MCenterCQ> {
-        protected BTimeZoneCB.HpSpecification _bTimeZone;
         protected BCultureCB.HpSpecification _bCulture;
+        protected BTimeZoneCB.HpSpecification _bTimeZone;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MCenterCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
@@ -585,13 +585,13 @@ public class BsMCenterCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnCenterId(); // PK
-            if (qyCall().qy().hasConditionQueryBTimeZone()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BTimeZoneCQ) {
-                columnTimeZoneId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBCulture()
                     || qyCall().qy().xgetReferrerQuery() instanceof BCultureCQ) {
                 columnCultureId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBTimeZone()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BTimeZoneCQ) {
+                columnTimeZoneId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByDelFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -600,26 +600,6 @@ public class BsMCenterCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_CENTER"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BTimeZoneCB.HpSpecification specifyBTimeZone() {
-            assertRelation("bTimeZone");
-            if (_bTimeZone == null) {
-                _bTimeZone = new BTimeZoneCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBTimeZone()
-                                    , () -> _qyCall.qy().queryBTimeZone())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bTimeZone.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBTimeZone()
-                      , () -> xsyncQyCall().qy().queryBTimeZone()));
-                }
-            }
-            return _bTimeZone;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * B_CULTURE by my CULTURE_ID, named 'BCulture'.
@@ -639,6 +619,26 @@ public class BsMCenterCB extends AbstractConditionBean {
                 }
             }
             return _bCulture;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BTimeZoneCB.HpSpecification specifyBTimeZone() {
+            assertRelation("bTimeZone");
+            if (_bTimeZone == null) {
+                _bTimeZone = new BTimeZoneCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBTimeZone()
+                                    , () -> _qyCall.qy().queryBTimeZone())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bTimeZone.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBTimeZone()
+                      , () -> xsyncQyCall().qy().queryBTimeZone()));
+                }
+            }
+            return _bTimeZone;
         }
         /**
          * Prepare to specify functions about relation table. <br>

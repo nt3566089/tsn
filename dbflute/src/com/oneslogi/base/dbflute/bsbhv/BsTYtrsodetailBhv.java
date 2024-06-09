@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_YTRSO, M_PRODUCT
+ *     M_PRODUCT, T_YTRSO
  *
  * [referrer table]
  *     T_TRIMALLOCSCHKRI, T_TRPICKDETAIL
  *
  * [foreign property]
- *     tYtrso, mProduct
+ *     mProduct, tYtrso
  *
  * [referrer property]
  *     tTrimallocschkriList, tTrpickdetailList
@@ -569,20 +569,20 @@ public abstract class BsTYtrsodetailBhv extends AbstractBehaviorWritable<TYtrsod
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TYtrso'.
-     * @param tYtrsodetailList The list of tYtrsodetail. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TYtrso> pulloutTYtrso(List<TYtrsodetail> tYtrsodetailList)
-    { return helpPulloutInternally(tYtrsodetailList, "tYtrso"); }
-
-    /**
      * Pull out the list of foreign table 'MProduct'.
      * @param tYtrsodetailList The list of tYtrsodetail. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MProduct> pulloutMProduct(List<TYtrsodetail> tYtrsodetailList)
     { return helpPulloutInternally(tYtrsodetailList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'TYtrso'.
+     * @param tYtrsodetailList The list of tYtrsodetail. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TYtrso> pulloutTYtrso(List<TYtrsodetail> tYtrsodetailList)
+    { return helpPulloutInternally(tYtrsodetailList, "tYtrso"); }
 
     // ===================================================================================
     //                                                                      Extract Column

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, M_CLIENT
+ *     M_CLIENT, B_USER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, mClient
+ *     mClient, bUser
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsMUserClientBhv extends AbstractBehaviorWritable<MUserCli
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BUser'.
-     * @param mUserClientList The list of mUserClient. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BUser> pulloutBUser(List<MUserClient> mUserClientList)
-    { return helpPulloutInternally(mUserClientList, "bUser"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param mUserClientList The list of mUserClient. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MClient> pulloutMClient(List<MUserClient> mUserClientList)
     { return helpPulloutInternally(mUserClientList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'BUser'.
+     * @param mUserClientList The list of mUserClient. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BUser> pulloutBUser(List<MUserClient> mUserClientList)
+    { return helpPulloutInternally(mUserClientList, "bUser"); }
 
     // ===================================================================================
     //                                                                      Extract Column

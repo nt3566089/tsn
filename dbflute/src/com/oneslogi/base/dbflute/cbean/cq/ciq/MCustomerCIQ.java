@@ -78,9 +78,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TAllocInstBList(TAllocInstBCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
-    { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq)
+    { throwIICBOE("ExistsReferrer"); return null; }
+    public String keepCustomerId_ExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TAllocLotList(TAllocLotCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
@@ -94,9 +94,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TLastLotList(TLastLotCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
-    { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq)
+    { throwIICBOE("ExistsReferrer"); return null; }
+    public String keepCustomerId_ExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
@@ -104,9 +104,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TShippingInstBList(TShippingInstBCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
-    public String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
-    { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq)
+    { throwIICBOE("ExistsReferrer"); return null; }
+    public String keepCustomerId_ExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
     public String keepCustomerId_ExistsReferrer_TStockList(TStockCQ sq)
     { throwIICBOE("ExistsReferrer"); return null; }
@@ -142,9 +142,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TAllocInstBList(TAllocInstBCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
-    { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq)
+    { throwIICBOE("NotExistsReferrer"); return null; }
+    public String keepCustomerId_NotExistsReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TAllocLotList(TAllocLotCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
@@ -158,9 +158,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TLastLotList(TLastLotCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
-    { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq)
+    { throwIICBOE("NotExistsReferrer"); return null; }
+    public String keepCustomerId_NotExistsReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
@@ -168,9 +168,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TShippingInstBList(TShippingInstBCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
-    public String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
-    { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq)
+    { throwIICBOE("NotExistsReferrer"); return null; }
+    public String keepCustomerId_NotExistsReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
     public String keepCustomerId_NotExistsReferrer_TStockList(TStockCQ sq)
     { throwIICBOE("NotExistsReferrer"); return null; }
@@ -204,9 +204,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstBList(TAllocInstBCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
-    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq)
+    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
+    public String keepCustomerId_SpecifyDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TAllocLotList(TAllocLotCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
@@ -220,9 +220,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TLastLotList(TLastLotCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
-    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq)
+    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
+    public String keepCustomerId_SpecifyDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
@@ -230,9 +230,9 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstBList(TShippingInstBCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
-    public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
-    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq)
+    { throwIICBOE("(Specify)DerivedReferrer"); return null; }
+    public String keepCustomerId_SpecifyDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
     public String keepCustomerId_SpecifyDerivedReferrer_TStockList(TStockCQ sq)
     { throwIICBOE("(Specify)DerivedReferrer"); return null; }
@@ -280,13 +280,13 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstBListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object vl)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdList(TAllocInstHCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TAllocInstHByDelivCustomerIdListParameter(Object vl)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdList(TAllocInstHCQ sq)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TAllocInstHBySupplyCustomerIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TAllocLotList(TAllocLotCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
@@ -312,13 +312,13 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TLastLotListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object vl)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdList(TMoveInstBCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TMoveInstBByDepositIdListParameter(Object vl)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdList(TMoveInstBCQ sq)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TMoveInstBBySupplierIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TReceivePlanHByPlanDepositIdList(TReceivePlanHCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
@@ -332,13 +332,13 @@ public class MCustomerCIQ extends AbstractBsMCustomerCQ {
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstBListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
-    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object vl)
-    { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdList(TShippingInstHCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TShippingInstHByDelivCustomerIdListParameter(Object vl)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdList(TShippingInstHCQ sq)
+    { throwIICBOE("(Query)DerivedReferrer"); return null; }
+    public String keepCustomerId_QueryDerivedReferrer_TShippingInstHBySupplyCustomerIdListParameter(Object vl)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }
     public String keepCustomerId_QueryDerivedReferrer_TStockList(TStockCQ sq)
     { throwIICBOE("(Query)DerivedReferrer"); return null; }

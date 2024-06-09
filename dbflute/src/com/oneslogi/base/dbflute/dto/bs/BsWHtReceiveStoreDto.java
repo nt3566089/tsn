@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_LOT, M_LOCATION, M_CLIENT, M_WAREHOUSE, M_CENTER, M_PRODUCT, M_STOCK_TYPE
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tLot, mLocation, mClient, mWarehouse, mCenter, mProduct, mStockType
+ *     mCenter, mClient, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer-property]
  *     
@@ -209,24 +209,14 @@ public abstract class BsWHtReceiveStoreDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TLotDto _tLot;
+    protected MCenterDto _mCenter;
 
-    public TLotDto getTLot() {
-        return _tLot;
+    public MCenterDto getMCenter() {
+        return _mCenter;
     }
 
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
-    protected MLocationDto _mLocation;
-
-    public MLocationDto getMLocation() {
-        return _mLocation;
-    }
-
-    public void setMLocation(MLocationDto mLocation) {
-        this._mLocation = mLocation;
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
     }
 
     protected MClientDto _mClient;
@@ -239,24 +229,24 @@ public abstract class BsWHtReceiveStoreDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MWarehouseDto _mWarehouse;
+    protected MLocationDto _mLocation;
 
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
+    public MLocationDto getMLocation() {
+        return _mLocation;
     }
 
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
+    public void setMLocation(MLocationDto mLocation) {
+        this._mLocation = mLocation;
     }
 
-    protected MCenterDto _mCenter;
+    protected TLotDto _tLot;
 
-    public MCenterDto getMCenter() {
-        return _mCenter;
+    public TLotDto getTLot() {
+        return _tLot;
     }
 
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
     }
 
     protected MProductDto _mProduct;
@@ -277,6 +267,16 @@ public abstract class BsWHtReceiveStoreDto implements Serializable {
 
     public void setMStockType(MStockTypeDto mStockType) {
         this._mStockType = mStockType;
+    }
+
+    protected MWarehouseDto _mWarehouse;
+
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     // ===================================================================================

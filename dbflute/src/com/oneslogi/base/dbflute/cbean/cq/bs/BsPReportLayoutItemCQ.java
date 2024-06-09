@@ -446,11 +446,11 @@ public class BsPReportLayoutItemCQ extends AbstractBsPReportLayoutItemCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         PReportLayoutItemCQ bq = (PReportLayoutItemCQ)bqs;
         PReportLayoutItemCQ uq = (PReportLayoutItemCQ)uqs;
-        if (bq.hasConditionQueryPReportLayout()) {
-            uq.queryPReportLayout().reflectRelationOnUnionQuery(bq.queryPReportLayout(), uq.queryPReportLayout());
-        }
         if (bq.hasConditionQueryBDict()) {
             uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
+        }
+        if (bq.hasConditionQueryPReportLayout()) {
+            uq.queryPReportLayout().reflectRelationOnUnionQuery(bq.queryPReportLayout(), uq.queryPReportLayout());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -461,26 +461,6 @@ public class BsPReportLayoutItemCQ extends AbstractBsPReportLayoutItemCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public PReportLayoutCQ queryPReportLayout() {
-        return xdfgetConditionQueryPReportLayout();
-    }
-    public PReportLayoutCQ xdfgetConditionQueryPReportLayout() {
-        String prop = "pReportLayout";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPReportLayout()); xsetupOuterJoinPReportLayout(); }
-        return xgetQueRlMap(prop);
-    }
-    protected PReportLayoutCQ xcreateQueryPReportLayout() {
-        String nrp = xresolveNRP("P_REPORT_LAYOUT_ITEM", "pReportLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new PReportLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pReportLayout", nrp);
-    }
-    protected void xsetupOuterJoinPReportLayout() { xregOutJo("pReportLayout"); }
-    public boolean hasConditionQueryPReportLayout() { return xhasQueRlMap("pReportLayout"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
@@ -500,6 +480,26 @@ public class BsPReportLayoutItemCQ extends AbstractBsPReportLayoutItemCQ {
     }
     protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
     public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public PReportLayoutCQ queryPReportLayout() {
+        return xdfgetConditionQueryPReportLayout();
+    }
+    public PReportLayoutCQ xdfgetConditionQueryPReportLayout() {
+        String prop = "pReportLayout";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPReportLayout()); xsetupOuterJoinPReportLayout(); }
+        return xgetQueRlMap(prop);
+    }
+    protected PReportLayoutCQ xcreateQueryPReportLayout() {
+        String nrp = xresolveNRP("P_REPORT_LAYOUT_ITEM", "pReportLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new PReportLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pReportLayout", nrp);
+    }
+    protected void xsetupOuterJoinPReportLayout() { xregOutJo("pReportLayout"); }
+    public boolean hasConditionQueryPReportLayout() { return xhasQueRlMap("pReportLayout"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -4,7 +4,7 @@ import com.oneslogi.base.dbflute.bsbhv.pmbean.BsSqlgetStockHozeiListPmb;
 
 /**
  * <!-- df:beginClassDescription -->
- * The typed parameter-bean of SqlgetStockHozeiList. <span style="color: #AD4747">(typed to entity, auto-paging)</span><br>
+ * The typed parameter-bean of SqlgetStockHozeiList. <span style="color: #AD4747">(typed to list, entity)</span><br>
  * This is related to "<span style="color: #AD4747">selectSqlgetStockHozeiList</span>" on TStockBhv, <br>
  * described as "ロケーションマスタ受信一覧を取得します。". <br>
  * <!-- df:endClassDescription -->

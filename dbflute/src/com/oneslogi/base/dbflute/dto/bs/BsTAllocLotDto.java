@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_LOT, M_PRODUCT, T_ALLOC_INST_B, M_CUSTOMER
+ *     T_ALLOC_INST_B, M_CUSTOMER, T_LOT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tLot, mProduct, tAllocInstB, mCustomer
+ *     tAllocInstB, mCustomer, tLot, mProduct
  *
  * [referrer-property]
  *     
@@ -137,26 +137,6 @@ public abstract class BsTAllocLotDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TLotDto _tLot;
-
-    public TLotDto getTLot() {
-        return _tLot;
-    }
-
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
-    protected MProductDto _mProduct;
-
-    public MProductDto getMProduct() {
-        return _mProduct;
-    }
-
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
-    }
-
     protected TAllocInstBDto _tAllocInstB;
 
     public TAllocInstBDto getTAllocInstB() {
@@ -175,6 +155,26 @@ public abstract class BsTAllocLotDto implements Serializable {
 
     public void setMCustomer(MCustomerDto mCustomer) {
         this._mCustomer = mCustomer;
+    }
+
+    protected TLotDto _tLot;
+
+    public TLotDto getTLot() {
+        return _tLot;
+    }
+
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

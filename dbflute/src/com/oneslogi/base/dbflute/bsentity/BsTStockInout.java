@@ -31,16 +31,16 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_ALLOC_INST_B, T_STOCK_INOUT, T_STORE_RECORD_B, M_PROCESS_TYPE, T_MOVE_RECORD_B, T_STOCK, B_CLASS_DTL(ByCorrectType)
+ *     T_ALLOC_INST_B, T_STOCK_INOUT, T_MOVE_RECORD_B, M_PROCESS_TYPE, T_STOCK, T_STORE_RECORD_B, B_CLASS_DTL(ByCorrectType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tAllocInstB, tStockInoutByFsStockInoutIdSelf, tStoreRecordB, mProcessType, tMoveRecordB, tStock, tStockInoutByBfStockInoutIdSelf, bClassDtlByCorrectType, bClassDtlByInoutType
+ *     tAllocInstB, tStockInoutByBfStockInoutIdSelf, tStockInoutByFsStockInoutIdSelf, tMoveRecordB, mProcessType, tStock, tStoreRecordB, bClassDtlByCorrectType, bClassDtlByInoutType
  *
  * [referrer property]
- *     tStockInoutByFsStockInoutIdSelfList, tStockInoutByBfStockInoutIdSelfList
+ *     tStockInoutByBfStockInoutIdSelfList, tStockInoutByFsStockInoutIdSelfList
  *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -448,6 +448,25 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
         _tAllocInstB = tAllocInstB;
     }
 
+    /** T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'. */
+    protected TStockInout _tStockInoutByBfStockInoutIdSelf;
+
+    /**
+     * [get] T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'. <br>
+     * @return The entity of foreign property 'TStockInoutByBfStockInoutIdSelf'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TStockInout getTStockInoutByBfStockInoutIdSelf() {
+        return _tStockInoutByBfStockInoutIdSelf;
+    }
+
+    /**
+     * [set] T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
+     * @param tStockInoutByBfStockInoutIdSelf The entity of foreign property 'TStockInoutByBfStockInoutIdSelf'. (NullAllowed)
+     */
+    public void setTStockInoutByBfStockInoutIdSelf(TStockInout tStockInoutByBfStockInoutIdSelf) {
+        _tStockInoutByBfStockInoutIdSelf = tStockInoutByBfStockInoutIdSelf;
+    }
+
     /** T_STOCK_INOUT by my FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelf'. */
     protected TStockInout _tStockInoutByFsStockInoutIdSelf;
 
@@ -465,44 +484,6 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
      */
     public void setTStockInoutByFsStockInoutIdSelf(TStockInout tStockInoutByFsStockInoutIdSelf) {
         _tStockInoutByFsStockInoutIdSelf = tStockInoutByFsStockInoutIdSelf;
-    }
-
-    /** T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'. */
-    protected TStoreRecordB _tStoreRecordB;
-
-    /**
-     * [get] T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'. <br>
-     * @return The entity of foreign property 'TStoreRecordB'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TStoreRecordB getTStoreRecordB() {
-        return _tStoreRecordB;
-    }
-
-    /**
-     * [set] T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
-     * @param tStoreRecordB The entity of foreign property 'TStoreRecordB'. (NullAllowed)
-     */
-    public void setTStoreRecordB(TStoreRecordB tStoreRecordB) {
-        _tStoreRecordB = tStoreRecordB;
-    }
-
-    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
-    protected MProcessType _mProcessType;
-
-    /**
-     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
-     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MProcessType getMProcessType() {
-        return _mProcessType;
-    }
-
-    /**
-     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
-     */
-    public void setMProcessType(MProcessType mProcessType) {
-        _mProcessType = mProcessType;
     }
 
     /** T_MOVE_RECORD_B by my MOVE_RECORD_B_ID, named 'TMoveRecordB'. */
@@ -524,6 +505,25 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
         _tMoveRecordB = tMoveRecordB;
     }
 
+    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
+    protected MProcessType _mProcessType;
+
+    /**
+     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
+     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProcessType getMProcessType() {
+        return _mProcessType;
+    }
+
+    /**
+     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
+     */
+    public void setMProcessType(MProcessType mProcessType) {
+        _mProcessType = mProcessType;
+    }
+
     /** T_STOCK by my STOCK_ID, named 'TStock'. */
     protected TStock _tStock;
 
@@ -543,23 +543,23 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
         _tStock = tStock;
     }
 
-    /** T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'. */
-    protected TStockInout _tStockInoutByBfStockInoutIdSelf;
+    /** T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'. */
+    protected TStoreRecordB _tStoreRecordB;
 
     /**
-     * [get] T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'. <br>
-     * @return The entity of foreign property 'TStockInoutByBfStockInoutIdSelf'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'. <br>
+     * @return The entity of foreign property 'TStoreRecordB'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TStockInout getTStockInoutByBfStockInoutIdSelf() {
-        return _tStockInoutByBfStockInoutIdSelf;
+    public TStoreRecordB getTStoreRecordB() {
+        return _tStoreRecordB;
     }
 
     /**
-     * [set] T_STOCK_INOUT by my BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelf'.
-     * @param tStockInoutByBfStockInoutIdSelf The entity of foreign property 'TStockInoutByBfStockInoutIdSelf'. (NullAllowed)
+     * [set] T_STORE_RECORD_B by my STORE_RECORD_B_ID, named 'TStoreRecordB'.
+     * @param tStoreRecordB The entity of foreign property 'TStoreRecordB'. (NullAllowed)
      */
-    public void setTStockInoutByBfStockInoutIdSelf(TStockInout tStockInoutByBfStockInoutIdSelf) {
-        _tStockInoutByBfStockInoutIdSelf = tStockInoutByBfStockInoutIdSelf;
+    public void setTStoreRecordB(TStoreRecordB tStoreRecordB) {
+        _tStoreRecordB = tStoreRecordB;
     }
 
     /** B_CLASS_DTL by my CORRECT_TYPE, named 'BClassDtlByCorrectType'. */
@@ -603,26 +603,6 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                   Referrer Property
     //                                                                   =================
-    /** T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'. */
-    protected List<TStockInout> _tStockInoutByFsStockInoutIdSelfList;
-
-    /**
-     * [get] T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * @return The entity list of referrer property 'TStockInoutByFsStockInoutIdSelfList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TStockInout> getTStockInoutByFsStockInoutIdSelfList() {
-        if (_tStockInoutByFsStockInoutIdSelfList == null) { _tStockInoutByFsStockInoutIdSelfList = newReferrerList(); }
-        return _tStockInoutByFsStockInoutIdSelfList;
-    }
-
-    /**
-     * [set] T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * @param tStockInoutByFsStockInoutIdSelfList The entity list of referrer property 'TStockInoutByFsStockInoutIdSelfList'. (NullAllowed)
-     */
-    public void setTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutByFsStockInoutIdSelfList) {
-        _tStockInoutByFsStockInoutIdSelfList = tStockInoutByFsStockInoutIdSelfList;
-    }
-
     /** T_STOCK_INOUT by BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelfList'. */
     protected List<TStockInout> _tStockInoutByBfStockInoutIdSelfList;
 
@@ -641,6 +621,26 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
      */
     public void setTStockInoutByBfStockInoutIdSelfList(List<TStockInout> tStockInoutByBfStockInoutIdSelfList) {
         _tStockInoutByBfStockInoutIdSelfList = tStockInoutByBfStockInoutIdSelfList;
+    }
+
+    /** T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'. */
+    protected List<TStockInout> _tStockInoutByFsStockInoutIdSelfList;
+
+    /**
+     * [get] T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * @return The entity list of referrer property 'TStockInoutByFsStockInoutIdSelfList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TStockInout> getTStockInoutByFsStockInoutIdSelfList() {
+        if (_tStockInoutByFsStockInoutIdSelfList == null) { _tStockInoutByFsStockInoutIdSelfList = newReferrerList(); }
+        return _tStockInoutByFsStockInoutIdSelfList;
+    }
+
+    /**
+     * [set] T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * @param tStockInoutByFsStockInoutIdSelfList The entity list of referrer property 'TStockInoutByFsStockInoutIdSelfList'. (NullAllowed)
+     */
+    public void setTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutByFsStockInoutIdSelfList) {
+        _tStockInoutByFsStockInoutIdSelfList = tStockInoutByFsStockInoutIdSelfList;
     }
 
     protected <ELEMENT> List<ELEMENT> newReferrerList() { // overriding to import
@@ -674,26 +674,26 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
         StringBuilder sb = new StringBuilder();
         if (_tAllocInstB != null)
         { sb.append(li).append(xbRDS(_tAllocInstB, "tAllocInstB")); }
-        if (_tStockInoutByFsStockInoutIdSelf != null)
-        { sb.append(li).append(xbRDS(_tStockInoutByFsStockInoutIdSelf, "tStockInoutByFsStockInoutIdSelf")); }
-        if (_tStoreRecordB != null)
-        { sb.append(li).append(xbRDS(_tStoreRecordB, "tStoreRecordB")); }
-        if (_mProcessType != null)
-        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
-        if (_tMoveRecordB != null)
-        { sb.append(li).append(xbRDS(_tMoveRecordB, "tMoveRecordB")); }
-        if (_tStock != null)
-        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
         if (_tStockInoutByBfStockInoutIdSelf != null)
         { sb.append(li).append(xbRDS(_tStockInoutByBfStockInoutIdSelf, "tStockInoutByBfStockInoutIdSelf")); }
+        if (_tStockInoutByFsStockInoutIdSelf != null)
+        { sb.append(li).append(xbRDS(_tStockInoutByFsStockInoutIdSelf, "tStockInoutByFsStockInoutIdSelf")); }
+        if (_tMoveRecordB != null)
+        { sb.append(li).append(xbRDS(_tMoveRecordB, "tMoveRecordB")); }
+        if (_mProcessType != null)
+        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
+        if (_tStock != null)
+        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
+        if (_tStoreRecordB != null)
+        { sb.append(li).append(xbRDS(_tStoreRecordB, "tStoreRecordB")); }
         if (_bClassDtlByCorrectType != null)
         { sb.append(li).append(xbRDS(_bClassDtlByCorrectType, "bClassDtlByCorrectType")); }
         if (_bClassDtlByInoutType != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInoutType, "bClassDtlByInoutType")); }
-        if (_tStockInoutByFsStockInoutIdSelfList != null) { for (TStockInout et : _tStockInoutByFsStockInoutIdSelfList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tStockInoutByFsStockInoutIdSelfList")); } } }
         if (_tStockInoutByBfStockInoutIdSelfList != null) { for (TStockInout et : _tStockInoutByBfStockInoutIdSelfList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tStockInoutByBfStockInoutIdSelfList")); } } }
+        if (_tStockInoutByFsStockInoutIdSelfList != null) { for (TStockInout et : _tStockInoutByFsStockInoutIdSelfList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tStockInoutByFsStockInoutIdSelfList")); } } }
         return sb.toString();
     }
 
@@ -734,26 +734,26 @@ public abstract class BsTStockInout extends AbstractEntity implements DomainEnti
         StringBuilder sb = new StringBuilder();
         if (_tAllocInstB != null)
         { sb.append(dm).append("tAllocInstB"); }
-        if (_tStockInoutByFsStockInoutIdSelf != null)
-        { sb.append(dm).append("tStockInoutByFsStockInoutIdSelf"); }
-        if (_tStoreRecordB != null)
-        { sb.append(dm).append("tStoreRecordB"); }
-        if (_mProcessType != null)
-        { sb.append(dm).append("mProcessType"); }
-        if (_tMoveRecordB != null)
-        { sb.append(dm).append("tMoveRecordB"); }
-        if (_tStock != null)
-        { sb.append(dm).append("tStock"); }
         if (_tStockInoutByBfStockInoutIdSelf != null)
         { sb.append(dm).append("tStockInoutByBfStockInoutIdSelf"); }
+        if (_tStockInoutByFsStockInoutIdSelf != null)
+        { sb.append(dm).append("tStockInoutByFsStockInoutIdSelf"); }
+        if (_tMoveRecordB != null)
+        { sb.append(dm).append("tMoveRecordB"); }
+        if (_mProcessType != null)
+        { sb.append(dm).append("mProcessType"); }
+        if (_tStock != null)
+        { sb.append(dm).append("tStock"); }
+        if (_tStoreRecordB != null)
+        { sb.append(dm).append("tStoreRecordB"); }
         if (_bClassDtlByCorrectType != null)
         { sb.append(dm).append("bClassDtlByCorrectType"); }
         if (_bClassDtlByInoutType != null)
         { sb.append(dm).append("bClassDtlByInoutType"); }
-        if (_tStockInoutByFsStockInoutIdSelfList != null && !_tStockInoutByFsStockInoutIdSelfList.isEmpty())
-        { sb.append(dm).append("tStockInoutByFsStockInoutIdSelfList"); }
         if (_tStockInoutByBfStockInoutIdSelfList != null && !_tStockInoutByBfStockInoutIdSelfList.isEmpty())
         { sb.append(dm).append("tStockInoutByBfStockInoutIdSelfList"); }
+        if (_tStockInoutByFsStockInoutIdSelfList != null && !_tStockInoutByFsStockInoutIdSelfList.isEmpty())
+        { sb.append(dm).append("tStockInoutByFsStockInoutIdSelfList"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

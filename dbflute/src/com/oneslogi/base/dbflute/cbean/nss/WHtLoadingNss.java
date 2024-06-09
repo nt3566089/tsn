@@ -20,12 +20,12 @@ public class WHtLoadingNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MDeliveryCourseNss withMDeliveryCourse() {
-        _query.xdoNss(() -> _query.queryMDeliveryCourse());
-        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,11 +38,11 @@ public class WHtLoadingNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
+    public MDeliveryCourseNss withMDeliveryCourse() {
+        _query.xdoNss(() -> _query.queryMDeliveryCourse());
+        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
     }
 }

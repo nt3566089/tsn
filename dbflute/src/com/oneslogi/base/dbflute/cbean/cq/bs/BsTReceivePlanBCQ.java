@@ -690,11 +690,11 @@ public class BsTReceivePlanBCQ extends AbstractBsTReceivePlanBCQ {
         if (bq.hasConditionQueryMWarehouse()) {
             uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
         }
-        if (bq.hasConditionQueryTReceivePlanH()) {
-            uq.queryTReceivePlanH().reflectRelationOnUnionQuery(bq.queryTReceivePlanH(), uq.queryTReceivePlanH());
-        }
         if (bq.hasConditionQueryMProduct()) {
             uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        }
+        if (bq.hasConditionQueryTReceivePlanH()) {
+            uq.queryTReceivePlanH().reflectRelationOnUnionQuery(bq.queryTReceivePlanH(), uq.queryTReceivePlanH());
         }
         if (bq.hasConditionQueryBClassDtlByErrorFlg()) {
             uq.queryBClassDtlByErrorFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByErrorFlg(), uq.queryBClassDtlByErrorFlg());
@@ -755,26 +755,6 @@ public class BsTReceivePlanBCQ extends AbstractBsTReceivePlanBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TReceivePlanHCQ queryTReceivePlanH() {
-        return xdfgetConditionQueryTReceivePlanH();
-    }
-    public TReceivePlanHCQ xdfgetConditionQueryTReceivePlanH() {
-        String prop = "tReceivePlanH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanH()); xsetupOuterJoinTReceivePlanH(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TReceivePlanHCQ xcreateQueryTReceivePlanH() {
-        String nrp = xresolveNRP("T_RECEIVE_PLAN_B", "tReceivePlanH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TReceivePlanHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanH", nrp);
-    }
-    protected void xsetupOuterJoinTReceivePlanH() { xregOutJo("tReceivePlanH"); }
-    public boolean hasConditionQueryTReceivePlanH() { return xhasQueRlMap("tReceivePlanH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -792,6 +772,26 @@ public class BsTReceivePlanBCQ extends AbstractBsTReceivePlanBCQ {
     }
     protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
     public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_RECEIVE_PLAN_H by my RECEIVE_PLAN_H_ID, named 'TReceivePlanH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TReceivePlanHCQ queryTReceivePlanH() {
+        return xdfgetConditionQueryTReceivePlanH();
+    }
+    public TReceivePlanHCQ xdfgetConditionQueryTReceivePlanH() {
+        String prop = "tReceivePlanH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTReceivePlanH()); xsetupOuterJoinTReceivePlanH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TReceivePlanHCQ xcreateQueryTReceivePlanH() {
+        String nrp = xresolveNRP("T_RECEIVE_PLAN_B", "tReceivePlanH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TReceivePlanHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tReceivePlanH", nrp);
+    }
+    protected void xsetupOuterJoinTReceivePlanH() { xregOutJo("tReceivePlanH"); }
+    public boolean hasConditionQueryTReceivePlanH() { return xhasQueRlMap("tReceivePlanH"); }
 
     /**
      * Get the condition-query for relation table. <br>

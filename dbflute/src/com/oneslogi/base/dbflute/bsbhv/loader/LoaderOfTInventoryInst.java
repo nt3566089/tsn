@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_ZONE, T_INVENTORY_H, M_CUSTOMER, B_CLASS_DTL(ByStockExistOnlyFlg)
+ *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByStockExistOnlyFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mZone, tInventoryH, mCustomer, bClassDtlByStockExistOnlyFlg
+ *     mCustomer, tInventoryH, mStockType, mZone, bClassDtlByStockExistOnlyFlg
  *
  * [referrer property]
  *     
@@ -59,6 +59,20 @@ public class LoaderOfTInventoryInst {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfMCustomer _foreignMCustomerLoader;
+    public LoaderOfMCustomer pulloutMCustomer() {
+        if (_foreignMCustomerLoader == null)
+        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
+        return _foreignMCustomerLoader;
+    }
+
+    protected LoaderOfTInventoryH _foreignTInventoryHLoader;
+    public LoaderOfTInventoryH pulloutTInventoryH() {
+        if (_foreignTInventoryHLoader == null)
+        { _foreignTInventoryHLoader = new LoaderOfTInventoryH().ready(myBhv().pulloutTInventoryH(_selectedList), _selector); }
+        return _foreignTInventoryHLoader;
+    }
+
     protected LoaderOfMStockType _foreignMStockTypeLoader;
     public LoaderOfMStockType pulloutMStockType() {
         if (_foreignMStockTypeLoader == null)
@@ -71,20 +85,6 @@ public class LoaderOfTInventoryInst {
         if (_foreignMZoneLoader == null)
         { _foreignMZoneLoader = new LoaderOfMZone().ready(myBhv().pulloutMZone(_selectedList), _selector); }
         return _foreignMZoneLoader;
-    }
-
-    protected LoaderOfTInventoryH _foreignTInventoryHLoader;
-    public LoaderOfTInventoryH pulloutTInventoryH() {
-        if (_foreignTInventoryHLoader == null)
-        { _foreignTInventoryHLoader = new LoaderOfTInventoryH().ready(myBhv().pulloutTInventoryH(_selectedList), _selector); }
-        return _foreignTInventoryHLoader;
-    }
-
-    protected LoaderOfMCustomer _foreignMCustomerLoader;
-    public LoaderOfMCustomer pulloutMCustomer() {
-        if (_foreignMCustomerLoader == null)
-        { _foreignMCustomerLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomer(_selectedList), _selector); }
-        return _foreignMCustomerLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByStockExistOnlyFlgLoader;

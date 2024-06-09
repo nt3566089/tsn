@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, M_CLIENT, M_PRODUCT, T_LOT, M_LOCATION
+ *     M_CENTER, M_CLIENT, M_LOCATION, T_LOT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mCenter, mClient, mProduct, tLot, mLocation
+ *     mCenter, mClient, mLocation, tLot, mProduct
  *
  * [referrer-property]
  *     
@@ -233,14 +233,14 @@ public abstract class BsWHtShippingPickingDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected MProductDto _mProduct;
+    protected MLocationDto _mLocation;
 
-    public MProductDto getMProduct() {
-        return _mProduct;
+    public MLocationDto getMLocation() {
+        return _mLocation;
     }
 
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
+    public void setMLocation(MLocationDto mLocation) {
+        this._mLocation = mLocation;
     }
 
     protected TLotDto _tLot;
@@ -253,14 +253,14 @@ public abstract class BsWHtShippingPickingDto implements Serializable {
         this._tLot = tLot;
     }
 
-    protected MLocationDto _mLocation;
+    protected MProductDto _mProduct;
 
-    public MLocationDto getMLocation() {
-        return _mLocation;
+    public MProductDto getMProduct() {
+        return _mProduct;
     }
 
-    public void setMLocation(MLocationDto mLocation) {
-        this._mLocation = mLocation;
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

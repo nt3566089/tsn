@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_SHAPE_GRP, B_CLASS_DTL(ByCasePickFlg)
+ *     M_SHAPE_GRP, M_SHAPE, B_CLASS_DTL(ByCasePickFlg)
  *
  * [referrer table]
  *     M_PRODUCT_SHAPE
  *
  * [foreign property]
- *     mShape, mShapeGrp, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
+ *     mShapeGrp, mShape, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
  *
  * [referrer property]
  *     mProductShapeList
@@ -399,25 +399,6 @@ public abstract class BsMShapeGrpDtl extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
-    protected MShape _mShape;
-
-    /**
-     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
-     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MShape getMShape() {
-        return _mShape;
-    }
-
-    /**
-     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
-     */
-    public void setMShape(MShape mShape) {
-        _mShape = mShape;
-    }
-
     /** M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'. */
     protected MShapeGrp _mShapeGrp;
 
@@ -435,6 +416,25 @@ public abstract class BsMShapeGrpDtl extends AbstractEntity implements DomainEnt
      */
     public void setMShapeGrp(MShapeGrp mShapeGrp) {
         _mShapeGrp = mShapeGrp;
+    }
+
+    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
+    protected MShape _mShape;
+
+    /**
+     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
+     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MShape getMShape() {
+        return _mShape;
+    }
+
+    /**
+     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
+     */
+    public void setMShape(MShape mShape) {
+        _mShape = mShape;
     }
 
     /** B_CLASS_DTL by my CASE_PICK_FLG, named 'BClassDtlByCasePickFlg'. */
@@ -546,10 +546,10 @@ public abstract class BsMShapeGrpDtl extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mShape != null)
-        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
         if (_mShapeGrp != null)
         { sb.append(li).append(xbRDS(_mShapeGrp, "mShapeGrp")); }
+        if (_mShape != null)
+        { sb.append(li).append(xbRDS(_mShape, "mShape")); }
         if (_bClassDtlByCasePickFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByCasePickFlg, "bClassDtlByCasePickFlg")); }
         if (_bClassDtlByEmReplenishShapeFlg != null)
@@ -590,10 +590,10 @@ public abstract class BsMShapeGrpDtl extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mShape != null)
-        { sb.append(dm).append("mShape"); }
         if (_mShapeGrp != null)
         { sb.append(dm).append("mShapeGrp"); }
+        if (_mShape != null)
+        { sb.append(dm).append("mShape"); }
         if (_bClassDtlByCasePickFlg != null)
         { sb.append(dm).append("bClassDtlByCasePickFlg"); }
         if (_bClassDtlByEmReplenishShapeFlg != null)

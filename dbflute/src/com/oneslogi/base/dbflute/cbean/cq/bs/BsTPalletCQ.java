@@ -452,63 +452,23 @@ public class BsTPalletCQ extends AbstractBsTPalletCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPalletCQ bq = (TPalletCQ)bqs;
         TPalletCQ uq = (TPalletCQ)uqs;
-        if (bq.hasConditionQueryMClient()) {
-            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
-        }
-        if (bq.hasConditionQueryTTrpallet()) {
-            uq.queryTTrpallet().reflectRelationOnUnionQuery(bq.queryTTrpallet(), uq.queryTTrpallet());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
+        if (bq.hasConditionQueryMClient()) {
+            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
         if (bq.hasConditionQueryTStock()) {
             uq.queryTStock().reflectRelationOnUnionQuery(bq.queryTStock(), uq.queryTStock());
+        }
+        if (bq.hasConditionQueryTTrpallet()) {
+            uq.queryTTrpallet().reflectRelationOnUnionQuery(bq.queryTTrpallet(), uq.queryTTrpallet());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MClientCQ queryMClient() {
-        return xdfgetConditionQueryMClient();
-    }
-    public MClientCQ xdfgetConditionQueryMClient() {
-        String prop = "mClient";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MClientCQ xcreateQueryMClient() {
-        String nrp = xresolveNRP("T_PALLET", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
-    }
-    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
-    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TTrpalletCQ queryTTrpallet() {
-        return xdfgetConditionQueryTTrpallet();
-    }
-    public TTrpalletCQ xdfgetConditionQueryTTrpallet() {
-        String prop = "tTrpallet";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrpallet()); xsetupOuterJoinTTrpallet(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TTrpalletCQ xcreateQueryTTrpallet() {
-        String nrp = xresolveNRP("T_PALLET", "tTrpallet"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TTrpalletCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrpallet", nrp);
-    }
-    protected void xsetupOuterJoinTTrpallet() { xregOutJo("tTrpallet"); }
-    public boolean hasConditionQueryTTrpallet() { return xhasQueRlMap("tTrpallet"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -531,6 +491,26 @@ public class BsTPalletCQ extends AbstractBsTPalletCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MClientCQ queryMClient() {
+        return xdfgetConditionQueryMClient();
+    }
+    public MClientCQ xdfgetConditionQueryMClient() {
+        String prop = "mClient";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MClientCQ xcreateQueryMClient() {
+        String nrp = xresolveNRP("T_PALLET", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
+    }
+    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
+    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * T_STOCK by my STOCK_ID, named 'TStock'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -548,6 +528,26 @@ public class BsTPalletCQ extends AbstractBsTPalletCQ {
     }
     protected void xsetupOuterJoinTStock() { xregOutJo("tStock"); }
     public boolean hasConditionQueryTStock() { return xhasQueRlMap("tStock"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_TRPALLET by my TRPALLET_ID, named 'TTrpallet'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TTrpalletCQ queryTTrpallet() {
+        return xdfgetConditionQueryTTrpallet();
+    }
+    public TTrpalletCQ xdfgetConditionQueryTTrpallet() {
+        String prop = "tTrpallet";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrpallet()); xsetupOuterJoinTTrpallet(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TTrpalletCQ xcreateQueryTTrpallet() {
+        String nrp = xresolveNRP("T_PALLET", "tTrpallet"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TTrpalletCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrpallet", nrp);
+    }
+    protected void xsetupOuterJoinTTrpallet() { xregOutJo("tTrpallet"); }
+    public boolean hasConditionQueryTTrpallet() { return xhasQueRlMap("tTrpallet"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

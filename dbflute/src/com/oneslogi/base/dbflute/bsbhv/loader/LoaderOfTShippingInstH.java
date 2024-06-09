@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_CLIENT, M_CENTER, T_ALLOC_INST_H, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer table]
  *     T_EC_ORDER_H, T_SHIPPING_INST_B
  *
  * [foreign property]
- *     mDeliveryCourse, mCustomerBySupplyCustomerId, mProcessType, mClient, mCenter, mCustomerByDelivCustomerId, tAllocInstH, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
+ *     tAllocInstH, mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
  *
  * [referrer property]
  *     tEcOrderHList, tShippingInstBList
@@ -132,32 +132,11 @@ public class LoaderOfTShippingInstH {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
-    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
-        if (_foreignMDeliveryCourseLoader == null)
-        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
-        return _foreignMDeliveryCourseLoader;
-    }
-
-    protected LoaderOfMCustomer _foreignMCustomerBySupplyCustomerIdLoader;
-    public LoaderOfMCustomer pulloutMCustomerBySupplyCustomerId() {
-        if (_foreignMCustomerBySupplyCustomerIdLoader == null)
-        { _foreignMCustomerBySupplyCustomerIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerBySupplyCustomerId(_selectedList), _selector); }
-        return _foreignMCustomerBySupplyCustomerIdLoader;
-    }
-
-    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
-    public LoaderOfMProcessType pulloutMProcessType() {
-        if (_foreignMProcessTypeLoader == null)
-        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
-        return _foreignMProcessTypeLoader;
-    }
-
-    protected LoaderOfMClient _foreignMClientLoader;
-    public LoaderOfMClient pulloutMClient() {
-        if (_foreignMClientLoader == null)
-        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
-        return _foreignMClientLoader;
+    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
+    public LoaderOfTAllocInstH pulloutTAllocInstH() {
+        if (_foreignTAllocInstHLoader == null)
+        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
+        return _foreignTAllocInstHLoader;
     }
 
     protected LoaderOfMCenter _foreignMCenterLoader;
@@ -167,6 +146,20 @@ public class LoaderOfTShippingInstH {
         return _foreignMCenterLoader;
     }
 
+    protected LoaderOfMClient _foreignMClientLoader;
+    public LoaderOfMClient pulloutMClient() {
+        if (_foreignMClientLoader == null)
+        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
+        return _foreignMClientLoader;
+    }
+
+    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
+    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
+        if (_foreignMDeliveryCourseLoader == null)
+        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
+        return _foreignMDeliveryCourseLoader;
+    }
+
     protected LoaderOfMCustomer _foreignMCustomerByDelivCustomerIdLoader;
     public LoaderOfMCustomer pulloutMCustomerByDelivCustomerId() {
         if (_foreignMCustomerByDelivCustomerIdLoader == null)
@@ -174,11 +167,18 @@ public class LoaderOfTShippingInstH {
         return _foreignMCustomerByDelivCustomerIdLoader;
     }
 
-    protected LoaderOfTAllocInstH _foreignTAllocInstHLoader;
-    public LoaderOfTAllocInstH pulloutTAllocInstH() {
-        if (_foreignTAllocInstHLoader == null)
-        { _foreignTAllocInstHLoader = new LoaderOfTAllocInstH().ready(myBhv().pulloutTAllocInstH(_selectedList), _selector); }
-        return _foreignTAllocInstHLoader;
+    protected LoaderOfMProcessType _foreignMProcessTypeLoader;
+    public LoaderOfMProcessType pulloutMProcessType() {
+        if (_foreignMProcessTypeLoader == null)
+        { _foreignMProcessTypeLoader = new LoaderOfMProcessType().ready(myBhv().pulloutMProcessType(_selectedList), _selector); }
+        return _foreignMProcessTypeLoader;
+    }
+
+    protected LoaderOfMCustomer _foreignMCustomerBySupplyCustomerIdLoader;
+    public LoaderOfMCustomer pulloutMCustomerBySupplyCustomerId() {
+        if (_foreignMCustomerBySupplyCustomerIdLoader == null)
+        { _foreignMCustomerBySupplyCustomerIdLoader = new LoaderOfMCustomer().ready(myBhv().pulloutMCustomerBySupplyCustomerId(_selectedList), _selector); }
+        return _foreignMCustomerBySupplyCustomerIdLoader;
     }
 
     protected LoaderOfMZip _foreignMZipForDelivLoader;

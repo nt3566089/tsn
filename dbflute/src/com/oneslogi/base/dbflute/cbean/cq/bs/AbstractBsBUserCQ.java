@@ -298,25 +298,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select TAG_OUT_USER_ID from T_PACKING_R where ...)} <br>
-     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTPackingRByTagOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TPackingRByTagOutUserIdList for 'exists'. (NotNull)
-     */
-    public void existsTPackingRByTagOutUserIdList(SubQuery<TPackingRCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TPackingRCB cb = new TPackingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(cb.query());
-        registerExistsReferrer(cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList");
-    }
-    public abstract String keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select INSPECTION_OUT_USER_ID from T_PACKING_R where ...)} <br>
      * T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdAsOne'.
      * <pre>
@@ -355,22 +336,22 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select PL1_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * {exists (select TAG_OUT_USER_ID from T_PACKING_R where ...)} <br>
+     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">existsTPickingRByPl1OutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">existsTPackingRByTagOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.query().set...
      * });
      * </pre>
-     * @param subCBLambda The callback for sub-query of TPickingRByPl1OutUserIdList for 'exists'. (NotNull)
+     * @param subCBLambda The callback for sub-query of TPackingRByTagOutUserIdList for 'exists'. (NotNull)
      */
-    public void existsTPickingRByPl1OutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+    public void existsTPackingRByTagOutUserIdList(SubQuery<TPackingRCB> subCBLambda) {
         assertObjectNotNull("subCBLambda", subCBLambda);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(cb.query());
-        registerExistsReferrer(cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList");
+        TPackingRCB cb = new TPackingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(cb.query());
+        registerExistsReferrer(cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList");
     }
-    public abstract String keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_ExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -393,22 +374,41 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select SHIPPING_RECORD_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * {exists (select PACKING_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">existsTPickingRByShippingRecordOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">existsTPickingRByPackingOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.query().set...
      * });
      * </pre>
-     * @param subCBLambda The callback for sub-query of TPickingRByShippingRecordOutUserIdList for 'exists'. (NotNull)
+     * @param subCBLambda The callback for sub-query of TPickingRByPackingOutUserIdList for 'exists'. (NotNull)
      */
-    public void existsTPickingRByShippingRecordOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+    public void existsTPickingRByPackingOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
         assertObjectNotNull("subCBLambda", subCBLambda);
         TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
-        registerExistsReferrer(cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList");
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(cb.query());
+        registerExistsReferrer(cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList");
     }
-    public abstract String keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select PL1_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">existsTPickingRByPl1OutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of TPickingRByPl1OutUserIdList for 'exists'. (NotNull)
+     */
+    public void existsTPickingRByPl1OutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(cb.query());
+        registerExistsReferrer(cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList");
+    }
+    public abstract String keepUserId_ExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -431,6 +431,25 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
+     * {exists (select SHIPPING_RECORD_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">existsTPickingRByShippingRecordOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of TPickingRByShippingRecordOutUserIdList for 'exists'. (NotNull)
+     */
+    public void existsTPickingRByShippingRecordOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
+        registerExistsReferrer(cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList");
+    }
+    public abstract String keepUserId_ExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+
+    /**
+     * Set up ExistsReferrer (correlated sub-query). <br>
      * {exists (select SLIP_OUT_USER_ID from T_PICKING_R where ...)} <br>
      * T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdAsOne'.
      * <pre>
@@ -447,25 +466,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
         registerExistsReferrer(cb.query(), "USER_ID", "SLIP_OUT_USER_ID", pp, "tPickingRBySlipOutUserIdList");
     }
     public abstract String keepUserId_ExistsReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq);
-
-    /**
-     * Set up ExistsReferrer (correlated sub-query). <br>
-     * {exists (select PACKING_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">existsTPickingRByPackingOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of TPickingRByPackingOutUserIdList for 'exists'. (NotNull)
-     */
-    public void existsTPickingRByPackingOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(cb.query());
-        registerExistsReferrer(cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList");
-    }
-    public abstract String keepUserId_ExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
 
     /**
      * Set up ExistsReferrer (correlated sub-query). <br>
@@ -697,25 +697,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select TAG_OUT_USER_ID from T_PACKING_R where ...)} <br>
-     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTPackingRByTagOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPackingRByTagOutUserIdList for 'not exists'. (NotNull)
-     */
-    public void notExistsTPackingRByTagOutUserIdList(SubQuery<TPackingRCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TPackingRCB cb = new TPackingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList");
-    }
-    public abstract String keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
-
-    /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
      * {not exists (select INSPECTION_OUT_USER_ID from T_PACKING_R where ...)} <br>
      * T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdAsOne'.
      * <pre>
@@ -754,22 +735,22 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select PL1_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * {not exists (select TAG_OUT_USER_ID from T_PACKING_R where ...)} <br>
+     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTPickingRByPl1OutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">notExistsTPackingRByTagOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.query().set...
      * });
      * </pre>
-     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByPl1OutUserIdList for 'not exists'. (NotNull)
+     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPackingRByTagOutUserIdList for 'not exists'. (NotNull)
      */
-    public void notExistsTPickingRByPl1OutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+    public void notExistsTPackingRByTagOutUserIdList(SubQuery<TPackingRCB> subCBLambda) {
         assertObjectNotNull("subCBLambda", subCBLambda);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList");
+        TPackingRCB cb = new TPackingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList");
     }
-    public abstract String keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_NotExistsReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -792,22 +773,41 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select SHIPPING_RECORD_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * {not exists (select PACKING_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTPickingRByShippingRecordOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">notExistsTPickingRByPackingOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.query().set...
      * });
      * </pre>
-     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList for 'not exists'. (NotNull)
+     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByPackingOutUserIdList for 'not exists'. (NotNull)
      */
-    public void notExistsTPickingRByShippingRecordOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+    public void notExistsTPickingRByPackingOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
         assertObjectNotNull("subCBLambda", subCBLambda);
         TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList");
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList");
     }
-    public abstract String keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select PL1_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTPickingRByPl1OutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByPl1OutUserIdList for 'not exists'. (NotNull)
+     */
+    public void notExistsTPickingRByPl1OutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList");
+    }
+    public abstract String keepUserId_NotExistsReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -830,6 +830,25 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
+     * {not exists (select SHIPPING_RECORD_OUT_USER_ID from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">notExistsTPickingRByShippingRecordOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.query().set...
+     * });
+     * </pre>
+     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList for 'not exists'. (NotNull)
+     */
+    public void notExistsTPickingRByShippingRecordOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
+        assertObjectNotNull("subCBLambda", subCBLambda);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
+        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
+        registerNotExistsReferrer(cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList");
+    }
+    public abstract String keepUserId_NotExistsReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+
+    /**
+     * Set up NotExistsReferrer (correlated sub-query). <br>
      * {not exists (select SLIP_OUT_USER_ID from T_PICKING_R where ...)} <br>
      * T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdAsOne'.
      * <pre>
@@ -846,25 +865,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
         registerNotExistsReferrer(cb.query(), "USER_ID", "SLIP_OUT_USER_ID", pp, "tPickingRBySlipOutUserIdList");
     }
     public abstract String keepUserId_NotExistsReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq);
-
-    /**
-     * Set up NotExistsReferrer (correlated sub-query). <br>
-     * {not exists (select PACKING_OUT_USER_ID from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">notExistsTPickingRByPackingOutUserIdList</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.query().set...
-     * });
-     * </pre>
-     * @param subCBLambda The callback for sub-query of UserId_NotExistsReferrer_TPickingRByPackingOutUserIdList for 'not exists'. (NotNull)
-     */
-    public void notExistsTPickingRByPackingOutUserIdList(SubQuery<TPickingRCB> subCBLambda) {
-        assertObjectNotNull("subCBLambda", subCBLambda);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForExistsReferrer(this);
-        lockCall(() -> subCBLambda.query(cb)); String pp = keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(cb.query());
-        registerNotExistsReferrer(cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList");
-    }
-    public abstract String keepUserId_NotExistsReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
 
     /**
      * Set up NotExistsReferrer (correlated sub-query). <br>
@@ -990,14 +990,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     }
     public abstract String keepUserId_SpecifyDerivedReferrer_TMoveInstRList(TMoveInstRCQ sq);
 
-    public void xsderiveTPackingRByTagOutUserIdList(String fn, SubQuery<TPackingRCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TPackingRCB cb = new TPackingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList", al, op);
-    }
-    public abstract String keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
-
     public void xsderiveTPackingRByInspectionOutUserIdList(String fn, SubQuery<TPackingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TPackingRCB cb = new TPackingRCB(); cb.xsetupForDerivedReferrer(this);
@@ -1014,13 +1006,13 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     }
     public abstract String keepUserId_SpecifyDerivedReferrer_TPackingRByStwOutUserIdList(TPackingRCQ sq);
 
-    public void xsderiveTPickingRByPl1OutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
+    public void xsderiveTPackingRByTagOutUserIdList(String fn, SubQuery<TPackingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList", al, op);
+        TPackingRCB cb = new TPackingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "TAG_OUT_USER_ID", pp, "tPackingRByTagOutUserIdList", al, op);
     }
-    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_SpecifyDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
 
     public void xsderiveTPickingRByCaseOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1030,13 +1022,21 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     }
     public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByCaseOutUserIdList(TPickingRCQ sq);
 
-    public void xsderiveTPickingRByShippingRecordOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
+    public void xsderiveTPickingRByPackingOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList", al, op);
+        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList", al, op);
     }
-    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
+
+    public void xsderiveTPickingRByPl1OutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "PL1_OUT_USER_ID", pp, "tPickingRByPl1OutUserIdList", al, op);
+    }
+    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
 
     public void xsderiveTPickingRByPl2OutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1046,6 +1046,14 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     }
     public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByPl2OutUserIdList(TPickingRCQ sq);
 
+    public void xsderiveTPickingRByShippingRecordOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(cb.query());
+        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", pp, "tPickingRByShippingRecordOutUserIdList", al, op);
+    }
+    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+
     public void xsderiveTPickingRBySlipOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
@@ -1053,14 +1061,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
         registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "SLIP_OUT_USER_ID", pp, "tPickingRBySlipOutUserIdList", al, op);
     }
     public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq);
-
-    public void xsderiveTPickingRByPackingOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String al, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String pp = keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(cb.query());
-        registerSpecifyDerivedReferrer(fn, cb.query(), "USER_ID", "PACKING_OUT_USER_ID", pp, "tPickingRByPackingOutUserIdList", al, op);
-    }
-    public abstract String keepUserId_SpecifyDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
 
     public void xsderiveTReceivePlanRList(String fn, SubQuery<TReceivePlanRCB> sq, String al, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
@@ -1259,33 +1259,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_PACKING_R where ...)} <br>
-     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTPackingRByTagOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TPackingRCB> derivedTPackingRByTagOutUserIdList() {
-        return xcreateQDRFunctionTPackingRByTagOutUserIdList();
-    }
-    protected HpQDRFunction<TPackingRCB> xcreateQDRFunctionTPackingRByTagOutUserIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPackingRByTagOutUserIdList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTPackingRByTagOutUserIdList(String fn, SubQuery<TPackingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TPackingRCB cb = new TPackingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "TAG_OUT_USER_ID", sqpp, "tPackingRByTagOutUserIdList", rd, vl, prpp, op);
-    }
-    public abstract String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
-    public abstract String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(Object vl);
-
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_PACKING_R where ...)} <br>
      * T_PACKING_R by INSPECTION_OUT_USER_ID, named 'TPackingRByInspectionOutUserIdAsOne'.
      * <pre>
      * cb.query().<span style="color: #CC4747">derivedTPackingRByInspectionOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -1339,30 +1312,30 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * {FOO &lt;= (select max(BAR) from T_PACKING_R where ...)} <br>
+     * T_PACKING_R by TAG_OUT_USER_ID, named 'TPackingRByTagOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTPickingRByPl1OutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">derivedTPackingRByTagOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
      *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
      * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
      * </pre>
      * @return The object to set up a function for referrer table. (NotNull)
      */
-    public HpQDRFunction<TPickingRCB> derivedTPickingRByPl1OutUserIdList() {
-        return xcreateQDRFunctionTPickingRByPl1OutUserIdList();
+    public HpQDRFunction<TPackingRCB> derivedTPackingRByTagOutUserIdList() {
+        return xcreateQDRFunctionTPackingRByTagOutUserIdList();
     }
-    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByPl1OutUserIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByPl1OutUserIdList(fn, sq, rd, vl, op));
+    protected HpQDRFunction<TPackingRCB> xcreateQDRFunctionTPackingRByTagOutUserIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPackingRByTagOutUserIdList(fn, sq, rd, vl, op));
     }
-    public void xqderiveTPickingRByPl1OutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+    public void xqderiveTPackingRByTagOutUserIdList(String fn, SubQuery<TPackingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "PL1_OUT_USER_ID", sqpp, "tPickingRByPl1OutUserIdList", rd, vl, prpp, op);
+        TPackingRCB cb = new TPackingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "TAG_OUT_USER_ID", sqpp, "tPackingRByTagOutUserIdList", rd, vl, prpp, op);
     }
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(Object vl);
+    public abstract String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdList(TPackingRCQ sq);
+    public abstract String keepUserId_QueryDerivedReferrer_TPackingRByTagOutUserIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
@@ -1394,29 +1367,56 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
      * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTPickingRByShippingRecordOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     * cb.query().<span style="color: #CC4747">derivedTPickingRByPackingOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
      *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
      *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
      * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
      * </pre>
      * @return The object to set up a function for referrer table. (NotNull)
      */
-    public HpQDRFunction<TPickingRCB> derivedTPickingRByShippingRecordOutUserIdList() {
-        return xcreateQDRFunctionTPickingRByShippingRecordOutUserIdList();
+    public HpQDRFunction<TPickingRCB> derivedTPickingRByPackingOutUserIdList() {
+        return xcreateQDRFunctionTPickingRByPackingOutUserIdList();
     }
-    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByShippingRecordOutUserIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByShippingRecordOutUserIdList(fn, sq, rd, vl, op));
+    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByPackingOutUserIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByPackingOutUserIdList(fn, sq, rd, vl, op));
     }
-    public void xqderiveTPickingRByShippingRecordOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+    public void xqderiveTPickingRByPackingOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
         assertObjectNotNull("subQuery", sq);
         TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", sqpp, "tPickingRByShippingRecordOutUserIdList", rd, vl, prpp, op);
+        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "PACKING_OUT_USER_ID", sqpp, "tPickingRByPackingOutUserIdList", rd, vl, prpp, op);
     }
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(Object vl);
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by PL1_OUT_USER_ID, named 'TPickingRByPl1OutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTPickingRByPl1OutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TPickingRCB> derivedTPickingRByPl1OutUserIdList() {
+        return xcreateQDRFunctionTPickingRByPl1OutUserIdList();
+    }
+    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByPl1OutUserIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByPl1OutUserIdList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTPickingRByPl1OutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "PL1_OUT_USER_ID", sqpp, "tPickingRByPl1OutUserIdList", rd, vl, prpp, op);
+    }
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPl1OutUserIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
@@ -1448,6 +1448,33 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
      * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
+     * T_PICKING_R by SHIPPING_RECORD_OUT_USER_ID, named 'TPickingRByShippingRecordOutUserIdAsOne'.
+     * <pre>
+     * cb.query().<span style="color: #CC4747">derivedTPickingRByShippingRecordOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
+     *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
+     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
+     * </pre>
+     * @return The object to set up a function for referrer table. (NotNull)
+     */
+    public HpQDRFunction<TPickingRCB> derivedTPickingRByShippingRecordOutUserIdList() {
+        return xcreateQDRFunctionTPickingRByShippingRecordOutUserIdList();
+    }
+    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByShippingRecordOutUserIdList() {
+        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByShippingRecordOutUserIdList(fn, sq, rd, vl, op));
+    }
+    public void xqderiveTPickingRByShippingRecordOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
+        assertObjectNotNull("subQuery", sq);
+        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
+        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(vl);
+        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "SHIPPING_RECORD_OUT_USER_ID", sqpp, "tPickingRByShippingRecordOutUserIdList", rd, vl, prpp, op);
+    }
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdList(TPickingRCQ sq);
+    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByShippingRecordOutUserIdListParameter(Object vl);
+
+    /**
+     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
+     * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
      * T_PICKING_R by SLIP_OUT_USER_ID, named 'TPickingRBySlipOutUserIdAsOne'.
      * <pre>
      * cb.query().<span style="color: #CC4747">derivedTPickingRBySlipOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
@@ -1471,33 +1498,6 @@ public abstract class AbstractBsBUserCQ extends AbstractConditionQuery {
     }
     public abstract String keepUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdList(TPickingRCQ sq);
     public abstract String keepUserId_QueryDerivedReferrer_TPickingRBySlipOutUserIdListParameter(Object vl);
-
-    /**
-     * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>
-     * {FOO &lt;= (select max(BAR) from T_PICKING_R where ...)} <br>
-     * T_PICKING_R by PACKING_OUT_USER_ID, named 'TPickingRByPackingOutUserIdAsOne'.
-     * <pre>
-     * cb.query().<span style="color: #CC4747">derivedTPickingRByPackingOutUserIdList()</span>.<span style="color: #CC4747">max</span>(rCB <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     rCB.specify().<span style="color: #CC4747">columnFoo...</span> <span style="color: #3F7E5E">// derived column by function</span>
-     *     rCB.query().setBar... <span style="color: #3F7E5E">// referrer condition</span>
-     * }).<span style="color: #CC4747">greaterEqual</span>(123); <span style="color: #3F7E5E">// condition to derived column</span>
-     * </pre>
-     * @return The object to set up a function for referrer table. (NotNull)
-     */
-    public HpQDRFunction<TPickingRCB> derivedTPickingRByPackingOutUserIdList() {
-        return xcreateQDRFunctionTPickingRByPackingOutUserIdList();
-    }
-    protected HpQDRFunction<TPickingRCB> xcreateQDRFunctionTPickingRByPackingOutUserIdList() {
-        return xcQDRFunc((fn, sq, rd, vl, op) -> xqderiveTPickingRByPackingOutUserIdList(fn, sq, rd, vl, op));
-    }
-    public void xqderiveTPickingRByPackingOutUserIdList(String fn, SubQuery<TPickingRCB> sq, String rd, Object vl, DerivedReferrerOption op) {
-        assertObjectNotNull("subQuery", sq);
-        TPickingRCB cb = new TPickingRCB(); cb.xsetupForDerivedReferrer(this);
-        lockCall(() -> sq.query(cb)); String sqpp = keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(cb.query()); String prpp = keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(vl);
-        registerQueryDerivedReferrer(fn, cb.query(), "USER_ID", "PACKING_OUT_USER_ID", sqpp, "tPickingRByPackingOutUserIdList", rd, vl, prpp, op);
-    }
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdList(TPickingRCQ sq);
-    public abstract String keepUserId_QueryDerivedReferrer_TPickingRByPackingOutUserIdListParameter(Object vl);
 
     /**
      * Prepare for (Query)DerivedReferrer (correlated sub-query). <br>

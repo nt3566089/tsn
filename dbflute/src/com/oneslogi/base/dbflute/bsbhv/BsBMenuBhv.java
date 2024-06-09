@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_SCREEN, B_MENU_GRP, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
+ *     B_DICT, B_MENU_GRP, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, bScreen, bMenuGrp, vDict, vHtDict, bClassDtlByTargetWindow
+ *     bDict, bMenuGrp, bScreen, vDict, vHtDict, bClassDtlByTargetWindow
  *
  * [referrer property]
  *     
@@ -401,20 +401,20 @@ public abstract class BsBMenuBhv extends AbstractBehaviorWritable<BMenu, BMenuCB
     { return helpPulloutInternally(bMenuList, "bDict"); }
 
     /**
-     * Pull out the list of foreign table 'BScreen'.
-     * @param bMenuList The list of bMenu. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BScreen> pulloutBScreen(List<BMenu> bMenuList)
-    { return helpPulloutInternally(bMenuList, "bScreen"); }
-
-    /**
      * Pull out the list of foreign table 'BMenuGrp'.
      * @param bMenuList The list of bMenu. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<BMenuGrp> pulloutBMenuGrp(List<BMenu> bMenuList)
     { return helpPulloutInternally(bMenuList, "bMenuGrp"); }
+
+    /**
+     * Pull out the list of foreign table 'BScreen'.
+     * @param bMenuList The list of bMenu. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BScreen> pulloutBScreen(List<BMenu> bMenuList)
+    { return helpPulloutInternally(bMenuList, "bScreen"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

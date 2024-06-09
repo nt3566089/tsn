@@ -366,37 +366,17 @@ public class BsMBoxGrpDtlCQ extends AbstractBsMBoxGrpDtlCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MBoxGrpDtlCQ bq = (MBoxGrpDtlCQ)bqs;
         MBoxGrpDtlCQ uq = (MBoxGrpDtlCQ)uqs;
-        if (bq.hasConditionQueryMBox()) {
-            uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
-        }
         if (bq.hasConditionQueryMBoxGrp()) {
             uq.queryMBoxGrp().reflectRelationOnUnionQuery(bq.queryMBoxGrp(), uq.queryMBoxGrp());
+        }
+        if (bq.hasConditionQueryMBox()) {
+            uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_BOX by my BOX_ID, named 'MBox'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MBoxCQ queryMBox() {
-        return xdfgetConditionQueryMBox();
-    }
-    public MBoxCQ xdfgetConditionQueryMBox() {
-        String prop = "mBox";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBox()); xsetupOuterJoinMBox(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MBoxCQ xcreateQueryMBox() {
-        String nrp = xresolveNRP("M_BOX_GRP_DTL", "mBox"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MBoxCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBox", nrp);
-    }
-    protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
-    public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_BOX_GRP by my BOX_GRP_ID, named 'MBoxGrp'.
@@ -416,6 +396,26 @@ public class BsMBoxGrpDtlCQ extends AbstractBsMBoxGrpDtlCQ {
     }
     protected void xsetupOuterJoinMBoxGrp() { xregOutJo("mBoxGrp"); }
     public boolean hasConditionQueryMBoxGrp() { return xhasQueRlMap("mBoxGrp"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_BOX by my BOX_ID, named 'MBox'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MBoxCQ queryMBox() {
+        return xdfgetConditionQueryMBox();
+    }
+    public MBoxCQ xdfgetConditionQueryMBox() {
+        String prop = "mBox";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMBox()); xsetupOuterJoinMBox(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MBoxCQ xcreateQueryMBox() {
+        String nrp = xresolveNRP("M_BOX_GRP_DTL", "mBox"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MBoxCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mBox", nrp);
+    }
+    protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
+    public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

@@ -294,35 +294,6 @@ public class BsTLastLotCB extends AbstractConditionBean {
         return _nssMCustomer;
     }
 
-    protected MProductNss _nssMProduct;
-    public MProductNss xdfgetNssMProduct() {
-        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
-        return _nssMProduct;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * <pre>
-     * <span style="color: #0000C0">tLastLotBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tLastLot</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tLastLot</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MProductNss setupSelect_MProduct() {
-        assertSetupSelectPurpose("mProduct");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnProductId();
-        }
-        doSetupSelect(() -> query().queryMProduct());
-        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
-        { _nssMProduct = new MProductNss(query().queryMProduct()); }
-        return _nssMProduct;
-    }
-
     protected TLotNss _nssTLot;
     public TLotNss xdfgetNssTLot() {
         if (_nssTLot == null) { _nssTLot = new TLotNss(null); }
@@ -350,6 +321,35 @@ public class BsTLastLotCB extends AbstractConditionBean {
         if (_nssTLot == null || !_nssTLot.hasConditionQuery())
         { _nssTLot = new TLotNss(query().queryTLot()); }
         return _nssTLot;
+    }
+
+    protected MProductNss _nssMProduct;
+    public MProductNss xdfgetNssMProduct() {
+        if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
+        return _nssMProduct;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * <pre>
+     * <span style="color: #0000C0">tLastLotBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProduct()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tLastLot</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tLastLot</span>.<span style="color: #CC4747">getMProduct()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MProductNss setupSelect_MProduct() {
+        assertSetupSelectPurpose("mProduct");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnProductId();
+        }
+        doSetupSelect(() -> query().queryMProduct());
+        if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
+        { _nssMProduct = new MProductNss(query().queryMProduct()); }
+        return _nssMProduct;
     }
 
     // [DBFlute-0.7.4]
@@ -394,8 +394,8 @@ public class BsTLastLotCB extends AbstractConditionBean {
 
     public static class HpSpecification extends HpAbstractSpecification<TLastLotCQ> {
         protected MCustomerCB.HpSpecification _mCustomer;
-        protected MProductCB.HpSpecification _mProduct;
         protected TLotCB.HpSpecification _tLot;
+        protected MProductCB.HpSpecification _mProduct;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TLastLotCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -474,13 +474,13 @@ public class BsTLastLotCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
                 columnCustomerId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMProduct()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
-                columnProductId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryTLot()
                     || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
                 columnLotId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMProduct()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
+                columnProductId(); // FK or one-to-one referrer
             }
         }
         @Override
@@ -507,26 +507,6 @@ public class BsTLastLotCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MProductCB.HpSpecification specifyMProduct() {
-            assertRelation("mProduct");
-            if (_mProduct == null) {
-                _mProduct = new MProductCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
-                                    , () -> _qyCall.qy().queryMProduct())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
-                      , () -> xsyncQyCall().qy().queryMProduct()));
-                }
-            }
-            return _mProduct;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * T_LOT by my LOT_ID, named 'TLot'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -544,6 +524,26 @@ public class BsTLastLotCB extends AbstractConditionBean {
                 }
             }
             return _tLot;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MProductCB.HpSpecification specifyMProduct() {
+            assertRelation("mProduct");
+            if (_mProduct == null) {
+                _mProduct = new MProductCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProduct()
+                                    , () -> _qyCall.qy().queryMProduct())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mProduct.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProduct()
+                      , () -> xsyncQyCall().qy().queryMProduct()));
+                }
+            }
+            return _mProduct;
         }
         /**
          * Prepare for (Specify)MyselfDerived (SubQuery).

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE, M_SHAPE_GRP, B_CLASS_DTL(ByCasePickFlg)
+ *     M_SHAPE_GRP, M_SHAPE, B_CLASS_DTL(ByCasePickFlg)
  *
  * [referrer table]
  *     M_PRODUCT_SHAPE
  *
  * [foreign property]
- *     mShape, mShapeGrp, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
+ *     mShapeGrp, mShape, bClassDtlByCasePickFlg, bClassDtlByEmReplenishShapeFlg, bClassDtlByDelFlg
  *
  * [referrer property]
  *     mProductShapeList
@@ -98,18 +98,18 @@ public class LoaderOfMShapeGrpDtl {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMShape _foreignMShapeLoader;
-    public LoaderOfMShape pulloutMShape() {
-        if (_foreignMShapeLoader == null)
-        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
-        return _foreignMShapeLoader;
-    }
-
     protected LoaderOfMShapeGrp _foreignMShapeGrpLoader;
     public LoaderOfMShapeGrp pulloutMShapeGrp() {
         if (_foreignMShapeGrpLoader == null)
         { _foreignMShapeGrpLoader = new LoaderOfMShapeGrp().ready(myBhv().pulloutMShapeGrp(_selectedList), _selector); }
         return _foreignMShapeGrpLoader;
+    }
+
+    protected LoaderOfMShape _foreignMShapeLoader;
+    public LoaderOfMShape pulloutMShape() {
+        if (_foreignMShapeLoader == null)
+        { _foreignMShapeLoader = new LoaderOfMShape().ready(myBhv().pulloutMShape(_selectedList), _selector); }
+        return _foreignMShapeLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByCasePickFlgLoader;

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ITEM, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_DICT, B_ITEM, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bItem, mClient, bDict, vDict
+ *     mClient, bDict, bItem, vDict
  *
  * [referrer property]
  *     
@@ -420,14 +420,6 @@ public abstract class BsMClientItemBhv extends AbstractBehaviorWritable<MClientI
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'BItem'.
-     * @param mClientItemList The list of mClientItem. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<BItem> pulloutBItem(List<MClientItem> mClientItemList)
-    { return helpPulloutInternally(mClientItemList, "bItem"); }
-
-    /**
      * Pull out the list of foreign table 'MClient'.
      * @param mClientItemList The list of mClientItem. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -442,6 +434,14 @@ public abstract class BsMClientItemBhv extends AbstractBehaviorWritable<MClientI
      */
     public List<BDict> pulloutBDict(List<MClientItem> mClientItemList)
     { return helpPulloutInternally(mClientItemList, "bDict"); }
+
+    /**
+     * Pull out the list of foreign table 'BItem'.
+     * @param mClientItemList The list of mClientItem. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<BItem> pulloutBItem(List<MClientItem> mClientItemList)
+    { return helpPulloutInternally(mClientItemList, "bItem"); }
 
     /**
      * Pull out the list of foreign table 'VDict'.

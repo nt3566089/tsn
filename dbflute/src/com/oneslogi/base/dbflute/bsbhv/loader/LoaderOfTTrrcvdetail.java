@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_TRRCV, T_RECEIVE_PLAN_B
+ *     T_RECEIVE_PLAN_B, T_TRRCV
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tTrrcv, tReceivePlanB
+ *     tReceivePlanB, tTrrcv
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfTTrrcvdetail {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTTrrcv _foreignTTrrcvLoader;
-    public LoaderOfTTrrcv pulloutTTrrcv() {
-        if (_foreignTTrrcvLoader == null)
-        { _foreignTTrrcvLoader = new LoaderOfTTrrcv().ready(myBhv().pulloutTTrrcv(_selectedList), _selector); }
-        return _foreignTTrrcvLoader;
-    }
-
     protected LoaderOfTReceivePlanB _foreignTReceivePlanBLoader;
     public LoaderOfTReceivePlanB pulloutTReceivePlanB() {
         if (_foreignTReceivePlanBLoader == null)
         { _foreignTReceivePlanBLoader = new LoaderOfTReceivePlanB().ready(myBhv().pulloutTReceivePlanB(_selectedList), _selector); }
         return _foreignTReceivePlanBLoader;
+    }
+
+    protected LoaderOfTTrrcv _foreignTTrrcvLoader;
+    public LoaderOfTTrrcv pulloutTTrrcv() {
+        if (_foreignTTrrcvLoader == null)
+        { _foreignTTrrcvLoader = new LoaderOfTTrrcv().ready(myBhv().pulloutTTrrcv(_selectedList), _selector); }
+        return _foreignTTrrcvLoader;
     }
 
     // ===================================================================================

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_USER, T_STORE_NO, B_CLASS_DTL(ByTwlOutFlg)
+ *     T_STORE_NO, B_USER, B_CLASS_DTL(ByTwlOutFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bUser, tStoreNo, bClassDtlByTwlOutFlg
+ *     tStoreNo, bUser, bClassDtlByTwlOutFlg
  *
  * [referrer property]
  *     
@@ -316,25 +316,6 @@ public abstract class BsTStoreNoR extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_USER by my TWL_OUT_USER_ID, named 'BUser'. */
-    protected BUser _bUser;
-
-    /**
-     * [get] B_USER by my TWL_OUT_USER_ID, named 'BUser'. <br>
-     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BUser getBUser() {
-        return _bUser;
-    }
-
-    /**
-     * [set] B_USER by my TWL_OUT_USER_ID, named 'BUser'.
-     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
-     */
-    public void setBUser(BUser bUser) {
-        _bUser = bUser;
-    }
-
     /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
     protected TStoreNo _tStoreNo;
 
@@ -352,6 +333,25 @@ public abstract class BsTStoreNoR extends AbstractEntity implements DomainEntity
      */
     public void setTStoreNo(TStoreNo tStoreNo) {
         _tStoreNo = tStoreNo;
+    }
+
+    /** B_USER by my TWL_OUT_USER_ID, named 'BUser'. */
+    protected BUser _bUser;
+
+    /**
+     * [get] B_USER by my TWL_OUT_USER_ID, named 'BUser'. <br>
+     * @return The entity of foreign property 'BUser'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BUser getBUser() {
+        return _bUser;
+    }
+
+    /**
+     * [set] B_USER by my TWL_OUT_USER_ID, named 'BUser'.
+     * @param bUser The entity of foreign property 'BUser'. (NullAllowed)
+     */
+    public void setBUser(BUser bUser) {
+        _bUser = bUser;
     }
 
     /** B_CLASS_DTL by my TWL_OUT_FLG, named 'BClassDtlByTwlOutFlg'. */
@@ -405,10 +405,10 @@ public abstract class BsTStoreNoR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_tStoreNo != null)
         { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
+        if (_bUser != null)
+        { sb.append(li).append(xbRDS(_bUser, "bUser")); }
         if (_bClassDtlByTwlOutFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByTwlOutFlg, "bClassDtlByTwlOutFlg")); }
         return sb.toString();
@@ -440,10 +440,10 @@ public abstract class BsTStoreNoR extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bUser != null)
-        { sb.append(dm).append("bUser"); }
         if (_tStoreNo != null)
         { sb.append(dm).append("tStoreNo"); }
+        if (_bUser != null)
+        { sb.append(dm).append("bUser"); }
         if (_bClassDtlByTwlOutFlg != null)
         { sb.append(dm).append("bClassDtlByTwlOutFlg"); }
         if (sb.length() > dm.length()) {

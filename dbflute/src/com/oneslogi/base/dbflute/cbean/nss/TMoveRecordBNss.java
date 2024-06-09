@@ -20,6 +20,15 @@ public class TMoveRecordBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
+     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MLocationNss withMLocation() {
+        _query.xdoNss(() -> _query.queryMLocation());
+        return new MLocationNss(_query.queryMLocation());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * T_MOVE_INST_B by my MOVE_INST_B_ID, named 'TMoveInstB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -35,15 +44,6 @@ public class TMoveRecordBNss {
     public TMoveInstHNss withTMoveInstH() {
         _query.xdoNss(() -> _query.queryTMoveInstH());
         return new TMoveInstHNss(_query.queryTMoveInstH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_LOCATION by my LOCATION_ID, named 'MLocation'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MLocationNss withMLocation() {
-        _query.xdoNss(() -> _query.queryMLocation());
-        return new MLocationNss(_query.queryMLocation());
     }
     /**
      * With nested relation columns to select clause. <br>

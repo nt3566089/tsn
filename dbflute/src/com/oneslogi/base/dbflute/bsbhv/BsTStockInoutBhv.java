@@ -39,16 +39,16 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_ALLOC_INST_B, T_STOCK_INOUT, T_STORE_RECORD_B, M_PROCESS_TYPE, T_MOVE_RECORD_B, T_STOCK, B_CLASS_DTL(ByCorrectType)
+ *     T_ALLOC_INST_B, T_STOCK_INOUT, T_MOVE_RECORD_B, M_PROCESS_TYPE, T_STOCK, T_STORE_RECORD_B, B_CLASS_DTL(ByCorrectType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     tAllocInstB, tStockInoutByFsStockInoutIdSelf, tStoreRecordB, mProcessType, tMoveRecordB, tStock, tStockInoutByBfStockInoutIdSelf, bClassDtlByCorrectType, bClassDtlByInoutType
+ *     tAllocInstB, tStockInoutByBfStockInoutIdSelf, tStockInoutByFsStockInoutIdSelf, tMoveRecordB, mProcessType, tStock, tStoreRecordB, bClassDtlByCorrectType, bClassDtlByInoutType
  *
  * [referrer property]
- *     tStockInoutByFsStockInoutIdSelfList, tStockInoutByBfStockInoutIdSelfList
+ *     tStockInoutByBfStockInoutIdSelfList, tStockInoutByFsStockInoutIdSelfList
  * </pre>
  * @author DBFlute(AutoGenerator)
  */
@@ -390,94 +390,6 @@ public abstract class BsTStockInoutBhv extends AbstractBehaviorWritable<TStockIn
     }
 
     /**
-     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * <pre>
-     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">tStockInoutList</span>, <span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">inoutCB</span>.setupSelect...
-     *     <span style="color: #553000">inoutCB</span>.query().set...
-     *     <span style="color: #553000">inoutCB</span>.query().addOrderBy...
-     * }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     * <span style="color: #3F7E5E">//}).withNestedReferrer(referrerList -&gt; {</span>
-     * <span style="color: #3F7E5E">//    ...</span>
-     * <span style="color: #3F7E5E">//});</span>
-     * <span style="color: #70226C">for</span> (TStockInout tStockInout : <span style="color: #553000">tStockInoutList</span>) {
-     *     ... = tStockInout.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
-     * }
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setFsStockInoutId_InScope(pkList);
-     * cb.query().addOrderBy_FsStockInoutId_Asc();
-     * </pre>
-     * @param tStockInoutList The entity list of TStockInout. (NotNull)
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
-        xassLRArg(tStockInoutList, refCBLambda);
-        return doLoadTStockInoutByFsStockInoutIdSelfList(tStockInoutList, new LoadReferrerOption<TStockInoutCB, TStockInout>().xinit(refCBLambda));
-    }
-
-    /**
-     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
-     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
-     * <pre>
-     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">tStockInout</span>, <span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">inoutCB</span>.setupSelect...
-     *     <span style="color: #553000">inoutCB</span>.query().set...
-     *     <span style="color: #553000">inoutCB</span>.query().addOrderBy...
-     * }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
-     * <span style="color: #3F7E5E">//}).withNestedReferrer(referrerList -&gt; {</span>
-     * <span style="color: #3F7E5E">//    ...</span>
-     * <span style="color: #3F7E5E">//});</span>
-     * ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
-     * </pre>
-     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
-     * The condition-bean, which the set-upper provides, has settings before callback as follows:
-     * <pre>
-     * cb.query().setFsStockInoutId_InScope(pkList);
-     * cb.query().addOrderBy_FsStockInoutId_Asc();
-     * </pre>
-     * @param tStockInout The entity of TStockInout. (NotNull)
-     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(TStockInout tStockInout, ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
-        xassLRArg(tStockInout, refCBLambda);
-        return doLoadTStockInoutByFsStockInoutIdSelfList(xnewLRLs(tStockInout), new LoadReferrerOption<TStockInoutCB, TStockInout>().xinit(refCBLambda));
-    }
-
-    /**
-     * {Refer to overload method that has an argument of the list of entity.} #beforejava8
-     * @param tStockInout The entity of TStockInout. (NotNull)
-     * @param loadReferrerOption The option of load-referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(TStockInout tStockInout, LoadReferrerOption<TStockInoutCB, TStockInout> loadReferrerOption) {
-        xassLRArg(tStockInout, loadReferrerOption);
-        return loadTStockInoutByFsStockInoutIdSelfList(xnewLRLs(tStockInout), loadReferrerOption);
-    }
-
-    /**
-     * {Refer to overload method that has an argument of condition-bean set-upper} #beforejava8
-     * @param tStockInoutList The entity list of TStockInout. (NotNull)
-     * @param loadReferrerOption The option of load-referrer. (NotNull)
-     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
-     */
-    @SuppressWarnings("unchecked")
-    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, LoadReferrerOption<TStockInoutCB, TStockInout> loadReferrerOption) {
-        xassLRArg(tStockInoutList, loadReferrerOption);
-        if (tStockInoutList.isEmpty()) { return (NestedReferrerListGateway<TStockInout>)EMPTY_NREF_LGWAY; }
-        return doLoadTStockInoutByFsStockInoutIdSelfList(tStockInoutList, loadReferrerOption);
-    }
-
-    protected NestedReferrerListGateway<TStockInout> doLoadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, LoadReferrerOption<TStockInoutCB, TStockInout> option) {
-        return helpLoadReferrerInternally(tStockInoutList, option, "tStockInoutByFsStockInoutIdSelfList");
-    }
-
-    /**
      * Load referrer of TStockInoutByBfStockInoutIdSelfList by the set-upper of referrer. <br>
      * T_STOCK_INOUT by BF_STOCK_INOUT_ID, named 'TStockInoutByBfStockInoutIdSelfList'.
      * <pre>
@@ -565,6 +477,94 @@ public abstract class BsTStockInoutBhv extends AbstractBehaviorWritable<TStockIn
         return helpLoadReferrerInternally(tStockInoutList, option, "tStockInoutByBfStockInoutIdSelfList");
     }
 
+    /**
+     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * <pre>
+     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">tStockInoutList</span>, <span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">inoutCB</span>.setupSelect...
+     *     <span style="color: #553000">inoutCB</span>.query().set...
+     *     <span style="color: #553000">inoutCB</span>.query().addOrderBy...
+     * }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     * <span style="color: #3F7E5E">//}).withNestedReferrer(referrerList -&gt; {</span>
+     * <span style="color: #3F7E5E">//    ...</span>
+     * <span style="color: #3F7E5E">//});</span>
+     * <span style="color: #70226C">for</span> (TStockInout tStockInout : <span style="color: #553000">tStockInoutList</span>) {
+     *     ... = tStockInout.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
+     * }
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setFsStockInoutId_InScope(pkList);
+     * cb.query().addOrderBy_FsStockInoutId_Asc();
+     * </pre>
+     * @param tStockInoutList The entity list of TStockInout. (NotNull)
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
+        xassLRArg(tStockInoutList, refCBLambda);
+        return doLoadTStockInoutByFsStockInoutIdSelfList(tStockInoutList, new LoadReferrerOption<TStockInoutCB, TStockInout>().xinit(refCBLambda));
+    }
+
+    /**
+     * Load referrer of TStockInoutByFsStockInoutIdSelfList by the set-upper of referrer. <br>
+     * T_STOCK_INOUT by FS_STOCK_INOUT_ID, named 'TStockInoutByFsStockInoutIdSelfList'.
+     * <pre>
+     * <span style="color: #0000C0">tStockInoutBhv</span>.<span style="color: #CC4747">loadTStockInoutByFsStockInoutIdSelfList</span>(<span style="color: #553000">tStockInout</span>, <span style="color: #553000">inoutCB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">inoutCB</span>.setupSelect...
+     *     <span style="color: #553000">inoutCB</span>.query().set...
+     *     <span style="color: #553000">inoutCB</span>.query().addOrderBy...
+     * }); <span style="color: #3F7E5E">// you can load nested referrer from here</span>
+     * <span style="color: #3F7E5E">//}).withNestedReferrer(referrerList -&gt; {</span>
+     * <span style="color: #3F7E5E">//    ...</span>
+     * <span style="color: #3F7E5E">//});</span>
+     * ... = <span style="color: #553000">tStockInout</span>.<span style="color: #CC4747">getTStockInoutByFsStockInoutIdSelfList()</span>;
+     * </pre>
+     * About internal policy, the value of primary key (and others too) is treated as case-insensitive. <br>
+     * The condition-bean, which the set-upper provides, has settings before callback as follows:
+     * <pre>
+     * cb.query().setFsStockInoutId_InScope(pkList);
+     * cb.query().addOrderBy_FsStockInoutId_Asc();
+     * </pre>
+     * @param tStockInout The entity of TStockInout. (NotNull)
+     * @param refCBLambda The callback to set up referrer condition-bean for loading referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(TStockInout tStockInout, ConditionBeanSetupper<TStockInoutCB> refCBLambda) {
+        xassLRArg(tStockInout, refCBLambda);
+        return doLoadTStockInoutByFsStockInoutIdSelfList(xnewLRLs(tStockInout), new LoadReferrerOption<TStockInoutCB, TStockInout>().xinit(refCBLambda));
+    }
+
+    /**
+     * {Refer to overload method that has an argument of the list of entity.} #beforejava8
+     * @param tStockInout The entity of TStockInout. (NotNull)
+     * @param loadReferrerOption The option of load-referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(TStockInout tStockInout, LoadReferrerOption<TStockInoutCB, TStockInout> loadReferrerOption) {
+        xassLRArg(tStockInout, loadReferrerOption);
+        return loadTStockInoutByFsStockInoutIdSelfList(xnewLRLs(tStockInout), loadReferrerOption);
+    }
+
+    /**
+     * {Refer to overload method that has an argument of condition-bean set-upper} #beforejava8
+     * @param tStockInoutList The entity list of TStockInout. (NotNull)
+     * @param loadReferrerOption The option of load-referrer. (NotNull)
+     * @return The callback interface which you can load nested referrer by calling withNestedReferrer(). (NotNull)
+     */
+    @SuppressWarnings("unchecked")
+    public NestedReferrerListGateway<TStockInout> loadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, LoadReferrerOption<TStockInoutCB, TStockInout> loadReferrerOption) {
+        xassLRArg(tStockInoutList, loadReferrerOption);
+        if (tStockInoutList.isEmpty()) { return (NestedReferrerListGateway<TStockInout>)EMPTY_NREF_LGWAY; }
+        return doLoadTStockInoutByFsStockInoutIdSelfList(tStockInoutList, loadReferrerOption);
+    }
+
+    protected NestedReferrerListGateway<TStockInout> doLoadTStockInoutByFsStockInoutIdSelfList(List<TStockInout> tStockInoutList, LoadReferrerOption<TStockInoutCB, TStockInout> option) {
+        return helpLoadReferrerInternally(tStockInoutList, option, "tStockInoutByFsStockInoutIdSelfList");
+    }
+
     // ===================================================================================
     //                                                                   Pull out Relation
     //                                                                   =================
@@ -581,24 +581,16 @@ public abstract class BsTStockInoutBhv extends AbstractBehaviorWritable<TStockIn
      * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
+    public List<TStockInout> pulloutTStockInoutByBfStockInoutIdSelf(List<TStockInout> tStockInoutList)
+    { return helpPulloutInternally(tStockInoutList, "tStockInoutByBfStockInoutIdSelf"); }
+
+    /**
+     * Pull out the list of foreign table 'TStockInout'.
+     * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
     public List<TStockInout> pulloutTStockInoutByFsStockInoutIdSelf(List<TStockInout> tStockInoutList)
     { return helpPulloutInternally(tStockInoutList, "tStockInoutByFsStockInoutIdSelf"); }
-
-    /**
-     * Pull out the list of foreign table 'TStoreRecordB'.
-     * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TStoreRecordB> pulloutTStoreRecordB(List<TStockInout> tStockInoutList)
-    { return helpPulloutInternally(tStockInoutList, "tStoreRecordB"); }
-
-    /**
-     * Pull out the list of foreign table 'MProcessType'.
-     * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProcessType> pulloutMProcessType(List<TStockInout> tStockInoutList)
-    { return helpPulloutInternally(tStockInoutList, "mProcessType"); }
 
     /**
      * Pull out the list of foreign table 'TMoveRecordB'.
@@ -609,6 +601,14 @@ public abstract class BsTStockInoutBhv extends AbstractBehaviorWritable<TStockIn
     { return helpPulloutInternally(tStockInoutList, "tMoveRecordB"); }
 
     /**
+     * Pull out the list of foreign table 'MProcessType'.
+     * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProcessType> pulloutMProcessType(List<TStockInout> tStockInoutList)
+    { return helpPulloutInternally(tStockInoutList, "mProcessType"); }
+
+    /**
      * Pull out the list of foreign table 'TStock'.
      * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -617,12 +617,12 @@ public abstract class BsTStockInoutBhv extends AbstractBehaviorWritable<TStockIn
     { return helpPulloutInternally(tStockInoutList, "tStock"); }
 
     /**
-     * Pull out the list of foreign table 'TStockInout'.
+     * Pull out the list of foreign table 'TStoreRecordB'.
      * @param tStockInoutList The list of tStockInout. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TStockInout> pulloutTStockInoutByBfStockInoutIdSelf(List<TStockInout> tStockInoutList)
-    { return helpPulloutInternally(tStockInoutList, "tStockInoutByBfStockInoutIdSelf"); }
+    public List<TStoreRecordB> pulloutTStoreRecordB(List<TStockInout> tStockInoutList)
+    { return helpPulloutInternally(tStockInoutList, "tStoreRecordB"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

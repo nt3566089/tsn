@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_YTRSODETAIL, T_TRIMALLOC_H
+ *     T_TRIMALLOC_H, T_YTRSODETAIL
  *
  * [referrer-table]
  *     T_TRIMALLOCADJUST
  *
  * [foreign-property]
- *     tYtrsodetail, tTrimallocH
+ *     tTrimallocH, tYtrsodetail
  *
  * [referrer-property]
  *     tTrimallocadjustList
@@ -165,16 +165,6 @@ public abstract class BsTTrimallocschkriDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TYtrsodetailDto _tYtrsodetail;
-
-    public TYtrsodetailDto getTYtrsodetail() {
-        return _tYtrsodetail;
-    }
-
-    public void setTYtrsodetail(TYtrsodetailDto tYtrsodetail) {
-        this._tYtrsodetail = tYtrsodetail;
-    }
-
     protected TTrimallocHDto _tTrimallocH;
 
     public TTrimallocHDto getTTrimallocH() {
@@ -183,6 +173,16 @@ public abstract class BsTTrimallocschkriDto implements Serializable {
 
     public void setTTrimallocH(TTrimallocHDto tTrimallocH) {
         this._tTrimallocH = tTrimallocH;
+    }
+
+    protected TYtrsodetailDto _tYtrsodetail;
+
+    public TYtrsodetailDto getTYtrsodetail() {
+        return _tYtrsodetail;
+    }
+
+    public void setTYtrsodetail(TYtrsodetailDto tYtrsodetail) {
+        this._tYtrsodetail = tYtrsodetail;
     }
 
     // ===================================================================================

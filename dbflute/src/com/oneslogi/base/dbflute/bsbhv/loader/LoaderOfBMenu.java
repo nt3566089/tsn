@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_DICT, B_SCREEN, B_MENU_GRP, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
+ *     B_DICT, B_MENU_GRP, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByTargetWindow)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bDict, bScreen, bMenuGrp, vDict, vHtDict, bClassDtlByTargetWindow
+ *     bDict, bMenuGrp, bScreen, vDict, vHtDict, bClassDtlByTargetWindow
  *
  * [referrer property]
  *     
@@ -66,18 +66,18 @@ public class LoaderOfBMenu {
         return _foreignBDictLoader;
     }
 
-    protected LoaderOfBScreen _foreignBScreenLoader;
-    public LoaderOfBScreen pulloutBScreen() {
-        if (_foreignBScreenLoader == null)
-        { _foreignBScreenLoader = new LoaderOfBScreen().ready(myBhv().pulloutBScreen(_selectedList), _selector); }
-        return _foreignBScreenLoader;
-    }
-
     protected LoaderOfBMenuGrp _foreignBMenuGrpLoader;
     public LoaderOfBMenuGrp pulloutBMenuGrp() {
         if (_foreignBMenuGrpLoader == null)
         { _foreignBMenuGrpLoader = new LoaderOfBMenuGrp().ready(myBhv().pulloutBMenuGrp(_selectedList), _selector); }
         return _foreignBMenuGrpLoader;
+    }
+
+    protected LoaderOfBScreen _foreignBScreenLoader;
+    public LoaderOfBScreen pulloutBScreen() {
+        if (_foreignBScreenLoader == null)
+        { _foreignBScreenLoader = new LoaderOfBScreen().ready(myBhv().pulloutBScreen(_selectedList), _selector); }
+        return _foreignBScreenLoader;
     }
 
     protected LoaderOfVDict _foreignVDictLoader;

@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_COL, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_COL, B_DICT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bCol, mClient, bDict, vDict
+ *     mClient, bCol, bDict, vDict
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfMClientCol {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBCol _foreignBColLoader;
-    public LoaderOfBCol pulloutBCol() {
-        if (_foreignBColLoader == null)
-        { _foreignBColLoader = new LoaderOfBCol().ready(myBhv().pulloutBCol(_selectedList), _selector); }
-        return _foreignBColLoader;
-    }
-
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
         { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
         return _foreignMClientLoader;
+    }
+
+    protected LoaderOfBCol _foreignBColLoader;
+    public LoaderOfBCol pulloutBCol() {
+        if (_foreignBColLoader == null)
+        { _foreignBColLoader = new LoaderOfBCol().ready(myBhv().pulloutBCol(_selectedList), _selector); }
+        return _foreignBColLoader;
     }
 
     protected LoaderOfBDict _foreignBDictLoader;

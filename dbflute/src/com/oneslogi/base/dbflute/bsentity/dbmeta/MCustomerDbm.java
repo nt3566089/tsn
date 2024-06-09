@@ -124,7 +124,7 @@ public class MCustomerDbm extends AbstractDBMeta {
     // ===================================================================================
     //                                                                         Column Info
     //                                                                         ===========
-    protected final ColumnInfo _columnCustomerId = cci("CUSTOMER_ID", "CUSTOMER_ID", null, null, Long.class, "customerId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, "MClientCenterByClientId,MCarrierSlipCesAsOne", "MCenterCustomerList,MClientList,MClientCenterList,MCustomerSelfList,MLocationList,MUserDepositList,TAllocInstBList,TAllocInstHBySupplyCustomerIdList,TAllocInstHByDelivCustomerIdList,TAllocLotList,TInventoryBByDepositIdList,TInventoryBBySupplierIdList,TInventoryInstList,TKeepingLotList,TLastLotList,TMoveInstBBySupplierIdList,TMoveInstBByDepositIdList,TReceivePlanHByPlanDepositIdList,TReceivePlanHByPlanSupplierIdList,TShippingInstBList,TShippingInstHBySupplyCustomerIdList,TShippingInstHByDelivCustomerIdList,TStockList,TStoreNoList,TStoreRecordHByDepositIdList,TStoreRecordHBySupplierIdList,WHtInventoryInputProdList,WHtReceiveNoPlanInspByDepositIdList,WHtReceiveNoPlanInspBySupplierIdList,WHtSerialReceiveInspList,WHtSerialShippingInspList", null, false);
+    protected final ColumnInfo _columnCustomerId = cci("CUSTOMER_ID", "CUSTOMER_ID", null, null, Long.class, "customerId", null, true, true, true, "bigint identity", 19, 0, null, null, false, null, null, "MClientCenterByClientId,MCarrierSlipCesAsOne", "MCenterCustomerList,MClientList,MClientCenterList,MCustomerSelfList,MLocationList,MUserDepositList,TAllocInstBList,TAllocInstHByDelivCustomerIdList,TAllocInstHBySupplyCustomerIdList,TAllocLotList,TInventoryBByDepositIdList,TInventoryBBySupplierIdList,TInventoryInstList,TKeepingLotList,TLastLotList,TMoveInstBByDepositIdList,TMoveInstBBySupplierIdList,TReceivePlanHByPlanDepositIdList,TReceivePlanHByPlanSupplierIdList,TShippingInstBList,TShippingInstHByDelivCustomerIdList,TShippingInstHBySupplyCustomerIdList,TStockList,TStoreNoList,TStoreRecordHByDepositIdList,TStoreRecordHBySupplierIdList,WHtInventoryInputProdList,WHtReceiveNoPlanInspByDepositIdList,WHtReceiveNoPlanInspBySupplierIdList,WHtSerialReceiveInspList,WHtSerialShippingInspList", null, false);
     protected final ColumnInfo _columnClientId = cci("CLIENT_ID", "CLIENT_ID", null, null, Long.class, "clientId", null, false, false, true, "bigint", 19, 0, null, null, false, null, null, "MClient,MClientCenterByClientId", null, null, false);
     protected final ColumnInfo _columnCustomerCd = cci("CUSTOMER_CD", "CUSTOMER_CD", null, null, String.class, "customerCd", null, false, false, true, "varchar", 30, 0, null, null, false, null, null, null, null, null, false);
     protected final ColumnInfo _columnCustomerNm = cci("CUSTOMER_NM", "CUSTOMER_NM", null, null, String.class, "customerNm", null, false, false, true, "varchar", 60, 0, null, null, false, null, null, null, null, null, false);
@@ -600,20 +600,20 @@ public class MCustomerDbm extends AbstractDBMeta {
         return cri("T_ALLOC_INST_B_FK4", "TAllocInstBList", this, TAllocInstBDbm.getInstance(), mp, false, "MCustomer");
     }
     /**
-     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTAllocInstHBySupplyCustomerIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TAllocInstHDbm.getInstance().columnSupplyCustomerId());
-        return cri("T_ALLOC_INST_H_FK4", "TAllocInstHBySupplyCustomerIdList", this, TAllocInstHDbm.getInstance(), mp, false, "MCustomerBySupplyCustomerId");
-    }
-    /**
      * T_ALLOC_INST_H by DELIV_CUSTOMER_ID, named 'TAllocInstHByDelivCustomerIdList'.
      * @return The information object of referrer property. (NotNull)
      */
     public ReferrerInfo referrerTAllocInstHByDelivCustomerIdList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TAllocInstHDbm.getInstance().columnDelivCustomerId());
         return cri("T_ALLOC_INST_H_FK1", "TAllocInstHByDelivCustomerIdList", this, TAllocInstHDbm.getInstance(), mp, false, "MCustomerByDelivCustomerId");
+    }
+    /**
+     * T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTAllocInstHBySupplyCustomerIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TAllocInstHDbm.getInstance().columnSupplyCustomerId());
+        return cri("T_ALLOC_INST_H_FK4", "TAllocInstHBySupplyCustomerIdList", this, TAllocInstHDbm.getInstance(), mp, false, "MCustomerBySupplyCustomerId");
     }
     /**
      * T_ALLOC_LOT by CUSTOMER_ID, named 'TAllocLotList'.
@@ -664,20 +664,20 @@ public class MCustomerDbm extends AbstractDBMeta {
         return cri("T_LAST_LOT_FK1", "TLastLotList", this, TLastLotDbm.getInstance(), mp, false, "MCustomer");
     }
     /**
-     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTMoveInstBBySupplierIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TMoveInstBDbm.getInstance().columnSupplierId());
-        return cri("T_MOVE_INST_B_FK4", "TMoveInstBBySupplierIdList", this, TMoveInstBDbm.getInstance(), mp, false, "MCustomerBySupplierId");
-    }
-    /**
      * T_MOVE_INST_B by DEPOSIT_ID, named 'TMoveInstBByDepositIdList'.
      * @return The information object of referrer property. (NotNull)
      */
     public ReferrerInfo referrerTMoveInstBByDepositIdList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TMoveInstBDbm.getInstance().columnDepositId());
         return cri("T_MOVE_INST_B_FK9", "TMoveInstBByDepositIdList", this, TMoveInstBDbm.getInstance(), mp, false, "MCustomerByDepositId");
+    }
+    /**
+     * T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTMoveInstBBySupplierIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TMoveInstBDbm.getInstance().columnSupplierId());
+        return cri("T_MOVE_INST_B_FK4", "TMoveInstBBySupplierIdList", this, TMoveInstBDbm.getInstance(), mp, false, "MCustomerBySupplierId");
     }
     /**
      * T_RECEIVE_PLAN_H by PLAN_DEPOSIT_ID, named 'TReceivePlanHByPlanDepositIdList'.
@@ -704,20 +704,20 @@ public class MCustomerDbm extends AbstractDBMeta {
         return cri("T_SHIPPING_INST_B_FK5", "TShippingInstBList", this, TShippingInstBDbm.getInstance(), mp, false, "MCustomer");
     }
     /**
-     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
-     * @return The information object of referrer property. (NotNull)
-     */
-    public ReferrerInfo referrerTShippingInstHBySupplyCustomerIdList() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TShippingInstHDbm.getInstance().columnSupplyCustomerId());
-        return cri("T_SHIPPING_INST_H_FK4", "TShippingInstHBySupplyCustomerIdList", this, TShippingInstHDbm.getInstance(), mp, false, "MCustomerBySupplyCustomerId");
-    }
-    /**
      * T_SHIPPING_INST_H by DELIV_CUSTOMER_ID, named 'TShippingInstHByDelivCustomerIdList'.
      * @return The information object of referrer property. (NotNull)
      */
     public ReferrerInfo referrerTShippingInstHByDelivCustomerIdList() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TShippingInstHDbm.getInstance().columnDelivCustomerId());
         return cri("T_SHIPPING_INST_H_FK2", "TShippingInstHByDelivCustomerIdList", this, TShippingInstHDbm.getInstance(), mp, false, "MCustomerByDelivCustomerId");
+    }
+    /**
+     * T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
+     * @return The information object of referrer property. (NotNull)
+     */
+    public ReferrerInfo referrerTShippingInstHBySupplyCustomerIdList() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCustomerId(), TShippingInstHDbm.getInstance().columnSupplyCustomerId());
+        return cri("T_SHIPPING_INST_H_FK4", "TShippingInstHBySupplyCustomerIdList", this, TShippingInstHDbm.getInstance(), mp, false, "MCustomerBySupplyCustomerId");
     }
     /**
      * T_STOCK by DEPOSIT_ID, named 'TStockList'.

@@ -252,35 +252,6 @@ public class BsTPickingRCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected BUserNss _nssBUserByPl1OutUserId;
-    public BUserNss xdfgetNssBUserByPl1OutUserId() {
-        if (_nssBUserByPl1OutUserId == null) { _nssBUserByPl1OutUserId = new BUserNss(null); }
-        return _nssBUserByPl1OutUserId;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-     * <pre>
-     * <span style="color: #0000C0">tPickingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByPl1OutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPickingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByPl1OutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BUserNss setupSelect_BUserByPl1OutUserId() {
-        assertSetupSelectPurpose("bUserByPl1OutUserId");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPl1OutUserId();
-        }
-        doSetupSelect(() -> query().queryBUserByPl1OutUserId());
-        if (_nssBUserByPl1OutUserId == null || !_nssBUserByPl1OutUserId.hasConditionQuery())
-        { _nssBUserByPl1OutUserId = new BUserNss(query().queryBUserByPl1OutUserId()); }
-        return _nssBUserByPl1OutUserId;
-    }
-
     protected BUserNss _nssBUserByCaseOutUserId;
     public BUserNss xdfgetNssBUserByCaseOutUserId() {
         if (_nssBUserByCaseOutUserId == null) { _nssBUserByCaseOutUserId = new BUserNss(null); }
@@ -310,33 +281,33 @@ public class BsTPickingRCB extends AbstractConditionBean {
         return _nssBUserByCaseOutUserId;
     }
 
-    protected BUserNss _nssBUserByShippingRecordOutUserId;
-    public BUserNss xdfgetNssBUserByShippingRecordOutUserId() {
-        if (_nssBUserByShippingRecordOutUserId == null) { _nssBUserByShippingRecordOutUserId = new BUserNss(null); }
-        return _nssBUserByShippingRecordOutUserId;
+    protected BUserNss _nssBUserByPackingOutUserId;
+    public BUserNss xdfgetNssBUserByPackingOutUserId() {
+        if (_nssBUserByPackingOutUserId == null) { _nssBUserByPackingOutUserId = new BUserNss(null); }
+        return _nssBUserByPackingOutUserId;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
      * <pre>
      * <span style="color: #0000C0">tPickingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByShippingRecordOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByPackingOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tPickingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByShippingRecordOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByPackingOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public BUserNss setupSelect_BUserByShippingRecordOutUserId() {
-        assertSetupSelectPurpose("bUserByShippingRecordOutUserId");
+    public BUserNss setupSelect_BUserByPackingOutUserId() {
+        assertSetupSelectPurpose("bUserByPackingOutUserId");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnShippingRecordOutUserId();
+            specify().columnPackingOutUserId();
         }
-        doSetupSelect(() -> query().queryBUserByShippingRecordOutUserId());
-        if (_nssBUserByShippingRecordOutUserId == null || !_nssBUserByShippingRecordOutUserId.hasConditionQuery())
-        { _nssBUserByShippingRecordOutUserId = new BUserNss(query().queryBUserByShippingRecordOutUserId()); }
-        return _nssBUserByShippingRecordOutUserId;
+        doSetupSelect(() -> query().queryBUserByPackingOutUserId());
+        if (_nssBUserByPackingOutUserId == null || !_nssBUserByPackingOutUserId.hasConditionQuery())
+        { _nssBUserByPackingOutUserId = new BUserNss(query().queryBUserByPackingOutUserId()); }
+        return _nssBUserByPackingOutUserId;
     }
 
     protected TPickingHNss _nssTPickingH;
@@ -363,6 +334,35 @@ public class BsTPickingRCB extends AbstractConditionBean {
         if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
         { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
         return _nssTPickingH;
+    }
+
+    protected BUserNss _nssBUserByPl1OutUserId;
+    public BUserNss xdfgetNssBUserByPl1OutUserId() {
+        if (_nssBUserByPl1OutUserId == null) { _nssBUserByPl1OutUserId = new BUserNss(null); }
+        return _nssBUserByPl1OutUserId;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+     * <pre>
+     * <span style="color: #0000C0">tPickingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByPl1OutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPickingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByPl1OutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BUserNss setupSelect_BUserByPl1OutUserId() {
+        assertSetupSelectPurpose("bUserByPl1OutUserId");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnPl1OutUserId();
+        }
+        doSetupSelect(() -> query().queryBUserByPl1OutUserId());
+        if (_nssBUserByPl1OutUserId == null || !_nssBUserByPl1OutUserId.hasConditionQuery())
+        { _nssBUserByPl1OutUserId = new BUserNss(query().queryBUserByPl1OutUserId()); }
+        return _nssBUserByPl1OutUserId;
     }
 
     protected BUserNss _nssBUserByPl2OutUserId;
@@ -394,6 +394,35 @@ public class BsTPickingRCB extends AbstractConditionBean {
         return _nssBUserByPl2OutUserId;
     }
 
+    protected BUserNss _nssBUserByShippingRecordOutUserId;
+    public BUserNss xdfgetNssBUserByShippingRecordOutUserId() {
+        if (_nssBUserByShippingRecordOutUserId == null) { _nssBUserByShippingRecordOutUserId = new BUserNss(null); }
+        return _nssBUserByShippingRecordOutUserId;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+     * <pre>
+     * <span style="color: #0000C0">tPickingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByShippingRecordOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tPickingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByShippingRecordOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public BUserNss setupSelect_BUserByShippingRecordOutUserId() {
+        assertSetupSelectPurpose("bUserByShippingRecordOutUserId");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShippingRecordOutUserId();
+        }
+        doSetupSelect(() -> query().queryBUserByShippingRecordOutUserId());
+        if (_nssBUserByShippingRecordOutUserId == null || !_nssBUserByShippingRecordOutUserId.hasConditionQuery())
+        { _nssBUserByShippingRecordOutUserId = new BUserNss(query().queryBUserByShippingRecordOutUserId()); }
+        return _nssBUserByShippingRecordOutUserId;
+    }
+
     protected BUserNss _nssBUserBySlipOutUserId;
     public BUserNss xdfgetNssBUserBySlipOutUserId() {
         if (_nssBUserBySlipOutUserId == null) { _nssBUserBySlipOutUserId = new BUserNss(null); }
@@ -421,35 +450,6 @@ public class BsTPickingRCB extends AbstractConditionBean {
         if (_nssBUserBySlipOutUserId == null || !_nssBUserBySlipOutUserId.hasConditionQuery())
         { _nssBUserBySlipOutUserId = new BUserNss(query().queryBUserBySlipOutUserId()); }
         return _nssBUserBySlipOutUserId;
-    }
-
-    protected BUserNss _nssBUserByPackingOutUserId;
-    public BUserNss xdfgetNssBUserByPackingOutUserId() {
-        if (_nssBUserByPackingOutUserId == null) { _nssBUserByPackingOutUserId = new BUserNss(null); }
-        return _nssBUserByPackingOutUserId;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-     * <pre>
-     * <span style="color: #0000C0">tPickingRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_BUserByPackingOutUserId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tPickingR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tPickingR</span>.<span style="color: #CC4747">getBUserByPackingOutUserId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public BUserNss setupSelect_BUserByPackingOutUserId() {
-        assertSetupSelectPurpose("bUserByPackingOutUserId");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPackingOutUserId();
-        }
-        doSetupSelect(() -> query().queryBUserByPackingOutUserId());
-        if (_nssBUserByPackingOutUserId == null || !_nssBUserByPackingOutUserId.hasConditionQuery())
-        { _nssBUserByPackingOutUserId = new BUserNss(query().queryBUserByPackingOutUserId()); }
-        return _nssBUserByPackingOutUserId;
     }
 
     protected BClassDtlNss _nssBClassDtlByInvoiceCreateFlg;
@@ -899,13 +899,13 @@ public class BsTPickingRCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TPickingRCQ> {
-        protected BUserCB.HpSpecification _bUserByPl1OutUserId;
         protected BUserCB.HpSpecification _bUserByCaseOutUserId;
-        protected BUserCB.HpSpecification _bUserByShippingRecordOutUserId;
-        protected TPickingHCB.HpSpecification _tPickingH;
-        protected BUserCB.HpSpecification _bUserByPl2OutUserId;
-        protected BUserCB.HpSpecification _bUserBySlipOutUserId;
         protected BUserCB.HpSpecification _bUserByPackingOutUserId;
+        protected TPickingHCB.HpSpecification _tPickingH;
+        protected BUserCB.HpSpecification _bUserByPl1OutUserId;
+        protected BUserCB.HpSpecification _bUserByPl2OutUserId;
+        protected BUserCB.HpSpecification _bUserByShippingRecordOutUserId;
+        protected BUserCB.HpSpecification _bUserBySlipOutUserId;
         protected BClassDtlCB.HpSpecification _bClassDtlByInvoiceCreateFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByOplOutFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByTplOutFlg;
@@ -1129,29 +1129,29 @@ public class BsTPickingRCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnPickingHId(); // PK
-            if (qyCall().qy().hasConditionQueryBUserByPl1OutUserId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnPl1OutUserId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryBUserByCaseOutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
                 columnCaseOutUserId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryBUserByShippingRecordOutUserId()
+            if (qyCall().qy().hasConditionQueryBUserByPackingOutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnShippingRecordOutUserId(); // FK or one-to-one referrer
+                columnPackingOutUserId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryBUserByPl1OutUserId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
+                columnPl1OutUserId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBUserByPl2OutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
                 columnPl2OutUserId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryBUserByShippingRecordOutUserId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
+                columnShippingRecordOutUserId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryBUserBySlipOutUserId()
                     || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
                 columnSlipOutUserId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryBUserByPackingOutUserId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof BUserCQ) {
-                columnPackingOutUserId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByInvoiceCreateFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -1214,26 +1214,6 @@ public class BsTPickingRCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_PICKING_R"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUserByPl1OutUserId() {
-            assertRelation("bUserByPl1OutUserId");
-            if (_bUserByPl1OutUserId == null) {
-                _bUserByPl1OutUserId = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByPl1OutUserId()
-                                    , () -> _qyCall.qy().queryBUserByPl1OutUserId())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUserByPl1OutUserId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByPl1OutUserId()
-                      , () -> xsyncQyCall().qy().queryBUserByPl1OutUserId()));
-                }
-            }
-            return _bUserByPl1OutUserId;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * B_USER by my CASE_OUT_USER_ID, named 'BUserByCaseOutUserId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -1254,23 +1234,23 @@ public class BsTPickingRCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+         * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public BUserCB.HpSpecification specifyBUserByShippingRecordOutUserId() {
-            assertRelation("bUserByShippingRecordOutUserId");
-            if (_bUserByShippingRecordOutUserId == null) {
-                _bUserByShippingRecordOutUserId = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByShippingRecordOutUserId()
-                                    , () -> _qyCall.qy().queryBUserByShippingRecordOutUserId())
+        public BUserCB.HpSpecification specifyBUserByPackingOutUserId() {
+            assertRelation("bUserByPackingOutUserId");
+            if (_bUserByPackingOutUserId == null) {
+                _bUserByPackingOutUserId = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByPackingOutUserId()
+                                    , () -> _qyCall.qy().queryBUserByPackingOutUserId())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _bUserByShippingRecordOutUserId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByShippingRecordOutUserId()
-                      , () -> xsyncQyCall().qy().queryBUserByShippingRecordOutUserId()));
+                    _bUserByPackingOutUserId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByPackingOutUserId()
+                      , () -> xsyncQyCall().qy().queryBUserByPackingOutUserId()));
                 }
             }
-            return _bUserByShippingRecordOutUserId;
+            return _bUserByPackingOutUserId;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1294,6 +1274,26 @@ public class BsTPickingRCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * B_USER by my PL1_OUT_USER_ID, named 'BUserByPl1OutUserId'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUserByPl1OutUserId() {
+            assertRelation("bUserByPl1OutUserId");
+            if (_bUserByPl1OutUserId == null) {
+                _bUserByPl1OutUserId = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByPl1OutUserId()
+                                    , () -> _qyCall.qy().queryBUserByPl1OutUserId())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUserByPl1OutUserId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByPl1OutUserId()
+                      , () -> xsyncQyCall().qy().queryBUserByPl1OutUserId()));
+                }
+            }
+            return _bUserByPl1OutUserId;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * B_USER by my PL2_OUT_USER_ID, named 'BUserByPl2OutUserId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -1314,6 +1314,26 @@ public class BsTPickingRCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * B_USER by my SHIPPING_RECORD_OUT_USER_ID, named 'BUserByShippingRecordOutUserId'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUserByShippingRecordOutUserId() {
+            assertRelation("bUserByShippingRecordOutUserId");
+            if (_bUserByShippingRecordOutUserId == null) {
+                _bUserByShippingRecordOutUserId = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByShippingRecordOutUserId()
+                                    , () -> _qyCall.qy().queryBUserByShippingRecordOutUserId())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUserByShippingRecordOutUserId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByShippingRecordOutUserId()
+                      , () -> xsyncQyCall().qy().queryBUserByShippingRecordOutUserId()));
+                }
+            }
+            return _bUserByShippingRecordOutUserId;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * B_USER by my SLIP_OUT_USER_ID, named 'BUserBySlipOutUserId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -1331,26 +1351,6 @@ public class BsTPickingRCB extends AbstractConditionBean {
                 }
             }
             return _bUserBySlipOutUserId;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * B_USER by my PACKING_OUT_USER_ID, named 'BUserByPackingOutUserId'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUserByPackingOutUserId() {
-            assertRelation("bUserByPackingOutUserId");
-            if (_bUserByPackingOutUserId == null) {
-                _bUserByPackingOutUserId = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUserByPackingOutUserId()
-                                    , () -> _qyCall.qy().queryBUserByPackingOutUserId())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUserByPackingOutUserId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUserByPackingOutUserId()
-                      , () -> xsyncQyCall().qy().queryBUserByPackingOutUserId()));
-                }
-            }
-            return _bUserByPackingOutUserId;
         }
         /**
          * Prepare to specify functions about relation table. <br>

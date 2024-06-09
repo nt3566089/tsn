@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_SHAPE_GRP, M_CUSTOMER, B_CLASS_DTL(ByDelFlg)
+ *     M_CUSTOMER, M_SHAPE_GRP, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer table]
  *     M_CBRCTG, M_CDRCATT, M_CLIENT_CENTER, M_CLIENT_COL, M_CLIENT_ITEM, M_CLIENT_SCREEN, M_CUSTOMER, M_IMPORT_TYPE, M_MFINVOPERATION, M_MFMONTHCHG, M_MFPICKCTL, M_MFRCVDESIGN, M_MFRCVITEM, M_MFWHxITEM, M_PRODUCT, M_SHAPE_GRP, M_USER_CLIENT, M_USER_LOGIN, M_WEB_HT_INFO, T_ALLOC_INST_H, T_CCOPAM, T_CENTER_SYMBOL, T_CORDHDR, T_EC_ORDER_H, T_INVENTORY_H, T_MFLASTSHIPLOT, T_MOVE_INST_H, T_PACKING_H, T_PALLET, T_PICKING_H, T_PIC_MTHD_RCMD, T_RECEIVE_PLAN_H, T_SERIAL_NO, T_SHIPPING_INST_H, T_SPLINFO, T_STOCK, T_STORE_RECORD_H, T_TRALLINV, T_TRALLINVHISTORY, T_TRCASEINVENTORY, T_TRCASENUM, T_TRCASESTOCK, T_TRHANBAIINV, T_TRINVCHECKINFO, T_TRINVCORRECT, T_TRINVREANSWER, T_TRINVREQUEST, T_TRITEMCONVRESULT, T_TRJUKYUINV, T_TRMANUFACTUREDATE, T_TRMANUFACTUREDATEDETAIL, T_TRMANUFACTUREDATEHISTORY, T_TRPALLETTRACE, T_TRREVERSESTOCK, T_TRSTOCKDIFFHISTORY, T_TRSYMBOLTRACE, T_TRSYMBOLTRACEEXTEND, T_TRTRACE, T_YTRSO, W_HT_INVENTORY_INPUT_PROD, W_HT_LOADING, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SERIAL_RECEIVE_INSP, W_HT_SERIAL_SHIPPING_INSP, W_HT_SHIPPING, W_HT_SHIPPING_PICKING, W_SGL_ROW_SHIP_INSP_H, W_SHIPPING_INTERRUPT
  *
  * [foreign property]
- *     mShapeGrp, mCustomer, bClassDtlByDelFlg
+ *     mCustomer, mShapeGrp, bClassDtlByDelFlg
  *
  * [referrer property]
  *     mCbrctgList, mCdrcattList, mClientCenterList, mClientColList, mClientItemList, mClientScreenList, mCustomerList, mImportTypeList, mMfinvoperationList, mMfmonthchgList, mMfpickctlList, mMfrcvdesignList, mMfrcvitemList, mMfwhxitemList, mProductList, mShapeGrpList, mUserClientList, mUserLoginList, mWebHtInfoList, tAllocInstHList, tCcopamList, tCenterSymbolList, tCordhdrList, tEcOrderHList, tInventoryHList, tMflastshiplotList, tMoveInstHList, tPackingHList, tPalletList, tPickingHList, tPicMthdRcmdList, tReceivePlanHList, tSerialNoList, tShippingInstHList, tSplinfoList, tStockList, tStoreRecordHList, tTrallinvList, tTrallinvhistoryList, tTrcaseinventoryList, tTrcasenumList, tTrcasestockList, tTrhanbaiinvList, tTrinvcheckinfoList, tTrinvcorrectList, tTrinvreanswerList, tTrinvrequestList, tTritemconvresultList, tTrjukyuinvList, tTrmanufacturedateList, tTrmanufacturedatedetailList, tTrmanufacturedatehistoryList, tTrpallettraceList, tTrreversestockList, tTrstockdiffhistoryList, tTrsymboltraceList, tTrsymboltraceextendList, tTrtraceList, tYtrsoList, wHtInventoryInputProdList, wHtLoadingList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtSerialReceiveInspList, wHtSerialShippingInspList, wHtShippingList, wHtShippingPickingList, wSglRowShipInspHList, wShippingInterruptList
@@ -269,25 +269,6 @@ public abstract class BsMClient extends AbstractEntity implements DomainEntity, 
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'. */
-    protected MShapeGrp _mShapeGrp;
-
-    /**
-     * [get] M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'. <br>
-     * @return The entity of foreign property 'MShapeGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MShapeGrp getMShapeGrp() {
-        return _mShapeGrp;
-    }
-
-    /**
-     * [set] M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-     * @param mShapeGrp The entity of foreign property 'MShapeGrp'. (NullAllowed)
-     */
-    public void setMShapeGrp(MShapeGrp mShapeGrp) {
-        _mShapeGrp = mShapeGrp;
-    }
-
     /** M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'. */
     protected MCustomer _mCustomer;
 
@@ -305,6 +286,25 @@ public abstract class BsMClient extends AbstractEntity implements DomainEntity, 
      */
     public void setMCustomer(MCustomer mCustomer) {
         _mCustomer = mCustomer;
+    }
+
+    /** M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'. */
+    protected MShapeGrp _mShapeGrp;
+
+    /**
+     * [get] M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'. <br>
+     * @return The entity of foreign property 'MShapeGrp'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MShapeGrp getMShapeGrp() {
+        return _mShapeGrp;
+    }
+
+    /**
+     * [set] M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+     * @param mShapeGrp The entity of foreign property 'MShapeGrp'. (NullAllowed)
+     */
+    public void setMShapeGrp(MShapeGrp mShapeGrp) {
+        _mShapeGrp = mShapeGrp;
     }
 
     /** B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'. */
@@ -1758,10 +1758,10 @@ public abstract class BsMClient extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mShapeGrp != null)
-        { sb.append(li).append(xbRDS(_mShapeGrp, "mShapeGrp")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
+        if (_mShapeGrp != null)
+        { sb.append(li).append(xbRDS(_mShapeGrp, "mShapeGrp")); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByDelFlg, "bClassDtlByDelFlg")); }
         if (_mCbrctgList != null) { for (MCbrctg et : _mCbrctgList)
@@ -1935,10 +1935,10 @@ public abstract class BsMClient extends AbstractEntity implements DomainEntity, 
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mShapeGrp != null)
-        { sb.append(dm).append("mShapeGrp"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
+        if (_mShapeGrp != null)
+        { sb.append(dm).append("mShapeGrp"); }
         if (_bClassDtlByDelFlg != null)
         { sb.append(dm).append("bClassDtlByDelFlg"); }
         if (_mCbrctgList != null && !_mCbrctgList.isEmpty())

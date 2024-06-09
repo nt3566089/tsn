@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_FUNC, B_DICT, V_HT_DICT, B_ARG_VALID(AsOne)
+ *     B_DICT, B_FUNC, V_HT_DICT, B_ARG_VALID(AsOne)
  *
  * [referrer table]
  *     B_ARG_VALID
  *
  * [foreign property]
- *     bFunc, bDict, vHtDict, bArgValidAsOne
+ *     bDict, bFunc, vHtDict, bArgValidAsOne
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfBArg {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfBFunc _foreignBFuncLoader;
-    public LoaderOfBFunc pulloutBFunc() {
-        if (_foreignBFuncLoader == null)
-        { _foreignBFuncLoader = new LoaderOfBFunc().ready(myBhv().pulloutBFunc(_selectedList), _selector); }
-        return _foreignBFuncLoader;
-    }
-
     protected LoaderOfBDict _foreignBDictLoader;
     public LoaderOfBDict pulloutBDict() {
         if (_foreignBDictLoader == null)
         { _foreignBDictLoader = new LoaderOfBDict().ready(myBhv().pulloutBDict(_selectedList), _selector); }
         return _foreignBDictLoader;
+    }
+
+    protected LoaderOfBFunc _foreignBFuncLoader;
+    public LoaderOfBFunc pulloutBFunc() {
+        if (_foreignBFuncLoader == null)
+        { _foreignBFuncLoader = new LoaderOfBFunc().ready(myBhv().pulloutBFunc(_selectedList), _selector); }
+        return _foreignBFuncLoader;
     }
 
     protected LoaderOfVHtDict _foreignVHtDictLoader;

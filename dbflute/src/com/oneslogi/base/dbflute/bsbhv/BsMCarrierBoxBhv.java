@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CARRIER, M_BOX
+ *     M_BOX, M_CARRIER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCarrier, mBox
+ *     mBox, mCarrier
  *
  * [referrer property]
  *     
@@ -419,20 +419,20 @@ public abstract class BsMCarrierBoxBhv extends AbstractBehaviorWritable<MCarrier
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MCarrier'.
-     * @param mCarrierBoxList The list of mCarrierBox. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCarrier> pulloutMCarrier(List<MCarrierBox> mCarrierBoxList)
-    { return helpPulloutInternally(mCarrierBoxList, "mCarrier"); }
-
-    /**
      * Pull out the list of foreign table 'MBox'.
      * @param mCarrierBoxList The list of mCarrierBox. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MBox> pulloutMBox(List<MCarrierBox> mCarrierBoxList)
     { return helpPulloutInternally(mCarrierBoxList, "mBox"); }
+
+    /**
+     * Pull out the list of foreign table 'MCarrier'.
+     * @param mCarrierBoxList The list of mCarrierBox. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCarrier> pulloutMCarrier(List<MCarrierBox> mCarrierBoxList)
+    { return helpPulloutInternally(mCarrierBoxList, "mCarrier"); }
 
     // ===================================================================================
     //                                                                      Extract Column

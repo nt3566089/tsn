@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_TRIMALLOCSTOCK, T_TRIMALLOCSCHKRI
+ *     T_TRIMALLOCSCHKRI, T_TRIMALLOCSTOCK
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tTrimallocstock, tTrimallocschkri
+ *     tTrimallocschkri, tTrimallocstock
  *
  * [referrer property]
  *     
@@ -393,20 +393,20 @@ public abstract class BsTTrimallocadjustBhv extends AbstractBehaviorWritable<TTr
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TTrimallocstock'.
-     * @param tTrimallocadjustList The list of tTrimallocadjust. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TTrimallocstock> pulloutTTrimallocstock(List<TTrimallocadjust> tTrimallocadjustList)
-    { return helpPulloutInternally(tTrimallocadjustList, "tTrimallocstock"); }
-
-    /**
      * Pull out the list of foreign table 'TTrimallocschkri'.
      * @param tTrimallocadjustList The list of tTrimallocadjust. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TTrimallocschkri> pulloutTTrimallocschkri(List<TTrimallocadjust> tTrimallocadjustList)
     { return helpPulloutInternally(tTrimallocadjustList, "tTrimallocschkri"); }
+
+    /**
+     * Pull out the list of foreign table 'TTrimallocstock'.
+     * @param tTrimallocadjustList The list of tTrimallocadjust. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TTrimallocstock> pulloutTTrimallocstock(List<TTrimallocadjust> tTrimallocadjustList)
+    { return helpPulloutInternally(tTrimallocadjustList, "tTrimallocstock"); }
 
     // ===================================================================================
     //                                                                      Extract Column

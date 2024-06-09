@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     P_PRINTER_GROUP, P_PRINTER_ATTRIBUTE, P_REPORT_LAYOUT, P_PRINTER, B_CLASS_DTL(BySheetCollate)
+ *     P_PRINTER_ATTRIBUTE, P_PRINTER_GROUP, P_PRINTER, P_REPORT_LAYOUT, B_CLASS_DTL(BySheetCollate)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     pPrinterGroup, pPrinterAttribute, pReportLayout, pPrinter, bClassDtlBySheetCollate
+ *     pPrinterAttribute, pPrinterGroup, pPrinter, pReportLayout, bClassDtlBySheetCollate
  *
  * [referrer property]
  *     
@@ -59,13 +59,6 @@ public class LoaderOfPLayoutPrintSetting {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfPPrinterGroup _foreignPPrinterGroupLoader;
-    public LoaderOfPPrinterGroup pulloutPPrinterGroup() {
-        if (_foreignPPrinterGroupLoader == null)
-        { _foreignPPrinterGroupLoader = new LoaderOfPPrinterGroup().ready(myBhv().pulloutPPrinterGroup(_selectedList), _selector); }
-        return _foreignPPrinterGroupLoader;
-    }
-
     protected LoaderOfPPrinterAttribute _foreignPPrinterAttributeLoader;
     public LoaderOfPPrinterAttribute pulloutPPrinterAttribute() {
         if (_foreignPPrinterAttributeLoader == null)
@@ -73,11 +66,11 @@ public class LoaderOfPLayoutPrintSetting {
         return _foreignPPrinterAttributeLoader;
     }
 
-    protected LoaderOfPReportLayout _foreignPReportLayoutLoader;
-    public LoaderOfPReportLayout pulloutPReportLayout() {
-        if (_foreignPReportLayoutLoader == null)
-        { _foreignPReportLayoutLoader = new LoaderOfPReportLayout().ready(myBhv().pulloutPReportLayout(_selectedList), _selector); }
-        return _foreignPReportLayoutLoader;
+    protected LoaderOfPPrinterGroup _foreignPPrinterGroupLoader;
+    public LoaderOfPPrinterGroup pulloutPPrinterGroup() {
+        if (_foreignPPrinterGroupLoader == null)
+        { _foreignPPrinterGroupLoader = new LoaderOfPPrinterGroup().ready(myBhv().pulloutPPrinterGroup(_selectedList), _selector); }
+        return _foreignPPrinterGroupLoader;
     }
 
     protected LoaderOfPPrinter _foreignPPrinterLoader;
@@ -85,6 +78,13 @@ public class LoaderOfPLayoutPrintSetting {
         if (_foreignPPrinterLoader == null)
         { _foreignPPrinterLoader = new LoaderOfPPrinter().ready(myBhv().pulloutPPrinter(_selectedList), _selector); }
         return _foreignPPrinterLoader;
+    }
+
+    protected LoaderOfPReportLayout _foreignPReportLayoutLoader;
+    public LoaderOfPReportLayout pulloutPReportLayout() {
+        if (_foreignPReportLayoutLoader == null)
+        { _foreignPReportLayoutLoader = new LoaderOfPReportLayout().ready(myBhv().pulloutPReportLayout(_selectedList), _selector); }
+        return _foreignPReportLayoutLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlBySheetCollateLoader;

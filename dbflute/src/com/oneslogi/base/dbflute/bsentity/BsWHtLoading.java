@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mClient, mCenter
+ *     mCenter, mClient, mDeliveryCourse
  *
  * [referrer property]
  *     
@@ -268,23 +268,23 @@ public abstract class BsWHtLoading extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
-    protected MDeliveryCourse _mDeliveryCourse;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
-     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MDeliveryCourse getMDeliveryCourse() {
-        return _mDeliveryCourse;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
-     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
-        _mDeliveryCourse = mDeliveryCourse;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -306,23 +306,23 @@ public abstract class BsWHtLoading extends AbstractEntity implements DomainEntit
         _mClient = mClient;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
+    /** M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. */
+    protected MDeliveryCourse _mDeliveryCourse;
 
     /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'. <br>
+     * @return The entity of foreign property 'MDeliveryCourse'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCenter getMCenter() {
-        return _mCenter;
+    public MDeliveryCourse getMDeliveryCourse() {
+        return _mDeliveryCourse;
     }
 
     /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     * [set] M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @param mDeliveryCourse The entity of foreign property 'MDeliveryCourse'. (NullAllowed)
      */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setMDeliveryCourse(MDeliveryCourse mDeliveryCourse) {
+        _mDeliveryCourse = mDeliveryCourse;
     }
 
     // ===================================================================================
@@ -357,12 +357,12 @@ public abstract class BsWHtLoading extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mDeliveryCourse != null)
+        { sb.append(li).append(xbRDS(_mDeliveryCourse, "mDeliveryCourse")); }
         return sb.toString();
     }
 
@@ -396,12 +396,12 @@ public abstract class BsWHtLoading extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mDeliveryCourse != null)
-        { sb.append(dm).append("mDeliveryCourse"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mDeliveryCourse != null)
+        { sb.append(dm).append("mDeliveryCourse"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

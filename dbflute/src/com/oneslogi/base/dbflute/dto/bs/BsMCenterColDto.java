@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_COL, B_DICT, M_CENTER, V_DICT
+ *     M_CENTER, B_COL, B_DICT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bCol, bDict, mCenter, vDict
+ *     mCenter, bCol, bDict, vDict
  *
  * [referrer-property]
  *     
@@ -149,6 +149,16 @@ public abstract class BsMCenterColDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
     protected BColDto _bCol;
 
     public BColDto getBCol() {
@@ -167,16 +177,6 @@ public abstract class BsMCenterColDto implements Serializable {
 
     public void setBDict(BDictDto bDict) {
         this._bDict = bDict;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
     }
 
     protected VDictDto _vDict;

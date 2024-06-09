@@ -90,8 +90,8 @@ public class MCenterDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MCenter)et).getBTimeZone(), (et, vl) -> ((MCenter)et).setBTimeZone((BTimeZone)vl), "BTimeZone");
         setupEfpg(_efpgMap, et -> ((MCenter)et).getBCulture(), (et, vl) -> ((MCenter)et).setBCulture((BCulture)vl), "BCulture");
+        setupEfpg(_efpgMap, et -> ((MCenter)et).getBTimeZone(), (et, vl) -> ((MCenter)et).setBTimeZone((BTimeZone)vl), "BTimeZone");
         setupEfpg(_efpgMap, et -> ((MCenter)et).getBClassDtlByDelFlg(), (et, vl) -> ((MCenter)et).setBClassDtlByDelFlg((BClassDtl)vl), "BClassDtlByDelFlg");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -412,20 +412,20 @@ public class MCenterDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBTimeZone() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTimeZoneId(), BTimeZoneDbm.getInstance().columnTimeZoneId());
-        return cfi("M_CENTER_FK1", "BTimeZone", this, BTimeZoneDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCenterList", false);
-    }
-    /**
      * B_CULTURE by my CULTURE_ID, named 'BCulture'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignBCulture() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCultureId(), BCultureDbm.getInstance().columnCultureId());
-        return cfi("M_CENTER_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterList", false);
+        return cfi("M_CENTER_FK2", "BCulture", this, BCultureDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MCenterList", false);
+    }
+    /**
+     * B_TIME_ZONE by my TIME_ZONE_ID, named 'BTimeZone'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBTimeZone() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnTimeZoneId(), BTimeZoneDbm.getInstance().columnTimeZoneId());
+        return cfi("M_CENTER_FK1", "BTimeZone", this, BTimeZoneDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MCenterList", false);
     }
     /**
      * B_CLASS_DTL by my DEL_FLG, named 'BClassDtlByDelFlg'.

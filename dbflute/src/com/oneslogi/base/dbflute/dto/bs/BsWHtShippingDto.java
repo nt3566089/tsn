@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PRODUCT, M_CENTER, M_BOX, M_CLIENT
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mProduct, mCenter, mBox, mClient
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer-property]
  *     
@@ -193,14 +193,14 @@ public abstract class BsWHtShippingDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MProductDto _mProduct;
+    protected MBoxDto _mBox;
 
-    public MProductDto getMProduct() {
-        return _mProduct;
+    public MBoxDto getMBox() {
+        return _mBox;
     }
 
-    public void setMProduct(MProductDto mProduct) {
-        this._mProduct = mProduct;
+    public void setMBox(MBoxDto mBox) {
+        this._mBox = mBox;
     }
 
     protected MCenterDto _mCenter;
@@ -213,16 +213,6 @@ public abstract class BsWHtShippingDto implements Serializable {
         this._mCenter = mCenter;
     }
 
-    protected MBoxDto _mBox;
-
-    public MBoxDto getMBox() {
-        return _mBox;
-    }
-
-    public void setMBox(MBoxDto mBox) {
-        this._mBox = mBox;
-    }
-
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -231,6 +221,16 @@ public abstract class BsWHtShippingDto implements Serializable {
 
     public void setMClient(MClientDto mClient) {
         this._mClient = mClient;
+    }
+
+    protected MProductDto _mProduct;
+
+    public MProductDto getMProduct() {
+        return _mProduct;
+    }
+
+    public void setMProduct(MProductDto mProduct) {
+        this._mProduct = mProduct;
     }
 
     // ===================================================================================

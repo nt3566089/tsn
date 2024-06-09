@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_SHAPE
+ *     M_SHAPE, M_STOCK_TYPE
  *
  * [referrer table]
  *     H_INVENTORY_B, H_MOVE_B, H_PACKING_B, H_RECEIVE_B, H_STOCK_INOUT, H_STOCK_REPORT
  *
  * [foreign property]
- *     mStockType, mShape
+ *     mShape, mStockType
  *
  * [referrer property]
  *     hInventoryBList, hMoveBList, hPackingBList, hReceiveBList, hStockInoutList, hStockReportList
@@ -921,20 +921,20 @@ public abstract class BsHStockBhv extends AbstractBehaviorWritable<HStock, HStoc
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param hStockList The list of hStock. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<HStock> hStockList)
-    { return helpPulloutInternally(hStockList, "mStockType"); }
-
-    /**
      * Pull out the list of foreign table 'MShape'.
      * @param hStockList The list of hStock. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MShape> pulloutMShape(List<HStock> hStockList)
     { return helpPulloutInternally(hStockList, "mShape"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param hStockList The list of hStock. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<HStock> hStockList)
+    { return helpPulloutInternally(hStockList, "mStockType"); }
 
     // ===================================================================================
     //                                                                      Extract Column

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_SHIPPING_INST_B, T_PICKING_H, T_ALLOC_INST_B, T_STOCK, M_SHAPE
+ *     T_ALLOC_INST_B, T_PICKING_H, M_SHAPE, T_SHIPPING_INST_B, T_STOCK
  *
  * [referrer table]
  *     T_PACKING_B
  *
  * [foreign property]
- *     tShippingInstB, tPickingH, tAllocInstB, tStock, mShape
+ *     tAllocInstB, tPickingH, mShape, tShippingInstB, tStock
  *
  * [referrer property]
  *     tPackingBList
@@ -481,12 +481,12 @@ public abstract class BsTPickingBBhv extends AbstractBehaviorWritable<TPickingB,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TShippingInstB'.
+     * Pull out the list of foreign table 'TAllocInstB'.
      * @param tPickingBList The list of tPickingB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TShippingInstB> pulloutTShippingInstB(List<TPickingB> tPickingBList)
-    { return helpPulloutInternally(tPickingBList, "tShippingInstB"); }
+    public List<TAllocInstB> pulloutTAllocInstB(List<TPickingB> tPickingBList)
+    { return helpPulloutInternally(tPickingBList, "tAllocInstB"); }
 
     /**
      * Pull out the list of foreign table 'TPickingH'.
@@ -497,12 +497,20 @@ public abstract class BsTPickingBBhv extends AbstractBehaviorWritable<TPickingB,
     { return helpPulloutInternally(tPickingBList, "tPickingH"); }
 
     /**
-     * Pull out the list of foreign table 'TAllocInstB'.
+     * Pull out the list of foreign table 'MShape'.
      * @param tPickingBList The list of tPickingB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TAllocInstB> pulloutTAllocInstB(List<TPickingB> tPickingBList)
-    { return helpPulloutInternally(tPickingBList, "tAllocInstB"); }
+    public List<MShape> pulloutMShape(List<TPickingB> tPickingBList)
+    { return helpPulloutInternally(tPickingBList, "mShape"); }
+
+    /**
+     * Pull out the list of foreign table 'TShippingInstB'.
+     * @param tPickingBList The list of tPickingB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TShippingInstB> pulloutTShippingInstB(List<TPickingB> tPickingBList)
+    { return helpPulloutInternally(tPickingBList, "tShippingInstB"); }
 
     /**
      * Pull out the list of foreign table 'TStock'.
@@ -511,14 +519,6 @@ public abstract class BsTPickingBBhv extends AbstractBehaviorWritable<TPickingB,
      */
     public List<TStock> pulloutTStock(List<TPickingB> tPickingBList)
     { return helpPulloutInternally(tPickingBList, "tStock"); }
-
-    /**
-     * Pull out the list of foreign table 'MShape'.
-     * @param tPickingBList The list of tPickingB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MShape> pulloutMShape(List<TPickingB> tPickingBList)
-    { return helpPulloutInternally(tPickingBList, "mShape"); }
 
     // ===================================================================================
     //                                                                      Extract Column

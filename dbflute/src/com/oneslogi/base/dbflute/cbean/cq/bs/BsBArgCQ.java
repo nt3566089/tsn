@@ -432,11 +432,11 @@ public class BsBArgCQ extends AbstractBsBArgCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BArgCQ bq = (BArgCQ)bqs;
         BArgCQ uq = (BArgCQ)uqs;
-        if (bq.hasConditionQueryBFunc()) {
-            uq.queryBFunc().reflectRelationOnUnionQuery(bq.queryBFunc(), uq.queryBFunc());
-        }
         if (bq.hasConditionQueryBDict()) {
             uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
+        }
+        if (bq.hasConditionQueryBFunc()) {
+            uq.queryBFunc().reflectRelationOnUnionQuery(bq.queryBFunc(), uq.queryBFunc());
         }
         if (bq.hasConditionQueryVHtDict()) {
             uq.xsetParameterMapVHtDict(bq.xdfgetParameterMapVHtDict());
@@ -450,26 +450,6 @@ public class BsBArgCQ extends AbstractBsBArgCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_FUNC by my FUNC_ID, named 'BFunc'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BFuncCQ queryBFunc() {
-        return xdfgetConditionQueryBFunc();
-    }
-    public BFuncCQ xdfgetConditionQueryBFunc() {
-        String prop = "bFunc";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBFunc()); xsetupOuterJoinBFunc(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BFuncCQ xcreateQueryBFunc() {
-        String nrp = xresolveNRP("B_ARG", "bFunc"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BFuncCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bFunc", nrp);
-    }
-    protected void xsetupOuterJoinBFunc() { xregOutJo("bFunc"); }
-    public boolean hasConditionQueryBFunc() { return xhasQueRlMap("bFunc"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
@@ -489,6 +469,26 @@ public class BsBArgCQ extends AbstractBsBArgCQ {
     }
     protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
     public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_FUNC by my FUNC_ID, named 'BFunc'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BFuncCQ queryBFunc() {
+        return xdfgetConditionQueryBFunc();
+    }
+    public BFuncCQ xdfgetConditionQueryBFunc() {
+        String prop = "bFunc";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBFunc()); xsetupOuterJoinBFunc(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BFuncCQ xcreateQueryBFunc() {
+        String nrp = xresolveNRP("B_ARG", "bFunc"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BFuncCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bFunc", nrp);
+    }
+    protected void xsetupOuterJoinBFunc() { xregOutJo("bFunc"); }
+    public boolean hasConditionQueryBFunc() { return xhasQueRlMap("bFunc"); }
 
     /**
      * Get the condition-query for relation table. <br>

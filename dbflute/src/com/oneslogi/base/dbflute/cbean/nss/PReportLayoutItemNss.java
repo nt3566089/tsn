@@ -20,21 +20,21 @@ public class PReportLayoutItemNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public PReportLayoutNss withPReportLayout() {
-        _query.xdoNss(() -> _query.queryPReportLayout());
-        return new PReportLayoutNss(_query.queryPReportLayout());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BDictNss withBDict() {
         _query.xdoNss(() -> _query.queryBDict());
         return new BDictNss(_query.queryBDict());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * P_REPORT_LAYOUT by my REPORT_LAYOUT_ID, named 'PReportLayout'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public PReportLayoutNss withPReportLayout() {
+        _query.xdoNss(() -> _query.queryPReportLayout());
+        return new PReportLayoutNss(_query.queryPReportLayout());
     }
     /**
      * With nested relation columns to select clause. <br>

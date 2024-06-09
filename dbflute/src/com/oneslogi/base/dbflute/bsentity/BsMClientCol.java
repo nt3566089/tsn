@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_COL, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_COL, B_DICT, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bCol, mClient, bDict, vDict
+ *     mClient, bCol, bDict, vDict
  *
  * [referrer property]
  *     
@@ -278,25 +278,6 @@ public abstract class BsMClientCol extends AbstractEntity implements DomainEntit
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_COL by my COL_ID, named 'BCol'. */
-    protected BCol _bCol;
-
-    /**
-     * [get] B_COL by my COL_ID, named 'BCol'. <br>
-     * @return The entity of foreign property 'BCol'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BCol getBCol() {
-        return _bCol;
-    }
-
-    /**
-     * [set] B_COL by my COL_ID, named 'BCol'.
-     * @param bCol The entity of foreign property 'BCol'. (NullAllowed)
-     */
-    public void setBCol(BCol bCol) {
-        _bCol = bCol;
-    }
-
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -314,6 +295,25 @@ public abstract class BsMClientCol extends AbstractEntity implements DomainEntit
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** B_COL by my COL_ID, named 'BCol'. */
+    protected BCol _bCol;
+
+    /**
+     * [get] B_COL by my COL_ID, named 'BCol'. <br>
+     * @return The entity of foreign property 'BCol'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BCol getBCol() {
+        return _bCol;
+    }
+
+    /**
+     * [set] B_COL by my COL_ID, named 'BCol'.
+     * @param bCol The entity of foreign property 'BCol'. (NullAllowed)
+     */
+    public void setBCol(BCol bCol) {
+        _bCol = bCol;
     }
 
     /** B_DICT by my DICT_ID, named 'BDict'. */
@@ -386,10 +386,10 @@ public abstract class BsMClientCol extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bCol != null)
-        { sb.append(li).append(xbRDS(_bCol, "bCol")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_bCol != null)
+        { sb.append(li).append(xbRDS(_bCol, "bCol")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
         if (_vDict != null)
@@ -426,10 +426,10 @@ public abstract class BsMClientCol extends AbstractEntity implements DomainEntit
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bCol != null)
-        { sb.append(dm).append("bCol"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_bCol != null)
+        { sb.append(dm).append("bCol"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
         if (_vDict != null)

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ROLE, B_ROLE_GRP
+ *     B_ROLE_GRP, B_ROLE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bRole, bRoleGrp
+ *     bRoleGrp, bRole
  *
  * [referrer property]
  *     
@@ -263,25 +263,6 @@ public abstract class BsBRoleGrpDtl extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_ROLE by my ROLE_ID, named 'BRole'. */
-    protected BRole _bRole;
-
-    /**
-     * [get] B_ROLE by my ROLE_ID, named 'BRole'. <br>
-     * @return The entity of foreign property 'BRole'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BRole getBRole() {
-        return _bRole;
-    }
-
-    /**
-     * [set] B_ROLE by my ROLE_ID, named 'BRole'.
-     * @param bRole The entity of foreign property 'BRole'. (NullAllowed)
-     */
-    public void setBRole(BRole bRole) {
-        _bRole = bRole;
-    }
-
     /** B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'. */
     protected BRoleGrp _bRoleGrp;
 
@@ -299,6 +280,25 @@ public abstract class BsBRoleGrpDtl extends AbstractEntity implements DomainEnti
      */
     public void setBRoleGrp(BRoleGrp bRoleGrp) {
         _bRoleGrp = bRoleGrp;
+    }
+
+    /** B_ROLE by my ROLE_ID, named 'BRole'. */
+    protected BRole _bRole;
+
+    /**
+     * [get] B_ROLE by my ROLE_ID, named 'BRole'. <br>
+     * @return The entity of foreign property 'BRole'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BRole getBRole() {
+        return _bRole;
+    }
+
+    /**
+     * [set] B_ROLE by my ROLE_ID, named 'BRole'.
+     * @param bRole The entity of foreign property 'BRole'. (NullAllowed)
+     */
+    public void setBRole(BRole bRole) {
+        _bRole = bRole;
     }
 
     // ===================================================================================
@@ -333,10 +333,10 @@ public abstract class BsBRoleGrpDtl extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bRole != null)
-        { sb.append(li).append(xbRDS(_bRole, "bRole")); }
         if (_bRoleGrp != null)
         { sb.append(li).append(xbRDS(_bRoleGrp, "bRoleGrp")); }
+        if (_bRole != null)
+        { sb.append(li).append(xbRDS(_bRole, "bRole")); }
         return sb.toString();
     }
 
@@ -366,10 +366,10 @@ public abstract class BsBRoleGrpDtl extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bRole != null)
-        { sb.append(dm).append("bRole"); }
         if (_bRoleGrp != null)
         { sb.append(dm).append("bRoleGrp"); }
+        if (_bRole != null)
+        { sb.append(dm).append("bRole"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

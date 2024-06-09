@@ -66,8 +66,8 @@ public class MClientScreenDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MClientScreen)et).getBDict(), (et, vl) -> ((MClientScreen)et).setBDict((BDict)vl), "BDict");
         setupEfpg(_efpgMap, et -> ((MClientScreen)et).getMClient(), (et, vl) -> ((MClientScreen)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((MClientScreen)et).getBDict(), (et, vl) -> ((MClientScreen)et).setBDict((BDict)vl), "BDict");
         setupEfpg(_efpgMap, et -> ((MClientScreen)et).getBScreen(), (et, vl) -> ((MClientScreen)et).setBScreen((BScreen)vl), "BScreen");
         setupEfpg(_efpgMap, et -> ((MClientScreen)et).getVDict(), (et, vl) -> ((MClientScreen)et).setVDict((VDict)vl), "VDict");
         setupEfpg(_efpgMap, et -> ((MClientScreen)et).getVHtDict(), (et, vl) -> ((MClientScreen)et).setVHtDict((VHtDict)vl), "VHtDict");
@@ -228,20 +228,20 @@ public class MClientScreenDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_DICT by my DICT_ID, named 'BDict'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBDict() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("M_CLIENT_SCREEN_FK2", "BDict", this, BDictDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientScreenList", false);
-    }
-    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("M_CLIENT_SCREEN_FK1", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientScreenList", false);
+        return cfi("M_CLIENT_SCREEN_FK1", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientScreenList", false);
+    }
+    /**
+     * B_DICT by my DICT_ID, named 'BDict'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBDict() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
+        return cfi("M_CLIENT_SCREEN_FK2", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientScreenList", false);
     }
     /**
      * B_SCREEN by my SCREEN_ID, named 'BScreen'.

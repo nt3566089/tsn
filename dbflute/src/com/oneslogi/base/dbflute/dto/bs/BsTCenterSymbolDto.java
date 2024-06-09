@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_TRSYMBOL, T_PALLET
+ *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_PALLET, T_TRSYMBOL
  *
  * [referrer-table]
  *     T_CENTER_SYMBOL
  *
  * [foreign-property]
- *     mCenter, tCenterSymbolSelf, mClient, tTrsymbol, tPallet
+ *     mCenter, tCenterSymbolSelf, mClient, tPallet, tTrsymbol
  *
  * [referrer-property]
  *     tCenterSymbolSelfList
@@ -191,16 +191,6 @@ public abstract class BsTCenterSymbolDto implements Serializable {
         this._mClient = mClient;
     }
 
-    protected TTrsymbolDto _tTrsymbol;
-
-    public TTrsymbolDto getTTrsymbol() {
-        return _tTrsymbol;
-    }
-
-    public void setTTrsymbol(TTrsymbolDto tTrsymbol) {
-        this._tTrsymbol = tTrsymbol;
-    }
-
     protected TPalletDto _tPallet;
 
     public TPalletDto getTPallet() {
@@ -209,6 +199,16 @@ public abstract class BsTCenterSymbolDto implements Serializable {
 
     public void setTPallet(TPalletDto tPallet) {
         this._tPallet = tPallet;
+    }
+
+    protected TTrsymbolDto _tTrsymbol;
+
+    public TTrsymbolDto getTTrsymbol() {
+        return _tTrsymbol;
+    }
+
+    public void setTTrsymbol(TTrsymbolDto tTrsymbol) {
+        this._tTrsymbol = tTrsymbol;
     }
 
     // ===================================================================================

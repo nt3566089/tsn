@@ -20,20 +20,20 @@ public class MCarrierBoxNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCarrierNss withMCarrier() {
-        _query.xdoNss(() -> _query.queryMCarrier());
-        return new MCarrierNss(_query.queryMCarrier());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_BOX by my BOX_ID, named 'MBox'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MBoxNss withMBox() {
         _query.xdoNss(() -> _query.queryMBox());
         return new MBoxNss(_query.queryMBox());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCarrierNss withMCarrier() {
+        _query.xdoNss(() -> _query.queryMCarrier());
+        return new MCarrierNss(_query.queryMCarrier());
     }
 }

@@ -446,11 +446,11 @@ public class BsPSubrepLayoutItemCQ extends AbstractBsPSubrepLayoutItemCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         PSubrepLayoutItemCQ bq = (PSubrepLayoutItemCQ)bqs;
         PSubrepLayoutItemCQ uq = (PSubrepLayoutItemCQ)uqs;
-        if (bq.hasConditionQueryPSubrepLayout()) {
-            uq.queryPSubrepLayout().reflectRelationOnUnionQuery(bq.queryPSubrepLayout(), uq.queryPSubrepLayout());
-        }
         if (bq.hasConditionQueryBDict()) {
             uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
+        }
+        if (bq.hasConditionQueryPSubrepLayout()) {
+            uq.queryPSubrepLayout().reflectRelationOnUnionQuery(bq.queryPSubrepLayout(), uq.queryPSubrepLayout());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -461,26 +461,6 @@ public class BsPSubrepLayoutItemCQ extends AbstractBsPSubrepLayoutItemCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public PSubrepLayoutCQ queryPSubrepLayout() {
-        return xdfgetConditionQueryPSubrepLayout();
-    }
-    public PSubrepLayoutCQ xdfgetConditionQueryPSubrepLayout() {
-        String prop = "pSubrepLayout";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPSubrepLayout()); xsetupOuterJoinPSubrepLayout(); }
-        return xgetQueRlMap(prop);
-    }
-    protected PSubrepLayoutCQ xcreateQueryPSubrepLayout() {
-        String nrp = xresolveNRP("P_SUBREP_LAYOUT_ITEM", "pSubrepLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new PSubrepLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pSubrepLayout", nrp);
-    }
-    protected void xsetupOuterJoinPSubrepLayout() { xregOutJo("pSubrepLayout"); }
-    public boolean hasConditionQueryPSubrepLayout() { return xhasQueRlMap("pSubrepLayout"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
@@ -500,6 +480,26 @@ public class BsPSubrepLayoutItemCQ extends AbstractBsPSubrepLayoutItemCQ {
     }
     protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
     public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * P_SUBREP_LAYOUT by my SUBREP_LAYOUT_ID, named 'PSubrepLayout'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public PSubrepLayoutCQ queryPSubrepLayout() {
+        return xdfgetConditionQueryPSubrepLayout();
+    }
+    public PSubrepLayoutCQ xdfgetConditionQueryPSubrepLayout() {
+        String prop = "pSubrepLayout";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryPSubrepLayout()); xsetupOuterJoinPSubrepLayout(); }
+        return xgetQueRlMap(prop);
+    }
+    protected PSubrepLayoutCQ xcreateQueryPSubrepLayout() {
+        String nrp = xresolveNRP("P_SUBREP_LAYOUT_ITEM", "pSubrepLayout"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new PSubrepLayoutCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "pSubrepLayout", nrp);
+    }
+    protected void xsetupOuterJoinPSubrepLayout() { xregOutJo("pSubrepLayout"); }
+    public boolean hasConditionQueryPSubrepLayout() { return xhasQueRlMap("pSubrepLayout"); }
 
     /**
      * Get the condition-query for relation table. <br>

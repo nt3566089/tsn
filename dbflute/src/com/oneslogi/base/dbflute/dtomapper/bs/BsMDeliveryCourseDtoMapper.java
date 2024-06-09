@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CARRIER_SLIP_YUPK, M_CENTER, M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
+ *     M_CARRIER, M_CARRIER_SLIP_SGW, M_CARRIER_SLIP_YMT, M_CARRIER_SLIP_YUPK, M_CENTER, B_CLASS_DTL(ByDelFlg), M_CENTER_CLASS_DTL(ByTagDataType)
  *
  * [referrer-table]
  *     M_CENTER_CUSTOMER, M_PARAM, T_ALLOC_INST_H, T_SHIPPING_INST_H, W_HT_LOADING
  *
  * [foreign-property]
- *     mCarrierSlipYupk, mCenter, mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
+ *     mCarrier, mCarrierSlipSgw, mCarrierSlipYmt, mCarrierSlipYupk, mCenter, bClassDtlByDelFlg, mCenterClassDtlByTagDataType, mCenterClassDtlByTagType, mCenterClassDtlByTagTypeAfter, bClassDtlByTrackingNumberingUnit, bClassDtlByPaymentTerm
  *
  * [referrer-property]
  *     mCenterCustomerList, mParamList, tAllocInstHList, tShippingInstHList, wHtLoadingList
@@ -70,11 +70,11 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMCarrierSlipYupk;
-    protected boolean _suppressMCenter;
     protected boolean _suppressMCarrier;
     protected boolean _suppressMCarrierSlipSgw;
     protected boolean _suppressMCarrierSlipYmt;
+    protected boolean _suppressMCarrierSlipYupk;
+    protected boolean _suppressMCenter;
     protected boolean _suppressBClassDtlByDelFlg;
     protected boolean _suppressMCenterClassDtlByTagDataType;
     protected boolean _suppressMCenterClassDtlByTagType;
@@ -171,58 +171,6 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCarrierSlipYupk && entity.getMCarrierSlipYupk() != null) {
-            MCarrierSlipYupk relationEntity = entity.getMCarrierSlipYupk();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCarrierSlipYupkDto relationDto = (MCarrierSlipYupkDto)cachedDto;
-                dto.setMCarrierSlipYupk(relationDto);
-                if (reverseReference) {
-                    relationDto.getMDeliveryCourseList().add(dto);
-                }
-            } else {
-                MCarrierSlipYupkDtoMapper mapper = new MCarrierSlipYupkDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMDeliveryCourseList();
-                MCarrierSlipYupkDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCarrierSlipYupk(relationDto);
-                if (reverseReference) {
-                    relationDto.getMDeliveryCourseList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCarrierSlipYupk());
-                }
-            }
-        };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMDeliveryCourseList().add(dto);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMDeliveryCourseList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
-                if (reverseReference) {
-                    relationDto.getMDeliveryCourseList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
-                }
-            }
-        };
         if (!_suppressMCarrier && entity.getMCarrier() != null) {
             MCarrier relationEntity = entity.getMCarrier();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -298,6 +246,58 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMCarrierSlipYmt());
+                }
+            }
+        };
+        if (!_suppressMCarrierSlipYupk && entity.getMCarrierSlipYupk() != null) {
+            MCarrierSlipYupk relationEntity = entity.getMCarrierSlipYupk();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCarrierSlipYupkDto relationDto = (MCarrierSlipYupkDto)cachedDto;
+                dto.setMCarrierSlipYupk(relationDto);
+                if (reverseReference) {
+                    relationDto.getMDeliveryCourseList().add(dto);
+                }
+            } else {
+                MCarrierSlipYupkDtoMapper mapper = new MCarrierSlipYupkDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMDeliveryCourseList();
+                MCarrierSlipYupkDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCarrierSlipYupk(relationDto);
+                if (reverseReference) {
+                    relationDto.getMDeliveryCourseList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCarrierSlipYupk());
+                }
+            }
+        };
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMDeliveryCourseList().add(dto);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMDeliveryCourseList();
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
+                if (reverseReference) {
+                    relationDto.getMDeliveryCourseList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -637,58 +637,6 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCarrierSlipYupk && dto.getMCarrierSlipYupk() != null) {
-            MCarrierSlipYupkDto relationDto = dto.getMCarrierSlipYupk();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCarrierSlipYupk relationEntity = (MCarrierSlipYupk)cachedEntity;
-                entity.setMCarrierSlipYupk(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMDeliveryCourseList().add(entity);
-                }
-            } else {
-                MCarrierSlipYupkDtoMapper mapper = new MCarrierSlipYupkDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMDeliveryCourseList();
-                MCarrierSlipYupk relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCarrierSlipYupk(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMDeliveryCourseList().add(entity);
-                }
-                if (instanceCache && entity.getMCarrierSlipYupk().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCarrierSlipYupk());
-                }
-            }
-        };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMDeliveryCourseList().add(entity);
-                }
-            } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMDeliveryCourseList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMDeliveryCourseList().add(entity);
-                }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
-                }
-            }
-        };
         if (!_suppressMCarrier && dto.getMCarrier() != null) {
             MCarrierDto relationDto = dto.getMCarrier();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -764,6 +712,58 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
                 }
                 if (instanceCache && entity.getMCarrierSlipYmt().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMCarrierSlipYmt());
+                }
+            }
+        };
+        if (!_suppressMCarrierSlipYupk && dto.getMCarrierSlipYupk() != null) {
+            MCarrierSlipYupkDto relationDto = dto.getMCarrierSlipYupk();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCarrierSlipYupk relationEntity = (MCarrierSlipYupk)cachedEntity;
+                entity.setMCarrierSlipYupk(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMDeliveryCourseList().add(entity);
+                }
+            } else {
+                MCarrierSlipYupkDtoMapper mapper = new MCarrierSlipYupkDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMDeliveryCourseList();
+                MCarrierSlipYupk relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCarrierSlipYupk(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMDeliveryCourseList().add(entity);
+                }
+                if (instanceCache && entity.getMCarrierSlipYupk().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCarrierSlipYupk());
+                }
+            }
+        };
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMDeliveryCourseList().add(entity);
+                }
+            } else {
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMDeliveryCourseList();
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMDeliveryCourseList().add(entity);
+                }
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -1093,12 +1093,6 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMCarrierSlipYupk() {
-        _suppressMCarrierSlipYupk = true;
-    }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
-    }
     public void suppressMCarrier() {
         _suppressMCarrier = true;
     }
@@ -1107,6 +1101,12 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
     }
     public void suppressMCarrierSlipYmt() {
         _suppressMCarrierSlipYmt = true;
+    }
+    public void suppressMCarrierSlipYupk() {
+        _suppressMCarrierSlipYupk = true;
+    }
+    public void suppressMCenter() {
+        _suppressMCenter = true;
     }
     public void suppressBClassDtlByDelFlg() {
         _suppressBClassDtlByDelFlg = true;
@@ -1142,11 +1142,11 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
         _suppressWHtLoadingList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMCarrierSlipYupk();
-        suppressMCenter();
         suppressMCarrier();
         suppressMCarrierSlipSgw();
         suppressMCarrierSlipYmt();
+        suppressMCarrierSlipYupk();
+        suppressMCenter();
         suppressBClassDtlByDelFlg();
         suppressMCenterClassDtlByTagDataType();
         suppressMCenterClassDtlByTagType();
@@ -1160,11 +1160,11 @@ public abstract class BsMDeliveryCourseDtoMapper implements DtoMapper<MDeliveryC
         suppressWHtLoadingList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMCarrierSlipYupk = false;
-        _suppressMCenter = false;
         _suppressMCarrier = false;
         _suppressMCarrierSlipSgw = false;
         _suppressMCarrierSlipYmt = false;
+        _suppressMCarrierSlipYupk = false;
+        _suppressMCenter = false;
         _suppressBClassDtlByDelFlg = false;
         _suppressMCenterClassDtlByTagDataType = false;
         _suppressMCenterClassDtlByTagType = false;

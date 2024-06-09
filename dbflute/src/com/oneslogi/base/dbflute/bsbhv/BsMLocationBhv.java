@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT_SHAPE, M_PRODUCT, M_ZONE, M_STOCK_TYPE, M_CUSTOMER, M_CENTER, B_CLASS_DTL(ByAllocNgFlg)
+ *     M_CENTER, M_PRODUCT_SHAPE, M_CUSTOMER, M_PRODUCT, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByAllocNgFlg)
  *
  * [referrer table]
  *     T_ALLOC_INST_B, T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_RECEIVE_PLAN_B, T_SHIPPING_INST_B, T_STOCK, T_STORE_RECORD_B, T_TRPICKDETAIL, W_HT_INVENTORY_INPUT_PROD, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SHIPPING_PICKING
  *
  * [foreign property]
- *     mProductShapeByMaxStoreProductShapeId, mProduct, mZone, mProductShapeByReplenishPProductShapeId, mStockType, mCustomer, mCenter, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
+ *     mCenter, mProductShapeByMaxStoreProductShapeId, mCustomer, mProduct, mProductShapeByReplenishPProductShapeId, mStockType, mZone, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
  *
  * [referrer property]
  *     tAllocInstBList, tInventoryBList, tMoveInstBList, tMoveRecordBList, tReceivePlanBList, tShippingInstBList, tStockList, tStoreRecordBList, tTrpickdetailList, wHtInventoryInputProdList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtShippingPickingList
@@ -1671,6 +1671,14 @@ public abstract class BsMLocationBhv extends AbstractBehaviorWritable<MLocation,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<MLocation> mLocationList)
+    { return helpPulloutInternally(mLocationList, "mCenter"); }
+
+    /**
      * Pull out the list of foreign table 'MProductShape'.
      * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -1679,20 +1687,20 @@ public abstract class BsMLocationBhv extends AbstractBehaviorWritable<MLocation,
     { return helpPulloutInternally(mLocationList, "mProductShapeByMaxStoreProductShapeId"); }
 
     /**
+     * Pull out the list of foreign table 'MCustomer'.
+     * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCustomer> pulloutMCustomer(List<MLocation> mLocationList)
+    { return helpPulloutInternally(mLocationList, "mCustomer"); }
+
+    /**
      * Pull out the list of foreign table 'MProduct'.
      * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MProduct> pulloutMProduct(List<MLocation> mLocationList)
     { return helpPulloutInternally(mLocationList, "mProduct"); }
-
-    /**
-     * Pull out the list of foreign table 'MZone'.
-     * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MZone> pulloutMZone(List<MLocation> mLocationList)
-    { return helpPulloutInternally(mLocationList, "mZone"); }
 
     /**
      * Pull out the list of foreign table 'MProductShape'.
@@ -1711,20 +1719,12 @@ public abstract class BsMLocationBhv extends AbstractBehaviorWritable<MLocation,
     { return helpPulloutInternally(mLocationList, "mStockType"); }
 
     /**
-     * Pull out the list of foreign table 'MCustomer'.
+     * Pull out the list of foreign table 'MZone'.
      * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomer(List<MLocation> mLocationList)
-    { return helpPulloutInternally(mLocationList, "mCustomer"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param mLocationList The list of mLocation. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<MLocation> mLocationList)
-    { return helpPulloutInternally(mLocationList, "mCenter"); }
+    public List<MZone> pulloutMZone(List<MLocation> mLocationList)
+    { return helpPulloutInternally(mLocationList, "mZone"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

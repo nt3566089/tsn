@@ -64,8 +64,8 @@ public class MUserClientDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MUserClient)et).getBUser(), (et, vl) -> ((MUserClient)et).setBUser((BUser)vl), "BUser");
         setupEfpg(_efpgMap, et -> ((MUserClient)et).getMClient(), (et, vl) -> ((MUserClient)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((MUserClient)et).getBUser(), (et, vl) -> ((MUserClient)et).setBUser((BUser)vl), "BUser");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -208,20 +208,20 @@ public class MUserClientDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_USER by my USER_ID, named 'BUser'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBUser() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), BUserDbm.getInstance().columnUserId());
-        return cfi("M_USER_CLIENT_FK1", "BUser", this, BUserDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MUserClientList", false);
-    }
-    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("M_USER_CLIENT_FK2", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MUserClientList", false);
+        return cfi("M_USER_CLIENT_FK2", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MUserClientList", false);
+    }
+    /**
+     * B_USER by my USER_ID, named 'BUser'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBUser() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnUserId(), BUserDbm.getInstance().columnUserId());
+        return cfi("M_USER_CLIENT_FK1", "BUser", this, BUserDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MUserClientList", false);
     }
 
     // -----------------------------------------------------

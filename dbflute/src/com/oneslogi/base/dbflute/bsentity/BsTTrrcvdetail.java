@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_TRRCV, T_RECEIVE_PLAN_B
+ *     T_RECEIVE_PLAN_B, T_TRRCV
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tTrrcv, tReceivePlanB
+ *     tReceivePlanB, tTrrcv
  *
  * [referrer property]
  *     
@@ -563,25 +563,6 @@ public abstract class BsTTrrcvdetail extends AbstractEntity implements DomainEnt
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'. */
-    protected TTrrcv _tTrrcv;
-
-    /**
-     * [get] T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'. <br>
-     * @return The entity of foreign property 'TTrrcv'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TTrrcv getTTrrcv() {
-        return _tTrrcv;
-    }
-
-    /**
-     * [set] T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
-     * @param tTrrcv The entity of foreign property 'TTrrcv'. (NullAllowed)
-     */
-    public void setTTrrcv(TTrrcv tTrrcv) {
-        _tTrrcv = tTrrcv;
-    }
-
     /** T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'. */
     protected TReceivePlanB _tReceivePlanB;
 
@@ -599,6 +580,25 @@ public abstract class BsTTrrcvdetail extends AbstractEntity implements DomainEnt
      */
     public void setTReceivePlanB(TReceivePlanB tReceivePlanB) {
         _tReceivePlanB = tReceivePlanB;
+    }
+
+    /** T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'. */
+    protected TTrrcv _tTrrcv;
+
+    /**
+     * [get] T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'. <br>
+     * @return The entity of foreign property 'TTrrcv'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TTrrcv getTTrrcv() {
+        return _tTrrcv;
+    }
+
+    /**
+     * [set] T_TRRCV by my RECEIVE_PLAN_H_ID, named 'TTrrcv'.
+     * @param tTrrcv The entity of foreign property 'TTrrcv'. (NullAllowed)
+     */
+    public void setTTrrcv(TTrrcv tTrrcv) {
+        _tTrrcv = tTrrcv;
     }
 
     // ===================================================================================
@@ -633,10 +633,10 @@ public abstract class BsTTrrcvdetail extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tTrrcv != null)
-        { sb.append(li).append(xbRDS(_tTrrcv, "tTrrcv")); }
         if (_tReceivePlanB != null)
         { sb.append(li).append(xbRDS(_tReceivePlanB, "tReceivePlanB")); }
+        if (_tTrrcv != null)
+        { sb.append(li).append(xbRDS(_tTrrcv, "tTrrcv")); }
         return sb.toString();
     }
 
@@ -729,10 +729,10 @@ public abstract class BsTTrrcvdetail extends AbstractEntity implements DomainEnt
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tTrrcv != null)
-        { sb.append(dm).append("tTrrcv"); }
         if (_tReceivePlanB != null)
         { sb.append(dm).append("tReceivePlanB"); }
+        if (_tTrrcv != null)
+        { sb.append(dm).append("tTrrcv"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

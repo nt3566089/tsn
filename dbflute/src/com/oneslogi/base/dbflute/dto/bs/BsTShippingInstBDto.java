@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_SHAPE, M_WAREHOUSE, T_LOT, T_ALLOC_INST_B, T_STORE_NO, M_STOCK_TYPE, M_LOCATION, T_SHIPPING_INST_H, M_PRODUCT, M_CUSTOMER, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
+ *     T_ALLOC_INST_B, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, T_SHIPPING_INST_H, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByErrorFlg), T_SHIPPING_INST_SPARE(AsOne)
  *
  * [referrer-table]
  *     T_PICKING_B, T_SHIPPING_INST_SPARE
  *
  * [foreign-property]
- *     mShape, mWarehouse, tLot, tAllocInstB, tStoreNo, mStockType, mLocation, tShippingInstH, mProduct, mCustomer, bClassDtlByErrorFlg, tShippingInstSpareAsOne
+ *     tAllocInstB, mCustomer, mLocation, tLot, mProduct, mShape, tShippingInstH, mStockType, tStoreNo, mWarehouse, bClassDtlByErrorFlg, tShippingInstSpareAsOne
  *
  * [referrer-property]
  *     tPickingBList
@@ -241,36 +241,6 @@ public abstract class BsTShippingInstBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MShapeDto _mShape;
-
-    public MShapeDto getMShape() {
-        return _mShape;
-    }
-
-    public void setMShape(MShapeDto mShape) {
-        this._mShape = mShape;
-    }
-
-    protected MWarehouseDto _mWarehouse;
-
-    public MWarehouseDto getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    public void setMWarehouse(MWarehouseDto mWarehouse) {
-        this._mWarehouse = mWarehouse;
-    }
-
-    protected TLotDto _tLot;
-
-    public TLotDto getTLot() {
-        return _tLot;
-    }
-
-    public void setTLot(TLotDto tLot) {
-        this._tLot = tLot;
-    }
-
     protected TAllocInstBDto _tAllocInstB;
 
     public TAllocInstBDto getTAllocInstB() {
@@ -281,24 +251,14 @@ public abstract class BsTShippingInstBDto implements Serializable {
         this._tAllocInstB = tAllocInstB;
     }
 
-    protected TStoreNoDto _tStoreNo;
+    protected MCustomerDto _mCustomer;
 
-    public TStoreNoDto getTStoreNo() {
-        return _tStoreNo;
+    public MCustomerDto getMCustomer() {
+        return _mCustomer;
     }
 
-    public void setTStoreNo(TStoreNoDto tStoreNo) {
-        this._tStoreNo = tStoreNo;
-    }
-
-    protected MStockTypeDto _mStockType;
-
-    public MStockTypeDto getMStockType() {
-        return _mStockType;
-    }
-
-    public void setMStockType(MStockTypeDto mStockType) {
-        this._mStockType = mStockType;
+    public void setMCustomer(MCustomerDto mCustomer) {
+        this._mCustomer = mCustomer;
     }
 
     protected MLocationDto _mLocation;
@@ -311,14 +271,14 @@ public abstract class BsTShippingInstBDto implements Serializable {
         this._mLocation = mLocation;
     }
 
-    protected TShippingInstHDto _tShippingInstH;
+    protected TLotDto _tLot;
 
-    public TShippingInstHDto getTShippingInstH() {
-        return _tShippingInstH;
+    public TLotDto getTLot() {
+        return _tLot;
     }
 
-    public void setTShippingInstH(TShippingInstHDto tShippingInstH) {
-        this._tShippingInstH = tShippingInstH;
+    public void setTLot(TLotDto tLot) {
+        this._tLot = tLot;
     }
 
     protected MProductDto _mProduct;
@@ -331,14 +291,54 @@ public abstract class BsTShippingInstBDto implements Serializable {
         this._mProduct = mProduct;
     }
 
-    protected MCustomerDto _mCustomer;
+    protected MShapeDto _mShape;
 
-    public MCustomerDto getMCustomer() {
-        return _mCustomer;
+    public MShapeDto getMShape() {
+        return _mShape;
     }
 
-    public void setMCustomer(MCustomerDto mCustomer) {
-        this._mCustomer = mCustomer;
+    public void setMShape(MShapeDto mShape) {
+        this._mShape = mShape;
+    }
+
+    protected TShippingInstHDto _tShippingInstH;
+
+    public TShippingInstHDto getTShippingInstH() {
+        return _tShippingInstH;
+    }
+
+    public void setTShippingInstH(TShippingInstHDto tShippingInstH) {
+        this._tShippingInstH = tShippingInstH;
+    }
+
+    protected MStockTypeDto _mStockType;
+
+    public MStockTypeDto getMStockType() {
+        return _mStockType;
+    }
+
+    public void setMStockType(MStockTypeDto mStockType) {
+        this._mStockType = mStockType;
+    }
+
+    protected TStoreNoDto _tStoreNo;
+
+    public TStoreNoDto getTStoreNo() {
+        return _tStoreNo;
+    }
+
+    public void setTStoreNo(TStoreNoDto tStoreNo) {
+        this._tStoreNo = tStoreNo;
+    }
+
+    protected MWarehouseDto _mWarehouse;
+
+    public MWarehouseDto getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    public void setMWarehouse(MWarehouseDto mWarehouse) {
+        this._mWarehouse = mWarehouse;
     }
 
     protected BClassDtlDto _bClassDtlByErrorFlg;

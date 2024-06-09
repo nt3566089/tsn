@@ -366,37 +366,17 @@ public class BsMUserCenterCQ extends AbstractBsMUserCenterCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MUserCenterCQ bq = (MUserCenterCQ)bqs;
         MUserCenterCQ uq = (MUserCenterCQ)uqs;
-        if (bq.hasConditionQueryBUser()) {
-            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
+        if (bq.hasConditionQueryBUser()) {
+            uq.queryBUser().reflectRelationOnUnionQuery(bq.queryBUser(), uq.queryBUser());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_USER by my USER_ID, named 'BUser'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BUserCQ queryBUser() {
-        return xdfgetConditionQueryBUser();
-    }
-    public BUserCQ xdfgetConditionQueryBUser() {
-        String prop = "bUser";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BUserCQ xcreateQueryBUser() {
-        String nrp = xresolveNRP("M_USER_CENTER", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
-    }
-    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
-    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -416,6 +396,26 @@ public class BsMUserCenterCQ extends AbstractBsMUserCenterCQ {
     }
     protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
     public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_USER by my USER_ID, named 'BUser'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BUserCQ queryBUser() {
+        return xdfgetConditionQueryBUser();
+    }
+    public BUserCQ xdfgetConditionQueryBUser() {
+        String prop = "bUser";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBUser()); xsetupOuterJoinBUser(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BUserCQ xcreateQueryBUser() {
+        String nrp = xresolveNRP("M_USER_CENTER", "bUser"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BUserCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bUser", nrp);
+    }
+    protected void xsetupOuterJoinBUser() { xregOutJo("bUser"); }
+    public boolean hasConditionQueryBUser() { return xhasQueRlMap("bUser"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

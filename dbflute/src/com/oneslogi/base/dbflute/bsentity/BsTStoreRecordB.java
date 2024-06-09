@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_LOCATION, T_STORE_RECORD_H, T_RECEIVE_PLAN_B, B_CLASS_DTL(ByInputType)
+ *     T_RECEIVE_PLAN_B, M_LOCATION, T_STORE_RECORD_H, B_CLASS_DTL(ByInputType)
  *
  * [referrer table]
  *     T_STOCK_INOUT
  *
  * [foreign property]
- *     mLocation, tStoreRecordH, tReceivePlanB, bClassDtlByInputType, bClassDtlByStoreFlg
+ *     tReceivePlanB, mLocation, tStoreRecordH, bClassDtlByInputType, bClassDtlByStoreFlg
  *
  * [referrer property]
  *     tStockInoutList
@@ -477,6 +477,25 @@ public abstract class BsTStoreRecordB extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'. */
+    protected TReceivePlanB _tReceivePlanB;
+
+    /**
+     * [get] T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'. <br>
+     * @return The entity of foreign property 'TReceivePlanB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TReceivePlanB getTReceivePlanB() {
+        return _tReceivePlanB;
+    }
+
+    /**
+     * [set] T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+     * @param tReceivePlanB The entity of foreign property 'TReceivePlanB'. (NullAllowed)
+     */
+    public void setTReceivePlanB(TReceivePlanB tReceivePlanB) {
+        _tReceivePlanB = tReceivePlanB;
+    }
+
     /** M_LOCATION by my STORE_LOCATION_ID, named 'MLocation'. */
     protected MLocation _mLocation;
 
@@ -513,25 +532,6 @@ public abstract class BsTStoreRecordB extends AbstractEntity implements DomainEn
      */
     public void setTStoreRecordH(TStoreRecordH tStoreRecordH) {
         _tStoreRecordH = tStoreRecordH;
-    }
-
-    /** T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'. */
-    protected TReceivePlanB _tReceivePlanB;
-
-    /**
-     * [get] T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'. <br>
-     * @return The entity of foreign property 'TReceivePlanB'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TReceivePlanB getTReceivePlanB() {
-        return _tReceivePlanB;
-    }
-
-    /**
-     * [set] T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-     * @param tReceivePlanB The entity of foreign property 'TReceivePlanB'. (NullAllowed)
-     */
-    public void setTReceivePlanB(TReceivePlanB tReceivePlanB) {
-        _tReceivePlanB = tReceivePlanB;
     }
 
     /** B_CLASS_DTL by my INPUT_TYPE, named 'BClassDtlByInputType'. */
@@ -624,12 +624,12 @@ public abstract class BsTStoreRecordB extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_tReceivePlanB != null)
+        { sb.append(li).append(xbRDS(_tReceivePlanB, "tReceivePlanB")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
         if (_tStoreRecordH != null)
         { sb.append(li).append(xbRDS(_tStoreRecordH, "tStoreRecordH")); }
-        if (_tReceivePlanB != null)
-        { sb.append(li).append(xbRDS(_tReceivePlanB, "tReceivePlanB")); }
         if (_bClassDtlByInputType != null)
         { sb.append(li).append(xbRDS(_bClassDtlByInputType, "bClassDtlByInputType")); }
         if (_bClassDtlByStoreFlg != null)
@@ -676,12 +676,12 @@ public abstract class BsTStoreRecordB extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_tReceivePlanB != null)
+        { sb.append(dm).append("tReceivePlanB"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
         if (_tStoreRecordH != null)
         { sb.append(dm).append("tStoreRecordH"); }
-        if (_tReceivePlanB != null)
-        { sb.append(dm).append("tReceivePlanB"); }
         if (_bClassDtlByInputType != null)
         { sb.append(dm).append("bClassDtlByInputType"); }
         if (_bClassDtlByStoreFlg != null)

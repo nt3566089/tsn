@@ -1406,11 +1406,11 @@ public class BsMClientCQ extends AbstractBsMClientCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MClientCQ bq = (MClientCQ)bqs;
         MClientCQ uq = (MClientCQ)uqs;
-        if (bq.hasConditionQueryMShapeGrp()) {
-            uq.queryMShapeGrp().reflectRelationOnUnionQuery(bq.queryMShapeGrp(), uq.queryMShapeGrp());
-        }
         if (bq.hasConditionQueryMCustomer()) {
             uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
+        }
+        if (bq.hasConditionQueryMShapeGrp()) {
+            uq.queryMShapeGrp().reflectRelationOnUnionQuery(bq.queryMShapeGrp(), uq.queryMShapeGrp());
         }
         if (bq.hasConditionQueryBClassDtlByDelFlg()) {
             uq.queryBClassDtlByDelFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByDelFlg(), uq.queryBClassDtlByDelFlg());
@@ -1420,26 +1420,6 @@ public class BsMClientCQ extends AbstractBsMClientCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MShapeGrpCQ queryMShapeGrp() {
-        return xdfgetConditionQueryMShapeGrp();
-    }
-    public MShapeGrpCQ xdfgetConditionQueryMShapeGrp() {
-        String prop = "mShapeGrp";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShapeGrp()); xsetupOuterJoinMShapeGrp(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MShapeGrpCQ xcreateQueryMShapeGrp() {
-        String nrp = xresolveNRP("M_CLIENT", "mShapeGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MShapeGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShapeGrp", nrp);
-    }
-    protected void xsetupOuterJoinMShapeGrp() { xregOutJo("mShapeGrp"); }
-    public boolean hasConditionQueryMShapeGrp() { return xhasQueRlMap("mShapeGrp"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
@@ -1459,6 +1439,26 @@ public class BsMClientCQ extends AbstractBsMClientCQ {
     }
     protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
     public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MShapeGrpCQ queryMShapeGrp() {
+        return xdfgetConditionQueryMShapeGrp();
+    }
+    public MShapeGrpCQ xdfgetConditionQueryMShapeGrp() {
+        String prop = "mShapeGrp";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShapeGrp()); xsetupOuterJoinMShapeGrp(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MShapeGrpCQ xcreateQueryMShapeGrp() {
+        String nrp = xresolveNRP("M_CLIENT", "mShapeGrp"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MShapeGrpCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShapeGrp", nrp);
+    }
+    protected void xsetupOuterJoinMShapeGrp() { xregOutJo("mShapeGrp"); }
+    public boolean hasConditionQueryMShapeGrp() { return xhasQueRlMap("mShapeGrp"); }
 
     /**
      * Get the condition-query for relation table. <br>

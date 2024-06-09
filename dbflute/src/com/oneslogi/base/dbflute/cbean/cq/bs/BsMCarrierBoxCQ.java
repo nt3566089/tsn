@@ -386,37 +386,17 @@ public class BsMCarrierBoxCQ extends AbstractBsMCarrierBoxCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MCarrierBoxCQ bq = (MCarrierBoxCQ)bqs;
         MCarrierBoxCQ uq = (MCarrierBoxCQ)uqs;
-        if (bq.hasConditionQueryMCarrier()) {
-            uq.queryMCarrier().reflectRelationOnUnionQuery(bq.queryMCarrier(), uq.queryMCarrier());
-        }
         if (bq.hasConditionQueryMBox()) {
             uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
+        }
+        if (bq.hasConditionQueryMCarrier()) {
+            uq.queryMCarrier().reflectRelationOnUnionQuery(bq.queryMCarrier(), uq.queryMCarrier());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCarrierCQ queryMCarrier() {
-        return xdfgetConditionQueryMCarrier();
-    }
-    public MCarrierCQ xdfgetConditionQueryMCarrier() {
-        String prop = "mCarrier";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCarrier()); xsetupOuterJoinMCarrier(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCarrierCQ xcreateQueryMCarrier() {
-        String nrp = xresolveNRP("M_CARRIER_BOX", "mCarrier"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCarrierCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCarrier", nrp);
-    }
-    protected void xsetupOuterJoinMCarrier() { xregOutJo("mCarrier"); }
-    public boolean hasConditionQueryMCarrier() { return xhasQueRlMap("mCarrier"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_BOX by my BOX_ID, named 'MBox'.
@@ -436,6 +416,26 @@ public class BsMCarrierBoxCQ extends AbstractBsMCarrierBoxCQ {
     }
     protected void xsetupOuterJoinMBox() { xregOutJo("mBox"); }
     public boolean hasConditionQueryMBox() { return xhasQueRlMap("mBox"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCarrierCQ queryMCarrier() {
+        return xdfgetConditionQueryMCarrier();
+    }
+    public MCarrierCQ xdfgetConditionQueryMCarrier() {
+        String prop = "mCarrier";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCarrier()); xsetupOuterJoinMCarrier(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCarrierCQ xcreateQueryMCarrier() {
+        String nrp = xresolveNRP("M_CARRIER_BOX", "mCarrier"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCarrierCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCarrier", nrp);
+    }
+    protected void xsetupOuterJoinMCarrier() { xregOutJo("mCarrier"); }
+    public boolean hasConditionQueryMCarrier() { return xhasQueRlMap("mCarrier"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

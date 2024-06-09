@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, M_EDI_COLUMN
+ *     M_EDI_COLUMN, M_IMPORT_TYPE
  *
  * [referrer table]
  *     M_IMPORT_TYPE_B_COPY_B, M_IMPORT_TYPE_B_COPY_H
  *
  * [foreign property]
- *     mImportType, mEdiColumn
+ *     mEdiColumn, mImportType
  *
  * [referrer property]
  *     mImportTypeBCopyBList, mImportTypeBCopyHList
@@ -569,20 +569,20 @@ public abstract class BsMImportTypeBBhv extends AbstractBehaviorWritable<MImport
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MImportType'.
-     * @param mImportTypeBList The list of mImportTypeB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MImportType> pulloutMImportType(List<MImportTypeB> mImportTypeBList)
-    { return helpPulloutInternally(mImportTypeBList, "mImportType"); }
-
-    /**
      * Pull out the list of foreign table 'MEdiColumn'.
      * @param mImportTypeBList The list of mImportTypeB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MEdiColumn> pulloutMEdiColumn(List<MImportTypeB> mImportTypeBList)
     { return helpPulloutInternally(mImportTypeBList, "mEdiColumn"); }
+
+    /**
+     * Pull out the list of foreign table 'MImportType'.
+     * @param mImportTypeBList The list of mImportTypeB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MImportType> pulloutMImportType(List<MImportTypeB> mImportTypeBList)
+    { return helpPulloutInternally(mImportTypeBList, "mImportType"); }
 
     // ===================================================================================
     //                                                                      Extract Column

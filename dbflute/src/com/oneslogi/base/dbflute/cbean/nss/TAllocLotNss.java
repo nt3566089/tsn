@@ -20,24 +20,6 @@ public class TAllocLotNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TLotNss withTLot() {
-        _query.xdoNss(() -> _query.queryTLot());
-        return new TLotNss(_query.queryTLot());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -53,5 +35,23 @@ public class TAllocLotNss {
     public MCustomerNss withMCustomer() {
         _query.xdoNss(() -> _query.queryMCustomer());
         return new MCustomerNss(_query.queryMCustomer());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TLotNss withTLot() {
+        _query.xdoNss(() -> _query.queryTLot());
+        return new TLotNss(_query.queryTLot());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
 }

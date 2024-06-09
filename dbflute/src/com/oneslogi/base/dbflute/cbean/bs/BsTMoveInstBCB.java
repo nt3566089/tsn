@@ -252,91 +252,33 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TMoveInstHNss _nssTMoveInstH;
-    public TMoveInstHNss xdfgetNssTMoveInstH() {
-        if (_nssTMoveInstH == null) { _nssTMoveInstH = new TMoveInstHNss(null); }
-        return _nssTMoveInstH;
+    protected MCustomerNss _nssMCustomerByDepositId;
+    public MCustomerNss xdfgetNssMCustomerByDepositId() {
+        if (_nssMCustomerByDepositId == null) { _nssMCustomerByDepositId = new MCustomerNss(null); }
+        return _nssMCustomerByDepositId;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
      * <pre>
      * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TMoveInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByDepositId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getTMoveInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMCustomerByDepositId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TMoveInstHNss setupSelect_TMoveInstH() {
-        assertSetupSelectPurpose("tMoveInstH");
+    public MCustomerNss setupSelect_MCustomerByDepositId() {
+        assertSetupSelectPurpose("mCustomerByDepositId");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnMoveInstHId();
+            specify().columnDepositId();
         }
-        doSetupSelect(() -> query().queryTMoveInstH());
-        if (_nssTMoveInstH == null || !_nssTMoveInstH.hasConditionQuery())
-        { _nssTMoveInstH = new TMoveInstHNss(query().queryTMoveInstH()); }
-        return _nssTMoveInstH;
-    }
-
-    protected MWarehouseNss _nssMWarehouse;
-    public MWarehouseNss xdfgetNssMWarehouse() {
-        if (_nssMWarehouse == null) { _nssMWarehouse = new MWarehouseNss(null); }
-        return _nssMWarehouse;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * <pre>
-     * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MWarehouse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMWarehouse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MWarehouseNss setupSelect_MWarehouse() {
-        assertSetupSelectPurpose("mWarehouse");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnWarehouseId();
-        }
-        doSetupSelect(() -> query().queryMWarehouse());
-        if (_nssMWarehouse == null || !_nssMWarehouse.hasConditionQuery())
-        { _nssMWarehouse = new MWarehouseNss(query().queryMWarehouse()); }
-        return _nssMWarehouse;
-    }
-
-    protected TLotNss _nssTLot;
-    public TLotNss xdfgetNssTLot() {
-        if (_nssTLot == null) { _nssTLot = new TLotNss(null); }
-        return _nssTLot;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * <pre>
-     * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TLot()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getTLot()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TLotNss setupSelect_TLot() {
-        assertSetupSelectPurpose("tLot");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnLotId();
-        }
-        doSetupSelect(() -> query().queryTLot());
-        if (_nssTLot == null || !_nssTLot.hasConditionQuery())
-        { _nssTLot = new TLotNss(query().queryTLot()); }
-        return _nssTLot;
+        doSetupSelect(() -> query().queryMCustomerByDepositId());
+        if (_nssMCustomerByDepositId == null || !_nssMCustomerByDepositId.hasConditionQuery())
+        { _nssMCustomerByDepositId = new MCustomerNss(query().queryMCustomerByDepositId()); }
+        return _nssMCustomerByDepositId;
     }
 
     protected MLocationNss _nssMLocation;
@@ -368,33 +310,62 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         return _nssMLocation;
     }
 
-    protected MShapeNss _nssMShape;
-    public MShapeNss xdfgetNssMShape() {
-        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
-        return _nssMShape;
+    protected TLotNss _nssTLot;
+    public TLotNss xdfgetNssTLot() {
+        if (_nssTLot == null) { _nssTLot = new TLotNss(null); }
+        return _nssTLot;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * T_LOT by my LOT_ID, named 'TLot'.
      * <pre>
      * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TLot()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getTLot()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MShapeNss setupSelect_MShape() {
-        assertSetupSelectPurpose("mShape");
+    public TLotNss setupSelect_TLot() {
+        assertSetupSelectPurpose("tLot");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnShapeId();
+            specify().columnLotId();
         }
-        doSetupSelect(() -> query().queryMShape());
-        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
-        { _nssMShape = new MShapeNss(query().queryMShape()); }
-        return _nssMShape;
+        doSetupSelect(() -> query().queryTLot());
+        if (_nssTLot == null || !_nssTLot.hasConditionQuery())
+        { _nssTLot = new TLotNss(query().queryTLot()); }
+        return _nssTLot;
+    }
+
+    protected TMoveInstHNss _nssTMoveInstH;
+    public TMoveInstHNss xdfgetNssTMoveInstH() {
+        if (_nssTMoveInstH == null) { _nssTMoveInstH = new TMoveInstHNss(null); }
+        return _nssTMoveInstH;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * <pre>
+     * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TMoveInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getTMoveInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TMoveInstHNss setupSelect_TMoveInstH() {
+        assertSetupSelectPurpose("tMoveInstH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnMoveInstHId();
+        }
+        doSetupSelect(() -> query().queryTMoveInstH());
+        if (_nssTMoveInstH == null || !_nssTMoveInstH.hasConditionQuery())
+        { _nssTMoveInstH = new TMoveInstHNss(query().queryTMoveInstH()); }
+        return _nssTMoveInstH;
     }
 
     protected MProductNss _nssMProduct;
@@ -424,6 +395,35 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
         { _nssMProduct = new MProductNss(query().queryMProduct()); }
         return _nssMProduct;
+    }
+
+    protected MShapeNss _nssMShape;
+    public MShapeNss xdfgetNssMShape() {
+        if (_nssMShape == null) { _nssMShape = new MShapeNss(null); }
+        return _nssMShape;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * <pre>
+     * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MShape()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMShape()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MShapeNss setupSelect_MShape() {
+        assertSetupSelectPurpose("mShape");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShapeId();
+        }
+        doSetupSelect(() -> query().queryMShape());
+        if (_nssMShape == null || !_nssMShape.hasConditionQuery())
+        { _nssMShape = new MShapeNss(query().queryMShape()); }
+        return _nssMShape;
     }
 
     protected MStockTypeNss _nssMStockType;
@@ -513,33 +513,33 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         return _nssMCustomerBySupplierId;
     }
 
-    protected MCustomerNss _nssMCustomerByDepositId;
-    public MCustomerNss xdfgetNssMCustomerByDepositId() {
-        if (_nssMCustomerByDepositId == null) { _nssMCustomerByDepositId = new MCustomerNss(null); }
-        return _nssMCustomerByDepositId;
+    protected MWarehouseNss _nssMWarehouse;
+    public MWarehouseNss xdfgetNssMWarehouse() {
+        if (_nssMWarehouse == null) { _nssMWarehouse = new MWarehouseNss(null); }
+        return _nssMWarehouse;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
      * <pre>
      * <span style="color: #0000C0">tMoveInstBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByDepositId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MWarehouse()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tMoveInstB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMCustomerByDepositId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tMoveInstB</span>.<span style="color: #CC4747">getMWarehouse()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCustomerNss setupSelect_MCustomerByDepositId() {
-        assertSetupSelectPurpose("mCustomerByDepositId");
+    public MWarehouseNss setupSelect_MWarehouse() {
+        assertSetupSelectPurpose("mWarehouse");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnDepositId();
+            specify().columnWarehouseId();
         }
-        doSetupSelect(() -> query().queryMCustomerByDepositId());
-        if (_nssMCustomerByDepositId == null || !_nssMCustomerByDepositId.hasConditionQuery())
-        { _nssMCustomerByDepositId = new MCustomerNss(query().queryMCustomerByDepositId()); }
-        return _nssMCustomerByDepositId;
+        doSetupSelect(() -> query().queryMWarehouse());
+        if (_nssMWarehouse == null || !_nssMWarehouse.hasConditionQuery())
+        { _nssMWarehouse = new MWarehouseNss(query().queryMWarehouse()); }
+        return _nssMWarehouse;
     }
 
     protected BClassDtlNss _nssBClassDtlByInoutType;
@@ -667,16 +667,16 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TMoveInstBCQ> {
-        protected TMoveInstHCB.HpSpecification _tMoveInstH;
-        protected MWarehouseCB.HpSpecification _mWarehouse;
-        protected TLotCB.HpSpecification _tLot;
+        protected MCustomerCB.HpSpecification _mCustomerByDepositId;
         protected MLocationCB.HpSpecification _mLocation;
-        protected MShapeCB.HpSpecification _mShape;
+        protected TLotCB.HpSpecification _tLot;
+        protected TMoveInstHCB.HpSpecification _tMoveInstH;
         protected MProductCB.HpSpecification _mProduct;
+        protected MShapeCB.HpSpecification _mShape;
         protected MStockTypeCB.HpSpecification _mStockType;
         protected TStoreNoCB.HpSpecification _tStoreNo;
         protected MCustomerCB.HpSpecification _mCustomerBySupplierId;
-        protected MCustomerCB.HpSpecification _mCustomerByDepositId;
+        protected MWarehouseCB.HpSpecification _mWarehouse;
         protected BClassDtlCB.HpSpecification _bClassDtlByInoutType;
         protected BClassDtlCB.HpSpecification _bClassDtlByMoveInstStatus;
         protected TMoveInstBSubCB.HpSpecification _tMoveInstBSubAsOne;
@@ -929,29 +929,29 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnMoveInstBId(); // PK
-            if (qyCall().qy().hasConditionQueryTMoveInstH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TMoveInstHCQ) {
-                columnMoveInstHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMWarehouse()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MWarehouseCQ) {
-                columnWarehouseId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryTLot()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
-                columnLotId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCustomerByDepositId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnDepositId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMLocation()
                     || qyCall().qy().xgetReferrerQuery() instanceof MLocationCQ) {
                 columnLocationId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMShape()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
-                columnShapeId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTLot()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TLotCQ) {
+                columnLotId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTMoveInstH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TMoveInstHCQ) {
+                columnMoveInstHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMProduct()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
                 columnProductId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMShape()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MShapeCQ) {
+                columnShapeId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMStockType()
                     || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
@@ -965,9 +965,9 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
                 columnSupplierId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCustomerByDepositId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnDepositId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMWarehouse()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MWarehouseCQ) {
+                columnWarehouseId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByInoutType()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -982,63 +982,23 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_MOVE_INST_B"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+         * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TMoveInstHCB.HpSpecification specifyTMoveInstH() {
-            assertRelation("tMoveInstH");
-            if (_tMoveInstH == null) {
-                _tMoveInstH = new TMoveInstHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTMoveInstH()
-                                    , () -> _qyCall.qy().queryTMoveInstH())
+        public MCustomerCB.HpSpecification specifyMCustomerByDepositId() {
+            assertRelation("mCustomerByDepositId");
+            if (_mCustomerByDepositId == null) {
+                _mCustomerByDepositId = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByDepositId()
+                                    , () -> _qyCall.qy().queryMCustomerByDepositId())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tMoveInstH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTMoveInstH()
-                      , () -> xsyncQyCall().qy().queryTMoveInstH()));
+                    _mCustomerByDepositId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByDepositId()
+                      , () -> xsyncQyCall().qy().queryMCustomerByDepositId()));
                 }
             }
-            return _tMoveInstH;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MWarehouseCB.HpSpecification specifyMWarehouse() {
-            assertRelation("mWarehouse");
-            if (_mWarehouse == null) {
-                _mWarehouse = new MWarehouseCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMWarehouse()
-                                    , () -> _qyCall.qy().queryMWarehouse())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mWarehouse.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMWarehouse()
-                      , () -> xsyncQyCall().qy().queryMWarehouse()));
-                }
-            }
-            return _mWarehouse;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_LOT by my LOT_ID, named 'TLot'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TLotCB.HpSpecification specifyTLot() {
-            assertRelation("tLot");
-            if (_tLot == null) {
-                _tLot = new TLotCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTLot()
-                                    , () -> _qyCall.qy().queryTLot())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tLot.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTLot()
-                      , () -> xsyncQyCall().qy().queryTLot()));
-                }
-            }
-            return _tLot;
+            return _mCustomerByDepositId;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1062,23 +1022,43 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_SHAPE by my SHAPE_ID, named 'MShape'.
+         * T_LOT by my LOT_ID, named 'TLot'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MShapeCB.HpSpecification specifyMShape() {
-            assertRelation("mShape");
-            if (_mShape == null) {
-                _mShape = new MShapeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
-                                    , () -> _qyCall.qy().queryMShape())
+        public TLotCB.HpSpecification specifyTLot() {
+            assertRelation("tLot");
+            if (_tLot == null) {
+                _tLot = new TLotCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTLot()
+                                    , () -> _qyCall.qy().queryTLot())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
-                      , () -> xsyncQyCall().qy().queryMShape()));
+                    _tLot.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTLot()
+                      , () -> xsyncQyCall().qy().queryTLot()));
                 }
             }
-            return _mShape;
+            return _tLot;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TMoveInstHCB.HpSpecification specifyTMoveInstH() {
+            assertRelation("tMoveInstH");
+            if (_tMoveInstH == null) {
+                _tMoveInstH = new TMoveInstHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTMoveInstH()
+                                    , () -> _qyCall.qy().queryTMoveInstH())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tMoveInstH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTMoveInstH()
+                      , () -> xsyncQyCall().qy().queryTMoveInstH()));
+                }
+            }
+            return _tMoveInstH;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1099,6 +1079,26 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
                 }
             }
             return _mProduct;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_SHAPE by my SHAPE_ID, named 'MShape'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MShapeCB.HpSpecification specifyMShape() {
+            assertRelation("mShape");
+            if (_mShape == null) {
+                _mShape = new MShapeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMShape()
+                                    , () -> _qyCall.qy().queryMShape())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mShape.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMShape()
+                      , () -> xsyncQyCall().qy().queryMShape()));
+                }
+            }
+            return _mShape;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1162,23 +1162,23 @@ public class BsTMoveInstBCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+         * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCustomerCB.HpSpecification specifyMCustomerByDepositId() {
-            assertRelation("mCustomerByDepositId");
-            if (_mCustomerByDepositId == null) {
-                _mCustomerByDepositId = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByDepositId()
-                                    , () -> _qyCall.qy().queryMCustomerByDepositId())
+        public MWarehouseCB.HpSpecification specifyMWarehouse() {
+            assertRelation("mWarehouse");
+            if (_mWarehouse == null) {
+                _mWarehouse = new MWarehouseCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMWarehouse()
+                                    , () -> _qyCall.qy().queryMWarehouse())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCustomerByDepositId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByDepositId()
-                      , () -> xsyncQyCall().qy().queryMCustomerByDepositId()));
+                    _mWarehouse.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMWarehouse()
+                      , () -> xsyncQyCall().qy().queryMWarehouse()));
                 }
             }
-            return _mCustomerByDepositId;
+            return _mWarehouse;
         }
         /**
          * Prepare to specify functions about relation table. <br>

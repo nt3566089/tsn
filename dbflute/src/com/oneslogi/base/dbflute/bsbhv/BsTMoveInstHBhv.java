@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_PROCESS_TYPE, M_CENTER, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByInputType), T_MOVE_INST_R(AsOne)
  *
  * [referrer table]
  *     T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_MOVE_INST_R
  *
  * [foreign property]
- *     mClient, mProcessType, mCenter, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
+ *     mCenter, mClient, mProcessType, bClassDtlByInputType, bClassDtlByMoveInstStatus, tMoveInstRAsOne
  *
  * [referrer property]
  *     tInventoryBList, tMoveInstBList, tMoveRecordBList
@@ -657,6 +657,14 @@ public abstract class BsTMoveInstHBhv extends AbstractBehaviorWritable<TMoveInst
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param tMoveInstHList The list of tMoveInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<TMoveInstH> tMoveInstHList)
+    { return helpPulloutInternally(tMoveInstHList, "mCenter"); }
+
+    /**
      * Pull out the list of foreign table 'MClient'.
      * @param tMoveInstHList The list of tMoveInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -671,14 +679,6 @@ public abstract class BsTMoveInstHBhv extends AbstractBehaviorWritable<TMoveInst
      */
     public List<MProcessType> pulloutMProcessType(List<TMoveInstH> tMoveInstHList)
     { return helpPulloutInternally(tMoveInstHList, "mProcessType"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param tMoveInstHList The list of tMoveInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<TMoveInstH> tMoveInstHList)
-    { return helpPulloutInternally(tMoveInstHList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CARRIER, M_BOX
+ *     M_BOX, M_CARRIER
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mCarrier, mBox
+ *     mBox, mCarrier
  *
  * [referrer property]
  *     
@@ -261,25 +261,6 @@ public abstract class BsMCarrierBox extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CARRIER by my CARRIER_ID, named 'MCarrier'. */
-    protected MCarrier _mCarrier;
-
-    /**
-     * [get] M_CARRIER by my CARRIER_ID, named 'MCarrier'. <br>
-     * @return The entity of foreign property 'MCarrier'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCarrier getMCarrier() {
-        return _mCarrier;
-    }
-
-    /**
-     * [set] M_CARRIER by my CARRIER_ID, named 'MCarrier'.
-     * @param mCarrier The entity of foreign property 'MCarrier'. (NullAllowed)
-     */
-    public void setMCarrier(MCarrier mCarrier) {
-        _mCarrier = mCarrier;
-    }
-
     /** M_BOX by my BOX_ID, named 'MBox'. */
     protected MBox _mBox;
 
@@ -297,6 +278,25 @@ public abstract class BsMCarrierBox extends AbstractEntity implements DomainEnti
      */
     public void setMBox(MBox mBox) {
         _mBox = mBox;
+    }
+
+    /** M_CARRIER by my CARRIER_ID, named 'MCarrier'. */
+    protected MCarrier _mCarrier;
+
+    /**
+     * [get] M_CARRIER by my CARRIER_ID, named 'MCarrier'. <br>
+     * @return The entity of foreign property 'MCarrier'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCarrier getMCarrier() {
+        return _mCarrier;
+    }
+
+    /**
+     * [set] M_CARRIER by my CARRIER_ID, named 'MCarrier'.
+     * @param mCarrier The entity of foreign property 'MCarrier'. (NullAllowed)
+     */
+    public void setMCarrier(MCarrier mCarrier) {
+        _mCarrier = mCarrier;
     }
 
     // ===================================================================================
@@ -331,10 +331,10 @@ public abstract class BsMCarrierBox extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mCarrier != null)
-        { sb.append(li).append(xbRDS(_mCarrier, "mCarrier")); }
         if (_mBox != null)
         { sb.append(li).append(xbRDS(_mBox, "mBox")); }
+        if (_mCarrier != null)
+        { sb.append(li).append(xbRDS(_mCarrier, "mCarrier")); }
         return sb.toString();
     }
 
@@ -364,10 +364,10 @@ public abstract class BsMCarrierBox extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mCarrier != null)
-        { sb.append(dm).append("mCarrier"); }
         if (_mBox != null)
         { sb.append(dm).append("mBox"); }
+        if (_mCarrier != null)
+        { sb.append(dm).append("mCarrier"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

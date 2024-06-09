@@ -252,62 +252,33 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected TReceivePlanHNss _nssTReceivePlanHSelf;
-    public TReceivePlanHNss xdfgetNssTReceivePlanHSelf() {
-        if (_nssTReceivePlanHSelf == null) { _nssTReceivePlanHSelf = new TReceivePlanHNss(null); }
-        return _nssTReceivePlanHSelf;
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * <pre>
      * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TReceivePlanHSelf()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getTReceivePlanHSelf()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TReceivePlanHNss setupSelect_TReceivePlanHSelf() {
-        assertSetupSelectPurpose("tReceivePlanHSelf");
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnOldReceivePlanHId();
+            specify().columnCenterId();
         }
-        doSetupSelect(() -> query().queryTReceivePlanHSelf());
-        if (_nssTReceivePlanHSelf == null || !_nssTReceivePlanHSelf.hasConditionQuery())
-        { _nssTReceivePlanHSelf = new TReceivePlanHNss(query().queryTReceivePlanHSelf()); }
-        return _nssTReceivePlanHSelf;
-    }
-
-    protected MCustomerNss _nssMCustomerByPlanDepositId;
-    public MCustomerNss xdfgetNssMCustomerByPlanDepositId() {
-        if (_nssMCustomerByPlanDepositId == null) { _nssMCustomerByPlanDepositId = new MCustomerNss(null); }
-        return _nssMCustomerByPlanDepositId;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
-     * <pre>
-     * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByPlanDepositId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMCustomerByPlanDepositId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCustomerNss setupSelect_MCustomerByPlanDepositId() {
-        assertSetupSelectPurpose("mCustomerByPlanDepositId");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnPlanDepositId();
-        }
-        doSetupSelect(() -> query().queryMCustomerByPlanDepositId());
-        if (_nssMCustomerByPlanDepositId == null || !_nssMCustomerByPlanDepositId.hasConditionQuery())
-        { _nssMCustomerByPlanDepositId = new MCustomerNss(query().queryMCustomerByPlanDepositId()); }
-        return _nssMCustomerByPlanDepositId;
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected MClientNss _nssMClient;
@@ -339,91 +310,91 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         return _nssMClient;
     }
 
-    protected MStockTypeNss _nssMStockType;
-    public MStockTypeNss xdfgetNssMStockType() {
-        if (_nssMStockType == null) { _nssMStockType = new MStockTypeNss(null); }
-        return _nssMStockType;
+    protected TReceivePlanHNss _nssTReceivePlanHSelf;
+    public TReceivePlanHNss xdfgetNssTReceivePlanHSelf() {
+        if (_nssTReceivePlanHSelf == null) { _nssTReceivePlanHSelf = new TReceivePlanHNss(null); }
+        return _nssTReceivePlanHSelf;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
      * <pre>
      * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MStockType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TReceivePlanHSelf()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMStockType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getTReceivePlanHSelf()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MStockTypeNss setupSelect_MStockType() {
-        assertSetupSelectPurpose("mStockType");
+    public TReceivePlanHNss setupSelect_TReceivePlanHSelf() {
+        assertSetupSelectPurpose("tReceivePlanHSelf");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnStockTypeId();
+            specify().columnOldReceivePlanHId();
         }
-        doSetupSelect(() -> query().queryMStockType());
-        if (_nssMStockType == null || !_nssMStockType.hasConditionQuery())
-        { _nssMStockType = new MStockTypeNss(query().queryMStockType()); }
-        return _nssMStockType;
+        doSetupSelect(() -> query().queryTReceivePlanHSelf());
+        if (_nssTReceivePlanHSelf == null || !_nssTReceivePlanHSelf.hasConditionQuery())
+        { _nssTReceivePlanHSelf = new TReceivePlanHNss(query().queryTReceivePlanHSelf()); }
+        return _nssTReceivePlanHSelf;
     }
 
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
+    protected TPickingHNss _nssTPickingH;
+    public TPickingHNss xdfgetNssTPickingH() {
+        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
+        return _nssTPickingH;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * <pre>
      * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
+    public TPickingHNss setupSelect_TPickingH() {
+        assertSetupSelectPurpose("tPickingH");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
+            specify().columnPickingHId();
         }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryTPickingH());
+        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
+        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
+        return _nssTPickingH;
     }
 
-    protected MProcessTypeNss _nssMProcessType;
-    public MProcessTypeNss xdfgetNssMProcessType() {
-        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
-        return _nssMProcessType;
+    protected MCustomerNss _nssMCustomerByPlanDepositId;
+    public MCustomerNss xdfgetNssMCustomerByPlanDepositId() {
+        if (_nssMCustomerByPlanDepositId == null) { _nssMCustomerByPlanDepositId = new MCustomerNss(null); }
+        return _nssMCustomerByPlanDepositId;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
      * <pre>
      * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomerByPlanDepositId()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMCustomerByPlanDepositId()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MProcessTypeNss setupSelect_MProcessType() {
-        assertSetupSelectPurpose("mProcessType");
+    public MCustomerNss setupSelect_MCustomerByPlanDepositId() {
+        assertSetupSelectPurpose("mCustomerByPlanDepositId");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnProcessTypeId();
+            specify().columnPlanDepositId();
         }
-        doSetupSelect(() -> query().queryMProcessType());
-        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
-        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
-        return _nssMProcessType;
+        doSetupSelect(() -> query().queryMCustomerByPlanDepositId());
+        if (_nssMCustomerByPlanDepositId == null || !_nssMCustomerByPlanDepositId.hasConditionQuery())
+        { _nssMCustomerByPlanDepositId = new MCustomerNss(query().queryMCustomerByPlanDepositId()); }
+        return _nssMCustomerByPlanDepositId;
     }
 
     protected MCustomerNss _nssMCustomerByPlanSupplierId;
@@ -455,33 +426,62 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         return _nssMCustomerByPlanSupplierId;
     }
 
-    protected TPickingHNss _nssTPickingH;
-    public TPickingHNss xdfgetNssTPickingH() {
-        if (_nssTPickingH == null) { _nssTPickingH = new TPickingHNss(null); }
-        return _nssTPickingH;
+    protected MProcessTypeNss _nssMProcessType;
+    public MProcessTypeNss xdfgetNssMProcessType() {
+        if (_nssMProcessType == null) { _nssMProcessType = new MProcessTypeNss(null); }
+        return _nssMProcessType;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * <pre>
      * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TPickingH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MProcessType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getTPickingH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMProcessType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public TPickingHNss setupSelect_TPickingH() {
-        assertSetupSelectPurpose("tPickingH");
+    public MProcessTypeNss setupSelect_MProcessType() {
+        assertSetupSelectPurpose("mProcessType");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnPickingHId();
+            specify().columnProcessTypeId();
         }
-        doSetupSelect(() -> query().queryTPickingH());
-        if (_nssTPickingH == null || !_nssTPickingH.hasConditionQuery())
-        { _nssTPickingH = new TPickingHNss(query().queryTPickingH()); }
-        return _nssTPickingH;
+        doSetupSelect(() -> query().queryMProcessType());
+        if (_nssMProcessType == null || !_nssMProcessType.hasConditionQuery())
+        { _nssMProcessType = new MProcessTypeNss(query().queryMProcessType()); }
+        return _nssMProcessType;
+    }
+
+    protected MStockTypeNss _nssMStockType;
+    public MStockTypeNss xdfgetNssMStockType() {
+        if (_nssMStockType == null) { _nssMStockType = new MStockTypeNss(null); }
+        return _nssMStockType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+     * <pre>
+     * <span style="color: #0000C0">tReceivePlanHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MStockType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tReceivePlanH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tReceivePlanH</span>.<span style="color: #CC4747">getMStockType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MStockTypeNss setupSelect_MStockType() {
+        assertSetupSelectPurpose("mStockType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnStockTypeId();
+        }
+        doSetupSelect(() -> query().queryMStockType());
+        if (_nssMStockType == null || !_nssMStockType.hasConditionQuery())
+        { _nssMStockType = new MStockTypeNss(query().queryMStockType()); }
+        return _nssMStockType;
     }
 
     protected BClassDtlNss _nssBClassDtlByCenterTransitFlg;
@@ -722,14 +722,14 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TReceivePlanHCQ> {
-        protected TReceivePlanHCB.HpSpecification _tReceivePlanHSelf;
-        protected MCustomerCB.HpSpecification _mCustomerByPlanDepositId;
-        protected MClientCB.HpSpecification _mClient;
-        protected MStockTypeCB.HpSpecification _mStockType;
         protected MCenterCB.HpSpecification _mCenter;
-        protected MProcessTypeCB.HpSpecification _mProcessType;
-        protected MCustomerCB.HpSpecification _mCustomerByPlanSupplierId;
+        protected MClientCB.HpSpecification _mClient;
+        protected TReceivePlanHCB.HpSpecification _tReceivePlanHSelf;
         protected TPickingHCB.HpSpecification _tPickingH;
+        protected MCustomerCB.HpSpecification _mCustomerByPlanDepositId;
+        protected MCustomerCB.HpSpecification _mCustomerByPlanSupplierId;
+        protected MProcessTypeCB.HpSpecification _mProcessType;
+        protected MStockTypeCB.HpSpecification _mStockType;
         protected BClassDtlCB.HpSpecification _bClassDtlByCenterTransitFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByErrorFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByInputType;
@@ -891,37 +891,37 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnReceivePlanHId(); // PK
-            if (qyCall().qy().hasConditionQueryTReceivePlanHSelf()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TReceivePlanHCQ) {
-                columnOldReceivePlanHId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCustomerByPlanDepositId()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnPlanDepositId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMStockType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
-                columnStockTypeId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTReceivePlanHSelf()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TReceivePlanHCQ) {
+                columnOldReceivePlanHId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryTPickingH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
+                columnPickingHId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMProcessType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
-                columnProcessTypeId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMCustomerByPlanDepositId()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnPlanDepositId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMCustomerByPlanSupplierId()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
                 columnPlanSupplierId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryTPickingH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TPickingHCQ) {
-                columnPickingHId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMProcessType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MProcessTypeCQ) {
+                columnProcessTypeId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMStockType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
+                columnStockTypeId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByCenterTransitFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -948,43 +948,23 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_RECEIVE_PLAN_H"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TReceivePlanHCB.HpSpecification specifyTReceivePlanHSelf() {
-            assertRelation("tReceivePlanHSelf");
-            if (_tReceivePlanHSelf == null) {
-                _tReceivePlanHSelf = new TReceivePlanHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTReceivePlanHSelf()
-                                    , () -> _qyCall.qy().queryTReceivePlanHSelf())
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tReceivePlanHSelf.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTReceivePlanHSelf()
-                      , () -> xsyncQyCall().qy().queryTReceivePlanHSelf()));
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
                 }
             }
-            return _tReceivePlanHSelf;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCustomerCB.HpSpecification specifyMCustomerByPlanDepositId() {
-            assertRelation("mCustomerByPlanDepositId");
-            if (_mCustomerByPlanDepositId == null) {
-                _mCustomerByPlanDepositId = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByPlanDepositId()
-                                    , () -> _qyCall.qy().queryMCustomerByPlanDepositId())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCustomerByPlanDepositId.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByPlanDepositId()
-                      , () -> xsyncQyCall().qy().queryMCustomerByPlanDepositId()));
-                }
-            }
-            return _mCustomerByPlanDepositId;
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1008,63 +988,63 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+         * T_RECEIVE_PLAN_H by my OLD_RECEIVE_PLAN_H_ID, named 'TReceivePlanHSelf'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MStockTypeCB.HpSpecification specifyMStockType() {
-            assertRelation("mStockType");
-            if (_mStockType == null) {
-                _mStockType = new MStockTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMStockType()
-                                    , () -> _qyCall.qy().queryMStockType())
+        public TReceivePlanHCB.HpSpecification specifyTReceivePlanHSelf() {
+            assertRelation("tReceivePlanHSelf");
+            if (_tReceivePlanHSelf == null) {
+                _tReceivePlanHSelf = new TReceivePlanHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTReceivePlanHSelf()
+                                    , () -> _qyCall.qy().queryTReceivePlanHSelf())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mStockType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMStockType()
-                      , () -> xsyncQyCall().qy().queryMStockType()));
+                    _tReceivePlanHSelf.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTReceivePlanHSelf()
+                      , () -> xsyncQyCall().qy().queryTReceivePlanHSelf()));
                 }
             }
-            return _mStockType;
+            return _tReceivePlanHSelf;
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
+        public TPickingHCB.HpSpecification specifyTPickingH() {
+            assertRelation("tPickingH");
+            if (_tPickingH == null) {
+                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
+                                    , () -> _qyCall.qy().queryTPickingH())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
+                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
+                      , () -> xsyncQyCall().qy().queryTPickingH()));
                 }
             }
-            return _mCenter;
+            return _tPickingH;
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+         * M_CUSTOMER by my PLAN_DEPOSIT_ID, named 'MCustomerByPlanDepositId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MProcessTypeCB.HpSpecification specifyMProcessType() {
-            assertRelation("mProcessType");
-            if (_mProcessType == null) {
-                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
-                                    , () -> _qyCall.qy().queryMProcessType())
+        public MCustomerCB.HpSpecification specifyMCustomerByPlanDepositId() {
+            assertRelation("mCustomerByPlanDepositId");
+            if (_mCustomerByPlanDepositId == null) {
+                _mCustomerByPlanDepositId = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomerByPlanDepositId()
+                                    , () -> _qyCall.qy().queryMCustomerByPlanDepositId())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
-                      , () -> xsyncQyCall().qy().queryMProcessType()));
+                    _mCustomerByPlanDepositId.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomerByPlanDepositId()
+                      , () -> xsyncQyCall().qy().queryMCustomerByPlanDepositId()));
                 }
             }
-            return _mProcessType;
+            return _mCustomerByPlanDepositId;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -1088,23 +1068,43 @@ public class BsTReceivePlanHCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+         * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public TPickingHCB.HpSpecification specifyTPickingH() {
-            assertRelation("tPickingH");
-            if (_tPickingH == null) {
-                _tPickingH = new TPickingHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTPickingH()
-                                    , () -> _qyCall.qy().queryTPickingH())
+        public MProcessTypeCB.HpSpecification specifyMProcessType() {
+            assertRelation("mProcessType");
+            if (_mProcessType == null) {
+                _mProcessType = new MProcessTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMProcessType()
+                                    , () -> _qyCall.qy().queryMProcessType())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _tPickingH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTPickingH()
-                      , () -> xsyncQyCall().qy().queryTPickingH()));
+                    _mProcessType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMProcessType()
+                      , () -> xsyncQyCall().qy().queryMProcessType()));
                 }
             }
-            return _tPickingH;
+            return _mProcessType;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MStockTypeCB.HpSpecification specifyMStockType() {
+            assertRelation("mStockType");
+            if (_mStockType == null) {
+                _mStockType = new MStockTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMStockType()
+                                    , () -> _qyCall.qy().queryMStockType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mStockType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMStockType()
+                      , () -> xsyncQyCall().qy().queryMStockType()));
+                }
+            }
+            return _mStockType;
         }
         /**
          * Prepare to specify functions about relation table. <br>

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, T_TRPALLET, M_CENTER, T_STOCK
+ *     M_CENTER, M_CLIENT, T_STOCK, T_TRPALLET
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mClient, tTrpallet, mCenter, tStock
+ *     mCenter, mClient, tStock, tTrpallet
  *
  * [referrer property]
  *     tCenterSymbolList
@@ -98,20 +98,6 @@ public class LoaderOfTPallet {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMClient _foreignMClientLoader;
-    public LoaderOfMClient pulloutMClient() {
-        if (_foreignMClientLoader == null)
-        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
-        return _foreignMClientLoader;
-    }
-
-    protected LoaderOfTTrpallet _foreignTTrpalletLoader;
-    public LoaderOfTTrpallet pulloutTTrpallet() {
-        if (_foreignTTrpalletLoader == null)
-        { _foreignTTrpalletLoader = new LoaderOfTTrpallet().ready(myBhv().pulloutTTrpallet(_selectedList), _selector); }
-        return _foreignTTrpalletLoader;
-    }
-
     protected LoaderOfMCenter _foreignMCenterLoader;
     public LoaderOfMCenter pulloutMCenter() {
         if (_foreignMCenterLoader == null)
@@ -119,11 +105,25 @@ public class LoaderOfTPallet {
         return _foreignMCenterLoader;
     }
 
+    protected LoaderOfMClient _foreignMClientLoader;
+    public LoaderOfMClient pulloutMClient() {
+        if (_foreignMClientLoader == null)
+        { _foreignMClientLoader = new LoaderOfMClient().ready(myBhv().pulloutMClient(_selectedList), _selector); }
+        return _foreignMClientLoader;
+    }
+
     protected LoaderOfTStock _foreignTStockLoader;
     public LoaderOfTStock pulloutTStock() {
         if (_foreignTStockLoader == null)
         { _foreignTStockLoader = new LoaderOfTStock().ready(myBhv().pulloutTStock(_selectedList), _selector); }
         return _foreignTStockLoader;
+    }
+
+    protected LoaderOfTTrpallet _foreignTTrpalletLoader;
+    public LoaderOfTTrpallet pulloutTTrpallet() {
+        if (_foreignTTrpalletLoader == null)
+        { _foreignTTrpalletLoader = new LoaderOfTTrpallet().ready(myBhv().pulloutTTrpallet(_selectedList), _selector); }
+        return _foreignTTrpalletLoader;
     }
 
     // ===================================================================================

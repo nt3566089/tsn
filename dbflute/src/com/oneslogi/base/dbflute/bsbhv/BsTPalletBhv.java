@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, T_TRPALLET, M_CENTER, T_STOCK
+ *     M_CENTER, M_CLIENT, T_STOCK, T_TRPALLET
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mClient, tTrpallet, mCenter, tStock
+ *     mCenter, mClient, tStock, tTrpallet
  *
  * [referrer property]
  *     tCenterSymbolList
@@ -481,22 +481,6 @@ public abstract class BsTPalletBhv extends AbstractBehaviorWritable<TPallet, TPa
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TPallet> tPalletList)
-    { return helpPulloutInternally(tPalletList, "mClient"); }
-
-    /**
-     * Pull out the list of foreign table 'TTrpallet'.
-     * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TTrpallet> pulloutTTrpallet(List<TPallet> tPalletList)
-    { return helpPulloutInternally(tPalletList, "tTrpallet"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -505,12 +489,28 @@ public abstract class BsTPalletBhv extends AbstractBehaviorWritable<TPallet, TPa
     { return helpPulloutInternally(tPalletList, "mCenter"); }
 
     /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TPallet> tPalletList)
+    { return helpPulloutInternally(tPalletList, "mClient"); }
+
+    /**
      * Pull out the list of foreign table 'TStock'.
      * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TStock> pulloutTStock(List<TPallet> tPalletList)
     { return helpPulloutInternally(tPalletList, "tStock"); }
+
+    /**
+     * Pull out the list of foreign table 'TTrpallet'.
+     * @param tPalletList The list of tPallet. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TTrpallet> pulloutTTrpallet(List<TPallet> tPalletList)
+    { return helpPulloutInternally(tPalletList, "tTrpallet"); }
 
     // ===================================================================================
     //                                                                      Extract Column

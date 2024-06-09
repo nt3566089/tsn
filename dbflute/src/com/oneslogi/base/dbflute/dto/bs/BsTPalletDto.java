@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, T_TRPALLET, M_CENTER, T_STOCK
+ *     M_CENTER, M_CLIENT, T_STOCK, T_TRPALLET
  *
  * [referrer-table]
  *     T_CENTER_SYMBOL
  *
  * [foreign-property]
- *     mClient, tTrpallet, mCenter, tStock
+ *     mCenter, mClient, tStock, tTrpallet
  *
  * [referrer-property]
  *     tCenterSymbolList
@@ -145,26 +145,6 @@ public abstract class BsTPalletDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MClientDto _mClient;
-
-    public MClientDto getMClient() {
-        return _mClient;
-    }
-
-    public void setMClient(MClientDto mClient) {
-        this._mClient = mClient;
-    }
-
-    protected TTrpalletDto _tTrpallet;
-
-    public TTrpalletDto getTTrpallet() {
-        return _tTrpallet;
-    }
-
-    public void setTTrpallet(TTrpalletDto tTrpallet) {
-        this._tTrpallet = tTrpallet;
-    }
-
     protected MCenterDto _mCenter;
 
     public MCenterDto getMCenter() {
@@ -175,6 +155,16 @@ public abstract class BsTPalletDto implements Serializable {
         this._mCenter = mCenter;
     }
 
+    protected MClientDto _mClient;
+
+    public MClientDto getMClient() {
+        return _mClient;
+    }
+
+    public void setMClient(MClientDto mClient) {
+        this._mClient = mClient;
+    }
+
     protected TStockDto _tStock;
 
     public TStockDto getTStock() {
@@ -183,6 +173,16 @@ public abstract class BsTPalletDto implements Serializable {
 
     public void setTStock(TStockDto tStock) {
         this._tStock = tStock;
+    }
+
+    protected TTrpalletDto _tTrpallet;
+
+    public TTrpalletDto getTTrpallet() {
+        return _tTrpallet;
+    }
+
+    public void setTTrpallet(TTrpalletDto tTrpallet) {
+        this._tTrpallet = tTrpallet;
     }
 
     // ===================================================================================

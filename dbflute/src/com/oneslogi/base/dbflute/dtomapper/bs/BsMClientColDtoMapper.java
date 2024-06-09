@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_COL, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_COL, B_DICT, V_DICT
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bCol, mClient, bDict, vDict
+ *     mClient, bCol, bDict, vDict
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBCol;
     protected boolean _suppressMClient;
+    protected boolean _suppressBCol;
     protected boolean _suppressBDict;
     protected boolean _suppressVDict;
 
@@ -148,32 +148,6 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBCol && entity.getBCol() != null) {
-            BCol relationEntity = entity.getBCol();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BColDto relationDto = (BColDto)cachedDto;
-                dto.setBCol(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientColList().add(dto);
-                }
-            } else {
-                BColDtoMapper mapper = new BColDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientColList();
-                BColDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBCol(relationDto);
-                if (reverseReference) {
-                    relationDto.getMClientColList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBCol());
-                }
-            }
-        };
         if (!_suppressMClient && entity.getMClient() != null) {
             MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -197,6 +171,32 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMClient());
+                }
+            }
+        };
+        if (!_suppressBCol && entity.getBCol() != null) {
+            BCol relationEntity = entity.getBCol();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BColDto relationDto = (BColDto)cachedDto;
+                dto.setBCol(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientColList().add(dto);
+                }
+            } else {
+                BColDtoMapper mapper = new BColDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientColList();
+                BColDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBCol(relationDto);
+                if (reverseReference) {
+                    relationDto.getMClientColList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBCol());
                 }
             }
         };
@@ -344,32 +344,6 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBCol && dto.getBCol() != null) {
-            BColDto relationDto = dto.getBCol();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BCol relationEntity = (BCol)cachedEntity;
-                entity.setBCol(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientColList().add(entity);
-                }
-            } else {
-                BColDtoMapper mapper = new BColDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMClientColList();
-                BCol relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBCol(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMClientColList().add(entity);
-                }
-                if (instanceCache && entity.getBCol().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBCol());
-                }
-            }
-        };
         if (!_suppressMClient && dto.getMClient() != null) {
             MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -393,6 +367,32 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
                 }
                 if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMClient());
+                }
+            }
+        };
+        if (!_suppressBCol && dto.getBCol() != null) {
+            BColDto relationDto = dto.getBCol();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BCol relationEntity = (BCol)cachedEntity;
+                entity.setBCol(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientColList().add(entity);
+                }
+            } else {
+                BColDtoMapper mapper = new BColDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMClientColList();
+                BCol relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBCol(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMClientColList().add(entity);
+                }
+                if (instanceCache && entity.getBCol().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBCol());
                 }
             }
         };
@@ -563,11 +563,11 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBCol() {
-        _suppressBCol = true;
-    }
     public void suppressMClient() {
         _suppressMClient = true;
+    }
+    public void suppressBCol() {
+        _suppressBCol = true;
     }
     public void suppressBDict() {
         _suppressBDict = true;
@@ -576,14 +576,14 @@ public abstract class BsMClientColDtoMapper implements DtoMapper<MClientCol, MCl
         _suppressVDict = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBCol();
         suppressMClient();
+        suppressBCol();
         suppressBDict();
         suppressVDict();
     }
     protected void doSuppressClear() { // internal
-        _suppressBCol = false;
         _suppressMClient = false;
+        _suppressBCol = false;
         _suppressBDict = false;
         _suppressVDict = false;
     }

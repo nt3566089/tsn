@@ -265,6 +265,35 @@ public class BsMLocationCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * <pre>
+     * <span style="color: #0000C0">mLocationBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mLocation</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnCenterId();
+        }
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
+    }
+
     protected MProductShapeNss _nssMProductShapeByMaxStoreProductShapeId;
     public MProductShapeNss xdfgetNssMProductShapeByMaxStoreProductShapeId() {
         if (_nssMProductShapeByMaxStoreProductShapeId == null) { _nssMProductShapeByMaxStoreProductShapeId = new MProductShapeNss(null); }
@@ -294,6 +323,35 @@ public class BsMLocationCB extends AbstractConditionBean {
         return _nssMProductShapeByMaxStoreProductShapeId;
     }
 
+    protected MCustomerNss _nssMCustomer;
+    public MCustomerNss xdfgetNssMCustomer() {
+        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
+        return _nssMCustomer;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * <pre>
+     * <span style="color: #0000C0">mLocationBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mLocation</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCustomerNss setupSelect_MCustomer() {
+        assertSetupSelectPurpose("mCustomer");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnReplenishDepositId();
+        }
+        doSetupSelect(() -> query().queryMCustomer());
+        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
+        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
+        return _nssMCustomer;
+    }
+
     protected MProductNss _nssMProduct;
     public MProductNss xdfgetNssMProduct() {
         if (_nssMProduct == null) { _nssMProduct = new MProductNss(null); }
@@ -321,35 +379,6 @@ public class BsMLocationCB extends AbstractConditionBean {
         if (_nssMProduct == null || !_nssMProduct.hasConditionQuery())
         { _nssMProduct = new MProductNss(query().queryMProduct()); }
         return _nssMProduct;
-    }
-
-    protected MZoneNss _nssMZone;
-    public MZoneNss xdfgetNssMZone() {
-        if (_nssMZone == null) { _nssMZone = new MZoneNss(null); }
-        return _nssMZone;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_ZONE by my ZONE_ID, named 'MZone'.
-     * <pre>
-     * <span style="color: #0000C0">mLocationBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MZone()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mLocation</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMZone()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MZoneNss setupSelect_MZone() {
-        assertSetupSelectPurpose("mZone");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnZoneId();
-        }
-        doSetupSelect(() -> query().queryMZone());
-        if (_nssMZone == null || !_nssMZone.hasConditionQuery())
-        { _nssMZone = new MZoneNss(query().queryMZone()); }
-        return _nssMZone;
     }
 
     protected MProductShapeNss _nssMProductShapeByReplenishPProductShapeId;
@@ -410,62 +439,33 @@ public class BsMLocationCB extends AbstractConditionBean {
         return _nssMStockType;
     }
 
-    protected MCustomerNss _nssMCustomer;
-    public MCustomerNss xdfgetNssMCustomer() {
-        if (_nssMCustomer == null) { _nssMCustomer = new MCustomerNss(null); }
-        return _nssMCustomer;
+    protected MZoneNss _nssMZone;
+    public MZoneNss xdfgetNssMZone() {
+        if (_nssMZone == null) { _nssMZone = new MZoneNss(null); }
+        return _nssMZone;
     }
     /**
      * Set up relation columns to select clause. <br>
-     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * M_ZONE by my ZONE_ID, named 'MZone'.
      * <pre>
      * <span style="color: #0000C0">mLocationBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCustomer()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MZone()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
      *     <span style="color: #553000">cb</span>.query().set...
      * }).alwaysPresent(<span style="color: #553000">mLocation</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMCustomer()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMZone()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
      * });
      * </pre>
      * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
      */
-    public MCustomerNss setupSelect_MCustomer() {
-        assertSetupSelectPurpose("mCustomer");
+    public MZoneNss setupSelect_MZone() {
+        assertSetupSelectPurpose("mZone");
         if (hasSpecifiedLocalColumn()) {
-            specify().columnReplenishDepositId();
+            specify().columnZoneId();
         }
-        doSetupSelect(() -> query().queryMCustomer());
-        if (_nssMCustomer == null || !_nssMCustomer.hasConditionQuery())
-        { _nssMCustomer = new MCustomerNss(query().queryMCustomer()); }
-        return _nssMCustomer;
-    }
-
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * <pre>
-     * <span style="color: #0000C0">mLocationBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mLocation</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mLocation</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
-        }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
+        doSetupSelect(() -> query().queryMZone());
+        if (_nssMZone == null || !_nssMZone.hasConditionQuery())
+        { _nssMZone = new MZoneNss(query().queryMZone()); }
+        return _nssMZone;
     }
 
     protected BClassDtlNss _nssBClassDtlByAllocNgFlg;
@@ -625,13 +625,13 @@ public class BsMLocationCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MLocationCQ> {
+        protected MCenterCB.HpSpecification _mCenter;
         protected MProductShapeCB.HpSpecification _mProductShapeByMaxStoreProductShapeId;
+        protected MCustomerCB.HpSpecification _mCustomer;
         protected MProductCB.HpSpecification _mProduct;
-        protected MZoneCB.HpSpecification _mZone;
         protected MProductShapeCB.HpSpecification _mProductShapeByReplenishPProductShapeId;
         protected MStockTypeCB.HpSpecification _mStockType;
-        protected MCustomerCB.HpSpecification _mCustomer;
-        protected MCenterCB.HpSpecification _mCenter;
+        protected MZoneCB.HpSpecification _mZone;
         protected BClassDtlCB.HpSpecification _bClassDtlByAllocNgFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByLocationType;
@@ -850,17 +850,21 @@ public class BsMLocationCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnLocationId(); // PK
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMProductShapeByMaxStoreProductShapeId()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductShapeCQ) {
                 columnMaxStoreProductShapeId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMCustomer()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
+                columnReplenishDepositId(); // FK or one-to-one referrer
+            }
             if (qyCall().qy().hasConditionQueryMProduct()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductCQ) {
                 columnReplenishProductId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMZone()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MZoneCQ) {
-                columnZoneId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryMProductShapeByReplenishPProductShapeId()
                     || qyCall().qy().xgetReferrerQuery() instanceof MProductShapeCQ) {
@@ -870,13 +874,9 @@ public class BsMLocationCB extends AbstractConditionBean {
                     || qyCall().qy().xgetReferrerQuery() instanceof MStockTypeCQ) {
                 columnReplenishStockTypeId(); // FK or one-to-one referrer
             }
-            if (qyCall().qy().hasConditionQueryMCustomer()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCustomerCQ) {
-                columnReplenishDepositId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
+            if (qyCall().qy().hasConditionQueryMZone()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MZoneCQ) {
+                columnZoneId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByAllocNgFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -899,6 +899,26 @@ public class BsMLocationCB extends AbstractConditionBean {
         protected String getTableDbName() { return "M_LOCATION"; }
         /**
          * Prepare to specify functions about relation table. <br>
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
+                }
+            }
+            return _mCenter;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * M_PRODUCT_SHAPE by my MAX_STORE_PRODUCT_SHAPE_ID, named 'MProductShapeByMaxStoreProductShapeId'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -919,6 +939,26 @@ public class BsMLocationCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
+         * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCustomerCB.HpSpecification specifyMCustomer() {
+            assertRelation("mCustomer");
+            if (_mCustomer == null) {
+                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
+                                    , () -> _qyCall.qy().queryMCustomer())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
+                      , () -> xsyncQyCall().qy().queryMCustomer()));
+                }
+            }
+            return _mCustomer;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
          * M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -936,26 +976,6 @@ public class BsMLocationCB extends AbstractConditionBean {
                 }
             }
             return _mProduct;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_ZONE by my ZONE_ID, named 'MZone'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MZoneCB.HpSpecification specifyMZone() {
-            assertRelation("mZone");
-            if (_mZone == null) {
-                _mZone = new MZoneCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMZone()
-                                    , () -> _qyCall.qy().queryMZone())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mZone.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMZone()
-                      , () -> xsyncQyCall().qy().queryMZone()));
-                }
-            }
-            return _mZone;
         }
         /**
          * Prepare to specify functions about relation table. <br>
@@ -999,43 +1019,23 @@ public class BsMLocationCB extends AbstractConditionBean {
         }
         /**
          * Prepare to specify functions about relation table. <br>
-         * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+         * M_ZONE by my ZONE_ID, named 'MZone'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
-        public MCustomerCB.HpSpecification specifyMCustomer() {
-            assertRelation("mCustomer");
-            if (_mCustomer == null) {
-                _mCustomer = new MCustomerCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCustomer()
-                                    , () -> _qyCall.qy().queryMCustomer())
+        public MZoneCB.HpSpecification specifyMZone() {
+            assertRelation("mZone");
+            if (_mZone == null) {
+                _mZone = new MZoneCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMZone()
+                                    , () -> _qyCall.qy().queryMZone())
                     , _purpose, _dbmetaProvider, xgetSDRFnFc());
                 if (xhasSyncQyCall()) { // inherits it
-                    _mCustomer.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCustomer()
-                      , () -> xsyncQyCall().qy().queryMCustomer()));
+                    _mZone.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMZone()
+                      , () -> xsyncQyCall().qy().queryMZone()));
                 }
             }
-            return _mCustomer;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
-                }
-            }
-            return _mCenter;
+            return _mZone;
         }
         /**
          * Prepare to specify functions about relation table. <br>

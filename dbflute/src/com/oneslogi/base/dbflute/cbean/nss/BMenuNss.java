@@ -20,21 +20,21 @@ public class BMenuNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BScreenNss withBScreen() {
-        _query.xdoNss(() -> _query.queryBScreen());
-        return new BScreenNss(_query.queryBScreen());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * B_MENU_GRP by my MENU_GRP_ID, named 'BMenuGrp'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public BMenuGrpNss withBMenuGrp() {
         _query.xdoNss(() -> _query.queryBMenuGrp());
         return new BMenuGrpNss(_query.queryBMenuGrp());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BScreenNss withBScreen() {
+        _query.xdoNss(() -> _query.queryBScreen());
+        return new BScreenNss(_query.queryBScreen());
     }
     /**
      * With nested relation columns to select clause. <br>

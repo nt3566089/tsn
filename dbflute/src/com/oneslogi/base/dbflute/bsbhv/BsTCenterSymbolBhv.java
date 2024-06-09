@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_TRSYMBOL, T_PALLET
+ *     M_CENTER, T_CENTER_SYMBOL, M_CLIENT, T_PALLET, T_TRSYMBOL
  *
  * [referrer table]
  *     T_CENTER_SYMBOL
  *
  * [foreign property]
- *     mCenter, tCenterSymbolSelf, mClient, tTrsymbol, tPallet
+ *     mCenter, tCenterSymbolSelf, mClient, tPallet, tTrsymbol
  *
  * [referrer property]
  *     tCenterSymbolSelfList
@@ -531,20 +531,20 @@ public abstract class BsTCenterSymbolBhv extends AbstractBehaviorWritable<TCente
     { return helpPulloutInternally(tCenterSymbolList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'TTrsymbol'.
-     * @param tCenterSymbolList The list of tCenterSymbol. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TTrsymbol> pulloutTTrsymbol(List<TCenterSymbol> tCenterSymbolList)
-    { return helpPulloutInternally(tCenterSymbolList, "tTrsymbol"); }
-
-    /**
      * Pull out the list of foreign table 'TPallet'.
      * @param tCenterSymbolList The list of tCenterSymbol. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<TPallet> pulloutTPallet(List<TCenterSymbol> tCenterSymbolList)
     { return helpPulloutInternally(tCenterSymbolList, "tPallet"); }
+
+    /**
+     * Pull out the list of foreign table 'TTrsymbol'.
+     * @param tCenterSymbolList The list of tCenterSymbol. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TTrsymbol> pulloutTTrsymbol(List<TCenterSymbol> tCenterSymbolList)
+    { return helpPulloutInternally(tCenterSymbolList, "tTrsymbol"); }
 
     // ===================================================================================
     //                                                                      Extract Column

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, M_EDI_COLUMN
+ *     M_EDI_COLUMN, M_IMPORT_TYPE
  *
  * [referrer table]
  *     M_IMPORT_TYPE_B_COPY_B, M_IMPORT_TYPE_B_COPY_H
  *
  * [foreign property]
- *     mImportType, mEdiColumn
+ *     mEdiColumn, mImportType
  *
  * [referrer property]
  *     mImportTypeBCopyBList, mImportTypeBCopyHList
@@ -132,18 +132,18 @@ public class LoaderOfMImportTypeB {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMImportType _foreignMImportTypeLoader;
-    public LoaderOfMImportType pulloutMImportType() {
-        if (_foreignMImportTypeLoader == null)
-        { _foreignMImportTypeLoader = new LoaderOfMImportType().ready(myBhv().pulloutMImportType(_selectedList), _selector); }
-        return _foreignMImportTypeLoader;
-    }
-
     protected LoaderOfMEdiColumn _foreignMEdiColumnLoader;
     public LoaderOfMEdiColumn pulloutMEdiColumn() {
         if (_foreignMEdiColumnLoader == null)
         { _foreignMEdiColumnLoader = new LoaderOfMEdiColumn().ready(myBhv().pulloutMEdiColumn(_selectedList), _selector); }
         return _foreignMEdiColumnLoader;
+    }
+
+    protected LoaderOfMImportType _foreignMImportTypeLoader;
+    public LoaderOfMImportType pulloutMImportType() {
+        if (_foreignMImportTypeLoader == null)
+        { _foreignMImportTypeLoader = new LoaderOfMImportType().ready(myBhv().pulloutMImportType(_selectedList), _selector); }
+        return _foreignMImportTypeLoader;
     }
 
     // ===================================================================================

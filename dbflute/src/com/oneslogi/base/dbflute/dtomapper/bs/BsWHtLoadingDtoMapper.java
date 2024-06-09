@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_DELIVERY_COURSE, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mDeliveryCourse, mClient, mCenter
+ *     mCenter, mClient, mDeliveryCourse
  *
  * [referrer-property]
  *     
@@ -70,9 +70,9 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMDeliveryCourse;
-    protected boolean _suppressMClient;
     protected boolean _suppressMCenter;
+    protected boolean _suppressMClient;
+    protected boolean _suppressMDeliveryCourse;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -148,29 +148,29 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMDeliveryCourse && entity.getMDeliveryCourse() != null) {
-            MDeliveryCourse relationEntity = entity.getMDeliveryCourse();
+        if (!_suppressMCenter && entity.getMCenter() != null) {
+            MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MDeliveryCourseDto relationDto = (MDeliveryCourseDto)cachedDto;
-                dto.setMDeliveryCourse(relationDto);
+                MCenterDto relationDto = (MCenterDto)cachedDto;
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtLoadingList().add(dto);
                 }
             } else {
-                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtLoadingList();
-                MDeliveryCourseDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMDeliveryCourse(relationDto);
+                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCenter(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtLoadingList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMDeliveryCourse());
+                    _relationDtoMap.put(relationKey, dto.getMCenter());
                 }
             }
         };
@@ -200,29 +200,29 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
                 }
             }
         };
-        if (!_suppressMCenter && entity.getMCenter() != null) {
-            MCenter relationEntity = entity.getMCenter();
+        if (!_suppressMDeliveryCourse && entity.getMDeliveryCourse() != null) {
+            MDeliveryCourse relationEntity = entity.getMDeliveryCourse();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCenterDto relationDto = (MCenterDto)cachedDto;
-                dto.setMCenter(relationDto);
+                MDeliveryCourseDto relationDto = (MDeliveryCourseDto)cachedDto;
+                dto.setMDeliveryCourse(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtLoadingList().add(dto);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtLoadingList();
-                MCenterDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCenter(relationDto);
+                MDeliveryCourseDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMDeliveryCourse(relationDto);
                 if (reverseReference) {
                     relationDto.getWHtLoadingList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCenter());
+                    _relationDtoMap.put(relationKey, dto.getMDeliveryCourse());
                 }
             }
         };
@@ -324,29 +324,29 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMDeliveryCourse && dto.getMDeliveryCourse() != null) {
-            MDeliveryCourseDto relationDto = dto.getMDeliveryCourse();
+        if (!_suppressMCenter && dto.getMCenter() != null) {
+            MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MDeliveryCourse relationEntity = (MDeliveryCourse)cachedEntity;
-                entity.setMDeliveryCourse(relationEntity);
+                MCenter relationEntity = (MCenter)cachedEntity;
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtLoadingList().add(entity);
                 }
             } else {
-                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
+                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtLoadingList();
-                MDeliveryCourse relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMDeliveryCourse(relationEntity);
+                MCenter relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCenter(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtLoadingList().add(entity);
                 }
-                if (instanceCache && entity.getMDeliveryCourse().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMDeliveryCourse());
+                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCenter());
                 }
             }
         };
@@ -376,29 +376,29 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
                 }
             }
         };
-        if (!_suppressMCenter && dto.getMCenter() != null) {
-            MCenterDto relationDto = dto.getMCenter();
+        if (!_suppressMDeliveryCourse && dto.getMDeliveryCourse() != null) {
+            MDeliveryCourseDto relationDto = dto.getMDeliveryCourse();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCenter relationEntity = (MCenter)cachedEntity;
-                entity.setMCenter(relationEntity);
+                MDeliveryCourse relationEntity = (MDeliveryCourse)cachedEntity;
+                entity.setMDeliveryCourse(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtLoadingList().add(entity);
                 }
             } else {
-                MCenterDtoMapper mapper = new MCenterDtoMapper(_relationDtoMap, _relationEntityMap);
+                MDeliveryCourseDtoMapper mapper = new MDeliveryCourseDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressWHtLoadingList();
-                MCenter relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCenter(relationEntity);
+                MDeliveryCourse relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMDeliveryCourse(relationEntity);
                 if (reverseReference) {
                     relationEntity.getWHtLoadingList().add(entity);
                 }
-                if (instanceCache && entity.getMCenter().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCenter());
+                if (instanceCache && entity.getMDeliveryCourse().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMDeliveryCourse());
                 }
             }
         };
@@ -520,24 +520,24 @@ public abstract class BsWHtLoadingDtoMapper implements DtoMapper<WHtLoading, WHt
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMDeliveryCourse() {
-        _suppressMDeliveryCourse = true;
+    public void suppressMCenter() {
+        _suppressMCenter = true;
     }
     public void suppressMClient() {
         _suppressMClient = true;
     }
-    public void suppressMCenter() {
-        _suppressMCenter = true;
+    public void suppressMDeliveryCourse() {
+        _suppressMDeliveryCourse = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMDeliveryCourse();
-        suppressMClient();
         suppressMCenter();
+        suppressMClient();
+        suppressMDeliveryCourse();
     }
     protected void doSuppressClear() { // internal
-        _suppressMDeliveryCourse = false;
-        _suppressMClient = false;
         _suppressMCenter = false;
+        _suppressMClient = false;
+        _suppressMDeliveryCourse = false;
     }
 
     // ===================================================================================

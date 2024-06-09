@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_PRODUCT, M_CENTER, M_LOCATION, M_WAREHOUSE, T_LOT, M_STOCK_TYPE
+ *     M_CENTER, M_CLIENT, T_LOT, M_PRODUCT, M_LOCATION, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mProduct, mCenter, mLocation, mWarehouse, tLot, mStockType
+ *     mCenter, mClient, tLot, mProduct, mLocation, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -393,22 +393,6 @@ public abstract class BsWHtReceiveInspectionBhv extends AbstractBehaviorWritable
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<WHtReceiveInspection> wHtReceiveInspectionList)
-    { return helpPulloutInternally(wHtReceiveInspectionList, "mClient"); }
-
-    /**
-     * Pull out the list of foreign table 'MProduct'.
-     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MProduct> pulloutMProduct(List<WHtReceiveInspection> wHtReceiveInspectionList)
-    { return helpPulloutInternally(wHtReceiveInspectionList, "mProduct"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -417,20 +401,12 @@ public abstract class BsWHtReceiveInspectionBhv extends AbstractBehaviorWritable
     { return helpPulloutInternally(wHtReceiveInspectionList, "mCenter"); }
 
     /**
-     * Pull out the list of foreign table 'MLocation'.
+     * Pull out the list of foreign table 'MClient'.
      * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MLocation> pulloutMLocation(List<WHtReceiveInspection> wHtReceiveInspectionList)
-    { return helpPulloutInternally(wHtReceiveInspectionList, "mLocation"); }
-
-    /**
-     * Pull out the list of foreign table 'MWarehouse'.
-     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MWarehouse> pulloutMWarehouse(List<WHtReceiveInspection> wHtReceiveInspectionList)
-    { return helpPulloutInternally(wHtReceiveInspectionList, "mWarehouse"); }
+    public List<MClient> pulloutMClient(List<WHtReceiveInspection> wHtReceiveInspectionList)
+    { return helpPulloutInternally(wHtReceiveInspectionList, "mClient"); }
 
     /**
      * Pull out the list of foreign table 'TLot'.
@@ -441,12 +417,36 @@ public abstract class BsWHtReceiveInspectionBhv extends AbstractBehaviorWritable
     { return helpPulloutInternally(wHtReceiveInspectionList, "tLot"); }
 
     /**
+     * Pull out the list of foreign table 'MProduct'.
+     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MProduct> pulloutMProduct(List<WHtReceiveInspection> wHtReceiveInspectionList)
+    { return helpPulloutInternally(wHtReceiveInspectionList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'MLocation'.
+     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MLocation> pulloutMLocation(List<WHtReceiveInspection> wHtReceiveInspectionList)
+    { return helpPulloutInternally(wHtReceiveInspectionList, "mLocation"); }
+
+    /**
      * Pull out the list of foreign table 'MStockType'.
      * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MStockType> pulloutMStockType(List<WHtReceiveInspection> wHtReceiveInspectionList)
     { return helpPulloutInternally(wHtReceiveInspectionList, "mStockType"); }
+
+    /**
+     * Pull out the list of foreign table 'MWarehouse'.
+     * @param wHtReceiveInspectionList The list of wHtReceiveInspection. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MWarehouse> pulloutMWarehouse(List<WHtReceiveInspection> wHtReceiveInspectionList)
+    { return helpPulloutInternally(wHtReceiveInspectionList, "mWarehouse"); }
 
     // ===================================================================================
     //                                                                      Extract Column

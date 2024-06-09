@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_ZONE, T_INVENTORY_H, M_CUSTOMER, B_CLASS_DTL(ByStockExistOnlyFlg)
+ *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByStockExistOnlyFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mZone, tInventoryH, mCustomer, bClassDtlByStockExistOnlyFlg
+ *     mCustomer, tInventoryH, mStockType, mZone, bClassDtlByStockExistOnlyFlg
  *
  * [referrer property]
  *     
@@ -391,6 +391,44 @@ public abstract class BsTInventoryInst extends AbstractEntity implements DomainE
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
+    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. */
+    protected MCustomer _mCustomer;
+
+    /**
+     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. <br>
+     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCustomer getMCustomer() {
+        return _mCustomer;
+    }
+
+    /**
+     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
+     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
+     */
+    public void setMCustomer(MCustomer mCustomer) {
+        _mCustomer = mCustomer;
+    }
+
+    /** T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'. */
+    protected TInventoryH _tInventoryH;
+
+    /**
+     * [get] T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'. <br>
+     * @return The entity of foreign property 'TInventoryH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TInventoryH getTInventoryH() {
+        return _tInventoryH;
+    }
+
+    /**
+     * [set] T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
+     * @param tInventoryH The entity of foreign property 'TInventoryH'. (NullAllowed)
+     */
+    public void setTInventoryH(TInventoryH tInventoryH) {
+        _tInventoryH = tInventoryH;
+    }
+
     /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
     protected MStockType _mStockType;
 
@@ -427,44 +465,6 @@ public abstract class BsTInventoryInst extends AbstractEntity implements DomainE
      */
     public void setMZone(MZone mZone) {
         _mZone = mZone;
-    }
-
-    /** T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'. */
-    protected TInventoryH _tInventoryH;
-
-    /**
-     * [get] T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'. <br>
-     * @return The entity of foreign property 'TInventoryH'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TInventoryH getTInventoryH() {
-        return _tInventoryH;
-    }
-
-    /**
-     * [set] T_INVENTORY_H by my INVENTORY_H_ID, named 'TInventoryH'.
-     * @param tInventoryH The entity of foreign property 'TInventoryH'. (NullAllowed)
-     */
-    public void setTInventoryH(TInventoryH tInventoryH) {
-        _tInventoryH = tInventoryH;
-    }
-
-    /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. */
-    protected MCustomer _mCustomer;
-
-    /**
-     * [get] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. <br>
-     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCustomer getMCustomer() {
-        return _mCustomer;
-    }
-
-    /**
-     * [set] M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'.
-     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
-     */
-    public void setMCustomer(MCustomer mCustomer) {
-        _mCustomer = mCustomer;
     }
 
     /** B_CLASS_DTL by my STOCK_EXIST_ONLY_FLG, named 'BClassDtlByStockExistOnlyFlg'. */
@@ -518,14 +518,14 @@ public abstract class BsTInventoryInst extends AbstractEntity implements DomainE
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
+        if (_mCustomer != null)
+        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
+        if (_tInventoryH != null)
+        { sb.append(li).append(xbRDS(_tInventoryH, "tInventoryH")); }
         if (_mStockType != null)
         { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
         if (_mZone != null)
         { sb.append(li).append(xbRDS(_mZone, "mZone")); }
-        if (_tInventoryH != null)
-        { sb.append(li).append(xbRDS(_tInventoryH, "tInventoryH")); }
-        if (_mCustomer != null)
-        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
         if (_bClassDtlByStockExistOnlyFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByStockExistOnlyFlg, "bClassDtlByStockExistOnlyFlg")); }
         return sb.toString();
@@ -572,14 +572,14 @@ public abstract class BsTInventoryInst extends AbstractEntity implements DomainE
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
+        if (_mCustomer != null)
+        { sb.append(dm).append("mCustomer"); }
+        if (_tInventoryH != null)
+        { sb.append(dm).append("tInventoryH"); }
         if (_mStockType != null)
         { sb.append(dm).append("mStockType"); }
         if (_mZone != null)
         { sb.append(dm).append("mZone"); }
-        if (_tInventoryH != null)
-        { sb.append(dm).append("tInventoryH"); }
-        if (_mCustomer != null)
-        { sb.append(dm).append("mCustomer"); }
         if (_bClassDtlByStockExistOnlyFlg != null)
         { sb.append(dm).append("bClassDtlByStockExistOnlyFlg"); }
         if (sb.length() > dm.length()) {

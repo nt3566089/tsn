@@ -750,20 +750,20 @@ public class BsTPackingHCQ extends AbstractBsTPackingHCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPackingHCQ bq = (TPackingHCQ)bqs;
         TPackingHCQ uq = (TPackingHCQ)uqs;
-        if (bq.hasConditionQueryTPickingH()) {
-            uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        if (bq.hasConditionQueryTAllocInstH()) {
+            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
         }
         if (bq.hasConditionQueryMBox()) {
             uq.queryMBox().reflectRelationOnUnionQuery(bq.queryMBox(), uq.queryMBox());
         }
-        if (bq.hasConditionQueryTAllocInstH()) {
-            uq.queryTAllocInstH().reflectRelationOnUnionQuery(bq.queryTAllocInstH(), uq.queryTAllocInstH());
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
         if (bq.hasConditionQueryMClient()) {
             uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
+        }
+        if (bq.hasConditionQueryTPickingH()) {
+            uq.queryTPickingH().reflectRelationOnUnionQuery(bq.queryTPickingH(), uq.queryTPickingH());
         }
         if (bq.hasConditionQueryMProcessType()) {
             uq.queryMProcessType().reflectRelationOnUnionQuery(bq.queryMProcessType(), uq.queryMProcessType());
@@ -793,43 +793,23 @@ public class BsTPackingHCQ extends AbstractBsTPackingHCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TPickingHCQ queryTPickingH() {
-        return xdfgetConditionQueryTPickingH();
+    public TAllocInstHCQ queryTAllocInstH() {
+        return xdfgetConditionQueryTAllocInstH();
     }
-    public TPickingHCQ xdfgetConditionQueryTPickingH() {
-        String prop = "tPickingH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingH()); xsetupOuterJoinTPickingH(); }
+    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
+        String prop = "tAllocInstH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
         return xgetQueRlMap(prop);
     }
-    protected TPickingHCQ xcreateQueryTPickingH() {
-        String nrp = xresolveNRP("T_PACKING_H", "tPickingH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TPickingHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingH", nrp);
+    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
+        String nrp = xresolveNRP("T_PACKING_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
     }
-    protected void xsetupOuterJoinTPickingH() { xregOutJo("tPickingH"); }
-    public boolean hasConditionQueryTPickingH() { return xhasQueRlMap("tPickingH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("T_PACKING_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
+    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -853,23 +833,23 @@ public class BsTPackingHCQ extends AbstractBsTPackingHCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TAllocInstHCQ queryTAllocInstH() {
-        return xdfgetConditionQueryTAllocInstH();
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
     }
-    public TAllocInstHCQ xdfgetConditionQueryTAllocInstH() {
-        String prop = "tAllocInstH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstH()); xsetupOuterJoinTAllocInstH(); }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
         return xgetQueRlMap(prop);
     }
-    protected TAllocInstHCQ xcreateQueryTAllocInstH() {
-        String nrp = xresolveNRP("T_PACKING_H", "tAllocInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TAllocInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstH", nrp);
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("T_PACKING_H", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
     }
-    protected void xsetupOuterJoinTAllocInstH() { xregOutJo("tAllocInstH"); }
-    public boolean hasConditionQueryTAllocInstH() { return xhasQueRlMap("tAllocInstH"); }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -890,6 +870,26 @@ public class BsTPackingHCQ extends AbstractBsTPackingHCQ {
     }
     protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
     public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TPickingHCQ queryTPickingH() {
+        return xdfgetConditionQueryTPickingH();
+    }
+    public TPickingHCQ xdfgetConditionQueryTPickingH() {
+        String prop = "tPickingH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingH()); xsetupOuterJoinTPickingH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TPickingHCQ xcreateQueryTPickingH() {
+        String nrp = xresolveNRP("T_PACKING_H", "tPickingH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TPickingHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingH", nrp);
+    }
+    protected void xsetupOuterJoinTPickingH() { xregOutJo("tPickingH"); }
+    public boolean hasConditionQueryTPickingH() { return xhasQueRlMap("tPickingH"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_CLIENT, M_CENTER, T_ALLOC_INST_H, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, M_ZIP(ForDeliv), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer table]
  *     T_EC_ORDER_H, T_SHIPPING_INST_B
  *
  * [foreign property]
- *     mDeliveryCourse, mCustomerBySupplyCustomerId, mProcessType, mClient, mCenter, mCustomerByDelivCustomerId, tAllocInstH, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
+ *     tAllocInstH, mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, mZipForDeliv, bClassDtlByDelivTz, bClassDtlByEmergencyFlg, bClassDtlByErrorFlg, bClassDtlByInputType, bClassDtlByShippingStatus, bClassDtlByStockOutFlg
  *
  * [referrer property]
  *     tEcOrderHList, tShippingInstBList
@@ -581,6 +581,30 @@ public abstract class BsTShippingInstHBhv extends AbstractBehaviorWritable<TShip
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
+     * Pull out the list of foreign table 'TAllocInstH'.
+     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TAllocInstH> pulloutTAllocInstH(List<TShippingInstH> tShippingInstHList)
+    { return helpPulloutInternally(tShippingInstHList, "tAllocInstH"); }
+
+    /**
+     * Pull out the list of foreign table 'MCenter'.
+     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MCenter> pulloutMCenter(List<TShippingInstH> tShippingInstHList)
+    { return helpPulloutInternally(tShippingInstHList, "mCenter"); }
+
+    /**
+     * Pull out the list of foreign table 'MClient'.
+     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MClient> pulloutMClient(List<TShippingInstH> tShippingInstHList)
+    { return helpPulloutInternally(tShippingInstHList, "mClient"); }
+
+    /**
      * Pull out the list of foreign table 'MDeliveryCourse'.
      * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -593,8 +617,8 @@ public abstract class BsTShippingInstHBhv extends AbstractBehaviorWritable<TShip
      * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerBySupplyCustomerId(List<TShippingInstH> tShippingInstHList)
-    { return helpPulloutInternally(tShippingInstHList, "mCustomerBySupplyCustomerId"); }
+    public List<MCustomer> pulloutMCustomerByDelivCustomerId(List<TShippingInstH> tShippingInstHList)
+    { return helpPulloutInternally(tShippingInstHList, "mCustomerByDelivCustomerId"); }
 
     /**
      * Pull out the list of foreign table 'MProcessType'.
@@ -605,36 +629,12 @@ public abstract class BsTShippingInstHBhv extends AbstractBehaviorWritable<TShip
     { return helpPulloutInternally(tShippingInstHList, "mProcessType"); }
 
     /**
-     * Pull out the list of foreign table 'MClient'.
-     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MClient> pulloutMClient(List<TShippingInstH> tShippingInstHList)
-    { return helpPulloutInternally(tShippingInstHList, "mClient"); }
-
-    /**
-     * Pull out the list of foreign table 'MCenter'.
-     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MCenter> pulloutMCenter(List<TShippingInstH> tShippingInstHList)
-    { return helpPulloutInternally(tShippingInstHList, "mCenter"); }
-
-    /**
      * Pull out the list of foreign table 'MCustomer'.
      * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomerByDelivCustomerId(List<TShippingInstH> tShippingInstHList)
-    { return helpPulloutInternally(tShippingInstHList, "mCustomerByDelivCustomerId"); }
-
-    /**
-     * Pull out the list of foreign table 'TAllocInstH'.
-     * @param tShippingInstHList The list of tShippingInstH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TAllocInstH> pulloutTAllocInstH(List<TShippingInstH> tShippingInstHList)
-    { return helpPulloutInternally(tShippingInstHList, "tAllocInstH"); }
+    public List<MCustomer> pulloutMCustomerBySupplyCustomerId(List<TShippingInstH> tShippingInstHList)
+    { return helpPulloutInternally(tShippingInstHList, "mCustomerBySupplyCustomerId"); }
 
     /**
      * Pull out the list of foreign table 'MZip'.

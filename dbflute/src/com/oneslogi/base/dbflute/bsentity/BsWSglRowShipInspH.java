@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_BOX, M_CLIENT, M_PRODUCT, M_CENTER
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     W_SGL_ROW_SHIP_INSP_B
  *
  * [foreign property]
- *     mBox, mClient, mProduct, mCenter
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     wSglRowShipInspBList
@@ -318,6 +318,25 @@ public abstract class BsWSglRowShipInspH extends AbstractEntity implements Domai
         _mBox = mBox;
     }
 
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
+
+    /**
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MCenter getMCenter() {
+        return _mCenter;
+    }
+
+    /**
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     */
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
+    }
+
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -354,25 +373,6 @@ public abstract class BsWSglRowShipInspH extends AbstractEntity implements Domai
      */
     public void setMProduct(MProduct mProduct) {
         _mProduct = mProduct;
-    }
-
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
-
-    /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MCenter getMCenter() {
-        return _mCenter;
-    }
-
-    /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
-     */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
     }
 
     // ===================================================================================
@@ -429,12 +429,12 @@ public abstract class BsWSglRowShipInspH extends AbstractEntity implements Domai
         StringBuilder sb = new StringBuilder();
         if (_mBox != null)
         { sb.append(li).append(xbRDS(_mBox, "mBox")); }
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_wSglRowShipInspBList != null) { for (WSglRowShipInspB et : _wSglRowShipInspBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "wSglRowShipInspBList")); } } }
         return sb.toString();
@@ -474,12 +474,12 @@ public abstract class BsWSglRowShipInspH extends AbstractEntity implements Domai
         StringBuilder sb = new StringBuilder();
         if (_mBox != null)
         { sb.append(dm).append("mBox"); }
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_wSglRowShipInspBList != null && !_wSglRowShipInspBList.isEmpty())
         { sb.append(dm).append("wSglRowShipInspBList"); }
         if (sb.length() > dm.length()) {

@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_IMPORT_TYPE, M_EDI_COLUMN
+ *     M_EDI_COLUMN, M_IMPORT_TYPE
  *
  * [referrer-table]
  *     M_IMPORT_TYPE_B_COPY_B, M_IMPORT_TYPE_B_COPY_H
  *
  * [foreign-property]
- *     mImportType, mEdiColumn
+ *     mEdiColumn, mImportType
  *
  * [referrer-property]
  *     mImportTypeBCopyBList, mImportTypeBCopyHList
@@ -141,16 +141,6 @@ public abstract class BsMImportTypeBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected MImportTypeDto _mImportType;
-
-    public MImportTypeDto getMImportType() {
-        return _mImportType;
-    }
-
-    public void setMImportType(MImportTypeDto mImportType) {
-        this._mImportType = mImportType;
-    }
-
     protected MEdiColumnDto _mEdiColumn;
 
     public MEdiColumnDto getMEdiColumn() {
@@ -159,6 +149,16 @@ public abstract class BsMImportTypeBDto implements Serializable {
 
     public void setMEdiColumn(MEdiColumnDto mEdiColumn) {
         this._mEdiColumn = mEdiColumn;
+    }
+
+    protected MImportTypeDto _mImportType;
+
+    public MImportTypeDto getMImportType() {
+        return _mImportType;
+    }
+
+    public void setMImportType(MImportTypeDto mImportType) {
+        this._mImportType = mImportType;
     }
 
     // ===================================================================================

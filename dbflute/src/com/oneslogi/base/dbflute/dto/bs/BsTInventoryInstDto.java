@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_STOCK_TYPE, M_ZONE, T_INVENTORY_H, M_CUSTOMER, B_CLASS_DTL(ByStockExistOnlyFlg)
+ *     M_CUSTOMER, T_INVENTORY_H, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByStockExistOnlyFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mStockType, mZone, tInventoryH, mCustomer, bClassDtlByStockExistOnlyFlg
+ *     mCustomer, tInventoryH, mStockType, mZone, bClassDtlByStockExistOnlyFlg
  *
  * [referrer-property]
  *     
@@ -197,6 +197,26 @@ public abstract class BsTInventoryInstDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MCustomerDto _mCustomer;
+
+    public MCustomerDto getMCustomer() {
+        return _mCustomer;
+    }
+
+    public void setMCustomer(MCustomerDto mCustomer) {
+        this._mCustomer = mCustomer;
+    }
+
+    protected TInventoryHDto _tInventoryH;
+
+    public TInventoryHDto getTInventoryH() {
+        return _tInventoryH;
+    }
+
+    public void setTInventoryH(TInventoryHDto tInventoryH) {
+        this._tInventoryH = tInventoryH;
+    }
+
     protected MStockTypeDto _mStockType;
 
     public MStockTypeDto getMStockType() {
@@ -215,26 +235,6 @@ public abstract class BsTInventoryInstDto implements Serializable {
 
     public void setMZone(MZoneDto mZone) {
         this._mZone = mZone;
-    }
-
-    protected TInventoryHDto _tInventoryH;
-
-    public TInventoryHDto getTInventoryH() {
-        return _tInventoryH;
-    }
-
-    public void setTInventoryH(TInventoryHDto tInventoryH) {
-        this._tInventoryH = tInventoryH;
-    }
-
-    protected MCustomerDto _mCustomer;
-
-    public MCustomerDto getMCustomer() {
-        return _mCustomer;
-    }
-
-    public void setMCustomer(MCustomerDto mCustomer) {
-        this._mCustomer = mCustomer;
     }
 
     protected BClassDtlDto _bClassDtlByStockExistOnlyFlg;

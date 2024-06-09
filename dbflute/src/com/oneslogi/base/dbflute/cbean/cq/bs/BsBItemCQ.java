@@ -596,11 +596,11 @@ public class BsBItemCQ extends AbstractBsBItemCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BItemCQ bq = (BItemCQ)bqs;
         BItemCQ uq = (BItemCQ)uqs;
-        if (bq.hasConditionQueryBScreen()) {
-            uq.queryBScreen().reflectRelationOnUnionQuery(bq.queryBScreen(), uq.queryBScreen());
-        }
         if (bq.hasConditionQueryBDict()) {
             uq.queryBDict().reflectRelationOnUnionQuery(bq.queryBDict(), uq.queryBDict());
+        }
+        if (bq.hasConditionQueryBScreen()) {
+            uq.queryBScreen().reflectRelationOnUnionQuery(bq.queryBScreen(), uq.queryBScreen());
         }
         if (bq.hasConditionQueryVDict()) {
             uq.xsetParameterMapVDict(bq.xdfgetParameterMapVDict());
@@ -638,26 +638,6 @@ public class BsBItemCQ extends AbstractBsBItemCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BScreenCQ queryBScreen() {
-        return xdfgetConditionQueryBScreen();
-    }
-    public BScreenCQ xdfgetConditionQueryBScreen() {
-        String prop = "bScreen";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBScreen()); xsetupOuterJoinBScreen(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BScreenCQ xcreateQueryBScreen() {
-        String nrp = xresolveNRP("B_ITEM", "bScreen"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BScreenCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bScreen", nrp);
-    }
-    protected void xsetupOuterJoinBScreen() { xregOutJo("bScreen"); }
-    public boolean hasConditionQueryBScreen() { return xhasQueRlMap("bScreen"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
      * B_DICT by my DICT_ID, named 'BDict'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -675,6 +655,26 @@ public class BsBItemCQ extends AbstractBsBItemCQ {
     }
     protected void xsetupOuterJoinBDict() { xregOutJo("bDict"); }
     public boolean hasConditionQueryBDict() { return xhasQueRlMap("bDict"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BScreenCQ queryBScreen() {
+        return xdfgetConditionQueryBScreen();
+    }
+    public BScreenCQ xdfgetConditionQueryBScreen() {
+        String prop = "bScreen";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBScreen()); xsetupOuterJoinBScreen(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BScreenCQ xcreateQueryBScreen() {
+        String nrp = xresolveNRP("B_ITEM", "bScreen"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BScreenCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bScreen", nrp);
+    }
+    protected void xsetupOuterJoinBScreen() { xregOutJo("bScreen"); }
+    public boolean hasConditionQueryBScreen() { return xhasQueRlMap("bScreen"); }
 
     /**
      * Get the condition-query for relation table. <br>

@@ -65,8 +65,8 @@ public class TPicMthdRcmdCartDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPicMthdRcmdCart)et).getTPicMthdRcmd(), (et, vl) -> ((TPicMthdRcmdCart)et).setTPicMthdRcmd((TPicMthdRcmd)vl), "TPicMthdRcmd");
         setupEfpg(_efpgMap, et -> ((TPicMthdRcmdCart)et).getTPackingH(), (et, vl) -> ((TPicMthdRcmdCart)et).setTPackingH((TPackingH)vl), "TPackingH");
+        setupEfpg(_efpgMap, et -> ((TPicMthdRcmdCart)et).getTPicMthdRcmd(), (et, vl) -> ((TPicMthdRcmdCart)et).setTPicMthdRcmd((TPicMthdRcmd)vl), "TPicMthdRcmd");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -206,20 +206,20 @@ public class TPicMthdRcmdCartDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTPicMthdRcmd() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPicMthdRcmdId(), TPicMthdRcmdDbm.getInstance().columnPicMthdRcmdId());
-        return cfi("T_PIC_MTHD_RCMD_CART_FK2", "TPicMthdRcmd", this, TPicMthdRcmdDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPicMthdRcmdCartList", false);
-    }
-    /**
      * T_PACKING_H by my PACKING_H_ID, named 'TPackingH'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignTPackingH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingHId(), TPackingHDbm.getInstance().columnPackingHId());
-        return cfi("T_PIC_MTHD_RCMD_CART_FK1", "TPackingH", this, TPackingHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPicMthdRcmdCartList", false);
+        return cfi("T_PIC_MTHD_RCMD_CART_FK1", "TPackingH", this, TPackingHDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPicMthdRcmdCartList", false);
+    }
+    /**
+     * T_PIC_MTHD_RCMD by my PIC_MTHD_RCMD_ID, named 'TPicMthdRcmd'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTPicMthdRcmd() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPicMthdRcmdId(), TPicMthdRcmdDbm.getInstance().columnPicMthdRcmdId());
+        return cfi("T_PIC_MTHD_RCMD_CART_FK2", "TPicMthdRcmd", this, TPicMthdRcmdDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPicMthdRcmdCartList", false);
     }
 
     // -----------------------------------------------------

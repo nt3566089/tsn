@@ -20,12 +20,12 @@ public class WSglRowShipInspBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my USER_ID, named 'BUser'.
+     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public BUserNss withBUser() {
-        _query.xdoNss(() -> _query.queryBUser());
-        return new BUserNss(_query.queryBUser());
+    public TPickingHNss withTPickingH() {
+        _query.xdoNss(() -> _query.queryTPickingH());
+        return new TPickingHNss(_query.queryTPickingH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,12 +38,12 @@ public class WSglRowShipInspBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
+     * B_USER by my USER_ID, named 'BUser'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TPickingHNss withTPickingH() {
-        _query.xdoNss(() -> _query.queryTPickingH());
-        return new TPickingHNss(_query.queryTPickingH());
+    public BUserNss withBUser() {
+        _query.xdoNss(() -> _query.queryBUser());
+        return new BUserNss(_query.queryBUser());
     }
     /**
      * With nested relation columns to select clause. <br>

@@ -265,64 +265,6 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MCarrierSlipYupkNss _nssMCarrierSlipYupk;
-    public MCarrierSlipYupkNss xdfgetNssMCarrierSlipYupk() {
-        if (_nssMCarrierSlipYupk == null) { _nssMCarrierSlipYupk = new MCarrierSlipYupkNss(null); }
-        return _nssMCarrierSlipYupk;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-     * <pre>
-     * <span style="color: #0000C0">mDeliveryCourseBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCarrierSlipYupk()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mDeliveryCourse</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mDeliveryCourse</span>.<span style="color: #CC4747">getMCarrierSlipYupk()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCarrierSlipYupkNss setupSelect_MCarrierSlipYupk() {
-        assertSetupSelectPurpose("mCarrierSlipYupk");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCarrierSlipYupkId();
-        }
-        doSetupSelect(() -> query().queryMCarrierSlipYupk());
-        if (_nssMCarrierSlipYupk == null || !_nssMCarrierSlipYupk.hasConditionQuery())
-        { _nssMCarrierSlipYupk = new MCarrierSlipYupkNss(query().queryMCarrierSlipYupk()); }
-        return _nssMCarrierSlipYupk;
-    }
-
-    protected MCenterNss _nssMCenter;
-    public MCenterNss xdfgetNssMCenter() {
-        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
-        return _nssMCenter;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * <pre>
-     * <span style="color: #0000C0">mDeliveryCourseBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mDeliveryCourse</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mDeliveryCourse</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MCenterNss setupSelect_MCenter() {
-        assertSetupSelectPurpose("mCenter");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnCenterId();
-        }
-        doSetupSelect(() -> query().queryMCenter());
-        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
-        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
-        return _nssMCenter;
-    }
-
     protected MCarrierNss _nssMCarrier;
     public MCarrierNss xdfgetNssMCarrier() {
         if (_nssMCarrier == null) { _nssMCarrier = new MCarrierNss(null); }
@@ -408,6 +350,64 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
         if (_nssMCarrierSlipYmt == null || !_nssMCarrierSlipYmt.hasConditionQuery())
         { _nssMCarrierSlipYmt = new MCarrierSlipYmtNss(query().queryMCarrierSlipYmt()); }
         return _nssMCarrierSlipYmt;
+    }
+
+    protected MCarrierSlipYupkNss _nssMCarrierSlipYupk;
+    public MCarrierSlipYupkNss xdfgetNssMCarrierSlipYupk() {
+        if (_nssMCarrierSlipYupk == null) { _nssMCarrierSlipYupk = new MCarrierSlipYupkNss(null); }
+        return _nssMCarrierSlipYupk;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+     * <pre>
+     * <span style="color: #0000C0">mDeliveryCourseBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCarrierSlipYupk()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mDeliveryCourse</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mDeliveryCourse</span>.<span style="color: #CC4747">getMCarrierSlipYupk()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCarrierSlipYupkNss setupSelect_MCarrierSlipYupk() {
+        assertSetupSelectPurpose("mCarrierSlipYupk");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnCarrierSlipYupkId();
+        }
+        doSetupSelect(() -> query().queryMCarrierSlipYupk());
+        if (_nssMCarrierSlipYupk == null || !_nssMCarrierSlipYupk.hasConditionQuery())
+        { _nssMCarrierSlipYupk = new MCarrierSlipYupkNss(query().queryMCarrierSlipYupk()); }
+        return _nssMCarrierSlipYupk;
+    }
+
+    protected MCenterNss _nssMCenter;
+    public MCenterNss xdfgetNssMCenter() {
+        if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
+        return _nssMCenter;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * <pre>
+     * <span style="color: #0000C0">mDeliveryCourseBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MCenter()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mDeliveryCourse</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mDeliveryCourse</span>.<span style="color: #CC4747">getMCenter()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MCenterNss setupSelect_MCenter() {
+        assertSetupSelectPurpose("mCenter");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnCenterId();
+        }
+        doSetupSelect(() -> query().queryMCenter());
+        if (_nssMCenter == null || !_nssMCenter.hasConditionQuery())
+        { _nssMCenter = new MCenterNss(query().queryMCenter()); }
+        return _nssMCenter;
     }
 
     protected BClassDtlNss _nssBClassDtlByDelFlg;
@@ -628,11 +628,11 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MDeliveryCourseCQ> {
-        protected MCarrierSlipYupkCB.HpSpecification _mCarrierSlipYupk;
-        protected MCenterCB.HpSpecification _mCenter;
         protected MCarrierCB.HpSpecification _mCarrier;
         protected MCarrierSlipSgwCB.HpSpecification _mCarrierSlipSgw;
         protected MCarrierSlipYmtCB.HpSpecification _mCarrierSlipYmt;
+        protected MCarrierSlipYupkCB.HpSpecification _mCarrierSlipYupk;
+        protected MCenterCB.HpSpecification _mCenter;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelFlg;
         protected MCenterClassDtlCB.HpSpecification _mCenterClassDtlByTagDataType;
         protected MCenterClassDtlCB.HpSpecification _mCenterClassDtlByTagType;
@@ -783,14 +783,6 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnDeliveryCourseId(); // PK
-            if (qyCall().qy().hasConditionQueryMCarrierSlipYupk()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCarrierSlipYupkCQ) {
-                columnCarrierSlipYupkId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryMCenter()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
-                columnCenterId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCarrier()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCarrierCQ) {
                 columnCarrierId(); // FK or one-to-one referrer
@@ -802,6 +794,14 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryMCarrierSlipYmt()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCarrierSlipYmtCQ) {
                 columnCarrierSlipYmtId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMCarrierSlipYupk()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCarrierSlipYupkCQ) {
+                columnCarrierSlipYupkId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMCenter()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
+                columnCenterId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByDelFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -830,46 +830,6 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "M_DELIVERY_COURSE"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCarrierSlipYupkCB.HpSpecification specifyMCarrierSlipYupk() {
-            assertRelation("mCarrierSlipYupk");
-            if (_mCarrierSlipYupk == null) {
-                _mCarrierSlipYupk = new MCarrierSlipYupkCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCarrierSlipYupk()
-                                    , () -> _qyCall.qy().queryMCarrierSlipYupk())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCarrierSlipYupk.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCarrierSlipYupk()
-                      , () -> xsyncQyCall().qy().queryMCarrierSlipYupk()));
-                }
-            }
-            return _mCarrierSlipYupk;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_CENTER by my CENTER_ID, named 'MCenter'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MCenterCB.HpSpecification specifyMCenter() {
-            assertRelation("mCenter");
-            if (_mCenter == null) {
-                _mCenter = new MCenterCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
-                                    , () -> _qyCall.qy().queryMCenter())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
-                      , () -> xsyncQyCall().qy().queryMCenter()));
-                }
-            }
-            return _mCenter;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CARRIER by my CARRIER_ID, named 'MCarrier'.
@@ -929,6 +889,46 @@ public class BsMDeliveryCourseCB extends AbstractConditionBean {
                 }
             }
             return _mCarrierSlipYmt;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CARRIER_SLIP_YUPK by my CARRIER_SLIP_YUPK_ID, named 'MCarrierSlipYupk'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCarrierSlipYupkCB.HpSpecification specifyMCarrierSlipYupk() {
+            assertRelation("mCarrierSlipYupk");
+            if (_mCarrierSlipYupk == null) {
+                _mCarrierSlipYupk = new MCarrierSlipYupkCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCarrierSlipYupk()
+                                    , () -> _qyCall.qy().queryMCarrierSlipYupk())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCarrierSlipYupk.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCarrierSlipYupk()
+                      , () -> xsyncQyCall().qy().queryMCarrierSlipYupk()));
+                }
+            }
+            return _mCarrierSlipYupk;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_CENTER by my CENTER_ID, named 'MCenter'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MCenterCB.HpSpecification specifyMCenter() {
+            assertRelation("mCenter");
+            if (_mCenter == null) {
+                _mCenter = new MCenterCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMCenter()
+                                    , () -> _qyCall.qy().queryMCenter())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mCenter.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMCenter()
+                      , () -> xsyncQyCall().qy().queryMCenter()));
+                }
+            }
+            return _mCenter;
         }
         /**
          * Prepare to specify functions about relation table. <br>

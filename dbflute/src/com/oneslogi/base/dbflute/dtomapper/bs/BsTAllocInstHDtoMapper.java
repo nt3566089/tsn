@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CUSTOMER, M_PROCESS_TYPE, M_CENTER, M_DELIVERY_COURSE, M_CLIENT, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE, M_CUSTOMER, M_PROCESS_TYPE, T_PICKING_H, M_CENTER_CUSTOMER(ByDelivCustomerId), B_CLASS_DTL(ByDelivTz)
  *
  * [referrer-table]
  *     T_ALLOC_INST_B, T_PACKING_H, T_PICKING_H, T_SHIPPING_INST_H
  *
  * [foreign-property]
- *     mCustomerBySupplyCustomerId, mProcessType, mCenter, mCustomerByDelivCustomerId, mDeliveryCourse, mClient, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
+ *     mCenter, mClient, mDeliveryCourse, mCustomerByDelivCustomerId, mProcessType, mCustomerBySupplyCustomerId, tPickingH, mCenterCustomerByDelivCustomerId, mCenterCustomerBySupplyCustomerId, bClassDtlByDelivTz
  *
  * [referrer-property]
  *     tAllocInstBList, tPackingHList, tPickingHList, tShippingInstHList
@@ -70,12 +70,12 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMCustomerBySupplyCustomerId;
-    protected boolean _suppressMProcessType;
     protected boolean _suppressMCenter;
-    protected boolean _suppressMCustomerByDelivCustomerId;
-    protected boolean _suppressMDeliveryCourse;
     protected boolean _suppressMClient;
+    protected boolean _suppressMDeliveryCourse;
+    protected boolean _suppressMCustomerByDelivCustomerId;
+    protected boolean _suppressMProcessType;
+    protected boolean _suppressMCustomerBySupplyCustomerId;
     protected boolean _suppressTPickingH;
     protected boolean _suppressMCenterCustomerByDelivCustomerId;
     protected boolean _suppressMCenterCustomerBySupplyCustomerId;
@@ -173,58 +173,6 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCustomerBySupplyCustomerId && entity.getMCustomerBySupplyCustomerId() != null) {
-            MCustomer relationEntity = entity.getMCustomerBySupplyCustomerId();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MCustomerDto relationDto = (MCustomerDto)cachedDto;
-                dto.setMCustomerBySupplyCustomerId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocInstHBySupplyCustomerIdList().add(dto);
-                }
-            } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHBySupplyCustomerIdList();
-                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCustomerBySupplyCustomerId(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocInstHBySupplyCustomerIdList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCustomerBySupplyCustomerId());
-                }
-            }
-        };
-        if (!_suppressMProcessType && entity.getMProcessType() != null) {
-            MProcessType relationEntity = entity.getMProcessType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
-                dto.setMProcessType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocInstHList().add(dto);
-                }
-            } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHList();
-                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMProcessType(relationDto);
-                if (reverseReference) {
-                    relationDto.getTAllocInstHList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMProcessType());
-                }
-            }
-        };
         if (!_suppressMCenter && entity.getMCenter() != null) {
             MCenter relationEntity = entity.getMCenter();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -251,29 +199,29 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
                 }
             }
         };
-        if (!_suppressMCustomerByDelivCustomerId && entity.getMCustomerByDelivCustomerId() != null) {
-            MCustomer relationEntity = entity.getMCustomerByDelivCustomerId();
+        if (!_suppressMClient && entity.getMClient() != null) {
+            MClient relationEntity = entity.getMClient();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MCustomerDto relationDto = (MCustomerDto)cachedDto;
-                dto.setMCustomerByDelivCustomerId(relationDto);
+                MClientDto relationDto = (MClientDto)cachedDto;
+                dto.setMClient(relationDto);
                 if (reverseReference) {
-                    relationDto.getTAllocInstHByDelivCustomerIdList().add(dto);
+                    relationDto.getTAllocInstHList().add(dto);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHByDelivCustomerIdList();
-                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMCustomerByDelivCustomerId(relationDto);
+                mapper.suppressTAllocInstHList();
+                MClientDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMClient(relationDto);
                 if (reverseReference) {
-                    relationDto.getTAllocInstHByDelivCustomerIdList().add(dto);
+                    relationDto.getTAllocInstHList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMCustomerByDelivCustomerId());
+                    _relationDtoMap.put(relationKey, dto.getMClient());
                 }
             }
         };
@@ -303,29 +251,81 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
                 }
             }
         };
-        if (!_suppressMClient && entity.getMClient() != null) {
-            MClient relationEntity = entity.getMClient();
+        if (!_suppressMCustomerByDelivCustomerId && entity.getMCustomerByDelivCustomerId() != null) {
+            MCustomer relationEntity = entity.getMCustomerByDelivCustomerId();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
             Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
             if (cachedDto != null) {
-                MClientDto relationDto = (MClientDto)cachedDto;
-                dto.setMClient(relationDto);
+                MCustomerDto relationDto = (MCustomerDto)cachedDto;
+                dto.setMCustomerByDelivCustomerId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocInstHByDelivCustomerIdList().add(dto);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocInstHByDelivCustomerIdList();
+                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCustomerByDelivCustomerId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocInstHByDelivCustomerIdList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCustomerByDelivCustomerId());
+                }
+            }
+        };
+        if (!_suppressMProcessType && entity.getMProcessType() != null) {
+            MProcessType relationEntity = entity.getMProcessType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MProcessTypeDto relationDto = (MProcessTypeDto)cachedDto;
+                dto.setMProcessType(relationDto);
                 if (reverseReference) {
                     relationDto.getTAllocInstHList().add(dto);
                 }
             } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTAllocInstHList();
-                MClientDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMClient(relationDto);
+                MProcessTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMProcessType(relationDto);
                 if (reverseReference) {
                     relationDto.getTAllocInstHList().add(dto);
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMClient());
+                    _relationDtoMap.put(relationKey, dto.getMProcessType());
+                }
+            }
+        };
+        if (!_suppressMCustomerBySupplyCustomerId && entity.getMCustomerBySupplyCustomerId() != null) {
+            MCustomer relationEntity = entity.getMCustomerBySupplyCustomerId();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MCustomerDto relationDto = (MCustomerDto)cachedDto;
+                dto.setMCustomerBySupplyCustomerId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocInstHBySupplyCustomerIdList().add(dto);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocInstHBySupplyCustomerIdList();
+                MCustomerDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMCustomerBySupplyCustomerId(relationDto);
+                if (reverseReference) {
+                    relationDto.getTAllocInstHBySupplyCustomerIdList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMCustomerBySupplyCustomerId());
                 }
             }
         };
@@ -623,58 +623,6 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMCustomerBySupplyCustomerId && dto.getMCustomerBySupplyCustomerId() != null) {
-            MCustomerDto relationDto = dto.getMCustomerBySupplyCustomerId();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MCustomer relationEntity = (MCustomer)cachedEntity;
-                entity.setMCustomerBySupplyCustomerId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocInstHBySupplyCustomerIdList().add(entity);
-                }
-            } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHBySupplyCustomerIdList();
-                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCustomerBySupplyCustomerId(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocInstHBySupplyCustomerIdList().add(entity);
-                }
-                if (instanceCache && entity.getMCustomerBySupplyCustomerId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCustomerBySupplyCustomerId());
-                }
-            }
-        };
-        if (!_suppressMProcessType && dto.getMProcessType() != null) {
-            MProcessTypeDto relationDto = dto.getMProcessType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MProcessType relationEntity = (MProcessType)cachedEntity;
-                entity.setMProcessType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocInstHList().add(entity);
-                }
-            } else {
-                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHList();
-                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMProcessType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTAllocInstHList().add(entity);
-                }
-                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMProcessType());
-                }
-            }
-        };
         if (!_suppressMCenter && dto.getMCenter() != null) {
             MCenterDto relationDto = dto.getMCenter();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -701,29 +649,29 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
                 }
             }
         };
-        if (!_suppressMCustomerByDelivCustomerId && dto.getMCustomerByDelivCustomerId() != null) {
-            MCustomerDto relationDto = dto.getMCustomerByDelivCustomerId();
+        if (!_suppressMClient && dto.getMClient() != null) {
+            MClientDto relationDto = dto.getMClient();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MCustomer relationEntity = (MCustomer)cachedEntity;
-                entity.setMCustomerByDelivCustomerId(relationEntity);
+                MClient relationEntity = (MClient)cachedEntity;
+                entity.setMClient(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTAllocInstHByDelivCustomerIdList().add(entity);
+                    relationEntity.getTAllocInstHList().add(entity);
                 }
             } else {
-                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTAllocInstHByDelivCustomerIdList();
-                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMCustomerByDelivCustomerId(relationEntity);
+                mapper.suppressTAllocInstHList();
+                MClient relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMClient(relationEntity);
                 if (reverseReference) {
-                    relationEntity.getTAllocInstHByDelivCustomerIdList().add(entity);
+                    relationEntity.getTAllocInstHList().add(entity);
                 }
-                if (instanceCache && entity.getMCustomerByDelivCustomerId().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMCustomerByDelivCustomerId());
+                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMClient());
                 }
             }
         };
@@ -753,29 +701,81 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
                 }
             }
         };
-        if (!_suppressMClient && dto.getMClient() != null) {
-            MClientDto relationDto = dto.getMClient();
+        if (!_suppressMCustomerByDelivCustomerId && dto.getMCustomerByDelivCustomerId() != null) {
+            MCustomerDto relationDto = dto.getMCustomerByDelivCustomerId();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
             Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
             if (cachedEntity != null) {
-                MClient relationEntity = (MClient)cachedEntity;
-                entity.setMClient(relationEntity);
+                MCustomer relationEntity = (MCustomer)cachedEntity;
+                entity.setMCustomerByDelivCustomerId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocInstHByDelivCustomerIdList().add(entity);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocInstHByDelivCustomerIdList();
+                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCustomerByDelivCustomerId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocInstHByDelivCustomerIdList().add(entity);
+                }
+                if (instanceCache && entity.getMCustomerByDelivCustomerId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCustomerByDelivCustomerId());
+                }
+            }
+        };
+        if (!_suppressMProcessType && dto.getMProcessType() != null) {
+            MProcessTypeDto relationDto = dto.getMProcessType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MProcessType relationEntity = (MProcessType)cachedEntity;
+                entity.setMProcessType(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTAllocInstHList().add(entity);
                 }
             } else {
-                MClientDtoMapper mapper = new MClientDtoMapper(_relationDtoMap, _relationEntityMap);
+                MProcessTypeDtoMapper mapper = new MProcessTypeDtoMapper(_relationDtoMap, _relationEntityMap);
                 mapper.setExceptCommonColumn(exceptCommonColumn);
                 mapper.setReverseReference(reverseReference);
                 if (!instanceCache) { mapper.disableInstanceCache(); }
                 mapper.suppressTAllocInstHList();
-                MClient relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMClient(relationEntity);
+                MProcessType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMProcessType(relationEntity);
                 if (reverseReference) {
                     relationEntity.getTAllocInstHList().add(entity);
                 }
-                if (instanceCache && entity.getMClient().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMClient());
+                if (instanceCache && entity.getMProcessType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMProcessType());
+                }
+            }
+        };
+        if (!_suppressMCustomerBySupplyCustomerId && dto.getMCustomerBySupplyCustomerId() != null) {
+            MCustomerDto relationDto = dto.getMCustomerBySupplyCustomerId();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MCustomer relationEntity = (MCustomer)cachedEntity;
+                entity.setMCustomerBySupplyCustomerId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocInstHBySupplyCustomerIdList().add(entity);
+                }
+            } else {
+                MCustomerDtoMapper mapper = new MCustomerDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTAllocInstHBySupplyCustomerIdList();
+                MCustomer relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMCustomerBySupplyCustomerId(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTAllocInstHBySupplyCustomerIdList().add(entity);
+                }
+                if (instanceCache && entity.getMCustomerBySupplyCustomerId().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMCustomerBySupplyCustomerId());
                 }
             }
         };
@@ -1051,23 +1051,23 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMCustomerBySupplyCustomerId() {
-        _suppressMCustomerBySupplyCustomerId = true;
-    }
-    public void suppressMProcessType() {
-        _suppressMProcessType = true;
-    }
     public void suppressMCenter() {
         _suppressMCenter = true;
     }
-    public void suppressMCustomerByDelivCustomerId() {
-        _suppressMCustomerByDelivCustomerId = true;
+    public void suppressMClient() {
+        _suppressMClient = true;
     }
     public void suppressMDeliveryCourse() {
         _suppressMDeliveryCourse = true;
     }
-    public void suppressMClient() {
-        _suppressMClient = true;
+    public void suppressMCustomerByDelivCustomerId() {
+        _suppressMCustomerByDelivCustomerId = true;
+    }
+    public void suppressMProcessType() {
+        _suppressMProcessType = true;
+    }
+    public void suppressMCustomerBySupplyCustomerId() {
+        _suppressMCustomerBySupplyCustomerId = true;
     }
     public void suppressTPickingH() {
         _suppressTPickingH = true;
@@ -1094,12 +1094,12 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
         _suppressTShippingInstHList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMCustomerBySupplyCustomerId();
-        suppressMProcessType();
         suppressMCenter();
-        suppressMCustomerByDelivCustomerId();
-        suppressMDeliveryCourse();
         suppressMClient();
+        suppressMDeliveryCourse();
+        suppressMCustomerByDelivCustomerId();
+        suppressMProcessType();
+        suppressMCustomerBySupplyCustomerId();
         suppressTPickingH();
         suppressMCenterCustomerByDelivCustomerId();
         suppressMCenterCustomerBySupplyCustomerId();
@@ -1110,12 +1110,12 @@ public abstract class BsTAllocInstHDtoMapper implements DtoMapper<TAllocInstH, T
         suppressTShippingInstHList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMCustomerBySupplyCustomerId = false;
-        _suppressMProcessType = false;
         _suppressMCenter = false;
-        _suppressMCustomerByDelivCustomerId = false;
-        _suppressMDeliveryCourse = false;
         _suppressMClient = false;
+        _suppressMDeliveryCourse = false;
+        _suppressMCustomerByDelivCustomerId = false;
+        _suppressMProcessType = false;
+        _suppressMCustomerBySupplyCustomerId = false;
         _suppressTPickingH = false;
         _suppressMCenterCustomerByDelivCustomerId = false;
         _suppressMCenterCustomerBySupplyCustomerId = false;

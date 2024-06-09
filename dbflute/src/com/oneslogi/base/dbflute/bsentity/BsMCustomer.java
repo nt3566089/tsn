@@ -40,7 +40,7 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     mClient, mCustomerSelf, mClientCenterByClientId, bClassDtlByDelFlg, bClassDtlByDeliveryFlg, bClassDtlByDepositFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotReverseFlg, bClassDtlByOnetimeFlg, bClassDtlByShippingStopFlg, bClassDtlByVendorFlg, mCarrierSlipCesAsOne
  *
  * [referrer property]
- *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHBySupplyCustomerIdList, tAllocInstHByDelivCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBBySupplierIdList, tMoveInstBByDepositIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHBySupplyCustomerIdList, tShippingInstHByDelivCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
+ *     mCenterCustomerList, mClientList, mClientCenterList, mCustomerSelfList, mLocationList, mUserDepositList, tAllocInstBList, tAllocInstHByDelivCustomerIdList, tAllocInstHBySupplyCustomerIdList, tAllocLotList, tInventoryBByDepositIdList, tInventoryBBySupplierIdList, tInventoryInstList, tKeepingLotList, tLastLotList, tMoveInstBByDepositIdList, tMoveInstBBySupplierIdList, tReceivePlanHByPlanDepositIdList, tReceivePlanHByPlanSupplierIdList, tShippingInstBList, tShippingInstHByDelivCustomerIdList, tShippingInstHBySupplyCustomerIdList, tStockList, tStoreNoList, tStoreRecordHByDepositIdList, tStoreRecordHBySupplierIdList, wHtInventoryInputProdList, wHtReceiveNoPlanInspByDepositIdList, wHtReceiveNoPlanInspBySupplierIdList, wHtSerialReceiveInspList, wHtSerialShippingInspList
  *
  * [get/set template]
  * /= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -1243,26 +1243,6 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         _tAllocInstBList = tAllocInstBList;
     }
 
-    /** T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'. */
-    protected List<TAllocInstH> _tAllocInstHBySupplyCustomerIdList;
-
-    /**
-     * [get] T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
-     * @return The entity list of referrer property 'TAllocInstHBySupplyCustomerIdList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TAllocInstH> getTAllocInstHBySupplyCustomerIdList() {
-        if (_tAllocInstHBySupplyCustomerIdList == null) { _tAllocInstHBySupplyCustomerIdList = newReferrerList(); }
-        return _tAllocInstHBySupplyCustomerIdList;
-    }
-
-    /**
-     * [set] T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
-     * @param tAllocInstHBySupplyCustomerIdList The entity list of referrer property 'TAllocInstHBySupplyCustomerIdList'. (NullAllowed)
-     */
-    public void setTAllocInstHBySupplyCustomerIdList(List<TAllocInstH> tAllocInstHBySupplyCustomerIdList) {
-        _tAllocInstHBySupplyCustomerIdList = tAllocInstHBySupplyCustomerIdList;
-    }
-
     /** T_ALLOC_INST_H by DELIV_CUSTOMER_ID, named 'TAllocInstHByDelivCustomerIdList'. */
     protected List<TAllocInstH> _tAllocInstHByDelivCustomerIdList;
 
@@ -1281,6 +1261,26 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
      */
     public void setTAllocInstHByDelivCustomerIdList(List<TAllocInstH> tAllocInstHByDelivCustomerIdList) {
         _tAllocInstHByDelivCustomerIdList = tAllocInstHByDelivCustomerIdList;
+    }
+
+    /** T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'. */
+    protected List<TAllocInstH> _tAllocInstHBySupplyCustomerIdList;
+
+    /**
+     * [get] T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
+     * @return The entity list of referrer property 'TAllocInstHBySupplyCustomerIdList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TAllocInstH> getTAllocInstHBySupplyCustomerIdList() {
+        if (_tAllocInstHBySupplyCustomerIdList == null) { _tAllocInstHBySupplyCustomerIdList = newReferrerList(); }
+        return _tAllocInstHBySupplyCustomerIdList;
+    }
+
+    /**
+     * [set] T_ALLOC_INST_H by SUPPLY_CUSTOMER_ID, named 'TAllocInstHBySupplyCustomerIdList'.
+     * @param tAllocInstHBySupplyCustomerIdList The entity list of referrer property 'TAllocInstHBySupplyCustomerIdList'. (NullAllowed)
+     */
+    public void setTAllocInstHBySupplyCustomerIdList(List<TAllocInstH> tAllocInstHBySupplyCustomerIdList) {
+        _tAllocInstHBySupplyCustomerIdList = tAllocInstHBySupplyCustomerIdList;
     }
 
     /** T_ALLOC_LOT by CUSTOMER_ID, named 'TAllocLotList'. */
@@ -1403,26 +1403,6 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         _tLastLotList = tLastLotList;
     }
 
-    /** T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'. */
-    protected List<TMoveInstB> _tMoveInstBBySupplierIdList;
-
-    /**
-     * [get] T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
-     * @return The entity list of referrer property 'TMoveInstBBySupplierIdList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TMoveInstB> getTMoveInstBBySupplierIdList() {
-        if (_tMoveInstBBySupplierIdList == null) { _tMoveInstBBySupplierIdList = newReferrerList(); }
-        return _tMoveInstBBySupplierIdList;
-    }
-
-    /**
-     * [set] T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
-     * @param tMoveInstBBySupplierIdList The entity list of referrer property 'TMoveInstBBySupplierIdList'. (NullAllowed)
-     */
-    public void setTMoveInstBBySupplierIdList(List<TMoveInstB> tMoveInstBBySupplierIdList) {
-        _tMoveInstBBySupplierIdList = tMoveInstBBySupplierIdList;
-    }
-
     /** T_MOVE_INST_B by DEPOSIT_ID, named 'TMoveInstBByDepositIdList'. */
     protected List<TMoveInstB> _tMoveInstBByDepositIdList;
 
@@ -1441,6 +1421,26 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
      */
     public void setTMoveInstBByDepositIdList(List<TMoveInstB> tMoveInstBByDepositIdList) {
         _tMoveInstBByDepositIdList = tMoveInstBByDepositIdList;
+    }
+
+    /** T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'. */
+    protected List<TMoveInstB> _tMoveInstBBySupplierIdList;
+
+    /**
+     * [get] T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
+     * @return The entity list of referrer property 'TMoveInstBBySupplierIdList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TMoveInstB> getTMoveInstBBySupplierIdList() {
+        if (_tMoveInstBBySupplierIdList == null) { _tMoveInstBBySupplierIdList = newReferrerList(); }
+        return _tMoveInstBBySupplierIdList;
+    }
+
+    /**
+     * [set] T_MOVE_INST_B by SUPPLIER_ID, named 'TMoveInstBBySupplierIdList'.
+     * @param tMoveInstBBySupplierIdList The entity list of referrer property 'TMoveInstBBySupplierIdList'. (NullAllowed)
+     */
+    public void setTMoveInstBBySupplierIdList(List<TMoveInstB> tMoveInstBBySupplierIdList) {
+        _tMoveInstBBySupplierIdList = tMoveInstBBySupplierIdList;
     }
 
     /** T_RECEIVE_PLAN_H by PLAN_DEPOSIT_ID, named 'TReceivePlanHByPlanDepositIdList'. */
@@ -1503,26 +1503,6 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         _tShippingInstBList = tShippingInstBList;
     }
 
-    /** T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'. */
-    protected List<TShippingInstH> _tShippingInstHBySupplyCustomerIdList;
-
-    /**
-     * [get] T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
-     * @return The entity list of referrer property 'TShippingInstHBySupplyCustomerIdList'. (NotNull: even if no loading, returns empty list)
-     */
-    public List<TShippingInstH> getTShippingInstHBySupplyCustomerIdList() {
-        if (_tShippingInstHBySupplyCustomerIdList == null) { _tShippingInstHBySupplyCustomerIdList = newReferrerList(); }
-        return _tShippingInstHBySupplyCustomerIdList;
-    }
-
-    /**
-     * [set] T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
-     * @param tShippingInstHBySupplyCustomerIdList The entity list of referrer property 'TShippingInstHBySupplyCustomerIdList'. (NullAllowed)
-     */
-    public void setTShippingInstHBySupplyCustomerIdList(List<TShippingInstH> tShippingInstHBySupplyCustomerIdList) {
-        _tShippingInstHBySupplyCustomerIdList = tShippingInstHBySupplyCustomerIdList;
-    }
-
     /** T_SHIPPING_INST_H by DELIV_CUSTOMER_ID, named 'TShippingInstHByDelivCustomerIdList'. */
     protected List<TShippingInstH> _tShippingInstHByDelivCustomerIdList;
 
@@ -1541,6 +1521,26 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
      */
     public void setTShippingInstHByDelivCustomerIdList(List<TShippingInstH> tShippingInstHByDelivCustomerIdList) {
         _tShippingInstHByDelivCustomerIdList = tShippingInstHByDelivCustomerIdList;
+    }
+
+    /** T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'. */
+    protected List<TShippingInstH> _tShippingInstHBySupplyCustomerIdList;
+
+    /**
+     * [get] T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
+     * @return The entity list of referrer property 'TShippingInstHBySupplyCustomerIdList'. (NotNull: even if no loading, returns empty list)
+     */
+    public List<TShippingInstH> getTShippingInstHBySupplyCustomerIdList() {
+        if (_tShippingInstHBySupplyCustomerIdList == null) { _tShippingInstHBySupplyCustomerIdList = newReferrerList(); }
+        return _tShippingInstHBySupplyCustomerIdList;
+    }
+
+    /**
+     * [set] T_SHIPPING_INST_H by SUPPLY_CUSTOMER_ID, named 'TShippingInstHBySupplyCustomerIdList'.
+     * @param tShippingInstHBySupplyCustomerIdList The entity list of referrer property 'TShippingInstHBySupplyCustomerIdList'. (NullAllowed)
+     */
+    public void setTShippingInstHBySupplyCustomerIdList(List<TShippingInstH> tShippingInstHBySupplyCustomerIdList) {
+        _tShippingInstHBySupplyCustomerIdList = tShippingInstHBySupplyCustomerIdList;
     }
 
     /** T_STOCK by DEPOSIT_ID, named 'TStockList'. */
@@ -1790,10 +1790,10 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         { if (et != null) { sb.append(li).append(xbRDS(et, "mUserDepositList")); } } }
         if (_tAllocInstBList != null) { for (TAllocInstB et : _tAllocInstBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tAllocInstBList")); } } }
-        if (_tAllocInstHBySupplyCustomerIdList != null) { for (TAllocInstH et : _tAllocInstHBySupplyCustomerIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tAllocInstHBySupplyCustomerIdList")); } } }
         if (_tAllocInstHByDelivCustomerIdList != null) { for (TAllocInstH et : _tAllocInstHByDelivCustomerIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tAllocInstHByDelivCustomerIdList")); } } }
+        if (_tAllocInstHBySupplyCustomerIdList != null) { for (TAllocInstH et : _tAllocInstHBySupplyCustomerIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tAllocInstHBySupplyCustomerIdList")); } } }
         if (_tAllocLotList != null) { for (TAllocLot et : _tAllocLotList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tAllocLotList")); } } }
         if (_tInventoryBByDepositIdList != null) { for (TInventoryB et : _tInventoryBByDepositIdList)
@@ -1806,20 +1806,20 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         { if (et != null) { sb.append(li).append(xbRDS(et, "tKeepingLotList")); } } }
         if (_tLastLotList != null) { for (TLastLot et : _tLastLotList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tLastLotList")); } } }
-        if (_tMoveInstBBySupplierIdList != null) { for (TMoveInstB et : _tMoveInstBBySupplierIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tMoveInstBBySupplierIdList")); } } }
         if (_tMoveInstBByDepositIdList != null) { for (TMoveInstB et : _tMoveInstBByDepositIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tMoveInstBByDepositIdList")); } } }
+        if (_tMoveInstBBySupplierIdList != null) { for (TMoveInstB et : _tMoveInstBBySupplierIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tMoveInstBBySupplierIdList")); } } }
         if (_tReceivePlanHByPlanDepositIdList != null) { for (TReceivePlanH et : _tReceivePlanHByPlanDepositIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tReceivePlanHByPlanDepositIdList")); } } }
         if (_tReceivePlanHByPlanSupplierIdList != null) { for (TReceivePlanH et : _tReceivePlanHByPlanSupplierIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tReceivePlanHByPlanSupplierIdList")); } } }
         if (_tShippingInstBList != null) { for (TShippingInstB et : _tShippingInstBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tShippingInstBList")); } } }
-        if (_tShippingInstHBySupplyCustomerIdList != null) { for (TShippingInstH et : _tShippingInstHBySupplyCustomerIdList)
-        { if (et != null) { sb.append(li).append(xbRDS(et, "tShippingInstHBySupplyCustomerIdList")); } } }
         if (_tShippingInstHByDelivCustomerIdList != null) { for (TShippingInstH et : _tShippingInstHByDelivCustomerIdList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tShippingInstHByDelivCustomerIdList")); } } }
+        if (_tShippingInstHBySupplyCustomerIdList != null) { for (TShippingInstH et : _tShippingInstHBySupplyCustomerIdList)
+        { if (et != null) { sb.append(li).append(xbRDS(et, "tShippingInstHBySupplyCustomerIdList")); } } }
         if (_tStockList != null) { for (TStock et : _tStockList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tStockList")); } } }
         if (_tStoreNoList != null) { for (TStoreNo et : _tStoreNoList)
@@ -1932,10 +1932,10 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         { sb.append(dm).append("mUserDepositList"); }
         if (_tAllocInstBList != null && !_tAllocInstBList.isEmpty())
         { sb.append(dm).append("tAllocInstBList"); }
-        if (_tAllocInstHBySupplyCustomerIdList != null && !_tAllocInstHBySupplyCustomerIdList.isEmpty())
-        { sb.append(dm).append("tAllocInstHBySupplyCustomerIdList"); }
         if (_tAllocInstHByDelivCustomerIdList != null && !_tAllocInstHByDelivCustomerIdList.isEmpty())
         { sb.append(dm).append("tAllocInstHByDelivCustomerIdList"); }
+        if (_tAllocInstHBySupplyCustomerIdList != null && !_tAllocInstHBySupplyCustomerIdList.isEmpty())
+        { sb.append(dm).append("tAllocInstHBySupplyCustomerIdList"); }
         if (_tAllocLotList != null && !_tAllocLotList.isEmpty())
         { sb.append(dm).append("tAllocLotList"); }
         if (_tInventoryBByDepositIdList != null && !_tInventoryBByDepositIdList.isEmpty())
@@ -1948,20 +1948,20 @@ public abstract class BsMCustomer extends AbstractEntity implements DomainEntity
         { sb.append(dm).append("tKeepingLotList"); }
         if (_tLastLotList != null && !_tLastLotList.isEmpty())
         { sb.append(dm).append("tLastLotList"); }
-        if (_tMoveInstBBySupplierIdList != null && !_tMoveInstBBySupplierIdList.isEmpty())
-        { sb.append(dm).append("tMoveInstBBySupplierIdList"); }
         if (_tMoveInstBByDepositIdList != null && !_tMoveInstBByDepositIdList.isEmpty())
         { sb.append(dm).append("tMoveInstBByDepositIdList"); }
+        if (_tMoveInstBBySupplierIdList != null && !_tMoveInstBBySupplierIdList.isEmpty())
+        { sb.append(dm).append("tMoveInstBBySupplierIdList"); }
         if (_tReceivePlanHByPlanDepositIdList != null && !_tReceivePlanHByPlanDepositIdList.isEmpty())
         { sb.append(dm).append("tReceivePlanHByPlanDepositIdList"); }
         if (_tReceivePlanHByPlanSupplierIdList != null && !_tReceivePlanHByPlanSupplierIdList.isEmpty())
         { sb.append(dm).append("tReceivePlanHByPlanSupplierIdList"); }
         if (_tShippingInstBList != null && !_tShippingInstBList.isEmpty())
         { sb.append(dm).append("tShippingInstBList"); }
-        if (_tShippingInstHBySupplyCustomerIdList != null && !_tShippingInstHBySupplyCustomerIdList.isEmpty())
-        { sb.append(dm).append("tShippingInstHBySupplyCustomerIdList"); }
         if (_tShippingInstHByDelivCustomerIdList != null && !_tShippingInstHByDelivCustomerIdList.isEmpty())
         { sb.append(dm).append("tShippingInstHByDelivCustomerIdList"); }
+        if (_tShippingInstHBySupplyCustomerIdList != null && !_tShippingInstHBySupplyCustomerIdList.isEmpty())
+        { sb.append(dm).append("tShippingInstHBySupplyCustomerIdList"); }
         if (_tStockList != null && !_tStockList.isEmpty())
         { sb.append(dm).append("tStockList"); }
         if (_tStoreNoList != null && !_tStoreNoList.isEmpty())

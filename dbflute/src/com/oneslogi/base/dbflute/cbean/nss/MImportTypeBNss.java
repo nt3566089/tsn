@@ -20,20 +20,20 @@ public class MImportTypeBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MImportTypeNss withMImportType() {
-        _query.xdoNss(() -> _query.queryMImportType());
-        return new MImportTypeNss(_query.queryMImportType());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_EDI_COLUMN by my EDI_COLUMN_ID, named 'MEdiColumn'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MEdiColumnNss withMEdiColumn() {
         _query.xdoNss(() -> _query.queryMEdiColumn());
         return new MEdiColumnNss(_query.queryMEdiColumn());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MImportTypeNss withMImportType() {
+        _query.xdoNss(() -> _query.queryMImportType());
+        return new MImportTypeNss(_query.queryMImportType());
     }
 }

@@ -70,11 +70,11 @@ public class TPickingBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTShippingInstB(), (et, vl) -> ((TPickingB)et).setTShippingInstB((TShippingInstB)vl), "TShippingInstB");
-        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTPickingH(), (et, vl) -> ((TPickingB)et).setTPickingH((TPickingH)vl), "TPickingH");
         setupEfpg(_efpgMap, et -> ((TPickingB)et).getTAllocInstB(), (et, vl) -> ((TPickingB)et).setTAllocInstB((TAllocInstB)vl), "TAllocInstB");
-        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTStock(), (et, vl) -> ((TPickingB)et).setTStock((TStock)vl), "TStock");
+        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTPickingH(), (et, vl) -> ((TPickingB)et).setTPickingH((TPickingH)vl), "TPickingH");
         setupEfpg(_efpgMap, et -> ((TPickingB)et).getMShape(), (et, vl) -> ((TPickingB)et).setMShape((MShape)vl), "MShape");
+        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTShippingInstB(), (et, vl) -> ((TPickingB)et).setTShippingInstB((TShippingInstB)vl), "TShippingInstB");
+        setupEfpg(_efpgMap, et -> ((TPickingB)et).getTStock(), (et, vl) -> ((TPickingB)et).setTStock((TStock)vl), "TStock");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
     { return doFindEfpg(_efpgMap, prop); }
@@ -249,12 +249,12 @@ public class TPickingBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTShippingInstB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstBId(), TShippingInstBDbm.getInstance().columnShippingInstBId());
-        return cfi("T_PICKING_B_FK5", "TShippingInstB", this, TShippingInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingBList", false);
+    public ForeignInfo foreignTAllocInstB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
+        return cfi("T_PICKING_B_FK2", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TPickingBList", false);
     }
     /**
      * T_PICKING_H by my PICKING_H_ID, named 'TPickingH'.
@@ -265,12 +265,20 @@ public class TPickingBDbm extends AbstractDBMeta {
         return cfi("T_PICKING_B_FK4", "TPickingH", this, TPickingHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TPickingBList", false);
     }
     /**
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignTAllocInstB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnAllocInstBId(), TAllocInstBDbm.getInstance().columnAllocInstBId());
-        return cfi("T_PICKING_B_FK2", "TAllocInstB", this, TAllocInstBDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPickingBList", false);
+    public ForeignInfo foreignMShape() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
+        return cfi("T_PICKING_B_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TPickingBList", false);
+    }
+    /**
+     * T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTShippingInstB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstBId(), TShippingInstBDbm.getInstance().columnShippingInstBId());
+        return cfi("T_PICKING_B_FK5", "TShippingInstB", this, TShippingInstBDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPickingBList", false);
     }
     /**
      * T_STOCK by my STOCK_ID, named 'TStock'.
@@ -278,15 +286,7 @@ public class TPickingBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTStock() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStockId(), TStockDbm.getInstance().columnStockId());
-        return cfi("T_PICKING_B_FK3", "TStock", this, TStockDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TPickingBList", false);
-    }
-    /**
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMShape() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShapeId(), MShapeDbm.getInstance().columnShapeId());
-        return cfi("T_PICKING_B_FK1", "MShape", this, MShapeDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TPickingBList", false);
+        return cfi("T_PICKING_B_FK3", "TStock", this, TStockDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "TPickingBList", false);
     }
 
     // -----------------------------------------------------

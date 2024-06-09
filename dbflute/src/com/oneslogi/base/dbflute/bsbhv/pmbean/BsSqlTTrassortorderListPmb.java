@@ -2,7 +2,6 @@ package com.oneslogi.base.dbflute.bsbhv.pmbean;
 
 import java.util.*;
 
-import org.dbflute.outsidesql.paging.SimplePagingBean;
 import org.dbflute.outsidesql.typed.*;
 import org.dbflute.jdbc.*;
 import org.dbflute.outsidesql.PmbCustodial;
@@ -16,7 +15,7 @@ import com.oneslogi.base.dbflute.exentity.customize.*;
  * This is related to "<span style="color: #AD4747">selectSqlTTrassortorderList</span>" on TTrassortorderBhv.
  * @author DBFlute(AutoGenerator)
  */
-public class BsSqlTTrassortorderListPmb extends SimplePagingBean implements EntityHandlingPmb<TTrassortorderBhv, SqlTTrassortorderList>, AutoPagingHandlingPmb<TTrassortorderBhv, SqlTTrassortorderList>, FetchBean {
+public class BsSqlTTrassortorderListPmb implements ListHandlingPmb<TTrassortorderBhv, SqlTTrassortorderList>, EntityHandlingPmb<TTrassortorderBhv, SqlTTrassortorderList>, FetchBean {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -26,6 +25,9 @@ public class BsSqlTTrassortorderListPmb extends SimplePagingBean implements Enti
 
     /** The parameter of tempInstNoList. */
     protected List<String> _tempInstNoList;
+
+    /** The max size of safety result. */
+    protected int _safetyMaxResultSize;
 
     /** The time-zone for filtering e.g. from-to. (NullAllowed: if null, default zone) */
     protected TimeZone _timeZone;
@@ -38,9 +40,6 @@ public class BsSqlTTrassortorderListPmb extends SimplePagingBean implements Enti
      * This is related to "<span style="color: #AD4747">selectSqlTTrassortorderList</span>" on TTrassortorderBhv.
      */
     public BsSqlTTrassortorderListPmb() {
-        if (DBFluteConfig.getInstance().isPagingCountLater()) {
-            enablePagingCountLater();
-        }
     }
 
     // ===================================================================================
@@ -56,6 +55,23 @@ public class BsSqlTTrassortorderListPmb extends SimplePagingBean implements Enti
      * @return The type instance of an entity, customize entity. (NotNull)
      */
     public Class<SqlTTrassortorderList> getEntityType() { return SqlTTrassortorderList.class; }
+
+    // ===================================================================================
+    //                                                                       Safety Result
+    //                                                                       =============
+    /**
+     * {@inheritDoc}
+     */
+    public void checkSafetyResult(int safetyMaxResultSize) {
+        _safetyMaxResultSize = safetyMaxResultSize;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public int getSafetyMaxResultSize() {
+        return _safetyMaxResultSize;
+    }
 
     // ===================================================================================
     //                                                                       Assist Helper

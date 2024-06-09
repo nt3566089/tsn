@@ -20,21 +20,12 @@ public class MParamNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MDeliveryCourseNss withMDeliveryCourse() {
-        _query.xdoNss(() -> _query.queryMDeliveryCourse());
-        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MBoxGrpNss withMBoxGrp() {
-        _query.xdoNss(() -> _query.queryMBoxGrp());
-        return new MBoxGrpNss(_query.queryMBoxGrp());
+    public MClientCenterNss withMClientCenter() {
+        _query.xdoNss(() -> _query.queryMClientCenter());
+        return new MClientCenterNss(_query.queryMClientCenter());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -47,6 +38,15 @@ public class MParamNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MDeliveryCourseNss withMDeliveryCourse() {
+        _query.xdoNss(() -> _query.queryMDeliveryCourse());
+        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_ZONE by my EM_REPLENISH_ZONE_ID, named 'MZone'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -56,12 +56,12 @@ public class MParamNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MClientCenterNss withMClientCenter() {
-        _query.xdoNss(() -> _query.queryMClientCenter());
-        return new MClientCenterNss(_query.queryMClientCenter());
+    public MBoxGrpNss withMBoxGrp() {
+        _query.xdoNss(() -> _query.queryMBoxGrp());
+        return new MBoxGrpNss(_query.queryMBoxGrp());
     }
     /**
      * With nested relation columns to select clause. <br>

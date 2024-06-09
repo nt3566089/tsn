@@ -20,21 +20,21 @@ public class TStoreNoRNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public BUserNss withBUser() {
-        _query.xdoNss(() -> _query.queryBUser());
-        return new BUserNss(_query.queryBUser());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public TStoreNoNss withTStoreNo() {
         _query.xdoNss(() -> _query.queryTStoreNo());
         return new TStoreNoNss(_query.queryTStoreNo());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * B_USER by my TWL_OUT_USER_ID, named 'BUser'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public BUserNss withBUser() {
+        _query.xdoNss(() -> _query.queryBUser());
+        return new BUserNss(_query.queryBUser());
     }
     /**
      * With nested relation columns to select clause. <br>

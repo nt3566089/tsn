@@ -20,30 +20,12 @@ public class TMoveInstBNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TMoveInstHNss withTMoveInstH() {
-        _query.xdoNss(() -> _query.queryTMoveInstH());
-        return new TMoveInstHNss(_query.queryTMoveInstH());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MWarehouseNss withMWarehouse() {
-        _query.xdoNss(() -> _query.queryMWarehouse());
-        return new MWarehouseNss(_query.queryMWarehouse());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public TLotNss withTLot() {
-        _query.xdoNss(() -> _query.queryTLot());
-        return new TLotNss(_query.queryTLot());
+    public MCustomerNss withMCustomerByDepositId() {
+        _query.xdoNss(() -> _query.queryMCustomerByDepositId());
+        return new MCustomerNss(_query.queryMCustomerByDepositId());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -56,12 +38,21 @@ public class TMoveInstBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * T_LOT by my LOT_ID, named 'TLot'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MShapeNss withMShape() {
-        _query.xdoNss(() -> _query.queryMShape());
-        return new MShapeNss(_query.queryMShape());
+    public TLotNss withTLot() {
+        _query.xdoNss(() -> _query.queryTLot());
+        return new TLotNss(_query.queryTLot());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TMoveInstHNss withTMoveInstH() {
+        _query.xdoNss(() -> _query.queryTMoveInstH());
+        return new TMoveInstHNss(_query.queryTMoveInstH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -71,6 +62,15 @@ public class TMoveInstBNss {
     public MProductNss withMProduct() {
         _query.xdoNss(() -> _query.queryMProduct());
         return new MProductNss(_query.queryMProduct());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MShapeNss withMShape() {
+        _query.xdoNss(() -> _query.queryMShape());
+        return new MShapeNss(_query.queryMShape());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -101,12 +101,12 @@ public class TMoveInstBNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MCustomerNss withMCustomerByDepositId() {
-        _query.xdoNss(() -> _query.queryMCustomerByDepositId());
-        return new MCustomerNss(_query.queryMCustomerByDepositId());
+    public MWarehouseNss withMWarehouse() {
+        _query.xdoNss(() -> _query.queryMWarehouse());
+        return new MWarehouseNss(_query.queryMWarehouse());
     }
     /**
      * With nested relation columns to select clause. <br>

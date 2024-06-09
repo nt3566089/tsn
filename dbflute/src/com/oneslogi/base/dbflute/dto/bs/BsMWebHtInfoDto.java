@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_CLIENT, M_WAREHOUSE, M_CENTER, B_CLASS_DTL(ByDelFlg)
+ *     M_CENTER, M_CLIENT, M_WAREHOUSE, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     mClient, mWarehouse, mCenter, bClassDtlByDelFlg
+ *     mCenter, mClient, mWarehouse, bClassDtlByDelFlg
  *
  * [referrer-property]
  *     
@@ -145,6 +145,16 @@ public abstract class BsMWebHtInfoDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
     protected MClientDto _mClient;
 
     public MClientDto getMClient() {
@@ -163,16 +173,6 @@ public abstract class BsMWebHtInfoDto implements Serializable {
 
     public void setMWarehouse(MWarehouseDto mWarehouse) {
         this._mWarehouse = mWarehouse;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
     }
 
     protected BClassDtlDto _bClassDtlByDelFlg;

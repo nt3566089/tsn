@@ -252,6 +252,32 @@ public class BsTEcOrderRCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
+    protected TEcOrderHNss _nssTEcOrderH;
+    public TEcOrderHNss xdfgetNssTEcOrderH() {
+        if (_nssTEcOrderH == null) { _nssTEcOrderH = new TEcOrderHNss(null); }
+        return _nssTEcOrderH;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
+     * <pre>
+     * <span style="color: #0000C0">tEcOrderRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TEcOrderH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tEcOrderR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tEcOrderR</span>.<span style="color: #CC4747">getTEcOrderH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TEcOrderHNss setupSelect_TEcOrderH() {
+        assertSetupSelectPurpose("tEcOrderH");
+        doSetupSelect(() -> query().queryTEcOrderH());
+        if (_nssTEcOrderH == null || !_nssTEcOrderH.hasConditionQuery())
+        { _nssTEcOrderH = new TEcOrderHNss(query().queryTEcOrderH()); }
+        return _nssTEcOrderH;
+    }
+
     protected BUserNss _nssBUser;
     public BUserNss xdfgetNssBUser() {
         if (_nssBUser == null) { _nssBUser = new BUserNss(null); }
@@ -279,32 +305,6 @@ public class BsTEcOrderRCB extends AbstractConditionBean {
         if (_nssBUser == null || !_nssBUser.hasConditionQuery())
         { _nssBUser = new BUserNss(query().queryBUser()); }
         return _nssBUser;
-    }
-
-    protected TEcOrderHNss _nssTEcOrderH;
-    public TEcOrderHNss xdfgetNssTEcOrderH() {
-        if (_nssTEcOrderH == null) { _nssTEcOrderH = new TEcOrderHNss(null); }
-        return _nssTEcOrderH;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
-     * <pre>
-     * <span style="color: #0000C0">tEcOrderRBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TEcOrderH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tEcOrderR</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tEcOrderR</span>.<span style="color: #CC4747">getTEcOrderH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TEcOrderHNss setupSelect_TEcOrderH() {
-        assertSetupSelectPurpose("tEcOrderH");
-        doSetupSelect(() -> query().queryTEcOrderH());
-        if (_nssTEcOrderH == null || !_nssTEcOrderH.hasConditionQuery())
-        { _nssTEcOrderH = new TEcOrderHNss(query().queryTEcOrderH()); }
-        return _nssTEcOrderH;
     }
 
     protected BClassDtlNss _nssBClassDtlByInvoiceCreateFlg;
@@ -406,8 +406,8 @@ public class BsTEcOrderRCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TEcOrderRCQ> {
-        protected BUserCB.HpSpecification _bUser;
         protected TEcOrderHCB.HpSpecification _tEcOrderH;
+        protected BUserCB.HpSpecification _bUser;
         protected BClassDtlCB.HpSpecification _bClassDtlByInvoiceCreateFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByStatementOutFlg;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<TEcOrderRCQ> qyCall
@@ -511,26 +511,6 @@ public class BsTEcOrderRCB extends AbstractConditionBean {
         protected String getTableDbName() { return "T_EC_ORDER_R"; }
         /**
          * Prepare to specify functions about relation table. <br>
-         * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public BUserCB.HpSpecification specifyBUser() {
-            assertRelation("bUser");
-            if (_bUser == null) {
-                _bUser = new BUserCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
-                                    , () -> _qyCall.qy().queryBUser())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
-                      , () -> xsyncQyCall().qy().queryBUser()));
-                }
-            }
-            return _bUser;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
          * T_EC_ORDER_H by my EC_ORDER_H_ID, named 'TEcOrderH'.
          * @return The instance for specification for relation table to specify. (NotNull)
          */
@@ -548,6 +528,26 @@ public class BsTEcOrderRCB extends AbstractConditionBean {
                 }
             }
             return _tEcOrderH;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * B_USER by my STATEMENT_OUT_USER_ID, named 'BUser'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public BUserCB.HpSpecification specifyBUser() {
+            assertRelation("bUser");
+            if (_bUser == null) {
+                _bUser = new BUserCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryBUser()
+                                    , () -> _qyCall.qy().queryBUser())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _bUser.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryBUser()
+                      , () -> xsyncQyCall().qy().queryBUser()));
+                }
+            }
+            return _bUser;
         }
         /**
          * Prepare to specify functions about relation table. <br>

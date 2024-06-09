@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_DICT, B_CULTURE, M_HT_DICT_CULTURE(AsOne)
+ *     B_CULTURE, B_DICT, M_HT_DICT_CULTURE(AsOne)
  *
  * [referrer-table]
  *     M_HT_DICT_CULTURE
  *
  * [foreign-property]
- *     bDict, bCulture, mHtDictCultureAsOne
+ *     bCulture, bDict, mHtDictCultureAsOne
  *
  * [referrer-property]
  *     
@@ -137,16 +137,6 @@ public abstract class BsBDictCultureDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BDictDto _bDict;
-
-    public BDictDto getBDict() {
-        return _bDict;
-    }
-
-    public void setBDict(BDictDto bDict) {
-        this._bDict = bDict;
-    }
-
     protected BCultureDto _bCulture;
 
     public BCultureDto getBCulture() {
@@ -155,6 +145,16 @@ public abstract class BsBDictCultureDto implements Serializable {
 
     public void setBCulture(BCultureDto bCulture) {
         this._bCulture = bCulture;
+    }
+
+    protected BDictDto _bDict;
+
+    public BDictDto getBDict() {
+        return _bDict;
+    }
+
+    public void setBDict(BDictDto bDict) {
+        this._bDict = bDict;
     }
 
     protected MHtDictCultureDto _mHtDictCultureAsOne;

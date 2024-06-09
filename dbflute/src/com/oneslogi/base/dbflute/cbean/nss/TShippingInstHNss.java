@@ -20,39 +20,12 @@ public class TShippingInstHNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MDeliveryCourseNss withMDeliveryCourse() {
-        _query.xdoNss(() -> _query.queryMDeliveryCourse());
-        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCustomerNss withMCustomerBySupplyCustomerId() {
-        _query.xdoNss(() -> _query.queryMCustomerBySupplyCustomerId());
-        return new MCustomerNss(_query.queryMCustomerBySupplyCustomerId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MProcessTypeNss withMProcessType() {
-        _query.xdoNss(() -> _query.queryMProcessType());
-        return new MProcessTypeNss(_query.queryMProcessType());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MClientNss withMClient() {
-        _query.xdoNss(() -> _query.queryMClient());
-        return new MClientNss(_query.queryMClient());
+    public TAllocInstHNss withTAllocInstH() {
+        _query.xdoNss(() -> _query.queryTAllocInstH());
+        return new TAllocInstHNss(_query.queryTAllocInstH());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -65,6 +38,24 @@ public class TShippingInstHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MClientNss withMClient() {
+        _query.xdoNss(() -> _query.queryMClient());
+        return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MDeliveryCourseNss withMDeliveryCourse() {
+        _query.xdoNss(() -> _query.queryMDeliveryCourse());
+        return new MDeliveryCourseNss(_query.queryMDeliveryCourse());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
      * M_CUSTOMER by my DELIV_CUSTOMER_ID, named 'MCustomerByDelivCustomerId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
@@ -74,12 +65,21 @@ public class TShippingInstHNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TAllocInstHNss withTAllocInstH() {
-        _query.xdoNss(() -> _query.queryTAllocInstH());
-        return new TAllocInstHNss(_query.queryTAllocInstH());
+    public MProcessTypeNss withMProcessType() {
+        _query.xdoNss(() -> _query.queryMProcessType());
+        return new MProcessTypeNss(_query.queryMProcessType());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CUSTOMER by my SUPPLY_CUSTOMER_ID, named 'MCustomerBySupplyCustomerId'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCustomerNss withMCustomerBySupplyCustomerId() {
+        _query.xdoNss(() -> _query.queryMCustomerBySupplyCustomerId());
+        return new MCustomerNss(_query.queryMCustomerBySupplyCustomerId());
     }
     /**
      * With nested relation columns to select clause. <br>

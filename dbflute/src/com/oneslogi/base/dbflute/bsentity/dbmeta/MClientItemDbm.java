@@ -68,9 +68,9 @@ public class MClientItemDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MClientItem)et).getBItem(), (et, vl) -> ((MClientItem)et).setBItem((BItem)vl), "BItem");
         setupEfpg(_efpgMap, et -> ((MClientItem)et).getMClient(), (et, vl) -> ((MClientItem)et).setMClient((MClient)vl), "MClient");
         setupEfpg(_efpgMap, et -> ((MClientItem)et).getBDict(), (et, vl) -> ((MClientItem)et).setBDict((BDict)vl), "BDict");
+        setupEfpg(_efpgMap, et -> ((MClientItem)et).getBItem(), (et, vl) -> ((MClientItem)et).setBItem((BItem)vl), "BItem");
         setupEfpg(_efpgMap, et -> ((MClientItem)et).getVDict(), (et, vl) -> ((MClientItem)et).setVDict((VDict)vl), "VDict");
     }
     public PropertyGateway findForeignPropertyGateway(String prop)
@@ -243,20 +243,12 @@ public class MClientItemDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * B_ITEM by my ITEM_ID, named 'BItem'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignBItem() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnItemId(), BItemDbm.getInstance().columnItemId());
-        return cfi("M_CLIENT_ITEM_FK1", "BItem", this, BItemDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientItemList", false);
-    }
-    /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("M_CLIENT_ITEM_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientItemList", false);
+        return cfi("M_CLIENT_ITEM_FK3", "MClient", this, MClientDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MClientItemList", false);
     }
     /**
      * B_DICT by my DICT_ID, named 'BDict'.
@@ -264,7 +256,15 @@ public class MClientItemDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignBDict() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDictId(), BDictDbm.getInstance().columnDictId());
-        return cfi("M_CLIENT_ITEM_FK2", "BDict", this, BDictDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MClientItemList", false);
+        return cfi("M_CLIENT_ITEM_FK2", "BDict", this, BDictDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MClientItemList", false);
+    }
+    /**
+     * B_ITEM by my ITEM_ID, named 'BItem'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignBItem() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnItemId(), BItemDbm.getInstance().columnItemId());
+        return cfi("M_CLIENT_ITEM_FK1", "BItem", this, BItemDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MClientItemList", false);
     }
     /**
      * V_DICT by my DICT_ID, named 'VDict'.

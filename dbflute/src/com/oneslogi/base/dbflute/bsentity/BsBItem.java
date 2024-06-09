@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_SCREEN, B_DICT, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
+ *     B_DICT, B_SCREEN, V_DICT, V_HT_DICT, B_CLASS_DTL(ByItemType), B_ITEM_VALID(AsOne)
  *
  * [referrer table]
  *     B_COL, B_COL_EXT_BASE, B_COL_EXT_USER, B_ITEM_ROLE, M_CENTER_ITEM, M_CLIENT_ITEM, B_ITEM_VALID
  *
  * [foreign property]
- *     bScreen, bDict, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
+ *     bDict, bScreen, vDict, vHtDict, bClassDtlByItemType, bClassDtlByVisible, bClassDtlByEditable, bClassDtlByTextAlign, bClassDtlByNecessary, bClassDtlByDisplayRequired, bItemValidAsOne
  *
  * [referrer property]
  *     bColList, bColExtBaseList, bColExtUserList, bItemRoleList, mCenterItemList, mClientItemList
@@ -813,25 +813,6 @@ public abstract class BsBItem extends AbstractEntity implements DomainEntity, En
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_SCREEN by my SCREEN_ID, named 'BScreen'. */
-    protected BScreen _bScreen;
-
-    /**
-     * [get] B_SCREEN by my SCREEN_ID, named 'BScreen'. <br>
-     * @return The entity of foreign property 'BScreen'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BScreen getBScreen() {
-        return _bScreen;
-    }
-
-    /**
-     * [set] B_SCREEN by my SCREEN_ID, named 'BScreen'.
-     * @param bScreen The entity of foreign property 'BScreen'. (NullAllowed)
-     */
-    public void setBScreen(BScreen bScreen) {
-        _bScreen = bScreen;
-    }
-
     /** B_DICT by my DICT_ID, named 'BDict'. */
     protected BDict _bDict;
 
@@ -849,6 +830,25 @@ public abstract class BsBItem extends AbstractEntity implements DomainEntity, En
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** B_SCREEN by my SCREEN_ID, named 'BScreen'. */
+    protected BScreen _bScreen;
+
+    /**
+     * [get] B_SCREEN by my SCREEN_ID, named 'BScreen'. <br>
+     * @return The entity of foreign property 'BScreen'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BScreen getBScreen() {
+        return _bScreen;
+    }
+
+    /**
+     * [set] B_SCREEN by my SCREEN_ID, named 'BScreen'.
+     * @param bScreen The entity of foreign property 'BScreen'. (NullAllowed)
+     */
+    public void setBScreen(BScreen bScreen) {
+        _bScreen = bScreen;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -1174,10 +1174,10 @@ public abstract class BsBItem extends AbstractEntity implements DomainEntity, En
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bScreen != null)
-        { sb.append(li).append(xbRDS(_bScreen, "bScreen")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_bScreen != null)
+        { sb.append(li).append(xbRDS(_bScreen, "bScreen")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         if (_vHtDict != null)
@@ -1243,10 +1243,10 @@ public abstract class BsBItem extends AbstractEntity implements DomainEntity, En
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bScreen != null)
-        { sb.append(dm).append("bScreen"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_bScreen != null)
+        { sb.append(dm).append("bScreen"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (_vHtDict != null)

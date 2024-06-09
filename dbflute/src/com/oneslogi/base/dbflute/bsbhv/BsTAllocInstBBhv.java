@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_WAREHOUSE, M_CUSTOMER, M_LOCATION, M_PRODUCT, M_SHAPE, T_STORE_NO, M_STOCK_TYPE, T_ALLOC_INST_H, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
+ *     T_ALLOC_INST_H, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
  *
  * [referrer table]
  *     T_PACKING_B, T_PICKING_B, T_SHIPPING_INST_B, T_STOCK_INOUT, T_ALLOC_LOT
  *
  * [foreign property]
- *     tLot, mWarehouse, mCustomer, mLocation, mProduct, mShape, tStoreNo, mStockType, tAllocInstH, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
+ *     tAllocInstH, mCustomer, mLocation, tLot, mProduct, mShape, mStockType, tStoreNo, mWarehouse, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
  *
  * [referrer property]
  *     tPackingBList, tPickingBList, tShippingInstBList, tStockInoutList
@@ -745,20 +745,12 @@ public abstract class BsTAllocInstBBhv extends AbstractBehaviorWritable<TAllocIn
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'TLot'.
+     * Pull out the list of foreign table 'TAllocInstH'.
      * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TLot> pulloutTLot(List<TAllocInstB> tAllocInstBList)
-    { return helpPulloutInternally(tAllocInstBList, "tLot"); }
-
-    /**
-     * Pull out the list of foreign table 'MWarehouse'.
-     * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MWarehouse> pulloutMWarehouse(List<TAllocInstB> tAllocInstBList)
-    { return helpPulloutInternally(tAllocInstBList, "mWarehouse"); }
+    public List<TAllocInstH> pulloutTAllocInstH(List<TAllocInstB> tAllocInstBList)
+    { return helpPulloutInternally(tAllocInstBList, "tAllocInstH"); }
 
     /**
      * Pull out the list of foreign table 'MCustomer'.
@@ -777,6 +769,14 @@ public abstract class BsTAllocInstBBhv extends AbstractBehaviorWritable<TAllocIn
     { return helpPulloutInternally(tAllocInstBList, "mLocation"); }
 
     /**
+     * Pull out the list of foreign table 'TLot'.
+     * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TLot> pulloutTLot(List<TAllocInstB> tAllocInstBList)
+    { return helpPulloutInternally(tAllocInstBList, "tLot"); }
+
+    /**
      * Pull out the list of foreign table 'MProduct'.
      * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -793,14 +793,6 @@ public abstract class BsTAllocInstBBhv extends AbstractBehaviorWritable<TAllocIn
     { return helpPulloutInternally(tAllocInstBList, "mShape"); }
 
     /**
-     * Pull out the list of foreign table 'TStoreNo'.
-     * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TStoreNo> pulloutTStoreNo(List<TAllocInstB> tAllocInstBList)
-    { return helpPulloutInternally(tAllocInstBList, "tStoreNo"); }
-
-    /**
      * Pull out the list of foreign table 'MStockType'.
      * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -809,12 +801,20 @@ public abstract class BsTAllocInstBBhv extends AbstractBehaviorWritable<TAllocIn
     { return helpPulloutInternally(tAllocInstBList, "mStockType"); }
 
     /**
-     * Pull out the list of foreign table 'TAllocInstH'.
+     * Pull out the list of foreign table 'TStoreNo'.
      * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<TAllocInstH> pulloutTAllocInstH(List<TAllocInstB> tAllocInstBList)
-    { return helpPulloutInternally(tAllocInstBList, "tAllocInstH"); }
+    public List<TStoreNo> pulloutTStoreNo(List<TAllocInstB> tAllocInstBList)
+    { return helpPulloutInternally(tAllocInstBList, "tStoreNo"); }
+
+    /**
+     * Pull out the list of foreign table 'MWarehouse'.
+     * @param tAllocInstBList The list of tAllocInstB. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MWarehouse> pulloutMWarehouse(List<TAllocInstB> tAllocInstBList)
+    { return helpPulloutInternally(tAllocInstBList, "mWarehouse"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

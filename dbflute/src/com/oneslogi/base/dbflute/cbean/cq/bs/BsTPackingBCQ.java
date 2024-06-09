@@ -472,14 +472,14 @@ public class BsTPackingBCQ extends AbstractBsTPackingBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TPackingBCQ bq = (TPackingBCQ)bqs;
         TPackingBCQ uq = (TPackingBCQ)uqs;
-        if (bq.hasConditionQueryTPickingB()) {
-            uq.queryTPickingB().reflectRelationOnUnionQuery(bq.queryTPickingB(), uq.queryTPickingB());
+        if (bq.hasConditionQueryTAllocInstB()) {
+            uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
         }
         if (bq.hasConditionQueryTPackingH()) {
             uq.queryTPackingH().reflectRelationOnUnionQuery(bq.queryTPackingH(), uq.queryTPackingH());
         }
-        if (bq.hasConditionQueryTAllocInstB()) {
-            uq.queryTAllocInstB().reflectRelationOnUnionQuery(bq.queryTAllocInstB(), uq.queryTAllocInstB());
+        if (bq.hasConditionQueryTPickingB()) {
+            uq.queryTPickingB().reflectRelationOnUnionQuery(bq.queryTPickingB(), uq.queryTPickingB());
         }
         if (bq.hasConditionQueryBClassDtlByInspectionFlg()) {
             uq.queryBClassDtlByInspectionFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByInspectionFlg(), uq.queryBClassDtlByInspectionFlg());
@@ -494,23 +494,23 @@ public class BsTPackingBCQ extends AbstractBsTPackingBCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
+     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TPickingBCQ queryTPickingB() {
-        return xdfgetConditionQueryTPickingB();
+    public TAllocInstBCQ queryTAllocInstB() {
+        return xdfgetConditionQueryTAllocInstB();
     }
-    public TPickingBCQ xdfgetConditionQueryTPickingB() {
-        String prop = "tPickingB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingB()); xsetupOuterJoinTPickingB(); }
+    public TAllocInstBCQ xdfgetConditionQueryTAllocInstB() {
+        String prop = "tAllocInstB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstB()); xsetupOuterJoinTAllocInstB(); }
         return xgetQueRlMap(prop);
     }
-    protected TPickingBCQ xcreateQueryTPickingB() {
-        String nrp = xresolveNRP("T_PACKING_B", "tPickingB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TPickingBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingB", nrp);
+    protected TAllocInstBCQ xcreateQueryTAllocInstB() {
+        String nrp = xresolveNRP("T_PACKING_B", "tAllocInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TAllocInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstB", nrp);
     }
-    protected void xsetupOuterJoinTPickingB() { xregOutJo("tPickingB"); }
-    public boolean hasConditionQueryTPickingB() { return xhasQueRlMap("tPickingB"); }
+    protected void xsetupOuterJoinTAllocInstB() { xregOutJo("tAllocInstB"); }
+    public boolean hasConditionQueryTAllocInstB() { return xhasQueRlMap("tAllocInstB"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -534,23 +534,23 @@ public class BsTPackingBCQ extends AbstractBsTPackingBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * T_PICKING_B by my PICKING_B_ID, named 'TPickingB'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TAllocInstBCQ queryTAllocInstB() {
-        return xdfgetConditionQueryTAllocInstB();
+    public TPickingBCQ queryTPickingB() {
+        return xdfgetConditionQueryTPickingB();
     }
-    public TAllocInstBCQ xdfgetConditionQueryTAllocInstB() {
-        String prop = "tAllocInstB";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTAllocInstB()); xsetupOuterJoinTAllocInstB(); }
+    public TPickingBCQ xdfgetConditionQueryTPickingB() {
+        String prop = "tPickingB";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTPickingB()); xsetupOuterJoinTPickingB(); }
         return xgetQueRlMap(prop);
     }
-    protected TAllocInstBCQ xcreateQueryTAllocInstB() {
-        String nrp = xresolveNRP("T_PACKING_B", "tAllocInstB"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TAllocInstBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tAllocInstB", nrp);
+    protected TPickingBCQ xcreateQueryTPickingB() {
+        String nrp = xresolveNRP("T_PACKING_B", "tPickingB"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TPickingBCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tPickingB", nrp);
     }
-    protected void xsetupOuterJoinTAllocInstB() { xregOutJo("tAllocInstB"); }
-    public boolean hasConditionQueryTAllocInstB() { return xhasQueRlMap("tAllocInstB"); }
+    protected void xsetupOuterJoinTPickingB() { xregOutJo("tPickingB"); }
+    public boolean hasConditionQueryTPickingB() { return xhasQueRlMap("tPickingB"); }
 
     /**
      * Get the condition-query for relation table. <br>

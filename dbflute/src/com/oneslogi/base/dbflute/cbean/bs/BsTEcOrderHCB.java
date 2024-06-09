@@ -252,64 +252,6 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MImportTypeNss _nssMImportType;
-    public MImportTypeNss xdfgetNssMImportType() {
-        if (_nssMImportType == null) { _nssMImportType = new MImportTypeNss(null); }
-        return _nssMImportType;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * <pre>
-     * <span style="color: #0000C0">tEcOrderHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MImportType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tEcOrderH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tEcOrderH</span>.<span style="color: #CC4747">getMImportType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MImportTypeNss setupSelect_MImportType() {
-        assertSetupSelectPurpose("mImportType");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnImportTypeId();
-        }
-        doSetupSelect(() -> query().queryMImportType());
-        if (_nssMImportType == null || !_nssMImportType.hasConditionQuery())
-        { _nssMImportType = new MImportTypeNss(query().queryMImportType()); }
-        return _nssMImportType;
-    }
-
-    protected TShippingInstHNss _nssTShippingInstH;
-    public TShippingInstHNss xdfgetNssTShippingInstH() {
-        if (_nssTShippingInstH == null) { _nssTShippingInstH = new TShippingInstHNss(null); }
-        return _nssTShippingInstH;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * <pre>
-     * <span style="color: #0000C0">tEcOrderHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TShippingInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">tEcOrderH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">tEcOrderH</span>.<span style="color: #CC4747">getTShippingInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public TShippingInstHNss setupSelect_TShippingInstH() {
-        assertSetupSelectPurpose("tShippingInstH");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnShippingInstHId();
-        }
-        doSetupSelect(() -> query().queryTShippingInstH());
-        if (_nssTShippingInstH == null || !_nssTShippingInstH.hasConditionQuery())
-        { _nssTShippingInstH = new TShippingInstHNss(query().queryTShippingInstH()); }
-        return _nssTShippingInstH;
-    }
-
     protected MCenterNss _nssMCenter;
     public MCenterNss xdfgetNssMCenter() {
         if (_nssMCenter == null) { _nssMCenter = new MCenterNss(null); }
@@ -366,6 +308,64 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
         if (_nssMClient == null || !_nssMClient.hasConditionQuery())
         { _nssMClient = new MClientNss(query().queryMClient()); }
         return _nssMClient;
+    }
+
+    protected MImportTypeNss _nssMImportType;
+    public MImportTypeNss xdfgetNssMImportType() {
+        if (_nssMImportType == null) { _nssMImportType = new MImportTypeNss(null); }
+        return _nssMImportType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * <pre>
+     * <span style="color: #0000C0">tEcOrderHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MImportType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tEcOrderH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tEcOrderH</span>.<span style="color: #CC4747">getMImportType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MImportTypeNss setupSelect_MImportType() {
+        assertSetupSelectPurpose("mImportType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnImportTypeId();
+        }
+        doSetupSelect(() -> query().queryMImportType());
+        if (_nssMImportType == null || !_nssMImportType.hasConditionQuery())
+        { _nssMImportType = new MImportTypeNss(query().queryMImportType()); }
+        return _nssMImportType;
+    }
+
+    protected TShippingInstHNss _nssTShippingInstH;
+    public TShippingInstHNss xdfgetNssTShippingInstH() {
+        if (_nssTShippingInstH == null) { _nssTShippingInstH = new TShippingInstHNss(null); }
+        return _nssTShippingInstH;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * <pre>
+     * <span style="color: #0000C0">tEcOrderHBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_TShippingInstH()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">tEcOrderH</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">tEcOrderH</span>.<span style="color: #CC4747">getTShippingInstH()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public TShippingInstHNss setupSelect_TShippingInstH() {
+        assertSetupSelectPurpose("tShippingInstH");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnShippingInstHId();
+        }
+        doSetupSelect(() -> query().queryTShippingInstH());
+        if (_nssTShippingInstH == null || !_nssTShippingInstH.hasConditionQuery())
+        { _nssTShippingInstH = new TShippingInstHNss(query().queryTShippingInstH()); }
+        return _nssTShippingInstH;
     }
 
     protected BClassDtlNss _nssBClassDtlByDelivMatchFlg;
@@ -580,10 +580,10 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<TEcOrderHCQ> {
-        protected MImportTypeCB.HpSpecification _mImportType;
-        protected TShippingInstHCB.HpSpecification _tShippingInstH;
         protected MCenterCB.HpSpecification _mCenter;
         protected MClientCB.HpSpecification _mClient;
+        protected MImportTypeCB.HpSpecification _mImportType;
+        protected TShippingInstHCB.HpSpecification _tShippingInstH;
         protected BClassDtlCB.HpSpecification _bClassDtlByDelivMatchFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByErrorFlg;
         protected BClassDtlCB.HpSpecification _bClassDtlByGiftFlg;
@@ -1014,14 +1014,6 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnEcOrderHId(); // PK
-            if (qyCall().qy().hasConditionQueryMImportType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MImportTypeCQ) {
-                columnImportTypeId(); // FK or one-to-one referrer
-            }
-            if (qyCall().qy().hasConditionQueryTShippingInstH()
-                    || qyCall().qy().xgetReferrerQuery() instanceof TShippingInstHCQ) {
-                columnShippingInstHId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMCenter()
                     || qyCall().qy().xgetReferrerQuery() instanceof MCenterCQ) {
                 columnCenterId(); // FK or one-to-one referrer
@@ -1029,6 +1021,14 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
             if (qyCall().qy().hasConditionQueryMClient()
                     || qyCall().qy().xgetReferrerQuery() instanceof MClientCQ) {
                 columnClientId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryMImportType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MImportTypeCQ) {
+                columnImportTypeId(); // FK or one-to-one referrer
+            }
+            if (qyCall().qy().hasConditionQueryTShippingInstH()
+                    || qyCall().qy().xgetReferrerQuery() instanceof TShippingInstHCQ) {
+                columnShippingInstHId(); // FK or one-to-one referrer
             }
             if (qyCall().qy().hasConditionQueryBClassDtlByDelivMatchFlg()
                     || qyCall().qy().xgetReferrerQuery() instanceof BClassDtlCQ) {
@@ -1053,46 +1053,6 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
         }
         @Override
         protected String getTableDbName() { return "T_EC_ORDER_H"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MImportTypeCB.HpSpecification specifyMImportType() {
-            assertRelation("mImportType");
-            if (_mImportType == null) {
-                _mImportType = new MImportTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMImportType()
-                                    , () -> _qyCall.qy().queryMImportType())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mImportType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMImportType()
-                      , () -> xsyncQyCall().qy().queryMImportType()));
-                }
-            }
-            return _mImportType;
-        }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public TShippingInstHCB.HpSpecification specifyTShippingInstH() {
-            assertRelation("tShippingInstH");
-            if (_tShippingInstH == null) {
-                _tShippingInstH = new TShippingInstHCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTShippingInstH()
-                                    , () -> _qyCall.qy().queryTShippingInstH())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _tShippingInstH.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTShippingInstH()
-                      , () -> xsyncQyCall().qy().queryTShippingInstH()));
-                }
-            }
-            return _tShippingInstH;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -1132,6 +1092,46 @@ public class BsTEcOrderHCB extends AbstractConditionBean {
                 }
             }
             return _mClient;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MImportTypeCB.HpSpecification specifyMImportType() {
+            assertRelation("mImportType");
+            if (_mImportType == null) {
+                _mImportType = new MImportTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMImportType()
+                                    , () -> _qyCall.qy().queryMImportType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mImportType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMImportType()
+                      , () -> xsyncQyCall().qy().queryMImportType()));
+                }
+            }
+            return _mImportType;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public TShippingInstHCB.HpSpecification specifyTShippingInstH() {
+            assertRelation("tShippingInstH");
+            if (_tShippingInstH == null) {
+                _tShippingInstH = new TShippingInstHCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryTShippingInstH()
+                                    , () -> _qyCall.qy().queryTShippingInstH())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _tShippingInstH.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryTShippingInstH()
+                      , () -> xsyncQyCall().qy().queryTShippingInstH()));
+                }
+            }
+            return _tShippingInstH;
         }
         /**
          * Prepare to specify functions about relation table. <br>

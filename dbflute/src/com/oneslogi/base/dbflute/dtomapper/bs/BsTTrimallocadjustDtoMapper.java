@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_TRIMALLOCSTOCK, T_TRIMALLOCSCHKRI
+ *     T_TRIMALLOCSCHKRI, T_TRIMALLOCSTOCK
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tTrimallocstock, tTrimallocschkri
+ *     tTrimallocschkri, tTrimallocstock
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressTTrimallocstock;
     protected boolean _suppressTTrimallocschkri;
+    protected boolean _suppressTTrimallocstock;
 
     // ===================================================================================
     //                                                                         Constructor
@@ -146,32 +146,6 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTTrimallocstock && entity.getTTrimallocstock() != null) {
-            TTrimallocstock relationEntity = entity.getTTrimallocstock();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                TTrimallocstockDto relationDto = (TTrimallocstockDto)cachedDto;
-                dto.setTTrimallocstock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrimallocadjustList().add(dto);
-                }
-            } else {
-                TTrimallocstockDtoMapper mapper = new TTrimallocstockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrimallocadjustList();
-                TTrimallocstockDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setTTrimallocstock(relationDto);
-                if (reverseReference) {
-                    relationDto.getTTrimallocadjustList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getTTrimallocstock());
-                }
-            }
-        };
         if (!_suppressTTrimallocschkri && entity.getTTrimallocschkri() != null) {
             TTrimallocschkri relationEntity = entity.getTTrimallocschkri();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -195,6 +169,32 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTTrimallocschkri());
+                }
+            }
+        };
+        if (!_suppressTTrimallocstock && entity.getTTrimallocstock() != null) {
+            TTrimallocstock relationEntity = entity.getTTrimallocstock();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                TTrimallocstockDto relationDto = (TTrimallocstockDto)cachedDto;
+                dto.setTTrimallocstock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrimallocadjustList().add(dto);
+                }
+            } else {
+                TTrimallocstockDtoMapper mapper = new TTrimallocstockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrimallocadjustList();
+                TTrimallocstockDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setTTrimallocstock(relationDto);
+                if (reverseReference) {
+                    relationDto.getTTrimallocadjustList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getTTrimallocstock());
                 }
             }
         };
@@ -293,32 +293,6 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressTTrimallocstock && dto.getTTrimallocstock() != null) {
-            TTrimallocstockDto relationDto = dto.getTTrimallocstock();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                TTrimallocstock relationEntity = (TTrimallocstock)cachedEntity;
-                entity.setTTrimallocstock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrimallocadjustList().add(entity);
-                }
-            } else {
-                TTrimallocstockDtoMapper mapper = new TTrimallocstockDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTTrimallocadjustList();
-                TTrimallocstock relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setTTrimallocstock(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTTrimallocadjustList().add(entity);
-                }
-                if (instanceCache && entity.getTTrimallocstock().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getTTrimallocstock());
-                }
-            }
-        };
         if (!_suppressTTrimallocschkri && dto.getTTrimallocschkri() != null) {
             TTrimallocschkriDto relationDto = dto.getTTrimallocschkri();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -342,6 +316,32 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
                 }
                 if (instanceCache && entity.getTTrimallocschkri().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTTrimallocschkri());
+                }
+            }
+        };
+        if (!_suppressTTrimallocstock && dto.getTTrimallocstock() != null) {
+            TTrimallocstockDto relationDto = dto.getTTrimallocstock();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                TTrimallocstock relationEntity = (TTrimallocstock)cachedEntity;
+                entity.setTTrimallocstock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrimallocadjustList().add(entity);
+                }
+            } else {
+                TTrimallocstockDtoMapper mapper = new TTrimallocstockDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTTrimallocadjustList();
+                TTrimallocstock relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setTTrimallocstock(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTTrimallocadjustList().add(entity);
+                }
+                if (instanceCache && entity.getTTrimallocstock().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getTTrimallocstock());
                 }
             }
         };
@@ -463,19 +463,19 @@ public abstract class BsTTrimallocadjustDtoMapper implements DtoMapper<TTrimallo
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressTTrimallocstock() {
-        _suppressTTrimallocstock = true;
-    }
     public void suppressTTrimallocschkri() {
         _suppressTTrimallocschkri = true;
     }
+    public void suppressTTrimallocstock() {
+        _suppressTTrimallocstock = true;
+    }
     protected void doSuppressAll() { // internal
-        suppressTTrimallocstock();
         suppressTTrimallocschkri();
+        suppressTTrimallocstock();
     }
     protected void doSuppressClear() { // internal
-        _suppressTTrimallocstock = false;
         _suppressTTrimallocschkri = false;
+        _suppressTTrimallocstock = false;
     }
 
     // ===================================================================================

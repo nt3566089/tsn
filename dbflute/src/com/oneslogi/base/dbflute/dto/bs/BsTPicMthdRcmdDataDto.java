@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     T_PIC_MTHD_RCMD, T_PICKING_H
+ *     T_PICKING_H, T_PIC_MTHD_RCMD
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     tPicMthdRcmd, tPickingH
+ *     tPickingH, tPicMthdRcmd
  *
  * [referrer-property]
  *     
@@ -133,16 +133,6 @@ public abstract class BsTPicMthdRcmdDataDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected TPicMthdRcmdDto _tPicMthdRcmd;
-
-    public TPicMthdRcmdDto getTPicMthdRcmd() {
-        return _tPicMthdRcmd;
-    }
-
-    public void setTPicMthdRcmd(TPicMthdRcmdDto tPicMthdRcmd) {
-        this._tPicMthdRcmd = tPicMthdRcmd;
-    }
-
     protected TPickingHDto _tPickingH;
 
     public TPickingHDto getTPickingH() {
@@ -151,6 +141,16 @@ public abstract class BsTPicMthdRcmdDataDto implements Serializable {
 
     public void setTPickingH(TPickingHDto tPickingH) {
         this._tPickingH = tPickingH;
+    }
+
+    protected TPicMthdRcmdDto _tPicMthdRcmd;
+
+    public TPicMthdRcmdDto getTPicMthdRcmd() {
+        return _tPicMthdRcmd;
+    }
+
+    public void setTPicMthdRcmd(TPicMthdRcmdDto tPicMthdRcmd) {
+        this._tPicMthdRcmd = tPicMthdRcmd;
     }
 
     // ===================================================================================

@@ -76,9 +76,9 @@ public class TStoreRecordBDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
+        setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getTReceivePlanB(), (et, vl) -> ((TStoreRecordB)et).setTReceivePlanB((TReceivePlanB)vl), "TReceivePlanB");
         setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getMLocation(), (et, vl) -> ((TStoreRecordB)et).setMLocation((MLocation)vl), "MLocation");
         setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getTStoreRecordH(), (et, vl) -> ((TStoreRecordB)et).setTStoreRecordH((TStoreRecordH)vl), "TStoreRecordH");
-        setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getTReceivePlanB(), (et, vl) -> ((TStoreRecordB)et).setTReceivePlanB((TReceivePlanB)vl), "TReceivePlanB");
         setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getBClassDtlByInputType(), (et, vl) -> ((TStoreRecordB)et).setBClassDtlByInputType((BClassDtl)vl), "BClassDtlByInputType");
         setupEfpg(_efpgMap, et -> ((TStoreRecordB)et).getBClassDtlByStoreFlg(), (et, vl) -> ((TStoreRecordB)et).setBClassDtlByStoreFlg((BClassDtl)vl), "BClassDtlByStoreFlg");
     }
@@ -297,12 +297,20 @@ public class TStoreRecordBDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
+     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTReceivePlanB() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanBId(), TReceivePlanBDbm.getInstance().columnReceivePlanBId());
+        return cfi("T_STORE_RECORD_B_FK1", "TReceivePlanB", this, TReceivePlanBDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
+    }
+    /**
      * M_LOCATION by my STORE_LOCATION_ID, named 'MLocation'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMLocation() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreLocationId(), MLocationDbm.getInstance().columnLocationId());
-        return cfi("T_STORE_RECORD_B_FK2", "MLocation", this, MLocationDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
+        return cfi("T_STORE_RECORD_B_FK2", "MLocation", this, MLocationDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
     }
     /**
      * T_STORE_RECORD_H by my STORE_RECORD_H_ID, named 'TStoreRecordH'.
@@ -310,15 +318,7 @@ public class TStoreRecordBDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignTStoreRecordH() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnStoreRecordHId(), TStoreRecordHDbm.getInstance().columnStoreRecordHId());
-        return cfi("T_STORE_RECORD_B_FK3", "TStoreRecordH", this, TStoreRecordHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
-    }
-    /**
-     * T_RECEIVE_PLAN_B by my RECEIVE_PLAN_B_ID, named 'TReceivePlanB'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTReceivePlanB() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnReceivePlanBId(), TReceivePlanBDbm.getInstance().columnReceivePlanBId());
-        return cfi("T_STORE_RECORD_B_FK1", "TReceivePlanB", this, TReceivePlanBDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
+        return cfi("T_STORE_RECORD_B_FK3", "TStoreRecordH", this, TStoreRecordHDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TStoreRecordBList", false);
     }
     /**
      * B_CLASS_DTL by my INPUT_TYPE, named 'BClassDtlByInputType'.

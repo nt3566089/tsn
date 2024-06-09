@@ -135,10 +135,10 @@ public class TEcOrderHDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getMImportType(), (et, vl) -> ((TEcOrderH)et).setMImportType((MImportType)vl), "MImportType");
-        setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getTShippingInstH(), (et, vl) -> ((TEcOrderH)et).setTShippingInstH((TShippingInstH)vl), "TShippingInstH");
         setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getMCenter(), (et, vl) -> ((TEcOrderH)et).setMCenter((MCenter)vl), "MCenter");
         setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getMClient(), (et, vl) -> ((TEcOrderH)et).setMClient((MClient)vl), "MClient");
+        setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getMImportType(), (et, vl) -> ((TEcOrderH)et).setMImportType((MImportType)vl), "MImportType");
+        setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getTShippingInstH(), (et, vl) -> ((TEcOrderH)et).setTShippingInstH((TShippingInstH)vl), "TShippingInstH");
         setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getBClassDtlByDelivMatchFlg(), (et, vl) -> ((TEcOrderH)et).setBClassDtlByDelivMatchFlg((BClassDtl)vl), "BClassDtlByDelivMatchFlg");
         setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getBClassDtlByErrorFlg(), (et, vl) -> ((TEcOrderH)et).setBClassDtlByErrorFlg((BClassDtl)vl), "BClassDtlByErrorFlg");
         setupEfpg(_efpgMap, et -> ((TEcOrderH)et).getBClassDtlByGiftFlg(), (et, vl) -> ((TEcOrderH)et).setBClassDtlByGiftFlg((BClassDtl)vl), "BClassDtlByGiftFlg");
@@ -774,28 +774,12 @@ public class TEcOrderHDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMImportType() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnImportTypeId(), MImportTypeDbm.getInstance().columnImportTypeId());
-        return cfi("T_EC_ORDER_H_FK4", "MImportType", this, MImportTypeDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
-    }
-    /**
-     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignTShippingInstH() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstHId(), TShippingInstHDbm.getInstance().columnShippingInstHId());
-        return cfi("T_EC_ORDER_H_FK2", "TShippingInstH", this, TShippingInstHDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
-    }
-    /**
      * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The information object of foreign property. (NotNull)
      */
     public ForeignInfo foreignMCenter() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnCenterId(), MCenterDbm.getInstance().columnCenterId());
-        return cfi("T_EC_ORDER_H_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
+        return cfi("T_EC_ORDER_H_FK1", "MCenter", this, MCenterDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
     }
     /**
      * M_CLIENT by my CLIENT_ID, named 'MClient'.
@@ -803,7 +787,23 @@ public class TEcOrderHDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMClient() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientId(), MClientDbm.getInstance().columnClientId());
-        return cfi("T_EC_ORDER_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
+        return cfi("T_EC_ORDER_H_FK3", "MClient", this, MClientDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
+    }
+    /**
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMImportType() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnImportTypeId(), MImportTypeDbm.getInstance().columnImportTypeId());
+        return cfi("T_EC_ORDER_H_FK4", "MImportType", this, MImportTypeDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
+    }
+    /**
+     * T_SHIPPING_INST_H by my SHIPPING_INST_H_ID, named 'TShippingInstH'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignTShippingInstH() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnShippingInstHId(), TShippingInstHDbm.getInstance().columnShippingInstHId());
+        return cfi("T_EC_ORDER_H_FK2", "TShippingInstH", this, TShippingInstHDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "TEcOrderHList", false);
     }
     /**
      * B_CLASS_DTL by my DELIV_MATCH_FLG, named 'BClassDtlByDelivMatchFlg'.

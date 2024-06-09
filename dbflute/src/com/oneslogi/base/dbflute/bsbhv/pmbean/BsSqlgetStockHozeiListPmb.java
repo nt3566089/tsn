@@ -2,7 +2,6 @@ package com.oneslogi.base.dbflute.bsbhv.pmbean;
 
 import java.util.*;
 
-import org.dbflute.outsidesql.paging.SimplePagingBean;
 import org.dbflute.outsidesql.typed.*;
 import org.dbflute.jdbc.*;
 import org.dbflute.cbean.coption.LikeSearchOption;
@@ -17,7 +16,7 @@ import com.oneslogi.base.dbflute.exentity.customize.*;
  * This is related to "<span style="color: #AD4747">selectSqlgetStockHozeiList</span>" on TStockBhv.
  * @author DBFlute(AutoGenerator)
  */
-public class BsSqlgetStockHozeiListPmb extends SimplePagingBean implements EntityHandlingPmb<TStockBhv, SqlgetStockHozeiList>, AutoPagingHandlingPmb<TStockBhv, SqlgetStockHozeiList>, FetchBean {
+public class BsSqlgetStockHozeiListPmb implements ListHandlingPmb<TStockBhv, SqlgetStockHozeiList>, EntityHandlingPmb<TStockBhv, SqlgetStockHozeiList>, FetchBean {
 
     // ===================================================================================
     //                                                                           Attribute
@@ -43,6 +42,9 @@ public class BsSqlgetStockHozeiListPmb extends SimplePagingBean implements Entit
     /** The parameter of clientId. */
     protected Long _clientId;
 
+    /** The max size of safety result. */
+    protected int _safetyMaxResultSize;
+
     /** The time-zone for filtering e.g. from-to. (NullAllowed: if null, default zone) */
     protected TimeZone _timeZone;
 
@@ -54,9 +56,6 @@ public class BsSqlgetStockHozeiListPmb extends SimplePagingBean implements Entit
      * This is related to "<span style="color: #AD4747">selectSqlgetStockHozeiList</span>" on TStockBhv.
      */
     public BsSqlgetStockHozeiListPmb() {
-        if (DBFluteConfig.getInstance().isPagingCountLater()) {
-            enablePagingCountLater();
-        }
     }
 
     // ===================================================================================
@@ -72,6 +71,23 @@ public class BsSqlgetStockHozeiListPmb extends SimplePagingBean implements Entit
      * @return The type instance of an entity, customize entity. (NotNull)
      */
     public Class<SqlgetStockHozeiList> getEntityType() { return SqlgetStockHozeiList.class; }
+
+    // ===================================================================================
+    //                                                                       Safety Result
+    //                                                                       =============
+    /**
+     * {@inheritDoc}
+     */
+    public void checkSafetyResult(int safetyMaxResultSize) {
+        _safetyMaxResultSize = safetyMaxResultSize;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public int getSafetyMaxResultSize() {
+        return _safetyMaxResultSize;
+    }
 
     // ===================================================================================
     //                                                                       Assist Helper

@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CLIENT, M_WAREHOUSE, M_CENTER, B_CLASS_DTL(ByDelFlg)
+ *     M_CENTER, M_CLIENT, M_WAREHOUSE, B_CLASS_DTL(ByDelFlg)
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mClient, mWarehouse, mCenter, bClassDtlByDelFlg
+ *     mCenter, mClient, mWarehouse, bClassDtlByDelFlg
  *
  * [referrer property]
  *     
@@ -59,6 +59,13 @@ public class LoaderOfMWebHtInfo {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
+    }
+
     protected LoaderOfMClient _foreignMClientLoader;
     public LoaderOfMClient pulloutMClient() {
         if (_foreignMClientLoader == null)
@@ -71,13 +78,6 @@ public class LoaderOfMWebHtInfo {
         if (_foreignMWarehouseLoader == null)
         { _foreignMWarehouseLoader = new LoaderOfMWarehouse().ready(myBhv().pulloutMWarehouse(_selectedList), _selector); }
         return _foreignMWarehouseLoader;
-    }
-
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
     }
 
     protected LoaderOfBClassDtl _foreignBClassDtlByDelFlgLoader;

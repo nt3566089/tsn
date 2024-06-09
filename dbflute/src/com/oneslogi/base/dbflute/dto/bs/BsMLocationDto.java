@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_PRODUCT_SHAPE, M_PRODUCT, M_ZONE, M_STOCK_TYPE, M_CUSTOMER, M_CENTER, B_CLASS_DTL(ByAllocNgFlg)
+ *     M_CENTER, M_PRODUCT_SHAPE, M_CUSTOMER, M_PRODUCT, M_STOCK_TYPE, M_ZONE, B_CLASS_DTL(ByAllocNgFlg)
  *
  * [referrer-table]
  *     T_ALLOC_INST_B, T_INVENTORY_B, T_MOVE_INST_B, T_MOVE_RECORD_B, T_RECEIVE_PLAN_B, T_SHIPPING_INST_B, T_STOCK, T_STORE_RECORD_B, T_TRPICKDETAIL, W_HT_INVENTORY_INPUT_PROD, W_HT_RECEIVE_INSPECTION, W_HT_RECEIVE_NO_PLAN_INSP, W_HT_RECEIVE_STORE, W_HT_SHIPPING_PICKING
  *
  * [foreign-property]
- *     mProductShapeByMaxStoreProductShapeId, mProduct, mZone, mProductShapeByReplenishPProductShapeId, mStockType, mCustomer, mCenter, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
+ *     mCenter, mProductShapeByMaxStoreProductShapeId, mCustomer, mProduct, mProductShapeByReplenishPProductShapeId, mStockType, mZone, bClassDtlByAllocNgFlg, bClassDtlByDelFlg, bClassDtlByLocationType, bClassDtlByPickingLocationFlg
  *
  * [referrer-property]
  *     tAllocInstBList, tInventoryBList, tMoveInstBList, tMoveRecordBList, tReceivePlanBList, tShippingInstBList, tStockList, tStoreRecordBList, tTrpickdetailList, wHtInventoryInputProdList, wHtReceiveInspectionList, wHtReceiveNoPlanInspList, wHtReceiveStoreList, wHtShippingPickingList
@@ -249,6 +249,16 @@ public abstract class BsMLocationDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
+    protected MCenterDto _mCenter;
+
+    public MCenterDto getMCenter() {
+        return _mCenter;
+    }
+
+    public void setMCenter(MCenterDto mCenter) {
+        this._mCenter = mCenter;
+    }
+
     protected MProductShapeDto _mProductShapeByMaxStoreProductShapeId;
 
     public MProductShapeDto getMProductShapeByMaxStoreProductShapeId() {
@@ -259,6 +269,16 @@ public abstract class BsMLocationDto implements Serializable {
         this._mProductShapeByMaxStoreProductShapeId = mProductShapeByMaxStoreProductShapeId;
     }
 
+    protected MCustomerDto _mCustomer;
+
+    public MCustomerDto getMCustomer() {
+        return _mCustomer;
+    }
+
+    public void setMCustomer(MCustomerDto mCustomer) {
+        this._mCustomer = mCustomer;
+    }
+
     protected MProductDto _mProduct;
 
     public MProductDto getMProduct() {
@@ -267,16 +287,6 @@ public abstract class BsMLocationDto implements Serializable {
 
     public void setMProduct(MProductDto mProduct) {
         this._mProduct = mProduct;
-    }
-
-    protected MZoneDto _mZone;
-
-    public MZoneDto getMZone() {
-        return _mZone;
-    }
-
-    public void setMZone(MZoneDto mZone) {
-        this._mZone = mZone;
     }
 
     protected MProductShapeDto _mProductShapeByReplenishPProductShapeId;
@@ -299,24 +309,14 @@ public abstract class BsMLocationDto implements Serializable {
         this._mStockType = mStockType;
     }
 
-    protected MCustomerDto _mCustomer;
+    protected MZoneDto _mZone;
 
-    public MCustomerDto getMCustomer() {
-        return _mCustomer;
+    public MZoneDto getMZone() {
+        return _mZone;
     }
 
-    public void setMCustomer(MCustomerDto mCustomer) {
-        this._mCustomer = mCustomer;
-    }
-
-    protected MCenterDto _mCenter;
-
-    public MCenterDto getMCenter() {
-        return _mCenter;
-    }
-
-    public void setMCenter(MCenterDto mCenter) {
-        this._mCenter = mCenter;
+    public void setMZone(MZoneDto mZone) {
+        this._mZone = mZone;
     }
 
     protected BClassDtlDto _bClassDtlByAllocNgFlg;

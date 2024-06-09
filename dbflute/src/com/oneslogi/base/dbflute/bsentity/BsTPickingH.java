@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PROCESS_TYPE, M_CENTER, M_CLIENT, T_ALLOC_INST_H, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
+ *     T_ALLOC_INST_H, M_CENTER, M_CLIENT, M_PROCESS_TYPE, B_CLASS_DTL(ByCenterTransitFlg), T_PICKING_R(AsOne)
  *
  * [referrer table]
  *     T_PACKING_H, T_PICKING_B, T_PIC_MTHD_RCMD_DATA, T_RECEIVE_PLAN_H, W_SGL_ROW_SHIP_INSP_B, T_PICKING_R
  *
  * [foreign property]
- *     mProcessType, mCenter, mClient, tAllocInstH, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
+ *     tAllocInstH, mCenter, mClient, mProcessType, bClassDtlByCenterTransitFlg, bClassDtlByForceFixedFlg, bClassDtlByPackingCalCls, bClassDtlByPickingStatus, bClassDtlBySglRowPicFlg, tPickingRAsOne
  *
  * [referrer property]
  *     tPackingHList, tPickingBList, tPicMthdRcmdDataList, tReceivePlanHList, wSglRowShipInspBList
@@ -833,23 +833,23 @@ public abstract class BsTPickingH extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
-    protected MProcessType _mProcessType;
+    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
+    protected TAllocInstH _tAllocInstH;
 
     /**
-     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
-     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
+     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MProcessType getMProcessType() {
-        return _mProcessType;
+    public TAllocInstH getTAllocInstH() {
+        return _tAllocInstH;
     }
 
     /**
-     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
-     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
+     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
      */
-    public void setMProcessType(MProcessType mProcessType) {
-        _mProcessType = mProcessType;
+    public void setTAllocInstH(TAllocInstH tAllocInstH) {
+        _tAllocInstH = tAllocInstH;
     }
 
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
@@ -890,23 +890,23 @@ public abstract class BsTPickingH extends AbstractEntity implements DomainEntity
         _mClient = mClient;
     }
 
-    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
-    protected TAllocInstH _tAllocInstH;
+    /** M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. */
+    protected MProcessType _mProcessType;
 
     /**
-     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
-     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'. <br>
+     * @return The entity of foreign property 'MProcessType'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstH getTAllocInstH() {
-        return _tAllocInstH;
+    public MProcessType getMProcessType() {
+        return _mProcessType;
     }
 
     /**
-     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
-     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
+     * [set] M_PROCESS_TYPE by my PROCESS_TYPE_ID, named 'MProcessType'.
+     * @param mProcessType The entity of foreign property 'MProcessType'. (NullAllowed)
      */
-    public void setTAllocInstH(TAllocInstH tAllocInstH) {
-        _tAllocInstH = tAllocInstH;
+    public void setMProcessType(MProcessType mProcessType) {
+        _mProcessType = mProcessType;
     }
 
     /** B_CLASS_DTL by my CENTER_TRANSIT_FLG, named 'BClassDtlByCenterTransitFlg'. */
@@ -1155,14 +1155,14 @@ public abstract class BsTPickingH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mProcessType != null)
-        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
+        if (_tAllocInstH != null)
+        { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
-        if (_tAllocInstH != null)
-        { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
+        if (_mProcessType != null)
+        { sb.append(li).append(xbRDS(_mProcessType, "mProcessType")); }
         if (_bClassDtlByCenterTransitFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByCenterTransitFlg, "bClassDtlByCenterTransitFlg")); }
         if (_bClassDtlByForceFixedFlg != null)
@@ -1225,14 +1225,14 @@ public abstract class BsTPickingH extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mProcessType != null)
-        { sb.append(dm).append("mProcessType"); }
+        if (_tAllocInstH != null)
+        { sb.append(dm).append("tAllocInstH"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
-        if (_tAllocInstH != null)
-        { sb.append(dm).append("tAllocInstH"); }
+        if (_mProcessType != null)
+        { sb.append(dm).append("mProcessType"); }
         if (_bClassDtlByCenterTransitFlg != null)
         { sb.append(dm).append("bClassDtlByCenterTransitFlg"); }
         if (_bClassDtlByForceFixedFlg != null)

@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_CLIENT, M_CENTER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
  *
  * [referrer table]
  *     M_PARAM
  *
  * [foreign property]
- *     mCustomer, mClient, mCenter, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
+ *     mCenter, mClient, mCustomer, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
  *
  * [referrer property]
  *     
@@ -344,23 +344,23 @@ public abstract class BsMClientCenter extends AbstractEntity implements DomainEn
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'. */
-    protected MCustomer _mCustomer;
+    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
+    protected MCenter _mCenter;
 
     /**
-     * [get] M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'. <br>
-     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
+     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCustomer getMCustomer() {
-        return _mCustomer;
+    public MCenter getMCenter() {
+        return _mCenter;
     }
 
     /**
-     * [set] M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
-     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
+     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
      */
-    public void setMCustomer(MCustomer mCustomer) {
-        _mCustomer = mCustomer;
+    public void setMCenter(MCenter mCenter) {
+        _mCenter = mCenter;
     }
 
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
@@ -382,23 +382,23 @@ public abstract class BsMClientCenter extends AbstractEntity implements DomainEn
         _mClient = mClient;
     }
 
-    /** M_CENTER by my CENTER_ID, named 'MCenter'. */
-    protected MCenter _mCenter;
+    /** M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'. */
+    protected MCustomer _mCustomer;
 
     /**
-     * [get] M_CENTER by my CENTER_ID, named 'MCenter'. <br>
-     * @return The entity of foreign property 'MCenter'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'. <br>
+     * @return The entity of foreign property 'MCustomer'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MCenter getMCenter() {
-        return _mCenter;
+    public MCustomer getMCustomer() {
+        return _mCustomer;
     }
 
     /**
-     * [set] M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @param mCenter The entity of foreign property 'MCenter'. (NullAllowed)
+     * [set] M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
+     * @param mCustomer The entity of foreign property 'MCustomer'. (NullAllowed)
      */
-    public void setMCenter(MCenter mCenter) {
-        _mCenter = mCenter;
+    public void setMCustomer(MCustomer mCustomer) {
+        _mCustomer = mCustomer;
     }
 
     /** B_CLASS_DTL by my BATCH_PROGRESS_FLG, named 'BClassDtlByBatchProgressFlg'. */
@@ -490,12 +490,12 @@ public abstract class BsMClientCenter extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mCustomer != null)
-        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
-        if (_mClient != null)
-        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_mCenter != null)
         { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
+        if (_mClient != null)
+        { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mCustomer != null)
+        { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
         if (_bClassDtlByBatchProgressFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByBatchProgressFlg, "bClassDtlByBatchProgressFlg")); }
         if (_bClassDtlByDelFlg != null)
@@ -534,12 +534,12 @@ public abstract class BsMClientCenter extends AbstractEntity implements DomainEn
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mCustomer != null)
-        { sb.append(dm).append("mCustomer"); }
-        if (_mClient != null)
-        { sb.append(dm).append("mClient"); }
         if (_mCenter != null)
         { sb.append(dm).append("mCenter"); }
+        if (_mClient != null)
+        { sb.append(dm).append("mClient"); }
+        if (_mCustomer != null)
+        { sb.append(dm).append("mCustomer"); }
         if (_bClassDtlByBatchProgressFlg != null)
         { sb.append(dm).append("bClassDtlByBatchProgressFlg"); }
         if (_bClassDtlByDelFlg != null)

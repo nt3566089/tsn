@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_DELIVERY_COURSE, M_CLIENT, M_CENTER
+ *     M_CENTER, M_CLIENT, M_DELIVERY_COURSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mDeliveryCourse, mClient, mCenter
+ *     mCenter, mClient, mDeliveryCourse
  *
  * [referrer property]
  *     
@@ -59,11 +59,11 @@ public class LoaderOfWHtLoading {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
-    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
-        if (_foreignMDeliveryCourseLoader == null)
-        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
-        return _foreignMDeliveryCourseLoader;
+    protected LoaderOfMCenter _foreignMCenterLoader;
+    public LoaderOfMCenter pulloutMCenter() {
+        if (_foreignMCenterLoader == null)
+        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
+        return _foreignMCenterLoader;
     }
 
     protected LoaderOfMClient _foreignMClientLoader;
@@ -73,11 +73,11 @@ public class LoaderOfWHtLoading {
         return _foreignMClientLoader;
     }
 
-    protected LoaderOfMCenter _foreignMCenterLoader;
-    public LoaderOfMCenter pulloutMCenter() {
-        if (_foreignMCenterLoader == null)
-        { _foreignMCenterLoader = new LoaderOfMCenter().ready(myBhv().pulloutMCenter(_selectedList), _selector); }
-        return _foreignMCenterLoader;
+    protected LoaderOfMDeliveryCourse _foreignMDeliveryCourseLoader;
+    public LoaderOfMDeliveryCourse pulloutMDeliveryCourse() {
+        if (_foreignMDeliveryCourseLoader == null)
+        { _foreignMDeliveryCourseLoader = new LoaderOfMDeliveryCourse().ready(myBhv().pulloutMDeliveryCourse(_selectedList), _selector); }
+        return _foreignMDeliveryCourseLoader;
     }
 
     // ===================================================================================

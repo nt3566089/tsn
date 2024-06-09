@@ -446,37 +446,17 @@ public class BsTTrimallocadjustCQ extends AbstractBsTTrimallocadjustCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TTrimallocadjustCQ bq = (TTrimallocadjustCQ)bqs;
         TTrimallocadjustCQ uq = (TTrimallocadjustCQ)uqs;
-        if (bq.hasConditionQueryTTrimallocstock()) {
-            uq.queryTTrimallocstock().reflectRelationOnUnionQuery(bq.queryTTrimallocstock(), uq.queryTTrimallocstock());
-        }
         if (bq.hasConditionQueryTTrimallocschkri()) {
             uq.queryTTrimallocschkri().reflectRelationOnUnionQuery(bq.queryTTrimallocschkri(), uq.queryTTrimallocschkri());
+        }
+        if (bq.hasConditionQueryTTrimallocstock()) {
+            uq.queryTTrimallocstock().reflectRelationOnUnionQuery(bq.queryTTrimallocstock(), uq.queryTTrimallocstock());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TTrimallocstockCQ queryTTrimallocstock() {
-        return xdfgetConditionQueryTTrimallocstock();
-    }
-    public TTrimallocstockCQ xdfgetConditionQueryTTrimallocstock() {
-        String prop = "tTrimallocstock";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrimallocstock()); xsetupOuterJoinTTrimallocstock(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TTrimallocstockCQ xcreateQueryTTrimallocstock() {
-        String nrp = xresolveNRP("T_TRIMALLOCADJUST", "tTrimallocstock"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TTrimallocstockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrimallocstock", nrp);
-    }
-    protected void xsetupOuterJoinTTrimallocstock() { xregOutJo("tTrimallocstock"); }
-    public boolean hasConditionQueryTTrimallocstock() { return xhasQueRlMap("tTrimallocstock"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * T_TRIMALLOCSCHKRI by my TRIMALLOCSCH_ID, named 'TTrimallocschkri'.
@@ -496,6 +476,26 @@ public class BsTTrimallocadjustCQ extends AbstractBsTTrimallocadjustCQ {
     }
     protected void xsetupOuterJoinTTrimallocschkri() { xregOutJo("tTrimallocschkri"); }
     public boolean hasConditionQueryTTrimallocschkri() { return xhasQueRlMap("tTrimallocschkri"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_TRIMALLOCSTOCK by my TRIMALLOCSTOCK_ID, named 'TTrimallocstock'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TTrimallocstockCQ queryTTrimallocstock() {
+        return xdfgetConditionQueryTTrimallocstock();
+    }
+    public TTrimallocstockCQ xdfgetConditionQueryTTrimallocstock() {
+        String prop = "tTrimallocstock";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTTrimallocstock()); xsetupOuterJoinTTrimallocstock(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TTrimallocstockCQ xcreateQueryTTrimallocstock() {
+        String nrp = xresolveNRP("T_TRIMALLOCADJUST", "tTrimallocstock"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TTrimallocstockCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tTrimallocstock", nrp);
+    }
+    protected void xsetupOuterJoinTTrimallocstock() { xregOutJo("tTrimallocstock"); }
+    public boolean hasConditionQueryTTrimallocstock() { return xhasQueRlMap("tTrimallocstock"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

@@ -252,35 +252,6 @@ public class BsMImportTypeBCB extends AbstractConditionBean {
     // ===================================================================================
     //                                                                         SetupSelect
     //                                                                         ===========
-    protected MImportTypeNss _nssMImportType;
-    public MImportTypeNss xdfgetNssMImportType() {
-        if (_nssMImportType == null) { _nssMImportType = new MImportTypeNss(null); }
-        return _nssMImportType;
-    }
-    /**
-     * Set up relation columns to select clause. <br>
-     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-     * <pre>
-     * <span style="color: #0000C0">mImportTypeBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MImportType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
-     *     <span style="color: #553000">cb</span>.query().set...
-     * }).alwaysPresent(<span style="color: #553000">mImportTypeB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
-     *     ... = <span style="color: #553000">mImportTypeB</span>.<span style="color: #CC4747">getMImportType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
-     * });
-     * </pre>
-     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
-     */
-    public MImportTypeNss setupSelect_MImportType() {
-        assertSetupSelectPurpose("mImportType");
-        if (hasSpecifiedLocalColumn()) {
-            specify().columnImportTypeId();
-        }
-        doSetupSelect(() -> query().queryMImportType());
-        if (_nssMImportType == null || !_nssMImportType.hasConditionQuery())
-        { _nssMImportType = new MImportTypeNss(query().queryMImportType()); }
-        return _nssMImportType;
-    }
-
     protected MEdiColumnNss _nssMEdiColumn;
     public MEdiColumnNss xdfgetNssMEdiColumn() {
         if (_nssMEdiColumn == null) { _nssMEdiColumn = new MEdiColumnNss(null); }
@@ -308,6 +279,35 @@ public class BsMImportTypeBCB extends AbstractConditionBean {
         if (_nssMEdiColumn == null || !_nssMEdiColumn.hasConditionQuery())
         { _nssMEdiColumn = new MEdiColumnNss(query().queryMEdiColumn()); }
         return _nssMEdiColumn;
+    }
+
+    protected MImportTypeNss _nssMImportType;
+    public MImportTypeNss xdfgetNssMImportType() {
+        if (_nssMImportType == null) { _nssMImportType = new MImportTypeNss(null); }
+        return _nssMImportType;
+    }
+    /**
+     * Set up relation columns to select clause. <br>
+     * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+     * <pre>
+     * <span style="color: #0000C0">mImportTypeBBhv</span>.selectEntity(<span style="color: #553000">cb</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     <span style="color: #553000">cb</span>.<span style="color: #CC4747">setupSelect_MImportType()</span>; <span style="color: #3F7E5E">// ...().with[nested-relation]()</span>
+     *     <span style="color: #553000">cb</span>.query().set...
+     * }).alwaysPresent(<span style="color: #553000">mImportTypeB</span> <span style="color: #90226C; font-weight: bold"><span style="font-size: 120%">-</span>&gt;</span> {
+     *     ... = <span style="color: #553000">mImportTypeB</span>.<span style="color: #CC4747">getMImportType()</span>; <span style="color: #3F7E5E">// you can get by using SetupSelect</span>
+     * });
+     * </pre>
+     * @return The set-upper of nested relation. {setupSelect...().with[nested-relation]} (NotNull)
+     */
+    public MImportTypeNss setupSelect_MImportType() {
+        assertSetupSelectPurpose("mImportType");
+        if (hasSpecifiedLocalColumn()) {
+            specify().columnImportTypeId();
+        }
+        doSetupSelect(() -> query().queryMImportType());
+        if (_nssMImportType == null || !_nssMImportType.hasConditionQuery())
+        { _nssMImportType = new MImportTypeNss(query().queryMImportType()); }
+        return _nssMImportType;
     }
 
     // [DBFlute-0.7.4]
@@ -351,8 +351,8 @@ public class BsMImportTypeBCB extends AbstractConditionBean {
     }
 
     public static class HpSpecification extends HpAbstractSpecification<MImportTypeBCQ> {
-        protected MImportTypeCB.HpSpecification _mImportType;
         protected MEdiColumnCB.HpSpecification _mEdiColumn;
+        protected MImportTypeCB.HpSpecification _mImportType;
         public HpSpecification(ConditionBean baseCB, HpSpQyCall<MImportTypeBCQ> qyCall
                              , HpCBPurpose purpose, DBMetaProvider dbmetaProvider
                              , HpSDRFunctionFactory sdrFuncFactory)
@@ -432,37 +432,17 @@ public class BsMImportTypeBCB extends AbstractConditionBean {
         @Override
         protected void doSpecifyRequiredColumn() {
             columnImportTypeBId(); // PK
-            if (qyCall().qy().hasConditionQueryMImportType()
-                    || qyCall().qy().xgetReferrerQuery() instanceof MImportTypeCQ) {
-                columnImportTypeId(); // FK or one-to-one referrer
-            }
             if (qyCall().qy().hasConditionQueryMEdiColumn()
                     || qyCall().qy().xgetReferrerQuery() instanceof MEdiColumnCQ) {
                 columnEdiColumnId(); // FK or one-to-one referrer
             }
+            if (qyCall().qy().hasConditionQueryMImportType()
+                    || qyCall().qy().xgetReferrerQuery() instanceof MImportTypeCQ) {
+                columnImportTypeId(); // FK or one-to-one referrer
+            }
         }
         @Override
         protected String getTableDbName() { return "M_IMPORT_TYPE_B"; }
-        /**
-         * Prepare to specify functions about relation table. <br>
-         * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
-         * @return The instance for specification for relation table to specify. (NotNull)
-         */
-        public MImportTypeCB.HpSpecification specifyMImportType() {
-            assertRelation("mImportType");
-            if (_mImportType == null) {
-                _mImportType = new MImportTypeCB.HpSpecification(_baseCB
-                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMImportType()
-                                    , () -> _qyCall.qy().queryMImportType())
-                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
-                if (xhasSyncQyCall()) { // inherits it
-                    _mImportType.xsetSyncQyCall(xcreateSpQyCall(
-                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMImportType()
-                      , () -> xsyncQyCall().qy().queryMImportType()));
-                }
-            }
-            return _mImportType;
-        }
         /**
          * Prepare to specify functions about relation table. <br>
          * M_EDI_COLUMN by my EDI_COLUMN_ID, named 'MEdiColumn'.
@@ -482,6 +462,26 @@ public class BsMImportTypeBCB extends AbstractConditionBean {
                 }
             }
             return _mEdiColumn;
+        }
+        /**
+         * Prepare to specify functions about relation table. <br>
+         * M_IMPORT_TYPE by my IMPORT_TYPE_ID, named 'MImportType'.
+         * @return The instance for specification for relation table to specify. (NotNull)
+         */
+        public MImportTypeCB.HpSpecification specifyMImportType() {
+            assertRelation("mImportType");
+            if (_mImportType == null) {
+                _mImportType = new MImportTypeCB.HpSpecification(_baseCB
+                    , xcreateSpQyCall(() -> _qyCall.has() && _qyCall.qy().hasConditionQueryMImportType()
+                                    , () -> _qyCall.qy().queryMImportType())
+                    , _purpose, _dbmetaProvider, xgetSDRFnFc());
+                if (xhasSyncQyCall()) { // inherits it
+                    _mImportType.xsetSyncQyCall(xcreateSpQyCall(
+                        () -> xsyncQyCall().has() && xsyncQyCall().qy().hasConditionQueryMImportType()
+                      , () -> xsyncQyCall().qy().queryMImportType()));
+                }
+            }
+            return _mImportType;
         }
         /**
          * Prepare for (Specify)DerivedReferrer (correlated sub-query). <br>

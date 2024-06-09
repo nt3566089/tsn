@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     B_ITEM, M_CLIENT, B_DICT, V_DICT
+ *     M_CLIENT, B_DICT, B_ITEM, V_DICT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     bItem, mClient, bDict, vDict
+ *     mClient, bDict, bItem, vDict
  *
  * [referrer property]
  *     
@@ -278,25 +278,6 @@ public abstract class BsMClientItem extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** B_ITEM by my ITEM_ID, named 'BItem'. */
-    protected BItem _bItem;
-
-    /**
-     * [get] B_ITEM by my ITEM_ID, named 'BItem'. <br>
-     * @return The entity of foreign property 'BItem'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public BItem getBItem() {
-        return _bItem;
-    }
-
-    /**
-     * [set] B_ITEM by my ITEM_ID, named 'BItem'.
-     * @param bItem The entity of foreign property 'BItem'. (NullAllowed)
-     */
-    public void setBItem(BItem bItem) {
-        _bItem = bItem;
-    }
-
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -333,6 +314,25 @@ public abstract class BsMClientItem extends AbstractEntity implements DomainEnti
      */
     public void setBDict(BDict bDict) {
         _bDict = bDict;
+    }
+
+    /** B_ITEM by my ITEM_ID, named 'BItem'. */
+    protected BItem _bItem;
+
+    /**
+     * [get] B_ITEM by my ITEM_ID, named 'BItem'. <br>
+     * @return The entity of foreign property 'BItem'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public BItem getBItem() {
+        return _bItem;
+    }
+
+    /**
+     * [set] B_ITEM by my ITEM_ID, named 'BItem'.
+     * @param bItem The entity of foreign property 'BItem'. (NullAllowed)
+     */
+    public void setBItem(BItem bItem) {
+        _bItem = bItem;
     }
 
     /** V_DICT by my DICT_ID, named 'VDict'. */
@@ -386,12 +386,12 @@ public abstract class BsMClientItem extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_bItem != null)
-        { sb.append(li).append(xbRDS(_bItem, "bItem")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
         if (_bDict != null)
         { sb.append(li).append(xbRDS(_bDict, "bDict")); }
+        if (_bItem != null)
+        { sb.append(li).append(xbRDS(_bItem, "bItem")); }
         if (_vDict != null)
         { sb.append(li).append(xbRDS(_vDict, "vDict")); }
         return sb.toString();
@@ -426,12 +426,12 @@ public abstract class BsMClientItem extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_bItem != null)
-        { sb.append(dm).append("bItem"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
         if (_bDict != null)
         { sb.append(dm).append("bDict"); }
+        if (_bItem != null)
+        { sb.append(dm).append("bItem"); }
         if (_vDict != null)
         { sb.append(dm).append("vDict"); }
         if (sb.length() > dm.length()) {

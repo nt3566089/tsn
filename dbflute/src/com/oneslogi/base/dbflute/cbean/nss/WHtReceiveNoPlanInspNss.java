@@ -20,12 +20,39 @@ public class WHtReceiveNoPlanInspNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public MProductNss withMProduct() {
-        _query.xdoNss(() -> _query.queryMProduct());
-        return new MProductNss(_query.queryMProduct());
+    public MCenterNss withMCenter() {
+        _query.xdoNss(() -> _query.queryMCenter());
+        return new MCenterNss(_query.queryMCenter());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MClientNss withMClient() {
+        _query.xdoNss(() -> _query.queryMClient());
+        return new MClientNss(_query.queryMClient());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MCustomerNss withMCustomerByDepositId() {
+        _query.xdoNss(() -> _query.queryMCustomerByDepositId());
+        return new MCustomerNss(_query.queryMCustomerByDepositId());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * T_LOT by my LOT_ID, named 'TLot'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public TLotNss withTLot() {
+        _query.xdoNss(() -> _query.queryTLot());
+        return new TLotNss(_query.queryTLot());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -38,12 +65,12 @@ public class WHtReceiveNoPlanInspNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
-    public TLotNss withTLot() {
-        _query.xdoNss(() -> _query.queryTLot());
-        return new TLotNss(_query.queryTLot());
+    public MProductNss withMProduct() {
+        _query.xdoNss(() -> _query.queryMProduct());
+        return new MProductNss(_query.queryMProduct());
     }
     /**
      * With nested relation columns to select clause. <br>
@@ -65,39 +92,12 @@ public class WHtReceiveNoPlanInspNss {
     }
     /**
      * With nested relation columns to select clause. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCustomerNss withMCustomerByDepositId() {
-        _query.xdoNss(() -> _query.queryMCustomerByDepositId());
-        return new MCustomerNss(_query.queryMCustomerByDepositId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MClientNss withMClient() {
-        _query.xdoNss(() -> _query.queryMClient());
-        return new MClientNss(_query.queryMClient());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CUSTOMER by my SUPPLIER_ID, named 'MCustomerBySupplierId'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MCustomerNss withMCustomerBySupplierId() {
         _query.xdoNss(() -> _query.queryMCustomerBySupplierId());
         return new MCustomerNss(_query.queryMCustomerBySupplierId());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MCenterNss withMCenter() {
-        _query.xdoNss(() -> _query.queryMCenter());
-        return new MCenterNss(_query.queryMCenter());
     }
     /**
      * With nested relation columns to select clause. <br>

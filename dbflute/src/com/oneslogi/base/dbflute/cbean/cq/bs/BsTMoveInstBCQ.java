@@ -1154,23 +1154,23 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         TMoveInstBCQ bq = (TMoveInstBCQ)bqs;
         TMoveInstBCQ uq = (TMoveInstBCQ)uqs;
-        if (bq.hasConditionQueryTMoveInstH()) {
-            uq.queryTMoveInstH().reflectRelationOnUnionQuery(bq.queryTMoveInstH(), uq.queryTMoveInstH());
-        }
-        if (bq.hasConditionQueryMWarehouse()) {
-            uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
-        }
-        if (bq.hasConditionQueryTLot()) {
-            uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
+        if (bq.hasConditionQueryMCustomerByDepositId()) {
+            uq.queryMCustomerByDepositId().reflectRelationOnUnionQuery(bq.queryMCustomerByDepositId(), uq.queryMCustomerByDepositId());
         }
         if (bq.hasConditionQueryMLocation()) {
             uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
         }
-        if (bq.hasConditionQueryMShape()) {
-            uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
+        if (bq.hasConditionQueryTLot()) {
+            uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
+        }
+        if (bq.hasConditionQueryTMoveInstH()) {
+            uq.queryTMoveInstH().reflectRelationOnUnionQuery(bq.queryTMoveInstH(), uq.queryTMoveInstH());
         }
         if (bq.hasConditionQueryMProduct()) {
             uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        }
+        if (bq.hasConditionQueryMShape()) {
+            uq.queryMShape().reflectRelationOnUnionQuery(bq.queryMShape(), uq.queryMShape());
         }
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
@@ -1181,8 +1181,8 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
         if (bq.hasConditionQueryMCustomerBySupplierId()) {
             uq.queryMCustomerBySupplierId().reflectRelationOnUnionQuery(bq.queryMCustomerBySupplierId(), uq.queryMCustomerBySupplierId());
         }
-        if (bq.hasConditionQueryMCustomerByDepositId()) {
-            uq.queryMCustomerByDepositId().reflectRelationOnUnionQuery(bq.queryMCustomerByDepositId(), uq.queryMCustomerByDepositId());
+        if (bq.hasConditionQueryMWarehouse()) {
+            uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
         }
         if (bq.hasConditionQueryBClassDtlByInoutType()) {
             uq.queryBClassDtlByInoutType().reflectRelationOnUnionQuery(bq.queryBClassDtlByInoutType(), uq.queryBClassDtlByInoutType());
@@ -1200,63 +1200,23 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
     //                                                                       =============
     /**
      * Get the condition-query for relation table. <br>
-     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
      * @return The instance of condition-query. (NotNull)
      */
-    public TMoveInstHCQ queryTMoveInstH() {
-        return xdfgetConditionQueryTMoveInstH();
+    public MCustomerCQ queryMCustomerByDepositId() {
+        return xdfgetConditionQueryMCustomerByDepositId();
     }
-    public TMoveInstHCQ xdfgetConditionQueryTMoveInstH() {
-        String prop = "tMoveInstH";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTMoveInstH()); xsetupOuterJoinTMoveInstH(); }
+    public MCustomerCQ xdfgetConditionQueryMCustomerByDepositId() {
+        String prop = "mCustomerByDepositId";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerByDepositId()); xsetupOuterJoinMCustomerByDepositId(); }
         return xgetQueRlMap(prop);
     }
-    protected TMoveInstHCQ xcreateQueryTMoveInstH() {
-        String nrp = xresolveNRP("T_MOVE_INST_B", "tMoveInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TMoveInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tMoveInstH", nrp);
+    protected MCustomerCQ xcreateQueryMCustomerByDepositId() {
+        String nrp = xresolveNRP("T_MOVE_INST_B", "mCustomerByDepositId"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerByDepositId", nrp);
     }
-    protected void xsetupOuterJoinTMoveInstH() { xregOutJo("tMoveInstH"); }
-    public boolean hasConditionQueryTMoveInstH() { return xhasQueRlMap("tMoveInstH"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MWarehouseCQ queryMWarehouse() {
-        return xdfgetConditionQueryMWarehouse();
-    }
-    public MWarehouseCQ xdfgetConditionQueryMWarehouse() {
-        String prop = "mWarehouse";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMWarehouse()); xsetupOuterJoinMWarehouse(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MWarehouseCQ xcreateQueryMWarehouse() {
-        String nrp = xresolveNRP("T_MOVE_INST_B", "mWarehouse"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MWarehouseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mWarehouse", nrp);
-    }
-    protected void xsetupOuterJoinMWarehouse() { xregOutJo("mWarehouse"); }
-    public boolean hasConditionQueryMWarehouse() { return xhasQueRlMap("mWarehouse"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * T_LOT by my LOT_ID, named 'TLot'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public TLotCQ queryTLot() {
-        return xdfgetConditionQueryTLot();
-    }
-    public TLotCQ xdfgetConditionQueryTLot() {
-        String prop = "tLot";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTLot()); xsetupOuterJoinTLot(); }
-        return xgetQueRlMap(prop);
-    }
-    protected TLotCQ xcreateQueryTLot() {
-        String nrp = xresolveNRP("T_MOVE_INST_B", "tLot"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new TLotCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tLot", nrp);
-    }
-    protected void xsetupOuterJoinTLot() { xregOutJo("tLot"); }
-    public boolean hasConditionQueryTLot() { return xhasQueRlMap("tLot"); }
+    protected void xsetupOuterJoinMCustomerByDepositId() { xregOutJo("mCustomerByDepositId"); }
+    public boolean hasConditionQueryMCustomerByDepositId() { return xhasQueRlMap("mCustomerByDepositId"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1280,23 +1240,43 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * T_LOT by my LOT_ID, named 'TLot'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MShapeCQ queryMShape() {
-        return xdfgetConditionQueryMShape();
+    public TLotCQ queryTLot() {
+        return xdfgetConditionQueryTLot();
     }
-    public MShapeCQ xdfgetConditionQueryMShape() {
-        String prop = "mShape";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShape()); xsetupOuterJoinMShape(); }
+    public TLotCQ xdfgetConditionQueryTLot() {
+        String prop = "tLot";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTLot()); xsetupOuterJoinTLot(); }
         return xgetQueRlMap(prop);
     }
-    protected MShapeCQ xcreateQueryMShape() {
-        String nrp = xresolveNRP("T_MOVE_INST_B", "mShape"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MShapeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShape", nrp);
+    protected TLotCQ xcreateQueryTLot() {
+        String nrp = xresolveNRP("T_MOVE_INST_B", "tLot"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TLotCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tLot", nrp);
     }
-    protected void xsetupOuterJoinMShape() { xregOutJo("mShape"); }
-    public boolean hasConditionQueryMShape() { return xhasQueRlMap("mShape"); }
+    protected void xsetupOuterJoinTLot() { xregOutJo("tLot"); }
+    public boolean hasConditionQueryTLot() { return xhasQueRlMap("tLot"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * T_MOVE_INST_H by my MOVE_INST_H_ID, named 'TMoveInstH'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public TMoveInstHCQ queryTMoveInstH() {
+        return xdfgetConditionQueryTMoveInstH();
+    }
+    public TMoveInstHCQ xdfgetConditionQueryTMoveInstH() {
+        String prop = "tMoveInstH";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryTMoveInstH()); xsetupOuterJoinTMoveInstH(); }
+        return xgetQueRlMap(prop);
+    }
+    protected TMoveInstHCQ xcreateQueryTMoveInstH() {
+        String nrp = xresolveNRP("T_MOVE_INST_B", "tMoveInstH"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new TMoveInstHCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "tMoveInstH", nrp);
+    }
+    protected void xsetupOuterJoinTMoveInstH() { xregOutJo("tMoveInstH"); }
+    public boolean hasConditionQueryTMoveInstH() { return xhasQueRlMap("tMoveInstH"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1317,6 +1297,26 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
     }
     protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
     public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MShapeCQ queryMShape() {
+        return xdfgetConditionQueryMShape();
+    }
+    public MShapeCQ xdfgetConditionQueryMShape() {
+        String prop = "mShape";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMShape()); xsetupOuterJoinMShape(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MShapeCQ xcreateQueryMShape() {
+        String nrp = xresolveNRP("T_MOVE_INST_B", "mShape"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MShapeCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mShape", nrp);
+    }
+    protected void xsetupOuterJoinMShape() { xregOutJo("mShape"); }
+    public boolean hasConditionQueryMShape() { return xhasQueRlMap("mShape"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1380,23 +1380,23 @@ public class BsTMoveInstBCQ extends AbstractBsTMoveInstBCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my DEPOSIT_ID, named 'MCustomerByDepositId'.
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCustomerCQ queryMCustomerByDepositId() {
-        return xdfgetConditionQueryMCustomerByDepositId();
+    public MWarehouseCQ queryMWarehouse() {
+        return xdfgetConditionQueryMWarehouse();
     }
-    public MCustomerCQ xdfgetConditionQueryMCustomerByDepositId() {
-        String prop = "mCustomerByDepositId";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomerByDepositId()); xsetupOuterJoinMCustomerByDepositId(); }
+    public MWarehouseCQ xdfgetConditionQueryMWarehouse() {
+        String prop = "mWarehouse";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMWarehouse()); xsetupOuterJoinMWarehouse(); }
         return xgetQueRlMap(prop);
     }
-    protected MCustomerCQ xcreateQueryMCustomerByDepositId() {
-        String nrp = xresolveNRP("T_MOVE_INST_B", "mCustomerByDepositId"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomerByDepositId", nrp);
+    protected MWarehouseCQ xcreateQueryMWarehouse() {
+        String nrp = xresolveNRP("T_MOVE_INST_B", "mWarehouse"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MWarehouseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mWarehouse", nrp);
     }
-    protected void xsetupOuterJoinMCustomerByDepositId() { xregOutJo("mCustomerByDepositId"); }
-    public boolean hasConditionQueryMCustomerByDepositId() { return xhasQueRlMap("mCustomerByDepositId"); }
+    protected void xsetupOuterJoinMWarehouse() { xregOutJo("mWarehouse"); }
+    public boolean hasConditionQueryMWarehouse() { return xhasQueRlMap("mWarehouse"); }
 
     /**
      * Get the condition-query for relation table. <br>

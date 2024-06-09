@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_CUSTOMER, M_CLIENT, M_CENTER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, B_CLASS_DTL(ByBatchProgressFlg), M_PARAM(AsOne)
  *
  * [referrer table]
  *     M_PARAM
  *
  * [foreign property]
- *     mCustomer, mClient, mCenter, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
+ *     mCenter, mClient, mCustomer, bClassDtlByBatchProgressFlg, bClassDtlByDelFlg, mParamAsOne
  *
  * [referrer property]
  *     
@@ -419,12 +419,12 @@ public abstract class BsMClientCenterBhv extends AbstractBehaviorWritable<MClien
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MCustomer'.
+     * Pull out the list of foreign table 'MCenter'.
      * @param mClientCenterList The list of mClientCenter. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCustomer> pulloutMCustomer(List<MClientCenter> mClientCenterList)
-    { return helpPulloutInternally(mClientCenterList, "mCustomer"); }
+    public List<MCenter> pulloutMCenter(List<MClientCenter> mClientCenterList)
+    { return helpPulloutInternally(mClientCenterList, "mCenter"); }
 
     /**
      * Pull out the list of foreign table 'MClient'.
@@ -435,12 +435,12 @@ public abstract class BsMClientCenterBhv extends AbstractBehaviorWritable<MClien
     { return helpPulloutInternally(mClientCenterList, "mClient"); }
 
     /**
-     * Pull out the list of foreign table 'MCenter'.
+     * Pull out the list of foreign table 'MCustomer'.
      * @param mClientCenterList The list of mClientCenter. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MCenter> pulloutMCenter(List<MClientCenter> mClientCenterList)
-    { return helpPulloutInternally(mClientCenterList, "mCenter"); }
+    public List<MCustomer> pulloutMCustomer(List<MClientCenter> mClientCenterList)
+    { return helpPulloutInternally(mClientCenterList, "mCustomer"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

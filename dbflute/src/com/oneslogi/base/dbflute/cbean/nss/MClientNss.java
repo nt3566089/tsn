@@ -20,21 +20,21 @@ public class MClientNss {
     //                                                                     ===============
     /**
      * With nested relation columns to select clause. <br>
-     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
-     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
-     */
-    public MShapeGrpNss withMShapeGrp() {
-        _query.xdoNss(() -> _query.queryMShapeGrp());
-        return new MShapeGrpNss(_query.queryMShapeGrp());
-    }
-    /**
-     * With nested relation columns to select clause. <br>
      * M_CUSTOMER by my CUSTOMER_ID, named 'MCustomer'.
      * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
      */
     public MCustomerNss withMCustomer() {
         _query.xdoNss(() -> _query.queryMCustomer());
         return new MCustomerNss(_query.queryMCustomer());
+    }
+    /**
+     * With nested relation columns to select clause. <br>
+     * M_SHAPE_GRP by my SHAPE_GRP_ID, named 'MShapeGrp'.
+     * @return The set-upper of more nested relation. {...with[nested-relation].with[more-nested-relation]} (NotNull)
+     */
+    public MShapeGrpNss withMShapeGrp() {
+        _query.xdoNss(() -> _query.queryMShapeGrp());
+        return new MShapeGrpNss(_query.queryMShapeGrp());
     }
     /**
      * With nested relation columns to select clause. <br>

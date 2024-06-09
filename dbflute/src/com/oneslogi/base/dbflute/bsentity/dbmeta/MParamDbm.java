@@ -129,11 +129,11 @@ public class MParamDbm extends AbstractDBMeta {
     protected final Map<String, PropertyGateway> _efpgMap = newHashMap();
     { xsetupEfpg(); }
     protected void xsetupEfpg() {
-        setupEfpg(_efpgMap, et -> ((MParam)et).getMDeliveryCourse(), (et, vl) -> ((MParam)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
-        setupEfpg(_efpgMap, et -> ((MParam)et).getMBoxGrp(), (et, vl) -> ((MParam)et).setMBoxGrp((MBoxGrp)vl), "MBoxGrp");
-        setupEfpg(_efpgMap, et -> ((MParam)et).getMBox(), (et, vl) -> ((MParam)et).setMBox((MBox)vl), "MBox");
-        setupEfpg(_efpgMap, et -> ((MParam)et).getMZone(), (et, vl) -> ((MParam)et).setMZone((MZone)vl), "MZone");
         setupEfpg(_efpgMap, et -> ((MParam)et).getMClientCenter(), (et, vl) -> ((MParam)et).setMClientCenter((MClientCenter)vl), "MClientCenter");
+        setupEfpg(_efpgMap, et -> ((MParam)et).getMBox(), (et, vl) -> ((MParam)et).setMBox((MBox)vl), "MBox");
+        setupEfpg(_efpgMap, et -> ((MParam)et).getMDeliveryCourse(), (et, vl) -> ((MParam)et).setMDeliveryCourse((MDeliveryCourse)vl), "MDeliveryCourse");
+        setupEfpg(_efpgMap, et -> ((MParam)et).getMZone(), (et, vl) -> ((MParam)et).setMZone((MZone)vl), "MZone");
+        setupEfpg(_efpgMap, et -> ((MParam)et).getMBoxGrp(), (et, vl) -> ((MParam)et).setMBoxGrp((MBoxGrp)vl), "MBoxGrp");
         setupEfpg(_efpgMap, et -> ((MParam)et).getBClassDtlByAfterTagOutFlg(), (et, vl) -> ((MParam)et).setBClassDtlByAfterTagOutFlg((BClassDtl)vl), "BClassDtlByAfterTagOutFlg");
         setupEfpg(_efpgMap, et -> ((MParam)et).getBClassDtlByAfterDelivSlipOutFlg(), (et, vl) -> ((MParam)et).setBClassDtlByAfterDelivSlipOutFlg((BClassDtl)vl), "BClassDtlByAfterDelivSlipOutFlg");
         setupEfpg(_efpgMap, et -> ((MParam)et).getBClassDtlByAfterDelivSlipOutTgt(), (et, vl) -> ((MParam)et).setBClassDtlByAfterDelivSlipOutTgt((BClassDtl)vl), "BClassDtlByAfterDelivSlipOutTgt");
@@ -769,20 +769,12 @@ public class MParamDbm extends AbstractDBMeta {
     //                                      Foreign Property
     //                                      ----------------
     /**
-     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMDeliveryCourse() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
-        return cfi("M_PARAM_FK5", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 0, null, false, false, false, false, null, null, false, "MParamList", false);
-    }
-    /**
-     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
-     * @return The information object of foreign property. (NotNull)
-     */
-    public ForeignInfo foreignMBoxGrp() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingBoxGroupId(), MBoxGrpDbm.getInstance().columnBoxGrpId());
-        return cfi("M_PARAM_FK4", "MBoxGrp", this, MBoxGrpDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MParamList", false);
+    public ForeignInfo foreignMClientCenter() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientCenterId(), MClientCenterDbm.getInstance().columnClientCenterId());
+        return cfi("M_PARAM_FK3", "MClientCenter", this, MClientCenterDbm.getInstance(), mp, 0, null, true, false, false, false, null, null, false, "MParamAsOne", false);
     }
     /**
      * M_BOX by my DEFAULT_BOX_ID, named 'MBox'.
@@ -790,7 +782,15 @@ public class MParamDbm extends AbstractDBMeta {
      */
     public ForeignInfo foreignMBox() {
         Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDefaultBoxId(), MBoxDbm.getInstance().columnBoxId());
-        return cfi("M_PARAM_FK1", "MBox", this, MBoxDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MParamList", false);
+        return cfi("M_PARAM_FK1", "MBox", this, MBoxDbm.getInstance(), mp, 1, null, false, false, false, false, null, null, false, "MParamList", false);
+    }
+    /**
+     * M_DELIVERY_COURSE by my DELIVERY_COURSE_ID, named 'MDeliveryCourse'.
+     * @return The information object of foreign property. (NotNull)
+     */
+    public ForeignInfo foreignMDeliveryCourse() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnDeliveryCourseId(), MDeliveryCourseDbm.getInstance().columnDeliveryCourseId());
+        return cfi("M_PARAM_FK5", "MDeliveryCourse", this, MDeliveryCourseDbm.getInstance(), mp, 2, null, false, false, false, false, null, null, false, "MParamList", false);
     }
     /**
      * M_ZONE by my EM_REPLENISH_ZONE_ID, named 'MZone'.
@@ -801,12 +801,12 @@ public class MParamDbm extends AbstractDBMeta {
         return cfi("M_PARAM_FK2", "MZone", this, MZoneDbm.getInstance(), mp, 3, null, false, false, false, false, null, null, false, "MParamList", false);
     }
     /**
-     * M_CLIENT_CENTER by my CLIENT_CENTER_ID, named 'MClientCenter'.
+     * M_BOX_GRP by my PACKING_BOX_GROUP_ID, named 'MBoxGrp'.
      * @return The information object of foreign property. (NotNull)
      */
-    public ForeignInfo foreignMClientCenter() {
-        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnClientCenterId(), MClientCenterDbm.getInstance().columnClientCenterId());
-        return cfi("M_PARAM_FK3", "MClientCenter", this, MClientCenterDbm.getInstance(), mp, 4, null, true, false, false, false, null, null, false, "MParamAsOne", false);
+    public ForeignInfo foreignMBoxGrp() {
+        Map<ColumnInfo, ColumnInfo> mp = newLinkedHashMap(columnPackingBoxGroupId(), MBoxGrpDbm.getInstance().columnBoxGrpId());
+        return cfi("M_PARAM_FK4", "MBoxGrp", this, MBoxGrpDbm.getInstance(), mp, 4, null, false, false, false, false, null, null, false, "MParamList", false);
     }
     /**
      * B_CLASS_DTL by my AFTER_TAG_OUT_FLG, named 'BClassDtlByAfterTagOutFlg'.

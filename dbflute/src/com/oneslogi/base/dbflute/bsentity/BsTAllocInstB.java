@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_LOT, M_WAREHOUSE, M_CUSTOMER, M_LOCATION, M_PRODUCT, M_SHAPE, T_STORE_NO, M_STOCK_TYPE, T_ALLOC_INST_H, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
+ *     T_ALLOC_INST_H, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_SHAPE, M_STOCK_TYPE, T_STORE_NO, M_WAREHOUSE, B_CLASS_DTL(ByLimitDtManagFlg), T_ALLOC_LOT(AsOne)
  *
  * [referrer table]
  *     T_PACKING_B, T_PICKING_B, T_SHIPPING_INST_B, T_STOCK_INOUT, T_ALLOC_LOT
  *
  * [foreign property]
- *     tLot, mWarehouse, mCustomer, mLocation, mProduct, mShape, tStoreNo, mStockType, tAllocInstH, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
+ *     tAllocInstH, mCustomer, mLocation, tLot, mProduct, mShape, mStockType, tStoreNo, mWarehouse, bClassDtlByLimitDtManagFlg, bClassDtlByLimitDtReverseFlg, bClassDtlByLotManagFlg, tAllocLotAsOne
  *
  * [referrer property]
  *     tPackingBList, tPickingBList, tShippingInstBList, tStockInoutList
@@ -547,42 +547,23 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_LOT by my LOT_ID, named 'TLot'. */
-    protected TLot _tLot;
+    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
+    protected TAllocInstH _tAllocInstH;
 
     /**
-     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
-     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
+     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TLot getTLot() {
-        return _tLot;
+    public TAllocInstH getTAllocInstH() {
+        return _tAllocInstH;
     }
 
     /**
-     * [set] T_LOT by my LOT_ID, named 'TLot'.
-     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
+     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
+     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
      */
-    public void setTLot(TLot tLot) {
-        _tLot = tLot;
-    }
-
-    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
-    protected MWarehouse _mWarehouse;
-
-    /**
-     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
-     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MWarehouse getMWarehouse() {
-        return _mWarehouse;
-    }
-
-    /**
-     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
-     */
-    public void setMWarehouse(MWarehouse mWarehouse) {
-        _mWarehouse = mWarehouse;
+    public void setTAllocInstH(TAllocInstH tAllocInstH) {
+        _tAllocInstH = tAllocInstH;
     }
 
     /** M_CUSTOMER by my DEPOSIT_ID, named 'MCustomer'. */
@@ -623,6 +604,25 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
         _mLocation = mLocation;
     }
 
+    /** T_LOT by my LOT_ID, named 'TLot'. */
+    protected TLot _tLot;
+
+    /**
+     * [get] T_LOT by my LOT_ID, named 'TLot'. <br>
+     * @return The entity of foreign property 'TLot'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TLot getTLot() {
+        return _tLot;
+    }
+
+    /**
+     * [set] T_LOT by my LOT_ID, named 'TLot'.
+     * @param tLot The entity of foreign property 'TLot'. (NullAllowed)
+     */
+    public void setTLot(TLot tLot) {
+        _tLot = tLot;
+    }
+
     /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
     protected MProduct _mProduct;
 
@@ -661,25 +661,6 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
         _mShape = mShape;
     }
 
-    /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
-    protected TStoreNo _tStoreNo;
-
-    /**
-     * [get] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. <br>
-     * @return The entity of foreign property 'TStoreNo'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public TStoreNo getTStoreNo() {
-        return _tStoreNo;
-    }
-
-    /**
-     * [set] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
-     * @param tStoreNo The entity of foreign property 'TStoreNo'. (NullAllowed)
-     */
-    public void setTStoreNo(TStoreNo tStoreNo) {
-        _tStoreNo = tStoreNo;
-    }
-
     /** M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'. */
     protected MStockType _mStockType;
 
@@ -699,23 +680,42 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
         _mStockType = mStockType;
     }
 
-    /** T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. */
-    protected TAllocInstH _tAllocInstH;
+    /** T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. */
+    protected TStoreNo _tStoreNo;
 
     /**
-     * [get] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'. <br>
-     * @return The entity of foreign property 'TAllocInstH'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'. <br>
+     * @return The entity of foreign property 'TStoreNo'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstH getTAllocInstH() {
-        return _tAllocInstH;
+    public TStoreNo getTStoreNo() {
+        return _tStoreNo;
     }
 
     /**
-     * [set] T_ALLOC_INST_H by my ALLOC_INST_H_ID, named 'TAllocInstH'.
-     * @param tAllocInstH The entity of foreign property 'TAllocInstH'. (NullAllowed)
+     * [set] T_STORE_NO by my STORE_NO_ID, named 'TStoreNo'.
+     * @param tStoreNo The entity of foreign property 'TStoreNo'. (NullAllowed)
      */
-    public void setTAllocInstH(TAllocInstH tAllocInstH) {
-        _tAllocInstH = tAllocInstH;
+    public void setTStoreNo(TStoreNo tStoreNo) {
+        _tStoreNo = tStoreNo;
+    }
+
+    /** M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. */
+    protected MWarehouse _mWarehouse;
+
+    /**
+     * [get] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'. <br>
+     * @return The entity of foreign property 'MWarehouse'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MWarehouse getMWarehouse() {
+        return _mWarehouse;
+    }
+
+    /**
+     * [set] M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @param mWarehouse The entity of foreign property 'MWarehouse'. (NullAllowed)
+     */
+    public void setMWarehouse(MWarehouse mWarehouse) {
+        _mWarehouse = mWarehouse;
     }
 
     /** B_CLASS_DTL by my LIMIT_DT_MANAG_FLG, named 'BClassDtlByLimitDtManagFlg'. */
@@ -906,24 +906,24 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
-        if (_mWarehouse != null)
-        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
+        if (_tAllocInstH != null)
+        { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
         if (_mCustomer != null)
         { sb.append(li).append(xbRDS(_mCustomer, "mCustomer")); }
         if (_mLocation != null)
         { sb.append(li).append(xbRDS(_mLocation, "mLocation")); }
+        if (_tLot != null)
+        { sb.append(li).append(xbRDS(_tLot, "tLot")); }
         if (_mProduct != null)
         { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         if (_mShape != null)
         { sb.append(li).append(xbRDS(_mShape, "mShape")); }
-        if (_tStoreNo != null)
-        { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
         if (_mStockType != null)
         { sb.append(li).append(xbRDS(_mStockType, "mStockType")); }
-        if (_tAllocInstH != null)
-        { sb.append(li).append(xbRDS(_tAllocInstH, "tAllocInstH")); }
+        if (_tStoreNo != null)
+        { sb.append(li).append(xbRDS(_tStoreNo, "tStoreNo")); }
+        if (_mWarehouse != null)
+        { sb.append(li).append(xbRDS(_mWarehouse, "mWarehouse")); }
         if (_bClassDtlByLimitDtManagFlg != null)
         { sb.append(li).append(xbRDS(_bClassDtlByLimitDtManagFlg, "bClassDtlByLimitDtManagFlg")); }
         if (_bClassDtlByLimitDtReverseFlg != null)
@@ -988,24 +988,24 @@ public abstract class BsTAllocInstB extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tLot != null)
-        { sb.append(dm).append("tLot"); }
-        if (_mWarehouse != null)
-        { sb.append(dm).append("mWarehouse"); }
+        if (_tAllocInstH != null)
+        { sb.append(dm).append("tAllocInstH"); }
         if (_mCustomer != null)
         { sb.append(dm).append("mCustomer"); }
         if (_mLocation != null)
         { sb.append(dm).append("mLocation"); }
+        if (_tLot != null)
+        { sb.append(dm).append("tLot"); }
         if (_mProduct != null)
         { sb.append(dm).append("mProduct"); }
         if (_mShape != null)
         { sb.append(dm).append("mShape"); }
-        if (_tStoreNo != null)
-        { sb.append(dm).append("tStoreNo"); }
         if (_mStockType != null)
         { sb.append(dm).append("mStockType"); }
-        if (_tAllocInstH != null)
-        { sb.append(dm).append("tAllocInstH"); }
+        if (_tStoreNo != null)
+        { sb.append(dm).append("tStoreNo"); }
+        if (_mWarehouse != null)
+        { sb.append(dm).append("mWarehouse"); }
         if (_bClassDtlByLimitDtManagFlg != null)
         { sb.append(dm).append("bClassDtlByLimitDtManagFlg"); }
         if (_bClassDtlByLimitDtReverseFlg != null)

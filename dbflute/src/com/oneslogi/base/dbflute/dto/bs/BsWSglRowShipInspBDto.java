@@ -27,13 +27,13 @@ import com.oneslogi.base.dbflute.dto.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, W_SGL_ROW_SHIP_INSP_H, T_PICKING_H, B_CLASS_DTL(ByInspectionFlg)
+ *     T_PICKING_H, W_SGL_ROW_SHIP_INSP_H, B_USER, B_CLASS_DTL(ByInspectionFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, wSglRowShipInspH, tPickingH, bClassDtlByInspectionFlg
+ *     tPickingH, wSglRowShipInspH, bUser, bClassDtlByInspectionFlg
  *
  * [referrer-property]
  *     
@@ -145,14 +145,14 @@ public abstract class BsWSglRowShipInspBDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BUserDto _bUser;
+    protected TPickingHDto _tPickingH;
 
-    public BUserDto getBUser() {
-        return _bUser;
+    public TPickingHDto getTPickingH() {
+        return _tPickingH;
     }
 
-    public void setBUser(BUserDto bUser) {
-        this._bUser = bUser;
+    public void setTPickingH(TPickingHDto tPickingH) {
+        this._tPickingH = tPickingH;
     }
 
     protected WSglRowShipInspHDto _wSglRowShipInspH;
@@ -165,14 +165,14 @@ public abstract class BsWSglRowShipInspBDto implements Serializable {
         this._wSglRowShipInspH = wSglRowShipInspH;
     }
 
-    protected TPickingHDto _tPickingH;
+    protected BUserDto _bUser;
 
-    public TPickingHDto getTPickingH() {
-        return _tPickingH;
+    public BUserDto getBUser() {
+        return _bUser;
     }
 
-    public void setTPickingH(TPickingHDto tPickingH) {
-        this._tPickingH = tPickingH;
+    public void setBUser(BUserDto bUser) {
+        this._bUser = bUser;
     }
 
     protected BClassDtlDto _bClassDtlByInspectionFlg;

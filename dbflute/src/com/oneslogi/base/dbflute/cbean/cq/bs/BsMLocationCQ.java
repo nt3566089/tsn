@@ -1172,14 +1172,17 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         MLocationCQ bq = (MLocationCQ)bqs;
         MLocationCQ uq = (MLocationCQ)uqs;
+        if (bq.hasConditionQueryMCenter()) {
+            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        }
         if (bq.hasConditionQueryMProductShapeByMaxStoreProductShapeId()) {
             uq.queryMProductShapeByMaxStoreProductShapeId().reflectRelationOnUnionQuery(bq.queryMProductShapeByMaxStoreProductShapeId(), uq.queryMProductShapeByMaxStoreProductShapeId());
         }
+        if (bq.hasConditionQueryMCustomer()) {
+            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
+        }
         if (bq.hasConditionQueryMProduct()) {
             uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
-        if (bq.hasConditionQueryMZone()) {
-            uq.queryMZone().reflectRelationOnUnionQuery(bq.queryMZone(), uq.queryMZone());
         }
         if (bq.hasConditionQueryMProductShapeByReplenishPProductShapeId()) {
             uq.queryMProductShapeByReplenishPProductShapeId().reflectRelationOnUnionQuery(bq.queryMProductShapeByReplenishPProductShapeId(), uq.queryMProductShapeByReplenishPProductShapeId());
@@ -1187,11 +1190,8 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
         }
-        if (bq.hasConditionQueryMCustomer()) {
-            uq.queryMCustomer().reflectRelationOnUnionQuery(bq.queryMCustomer(), uq.queryMCustomer());
-        }
-        if (bq.hasConditionQueryMCenter()) {
-            uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
+        if (bq.hasConditionQueryMZone()) {
+            uq.queryMZone().reflectRelationOnUnionQuery(bq.queryMZone(), uq.queryMZone());
         }
         if (bq.hasConditionQueryBClassDtlByAllocNgFlg()) {
             uq.queryBClassDtlByAllocNgFlg().reflectRelationOnUnionQuery(bq.queryBClassDtlByAllocNgFlg(), uq.queryBClassDtlByAllocNgFlg());
@@ -1210,6 +1210,26 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_CENTER by my CENTER_ID, named 'MCenter'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCenterCQ queryMCenter() {
+        return xdfgetConditionQueryMCenter();
+    }
+    public MCenterCQ xdfgetConditionQueryMCenter() {
+        String prop = "mCenter";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCenterCQ xcreateQueryMCenter() {
+        String nrp = xresolveNRP("M_LOCATION", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
+    }
+    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
+    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+
     /**
      * Get the condition-query for relation table. <br>
      * M_PRODUCT_SHAPE by my MAX_STORE_PRODUCT_SHAPE_ID, named 'MProductShapeByMaxStoreProductShapeId'.
@@ -1232,6 +1252,26 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MCustomerCQ queryMCustomer() {
+        return xdfgetConditionQueryMCustomer();
+    }
+    public MCustomerCQ xdfgetConditionQueryMCustomer() {
+        String prop = "mCustomer";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MCustomerCQ xcreateQueryMCustomer() {
+        String nrp = xresolveNRP("M_LOCATION", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
+    }
+    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
+    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * M_PRODUCT by my REPLENISH_PRODUCT_ID, named 'MProduct'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -1249,26 +1289,6 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
     }
     protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
     public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_ZONE by my ZONE_ID, named 'MZone'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MZoneCQ queryMZone() {
-        return xdfgetConditionQueryMZone();
-    }
-    public MZoneCQ xdfgetConditionQueryMZone() {
-        String prop = "mZone";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMZone()); xsetupOuterJoinMZone(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MZoneCQ xcreateQueryMZone() {
-        String nrp = xresolveNRP("M_LOCATION", "mZone"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MZoneCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mZone", nrp);
-    }
-    protected void xsetupOuterJoinMZone() { xregOutJo("mZone"); }
-    public boolean hasConditionQueryMZone() { return xhasQueRlMap("mZone"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -1312,43 +1332,23 @@ public class BsMLocationCQ extends AbstractBsMLocationCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_CUSTOMER by my REPLENISH_DEPOSIT_ID, named 'MCustomer'.
+     * M_ZONE by my ZONE_ID, named 'MZone'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MCustomerCQ queryMCustomer() {
-        return xdfgetConditionQueryMCustomer();
+    public MZoneCQ queryMZone() {
+        return xdfgetConditionQueryMZone();
     }
-    public MCustomerCQ xdfgetConditionQueryMCustomer() {
-        String prop = "mCustomer";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCustomer()); xsetupOuterJoinMCustomer(); }
+    public MZoneCQ xdfgetConditionQueryMZone() {
+        String prop = "mZone";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMZone()); xsetupOuterJoinMZone(); }
         return xgetQueRlMap(prop);
     }
-    protected MCustomerCQ xcreateQueryMCustomer() {
-        String nrp = xresolveNRP("M_LOCATION", "mCustomer"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCustomerCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCustomer", nrp);
+    protected MZoneCQ xcreateQueryMZone() {
+        String nrp = xresolveNRP("M_LOCATION", "mZone"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MZoneCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mZone", nrp);
     }
-    protected void xsetupOuterJoinMCustomer() { xregOutJo("mCustomer"); }
-    public boolean hasConditionQueryMCustomer() { return xhasQueRlMap("mCustomer"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CENTER by my CENTER_ID, named 'MCenter'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MCenterCQ queryMCenter() {
-        return xdfgetConditionQueryMCenter();
-    }
-    public MCenterCQ xdfgetConditionQueryMCenter() {
-        String prop = "mCenter";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMCenter()); xsetupOuterJoinMCenter(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MCenterCQ xcreateQueryMCenter() {
-        String nrp = xresolveNRP("M_LOCATION", "mCenter"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MCenterCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mCenter", nrp);
-    }
-    protected void xsetupOuterJoinMCenter() { xregOutJo("mCenter"); }
-    public boolean hasConditionQueryMCenter() { return xhasQueRlMap("mCenter"); }
+    protected void xsetupOuterJoinMZone() { xregOutJo("mZone"); }
+    public boolean hasConditionQueryMZone() { return xhasQueRlMap("mZone"); }
 
     /**
      * Get the condition-query for relation table. <br>

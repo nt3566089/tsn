@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_SHIPPING_INST_B, T_PICKING_H, T_ALLOC_INST_B, T_STOCK, M_SHAPE
+ *     T_ALLOC_INST_B, T_PICKING_H, M_SHAPE, T_SHIPPING_INST_B, T_STOCK
  *
  * [referrer table]
  *     T_PACKING_B
  *
  * [foreign property]
- *     tShippingInstB, tPickingH, tAllocInstB, tStock, mShape
+ *     tAllocInstB, tPickingH, mShape, tShippingInstB, tStock
  *
  * [referrer property]
  *     tPackingBList
@@ -273,23 +273,23 @@ public abstract class BsTPickingB extends AbstractEntity implements DomainEntity
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'. */
-    protected TShippingInstB _tShippingInstB;
+    /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
+    protected TAllocInstB _tAllocInstB;
 
     /**
-     * [get] T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'. <br>
-     * @return The entity of foreign property 'TShippingInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. <br>
+     * @return The entity of foreign property 'TAllocInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TShippingInstB getTShippingInstB() {
-        return _tShippingInstB;
+    public TAllocInstB getTAllocInstB() {
+        return _tAllocInstB;
     }
 
     /**
-     * [set] T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
-     * @param tShippingInstB The entity of foreign property 'TShippingInstB'. (NullAllowed)
+     * [set] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
+     * @param tAllocInstB The entity of foreign property 'TAllocInstB'. (NullAllowed)
      */
-    public void setTShippingInstB(TShippingInstB tShippingInstB) {
-        _tShippingInstB = tShippingInstB;
+    public void setTAllocInstB(TAllocInstB tAllocInstB) {
+        _tAllocInstB = tAllocInstB;
     }
 
     /** T_PICKING_H by my PICKING_H_ID, named 'TPickingH'. */
@@ -311,23 +311,42 @@ public abstract class BsTPickingB extends AbstractEntity implements DomainEntity
         _tPickingH = tPickingH;
     }
 
-    /** T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. */
-    protected TAllocInstB _tAllocInstB;
+    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
+    protected MShape _mShape;
 
     /**
-     * [get] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'. <br>
-     * @return The entity of foreign property 'TAllocInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
+     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public TAllocInstB getTAllocInstB() {
-        return _tAllocInstB;
+    public MShape getMShape() {
+        return _mShape;
     }
 
     /**
-     * [set] T_ALLOC_INST_B by my ALLOC_INST_B_ID, named 'TAllocInstB'.
-     * @param tAllocInstB The entity of foreign property 'TAllocInstB'. (NullAllowed)
+     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
+     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
      */
-    public void setTAllocInstB(TAllocInstB tAllocInstB) {
-        _tAllocInstB = tAllocInstB;
+    public void setMShape(MShape mShape) {
+        _mShape = mShape;
+    }
+
+    /** T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'. */
+    protected TShippingInstB _tShippingInstB;
+
+    /**
+     * [get] T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'. <br>
+     * @return The entity of foreign property 'TShippingInstB'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public TShippingInstB getTShippingInstB() {
+        return _tShippingInstB;
+    }
+
+    /**
+     * [set] T_SHIPPING_INST_B by my SHIPPING_INST_B_ID, named 'TShippingInstB'.
+     * @param tShippingInstB The entity of foreign property 'TShippingInstB'. (NullAllowed)
+     */
+    public void setTShippingInstB(TShippingInstB tShippingInstB) {
+        _tShippingInstB = tShippingInstB;
     }
 
     /** T_STOCK by my STOCK_ID, named 'TStock'. */
@@ -347,25 +366,6 @@ public abstract class BsTPickingB extends AbstractEntity implements DomainEntity
      */
     public void setTStock(TStock tStock) {
         _tStock = tStock;
-    }
-
-    /** M_SHAPE by my SHAPE_ID, named 'MShape'. */
-    protected MShape _mShape;
-
-    /**
-     * [get] M_SHAPE by my SHAPE_ID, named 'MShape'. <br>
-     * @return The entity of foreign property 'MShape'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MShape getMShape() {
-        return _mShape;
-    }
-
-    /**
-     * [set] M_SHAPE by my SHAPE_ID, named 'MShape'.
-     * @param mShape The entity of foreign property 'MShape'. (NullAllowed)
-     */
-    public void setMShape(MShape mShape) {
-        _mShape = mShape;
     }
 
     // ===================================================================================
@@ -420,16 +420,16 @@ public abstract class BsTPickingB extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_tShippingInstB != null)
-        { sb.append(li).append(xbRDS(_tShippingInstB, "tShippingInstB")); }
-        if (_tPickingH != null)
-        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
         if (_tAllocInstB != null)
         { sb.append(li).append(xbRDS(_tAllocInstB, "tAllocInstB")); }
-        if (_tStock != null)
-        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
+        if (_tPickingH != null)
+        { sb.append(li).append(xbRDS(_tPickingH, "tPickingH")); }
         if (_mShape != null)
         { sb.append(li).append(xbRDS(_mShape, "mShape")); }
+        if (_tShippingInstB != null)
+        { sb.append(li).append(xbRDS(_tShippingInstB, "tShippingInstB")); }
+        if (_tStock != null)
+        { sb.append(li).append(xbRDS(_tStock, "tStock")); }
         if (_tPackingBList != null) { for (TPackingB et : _tPackingBList)
         { if (et != null) { sb.append(li).append(xbRDS(et, "tPackingBList")); } } }
         return sb.toString();
@@ -466,16 +466,16 @@ public abstract class BsTPickingB extends AbstractEntity implements DomainEntity
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_tShippingInstB != null)
-        { sb.append(dm).append("tShippingInstB"); }
-        if (_tPickingH != null)
-        { sb.append(dm).append("tPickingH"); }
         if (_tAllocInstB != null)
         { sb.append(dm).append("tAllocInstB"); }
-        if (_tStock != null)
-        { sb.append(dm).append("tStock"); }
+        if (_tPickingH != null)
+        { sb.append(dm).append("tPickingH"); }
         if (_mShape != null)
         { sb.append(dm).append("mShape"); }
+        if (_tShippingInstB != null)
+        { sb.append(dm).append("tShippingInstB"); }
+        if (_tStock != null)
+        { sb.append(dm).append("tStock"); }
         if (_tPackingBList != null && !_tPackingBList.isEmpty())
         { sb.append(dm).append("tPackingBList"); }
         if (sb.length() > dm.length()) {

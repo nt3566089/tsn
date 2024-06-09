@@ -33,7 +33,7 @@ import com.oneslogi.base.dbflute.dto.*;
  *     
  *
  * [foreign-property]
- *     bUserByTagOutUserId, bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
+ *     bUserByInspectionOutUserId, tPackingH, bUserByStwOutUserId, bUserByTagOutUserId, bClassDtlByStwOutFlg, bClassDtlByTagOutFlg, bClassDtlByInspectionOutFlg
  *
  * [referrer-property]
  *     
@@ -165,16 +165,6 @@ public abstract class BsTPackingRDto implements Serializable {
     // ===================================================================================
     //                                                                       Foreign Table
     //                                                                       =============
-    protected BUserDto _bUserByTagOutUserId;
-
-    public BUserDto getBUserByTagOutUserId() {
-        return _bUserByTagOutUserId;
-    }
-
-    public void setBUserByTagOutUserId(BUserDto bUserByTagOutUserId) {
-        this._bUserByTagOutUserId = bUserByTagOutUserId;
-    }
-
     protected BUserDto _bUserByInspectionOutUserId;
 
     public BUserDto getBUserByInspectionOutUserId() {
@@ -203,6 +193,16 @@ public abstract class BsTPackingRDto implements Serializable {
 
     public void setBUserByStwOutUserId(BUserDto bUserByStwOutUserId) {
         this._bUserByStwOutUserId = bUserByStwOutUserId;
+    }
+
+    protected BUserDto _bUserByTagOutUserId;
+
+    public BUserDto getBUserByTagOutUserId() {
+        return _bUserByTagOutUserId;
+    }
+
+    public void setBUserByTagOutUserId(BUserDto bUserByTagOutUserId) {
+        this._bUserByTagOutUserId = bUserByTagOutUserId;
     }
 
     protected BClassDtlDto _bClassDtlByStwOutFlg;

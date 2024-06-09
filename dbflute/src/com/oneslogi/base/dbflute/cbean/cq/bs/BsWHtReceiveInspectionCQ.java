@@ -816,72 +816,32 @@ public class BsWHtReceiveInspectionCQ extends AbstractBsWHtReceiveInspectionCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         WHtReceiveInspectionCQ bq = (WHtReceiveInspectionCQ)bqs;
         WHtReceiveInspectionCQ uq = (WHtReceiveInspectionCQ)uqs;
-        if (bq.hasConditionQueryMClient()) {
-            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
-        }
-        if (bq.hasConditionQueryMProduct()) {
-            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
-        }
         if (bq.hasConditionQueryMCenter()) {
             uq.queryMCenter().reflectRelationOnUnionQuery(bq.queryMCenter(), uq.queryMCenter());
         }
-        if (bq.hasConditionQueryMLocation()) {
-            uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
-        }
-        if (bq.hasConditionQueryMWarehouse()) {
-            uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
+        if (bq.hasConditionQueryMClient()) {
+            uq.queryMClient().reflectRelationOnUnionQuery(bq.queryMClient(), uq.queryMClient());
         }
         if (bq.hasConditionQueryTLot()) {
             uq.queryTLot().reflectRelationOnUnionQuery(bq.queryTLot(), uq.queryTLot());
         }
+        if (bq.hasConditionQueryMProduct()) {
+            uq.queryMProduct().reflectRelationOnUnionQuery(bq.queryMProduct(), uq.queryMProduct());
+        }
+        if (bq.hasConditionQueryMLocation()) {
+            uq.queryMLocation().reflectRelationOnUnionQuery(bq.queryMLocation(), uq.queryMLocation());
+        }
         if (bq.hasConditionQueryMStockType()) {
             uq.queryMStockType().reflectRelationOnUnionQuery(bq.queryMStockType(), uq.queryMStockType());
+        }
+        if (bq.hasConditionQueryMWarehouse()) {
+            uq.queryMWarehouse().reflectRelationOnUnionQuery(bq.queryMWarehouse(), uq.queryMWarehouse());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_CLIENT by my CLIENT_ID, named 'MClient'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MClientCQ queryMClient() {
-        return xdfgetConditionQueryMClient();
-    }
-    public MClientCQ xdfgetConditionQueryMClient() {
-        String prop = "mClient";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MClientCQ xcreateQueryMClient() {
-        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
-    }
-    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
-    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MProductCQ queryMProduct() {
-        return xdfgetConditionQueryMProduct();
-    }
-    public MProductCQ xdfgetConditionQueryMProduct() {
-        String prop = "mProduct";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MProductCQ xcreateQueryMProduct() {
-        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
-    }
-    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
-    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * M_CENTER by my CENTER_ID, named 'MCenter'.
@@ -904,43 +864,23 @@ public class BsWHtReceiveInspectionCQ extends AbstractBsWHtReceiveInspectionCQ {
 
     /**
      * Get the condition-query for relation table. <br>
-     * M_LOCATION by my RCV_LOC_ID, named 'MLocation'.
+     * M_CLIENT by my CLIENT_ID, named 'MClient'.
      * @return The instance of condition-query. (NotNull)
      */
-    public MLocationCQ queryMLocation() {
-        return xdfgetConditionQueryMLocation();
+    public MClientCQ queryMClient() {
+        return xdfgetConditionQueryMClient();
     }
-    public MLocationCQ xdfgetConditionQueryMLocation() {
-        String prop = "mLocation";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMLocation()); xsetupOuterJoinMLocation(); }
+    public MClientCQ xdfgetConditionQueryMClient() {
+        String prop = "mClient";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMClient()); xsetupOuterJoinMClient(); }
         return xgetQueRlMap(prop);
     }
-    protected MLocationCQ xcreateQueryMLocation() {
-        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mLocation"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MLocationCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mLocation", nrp);
+    protected MClientCQ xcreateQueryMClient() {
+        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mClient"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MClientCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mClient", nrp);
     }
-    protected void xsetupOuterJoinMLocation() { xregOutJo("mLocation"); }
-    public boolean hasConditionQueryMLocation() { return xhasQueRlMap("mLocation"); }
-
-    /**
-     * Get the condition-query for relation table. <br>
-     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public MWarehouseCQ queryMWarehouse() {
-        return xdfgetConditionQueryMWarehouse();
-    }
-    public MWarehouseCQ xdfgetConditionQueryMWarehouse() {
-        String prop = "mWarehouse";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMWarehouse()); xsetupOuterJoinMWarehouse(); }
-        return xgetQueRlMap(prop);
-    }
-    protected MWarehouseCQ xcreateQueryMWarehouse() {
-        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mWarehouse"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new MWarehouseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mWarehouse", nrp);
-    }
-    protected void xsetupOuterJoinMWarehouse() { xregOutJo("mWarehouse"); }
-    public boolean hasConditionQueryMWarehouse() { return xhasQueRlMap("mWarehouse"); }
+    protected void xsetupOuterJoinMClient() { xregOutJo("mClient"); }
+    public boolean hasConditionQueryMClient() { return xhasQueRlMap("mClient"); }
 
     /**
      * Get the condition-query for relation table. <br>
@@ -964,6 +904,46 @@ public class BsWHtReceiveInspectionCQ extends AbstractBsWHtReceiveInspectionCQ {
 
     /**
      * Get the condition-query for relation table. <br>
+     * M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MProductCQ queryMProduct() {
+        return xdfgetConditionQueryMProduct();
+    }
+    public MProductCQ xdfgetConditionQueryMProduct() {
+        String prop = "mProduct";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMProduct()); xsetupOuterJoinMProduct(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MProductCQ xcreateQueryMProduct() {
+        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mProduct"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MProductCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mProduct", nrp);
+    }
+    protected void xsetupOuterJoinMProduct() { xregOutJo("mProduct"); }
+    public boolean hasConditionQueryMProduct() { return xhasQueRlMap("mProduct"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_LOCATION by my RCV_LOC_ID, named 'MLocation'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MLocationCQ queryMLocation() {
+        return xdfgetConditionQueryMLocation();
+    }
+    public MLocationCQ xdfgetConditionQueryMLocation() {
+        String prop = "mLocation";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMLocation()); xsetupOuterJoinMLocation(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MLocationCQ xcreateQueryMLocation() {
+        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mLocation"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MLocationCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mLocation", nrp);
+    }
+    protected void xsetupOuterJoinMLocation() { xregOutJo("mLocation"); }
+    public boolean hasConditionQueryMLocation() { return xhasQueRlMap("mLocation"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
      * M_STOCK_TYPE by my STOCK_TYPE_ID, named 'MStockType'.
      * @return The instance of condition-query. (NotNull)
      */
@@ -981,6 +961,26 @@ public class BsWHtReceiveInspectionCQ extends AbstractBsWHtReceiveInspectionCQ {
     }
     protected void xsetupOuterJoinMStockType() { xregOutJo("mStockType"); }
     public boolean hasConditionQueryMStockType() { return xhasQueRlMap("mStockType"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * M_WAREHOUSE by my WAREHOUSE_ID, named 'MWarehouse'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public MWarehouseCQ queryMWarehouse() {
+        return xdfgetConditionQueryMWarehouse();
+    }
+    public MWarehouseCQ xdfgetConditionQueryMWarehouse() {
+        String prop = "mWarehouse";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryMWarehouse()); xsetupOuterJoinMWarehouse(); }
+        return xgetQueRlMap(prop);
+    }
+    protected MWarehouseCQ xcreateQueryMWarehouse() {
+        String nrp = xresolveNRP("W_HT_RECEIVE_INSPECTION", "mWarehouse"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new MWarehouseCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "mWarehouse", nrp);
+    }
+    protected void xsetupOuterJoinMWarehouse() { xregOutJo("mWarehouse"); }
+    public boolean hasConditionQueryMWarehouse() { return xhasQueRlMap("mWarehouse"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

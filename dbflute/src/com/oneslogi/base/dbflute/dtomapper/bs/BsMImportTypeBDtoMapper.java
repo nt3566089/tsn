@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     M_IMPORT_TYPE, M_EDI_COLUMN
+ *     M_EDI_COLUMN, M_IMPORT_TYPE
  *
  * [referrer-table]
  *     M_IMPORT_TYPE_B_COPY_B, M_IMPORT_TYPE_B_COPY_H
  *
  * [foreign-property]
- *     mImportType, mEdiColumn
+ *     mEdiColumn, mImportType
  *
  * [referrer-property]
  *     mImportTypeBCopyBList, mImportTypeBCopyHList
@@ -70,8 +70,8 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressMImportType;
     protected boolean _suppressMEdiColumn;
+    protected boolean _suppressMImportType;
     protected boolean _suppressMImportTypeBCopyBList;
     protected boolean _suppressMImportTypeBCopyHList;
 
@@ -146,32 +146,6 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMImportType && entity.getMImportType() != null) {
-            MImportType relationEntity = entity.getMImportType();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                MImportTypeDto relationDto = (MImportTypeDto)cachedDto;
-                dto.setMImportType(relationDto);
-                if (reverseReference) {
-                    relationDto.getMImportTypeBList().add(dto);
-                }
-            } else {
-                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMImportTypeBList();
-                MImportTypeDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setMImportType(relationDto);
-                if (reverseReference) {
-                    relationDto.getMImportTypeBList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getMImportType());
-                }
-            }
-        };
         if (!_suppressMEdiColumn && entity.getMEdiColumn() != null) {
             MEdiColumn relationEntity = entity.getMEdiColumn();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -195,6 +169,32 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getMEdiColumn());
+                }
+            }
+        };
+        if (!_suppressMImportType && entity.getMImportType() != null) {
+            MImportType relationEntity = entity.getMImportType();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                MImportTypeDto relationDto = (MImportTypeDto)cachedDto;
+                dto.setMImportType(relationDto);
+                if (reverseReference) {
+                    relationDto.getMImportTypeBList().add(dto);
+                }
+            } else {
+                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMImportTypeBList();
+                MImportTypeDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setMImportType(relationDto);
+                if (reverseReference) {
+                    relationDto.getMImportTypeBList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getMImportType());
                 }
             }
         };
@@ -315,32 +315,6 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressMImportType && dto.getMImportType() != null) {
-            MImportTypeDto relationDto = dto.getMImportType();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                MImportType relationEntity = (MImportType)cachedEntity;
-                entity.setMImportType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMImportTypeBList().add(entity);
-                }
-            } else {
-                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressMImportTypeBList();
-                MImportType relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setMImportType(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getMImportTypeBList().add(entity);
-                }
-                if (instanceCache && entity.getMImportType().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getMImportType());
-                }
-            }
-        };
         if (!_suppressMEdiColumn && dto.getMEdiColumn() != null) {
             MEdiColumnDto relationDto = dto.getMEdiColumn();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -364,6 +338,32 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
                 }
                 if (instanceCache && entity.getMEdiColumn().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getMEdiColumn());
+                }
+            }
+        };
+        if (!_suppressMImportType && dto.getMImportType() != null) {
+            MImportTypeDto relationDto = dto.getMImportType();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                MImportType relationEntity = (MImportType)cachedEntity;
+                entity.setMImportType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMImportTypeBList().add(entity);
+                }
+            } else {
+                MImportTypeDtoMapper mapper = new MImportTypeDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressMImportTypeBList();
+                MImportType relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setMImportType(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getMImportTypeBList().add(entity);
+                }
+                if (instanceCache && entity.getMImportType().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getMImportType());
                 }
             }
         };
@@ -513,11 +513,11 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressMImportType() {
-        _suppressMImportType = true;
-    }
     public void suppressMEdiColumn() {
         _suppressMEdiColumn = true;
+    }
+    public void suppressMImportType() {
+        _suppressMImportType = true;
     }
     public void suppressMImportTypeBCopyBList() {
         _suppressMImportTypeBCopyBList = true;
@@ -526,14 +526,14 @@ public abstract class BsMImportTypeBDtoMapper implements DtoMapper<MImportTypeB,
         _suppressMImportTypeBCopyHList = true;
     }
     protected void doSuppressAll() { // internal
-        suppressMImportType();
         suppressMEdiColumn();
+        suppressMImportType();
         suppressMImportTypeBCopyBList();
         suppressMImportTypeBCopyHList();
     }
     protected void doSuppressClear() { // internal
-        _suppressMImportType = false;
         _suppressMEdiColumn = false;
+        _suppressMImportType = false;
         _suppressMImportTypeBCopyBList = false;
         _suppressMImportTypeBCopyHList = false;
     }

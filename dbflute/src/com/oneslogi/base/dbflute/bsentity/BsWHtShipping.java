@@ -31,13 +31,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_PRODUCT, M_CENTER, M_BOX, M_CLIENT
+ *     M_BOX, M_CENTER, M_CLIENT, M_PRODUCT
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mProduct, mCenter, mBox, mClient
+ *     mBox, mCenter, mClient, mProduct
  *
  * [referrer property]
  *     
@@ -318,23 +318,23 @@ public abstract class BsWHtShipping extends AbstractEntity implements DomainEnti
     // ===================================================================================
     //                                                                    Foreign Property
     //                                                                    ================
-    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
-    protected MProduct _mProduct;
+    /** M_BOX by my BOX_ID, named 'MBox'. */
+    protected MBox _mBox;
 
     /**
-     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
-     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     * [get] M_BOX by my BOX_ID, named 'MBox'. <br>
+     * @return The entity of foreign property 'MBox'. (NullAllowed: when e.g. null FK column, no setupSelect)
      */
-    public MProduct getMProduct() {
-        return _mProduct;
+    public MBox getMBox() {
+        return _mBox;
     }
 
     /**
-     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
-     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     * [set] M_BOX by my BOX_ID, named 'MBox'.
+     * @param mBox The entity of foreign property 'MBox'. (NullAllowed)
      */
-    public void setMProduct(MProduct mProduct) {
-        _mProduct = mProduct;
+    public void setMBox(MBox mBox) {
+        _mBox = mBox;
     }
 
     /** M_CENTER by my CENTER_ID, named 'MCenter'. */
@@ -356,25 +356,6 @@ public abstract class BsWHtShipping extends AbstractEntity implements DomainEnti
         _mCenter = mCenter;
     }
 
-    /** M_BOX by my BOX_ID, named 'MBox'. */
-    protected MBox _mBox;
-
-    /**
-     * [get] M_BOX by my BOX_ID, named 'MBox'. <br>
-     * @return The entity of foreign property 'MBox'. (NullAllowed: when e.g. null FK column, no setupSelect)
-     */
-    public MBox getMBox() {
-        return _mBox;
-    }
-
-    /**
-     * [set] M_BOX by my BOX_ID, named 'MBox'.
-     * @param mBox The entity of foreign property 'MBox'. (NullAllowed)
-     */
-    public void setMBox(MBox mBox) {
-        _mBox = mBox;
-    }
-
     /** M_CLIENT by my CLIENT_ID, named 'MClient'. */
     protected MClient _mClient;
 
@@ -392,6 +373,25 @@ public abstract class BsWHtShipping extends AbstractEntity implements DomainEnti
      */
     public void setMClient(MClient mClient) {
         _mClient = mClient;
+    }
+
+    /** M_PRODUCT by my PRODUCT_ID, named 'MProduct'. */
+    protected MProduct _mProduct;
+
+    /**
+     * [get] M_PRODUCT by my PRODUCT_ID, named 'MProduct'. <br>
+     * @return The entity of foreign property 'MProduct'. (NullAllowed: when e.g. null FK column, no setupSelect)
+     */
+    public MProduct getMProduct() {
+        return _mProduct;
+    }
+
+    /**
+     * [set] M_PRODUCT by my PRODUCT_ID, named 'MProduct'.
+     * @param mProduct The entity of foreign property 'MProduct'. (NullAllowed)
+     */
+    public void setMProduct(MProduct mProduct) {
+        _mProduct = mProduct;
     }
 
     // ===================================================================================
@@ -426,14 +426,14 @@ public abstract class BsWHtShipping extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildStringWithRelation(String li) {
         StringBuilder sb = new StringBuilder();
-        if (_mProduct != null)
-        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
-        if (_mCenter != null)
-        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mBox != null)
         { sb.append(li).append(xbRDS(_mBox, "mBox")); }
+        if (_mCenter != null)
+        { sb.append(li).append(xbRDS(_mCenter, "mCenter")); }
         if (_mClient != null)
         { sb.append(li).append(xbRDS(_mClient, "mClient")); }
+        if (_mProduct != null)
+        { sb.append(li).append(xbRDS(_mProduct, "mProduct")); }
         return sb.toString();
     }
 
@@ -477,14 +477,14 @@ public abstract class BsWHtShipping extends AbstractEntity implements DomainEnti
     @Override
     protected String doBuildRelationString(String dm) {
         StringBuilder sb = new StringBuilder();
-        if (_mProduct != null)
-        { sb.append(dm).append("mProduct"); }
-        if (_mCenter != null)
-        { sb.append(dm).append("mCenter"); }
         if (_mBox != null)
         { sb.append(dm).append("mBox"); }
+        if (_mCenter != null)
+        { sb.append(dm).append("mCenter"); }
         if (_mClient != null)
         { sb.append(dm).append("mClient"); }
+        if (_mProduct != null)
+        { sb.append(dm).append("mProduct"); }
         if (sb.length() > dm.length()) {
             sb.delete(0, dm.length()).insert(0, "(").append(")");
         }

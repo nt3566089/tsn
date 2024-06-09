@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_IMPORT_TYPE, T_SHIPPING_INST_H, M_CENTER, M_CLIENT, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
+ *     M_CENTER, M_CLIENT, M_IMPORT_TYPE, T_SHIPPING_INST_H, B_CLASS_DTL(ByDelivMatchFlg), T_EC_ORDER_R(AsOne)
  *
  * [referrer table]
  *     T_EC_ORDER_B, T_EC_ORDER_R
  *
  * [foreign property]
- *     mImportType, tShippingInstH, mCenter, mClient, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
+ *     mCenter, mClient, mImportType, tShippingInstH, bClassDtlByDelivMatchFlg, bClassDtlByErrorFlg, bClassDtlByGiftFlg, bClassDtlByImportFlg, bClassDtlByPriorityFlg, tEcOrderRAsOne
  *
  * [referrer property]
  *     tEcOrderBList
@@ -481,22 +481,6 @@ public abstract class BsTEcOrderHBhv extends AbstractBehaviorWritable<TEcOrderH,
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MImportType'.
-     * @param tEcOrderHList The list of tEcOrderH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MImportType> pulloutMImportType(List<TEcOrderH> tEcOrderHList)
-    { return helpPulloutInternally(tEcOrderHList, "mImportType"); }
-
-    /**
-     * Pull out the list of foreign table 'TShippingInstH'.
-     * @param tEcOrderHList The list of tEcOrderH. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<TShippingInstH> pulloutTShippingInstH(List<TEcOrderH> tEcOrderHList)
-    { return helpPulloutInternally(tEcOrderHList, "tShippingInstH"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param tEcOrderHList The list of tEcOrderH. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -511,6 +495,22 @@ public abstract class BsTEcOrderHBhv extends AbstractBehaviorWritable<TEcOrderH,
      */
     public List<MClient> pulloutMClient(List<TEcOrderH> tEcOrderHList)
     { return helpPulloutInternally(tEcOrderHList, "mClient"); }
+
+    /**
+     * Pull out the list of foreign table 'MImportType'.
+     * @param tEcOrderHList The list of tEcOrderH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MImportType> pulloutMImportType(List<TEcOrderH> tEcOrderHList)
+    { return helpPulloutInternally(tEcOrderHList, "mImportType"); }
+
+    /**
+     * Pull out the list of foreign table 'TShippingInstH'.
+     * @param tEcOrderHList The list of tEcOrderH. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<TShippingInstH> pulloutTShippingInstH(List<TEcOrderH> tEcOrderHList)
+    { return helpPulloutInternally(tEcOrderHList, "tShippingInstH"); }
 
     /**
      * Pull out the list of foreign table 'BClassDtl'.

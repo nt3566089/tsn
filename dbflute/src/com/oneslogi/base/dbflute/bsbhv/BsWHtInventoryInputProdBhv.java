@@ -39,13 +39,13 @@ import com.oneslogi.base.dbflute.cbean.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     M_STOCK_TYPE, M_CENTER, M_CLIENT, M_CUSTOMER, M_WAREHOUSE, T_LOT, M_LOCATION, M_PRODUCT
+ *     M_CENTER, M_CLIENT, M_CUSTOMER, M_LOCATION, T_LOT, M_PRODUCT, M_STOCK_TYPE, M_WAREHOUSE
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     mStockType, mCenter, mClient, mCustomer, mWarehouse, tLot, mLocation, mProduct
+ *     mCenter, mClient, mCustomer, mLocation, tLot, mProduct, mStockType, mWarehouse
  *
  * [referrer property]
  *     
@@ -425,14 +425,6 @@ public abstract class BsWHtInventoryInputProdBhv extends AbstractBehaviorWritabl
     //                                                                   Pull out Relation
     //                                                                   =================
     /**
-     * Pull out the list of foreign table 'MStockType'.
-     * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MStockType> pulloutMStockType(List<WHtInventoryInputProd> wHtInventoryInputProdList)
-    { return helpPulloutInternally(wHtInventoryInputProdList, "mStockType"); }
-
-    /**
      * Pull out the list of foreign table 'MCenter'.
      * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
@@ -457,12 +449,12 @@ public abstract class BsWHtInventoryInputProdBhv extends AbstractBehaviorWritabl
     { return helpPulloutInternally(wHtInventoryInputProdList, "mCustomer"); }
 
     /**
-     * Pull out the list of foreign table 'MWarehouse'.
+     * Pull out the list of foreign table 'MLocation'.
      * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
-    public List<MWarehouse> pulloutMWarehouse(List<WHtInventoryInputProd> wHtInventoryInputProdList)
-    { return helpPulloutInternally(wHtInventoryInputProdList, "mWarehouse"); }
+    public List<MLocation> pulloutMLocation(List<WHtInventoryInputProd> wHtInventoryInputProdList)
+    { return helpPulloutInternally(wHtInventoryInputProdList, "mLocation"); }
 
     /**
      * Pull out the list of foreign table 'TLot'.
@@ -473,20 +465,28 @@ public abstract class BsWHtInventoryInputProdBhv extends AbstractBehaviorWritabl
     { return helpPulloutInternally(wHtInventoryInputProdList, "tLot"); }
 
     /**
-     * Pull out the list of foreign table 'MLocation'.
-     * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
-     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
-     */
-    public List<MLocation> pulloutMLocation(List<WHtInventoryInputProd> wHtInventoryInputProdList)
-    { return helpPulloutInternally(wHtInventoryInputProdList, "mLocation"); }
-
-    /**
      * Pull out the list of foreign table 'MProduct'.
      * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
      * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
      */
     public List<MProduct> pulloutMProduct(List<WHtInventoryInputProd> wHtInventoryInputProdList)
     { return helpPulloutInternally(wHtInventoryInputProdList, "mProduct"); }
+
+    /**
+     * Pull out the list of foreign table 'MStockType'.
+     * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MStockType> pulloutMStockType(List<WHtInventoryInputProd> wHtInventoryInputProdList)
+    { return helpPulloutInternally(wHtInventoryInputProdList, "mStockType"); }
+
+    /**
+     * Pull out the list of foreign table 'MWarehouse'.
+     * @param wHtInventoryInputProdList The list of wHtInventoryInputProd. (NotNull, EmptyAllowed)
+     * @return The list of foreign table. (NotNull, EmptyAllowed, NotNullElement)
+     */
+    public List<MWarehouse> pulloutMWarehouse(List<WHtInventoryInputProd> wHtInventoryInputProdList)
+    { return helpPulloutInternally(wHtInventoryInputProdList, "mWarehouse"); }
 
     // ===================================================================================
     //                                                                      Extract Column

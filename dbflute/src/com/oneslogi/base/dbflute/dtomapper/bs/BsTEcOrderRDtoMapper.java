@@ -41,13 +41,13 @@ import com.oneslogi.base.dbflute.dtomapper.*;
  *     VERSION_NO
  *
  * [foreign-table]
- *     B_USER, T_EC_ORDER_H, B_CLASS_DTL(ByInvoiceCreateFlg)
+ *     T_EC_ORDER_H, B_USER, B_CLASS_DTL(ByInvoiceCreateFlg)
  *
  * [referrer-table]
  *     
  *
  * [foreign-property]
- *     bUser, tEcOrderH, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
+ *     tEcOrderH, bUser, bClassDtlByInvoiceCreateFlg, bClassDtlByStatementOutFlg
  *
  * [referrer-property]
  *     
@@ -70,8 +70,8 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
     protected boolean _exceptCommonColumn;
     protected boolean _reverseReference; // default: one-way reference
     protected boolean _instanceCache = true; // default: cached
-    protected boolean _suppressBUser;
     protected boolean _suppressTEcOrderH;
+    protected boolean _suppressBUser;
     protected boolean _suppressBClassDtlByInvoiceCreateFlg;
     protected boolean _suppressBClassDtlByStatementOutFlg;
 
@@ -147,32 +147,6 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
             _relationDtoMap.put(localKey, dto);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && entity.getBUser() != null) {
-            BUser relationEntity = entity.getBUser();
-            Entity relationKey = createInstanceKeyEntity(relationEntity);
-            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
-            if (cachedDto != null) {
-                BUserDto relationDto = (BUserDto)cachedDto;
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderRList().add(dto);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderRList();
-                BUserDto relationDto = mapper.mappingToDto(relationEntity);
-                dto.setBUser(relationDto);
-                if (reverseReference) {
-                    relationDto.getTEcOrderRList().add(dto);
-                }
-                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
-                    _relationDtoMap.put(relationKey, dto.getBUser());
-                }
-            }
-        };
         if (!_suppressTEcOrderH && entity.getTEcOrderH() != null) {
             TEcOrderH relationEntity = entity.getTEcOrderH();
             Entity relationKey = createInstanceKeyEntity(relationEntity);
@@ -196,6 +170,32 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
                 }
                 if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
                     _relationDtoMap.put(relationKey, dto.getTEcOrderH());
+                }
+            }
+        };
+        if (!_suppressBUser && entity.getBUser() != null) {
+            BUser relationEntity = entity.getBUser();
+            Entity relationKey = createInstanceKeyEntity(relationEntity);
+            Object cachedDto = instanceCache ? _relationDtoMap.get(relationKey) : null;
+            if (cachedDto != null) {
+                BUserDto relationDto = (BUserDto)cachedDto;
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderRList().add(dto);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderRList();
+                BUserDto relationDto = mapper.mappingToDto(relationEntity);
+                dto.setBUser(relationDto);
+                if (reverseReference) {
+                    relationDto.getTEcOrderRList().add(dto);
+                }
+                if (instanceCache && relationEntity.hasPrimaryKeyValue()) {
+                    _relationDtoMap.put(relationKey, dto.getBUser());
                 }
             }
         };
@@ -337,32 +337,6 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
             _relationEntityMap.put(localKey, entity);
         }
         boolean reverseReference = isReverseReference();
-        if (!_suppressBUser && dto.getBUser() != null) {
-            BUserDto relationDto = dto.getBUser();
-            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
-            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
-            if (cachedEntity != null) {
-                BUser relationEntity = (BUser)cachedEntity;
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderRList().add(entity);
-                }
-            } else {
-                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
-                mapper.setExceptCommonColumn(exceptCommonColumn);
-                mapper.setReverseReference(reverseReference);
-                if (!instanceCache) { mapper.disableInstanceCache(); }
-                mapper.suppressTEcOrderRList();
-                BUser relationEntity = mapper.mappingToEntity(relationDto);
-                entity.setBUser(relationEntity);
-                if (reverseReference) {
-                    relationEntity.getTEcOrderRList().add(entity);
-                }
-                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
-                    _relationEntityMap.put(relationKey, entity.getBUser());
-                }
-            }
-        };
         if (!_suppressTEcOrderH && dto.getTEcOrderH() != null) {
             TEcOrderHDto relationDto = dto.getTEcOrderH();
             Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
@@ -386,6 +360,32 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
                 }
                 if (instanceCache && entity.getTEcOrderH().hasPrimaryKeyValue()) {
                     _relationEntityMap.put(relationKey, entity.getTEcOrderH());
+                }
+            }
+        };
+        if (!_suppressBUser && dto.getBUser() != null) {
+            BUserDto relationDto = dto.getBUser();
+            Object relationKey = createInstanceKeyDto(relationDto, relationDto.instanceHash());
+            Entity cachedEntity = instanceCache ? _relationEntityMap.get(relationKey) : null;
+            if (cachedEntity != null) {
+                BUser relationEntity = (BUser)cachedEntity;
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderRList().add(entity);
+                }
+            } else {
+                BUserDtoMapper mapper = new BUserDtoMapper(_relationDtoMap, _relationEntityMap);
+                mapper.setExceptCommonColumn(exceptCommonColumn);
+                mapper.setReverseReference(reverseReference);
+                if (!instanceCache) { mapper.disableInstanceCache(); }
+                mapper.suppressTEcOrderRList();
+                BUser relationEntity = mapper.mappingToEntity(relationDto);
+                entity.setBUser(relationEntity);
+                if (reverseReference) {
+                    relationEntity.getTEcOrderRList().add(entity);
+                }
+                if (instanceCache && entity.getBUser().hasPrimaryKeyValue()) {
+                    _relationEntityMap.put(relationKey, entity.getBUser());
                 }
             }
         };
@@ -553,11 +553,11 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
     //                                                                   Suppress Relation
     //                                                                   =================
     // (basically) to suppress infinity loop
-    public void suppressBUser() {
-        _suppressBUser = true;
-    }
     public void suppressTEcOrderH() {
         _suppressTEcOrderH = true;
+    }
+    public void suppressBUser() {
+        _suppressBUser = true;
     }
     public void suppressBClassDtlByInvoiceCreateFlg() {
         _suppressBClassDtlByInvoiceCreateFlg = true;
@@ -566,14 +566,14 @@ public abstract class BsTEcOrderRDtoMapper implements DtoMapper<TEcOrderR, TEcOr
         _suppressBClassDtlByStatementOutFlg = true;
     }
     protected void doSuppressAll() { // internal
-        suppressBUser();
         suppressTEcOrderH();
+        suppressBUser();
         suppressBClassDtlByInvoiceCreateFlg();
         suppressBClassDtlByStatementOutFlg();
     }
     protected void doSuppressClear() { // internal
-        _suppressBUser = false;
         _suppressTEcOrderH = false;
+        _suppressBUser = false;
         _suppressBClassDtlByInvoiceCreateFlg = false;
         _suppressBClassDtlByStatementOutFlg = false;
     }

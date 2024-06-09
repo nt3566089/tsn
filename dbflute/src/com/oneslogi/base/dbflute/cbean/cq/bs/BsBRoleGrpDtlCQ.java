@@ -386,37 +386,17 @@ public class BsBRoleGrpDtlCQ extends AbstractBsBRoleGrpDtlCQ {
     public void reflectRelationOnUnionQuery(ConditionQuery bqs, ConditionQuery uqs) {
         BRoleGrpDtlCQ bq = (BRoleGrpDtlCQ)bqs;
         BRoleGrpDtlCQ uq = (BRoleGrpDtlCQ)uqs;
-        if (bq.hasConditionQueryBRole()) {
-            uq.queryBRole().reflectRelationOnUnionQuery(bq.queryBRole(), uq.queryBRole());
-        }
         if (bq.hasConditionQueryBRoleGrp()) {
             uq.queryBRoleGrp().reflectRelationOnUnionQuery(bq.queryBRoleGrp(), uq.queryBRoleGrp());
+        }
+        if (bq.hasConditionQueryBRole()) {
+            uq.queryBRole().reflectRelationOnUnionQuery(bq.queryBRole(), uq.queryBRole());
         }
     }
 
     // ===================================================================================
     //                                                                       Foreign Query
     //                                                                       =============
-    /**
-     * Get the condition-query for relation table. <br>
-     * B_ROLE by my ROLE_ID, named 'BRole'.
-     * @return The instance of condition-query. (NotNull)
-     */
-    public BRoleCQ queryBRole() {
-        return xdfgetConditionQueryBRole();
-    }
-    public BRoleCQ xdfgetConditionQueryBRole() {
-        String prop = "bRole";
-        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRole()); xsetupOuterJoinBRole(); }
-        return xgetQueRlMap(prop);
-    }
-    protected BRoleCQ xcreateQueryBRole() {
-        String nrp = xresolveNRP("B_ROLE_GRP_DTL", "bRole"); String jan = xresolveJAN(nrp, xgetNNLvl());
-        return xinitRelCQ(new BRoleCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRole", nrp);
-    }
-    protected void xsetupOuterJoinBRole() { xregOutJo("bRole"); }
-    public boolean hasConditionQueryBRole() { return xhasQueRlMap("bRole"); }
-
     /**
      * Get the condition-query for relation table. <br>
      * B_ROLE_GRP by my ROLE_GRP_ID, named 'BRoleGrp'.
@@ -436,6 +416,26 @@ public class BsBRoleGrpDtlCQ extends AbstractBsBRoleGrpDtlCQ {
     }
     protected void xsetupOuterJoinBRoleGrp() { xregOutJo("bRoleGrp"); }
     public boolean hasConditionQueryBRoleGrp() { return xhasQueRlMap("bRoleGrp"); }
+
+    /**
+     * Get the condition-query for relation table. <br>
+     * B_ROLE by my ROLE_ID, named 'BRole'.
+     * @return The instance of condition-query. (NotNull)
+     */
+    public BRoleCQ queryBRole() {
+        return xdfgetConditionQueryBRole();
+    }
+    public BRoleCQ xdfgetConditionQueryBRole() {
+        String prop = "bRole";
+        if (!xhasQueRlMap(prop)) { xregQueRl(prop, xcreateQueryBRole()); xsetupOuterJoinBRole(); }
+        return xgetQueRlMap(prop);
+    }
+    protected BRoleCQ xcreateQueryBRole() {
+        String nrp = xresolveNRP("B_ROLE_GRP_DTL", "bRole"); String jan = xresolveJAN(nrp, xgetNNLvl());
+        return xinitRelCQ(new BRoleCQ(this, xgetSqlClause(), jan, xgetNNLvl()), _baseCB, "bRole", nrp);
+    }
+    protected void xsetupOuterJoinBRole() { xregOutJo("bRole"); }
+    public boolean hasConditionQueryBRole() { return xhasQueRlMap("bRole"); }
 
     protected Map<String, Object> xfindFixedConditionDynamicParameterMap(String property) {
         return null;

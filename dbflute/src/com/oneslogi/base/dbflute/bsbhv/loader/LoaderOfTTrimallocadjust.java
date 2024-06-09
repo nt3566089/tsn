@@ -25,13 +25,13 @@ import com.oneslogi.base.dbflute.exentity.*;
  *     VERSION_NO
  *
  * [foreign table]
- *     T_TRIMALLOCSTOCK, T_TRIMALLOCSCHKRI
+ *     T_TRIMALLOCSCHKRI, T_TRIMALLOCSTOCK
  *
  * [referrer table]
  *     
  *
  * [foreign property]
- *     tTrimallocstock, tTrimallocschkri
+ *     tTrimallocschkri, tTrimallocstock
  *
  * [referrer property]
  *     
@@ -59,18 +59,18 @@ public class LoaderOfTTrimallocadjust {
     // ===================================================================================
     //                                                                    Pull out Foreign
     //                                                                    ================
-    protected LoaderOfTTrimallocstock _foreignTTrimallocstockLoader;
-    public LoaderOfTTrimallocstock pulloutTTrimallocstock() {
-        if (_foreignTTrimallocstockLoader == null)
-        { _foreignTTrimallocstockLoader = new LoaderOfTTrimallocstock().ready(myBhv().pulloutTTrimallocstock(_selectedList), _selector); }
-        return _foreignTTrimallocstockLoader;
-    }
-
     protected LoaderOfTTrimallocschkri _foreignTTrimallocschkriLoader;
     public LoaderOfTTrimallocschkri pulloutTTrimallocschkri() {
         if (_foreignTTrimallocschkriLoader == null)
         { _foreignTTrimallocschkriLoader = new LoaderOfTTrimallocschkri().ready(myBhv().pulloutTTrimallocschkri(_selectedList), _selector); }
         return _foreignTTrimallocschkriLoader;
+    }
+
+    protected LoaderOfTTrimallocstock _foreignTTrimallocstockLoader;
+    public LoaderOfTTrimallocstock pulloutTTrimallocstock() {
+        if (_foreignTTrimallocstockLoader == null)
+        { _foreignTTrimallocstockLoader = new LoaderOfTTrimallocstock().ready(myBhv().pulloutTTrimallocstock(_selectedList), _selector); }
+        return _foreignTTrimallocstockLoader;
     }
 
     // ===================================================================================
