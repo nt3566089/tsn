@@ -427,8 +427,8 @@ public class InventoryCreateLogic extends AbstractWmsLogic {
 				csrwhadmCb.specify().columnSrymd();
 				csrwhadmCb.query().setCenterId_Equal(clientCenter.getCenterId());
 				csrwhadmCb.query().setZzorgncd_Equal(center.getCenterCd());
-				TCsrwhadm csrwhadmEntity = tCsrwhadmBhv.selectEntityWithDeletedCheck(csrwhadmCb);
-				if(csrwhadmEntity.getSrymd() == null || csrwhadmEntity.getSrymd().isEmpty()) {
+				TCsrwhadm csrwhadmEntity = tCsrwhadmBhv.selectEntity(csrwhadmCb);
+				if(csrwhadmEntity == null) {
 					this.getErrorManager().add(errSts, WmsMessageConst.DATA_NOT_FOUND_ERROR);
 					return;
 				}
@@ -578,8 +578,8 @@ public class InventoryCreateLogic extends AbstractWmsLogic {
 				// 区分値CD
 				classDtlcb.query().queryBClass().setClassCd_Equal("SETTLEMENTINVMONTH");
 				classDtlcb.query().setClassDtlCd_Equal(clientCenter.getSystemDt().substring(4, 5));
-				BClassDtl classEntity = bClassDtlBhv.selectEntityWithDeletedCheck(classDtlcb);
-				if(classEntity.getClassDtlCd() == null || classEntity.getClassDtlCd().isEmpty()) {
+				BClassDtl classEntity = bClassDtlBhv.selectEntity(classDtlcb);
+				if(classEntity == null) {
 					return;
 				}
 				//たな卸実施日リストを取得する

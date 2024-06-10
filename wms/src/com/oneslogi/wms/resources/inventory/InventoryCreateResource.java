@@ -310,11 +310,13 @@ public class InventoryCreateResource extends AbstractWmsResource {
 				}
 				//区分値明細IDを取得する
 				BClassDtl bclassDtl = stockAdjustFlagCheckLogic.selectClassMaster(centerCd);
-				//保管場ロケ在庫調査状況チェック2
-				stockAdjustFlagCheckLogic.isSortingInventoryIncomplete(centerId, clientId, clientCenter.getSystemDt(), new ErrorStatus(StatusCode.SORTING_INVENTORY_INCOMPLETE));
-				// 結果判定
-				if (getErrorManager().size() > 0) {
-					return null;
+				if(bclassDtl == null) {
+					//保管場ロケ在庫調査状況チェック2
+					stockAdjustFlagCheckLogic.isSortingInventoryIncomplete(centerId, clientId, clientCenter.getSystemDt(), new ErrorStatus(StatusCode.SORTING_INVENTORY_INCOMPLETE));
+					// 結果判定
+					if (getErrorManager().size() > 0) {
+						return null;
+					}
 				}
 				break;
 			case "05":

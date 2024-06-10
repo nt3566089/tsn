@@ -521,23 +521,36 @@ angular.module('oneslogiWms.InventoryCreate',[])
 	//データー取得判断
 	$scope.deferredGetSelectList = function(){
 		var deffer = $q.defer();
-		var deferredGetArr = [];
+		//var deferredGetArr = [];
 		//倉庫リスト取得
-		deferredGetArr.push($scope.deferredGetwarehouseList());
+		//deferredGetArr.push($scope.deferredGetwarehouseList());
+		$scope.deferredGetwarehouseList();
 		//預託リスト取得
-		deferredGetArr.push($scope.deferredGetDepositList());
+		//deferredGetArr.push($scope.deferredGetDepositList());
+		$scope.deferredGetDepositList();
 		//在庫区分リストタ取得
-		deferredGetArr.push($scope.deferredGetStockTypeList());
+		//deferredGetArr.push($scope.deferredGetStockTypeList());
+		$scope.deferredGetStockTypeList();
 		//ゾーンリスト取得
-		deferredGetArr.push($scope.deferredGetZoneList());
+		//deferredGetArr.push($scope.deferredGetZoneList());
+		$scope.deferredGetZoneList();
 		//引当可能数+引当済数>0リスト取得
-		deferredGetArr.push($scope.deferredStockTargetList());
-		
+		//deferredGetArr.push($scope.deferredStockTargetList());
+		$scope.deferredStockTargetList();
+		//ロケーションCD活性化
+		directiveControl.editable($scope, 'locationCd', true);
+		//fromロケーションCD活性化
+		directiveControl.editable($scope, 'fromLocationCd', true);
+		//toロケーションCD活性化
+		directiveControl.editable($scope, 'toLocationCd', true);
+		// 在庫調査区分データ取得
+		$scope.deferredGetInventoryInstKbnList();
 		if($scope.hozei == "0"){//保税のみ表示
 			// ロケーショングループデータ取得
-			deferredGetArr.push($scope.deferredGetLocationGrpList());
+			//deferredGetArr.push($scope.deferredGetLocationGrpList());
+			$scope.deferredGetLocationGrpList();
 			//在庫調査区分を非表示にする
-			directiveControl.show($scope, 'inventoryInstKbn', false);
+			//directiveControl.show($scope, , false);
 			//ライン/ブロックを非表示にする
 			directiveControl.show($scope, 'lineBlock', false);
 			//方面ピストン(手入力)を非表示にする
@@ -550,28 +563,32 @@ angular.module('oneslogiWms.InventoryCreate',[])
 			directiveControl.show($scope, 'productDivision', false);
 		}else if ($scope.hozei == "1" ){//倉庫のみ表示
 			// 在庫調査区分データ取得
-			deferredGetArr.push($scope.deferredGetInventoryInstKbnList());
+			//deferredGetArr.push($scope.deferredGetInventoryInstKbnList());
+			//$scope.deferredGetInventoryInstKbnList();
 			// ライン/ブロックマスタデータ取得
-			deferredGetArr.push($scope.deferredGetLineBlockCdList());
+			//deferredGetArr.push($scope.deferredGetLineBlockCdList());
+			$scope.deferredGetLineBlockCdList();
 			//方面ピストン(選択)マスタデータ取得
-			deferredGetArr.push($scope.deferredGetPistonList());
+			//deferredGetArr.push($scope.deferredGetPistonList());
+			$scope.deferredGetPistonList();
 			//銘柄区分リストデータ取得
-			deferredGetArr.push($scope.deferredGetProductKbnList());
+			//deferredGetArr.push($scope.deferredGetProductKbnList());
+			$scope.deferredGetProductKbnList();
 			//ロケーショングループを非表示にする
 			directiveControl.show($scope, 'locationGrp', false);
-			//ロケーションCD活性化
-			directiveControl.editable($scope, 'locationCd', true);
-			//fromロケーションCD活性化
-			directiveControl.editable($scope, 'fromLocationCd', true);
-			//toロケーションCD活性化
-			directiveControl.editable($scope, 'toLocationCd', true);
+//			//ロケーションCD活性化
+//			directiveControl.editable($scope, 'locationCd', true);
+//			//fromロケーションCD活性化
+//			directiveControl.editable($scope, 'fromLocationCd', true);
+//			//toロケーションCD活性化
+//			directiveControl.editable($scope, 'toLocationCd', true);
 		}
-		$q.all(
-			deferredGetArr
-		).then(function(response){
-			deferred.resolve();
-		});
-		return deffer.promise;
+//		$q.all(
+//			deferredGetArr
+//		).then(function(response){
+//			deferred.resolve();
+//		});
+	//	return deffer.promise;
 	}
 
 	// 在庫調査区分データ取得

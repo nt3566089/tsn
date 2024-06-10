@@ -324,7 +324,7 @@ public class StockAdjustFlagCheckLogic extends AbstractWmsLogic {
 		// 荷主ID
 		cb.query().setClassDtlCd_Equal(centerCd);
 		// ====== 検索実行 ======
-		BClassDtl entity = bClassDtlBhv.selectEntityWithDeletedCheck(cb);
+		BClassDtl entity = bClassDtlBhv.selectEntity(cb);
 		return entity;
 	}
 	
